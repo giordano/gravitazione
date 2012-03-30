@@ -1,0 +1,164 @@
+\documentclass[a4paper,twoside,openright,fleqn,titlepage]{book}
+\usepackage[T1]{fontenc}
+\usepackage[light]{kpfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+
+%%%%% Pacchetti caricati
+\usepackage{fancyhdr,emptypage}
+\usepackage[font=small,format=hang,labelfont=bf,textformat=period]{caption}
+% per tabelle e figure
+\usepackage{booktabs,graphicx,subfig}
+\usepackage{tikz,tikz-3dplot}
+\usepackage[autostyle=true]{csquotes}
+\usepackage[style=numeric,hyperref,abbreviate=false,backend=biber]{biblatex}
+% `mathtools' serve per definire la norma e il valore assoluto
+\usepackage{mathtools}
+% pacchetti matematici dell'American Mathematical Society
+\usepackage{amsthm}
+% `bm' serve per scrivere i vettori in corsivo con il comando
+% `\bm{vettore}'. Deve sostituire il comando `\mathbf{vettore}' perché questo
+% restituisce erroneamente lettere in tondo, non in corsivo e non funziona con
+% le lettere greche.
+\usepackage{bm}
+\usepackage{siunitx}
+\usepackage{hyperref}
+%%%%% Fine pacchetti
+
+%%%%% Impostazioni
+%% testatine.
+\pagestyle{fancy}
+\fancyhf{} % svuota tutti i campi delle testatine e dei piedi
+% Nella testatina (`head') a destra (`R') nelle pagine pari (`E') mettiamo il
+% nome del capitolo (`\leftmark'), non tutto maiuscolo (`\nouppercase'). Sulla
+% sinistra (`L') delle pagine dispari (`O') mettiamo il nome del paragrafo
+% (`\rightmark').
+\fancyhead[RE]{\slshape\footnotesize\nouppercase{\leftmark}}
+\fancyhead[LO]{\slshape\footnotesize\nouppercase{\rightmark}}
+% All'esterno di ogni pagina (cioè a sinistra (`L') nelle pagine pari (`E') e a
+% destra (`R') nelle pagine dispari (`O')), nella testatina (`head') mettiamo il
+% numero della pagina (`\thepage').
+\fancyhead[LE,RO]{\thepage}
+
+% impostazioni per il pacchetto `hyperref'. Per l'elenco di tutte le opzioni del
+% documento consulta il manuale: `texdoc hyperref'
+\hypersetup{colorlinks,% link colorati, non riquadrati
+  breaklinks=true,% permette di spezzare i link su più righe
+  bookmarksnumbered,% inserisce i numeri delle sezioni nei segnalibri
+  hidelinks % link neri e senza bordi colorati, adatto per la stampa
+}
+
+\sisetup{per-mode=symbol,
+  inter-unit-separator={}\cdot{},
+  exponent-product=\cdot,
+  output-product=\cdot,
+  separate-uncertainty=true
+}
+
+% Posiziona le didascalie sopra le tabelle
+\captionsetup[table]{position=top}
+
+\bibliography{bibliografia} % nome del file contenente la bibliografia
+\defbibheading{bibliography}[\refname]{\chapter*{#1}\markboth{#1}{#1}}
+
+\theoremstyle{plain}
+\newtheorem*{teorema}{Teorema}
+%%%%% Fine impostazioni
+
+%%%%% Comandi personalizzati
+% ridefinisco i comandi per alcune lettere greche in modo che si usino le
+% varianti
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+
+% Operatori
+\newcommand*{\dd}{\mathop{}\!\mathrm{d}} % Operatore differenziale \dd
+\DeclareMathOperator{\uimm}{\mathrm{i}} % unità immaginaria
+% Operatore valore assoluto \abs{x}. Usa \abs*{} per le frazioni
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+% Operatore norma \norm{x}. Usa \norm*{} per le frazioni
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
+%% Derivate
+% Derivata totale: \toder[ordine]{funzione}{variabile}
+\newcommand*{\toder}[3][]{\frac{{\dd^{#1}}#2}{\dd {#3}^{#1}}}
+% Derivata parziale \parder[ordine]{funzione}{variabile}
+% Per la definizione del comando `parder' (per inserire le derivate parziali)
+% vedi
+% http://www.guitex.org/home/index.php?option=com_kunena&func=view&catid=5&id=42178&Itemid=60#42199
+\makeatletter
+\newcommand{\parder}[2]{\begingroup
+  \@tempswafalse\toks@={}\count@=\z@
+  \@for\next:=#2\do
+    {\expandafter\check@var\next\@nil
+     \advance\count@\parder@exp
+     \if@tempswa
+       \toks@=\expandafter{\the\toks@\,}%
+     \else
+       \@tempswatrue
+     \fi
+     \toks@=\expandafter{\the\expandafter\toks@\expandafter\partial\parder@var}}%
+  \frac{\partial\ifnum\count@=\@ne\else^{\number\count@}\fi#1}{\the\toks@}%
+  \endgroup}
+\def\check@var{\@ifstar{\mult@var}{\one@var}}
+\def\mult@var#1#2\@nil{\def\parder@var{#2^{#1}}\def\parder@exp{#1}}
+\def\one@var#1\@nil{\def\parder@var{#1}\chardef\parder@exp\@ne}
+\makeatother
+
+% Derivate per le formule in linea (usare \frac in linea è eccessivo). La `l'
+% iniziale nel nome distingue questi comandi da quelli per le formule fuori
+% corpo. Non uso `\dd' ma `\mathrm{d}' perché nelle formule in linea `\dd'
+% aggiunge una spaziatura non adatta. Non sono dei comandi bellissimi, ma
+% permettono di passare facilmente da formula in linea a fuori corpo e viceversa
+% cambiando una lettera.
+% Derivata totale: \ltoder[ordine]{funzione}{variabile}
+\newcommand*{\ltoder}[3][]{\mathrm{d}^{#1}#2 / \mathrm{d} {#3}^{#1}}
+% Derivata parziale: \lparder[ordine]{funzione}{variabile}
+\newcommand*{\lparder}[3][]{\partial^{#1} #2 / \partial {#3}^{#1}}
+% NOTA: `\parder' e `\lparder' non sono completamente interscambiabili, il primo
+% comando è molto più complesso e permette di inserire le derivate miste, a
+% differenza del secondo.
+
+% Costante di Eulero
+\DeclareMathOperator{\e}{\mathrm{e}}
+% Versore. Esempi: versore x: `\versore{x}', versore i: \versor{\imath}, versore
+% j: \versor{\jmath} (solo `i' e `j' richiedono `\imath' e `\jmath', altrimenti
+% il puntino litiga con `\hat')
+\newcommand*{\versor}[1]{\hat{\bm{#1}}}
+
+% Ambiente per scrivere sistemi di equazioni.
+% Vedi `L'arte di scrivere con LaTeX' di Pantieri.
+% Esempio d'uso (in ambiente matematico):
+%	\begin{sistema}
+%         x+y+z=0 \\
+%         2x-y=1 \\
+%         y-4z=-3
+%       \end{sistema}
+\newenvironment{sistema}%
+{\left\lbrace\begin{array}{@{}l@{}}}%
+    {\end{array}\right.}
+
+%% Campi notevoli
+\let\numberset\mathbb
+\newcommand{\N}{\numberset{N}}	% Naturali \N
+\newcommand{\Z}{\numberset{Z}}	% Interi \Z
+\newcommand{\R}{\numberset{R}}	% Reali \R
+\newcommand{\C}{\numberset{C}}	% Complessi \C
+%%%%% Fine comandi personalizzati
+
+% titolo provvisorio per il frontespizio provvisorio
+\title{Gravitazione e cosmologia}
+\date{}
+\begin{document}
+\maketitle
+
+\cleardoublepage{}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% fill-column: 80
+%%% End:
