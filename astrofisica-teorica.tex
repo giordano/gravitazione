@@ -1,4 +1,4 @@
-\documentclass[a4paper,twoside,openright,fleqn,titlepage]{book}
+\documentclass[a4paper,twoside,openright,fleqn,11pt]{book}
 \usepackage[T1]{fontenc}
 \usepackage[light]{kpfonts}
 \usepackage[utf8]{inputenc}
@@ -6,6 +6,7 @@
 
 %%%%% Pacchetti caricati
 \usepackage{fancyhdr,emptypage}
+\usepackage{tensor} % per rappresentare i tensori
 \usepackage[font=small,format=hang,labelfont=bf,textformat=period]{caption}
 % per tabelle e figure
 \usepackage{booktabs,graphicx,subfig}
@@ -52,7 +53,9 @@
   inter-unit-separator={}\cdot{},
   exponent-product=\cdot,
   output-product=\cdot,
-  separate-uncertainty=true
+  separate-uncertainty=true,
+  math-micro=\muup,
+  text-micro=\ensuremath{\muup},
 }
 
 % Posiziona le didascalie sopra le tabelle
@@ -119,8 +122,7 @@
 % comando è molto più complesso e permette di inserire le derivate miste, a
 % differenza del secondo.
 
-% Costante di Eulero
-\DeclareMathOperator{\e}{\mathrm{e}}
+\DeclareMathOperator{\e}{\mathrm{e}} % Costante di Eulero
 % Versore. Esempi: versore x: `\versore{x}', versore i: \versor{\imath}, versore
 % j: \versor{\jmath} (solo `i' e `j' richiedono `\imath' e `\jmath', altrimenti
 % il puntino litiga con `\hat')
@@ -150,9 +152,14 @@
 \title{Gravitazione e cosmologia}
 \date{}
 \begin{document}
+\frontmatter{}
 \maketitle
 
 \cleardoublepage{}
+\tableofcontents{}
+\cleardoublepage{}
+\mainmatter{}
+\input{capitoli/richiami_relativita_speciale}
 
 
 \end{document}

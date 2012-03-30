@@ -1,6 +1,183 @@
 \chapter{Richiami di relatività speciale}
 \label{cha:relativita-speciale}
 
+Coordinata controvariante
+\begin{equation}
+  \label{eq:coord-controvariante}
+  x^{\alpha} = (x^{0},x^{i}) = (t, \bm{x}),
+\end{equation}
+con $\alpha$ che varia fra $0$, $1$, $2$ e $3$ e $i$ fra $1$, $2$ e $3$.
+
+Nello spazio ordinario si defisce
+\begin{equation}
+  \dd l^{2}   = \dd x^{2} + \dd y^{2} + \dd z^{2} = \sum_{i} (\dd x^{i})^{2} =
+  \delta_{ij}\dd x^{i} \dd x^{j},
+\end{equation}
+con
+\begin{equation}
+  \delta_{ij} =
+  \begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+  \end{pmatrix}.
+\end{equation}
+Il trasformato della coordinata controvariante~\eqref{eq:coord-controvariante} è
+\begin{equation}
+  x'^{i} = \tensor{R}{^{i}_{j}}x^{j} + a^{i}
+\end{equation}
+e la matrice $R$ è univocamente definita imponendo la condizione che $\dd l^{2}$
+sia invariante cambiando sistema di riferimento.  Si scopre che $R$ è la matrice
+di rotazione.
+
+Nello spazio di Minkowski definiamo
+\begin{equation}
+  \dd \tau^{2} = \dd t^{2} - \dd \bm{x}^{2} = -\tensor{\eta}{_{\alpha\beta}}\dd
+  x^{\alpha} \dd x^{\beta},
+\end{equation}
+in cui $\tensor{\eta}{_{\alpha\beta}}$ è il \emph{tensore metrico di Minkowski}
+\begin{equation}
+  \tensor{\eta}{_{\alpha\beta}} =
+  \begin{pmatrix}
+    -1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1
+  \end{pmatrix}.
+\end{equation}
+Questo tensore definisce una metrica pseudo euclidea con segnatura $(-+++)$.
+Imponendo che $\dd \tau$ sia invariante per trasformazioni di Lorentz possiamo
+passare da un sistema di riferimento inerziale $O$ a un altro sistema di
+riferimento inerziale $O'$ in moto rispetto a $O$.  Consideriamo due eventi
+$E_{1}$ ed $E_{2}$ relativi a un fotone
+\begin{gather}
+  E_{1}: \quad (0,\bm{0}), \\
+  E_{2}: \quad (\dd t, \dd \bm{x})
+\end{gather}
+\begin{equation}
+  \dd \tau^{2} = \dd t^{2}\Big( 1 - \toder{\bm{x}^{2}}{t^{2}}\Big) = \dd t^{2}
+  (1 - 1^{2}) = 0
+\end{equation}
+perché per un fotone si ha
+\begin{equation}
+  \bm{v}^{2} = \Big(\toder{\bm{x}}{t}\Big)^{2} = c^{2} = 1.
+\end{equation}
+
+
+\begin{equation}
+  \dd \tau'^{2} = -\tensor{\eta}{_{\alpha\beta}}\dd x'^{\alpha}\dd x'^{\beta}
+\end{equation}
+Richiediamo che la trasformazione $x^{\alpha} \to x'^{\alpha}$ sia lineare
+per rispettare la condizione di omogeneità dello spazio (la lunghezza di una
+sbarra non deve dipendere dalla posizione degli estremi), del tempo (la
+lunghezza della sbarra non deve dipendere dall'istante di tempo in cui la
+misuriamo) e di isotropia dello spazio (la lunghezza della sbarra non deve
+dipendere neanche dalla direzione in cui la guardiamo).  La più generica
+trasformazione lineare è
+\begin{equation}
+  \label{eq:trasformazione-lineare}
+  x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta} + a^{\alpha}.
+\end{equation}
+Imponiamo che l'intervallo $\dd \tau^{2}$ non vari passando da un sistema di
+riferimento all'altro, cioè che $\dd \tau^{2} = \dd \tau'^{2}$, così abbiamo
+\begin{equation}
+  \dd \tau'^{2} = -\tensor{\eta}{_{\alpha\beta}}
+  \tensor{\Lambda}{^{\alpha}_{\gamma}} \dd x^{\gamma}
+  \tensor{\Lambda}{^{\beta}_{\delta}} \dd x^{\delta} = \dd \tau^{2} =
+  -\tensor{\eta}{_{\alpha\beta}} \dd x^{\alpha} \dd x^{\beta},
+\end{equation}
+da cui, semplificando negli ultimi due membri $\dd x^{\gamma}\dd x^{\delta}$,
+otteniamo la relazione fondamentale del tensore metrico
+\begin{equation}
+  \label{eq:rel-fond-tensore-metrico}
+  \tensor{\eta}{_{\alpha\beta}} \tensor{\Lambda}{^{\alpha}_{\gamma}}
+  \tensor{\Lambda}{^{\beta}_{\delta}} = \tensor{\eta}{_{\gamma\delta}}.
+\end{equation}
+Questa è la condizione che deve essere soddisfatta da una
+trasformazione~\eqref{eq:trasformazione-lineare} affinché sia una trasformazione
+di Lorentz.  L'equazione~\eqref{eq:rel-fond-tensore-metrico} impone $10$
+condizioni indipendenti in quanto il tensore metrico
+$\tensor{\eta}{_{\gamma\delta}}$ è simmetrico quindi solo $10$ delle sue $16$
+componenti sono indipendenti.
+
+L'equazione matriciale equivalente alla~\eqref{eq:rel-fond-tensore-metrico} è
+\begin{equation}
+  \Lambda^{\textup{T}}\eta\Lambda = \eta
+\end{equation}
+dalla quale abbiamo
+\begin{equation}
+  \det\eta = \det(\Lambda^{\textup{T}}\eta\Lambda) = \det\eta
+  \det(\Lambda^{\textup{T}}\Lambda) = \det\eta (\det\Lambda)^{2}
+\end{equation}
+e quindi deve valere la condizione
+\begin{equation}
+  \det\Lambda = \pm 1.
+\end{equation}
+Le trasformazioni di Lorentz con $\det\Lambda = +1$ sono chiamate
+\emph{proprie}, quelle con $\det\Lambda = -1$ sono chiamate \emph{improprie}.
+
+Consideriamo una particella a riposo nell'origine del sistema di riferimento $O$
+(quindi $\dd \bm{x} = \bm{0}$) che si muove con velocità
+$\bm{v} = (v^{1},v^{2},v^{3})$ rispetto a un altro sistema di riferimento
+inerziale $O'$
+% TODO: probabilmente questi calcoli andranno spezzati in più ambienti
+% `equation' spiegando che passaggi vengono fatti in mezzo
+\begin{gather}
+  \dd x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}} \dd x^{\beta} =
+  \tensor{\Lambda}{^{\alpha}_{0}} \dd x^{0} + \tensor{\Lambda}{^{\alpha}_{i}}\dd
+  x^{i} \\
+  \dd x'^{i} = \tensor{\Lambda}{^{i}_{0}}\dd t \\
+  \dd x'^{0} = \tensor{\Lambda}{^{0}_{0}}\dd t.
+\end{gather}
+Dividendo membro a membro abbiamo
+\begin{equation}
+  \toder{x'^{i}}{x'^{0}} = \toder{x'^{i}}{t'} = v_{i} =
+  \frac{\tensor{\Lambda}{^{i}_{0}}}{\tensor{\Lambda}{^{0}_{0}}},
+\end{equation}
+da cui
+\begin{equation}
+  \tensor{\Lambda}{^{i}_{0}} = v_{i}\tensor{\Lambda}{^{0}_{0}}.
+\end{equation}
+Ponendo $\gamma = \delta = 0$ nella~\eqref{eq:rel-fond-tensore-metrico} risulta
+\begin{equation}
+  \begin{split}
+    \tensor{\eta}{_{00}} &= -1 = \tensor{\eta}{_{\alpha\beta}}
+    \tensor{\Lambda}{^{\alpha}_{0}} \tensor{\Lambda}{^{\beta}_{0}} =
+    \tensor{\eta}{_{\alpha\beta}}(\tensor{\Lambda}{^{0}_{0}})^{2} +
+    \tensor{\eta}{_{ij}} \tensor{\Lambda}{^{i}_{0}} \tensor{\Lambda}{^{j}_{0}}
+    \\
+    &= -(\tensor{\Lambda}{^{0}_{0}})^{2} + \delta_{ij}
+    \tensor{\Lambda}{^{i}_{0}} \tensor{\Lambda}{^{j}_{0}} =
+    -(\tensor{\Lambda}{^{0}_{0}})^{2} + \sum_{i}(\tensor{\Lambda}{^{i}_{0}})^{2},
+  \end{split}
+\end{equation}
+quindi
+\begin{equation}
+  (\tensor{\Lambda}{^{0}_{0}})^{2} = 1 +
+  \sum_{i}(\tensor{\Lambda}{^{i}_{0}})^{2} = 1 +
+  \sum_{i}(v_{i}\tensor{\Lambda}{^{0}_{0}})^{2} \geq 1,
+\end{equation}
+cioè deve risultare
+\begin{equation}
+  \tensor{\Lambda}{^{0}_{0}} \geq 1 \text{ oppure } \tensor{\Lambda}{^{0}_{0}}
+  \leq -1.
+\end{equation}
+Inoltre abbiamo
+\begin{equation}
+  \tensor{\Lambda}{^{0}_{0}} = \frac{1}{\sqrt{1-\sum_{i}(v_{i})^{2}}} =
+  \frac{1}{\sqrt{1-v^{2}}} = \gamma.
+\end{equation}
+Quindi risulta anche
+\begin{equation}
+  \tensor{\Lambda}{^{i}_{0}} = v_{i}\tensor{\Lambda}{^{0}_{0}} = v_{i}\gamma.
+\end{equation}
+Le altre componenti $\tensor{\Lambda}{^{\alpha}_{\beta}}$ non sono univocamente
+determinate.  Una scelta conveniente che permette di soddisfare
+la~\eqref{eq:trasformazione-lineare} è
+\begin{align}
+  \tensor{\Lambda}{^{0}_{i}} &= \tensor{\Lambda}{^{i}_{0}} = v_{i}\gamma, \\
+  \tensor{\Lambda}{^{i}_{j}} &= \delta_{ij} + v_{i}v_{j}\frac{\gamma-1}{v^{2}}.
+\end{align}
 
 
 %%% Local Variables:
