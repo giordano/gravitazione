@@ -213,22 +213,20 @@ la~\eqref{eq:trasformazione-lineare} è
 \label{sec:calcolo-tensoriale}
 
 Un \index{quadrivettore!controvariante}\emph{quadrivettore controvariante}
-$V^{\alpha}$ è un insieme di quattro quantità $V^{0}$, $V^{1}$ e $V^{2}$,
-$V^{3}$ che, mediante una trasformazione di Lorentz ristretta
-$x^{\alpha} \to x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta}$, si
-trasformano come
+$V^{\alpha} = (V^{0}, V^{1}, V^{2}, V^{3})$ è un insieme di quattro quantità
+che, mediante una trasformazione di Lorentz ristretta, si trasformano come
 \begin{equation}
   V^{\alpha} \to V'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}V^{\beta}.
 \end{equation}
 Un quadrivettore controvariante può anche essere rappresentato come
 \begin{equation}
-  V^{\alpha} = (V^{0}, V^{1}, V^{2}, V^{3}) = (V^{0}, V^{i}) = (V^{0}, \bm{V}),
+  V^{\alpha} = (V^{0}, V^{i}) = (V^{0}, \bm{V}),
 \end{equation}
 dove $\bm{V} = (V^{1}, V^{2}, V^{3})$.
 
-Un \index{quadrivettore!covariante}\emph{quadrivettore covariante} $U_{\alpha}$
-è un insieme di quattro quantità $U_{0}$, $U_{1}$, $U_{2}$ e $U_{3}$ che, sotto
-una trasformazione di Lorentz ristretta, si trasformano come
+Un \index{quadrivettore!covariante}\emph{quadrivettore covariante}
+$U_{\alpha} = (U_{0}, U_{1}, U_{2}, U_{3})$ è un insieme di quattro quantità
+che, sotto una trasformazione di Lorentz ristretta, si trasformano come
 \begin{equation}
   U_{\alpha} \to U'_{\alpha} = \tensor{\Lambda}{_{\alpha}^{\beta}}U_{\beta}
 \end{equation}
@@ -237,7 +235,7 @@ dove
   \tensor{\Lambda}{_{\alpha}^{\beta}} = \tensor{\eta}{_{\alpha\gamma}}
   \tensor{\eta}{^{\beta\delta}} \tensor{\Lambda}{^{\gamma}_{\delta}}.
 \end{equation}
-La matrice $\tensor{\eta}{^{\alpha\beta}}$ qui introdotta è il
+La matrice $\tensor{\eta}{^{\alpha\beta}}$ è il
 \index{tensore!metrico controvariante di
   Minkowski}\emph{tensore
   metrico controvariante di Minkowski}
@@ -257,8 +255,192 @@ Osserviamo che
 in cui $\tensor{\delta}{^{\alpha}_{\beta}} = \tensor{\delta}{_{\alpha}^{\beta}}$
 è la
 \index{delta!di Kronecker quadrimensionale}delta di Kronecker quadrimensionale.
+Usando la relazione fondamentale delle trasformazioni di
+Lorentz~\eqref{eq:rel-fond-tensore-metrico} abbiamo
+\begin{equation}
+  \tensor{\Lambda}{_{\alpha}^{\gamma}} \tensor{\Lambda}{^{\alpha}_{\beta}} =
+  \tensor{\eta}{_{\alpha\delta}} \tensor{\eta}{^{\gamma\epsilon}}
+  \tensor{\Lambda}{^{\delta}_{\epsilon}} \tensor{\Lambda}{^{\alpha}_{\beta}} =
+  \tensor{\eta}{_{\epsilon\beta}} \tensor{\eta}{^{\gamma\epsilon}} =
+  \tensor{\delta}{^{\gamma}_{\beta}}.
+\end{equation}
 Dunque $\tensor{\Lambda}{_{\alpha}^{\beta}}$ è la matrice inversa di
 $\tensor{\Lambda}{^{\alpha}_{\beta}}$.
+
+Vogliamo ora determinare la trasformazione inversa $x'^{\alpha} \to x^{\alpha}$.
+Dalla trasformazione~\eqref{eq:trasformazione-lineare} risulta che
+\begin{equation}
+  x'^{\alpha} \tensor{\Lambda}{_{\alpha}^{\gamma}} =
+  \tensor{\Lambda}{^{\alpha}_{\beta}} \tensor{\Lambda}{_{\alpha}^{\gamma}}
+  x^{\beta} + \tensor{\Lambda}{_{\alpha}^{\gamma}} a^{\alpha} =
+  \tensor{\delta}{^{\gamma}_{\beta}} x^{\beta} - a'^{\gamma} = x^{\gamma} -a'^{\gamma}
+\end{equation}
+da cui ricaviamo la trasformazione, rinominando gli indici,
+\begin{equation}
+  x'^{\alpha} \to x^{\alpha} = \tensor{\Lambda}{_{\beta}^{\alpha}}x'^{\beta} +
+  a'^{\alpha}.
+\end{equation}
+
+Il prodotto scalare $V^{\alpha}U_{\alpha}$ fra un quadrivettore covariante e uno
+controvariante è una quantità che non varia cambiando sistema di riferimento
+inerziale, infatti
+\begin{equation}
+  V^{\alpha}U_{\alpha} \to V'^{\alpha}U'_{\alpha} =
+  \tensor{\Lambda}{^{\alpha}_{\beta}} V^{\beta}
+  \tensor{\Lambda}{_{\alpha}^{\gamma}} U_{\gamma} =
+  \tensor{\delta}{_{\beta}^{\gamma}} V^{\beta} U_{\gamma} = V^{\gamma}U_{\gamma}
+  = V^{\alpha} U_{\alpha}.
+\end{equation}
+
+Possiamo passare da un quadrivettore controvariante
+$V^{\alpha} = (V^{0}, V^{i})$ al corrispondente quadrivettore covariante
+$V_{\alpha} = (V_{0}, V_{i})$ moltiplicandolo per il tensore metrico covariante
+\begin{equation}
+  \label{eq:abbassamento-indice}
+  \begin{split}
+    V^{\alpha} \to V_{\alpha} &= \tensor{\eta}{_{\alpha\beta}}V^{\beta} =
+    \tensor{\eta}{_{\alpha\beta}} (V^{0}, V^{i}) =
+    (\tensor{\eta}{_{0\beta}}V^{0}, \tensor{\eta}{_{i\beta}}V^{i}) \\
+    &= (\tensor{\eta}{_{00}}V^{0}, \delta_{i\beta}V^{\beta}) = (-V^{0}, V^{i}).
+  \end{split}
+\end{equation}
+Pertanto, mediante questa operazione, chiamata a volte di
+\emph{abbassamento degli indici}, la componente temporale di un quadrivettore
+cambia segno mentre quelle spaziali rimangono immutate.  Analogamente si può
+effettuare l'\emph{innalzamento degli indici} di un quadrivettore covariante
+moltiplicandolo per il tensore metrico controvariante
+\begin{equation}
+  \label{eq:innalzamento-indice}
+  U_{\alpha} \to U^{\alpha} = \tensor{\eta}{^{\alpha\beta}}U_{\beta}.
+\end{equation}
+Verifichiamo che il quadrivettore $V_{\alpha}$ definito
+nella~\eqref{eq:abbassamento-indice} si trasforma effettivamente come un
+quadrivettore covariante
+\begin{equation}
+  V_{\alpha} \to V'_{\alpha} = \tensor{\eta}{_{\alpha\beta}}V'^{\beta} =
+  \tensor{\eta}{_{\alpha\beta}} \tensor{\Lambda}{^{\beta}_{\gamma}} V^{\gamma} =
+  \tensor{\eta}{_{\alpha\beta}} \tensor{\Lambda}{^{\beta}_{\gamma}}
+  \tensor{\eta}{^{\gamma\delta}}V_{\delta} =
+  \tensor{\Lambda}{_{\alpha}^{\delta}} V_{\delta}.
+\end{equation}
+Allo stesso modo si può far vedere che il quadrivettore $U^{\alpha}$ definito
+nella~\eqref{eq:innalzamento-indice} si trasforma come un quadrivettore
+controvariante.
+
+Possiamo generalizzare le definizioni date finora introducendo il concetto di
+quadritensore.  Un \index{quadritensore}\emph{quadritensore}
+$\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ (con
+$p + q = k$) di rango $k$ è un insieme di $4^{k}$ quantità che sotto una
+trasformazione di Lorentz ristretta
+$x^{\alpha} \to x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta}$ si
+trasformano come
+\begin{equation}
+  \tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} \to
+  \tensor*{{A'}}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} =
+  \tensor{\Lambda}{^{\alpha_{1}}_{\mu_{1}}} \cdots
+  \tensor{\Lambda}{^{\alpha_{p}}_{\mu_{p}}}
+  \tensor{\Lambda}{_{\beta_{1}}^{\nu_{1}}} \cdots
+  \tensor{\Lambda}{_{\beta_{q}}^{\nu_{q}}} \tensor*{A}{^{\mu_{1}\dots\mu_{p}}_{\nu_{1}\dots\nu_{q}}}
+\end{equation}
+Il quadritensore
+$\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ è un
+quadritensore misto $p$ volte controvariante e $q$ volte covariante, oppure di
+tipo $(p,q)$.  Un quadritensore di rango $k$ completamente controvariante è del
+tipo $\tensor{A}{^{\alpha_{1}\dots\alpha_{k}}}$ e si trasforma come
+\begin{equation}
+  \tensor{A}{^{\alpha_{1}\dots\alpha_{k}}} \to
+  \tensor{{A'}}{^{\alpha_{1}\dots\alpha_{k}}} =
+  \tensor{\Lambda}{^{\alpha_{1}}_{\mu_{1}}} \cdots
+  \tensor{\Lambda}{^{\alpha_{k}}_{\mu_{k}}} \tensor{A}{^{\mu_{1}\dots\mu_{k}}},
+\end{equation}
+similmente un quadritensore di rango $k$ completamente covariante è del tipo
+$\tensor{A}{_{\alpha_{1}\dots\alpha_{k}}}$ e si trasforma come
+\begin{equation}
+  \tensor{A}{_{\alpha_{1}\dots\alpha_{k}}} \to
+  \tensor{{A'}}{_{\alpha_{1}\dots\alpha_{k}}} =
+  \tensor{\Lambda}{_{\alpha_{1}}^{\mu_{1}}} \cdots
+  \tensor{\Lambda}{_{\alpha_{k}}^{\mu_{k}}} \tensor{A}{_{\mu_{1}\dots\mu_{k}}}.
+\end{equation}
+I quadritensori di rango $1$ sono i \index{quadrivettore}\emph{quadrivettori}, i
+quadritensori di rango $0$, che quindi non hanno indici, sono chiamati
+\index{scalare!di Lorentz}\emph{scalari di Lorentz} (o brevemente
+\emph{scalari}) e sono invarianti sotto le trasformazioni di Lorentz.
+
+\subsection{Operazioni con i quadritensori}
+\label{sec:operazioni-tensori}
+
+\subsubsection{Combinazione lineare}
+\label{sec:combinazione-lineare}
+
+La combinazione lineare
+\begin{equation}
+  \tensor*{T}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} = a
+  \tensor*{R}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} + b
+  \tensor*{S}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}},
+\end{equation}
+con $a$ e $b$ scalari, di due quadritensori dello stesso tipo è un quadritensore
+ancora dello stesso tipo.  Per esempio, verifichiamo che
+\begin{equation}
+  \tensor{T}{^{\alpha}_{\beta}} = a \tensor{R}{^{\alpha}_{\beta}} + b
+  \tensor{S}{^{\alpha}_{\beta}}
+\end{equation}
+è un quadritensore di rango $2$ una volta controvariante e una volta covariante
+come lo sono $\tensor{R}{^{\alpha}_{\beta}}$ e
+$\tensor{S}{^{\alpha}_{\beta}}$. Abbiamo
+\begin{equation}
+  \begin{split}
+    \tensor{T}{^{\alpha}_{\beta}} \to \tensor{{T'}}{^{\alpha}_{\beta}} &= a
+    \tensor{{R'}}{^{\alpha}_{\beta}} + b \tensor{{S'}}{^{\alpha}_{\beta}} = a
+    \tensor{\Lambda}{^{\alpha}_{\gamma}} \tensor{\Lambda}{_{\beta}^{\delta}}
+    \tensor{R}{^{\gamma}_{\delta}} + b \tensor{\Lambda}{^{\alpha}_{\gamma}}
+    \tensor{\Lambda}{_{\beta}^{\delta}} \tensor{S}{^{\gamma}_{\delta}} \\
+    &= \tensor{\Lambda}{^{\alpha}_{\gamma}}
+    \tensor{\Lambda}{_{\beta}^{\delta}}(a \tensor{R}{^{\gamma}_{\delta}} + b
+    \tensor{S}{^{\gamma}_{\delta}}) = \tensor{\Lambda}{^{\alpha}_{\gamma}}
+    \tensor{\Lambda}{_{\beta}^{\delta}} \tensor{T}{^{\gamma}_{\delta}}.
+  \end{split}
+\end{equation}
+
+\subsubsection{Prodotto diretto}
+\label{sec:prodotto-diretto}
+
+Il prodotto
+$\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}
+\tensor*{B}{^{\alpha_{1}\dots\alpha_{r}}_{\beta_{1}\dots\beta_{s}}}$
+di un quadritensore di tipo $(p,q)$ e di uno di tipo $(r,s)$ è un quadritensore
+$\tensor*{T}{^{\alpha_{1}\dots\alpha_{p+r}}_{\beta_{1}\dots\beta_{q+s}}}$ di
+tipo $(p+r,q+s)$.  Consideriamo per esempio
+\begin{equation}
+  \tensor{T}{^{\alpha}_{\beta}^{\delta}} = \tensor{A}{^{\alpha}_{\beta}}
+  \tensor{B}{^{\gamma}}.
+\end{equation}
+Abbiamo
+\begin{equation}
+  \tensor{T}{^{\alpha}_{\beta}^{\delta}} \to
+  \tensor{{T'}}{^{\alpha}_{\beta}^{\delta}} = \tensor{{A'}}{^{\alpha}_{\beta}}
+  \tensor{{B'}}{^{\gamma}} = \tensor{\Lambda}{^{\alpha}_{\delta}}
+  \tensor{\Lambda}{_{\beta}^{\epsilon}} \tensor{A}{^{\delta}_{\epsilon}}
+  \tensor{\Lambda}{^{\gamma}_{\zeta}} \tensor{B}{^{\zeta}} =
+  \tensor{\Lambda}{^{\alpha}_{\delta}} \tensor{\Lambda}{_{\beta}^{\epsilon}}
+  \tensor{\Lambda}{^{\gamma}_{\zeta}} \tensor{T}{^{\delta}_{\epsilon}^{\zeta}}.
+\end{equation}
+
+
+\subsubsection{Contrazione}
+\label{sec:contrazione}
+
+\subsubsection{Derivazione}
+\label{sec:derivazione}
+
+La derivazione di uno scalare $\phi$ rispetto a una coordinata controvariante $x^{\alpha}$
+\begin{equation}
+  \toder{\phi}{x^{\alpha}} = U_{\alpha}
+\end{equation}
+produce un quadrivettore covariante.  Infatti, dalla trasformazione
+
+\subsection{Quadritensori invarianti}
+\label{sec:tensori-invarianti}
+
 
 \section{Dinamica particellare}
 \label{sec:dinamica-particellare}
@@ -288,7 +470,7 @@ prodotto fra la massa a riposo $m$ della particella e la quadrivelocità
   m\gamma\bm{v}).
 \end{equation}
 Ricordando che l'energia totale $E$ di una particella è definita come $m\gamma$
-abbiamo che la prima componente del quadrivettore momento è proprio l'energia
+troviamo che la prima componente del quadrivettore momento è proprio l'energia
 totale, mentre le componenti $p^{i}$ sono le componenti del momento
 $\bm{p} = m\gamma\bm{v}$
 \begin{equation}

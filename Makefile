@@ -8,9 +8,9 @@ BIBLIOGRAFIA		= bibliografia.bib
 CAPITOLI_TEX		= $(wildcard capitoli/*.tex)
 INIZIO_FINE_TEX		= $(wildcard MaterialeInizialeFinale/*.tex)
 TUTTI_TEX		= $(PRINCIPALE_TEX) $(CAPITOLI_TEX) $(INIZIO_FINE_TEX)
-CLEAN_FILE		= *.aux *.bbl *.bcf *.blg *-blx.bib *.fdb_latexmk *.lof \
-	*.log *.nav *.out *.pgf-plot.* *.run.xml *.snm *.toc *~ \
-	$(wildcard capitoli/*~) $(wildcard MaterialeInizialeFinale/*~) \
+CLEAN_FILE		= *.aux *.bbl *.bcf *.blg *-blx.bib *.fdb_latexmk *.idx \
+	*.ilg *.ind *.lof *.log *.nav *.out *.pgf-plot.* *.run.xml *.snm \
+	*.toc *~ $(wildcard capitoli/*~) $(wildcard MaterialeInizialeFinale/*~) \
 DISTCLEAN_FILE		= *.pdf
 ##### Regole
 

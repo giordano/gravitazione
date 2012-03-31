@@ -4,6 +4,9 @@
 *.blg
 *-blx.bib
 *.fdb_latexmk
+*.idx
+*.ilg
+*.ind
 *.log
 *.lof
 *.nav
