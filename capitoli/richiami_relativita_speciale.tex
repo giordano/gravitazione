@@ -1,7 +1,10 @@
 \chapter{Richiami di relatività speciale}
 \label{cha:relativita-speciale}
 
-Coordinata controvariante
+\section{Trasformazioni di Lorentz}
+\label{sec:trasformazioni-lorentz}
+
+\index{coordinata controvariante}Coordinata controvariante
 \begin{equation}
   \label{eq:coord-controvariante}
   x^{\alpha} = (x^{0},x^{i}) = (t, \bm{x}),
@@ -35,9 +38,19 @@ Nello spazio di Minkowski definiamo
   \dd \tau^{2} = \dd t^{2} - \dd \bm{x}^{2} = -\tensor{\eta}{_{\alpha\beta}}\dd
   x^{\alpha} \dd x^{\beta},
 \end{equation}
-in cui $\tensor{\eta}{_{\alpha\beta}}$ è il \emph{tensore metrico di Minkowski}
+in cui $\tensor{\eta}{_{\alpha\beta}}$ è il
+\index{tensore!metrico covariante di
+  Minkowski}\emph{tensore metrico covariante di Minkowski}
 \begin{equation}
+  \label{eq:tensore-metrico-controvariante}
   \tensor{\eta}{_{\alpha\beta}} =
+  \begin{pmatrix}
+   \eta_{00} & \eta_{01} & \eta_{02} & \eta_{03} \\
+   \eta_{10} & \eta_{11} & \eta_{12} & \eta_{13} \\
+   \eta_{20} & \eta_{21} & \eta_{22} & \eta_{23} \\
+   \eta_{30} & \eta_{31} & \eta_{32} & \eta_{33}
+  \end{pmatrix}
+  =
   \begin{pmatrix}
     -1 & 0 & 0 & 0 \\
     0 & 1 & 0 & 0 \\
@@ -162,7 +175,11 @@ cioè deve risultare
   \tensor{\Lambda}{^{0}_{0}} \geq 1 \text{ oppure } \tensor{\Lambda}{^{0}_{0}}
   \leq -1.
 \end{equation}
-Inoltre abbiamo
+Le trasformazioni con $\tensor{\Lambda}{^{0}_{0}} \geq +1$ sono chiamate
+\emph{ortocrone}, quelle con $\tensor{\Lambda}{^{0}_{0}} \leq -1$
+\emph{anticrone}.  Le trasformazioni di Lorentz proprie e ortocrone sono dette
+\emph{trasformazioni di Lorentz ristrette} o \emph{speciali}.  Considerando una
+trasformazione ristretta inoltre abbiamo
 \begin{equation}
   \tensor{\Lambda}{^{0}_{0}} = \frac{1}{\sqrt{1-\sum_{i}(v_{i})^{2}}} =
   \frac{1}{\sqrt{1-v^{2}}} = \gamma.
@@ -174,10 +191,140 @@ Quindi risulta anche
 Le altre componenti $\tensor{\Lambda}{^{\alpha}_{\beta}}$ non sono univocamente
 determinate.  Una scelta conveniente che permette di soddisfare
 la~\eqref{eq:trasformazione-lineare} è
-\begin{align}
-  \tensor{\Lambda}{^{0}_{i}} &= \tensor{\Lambda}{^{i}_{0}} = v_{i}\gamma, \\
-  \tensor{\Lambda}{^{i}_{j}} &= \delta_{ij} + v_{i}v_{j}\frac{\gamma-1}{v^{2}}.
-\end{align}
+\begin{subequations}
+  \begin{align}
+    \tensor{\Lambda}{^{0}_{i}} &= \tensor{\Lambda}{^{i}_{0}} = v_{i}\gamma, \\
+    \tensor{\Lambda}{^{i}_{j}} &= \delta_{ij} +
+    v_{i}v_{j}\frac{\gamma-1}{v^{2}}.
+  \end{align}
+\end{subequations}
+
+% TODO: scrivere qualcosa!
+\section{Conseguenze delle trasformazioni di Lorentz}
+\label{sec:conseguenze-lorentz}
+
+\subsection{Dilatazione degli intervalli temporali}
+\label{sec:dilatazione-tempo}
+
+\subsection{Effetto Doppler}
+\label{sec:effetto-doppler}
+
+\section{Calcolo tensoriale nello spazio di Minkowski}
+\label{sec:calcolo-tensoriale}
+
+Un \index{quadrivettore!controvariante}\emph{quadrivettore controvariante}
+$V^{\alpha}$ è un insieme di quattro quantità $V^{0}$, $V^{1}$ e $V^{2}$,
+$V^{3}$ che, mediante una trasformazione di Lorentz ristretta
+$x^{\alpha} \to x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta}$, si
+trasformano come
+\begin{equation}
+  V^{\alpha} \to V'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}V^{\beta}.
+\end{equation}
+Un quadrivettore controvariante può anche essere rappresentato come
+\begin{equation}
+  V^{\alpha} = (V^{0}, V^{1}, V^{2}, V^{3}) = (V^{0}, V^{i}) = (V^{0}, \bm{V}),
+\end{equation}
+dove $\bm{V} = (V^{1}, V^{2}, V^{3})$.
+
+Un \index{quadrivettore!covariante}\emph{quadrivettore covariante} $U_{\alpha}$
+è un insieme di quattro quantità $U_{0}$, $U_{1}$, $U_{2}$ e $U_{3}$ che, sotto
+una trasformazione di Lorentz ristretta, si trasformano come
+\begin{equation}
+  U_{\alpha} \to U'_{\alpha} = \tensor{\Lambda}{_{\alpha}^{\beta}}U_{\beta}
+\end{equation}
+dove
+\begin{equation}
+  \tensor{\Lambda}{_{\alpha}^{\beta}} = \tensor{\eta}{_{\alpha\gamma}}
+  \tensor{\eta}{^{\beta\delta}} \tensor{\Lambda}{^{\gamma}_{\delta}}.
+\end{equation}
+La matrice $\tensor{\eta}{^{\alpha\beta}}$ qui introdotta è il
+\index{tensore!metrico controvariante di
+  Minkowski}\emph{tensore
+  metrico controvariante di Minkowski}
+ed è numericamente uguale a $\tensor{\eta}{_{\alpha\beta}}$, vale a dire
+\begin{equation}
+  \tensor{\eta}{^{\alpha\beta}} = \tensor{\eta}{_{\alpha\beta}}.
+\end{equation}
+Osserviamo che
+\begin{equation}
+  \tensor{\eta}{^{\alpha\gamma}} \tensor{\eta}{_{\beta\gamma}} =
+  \tensor{\delta}{^{\alpha}_{\beta}} = \tensor{\delta}{_{\alpha}^{\beta}} =
+  \begin{cases}
+    1 & \text{se } \alpha = \beta, \\
+    0 & \text{se } \alpha \neq \beta.
+  \end{cases}
+\end{equation}
+in cui $\tensor{\delta}{^{\alpha}_{\beta}} = \tensor{\delta}{_{\alpha}^{\beta}}$
+è la
+\index{delta!di Kronecker quadrimensionale}delta di Kronecker quadrimensionale.
+Dunque $\tensor{\Lambda}{_{\alpha}^{\beta}}$ è la matrice inversa di
+$\tensor{\Lambda}{^{\alpha}_{\beta}}$.
+
+\section{Dinamica particellare}
+\label{sec:dinamica-particellare}
+
+Data una particella il cui moto è descritto dalla coordinata controvariante
+$x^{\alpha}$, definiamo la sua \index{quadrivelocità}\emph{quadrivelocità} come
+la derivata di $x^{\alpha}$ rispetto al tempo proprio $\tau$:
+\begin{equation}
+  v^{\alpha} = (v^{0}, v^{i}) =\toder{x^{\alpha}}{\tau}
+\end{equation}
+e poiché risulta
+\begin{equation}
+  \dd \tau = \sqrt{\dd t^{2} - \dd \bm{x}^{2}} = \dd t \sqrt{1 -
+    \Big(\toder{\bm{x}}{t}\Big)^{2}} = \dd t\sqrt{1 - v^{2}} = \toder{\dd
+    t}{\gamma}
+\end{equation}
+abbiamo che la quadrivelocità è uguale a
+\begin{equation}
+  v^{\alpha} = \toder{x^{\alpha}}{t}\toder{t}{\tau} = \toder{x^{\alpha}}{t}
+  \gamma = \gamma \Big(\toder{x^{0}}{t}, \toder{\bm{x}}{t}\Big) =
+  \gamma(1,\bm{v}) = (\gamma, \gamma\bm{v}).
+\end{equation}
+Il \index{quadrimomento}\emph{quadrimomento} della particella è definito come il
+prodotto fra la massa a riposo $m$ della particella e la quadrivelocità
+\begin{equation}
+  p^{\alpha} = (p^{0},p^{i}) = m v^{\alpha} = m (v^{0}, v^{i}) = (m\gamma,
+  m\gamma\bm{v}).
+\end{equation}
+Ricordando che l'energia totale $E$ di una particella è definita come $m\gamma$
+abbiamo che la prima componente del quadrivettore momento è proprio l'energia
+totale, mentre le componenti $p^{i}$ sono le componenti del momento
+$\bm{p} = m\gamma\bm{v}$
+\begin{equation}
+  p^{\alpha} = (E, \bm{p}).
+\end{equation}
+La \index{quadriforza}\emph{quadriforza} agente sulla particella è definita come
+la derivata rispetto al tempo proprio del quadrimomento
+\begin{equation}
+  f^{\alpha} = (f^{0},f^{i}) =\toder{p^{\alpha}}{\tau} =
+  m\toder{v^{\alpha}}{\tau} = mw^{\alpha}
+\end{equation}
+in cui
+\begin{equation}
+  w^{\alpha} = (w^{0},w^{i}) =\toder{v^{\alpha}}{\tau}
+\end{equation}
+è la \index{quadriaccelerazione}\emph{quadriaccelerazione}.  In un sistema di
+riferimento $O$ in cui la particella è a riposo $\dd \bm{x} = \bm{0}$ quindi
+$\dd \tau = \dd t$ e $f^{\alpha} = F^{\alpha}$, in cui $F^{i}$ sono le
+componenti cartesiane della forza non relativistica $\bm{F}$ e $F^{0} = 0$:
+\begin{equation}
+  f^{\alpha} = (0, \bm{F}).
+\end{equation}
+Per calcolare la forza a cui è soggetta la particella in un altro sistema di
+riferimento inerziale $O'$ in moto rispetto a $O$ con velocità $\bm{v}$ dobbiamo
+effettuare la trasformazione di Lorentz
+\begin{equation}
+  f'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}f^{\beta}.
+\end{equation}
+Sviluppando i calcoli si ottiene
+\begin{subequations}
+  \begin{align}
+    f^{0} &= \gamma\bm{v}\cdot\bm{F} = \bm{v}\cdot\bm{f}, \\
+    \bm{f} &= \bm{F} + (\gamma - 1)\bm{v}\frac{\bm{v}\cdot\bm{F}}{v^{2}}.
+  \end{align}
+\end{subequations}
+% TODO: mettere la relazione di mass shell se non è stata messa prima
 
 
 %%% Local Variables:

@@ -22,6 +22,7 @@
 % restituisce erroneamente lettere in tondo, non in corsivo e non funziona con
 % le lettere greche.
 \usepackage{bm}
+\usepackage{makeidx}
 \usepackage{siunitx}
 \usepackage{hyperref}
 %%%%% Fine pacchetti
@@ -30,6 +31,7 @@
 %% testatine.
 \pagestyle{fancy}
 \fancyhf{} % svuota tutti i campi delle testatine e dei piedi
+\setlength{\headheight}{14pt}
 % Nella testatina (`head') a destra (`R') nelle pagine pari (`E') mettiamo il
 % nome del capitolo (`\leftmark'), non tutto maiuscolo (`\nouppercase'). Sulla
 % sinistra (`L') delle pagine dispari (`O') mettiamo il nome del paragrafo
@@ -148,6 +150,8 @@
 \newcommand{\C}{\numberset{C}}	% Complessi \C
 %%%%% Fine comandi personalizzati
 
+\makeindex{}
+
 % titolo provvisorio per il frontespizio provvisorio
 \title{Gravitazione e cosmologia}
 \date{}
@@ -161,6 +165,10 @@
 \mainmatter{}
 \input{capitoli/richiami_relativita_speciale}
 
+\cleardoublepage{}
+\phantomsection
+\addcontentsline{toc}{chapter}{\indexname}
+\printindex{}
 
 \end{document}
 
