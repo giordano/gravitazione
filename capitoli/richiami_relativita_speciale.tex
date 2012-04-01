@@ -131,7 +131,7 @@ Le trasformazioni di Lorentz con $\det\Lambda = +1$ sono chiamate
 
 Consideriamo una particella a riposo nell'origine del sistema di riferimento $O$
 (quindi $\dd \bm{x} = \bm{0}$) che si muove con velocità
-$\bm{v} = (v^{1},v^{2},v^{3})$ rispetto a un altro sistema di riferimento
+$\bm{v} = (v_{1},v_{2},v_{3})$ rispetto a un altro sistema di riferimento
 inerziale $O'$
 % TODO: probabilmente questi calcoli andranno spezzati in più ambienti
 % `equation' spiegando che passaggi vengono fatti in mezzo
@@ -182,9 +182,10 @@ Le trasformazioni con $\tensor{\Lambda}{^{0}_{0}} \geq +1$ sono chiamate
 trasformazione ristretta inoltre abbiamo
 \begin{equation}
   \tensor{\Lambda}{^{0}_{0}} = \frac{1}{\sqrt{1-\sum_{i}(v_{i})^{2}}} =
-  \frac{1}{\sqrt{1-v^{2}}} = \gamma.
+  \frac{1}{\sqrt{1-v^{2}}} = \gamma,
 \end{equation}
-Quindi risulta anche
+con $v^{2} = \sum_{i}(v_{i})^{2}$ modulo quadro del vettore $\bm{v}$.  Quindi
+risulta anche
 \begin{equation}
   \tensor{\Lambda}{^{i}_{0}} = v_{i}\tensor{\Lambda}{^{0}_{0}} = v_{i}\gamma.
 \end{equation}
@@ -277,19 +278,9 @@ Dalla trasformazione~\eqref{eq:trasformazione-lineare} risulta che
 \end{equation}
 da cui ricaviamo la trasformazione, rinominando gli indici,
 \begin{equation}
+  \label{eq:trasformazione-inversa}
   x'^{\alpha} \to x^{\alpha} = \tensor{\Lambda}{_{\beta}^{\alpha}}x'^{\beta} +
   a'^{\alpha}.
-\end{equation}
-
-Il prodotto scalare $V^{\alpha}U_{\alpha}$ fra un quadrivettore covariante e uno
-controvariante è una quantità che non varia cambiando sistema di riferimento
-inerziale, infatti
-\begin{equation}
-  V^{\alpha}U_{\alpha} \to V'^{\alpha}U'_{\alpha} =
-  \tensor{\Lambda}{^{\alpha}_{\beta}} V^{\beta}
-  \tensor{\Lambda}{_{\alpha}^{\gamma}} U_{\gamma} =
-  \tensor{\delta}{_{\beta}^{\gamma}} V^{\beta} U_{\gamma} = V^{\gamma}U_{\gamma}
-  = V^{\alpha} U_{\alpha}.
 \end{equation}
 
 Possiamo passare da un quadrivettore controvariante
@@ -425,22 +416,166 @@ Abbiamo
   \tensor{\Lambda}{^{\gamma}_{\zeta}} \tensor{T}{^{\delta}_{\epsilon}^{\zeta}}.
 \end{equation}
 
+\subsubsection{Contrazione degli indici}
+\label{sec:contrazione-indice}
 
-\subsubsection{Contrazione}
-\label{sec:contrazione}
+Se in un quadritensore di tipo $(p,q)$ $n$ indici controvarianti sono uguali a
+$n$ indici covarianti e si somma su tali indici si ottiene un tensore di tipo
+$(p-n,q-n)$.  Usando la convenzione di Einstein sulla somma si omette il simbolo
+di sommatoria.  Questa operazione viene detta di
+\emph{contrazione degli indici}.  Per esempio, il tensore
+$\tensor{T}{^{\alpha}_{\beta}^{\gamma\delta}}$ è un tensore di tipo $(3,1)$, ma
+se si contraggono l'indice covariante $\beta$ con il terzo indice controvariante
+$\delta$ si ottiene il tensore
+$\tensor{T}{^{\alpha}_{\beta}^{\gamma\beta}} =
+\tensor{T}{^{\alpha}_{0}^{\gamma 0}} + \tensor{T}{^{\alpha}_{1}^{\gamma 1}} +
+\tensor{T}{^{\alpha}_{2}^{\gamma 2}} + \tensor{T}{^{\alpha}_{3}^{\gamma 3}}$
+che è completamente controvariante di rango $2$.  Infatti
+\begin{equation}
+  \begin{split}
+    \tensor{T}{^{\alpha}_{\beta}^{\gamma\beta}} \to
+    \tensor{{T'}}{^{\alpha}_{\beta}^{\gamma\beta}} &=
+    \tensor{\Lambda}{^{\alpha}_{\omega}} \tensor{\Lambda}{_{\beta}^{\mu}}
+    \tensor{\Lambda}{^{\gamma}_{\nu}} \tensor{\Lambda}{^{\beta}_{\zeta}}
+    \tensor{T}{^{\omega}_{\mu}^{\nu\zeta}} =
+    \tensor{\Lambda}{^{\alpha}_{\omega}} \tensor{\Lambda}{^{\gamma}_{\nu}}
+    \tensor{\delta}{^{\mu}_{\zeta}} \tensor{T}{^{\omega}_{\mu}^{\nu\zeta}} \\
+    &= \tensor{\Lambda}{^{\alpha}_{\omega}} \tensor{\Lambda}{^{\gamma}_{\nu}}
+    \tensor{T}{^{\omega}_{\mu}^{\nu\mu}}.
+  \end{split}
+\end{equation}
+
+Si può effettuare la contrazione degli indici anche nel prodotto di due
+quadritensori: il prodotto di un quadritensore di tipo $(p,q)$ e di uno di tipo
+$(r,s)$ è un quadritensore di tipo $(p+r,q+s)$, ma se si contraggono $n$ indici
+si ottiene un quadritensore di tipo $(p+r-n,q+s-n)$.  Per esempio, il
+quadritensore $\tensor{A}{^{\alpha}_{\beta}^{\gamma\delta}}$ è di tipo $(3,1)$,
+$\tensor{B}{_{\epsilon\zeta}}$ è di tipo $(0,2)$, il prodotto
+$\tensor{A}{^{\alpha}_{\beta}^{\gamma\delta}} \tensor{B}{_{\epsilon\zeta}}$ è un
+quadritensore di tipo $(3,3)$, ma il prodotto
+$\tensor{A}{^{\alpha}_{\beta}^{\gamma\delta}} \tensor{B}{_{\alpha\delta}}$ con
+due indici contratti è un quadritensore di tipo $(1,1)$.
+
+\subsubsection{Prodotto scalare di due quadrivettori}
+\label{sec:prodotto-scalare-quadrivettori}
+
+Il \emph{prodotto scalare} fra due quadrivettori $V$ e $U$ è definito come
+\begin{equation}
+  \begin{split}
+    V\cdot U &= V^{\alpha}U_{\alpha} =
+    \tensor{\eta}{_{\alpha\beta}}V^{\alpha}U^{\beta} = V^{0}U_{0} + V^{1}U_{1} +
+    V^{2}U_{2} + V^{3}U_{3} \\
+    &= -V^{0}U^{0} + V^{1}U^{1} + V^{2}U^{2} + V^{3}U^{3} = -V^{0}U^{0} +
+    \bm{V}\cdot\bm{U}.
+  \end{split}
+\end{equation}
+
+Il prodotto scalare di due quadrivettori è un caso particolare di contrazione
+degli indici nel prodotto fra due quadritensori.  Dunque il loro prodotto è un
+quadritensore di rango $0$, cioè uno scalare e quindi una quantità che non varia
+per effetto di una trasformazione di Lorentz.  Infatti
+\begin{equation}
+  V^{\alpha}U_{\alpha} \to V'^{\alpha}U'_{\alpha} =
+  \tensor{\Lambda}{^{\alpha}_{\beta}} V^{\beta}
+  \tensor{\Lambda}{_{\alpha}^{\gamma}} U_{\gamma} =
+  \tensor{\delta}{_{\beta}^{\gamma}} V^{\beta} U_{\gamma} = V^{\gamma}U_{\gamma}
+  = V^{\alpha} U_{\alpha}.
+\end{equation}
+
+Si può definire anche il \index{modulo!di un
+  quadrivettore}\emph{modulo
+  quadro di un quadrivettore}
+$V$ come il prodotto scalare di $V$ per se stesso, vale a dire
+\begin{equation}
+  \begin{split}
+    V\cdot V &= V^{\alpha}V_{\alpha} =
+    \tensor{\eta}{_{\alpha\beta}}V^{\alpha}V^{\beta} = V^{0}V_{0} + V^{1}V_{1} +
+    V^{2}V_{2} + V^{3}V_{3} \\
+    &= -(V^{0})^{2} + (V^{1})^{2} + (V^{2})^{2} + (V^{3})^{2} = -(V^{0})^{2} +
+    \bm{V}^{2}.
+  \end{split}
+\end{equation}
+Anche il modulo quadro di un quadrivettore è uno scalare di Lorentz.
 
 \subsubsection{Derivazione}
 \label{sec:derivazione}
 
-La derivazione di uno scalare $\phi$ rispetto a una coordinata controvariante $x^{\alpha}$
+La derivazione di un quadritensore di rango $k$ rispetto alle coordinate
+controvarianti $x^{\alpha}$ o covarianti $x_{\alpha}$ è un quadritensore di
+rango $k+1$.  In dettaglio, la derivata
 \begin{equation}
-  \toder{\phi}{x^{\alpha}} = U_{\alpha}
+  \parder{}{x^{\sigma}}
+  \tensor*{T}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}
 \end{equation}
-produce un quadrivettore covariante.  Infatti, dalla trasformazione
+è un quadritensore del tipo
+$\tensor*{S}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}\sigma}}$ e la
+derivata
+\begin{equation}
+  \parder{}{x_{\sigma}}
+  \tensor*{T}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}
+\end{equation}
+è un quadritensore del tipo
+$\tensor*{S}{^{\alpha_{1}\dots\alpha_{p}\sigma}_{\beta_{1}\dots\beta_{q}}}$.
+Consideriamo il caso particolare di uno scalare $\phi$.  Dalla
+trasformazione~\eqref{eq:trasformazione-inversa} abbiamo
+\begin{equation}
+  \parder{x^{\beta}}{x'^{\alpha}} = \tensor{\Lambda}{_{\alpha}^{\beta}}
+\end{equation}
+quindi
+\begin{equation}
+  \parder{\phi}{x^{\alpha}} \to \parder{\phi}{x'^{\alpha}}
+  = \parder{\phi}{x^{\beta}} \parder{x^{\beta}}{x'^{\alpha}} =
+  \tensor{\Lambda}{_{\alpha}^{\beta}} \parder{\phi}{x^{\beta}}.
+\end{equation}
+Abbiamo così mostrato che la derivata di uno scalare (quadritensore di rango 0)
+rispetto a una coordinata controvariante è un quadrivettore (quadritensore di
+rango 1) covariante
+\begin{equation}
+  \parder{\phi}{x^{\alpha}} = U_{\alpha}.
+\end{equation}
+
+Definiamo l'operatore
+\index{quadrigradiente!covariante}\emph{quadrigradiente covariante} come
+\begin{equation}
+  \partial_{\alpha} = \parder{}{x^{\alpha}} = \Big( \parder{}{t}, \nabla\Big)
+\end{equation}
+e l'operatore
+\index{quadrigradiente!controvariante}\emph{quadrigradiente controvariante} come
+\begin{equation}
+  \partial^{\alpha} = \parder{}{x_{\alpha}} =
+  \tensor{\eta}{^{\alpha\beta}} \partial_{\beta} = \Big( -\parder{}{t},
+  \nabla\Big).
+\end{equation}
+Infine introduciamo l'operatore \index{d'Alambertiano}\emph{d'Alambertiano}
+definito da
+\begin{equation}
+  \Box^{2} = \partial^{\alpha}\partial_{\alpha} = - \parder{}{*2t} + \nabla^{2}.
+\end{equation}
+Poiché il d'Alambertiano è il modulo quadro del quadrigradiente, esso è un
+operatore differenziale scalare.
 
 \subsection{Quadritensori invarianti}
 \label{sec:tensori-invarianti}
 
+Ci sono dei particolari quadritensori che assumono la stessa forma in qualsiasi
+sistema di riferimento inerziale, così come fanno gli scalari.
+
+\subsubsection{Tensore metrico di Minkowski}
+\label{sec:tensore-metrico}
+
+Il primo quadritensore che analizzeremo è il tensore metrico di Minkowski.
+Dalla relazione fondamentale del tensore
+metrico~\eqref{eq:rel-fond-tensore-metrico} abbiamo che
+$\tensor{\eta}{_{\alpha\beta}}$ è effettivamente di un quadritensore covariante
+di rango $2$ che non cambia per effetto di una trasformazione di Lorentz
+\begin{equation}
+  \tensor{\eta}{_{\alpha\beta}} \to \tensor{{\eta'}}{_{\alpha\beta}} =
+  \tensor{\Lambda}{_{\alpha}^{\gamma}} \tensor{\Lambda}{_{\beta}^{\delta}}
+  \tensor{\eta}{_{\gamma\delta}} = \tensor{\eta}{_{\alpha\beta}}.
+\end{equation}
+In maniera analoga si può dimostrare che $\tensor{\eta}{^{\alpha\beta}}$ è
+effettivamente un quadritensore controvariante di rango $2$ e che rimane
+immutato sotto una trasformazione di Lorentz.
 
 \section{Dinamica particellare}
 \label{sec:dinamica-particellare}
@@ -476,6 +611,35 @@ $\bm{p} = m\gamma\bm{v}$
 \begin{equation}
   p^{\alpha} = (E, \bm{p}).
 \end{equation}
+% TODO: fermo a questo punto, devo completare i calcoli relativi alla
+% trasformazione del quadrimpulso.  Però sono bloccato perché non mi tornano i
+% conti, devo ricontrollarli!
+Vediamo come cambia il quadrimomento per effetto di una trasformazione di Lorentz
+\begin{equation}
+  p^{\alpha} \to p'^{\alpha} = (p'^{0}, p'^{i}) = \tensor{\Lambda}{^{\alpha}_{\beta}} p^{\beta} =
+  (\tensor{\Lambda}{^{0}_{\beta}}p^{\beta}, \tensor{\Lambda}{^{i}_{\beta}}p^{\beta}).
+\end{equation}
+La prima componente ci dà l'energia $E'$ nel nuovo sistema di riferimento
+\begin{equation}
+  E' = p'^{0} = \tensor{\Lambda}{^{0}_{\beta}}p^{\beta} =
+  \tensor{\Lambda}{^{0}_{0}}p^{0} + \tensor{\Lambda}{^{0}_{i}}p^{i} = \gamma E +
+  \gamma v_{i}p^{i} = \gamma E + \gamma \bm{v}\cdot\bm{p}.
+\end{equation}
+Le tre componenti spaziali sono le componenti $(\bm{p}')_{i}$ del vettore
+momento nel nuovo sistema di riferimento
+\begin{equation}
+  (\bm{p}')_{i} = (p')^{i} = \tensor{\Lambda}{^{i}_{\beta}}p^{\beta} =
+  \tensor{\Lambda}{^{i}_{0}}p^{0} + \tensor{\Lambda}{^{j}_{j}}p^{j} =
+\end{equation}
+Calcoliamo il modulo quadro del quadrimomento
+\begin{equation}
+  p^{\alpha}p_{\alpha} = \tensor{\eta}{_{\alpha\beta}}p^{\alpha}p^{\beta} =
+  -E^{2} + \bm{p}^{2} = -m^{2}
+\end{equation}
+avendo usato la relazione $E^{2} = m^{2} + \bm{p}^{2}$.  Questo fa vedere che la
+massa a riposo di una particella è uno scalare di Lorentz, quindi un invariante
+relativistico.
+
 La \index{quadriforza}\emph{quadriforza} agente sulla particella è definita come
 la derivata rispetto al tempo proprio del quadrimomento
 \begin{equation}
@@ -506,7 +670,6 @@ Sviluppando i calcoli si ottiene
     \bm{f} &= \bm{F} + (\gamma - 1)\bm{v}\frac{\bm{v}\cdot\bm{F}}{v^{2}}.
   \end{align}
 \end{subequations}
-% TODO: mettere la relazione di mass shell se non è stata messa prima
 
 
 %%% Local Variables:
