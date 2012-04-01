@@ -199,6 +199,22 @@ la~\eqref{eq:trasformazione-lineare} è
     v_{i}v_{j}\frac{\gamma-1}{v^{2}}.
   \end{align}
 \end{subequations}
+così che $\Lambda$ in forma matriciale può essere scritta come
+\begin{equation}
+  \Lambda =
+  \begin{pmatrix}
+    \gamma & \gamma v_{1} & \gamma v_{2} & \gamma _{3} \\[2.0ex]
+    \gamma v_{1} & 1 + (v_{1})^{2}\dfrac{\gamma-1}{v^{2}} &
+    v_{1}v_{2}\dfrac{\gamma-1}{v^{2}} & v_{1} v_{3}\dfrac{\gamma-1}{v^{2}}
+    \\[2.0ex]
+    \gamma v_{2} & v_{2}v_{1}\dfrac{\gamma-1}{v^{2}} & 1 +
+    (v_{2})^{2}\dfrac{\gamma-1}{v^{2}} & v_{2}v_{3}\dfrac{\gamma-1}{v^{2}}
+    \\[2.0ex]
+    \gamma v_{3} & v_{3}v_{1}\dfrac{\gamma-1}{v^{2}} &
+    v_{2}v_{3}\dfrac{\gamma-1}{v^{2}} & 1 + (v_{3})^{2}\dfrac{\gamma-1}{v^{2}}
+  \end{pmatrix}.
+\end{equation}
+
 
 % TODO: scrivere qualcosa!
 \section{Conseguenze delle trasformazioni di Lorentz}
@@ -611,9 +627,6 @@ $\bm{p} = m\gamma\bm{v}$
 \begin{equation}
   p^{\alpha} = (E, \bm{p}).
 \end{equation}
-% TODO: fermo a questo punto, devo completare i calcoli relativi alla
-% trasformazione del quadrimpulso.  Però sono bloccato perché non mi tornano i
-% conti, devo ricontrollarli!
 Vediamo come cambia il quadrimomento per effetto di una trasformazione di Lorentz
 \begin{equation}
   p^{\alpha} \to p'^{\alpha} = (p'^{0}, p'^{i}) = \tensor{\Lambda}{^{\alpha}_{\beta}} p^{\beta} =
@@ -623,14 +636,28 @@ La prima componente ci dà l'energia $E'$ nel nuovo sistema di riferimento
 \begin{equation}
   E' = p'^{0} = \tensor{\Lambda}{^{0}_{\beta}}p^{\beta} =
   \tensor{\Lambda}{^{0}_{0}}p^{0} + \tensor{\Lambda}{^{0}_{i}}p^{i} = \gamma E +
-  \gamma v_{i}p^{i} = \gamma E + \gamma \bm{v}\cdot\bm{p}.
+  \gamma V_{i}p^{i} = \gamma E + \gamma \bm{V}\cdot\bm{p}.
 \end{equation}
 Le tre componenti spaziali sono le componenti $(\bm{p}')_{i}$ del vettore
 momento nel nuovo sistema di riferimento
 \begin{equation}
-  (\bm{p}')_{i} = (p')^{i} = \tensor{\Lambda}{^{i}_{\beta}}p^{\beta} =
-  \tensor{\Lambda}{^{i}_{0}}p^{0} + \tensor{\Lambda}{^{j}_{j}}p^{j} =
+  \begin{split}
+    (\bm{p}')_{i} &= (p')^{i} = \tensor{\Lambda}{^{i}_{\beta}}p^{\beta} =
+    \tensor{\Lambda}{^{i}_{0}}p^{0} + \tensor{\Lambda}{^{j}_{j}}p^{j} = \gamma
+    V_{i}E + \Big( \delta_{ij} + V_{i}V_{j}\frac{\gamma-1}{V^{2}}\Big)p^{j} \\
+    &= \gamma V_{i}E + p_{i} + V_{i}V_{j}p^{j}\frac{\gamma-1}{V^{2}} = \gamma
+    V_{i}E + p_{i} + V_{i} \bm{V} \cdot \bm{p} \frac{\gamma-1}{V^{2}}
+  \end{split}
 \end{equation}
+cioè
+\begin{equation}
+  \bm{p}' = \bm{p} + \Big(\gamma E + \bm{V} \cdot \bm{p}
+  \frac{\gamma-1}{V^{2}}\Big)\bm{V}.
+\end{equation}
+% NOTA: i risultati delle trasformazioni di momento ed energia sono differenti
+% dalle formule [4.103] e [4.104], pagina 132, del Barone.  Weinberg definisce
+% la velocità di spostamento fra i due sistemi di riferimento al contrario
+% rispetto a quasi tutti gli altri autori (compreso il Barone).
 Calcoliamo il modulo quadro del quadrimomento
 \begin{equation}
   p^{\alpha}p_{\alpha} = \tensor{\eta}{_{\alpha\beta}}p^{\alpha}p^{\beta} =
@@ -638,7 +665,11 @@ Calcoliamo il modulo quadro del quadrimomento
 \end{equation}
 avendo usato la relazione $E^{2} = m^{2} + \bm{p}^{2}$.  Questo fa vedere che la
 massa a riposo di una particella è uno scalare di Lorentz, quindi un invariante
-relativistico.
+relativistico.  Il quadrimomento covariante è dato da
+\begin{equation}
+  p_{\alpha} = \tensor{\eta}{_{\alpha\beta}}p^{\beta} = (-E, \bm{p}).
+\end{equation}
+
 
 La \index{quadriforza}\emph{quadriforza} agente sulla particella è definita come
 la derivata rispetto al tempo proprio del quadrimomento
@@ -655,21 +686,36 @@ riferimento $O$ in cui la particella è a riposo $\dd \bm{x} = \bm{0}$ quindi
 $\dd \tau = \dd t$ e $f^{\alpha} = F^{\alpha}$, in cui $F^{i}$ sono le
 componenti cartesiane della forza non relativistica $\bm{F}$ e $F^{0} = 0$:
 \begin{equation}
-  f^{\alpha} = (0, \bm{F}).
+  f^{\alpha} = (f^{0}, f^{i}) = (0, \bm{F}).
 \end{equation}
 Per calcolare la forza a cui è soggetta la particella in un altro sistema di
-riferimento inerziale $O'$ in moto rispetto a $O$ con velocità $\bm{v}$ dobbiamo
-effettuare la trasformazione di Lorentz
+riferimento inerziale $O'$ in moto rispetto a $O$ con velocità
+$\bm{V} = (V_{1}, V_{2}, V_{3})$ dobbiamo effettuare la trasformazione di
+Lorentz
 \begin{equation}
-  f'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}f^{\beta}.
+  f'^{\alpha} = (f'^{0}, f'^{i}) = \tensor{\Lambda}{^{\alpha}_{\beta}}f^{\beta}.
 \end{equation}
-Sviluppando i calcoli si ottiene
+Abbiamo
 \begin{subequations}
   \begin{align}
-    f^{0} &= \gamma\bm{v}\cdot\bm{F} = \bm{v}\cdot\bm{f}, \\
-    \bm{f} &= \bm{F} + (\gamma - 1)\bm{v}\frac{\bm{v}\cdot\bm{F}}{v^{2}}.
+    f'^{0} &= \tensor{\Lambda}{^{0}_{\alpha}}f^{\alpha} =
+    \tensor{\Lambda}{^{0}_{0}}f^{0} + \tensor{\Lambda}{^{0}_{i}}f^{i} = \gamma
+    V_{i}f^{i} = \gamma \bm{V} \cdot \bm{f} = \gamma \bm{V} \cdot \bm{F} \\
+    \begin{split}
+      f'^{i} &= \tensor{\Lambda}{^{i}_{\alpha}}f^{\alpha} =
+      \tensor{\Lambda}{^{i}_{0}}f^{0} + \tensor{\Lambda}{^{i}_{j}}f^{j}
+      = \Big( \delta_{ij} + V_{i}V_{j}\frac{\gamma - 1}{V^{2}} \Big)f^{j} \\
+      &= f^{i} + V_{i}V_{j}f^{j}\frac{\gamma - 1}{V^{2}} = f^{i} + V_{i} \bm{V}
+      \cdot \bm{f} \frac{\gamma - 1}{V^{2}},
+    \end{split}
   \end{align}
 \end{subequations}
+cioè
+\begin{equation}
+  \bm{f}' = \bm{F} + \bm{V}(\bm{V}\cdot\bm{F})\frac{\gamma - 1}{V^{2}}.
+\end{equation}
+% TODO: questa formula è sostanzialmente diversa dalla [4.126], pagina 135, del
+% Barone (lì compare anche la velocità della particella).  Scoprire il perché!
 
 
 %%% Local Variables:
