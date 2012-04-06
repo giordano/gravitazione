@@ -45,7 +45,7 @@
 
 % impostazioni per il pacchetto `hyperref'. Per l'elenco di tutte le opzioni del
 % documento consulta il manuale: `texdoc hyperref'
-\hypersetup{colorlinks,% link colorati, non riquadrati
+\hypersetup{
   breaklinks=true,% permette di spezzare i link su più righe
   bookmarksnumbered,% inserisce i numeri delle sezioni nei segnalibri
   hidelinks % link neri e senza bordi colorati, adatto per la stampa
@@ -125,6 +125,7 @@
 % differenza del secondo.
 
 \DeclareMathOperator{\e}{\mathrm{e}} % Costante di Eulero
+\DeclareMathOperator{\diag}{diag}
 % Versore. Esempi: versore x: `\versore{x}', versore i: \versor{\imath}, versore
 % j: \versor{\jmath} (solo `i' e `j' richiedono `\imath' e `\jmath', altrimenti
 % il puntino litiga con `\hat')
@@ -160,7 +161,10 @@
 \maketitle
 
 \cleardoublepage{}
-\tableofcontents{}
+\tableofcontents{} % indice generale
+\cleardoublepage{}
+\listoffigures{} % elenco delle figure
+
 \cleardoublepage{}
 \mainmatter{}
 \input{capitoli/richiami_relativita_speciale}

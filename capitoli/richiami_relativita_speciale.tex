@@ -4,36 +4,63 @@
 \section{Trasformazioni di Lorentz}
 \label{sec:trasformazioni-lorentz}
 
-\index{coordinata controvariante}Coordinata controvariante
+Per il \index{principio!di relatività}\emph{principio di relatività} tutte le
+leggi fisiche assumono la stessa forma in qualsiasi sistema di riferimento
+inerziale.  In particolare, all'interno della teoria della relatività speciale
+le leggi fisiche devono essere invarianti per trasformazioni di Lorentz.  In
+questo capitolo richiameremo alcuni concetto di relatività speciale dopo aver
+dedotto le trasformazioni di Lorentz.
+
+L'ambiente in cui si verificano i fenomeni fisici descritti dalla relatività
+speciale è uno spazio quadrimensionale piatto, composto da una coordinata
+temporale e tre spaziali, chiamato \index{spazio!di
+  Minkowski}\emph{spazio
+  di Minkowski}
+e che indicheremo con il simbolo $\numberset{M}$.  Un elemento dello spazio di
+Minkowski è chiamato \index{evento}\emph{evento}.  Lo spazio di Minkowski si
+distingue dal corrispondente spazio euclideo quadrimensionale $\R^{4}$ e anche
+dallo spazio ordinario tridimensionale $\R^{3}$ in quanto utilizza una metrica
+differente da quelle usualmente adottate in $\R^{3}$ ed $\R^{4}$.
+
+Nello spazio ordinario $\R^{3}$ si definisce la metrica, ovvero la distanza fra
+due punti infinitesimamente vicini di coordinate
+$\bm{x} = (x,y,z) \equiv (x_{1},x_{2},x_{3})$ e
+$\bm{x} + \dd \bm{x} = (x+\dd x,y+\dd y,z+\dd z) \equiv (x_{1}+\dd
+x_{1},x_{2}+\dd x_{2},x_{3}+\dd x_{3})$ come
+\begin{equation}
+  \dd\bm{x}^{2} = (\dd x_{1})^{2} + (\dd x_{2})^{2} + (\dd x_{3})^{2} =
+  \sum_{i=1}^{3} \sum_{j=1}^{3} \delta_{ij} \dd x_{i} \dd x_{j},
+\end{equation}
+dove $\delta_{ij}$ è il tensore metrico dato da
+\begin{equation}
+  \delta_{ij} = \diag (+1,+1,+1) =
+  \begin{pmatrix}
+    +1 & 0  & 0  \\
+    0  & +1 & 0  \\
+    0  & 0  & +1
+  \end{pmatrix}.
+\end{equation}
+Analogamente, nello spazio $\R^{4}$ si utilizza il tensore metrico rappresentato
+da $\diag (+1,+1,+1,+1)$.  Una generica trasformazione lineare omogenea delle
+coordinate $(x,y,z) \equiv (x_{1},x_{2},x_{3})$ che lasci invariate la metrica,
+cioè che soddisfi la condizione $\dd\bm{x}^{2} = \dd\bm{x}'^{2}$, può essere
+scritta
+come
+\begin{equation}
+  x'_{i} = \sum_{j=1}^{3} R_{ij}x_{j}, \qquad i,j = 1,2,3,
+\end{equation}
+con $R_{ij}$ costanti reali, e la matrice di componenti $R_{ij}$ è una matrice
+di rotazione.
+
+Nello spaziotempo di Minkowski definiamo le
+\index{coordinata controvariante}\emph{coordinate controvarianti} di un evento
+che avviene al tempo $t$ nel punto dello spazio tridimensionale $\bm{x}$ come
 \begin{equation}
   \label{eq:coord-controvariante}
   x^{\alpha} = (x^{0},x^{i}) = (t, \bm{x}),
 \end{equation}
-con $\alpha$ che varia fra $0$, $1$, $2$ e $3$ e $i$ fra $1$, $2$ e $3$.
-
-Nello spazio ordinario si defisce
-\begin{equation}
-  \dd l^{2}   = \dd x^{2} + \dd y^{2} + \dd z^{2} = \sum_{i} (\dd x^{i})^{2} =
-  \delta_{ij}\dd x^{i} \dd x^{j},
-\end{equation}
-con
-\begin{equation}
-  \delta_{ij} =
-  \begin{pmatrix}
-    1 & 0 & 0 \\
-    0 & 1 & 0 \\
-    0 & 0 & 1
-  \end{pmatrix}.
-\end{equation}
-Il trasformato della coordinata controvariante~\eqref{eq:coord-controvariante} è
-\begin{equation}
-  x'^{i} = \tensor{R}{^{i}_{j}}x^{j} + a^{i}
-\end{equation}
-e la matrice $R$ è univocamente definita imponendo la condizione che $\dd l^{2}$
-sia invariante cambiando sistema di riferimento.  Si scopre che $R$ è la matrice
-di rotazione.
-
-Nello spazio di Minkowski definiamo
+con $\alpha$ che varia fra $0$, $1$, $2$ e $3$ e $i$ fra $1$, $2$ e $3$.  La
+\index{metrica!nello spazio di Minkowski}\emph{metrica} è data da
 \begin{equation}
   \dd \tau^{2} = \dd t^{2} - \dd \bm{x}^{2} = -\tensor{\eta}{_{\alpha\beta}}\dd
   x^{\alpha} \dd x^{\beta},
@@ -52,68 +79,78 @@ in cui $\tensor{\eta}{_{\alpha\beta}}$ è il
   \end{pmatrix}
   =
   \begin{pmatrix}
-    -1 & 0 & 0 & 0 \\
-    0 & 1 & 0 & 0 \\
-    0 & 0 & 1 & 0 \\
-    0 & 0 & 0 & 1
+    -1 & 0  & 0  & 0 \\
+    0  & +1 & 0  & 0 \\
+    0  & 0  & +1 & 0 \\
+    0  & 0  & 0  & +1
   \end{pmatrix}.
 \end{equation}
-Questo tensore definisce una metrica pseudo euclidea con segnatura $(-+++)$.
-Imponendo che $\dd \tau$ sia invariante per trasformazioni di Lorentz possiamo
-passare da un sistema di riferimento inerziale $O$ a un altro sistema di
-riferimento inerziale $O'$ in moto rispetto a $O$.  Consideriamo due eventi
-$E_{1}$ ed $E_{2}$ relativi a un fotone
-\begin{gather}
-  E_{1}: \quad (0,\bm{0}), \\
-  E_{2}: \quad (\dd t, \dd \bm{x})
-\end{gather}
-\begin{equation}
-  \dd \tau^{2} = \dd t^{2}\Big( 1 - \toder{\bm{x}^{2}}{t^{2}}\Big) = \dd t^{2}
-  (1 - 1^{2}) = 0
-\end{equation}
-perché per un fotone si ha
-\begin{equation}
-  \bm{v}^{2} = \Big(\toder{\bm{x}}{t}\Big)^{2} = c^{2} = 1.
-\end{equation}
-
-
-\begin{equation}
-  \dd \tau'^{2} = -\tensor{\eta}{_{\alpha\beta}}\dd x'^{\alpha}\dd x'^{\beta}
-\end{equation}
-Richiediamo che la trasformazione $x^{\alpha} \to x'^{\alpha}$ sia lineare
-per rispettare la condizione di omogeneità dello spazio (la lunghezza di una
-sbarra non deve dipendere dalla posizione degli estremi), del tempo (la
-lunghezza della sbarra non deve dipendere dall'istante di tempo in cui la
-misuriamo) e di isotropia dello spazio (la lunghezza della sbarra non deve
-dipendere neanche dalla direzione in cui la guardiamo).  La più generica
-trasformazione lineare è
+Questo tensore definisce una metrica pseudo euclidea con segnatura $(-+++)$,
+invece in $\R^{4}$ abbiamo visto che si utilizza la segnatura $(++++)$.  Una
+\index{trasformazione!di Lorentz}\emph{trasformazione di Lorentz} non omogenea è
+una trasformazione lineare nello spazio di Minkowski da un sistema di
+riferimento di coordinate $x^{\alpha}$ a un altro sistema di riferimento di
+coordinate
 \begin{equation}
   \label{eq:trasformazione-lineare}
-  x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta} + a^{\alpha}.
+  x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta} + a^{\alpha},
 \end{equation}
-Imponiamo che l'intervallo $\dd \tau^{2}$ non vari passando da un sistema di
-riferimento all'altro, cioè che $\dd \tau^{2} = \dd \tau'^{2}$, così abbiamo
+con $a^{\alpha}$ costanti, che mantenga invariata la distanza fra due eventi,
+cioè la metrica $\dd\tau^{2} = -\eta_{\alpha\beta}\dd x^{\alpha}\dd x^{\beta}$
+in $\numberset{M}$.  Richiediamo che la trasformazione
+$x^{\alpha} \to x'^{\alpha}$ sia lineare per rispettare la condizione di
+omogeneità dello spazio (la lunghezza di una sbarra non deve dipendere dalla
+posizione degli estremi), del tempo (la lunghezza della sbarra non deve
+dipendere dall'istante di tempo in cui la misuriamo) e di isotropia dello spazio
+(la lunghezza della sbarra non deve dipendere neanche dalla direzione in cui la
+guardiamo).  Inoltre, in questo modo un moto rettilineo uniforme in un sistema
+di riferimento inerziale risulta è ancora un moto rettilineo uniforme anche
+nell'altro sistema di riferimento inerziale.  La richiesta di invarianza della
+metrica, invece, permette di soddisfare il principio di relatività.  I
+differenziali delle coordinate nel nuovo sistema si ricavano
+dalla~\eqref{eq:trasformazione-lineare}
 \begin{equation}
-  \dd \tau'^{2} = -\tensor{\eta}{_{\alpha\beta}}
-  \tensor{\Lambda}{^{\alpha}_{\gamma}} \dd x^{\gamma}
-  \tensor{\Lambda}{^{\beta}_{\delta}} \dd x^{\delta} = \dd \tau^{2} =
-  -\tensor{\eta}{_{\alpha\beta}} \dd x^{\alpha} \dd x^{\beta},
+  \label{eq:trasformazione-differenziali}
+  \dd x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta}.
 \end{equation}
-da cui, semplificando negli ultimi due membri $\dd x^{\gamma}\dd x^{\delta}$,
-otteniamo la relazione fondamentale del tensore metrico
+Affinché una trasformazione lineare~\eqref{eq:trasformazione-lineare} delle
+coordinate sia di Lorentz, cioè affinché conservi la metrica, deve valere
+\begin{equation}
+  \begin{split}
+    \dd \tau'^{2} &= -\tensor{\eta}{_{\alpha\beta}}\dd x'^{\alpha}\dd x'^{\beta}
+    = -\tensor{\eta}{_{\alpha\beta}} \tensor{\Lambda}{^{\alpha}_{\gamma}} \dd
+    x^{\gamma} \tensor{\Lambda}{^{\beta}_{\delta}} \dd x^{\delta} \\
+    &= \dd \tau^{2} = -\tensor{\eta}{_{\gamma\delta}} \dd x^{\gamma} \dd x^{\delta},
+  \end{split}
+\end{equation}
+da cui, semplificando nel terzo e nel quinto membro
+$\dd x^{\gamma}\dd x^{\delta}$, otteniamo la relazione fondamentale del tensore
+metrico
 \begin{equation}
   \label{eq:rel-fond-tensore-metrico}
   \tensor{\eta}{_{\alpha\beta}} \tensor{\Lambda}{^{\alpha}_{\gamma}}
   \tensor{\Lambda}{^{\beta}_{\delta}} = \tensor{\eta}{_{\gamma\delta}}.
 \end{equation}
-Questa è la condizione che deve essere soddisfatta da una
-trasformazione~\eqref{eq:trasformazione-lineare} affinché sia una trasformazione
-di Lorentz.  L'equazione~\eqref{eq:rel-fond-tensore-metrico} impone $10$
-condizioni indipendenti in quanto il tensore metrico
-$\tensor{\eta}{_{\gamma\delta}}$ è simmetrico quindi solo $10$ delle sue $16$
-componenti sono indipendenti.
+Questa relazione impone $10$ condizioni indipendenti in quanto il tensore
+metrico $\tensor{\eta}{_{\gamma\delta}}$ è simmetrico quindi solo $10$ delle sue
+$16$ componenti sono indipendenti.
 
-L'equazione matriciale equivalente alla~\eqref{eq:rel-fond-tensore-metrico} è
+Indicando con $\Lambda$ la matrice $4 \times 4$ i cui elementi sono le
+$\tensor{\Lambda}{^{\alpha}_{\beta}}$
+\begin{equation}
+  \Lambda =
+  \begin{pmatrix}
+    \tensor{\Lambda}{^{0}_{0}} & \tensor{\Lambda}{^{0}_{1}} &
+    \tensor{\Lambda}{^{0}_{2}} & \tensor{\Lambda}{^{0}_{3}} \\
+    \tensor{\Lambda}{^{1}_{0}} & \tensor{\Lambda}{^{1}_{1}} &
+    \tensor{\Lambda}{^{1}_{2}} & \tensor{\Lambda}{^{1}_{3}} \\
+    \tensor{\Lambda}{^{2}_{0}} & \tensor{\Lambda}{^{2}_{1}} &
+    \tensor{\Lambda}{^{2}_{2}} & \tensor{\Lambda}{^{2}_{3}} \\
+    \tensor{\Lambda}{^{3}_{0}} & \tensor{\Lambda}{^{3}_{1}} &
+    \tensor{\Lambda}{^{3}_{2}} & \tensor{\Lambda}{^{3}_{3}}
+  \end{pmatrix},
+\end{equation}
+l'equazione matriciale equivalente alla~\eqref{eq:rel-fond-tensore-metrico} è
 \begin{equation}
   \Lambda^{\textup{T}}\eta\Lambda = \eta
 \end{equation}
@@ -129,25 +166,58 @@ e quindi deve valere la condizione
 Le trasformazioni di Lorentz con $\det\Lambda = +1$ sono chiamate
 \emph{proprie}, quelle con $\det\Lambda = -1$ sono chiamate \emph{improprie}.
 
-Consideriamo una particella a riposo nell'origine del sistema di riferimento $O$
-(quindi $\dd \bm{x} = \bm{0}$) che si muove con velocità
+\begin{figure}
+  \centering
+  \tdplotsetmaincoords{70}{100}
+  \begin{tikzpicture}[tdplot_main_coords,font=\footnotesize,scale=3]
+    \node[shape=coordinate] (O1) at (0,0,0) [label=above right:$O$] {};
+    \node[shape=coordinate] (O2) at (-1,0.5,0.3) [label=above right:$O'$] {};
+    \draw[->] (O1) -- ++(1,0,0) node[anchor=north east] {$x$}; % asse x
+    \draw[->] (O1) -- ++(0,1,0) node[anchor=north west] {$y$}; % asse y
+    \draw[->] (O1) -- ++(0,0,1) node[anchor=south] (Z1) {$z$}; % asse z
+    \node at (Z1) [label=below right:$\mathcal{S}$] {};% sistema di riferimento
+    \draw[->] (O2) -- ++(1,0,0) node[anchor=north east] {$x'$}; % asse x'
+    \draw[->] (O2) -- ++(0,1,0) node[anchor=north west] {$y'$}; % asse y'
+    \draw[->] (O2) -- ++(0,0,1) node[anchor=south] (Z2) {$z'$}; % asse z'
+    \node at (Z2) [label=below right:$\mathcal{S}'$] {};% sistema di riferimento
+    \draw[->,thick] (O1) -- node[above] {$\bm{v}$} ++(0.3,-0.4,0.3); % velocità
+  \end{tikzpicture}
+  \caption[Sistemi di riferimento inerziali in moto l'uno rispetto
+  all'altro]{Sistemi di riferimento inerziali, con gli assi corrispondenti
+    paralleli, in moto l'uno rispetto all'altro}
+  \label{fig:trasformazioni-lorentz}
+\end{figure}
+Vediamo come si trasformano le coordinate $x^{\alpha}$ di un evento in un
+sistema di riferimento per effetto di una \emph{trasformazione di velocità}, o
+\index{boost}\emph{boost}.  Consideriamo una particella a riposo in un sistema
+di riferimento $\mathcal{S}$ che si muove con velocità
 $\bm{v} = (v_{1},v_{2},v_{3})$ rispetto a un altro sistema di riferimento
-inerziale $O'$
-% TODO: probabilmente questi calcoli andranno spezzati in più ambienti
-% `equation' spiegando che passaggi vengono fatti in mezzo
-\begin{gather}
-  \dd x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}} \dd x^{\beta} =
-  \tensor{\Lambda}{^{\alpha}_{0}} \dd x^{0} + \tensor{\Lambda}{^{\alpha}_{i}}\dd
-  x^{i} \\
-  \dd x'^{i} = \tensor{\Lambda}{^{i}_{0}}\dd t \\
-  \dd x'^{0} = \tensor{\Lambda}{^{0}_{0}}\dd t.
-\end{gather}
+inerziale $\mathcal{S}'$, come nella
+figura~\ref{fig:trasformazioni-lorentz}.\footnote{Si noti che il sistema di
+  riferimento $\mathcal{S}$ vede il sistema $\mathcal{S}'$ muoversi con velocità
+  $-\bm{v}$.  Numerosi autori considerano il sistema di riferimento
+  $\mathcal{S}'$ in moto rispetto al sistema $\mathcal{S}$ con velocità
+  $\bm{v}$, questo comporterà una differenza di segno in numerose equazioni
+  rispetto a quelle ricavate da questi autori.}
+Poiché nel sistema $\mathcal{S}$ per la particella risulta $\dd\bm{x} = \bm{0}$,
+si ricava
+\begin{subequations}
+  \begin{align}
+    \dd x'^{i} &= \tensor{\Lambda}{^{i}_{\alpha}}\dd x^{\alpha} =
+    \tensor{\Lambda}{^{i}_{0}}\dd x^{0} + \tensor{\Lambda}{^{i}_{j}}\dd x^{j} =
+    \tensor{\Lambda}{^{i}_{0}}\dd t \\
+    \dd x'^{0} &= \tensor{\Lambda}{^{0}_{\alpha}}\dd x^{\alpha} =
+    \tensor{\Lambda}{^{0}_{0}}\dd x^{0} + \tensor{\Lambda}{^{0}_{j}}\dd x^{j} =
+    \tensor{\Lambda}{^{0}_{0}}\dd t.
+  \end{align}
+\end{subequations}
 Dividendo membro a membro abbiamo
 \begin{equation}
   \toder{x'^{i}}{x'^{0}} = \toder{x'^{i}}{t'} = v_{i} =
   \frac{\tensor{\Lambda}{^{i}_{0}}}{\tensor{\Lambda}{^{0}_{0}}},
 \end{equation}
-da cui
+in quanto $\ltoder{x'^{i}}{t'}$ è la componente $v_{i}$ della velocità della
+particella vista dal sistema $\mathcal{S}'$.  Allora
 \begin{equation}
   \tensor{\Lambda}{^{i}_{0}} = v_{i}\tensor{\Lambda}{^{0}_{0}}.
 \end{equation}
@@ -161,7 +231,7 @@ Ponendo $\gamma = \delta = 0$ nella~\eqref{eq:rel-fond-tensore-metrico} risulta
     \\
     &= -(\tensor{\Lambda}{^{0}_{0}})^{2} + \delta_{ij}
     \tensor{\Lambda}{^{i}_{0}} \tensor{\Lambda}{^{j}_{0}} =
-    -(\tensor{\Lambda}{^{0}_{0}})^{2} + \sum_{i}(\tensor{\Lambda}{^{i}_{0}})^{2},
+    -(\tensor{\Lambda}{^{0}_{0}})^{2}+\sum_{i}(\tensor{\Lambda}{^{i}_{0}})^{2},
   \end{split}
 \end{equation}
 quindi
@@ -170,7 +240,7 @@ quindi
   \sum_{i}(\tensor{\Lambda}{^{i}_{0}})^{2} = 1 +
   \sum_{i}(v_{i}\tensor{\Lambda}{^{0}_{0}})^{2} \geq 1,
 \end{equation}
-cioè deve risultare
+cioè deve aversi
 \begin{equation}
   \tensor{\Lambda}{^{0}_{0}} \geq 1 \text{ oppure } \tensor{\Lambda}{^{0}_{0}}
   \leq -1.
@@ -191,7 +261,7 @@ risulta anche
 \end{equation}
 Le altre componenti $\tensor{\Lambda}{^{\alpha}_{\beta}}$ non sono univocamente
 determinate.  Una scelta conveniente che permette di soddisfare
-la~\eqref{eq:trasformazione-lineare} è
+la relazione fondamentale~\eqref{eq:rel-fond-tensore-metrico} è
 \begin{subequations}
   \begin{align}
     \tensor{\Lambda}{^{0}_{i}} &= \tensor{\Lambda}{^{i}_{0}} = v_{i}\gamma, \\
@@ -199,7 +269,8 @@ la~\eqref{eq:trasformazione-lineare} è
     v_{i}v_{j}\frac{\gamma-1}{v^{2}}.
   \end{align}
 \end{subequations}
-così che $\Lambda$ in forma matriciale può essere scritta come
+così che la matrice $\Lambda$ può essere scritta, per un \index{boost}boost
+$\bm{v}$, come
 \begin{equation}
   \Lambda =
   \begin{pmatrix}
@@ -229,9 +300,17 @@ così che $\Lambda$ in forma matriciale può essere scritta come
 \section{Calcolo tensoriale nello spazio di Minkowski}
 \label{sec:calcolo-tensoriale}
 
+Il calcolo tensoriale è lo strumento matematico alla base della teoria della
+relatività.  In questo paragrafo daremo dei cenni relativi al calcolo tensoriale
+nello spazio di Minkowski.  Si noti che alcuni dei risultati che presenteremo
+qui sono validi solo nello spazio piatto della relatività speciale e non in
+quello curvo della relatività generale.
+
 Un \index{quadrivettore!controvariante}\emph{quadrivettore controvariante}
 $V^{\alpha} = (V^{0}, V^{1}, V^{2}, V^{3})$ è un insieme di quattro quantità
-che, mediante una trasformazione di Lorentz ristretta, si trasformano come
+che, mediante una trasformazione di Lorentz ristretta omogenea
+$x^{\alpha} \to x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta}$, si
+trasformano come le componenti di $\dd x^{\alpha}$, vale a dire
 \begin{equation}
   V^{\alpha} \to V'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}V^{\beta}.
 \end{equation}
@@ -266,12 +345,13 @@ Osserviamo che
   \tensor{\delta}{^{\alpha}_{\beta}} = \tensor{\delta}{_{\alpha}^{\beta}} =
   \begin{cases}
     1 & \text{se } \alpha = \beta, \\
-    0 & \text{se } \alpha \neq \beta.
+    0 & \text{se } \alpha \neq \beta,
   \end{cases}
 \end{equation}
 in cui $\tensor{\delta}{^{\alpha}_{\beta}} = \tensor{\delta}{_{\alpha}^{\beta}}$
-è la
-\index{delta!di Kronecker quadrimensionale}delta di Kronecker quadrimensionale.
+è la \index{delta!di Kronecker
+  quadrimensionale}\emph{delta
+  di Kronecker quadrimensionale}.
 Usando la relazione fondamentale delle trasformazioni di
 Lorentz~\eqref{eq:rel-fond-tensore-metrico} abbiamo
 \begin{equation}
@@ -290,12 +370,13 @@ Dalla trasformazione~\eqref{eq:trasformazione-lineare} risulta che
   x'^{\alpha} \tensor{\Lambda}{_{\alpha}^{\gamma}} =
   \tensor{\Lambda}{^{\alpha}_{\beta}} \tensor{\Lambda}{_{\alpha}^{\gamma}}
   x^{\beta} + \tensor{\Lambda}{_{\alpha}^{\gamma}} a^{\alpha} =
-  \tensor{\delta}{^{\gamma}_{\beta}} x^{\beta} - a'^{\gamma} = x^{\gamma} -a'^{\gamma}
+  \tensor{\delta}{^{\gamma}_{\beta}} x^{\beta} + a'^{\gamma} = x^{\gamma}
+  +a'^{\gamma}
 \end{equation}
 da cui ricaviamo la trasformazione, rinominando gli indici,
 \begin{equation}
   \label{eq:trasformazione-inversa}
-  x'^{\alpha} \to x^{\alpha} = \tensor{\Lambda}{_{\beta}^{\alpha}}x'^{\beta} +
+  x'^{\alpha} \to x^{\alpha} = \tensor{\Lambda}{_{\beta}^{\alpha}}x'^{\beta} -
   a'^{\alpha}.
 \end{equation}
 
@@ -338,7 +419,7 @@ Possiamo generalizzare le definizioni date finora introducendo il concetto di
 quadritensore.  Un \index{quadritensore}\emph{quadritensore}
 $\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ (con
 $p + q = k$) di rango $k$ è un insieme di $4^{k}$ quantità che sotto una
-trasformazione di Lorentz ristretta
+trasformazione di Lorentz ristretta omogenea
 $x^{\alpha} \to x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta}$ si
 trasformano come
 \begin{equation}
@@ -347,7 +428,8 @@ trasformano come
   \tensor{\Lambda}{^{\alpha_{1}}_{\mu_{1}}} \cdots
   \tensor{\Lambda}{^{\alpha_{p}}_{\mu_{p}}}
   \tensor{\Lambda}{_{\beta_{1}}^{\nu_{1}}} \cdots
-  \tensor{\Lambda}{_{\beta_{q}}^{\nu_{q}}} \tensor*{A}{^{\mu_{1}\dots\mu_{p}}_{\nu_{1}\dots\nu_{q}}}
+  \tensor{\Lambda}{_{\beta_{q}}^{\nu_{q}}}
+  \tensor*{A}{^{\mu_{1}\dots\mu_{p}}_{\nu_{1}\dots\nu_{q}}}
 \end{equation}
 Il quadritensore
 $\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ è un
@@ -517,8 +599,9 @@ Anche il modulo quadro di un quadrivettore è uno scalare di Lorentz.
 \label{sec:derivazione}
 
 La derivazione di un quadritensore di rango $k$ rispetto alle coordinate
-controvarianti $x^{\alpha}$ o covarianti $x_{\alpha}$ è un quadritensore di
-rango $k+1$.  In dettaglio, la derivata
+controvarianti $x^{\alpha}$ o covarianti
+$x_{\alpha} = (x_{0},x_{1}) = (-x^{0},x^{i})$ è un quadritensore di rango $k+1$.
+In dettaglio, la derivata
 \begin{equation}
   \parder{}{x^{\sigma}}
   \tensor*{T}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}
@@ -627,10 +710,12 @@ $\bm{p} = m\gamma\bm{v}$
 \begin{equation}
   p^{\alpha} = (E, \bm{p}).
 \end{equation}
-Vediamo come cambia il quadrimomento per effetto di una trasformazione di Lorentz
+Vediamo come cambia il quadrimomento per effetto di un boost $\bm{V}$
 \begin{equation}
-  p^{\alpha} \to p'^{\alpha} = (p'^{0}, p'^{i}) = \tensor{\Lambda}{^{\alpha}_{\beta}} p^{\beta} =
-  (\tensor{\Lambda}{^{0}_{\beta}}p^{\beta}, \tensor{\Lambda}{^{i}_{\beta}}p^{\beta}).
+  p^{\alpha} \to p'^{\alpha} = (p'^{0}, p'^{i}) =
+  \tensor{\Lambda}{^{\alpha}_{\beta}} p^{\beta} =
+  (\tensor{\Lambda}{^{0}_{\beta}}p^{\beta},
+  \tensor{\Lambda}{^{i}_{\beta}}p^{\beta}).
 \end{equation}
 La prima componente ci dà l'energia $E'$ nel nuovo sistema di riferimento
 \begin{equation}
@@ -670,7 +755,6 @@ relativistico.  Il quadrimomento covariante è dato da
   p_{\alpha} = \tensor{\eta}{_{\alpha\beta}}p^{\beta} = (-E, \bm{p}).
 \end{equation}
 
-
 La \index{quadriforza}\emph{quadriforza} agente sulla particella è definita come
 la derivata rispetto al tempo proprio del quadrimomento
 \begin{equation}
@@ -682,16 +766,15 @@ in cui
   w^{\alpha} = (w^{0},w^{i}) =\toder{v^{\alpha}}{\tau}
 \end{equation}
 è la \index{quadriaccelerazione}\emph{quadriaccelerazione}.  In un sistema di
-riferimento $O$ in cui la particella è a riposo $\dd \bm{x} = \bm{0}$ quindi
-$\dd \tau = \dd t$ e $f^{\alpha} = F^{\alpha}$, in cui $F^{i}$ sono le
+riferimento $\mathcal{S}$ in cui la particella è a riposo $\dd \bm{x} = \bm{0}$,
+quindi $\dd \tau = \dd t$ e $f^{\alpha} = F^{\alpha}$, in cui $F^{i}$ sono le
 componenti cartesiane della forza non relativistica $\bm{F}$ e $F^{0} = 0$:
 \begin{equation}
   f^{\alpha} = (f^{0}, f^{i}) = (0, \bm{F}).
 \end{equation}
 Per calcolare la forza a cui è soggetta la particella in un altro sistema di
-riferimento inerziale $O'$ in moto rispetto a $O$ con velocità
-$\bm{V} = (V_{1}, V_{2}, V_{3})$ dobbiamo effettuare la trasformazione di
-Lorentz
+riferimento inerziale $\mathcal{S}'$ che vede la particella muoversi con
+velocità $\bm{V} = (V_{1}, V_{2}, V_{3})$ dobbiamo effettuare un boost $\bm{V}$
 \begin{equation}
   f'^{\alpha} = (f'^{0}, f'^{i}) = \tensor{\Lambda}{^{\alpha}_{\beta}}f^{\beta}.
 \end{equation}
