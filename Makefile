@@ -35,7 +35,7 @@ dist: $(TUTTI_TEX) $(BIBLIOGRAFIA) distclean
 	git gc # comprimo il repository di git per ridurre al minimo la tarball
 	cd .. && tar -cJvpsf $(CARTELLA).tar.xz --exclude=$(CARTELLA)/auto $(CARTELLA)/
 
-# Crea un archivio compresso (.tar.gz) contenente tutte le immagini e senza il
+# Crea un archivio compresso (.tar.xz) contenente tutte le immagini e senza il
 # repo git
 full-dist: $(PRINCIPALE_PDF) clean
 	cd .. && tar -cJvpsf $(CARTELLA).tar.xz --exclude=$(CARTELLA)/auto --exclude-vcs $(CARTELLA)/
