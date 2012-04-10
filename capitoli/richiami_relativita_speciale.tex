@@ -8,8 +8,8 @@ Per il \index{principio!di relatività}\emph{principio di relatività} tutte le
 leggi fisiche assumono la stessa forma in qualsiasi sistema di riferimento
 inerziale.  In particolare, all'interno della teoria della relatività speciale
 le leggi fisiche devono essere invarianti per trasformazioni di Lorentz.  In
-questo capitolo richiameremo alcuni concetto di relatività speciale dopo aver
-dedotto le trasformazioni di Lorentz.
+questo capitolo dedurremo le trasformazioni di Lorentz e richiameremo alcuni
+concetto di relatività speciale.
 
 L'ambiente in cui si verificano i fenomeni fisici descritti dalla relatività
 speciale è uno spazio quadrimensionale piatto, composto da una coordinata
@@ -190,8 +190,8 @@ Le trasformazioni di Lorentz con $\det\Lambda = +1$ sono chiamate
 Esempi di trasformazioni di Lorentz proprie sono le rotazioni spaziali, che
 lasciano invariato il tempo, e le \emph{trasformazioni di velocità}, o
 \index{boost}\emph{boost}, vale a dire le trasformazioni tra due sistemi di
-riferimento inerziali con gli assi corrispondenti paralleli e in moto l'uno
-rispetto all'altro con velocità costante.
+riferimento inerziali con gli assi cartesiani corrispondenti paralleli e in moto
+l'uno rispetto all'altro con velocità costante.
 %%%%% TODO: controllare la validità di questa affermazione:
 La composizione di due trasformazioni di Lorentz è ancora una
 trasformazione di Lorentz.
@@ -260,7 +260,7 @@ Le trasformazioni con $\tensor{\Lambda}{^{0}_{0}} \geq +1$ sono chiamate
 trasformazione ristretta inoltre abbiamo
 \begin{equation}
   \tensor{\Lambda}{^{0}_{0}} = \frac{1}{\sqrt{1-\sum_{i}(v_{i})^{2}}} =
-  \frac{1}{\sqrt{1-v^{2}}} = \gamma,
+  \frac{1}{\sqrt{1-v^{2}}} = \gamma(v) \equiv \gamma,
 \end{equation}
 con $v^{2} = \sum_{i}(v_{i})^{2}$ modulo quadro del vettore $\bm{v}$.  Quindi
 risulta anche
@@ -700,25 +700,28 @@ la derivata di $x^{\alpha}$ rispetto al tempo proprio $\tau$:
 e poiché risulta
 \begin{equation}
   \dd \tau = \sqrt{\dd t^{2} - \dd \bm{x}^{2}} = \dd t \sqrt{1 -
-    \Big(\toder{\bm{x}}{t}\Big)^{2}} = \dd t\sqrt{1 - v^{2}} = \toder{\dd
-    t}{\gamma}
+    \Big(\toder{\bm{x}}{t}\Big)^{2}} = \dd t\sqrt{1 - v^{2}} = \frac{\dd
+    t}{\gamma(v)}
 \end{equation}
 abbiamo che la quadrivelocità è uguale a
 \begin{equation}
-  v^{\alpha} = \toder{x^{\alpha}}{t}\toder{t}{\tau} = \toder{x^{\alpha}}{t}
-  \gamma = \gamma \Big(\toder{x^{0}}{t}, \toder{\bm{x}}{t}\Big) =
-  \gamma(1,\bm{v}) = (\gamma, \gamma\bm{v}).
+  \begin{split}
+    v^{\alpha} &= \toder{x^{\alpha}}{t}\toder{t}{\tau} = \toder{x^{\alpha}}{t}
+    \gamma(v) = \gamma(v) \Big(\toder{x^{0}}{t}, \toder{\bm{x}}{t}\Big) =
+    \gamma(v)(1,\bm{v}) \\
+    &= (\gamma(v), \gamma(v)\bm{v}).
+  \end{split}
 \end{equation}
 Il \index{quadrimomento}\emph{quadrimomento} della particella è definito come il
 prodotto fra la massa a riposo $m$ della particella e la quadrivelocità
 \begin{equation}
-  p^{\alpha} = (p^{0},p^{i}) = m v^{\alpha} = m (v^{0}, v^{i}) = (m\gamma,
-  m\gamma\bm{v}).
+  p^{\alpha} = (p^{0},p^{i}) = m v^{\alpha} = m (v^{0}, v^{i}) = (m\gamma(v),
+  m\gamma(v)\bm{v}).
 \end{equation}
-Ricordando che l'energia totale $E$ di una particella è definita come $m\gamma$
+Ricordando che l'energia totale $E$ di una particella è definita come $m\gamma(v)$
 troviamo che la prima componente del quadrivettore momento è proprio l'energia
 totale, mentre le componenti $p^{i}$ sono le componenti del momento
-$\bm{p} = m\gamma\bm{v}$
+$\bm{p} = m\gamma(v)\bm{v}$
 \begin{equation}
   p^{\alpha} = (E, \bm{p}).
 \end{equation}
@@ -731,25 +734,31 @@ Vediamo come cambia il quadrimomento per effetto di un boost $\bm{V}$
 \end{equation}
 La prima componente ci dà l'energia $E'$ nel nuovo sistema di riferimento
 \begin{equation}
-  E' = p'^{0} = \tensor{\Lambda}{^{0}_{\beta}}p^{\beta} =
-  \tensor{\Lambda}{^{0}_{0}}p^{0} + \tensor{\Lambda}{^{0}_{i}}p^{i} = \gamma E +
-  \gamma V_{i}p^{i} = \gamma E + \gamma \bm{V}\cdot\bm{p}.
+  \begin{split}
+    E' &= p'^{0} = \tensor{\Lambda}{^{0}_{\beta}}p^{\beta} =
+    \tensor{\Lambda}{^{0}_{0}}p^{0} + \tensor{\Lambda}{^{0}_{i}}p^{i} \\
+    &= \gamma(V) E + \gamma(V) V_{i}p^{i} = \gamma(V) E + \gamma(V)
+    \bm{V}\cdot\bm{p}.
+  \end{split}
 \end{equation}
 Le tre componenti spaziali sono le componenti $(\bm{p}')_{i}$ del vettore
 momento nel nuovo sistema di riferimento
 \begin{equation}
   \begin{split}
     (\bm{p}')_{i} &= (p')^{i} = \tensor{\Lambda}{^{i}_{\beta}}p^{\beta} =
-    \tensor{\Lambda}{^{i}_{0}}p^{0} + \tensor{\Lambda}{^{j}_{j}}p^{j} = \gamma
-    V_{i}E + \Big( \delta_{ij} + V_{i}V_{j}\frac{\gamma-1}{V^{2}}\Big)p^{j} \\
-    &= \gamma V_{i}E + p_{i} + V_{i}V_{j}p^{j}\frac{\gamma-1}{V^{2}} = \gamma
-    V_{i}E + p_{i} + V_{i} \bm{V} \cdot \bm{p} \frac{\gamma-1}{V^{2}}
+    \tensor{\Lambda}{^{i}_{0}}p^{0} + \tensor{\Lambda}{^{j}_{j}}p^{j} \\
+    &= \gamma(V) V_{i}E + \Big( \delta_{ij} +
+    V_{i}V_{j}\frac{\gamma(V)-1}{V^{2}}\Big)p^{j} \\
+    &= \gamma(V) V_{i}E + p_{i} +
+    V_{i}V_{j}p^{j}\frac{\gamma(V)-1}{V^{2}} \\
+    &= \gamma(V) V_{i}E + p_{i} + V_{i} \bm{V} \cdot \bm{p}
+    \frac{\gamma(V)-1}{V^{2}},
   \end{split}
 \end{equation}
 cioè
 \begin{equation}
-  \bm{p}' = \bm{p} + \Big(\gamma E + \bm{V} \cdot \bm{p}
-  \frac{\gamma-1}{V^{2}}\Big)\bm{V}.
+  \bm{p}' = \bm{p} + \Big(\gamma(V) E + \bm{V} \cdot \bm{p}
+  \frac{\gamma(V)-1}{V^{2}}\Big)\bm{V}.
 \end{equation}
 % NOTA: i risultati delle trasformazioni di momento ed energia sono differenti
 % dalle formule [4.103] e [4.104], pagina 132, del Barone.  Weinberg definisce
@@ -793,24 +802,28 @@ velocità $\bm{V} = (V_{1}, V_{2}, V_{3})$ dobbiamo effettuare un boost $\bm{V}$
 Abbiamo
 \begin{subequations}
   \begin{align}
-    f'^{0} &= \tensor{\Lambda}{^{0}_{\alpha}}f^{\alpha} =
-    \tensor{\Lambda}{^{0}_{0}}f^{0} + \tensor{\Lambda}{^{0}_{i}}f^{i} = \gamma
-    V_{i}f^{i} = \gamma \bm{V} \cdot \bm{f} = \gamma \bm{V} \cdot \bm{F} \\
+    \begin{split}
+      f'^{0} &= \tensor{\Lambda}{^{0}_{\alpha}}f^{\alpha} =
+      \tensor{\Lambda}{^{0}_{0}}f^{0} + \tensor{\Lambda}{^{0}_{i}}f^{i} =
+      \gamma(V) V_{i}f^{i} = \gamma(V) \bm{V} \cdot \bm{f} \\
+      &= \gamma(V) \bm{V} \cdot \bm{F}
+    \end{split} \\
     \begin{split}
       f'^{i} &= \tensor{\Lambda}{^{i}_{\alpha}}f^{\alpha} =
       \tensor{\Lambda}{^{i}_{0}}f^{0} + \tensor{\Lambda}{^{i}_{j}}f^{j}
-      = \Big( \delta_{ij} + V_{i}V_{j}\frac{\gamma - 1}{V^{2}} \Big)f^{j} \\
-      &= f^{i} + V_{i}V_{j}f^{j}\frac{\gamma - 1}{V^{2}} = f^{i} + V_{i} \bm{V}
-      \cdot \bm{f} \frac{\gamma - 1}{V^{2}},
+      = \Big( \delta_{ij} + V_{i}V_{j}\frac{\gamma(V) - 1}{V^{2}} \Big)f^{j} \\
+      &= f^{i} + V_{i}V_{j}f^{j}\frac{\gamma(V) - 1}{V^{2}} = f^{i} + V_{i}
+      \bm{V} \cdot \bm{f} \frac{\gamma(V) - 1}{V^{2}},
     \end{split}
   \end{align}
 \end{subequations}
 cioè
 \begin{equation}
-  \bm{f}' = \bm{F} + \bm{V}(\bm{V}\cdot\bm{F})\frac{\gamma - 1}{V^{2}}.
+  \bm{f}' = \bm{F} + \bm{V}(\bm{V}\cdot\bm{F})\frac{\gamma(V) - 1}{V^{2}}.
 \end{equation}
-% TODO: questa formula è sostanzialmente diversa dalla [4.126], pagina 135, del
-% Barone (lì compare anche la velocità della particella).  Scoprire il perché!
+% Questa formula è diversa dalla [4.126] a pagina 135 del Barone perché lui
+% parte da un sistema di riferimento in cui la particella si muove con velocità
+% `v', noi invece siamo partiti da un sistema in cui la particella è a riposo.
 
 
 %%% Local Variables:
