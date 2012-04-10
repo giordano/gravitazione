@@ -786,45 +786,62 @@ in cui
 \begin{equation}
   w^{\alpha} = (w^{0},w^{i}) =\toder{v^{\alpha}}{\tau}
 \end{equation}
-è la \index{quadriaccelerazione}\emph{quadriaccelerazione}.  In un sistema di
-riferimento $\mathcal{S}$ in cui la particella è a riposo $\dd \bm{x} = \bm{0}$,
-quindi $\dd \tau = \dd t$ e $f^{\alpha} = F^{\alpha}$, in cui $F^{i}$ sono le
-componenti cartesiane della forza non relativistica $\bm{F}$ e $F^{0} = 0$:
+è la \index{quadriaccelerazione}\emph{quadriaccelerazione}.  Consideriamo un
+sistema di riferimento $\mathcal{S}$ in cui la particella si muove con velocità
+$\bm{v}$.  Calcoliamo la quadriforza a cui è soggetta la particella in un altro
+sistema di riferimento inerziale $\mathcal{S}'$ che vede muoversi il sistema
+$\mathcal{S}$ con velocità costante $\bm{V} = (V_{1}, V_{2}, V_{3})$:
 \begin{equation}
-  f^{\alpha} = (f^{0}, f^{i}) = (0, \bm{F}).
+  \begin{split}
+    f'^{\alpha} &= \toder{p'^{\alpha}}{\tau'} = \toder{p'^{\alpha}}{t'}\gamma(V)
+    = \gamma(V)\Big( \toder{p'^{0}}{t'}, \toder{p'^{i}}{t'}\Big) \\
+    &= \gamma(V) \Big( \toder{(\gamma(V)(E + \bm{V}\cdot\bm{p}))}{t'},
+    \toder{(\gamma(V)V_{i}E + p_{i} +
+      V_{i}\bm{V}\cdot\bm{p}(\gamma(V)-1)/V^{2})}{t'} \Big).
+  \end{split}
 \end{equation}
-Per calcolare la forza a cui è soggetta la particella in un altro sistema di
-riferimento inerziale $\mathcal{S}'$ che vede la particella muoversi con
-velocità $\bm{V} = (V_{1}, V_{2}, V_{3})$ dobbiamo effettuare un boost $\bm{V}$
+Osserviamo che
+$t' = x'^{0} = \tensor{\Lambda}{^{0}_{\alpha}}x^{\alpha} =
+\tensor{\Lambda}{^{0}_{0}}x^{0} + \tensor{\Lambda}{^{0}_{i}}x^{i} =
+\gamma(V)x^{0} + \gamma(V)V_{i}x^{i} = \gamma(V)(t+\bm{V}\cdot\bm{x})$, quindi
 \begin{equation}
-  f'^{\alpha} = (f'^{0}, f'^{i}) = \tensor{\Lambda}{^{\alpha}_{\beta}}f^{\beta}.
+  \toder{}{t'} = \toder{t}{t'}\toder{}{t} =
+  \Big(\toder{t'}{t}\Big)^{-1}\toder{}{t} =
+  (\gamma(V)(1+\bm{V}\cdot\bm{v}))^{-1}\toder{}{t},
 \end{equation}
-Abbiamo
-\begin{subequations}
-  \begin{align}
-    \begin{split}
-      f'^{0} &= \tensor{\Lambda}{^{0}_{\alpha}}f^{\alpha} =
-      \tensor{\Lambda}{^{0}_{0}}f^{0} + \tensor{\Lambda}{^{0}_{i}}f^{i} =
-      \gamma(V) V_{i}f^{i} = \gamma(V) \bm{V} \cdot \bm{f} \\
-      &= \gamma(V) \bm{V} \cdot \bm{F}
-    \end{split} \\
-    \begin{split}
-      f'^{i} &= \tensor{\Lambda}{^{i}_{\alpha}}f^{\alpha} =
-      \tensor{\Lambda}{^{i}_{0}}f^{0} + \tensor{\Lambda}{^{i}_{j}}f^{j}
-      = \Big( \delta_{ij} + V_{i}V_{j}\frac{\gamma(V) - 1}{V^{2}} \Big)f^{j} \\
-      &= f^{i} + V_{i}V_{j}f^{j}\frac{\gamma(V) - 1}{V^{2}} = f^{i} + V_{i}
-      \bm{V} \cdot \bm{f} \frac{\gamma(V) - 1}{V^{2}},
-    \end{split}
-  \end{align}
-\end{subequations}
+allora
+\begin{equation}
+  \begin{split}
+    f'^{0} &= \gamma(V) \toder{(\gamma(V)(E + \bm{V}\cdot\bm{p}))}{t'} =
+    \frac{\gamma^{2}(V)}{\gamma(V)(1 + \bm{V}\cdot\bm{v})}
+    \toder{(E + \bm{V}\cdot\bm{p})}{t} \\
+    &= \frac{\gamma(V)}{1 + \bm{V}\cdot\bm{v}} (\bm{F}\cdot\bm{v} +
+    \bm{F}\cdot\bm{V}) = \frac{\gamma(V)}{1 + \bm{V}\cdot\bm{v}}
+    \bm{F}\cdot(\bm{v} + \bm{V}),
+  \end{split}
+\end{equation}
+avendo ricordato che $\ltoder{E}{t} = \bm{F}\cdot\bm{v}$.  Per le tre componenti
+spaziali $f'^{i}$ della quadriforza, che rappresentano le componenti della forza
+$\bm{F}'$ nel sistema di riferimento $\mathcal{S}'$ abbiamo
+\begin{equation}
+  \begin{split}
+    f'^{i} &= \gamma(V)\toder{(\gamma(V)V_{i}E + p_{i} +
+      V_{i}\bm{V}\cdot\bm{p}(\gamma(V)-1)/V^{2})}{t'} \\
+    &= \frac{\gamma(V)}{\gamma(V)(1 + \bm{V}\cdot\bm{v})}
+    \toder{(\gamma(V)V_{i}E + p_{i} +
+      V_{i}\bm{V}\cdot\bm{p}(\gamma(V)-1)/V^{2})}{t} \\
+    &= \frac{1}{1 + \bm{V}\cdot\bm{v}} \Big( \gamma(V)V_{i}\bm{F}\cdot\bm{v} +
+    F_{i} + V_{i}\bm{V}\cdot\bm{F}\frac{\gamma(V)-1}{V^{2}} \Big),
+  \end{split}
+\end{equation}
 cioè
 \begin{equation}
-  \bm{f}' = \bm{F} + \bm{V}(\bm{V}\cdot\bm{F})\frac{\gamma(V) - 1}{V^{2}}.
+  \bm{f}'= \bm{F}' = \frac{1}{1 + \bm{V}\cdot\bm{v}} \Big(
+  \bm{F} + \Big( \gamma(V)\bm{F}\cdot\bm{v} +
+  \bm{V}\cdot\bm{F}\frac{\gamma(V)-1}{V^{2}} \Big)\bm{V} \Big).
 \end{equation}
-% Questa formula è diversa dalla [4.126] a pagina 135 del Barone perché lui
-% parte da un sistema di riferimento in cui la particella si muove con velocità
-% `v', noi invece siamo partiti da un sistema in cui la particella è a riposo.
-
+% TODO: c'è un fattore gamma(V) al denominatore di differenza rispetto alla
+% formula [4.126], pagina 135, del Barone.  Scoprire il perché della differenza!
 
 %%% Local Variables:
 %%% mode: latex
