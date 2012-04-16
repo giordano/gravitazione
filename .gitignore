@@ -4,6 +4,7 @@
 *.blg
 *-blx.bib
 *.fdb_latexmk
+*.fls
 *.idx
 *.ilg
 *.ind

@@ -1,0 +1,288 @@
+\cleardoublepage
+\chapter{Il principio di equivalenza}
+\label{cha:principio-equivalenza}
+
+
+\completare{Esperimento ideale di Einstein, uguaglianza massa inerziale e
+  gravitazionale.}
+
+\index{principio!di equivalenza}\emph{principio di equivalenza}:
+\emph{per ogni evento dello spazio-tempo in un arbitrario campo gravitazionale è
+  possibile scegliere un sistema di riferimento \emph{localmente inerziale} (in
+  caduta libera nel campo gravitazionale), tale che in un intorno
+  sufficientemente piccolo dell'evento gli effetti della gravità siano assenti e
+  le leggi della natura assumano la stessa forma che hanno in un sistema di
+  riferimento inerziale}.
+Dunque in un sistema di riferimento localmente inerziale la fisica segue le
+leggi della relatività speciale.
+
+\section{Equazione del moto di una particella in un campo gravitazionale}
+\label{sec:equazione-moto}
+
+Consideriamo una particella in caduta libera all'interno di un campo
+gravitazionale $\bm{g}$.  In un sistema di riferimento $\xi^{\alpha}$ in cui
+questa si muove di moto rettilineo uniforme nello spazio tempo l'equazione del
+moto è
+\begin{equation}
+  \label{eq:moto-caduta-libera}
+  \toder[2]{\xi^{\alpha}}{\tau} = 0,
+\end{equation}
+in cui $\dd^{2} \tau = -\eta_{\alpha\beta}\dd\xi^{\alpha}\dd\xi^{\beta}$ è
+l'intervallo di tempo proprio.  Le coordinate $\xi^{\alpha}$ possono essere
+espresse come funzione di un altro qualsiasi sistema di coordinate $x^{\mu}$ e
+viceversa
+\begin{align}
+  \xi^{\alpha} &= \xi^{\alpha}(x^{\mu}), \\
+  x^{\mu} &= x^{\mu}(\xi^{\alpha}).
+\end{align}
+% Poiché la trasformazione è invertibile deve risultare
+% \begin{equation}
+%   \abs*{\parder{x^{\mu}}{\xi^{\alpha}}} \neq 0.
+% \end{equation}
+Inoltre le coordinate $x^{\mu}$ dipendono anche dal tempo proprio $\tau$, allora
+dalla~\eqref{eq:moto-caduta-libera} abbiamo
+\begin{equation}
+  \label{eq:moto1}
+  0 = \toder{}{\tau}\toder{\xi^{\alpha}}{\tau} = \toder{}{\tau}
+  \Big( \parder{\xi^{\alpha}}{x^{\mu}}\toder{x^{\mu}}{\tau} \Big)
+  = \parder{\xi^{\alpha}}{x^{\mu},x^{\nu}} \toder{x^{\nu}}{\tau}
+  \toder{x^{\mu}}{\tau} + \parder{\xi^{\alpha}}{x^{\mu}}
+  \toder[2]{x^{\mu}}{\tau}.
+\end{equation}
+Supponendo che ciascuna delle quattro coordinate $x^{\mu}$ sia indipendente
+dalle altre possiamo scrivere le relazioni
+\begin{equation}
+  \parder{x^{\mu}}{x^{\nu}} = \tensor{\delta}{^{\mu}_{\nu}}
+  \implies \parder{x^{\mu}}{\xi^{\alpha}} \parder{\xi^{\alpha}}{x^{\nu}} =
+  \tensor{\delta}{^{\mu}_{\nu}},
+\end{equation}
+quindi moltiplicando la~\eqref{eq:moto1} per
+$\lparder{x^{\lambda}}{\xi^{\alpha}}$ l'equazione del moto diventa
+\begin{equation}
+  \tensor{\delta}{^{\lambda}_{\mu}} \toder[2]{x^{\mu}}{\tau} +
+  \Big( \parder{\xi^{\alpha}}{x^{\mu},x^{\nu}} \parder{x^{\lambda}}{\xi^{\alpha}}
+  \Big) \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} = 0.
+\end{equation}
+Definendo la \index{connessione!affine}\emph{connessione affine}
+$\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ come
+\begin{equation}
+  \label{eq:connessione-affine}
+  \tensor{\Gamma}{^{\lambda}_{\mu\nu}}
+  = \parder{\xi^{\alpha}}{x^{\mu},x^{\nu}} \parder{x^{\lambda}}{\xi^{\alpha}}
+\end{equation}
+l'equazione del moto può essere riscritta nel seguente modo
+\begin{equation}
+  \label{eq:geodesica}
+  \toder[2]{x^{\lambda}}{\tau} + \tensor{\Gamma}{^{\lambda}_{\mu\nu}}
+  \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} = 0,
+\end{equation}
+oppure, utilizzando la quadrivelocità $u^{\alpha} = \ltoder{x^{\alpha}}{\tau}$,
+\begin{equation}
+  \toder[2]{x^{\lambda}}{\tau} + \tensor{\Gamma}{^{\lambda}_{\mu\nu}}
+  u^{\nu} u^{\nu} = 0.
+\end{equation}
+La~\eqref{eq:geodesica} è chiama \emph{equazione della geodesica}.
+$\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ è un insieme di $4^{3} = 64$ quantità che
+tuttavia, come vedremo, % TODO: farlo vedere oppure non dire "come vedremo" :-P
+non si trasformano, in generale, come un quadritensore di rango $3$.  Dalla
+definizione di connessione affine abbiamo inoltre che questa è simmetrica
+rispetto agli indici inferiori, cioè
+$\tensor{\Gamma}{^{\lambda}_{\mu\nu}} = \tensor{\Gamma}{^{\lambda}_{\nu\mu}}$.
+
+L'intervallo di tempo proprio
+$\dd\tau^{2} = -\eta_{\alpha\beta} \dd\xi^{\alpha} \dd\xi^{\beta}$ può essere
+espresso rispetto alle coordinate $x^{\mu}$ come
+\begin{equation}
+  \begin{split}
+    \dd\tau^{2} &= -\eta_{\alpha\beta} \parder{\xi^{\alpha}}{x^{\mu}}\dd
+    x^{\mu} \parder{\xi^{\beta}}{x^{\nu}}\dd x^{\nu} \\
+    &= -g_{\mu\nu}\dd x^{\mu}\dd x^{\nu},
+  \end{split}
+\end{equation}
+dove
+\begin{equation}
+  \label{eq:tensore-metrico}
+  g_{\mu\nu} =
+  \eta_{\alpha\beta} \parder{\xi^{\alpha}}{x^{\mu}} \parder{\xi^{\beta}}{x^{\nu}}
+\end{equation}
+è il \index{tensore!metrico}\emph{tensore metrico}.  Osserviamo che $g_{\mu\nu}$
+è simmetrico rispetto allo scambio degli indici in quanto il tensore metrico di
+Minkowski $\eta_{\alpha\beta}$ è simmetrico, infatti
+\begin{equation}
+  g_{\nu\mu} =
+  \eta_{\alpha\beta} \parder{\xi^{\alpha}}{x^{\nu}}\parder{\xi^{\beta}}{x^{\mu}}
+  =
+  \eta_{\beta\alpha} \parder{\xi^{\beta}}{x^{\mu}} \parder{\xi^{\alpha}}{x^{\nu}}
+  = g_{\mu\nu}.
+\end{equation}
+
+\section{Relazione fra $g_{\mu\nu}$ e $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$}
+\label{sec:relazione-g-Gamma}
+
+Derivando rispetto a $x^{\lambda}$ l'espressione del tensore
+metrico~\eqref{eq:tensore-metrico} abbiamo
+\begin{equation}
+  \partial_{\lambda}g_{\mu\nu}
+  = \parder{\xi^{\alpha}}{x^{\lambda},x^{\mu}} \parder{\xi^{\beta}}{x^{\nu}}
+  \eta_{\alpha\beta}
+  + \parder{\xi^{\alpha}}{x^{\mu}} \parder{\xi^{\beta}}{x^{\lambda},x^{\nu}}
+  \eta_{\alpha\beta}.
+\end{equation}
+Osserviamo che dalla definizione di connessione
+affine~\eqref{eq:connessione-affine} risulta
+\begin{equation}
+  \parder{\xi^{\alpha}}{x^{\lambda}}\tensor{\Gamma}{^{\lambda}_{\mu\nu}}
+  = \parder{\xi^{\alpha}}{x^{\mu},x^{\nu}},
+\end{equation}
+quindi
+\begin{equation}
+  \begin{split}
+    \partial_{\lambda}g_{\mu\nu} &=
+    \tensor{\Gamma}{^{\rho}_{\lambda\mu}} \parder{\xi^{\alpha}}{x^{\rho}}
+    \parder{\xi^{\beta}}{x^{\nu}} \eta_{\alpha\beta} +
+    \tensor{\Gamma}{^{\rho}_{\lambda\nu}} \parder{\xi^{\alpha}}{x^{\mu}}
+    \parder{\xi^{\beta}}{x^{\rho}}
+    \eta_{\alpha\beta} \\
+    &= \tensor{\Gamma}{^{\rho}_{\lambda\mu}}g_{\rho\nu} +
+    \tensor{\Gamma}{^{\rho}_{\lambda\nu}}g_{\rho\mu}.
+  \end{split}
+\end{equation}
+Calcolando in maniera $\partial_{\mu}g_{\lambda\nu}$ e
+$\partial_{\nu}g_{\mu\lambda}$ si giunge all'equazione
+\begin{equation}
+  \begin{split}
+    \partial_{\lambda}g_{\mu\nu} + \partial_{\mu}g_{\lambda\nu}
+    - \partial_{\nu}g_{\mu\lambda} &=
+    \tensor{\Gamma}{^{\rho}_{\lambda\mu}}g_{\rho\nu} +
+    \tensor{\Gamma}{^{\rho}_{\lambda\nu}}g_{\rho\mu} +
+    \tensor{\Gamma}{^{\rho}_{\mu\lambda}}g_{\rho_{\nu}} +
+    \tensor{\Gamma}{^{\rho}_{\mu\nu}}g_{\rho\lambda} \\
+    &- \tensor{\Gamma}{^{\rho}_{\nu\mu}}g_{\rho\lambda} -
+    \tensor{\Gamma}{^{\rho}_{\nu\lambda}}g_{\rho\mu} \\
+    &= 2g_{\rho\nu} \tensor{\Gamma}{^{\rho}_{\lambda\mu}},
+  \end{split}
+\end{equation}
+ricordando che $g_{\mu\nu}$ e $\tensor{\Gamma}{^{\rho}_{\mu\nu}}$ sono
+simmetrici per scambi degli indici $\mu$ e $\nu$.  Definiamo la matrice
+$g^{\nu\sigma}$ come l'inversa di $g_{\nu\sigma}$, cioè
+$g^{\nu\sigma}g_{\rho\nu} = \tensor{\delta}{^{\sigma}_{\rho}}$, allora,
+moltiplicando l'equazione precedente per $g^{\nu\sigma}$ otteniamo
+\begin{equation}
+  \begin{aligned}
+    &g^{\nu\sigma}(\partial_{\lambda}g_{\mu\nu} + \partial_{\mu}g_{\lambda\nu}
+    - \partial_{\nu}g_{\mu\lambda}) = 2\tensor{\Gamma}{^{\sigma}_{\lambda\mu}}
+    \iff \\
+    &\tensor{\Gamma}{^{\sigma}_{\lambda\mu}} =
+    \frac{1}{2} g^{\nu\sigma} (\partial_{\lambda}g_{\mu\nu}
+    + \partial_{\mu}g_{\lambda\nu} - \partial_{\nu}g_{\lambda\mu}).
+  \end{aligned}
+\end{equation}
+
+\section{Limite newtoniano dell'equazione del moto}
+\label{sec:limite-newtoniano}
+
+Vogliamo vedere come l'equazione del moto~\eqref{eq:geodesica} di una particella
+all'interno di un campo gravitazionale si riduce considerando il limite
+newtoniano, vale a dire nelle condizioni
+\begin{itemize}
+\item il campo gravitazionale è debole, cioè può essere considerato come una
+  perturbazione dello spazio-tempo piatto;
+\item il campo gravitazionale inoltre è stazionario;
+\item la velocità della particella è molto più piccola di quella della luce.
+\end{itemize}
+La prima condizione può essere formalizzata dicendo che il tensore metrico
+$g_{\mu\nu}$ deve differire di poco dal tensore di Minkowski dello spazio-tempo
+piatto
+\begin{equation}
+  g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu},
+\end{equation}
+con $\abs{h_{\mu\nu}} \ll 1$.  Calcoliamo la connessione affine al primo ordine
+della perturbazione $h_{\mu\nu}$
+\begin{equation}
+  \label{eq:christoffel-approx}
+  \tensor{\Gamma}{^{\sigma}_{\mu\nu}} = \frac{1}{2}g^{\lambda\sigma}
+  (\partial_{\mu}g_{\nu\lambda} + \partial_{\nu}g_{\mu\lambda}
+  - \partial_{\lambda}g_{\mu\nu}) \approx \frac{1}{2}\eta^{\lambda\sigma}
+  (\partial_{\mu}h_{\nu\lambda} + \partial_{\nu}h_{\mu\lambda}
+  - \partial_{\lambda}h_{\mu\nu}).
+\end{equation}
+La terza condizione può essere formalizzata come
+\begin{equation}
+  \toder{x^{i}}{\tau} \ll \toder{t}{\tau},
+\end{equation}
+quindi l'equazione della geodesica si riduce a
+\begin{equation}
+  \label{eq:geodesica-approx}
+  \begin{split}
+    0 &= \toder[2]{x^{\sigma}}{\tau} + \tensor{\Gamma}{^{\sigma}_{\lambda\mu}}
+    \toder{x^{\lambda}}{\tau} \toder{x^{\mu}}{\tau} \\
+    &= \toder[2]{x^{\sigma}}{\tau} + \tensor{\Gamma}{^{\sigma}_{00}} \Big(
+    \toder{t}{\tau} \Big)^{2} + 2\tensor{\Gamma}{^{\sigma}_{0i}} \toder{t}{\tau}
+    \toder{x^{i}}{\tau} + \tensor{\Gamma}{^{\sigma}_{ij}} \toder{x^{i}}{\tau}
+    \toder{x^{j}}{\tau} \\
+    &\approx \toder[2]{x^{\sigma}}{\tau} + \tensor{\Gamma}{^{\sigma}_{00}} \Big(
+    \toder{t}{\tau} \Big)^{2}.
+  \end{split}
+\end{equation}
+Dalla~\eqref{eq:christoffel-approx} risulta
+\begin{equation}
+  \tensor{\Gamma}{^{\sigma}_{00}} \approx
+  \frac{1}{2}\eta^{\lambda\sigma}(\partial_{0}h_{0\lambda}
+  + \partial_{0}h_{0\lambda} - \partial_{\lambda}h_{00}) =
+  -\frac{1}{2}\eta^{\lambda\sigma} \partial_{\lambda}h_{00},
+\end{equation}
+in quanto le derivate temporali di $h_{\mu\nu}$ sono nulle in base alla seconda
+condizione che descrive il limite newtoniano.  Notiamo che per $\sigma=0$
+$\tensor{\Gamma}{^{0}_{00}}=0$.  La~\eqref{eq:geodesica-approx} corrisponde, al
+variare di $\sigma$, alle equazioni
+\begin{subequations}
+  \begin{align}
+    \toder[2]{t}{\tau} &= 0 &\text{per $\sigma = 0$}, \\
+    \toder[2]{x^{i}}{\tau} &= \frac{1}{2} \Big( \toder{t}{\tau} \Big)^{2} \nabla
+    h_{00} &\text{per $\sigma = i$}.
+  \end{align}
+\end{subequations}
+La seconda equazione ci dice che $\ltoder{t}{\tau}$ è una costante, mentre dalla
+prima, dividendo per $(\ltoder{t}{\tau})^{2}$, abbiamo
+\begin{equation}
+  \toder[2]{\bm{x}}{t} = \frac{1}{2}\nabla h_{00}.
+\end{equation}
+L'equazione newtoniana del moto è
+\begin{equation}
+  \bm{a}_{\textup{N}} = \toder[2]{\bm{x}}{t} = -\nabla\phi,
+\end{equation}
+in cui $\phi$ è il potenziale del campo gravitazionale che a distanza $r$ da un
+corpo sferico di massa $M$ assume l'espressione $\phi = -GM/r$.  Confrontando le
+due equazioni precedenti troviamo
+\begin{equation}
+  h_{00} = -2\phi + \text{costante}.
+\end{equation}
+A grandi distanze dal corpo, cioè nel limite $r \to \infty$, il potenziale
+$\phi$ si annulla, il campo gravitazionale è assente e il tensore metrico
+$g_{\mu\nu}$ deve tendere al tensore di Minkowski $\eta_{\mu\nu}$ dello
+spazio-tempo piatto, cioè si devono annullare tutte le componenti di
+$h_{\mu\nu}$.  Pertanto ricaviamo che la costante deve essere uguale a $0$ e
+$h_{00} = -2\phi$ o, ripristinando la velocità $c$ della luce  nel vuoto,
+\begin{equation}
+  h_{00} = -\frac{2\phi}{c^{2}} = \frac{2GM}{rc^{2}} = \frac{r_{\textup{S}}}{r},
+\end{equation}
+in cui
+\begin{equation}
+  r_{\textup{S}} = \frac{2GM}{c^{2}}
+\end{equation}
+è il \index{raggio!di Schwarzschild}\emph{raggio di Schwarzschild} del corpo che
+genera il campo gravitazionale.  Dunque
+\begin{equation}
+  g_{00} = \eta_{00} + h_{00} = - \Big(1 - \frac{2GM}{rc^{2}} \Big)
+\end{equation}
+e la quantità $h_{00} = r_{\textup{S}}/r$ è una misura delle deviazioni della
+relatività generale rispetto alle previsioni della gravità newtoniana.
+% TODO: fare la tabellina con il valore del raggio di Schwarzschild per alcuni
+% corpi.
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../astrofisica-teorica"
+%%% fill-column: 80
+%%% End:

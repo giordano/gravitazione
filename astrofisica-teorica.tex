@@ -5,14 +5,14 @@
 \usepackage[italian]{babel}
 
 %%%%% Pacchetti caricati
+% \usepackage[autostyle=true]{csquotes}
+% \usepackage[style=numeric,hyperref,abbreviate=false,backend=biber]{biblatex}
 \usepackage{fancyhdr,emptypage}
 \usepackage{tensor} % per rappresentare i tensori
 \usepackage[font=small,format=hang,labelfont=bf,textformat=period]{caption}
 % per tabelle e figure
 \usepackage{booktabs,graphicx,subfig}
 \usepackage{tikz,tikz-3dplot}
-% \usepackage[autostyle=true]{csquotes}
-% \usepackage[style=numeric,hyperref,abbreviate=false,backend=biber]{biblatex}
 % `mathtools' serve per definire la norma e il valore assoluto
 \usepackage{mathtools}
 % pacchetti matematici dell'American Mathematical Society
@@ -75,6 +75,11 @@
 % varianti
 \renewcommand{\phi}{\varphi}
 \renewcommand{\epsilon}{\varepsilon}
+
+% comando per evidenziare le sezioni da completare o espandere.  NOTA: è un
+% comando provvisorio, serve solo durante la scrittura del testo, ricordarsi di
+% eliminarlo quando non serve più.
+\newcommand{\completare}[1]{\textcolor{red}{#1}}
 
 % Operatori
 \newcommand*{\dd}{\mathop{}\!\mathrm{d}} % Operatore differenziale \dd
@@ -168,6 +173,7 @@
 \cleardoublepage{}
 \mainmatter{}
 \input{capitoli/richiami_relativita_speciale}
+\input{capitoli/principio_equivalenza}
 
 \cleardoublepage{}
 \phantomsection

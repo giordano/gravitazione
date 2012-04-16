@@ -1,3 +1,4 @@
+\cleardoublepage
 \chapter{Richiami di relatività speciale}
 \label{cha:relativita-speciale}
 
@@ -53,7 +54,7 @@ con $R_{ij}$ costanti reali, e la matrice di componenti $R_{ij}$ è una matrice
 di rotazione.
 
 Nello spaziotempo di Minkowski definiamo le
-\index{coordinata controvariante}\emph{coordinate controvarianti} di un evento
+\index{coordinata!controvariante}\emph{coordinate controvarianti} di un evento
 che avviene al tempo $t$ nel punto dello spazio tridimensionale $\bm{x}$ come
 \begin{equation}
   \label{eq:coord-controvariante}
@@ -296,17 +297,17 @@ $\bm{v}$, come
 
 
 % TODO: scrivere qualcosa!
-\section{Conseguenze delle trasformazioni di Lorentz}
+\section{\completare{Conseguenze delle trasformazioni di Lorentz}}
 \label{sec:conseguenze-lorentz}
 
-\subsection{Contrazione delle lunghezze}
+\subsection{\completare{Contrazione delle lunghezze}}
 \label{sec:contrazione-lunghezze}
 
 % TODO: ricordarsi di definire il tempo proprio (servirà più avanti)
-\subsection{Dilatazione degli intervalli temporali}
+\subsection{\completare{Dilatazione degli intervalli temporali}}
 \label{sec:dilatazione-tempo}
 
-\subsection{Effetto Doppler}
+\subsection{\completare{Effetto Doppler}}
 \label{sec:effetto-doppler}
 
 \section{Calcolo tensoriale nello spazio di Minkowski}
@@ -687,6 +688,74 @@ di rango $2$ che non cambia per effetto di una trasformazione di Lorentz
 In maniera analoga si può dimostrare che $\tensor{\eta}{^{\alpha\beta}}$ è
 effettivamente un quadritensore controvariante di rango $2$ e che rimane
 immutato sotto una trasformazione di Lorentz.
+
+\subsubsection{Tensore di Levi-Civita}
+\label{sec:tensore-levi-civita}
+
+Il \index{tensore!di Levi-Civita}\emph{tensore di Levi-Civita}
+$\epsilon^{\alpha\beta\gamma\delta}$ è un quadritensore definito da
+\begin{equation}
+  \epsilon^{\alpha\beta\gamma\delta} =
+  \begin{cases}
+    +1 & \text{se $\alpha\beta\gamma\delta$ è una permutazione pari di $0123$,}
+    \\
+    -1 & \text{se $\alpha\beta\gamma\delta$ è una permutazione dispari di
+      $0123$,} \\
+    0 & \text{altrimenti.}
+  \end{cases}
+\end{equation}
+Si può far vedere che il tensore così definito non varia cambiando sistema di
+riferimento inerziale.
+
+\subsubsection{Tensore nullo}
+\label{sec:tensore-nullo}
+
+Dati due arbitrari quadritensore dello stesso tipo
+$\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ e
+$\tensor*{B}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$, se in un
+certo sistema di riferimento inerziale risulta
+\begin{equation}
+  \label{eq:A-uguale-B}
+  \tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} =
+  \tensor*{B}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}
+\end{equation}
+è possibile definire un quadritensore
+$\tensor*{Z}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$, detto
+\index{tensore!nullo}\emph{tensore nullo}, invariante per trasformazioni di
+Lorentz come la differenza fra i due quadritensori:
+\begin{equation}
+  \tensor*{Z}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} =
+  \tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} -
+  \tensor*{B}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}.
+\end{equation}
+Dalla~\eqref{eq:A-uguale-B} ricaviamo che tutte le componenti di
+$\tensor*{Z}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ sono
+nulle, quindi anche il quadritensore
+$\tensor*{{Z'}}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} =
+\tensor*{{A'}}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} -
+\tensor*{{B'}}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$
+ottenuto dalla trasformazione di Lorentz
+\begin{equation}
+  \tensor*{{Z'}}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} =
+  \tensor{\Lambda}{^{\alpha_{1}}_{\mu_{1}}} \cdots
+  \tensor{\Lambda}{^{\alpha_{p}}_{\mu_{p}}}
+  \tensor{\Lambda}{_{\beta_{1}}^{\nu_{1}}} \cdots
+  \tensor{\Lambda}{_{\beta_{q}}^{\nu_{q}}}
+  \tensor*{Z}{^{\mu_{1}\dots\mu_{p}}_{\nu_{1}\dots\nu_{q}}}
+\end{equation}
+avrà tutte le componenti nulle, così che nel nuovo sistema di riferimento
+inerziale risulta anche
+\begin{equation}
+  \tensor*{{A'}}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} =
+  \tensor*{{B'}}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}.
+\end{equation}
+Questa proprietà del tensore nullo è molto importante poiché ci dice che
+\emph{se due quadritensori, dello stesso tipo, sono uguali in un sistema di
+  riferimento inerziale, saranno uguali in qualsiasi sistema di riferimento
+  inerziale ottenuto dal primo mediante una trasformazione di Lorentz}.
+Da questa affermazione deduciamo inoltre che
+\emph{qualsiasi legge fisica espressa come un'uguaglianza fra quadritensori è
+  automaticamente invariante per trasformazioni di Lorentz}.
 
 \section{Dinamica particellare}
 \label{sec:dinamica-particellare}
