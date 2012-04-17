@@ -2,7 +2,6 @@
 \chapter{Il principio di equivalenza}
 \label{cha:principio-equivalenza}
 
-
 \completare{Esperimento ideale di Einstein, uguaglianza massa inerziale e
   gravitazionale.}
 
@@ -20,9 +19,9 @@ leggi della relatività speciale.
 \label{sec:equazione-moto}
 
 Consideriamo una particella in caduta libera all'interno di un campo
-gravitazionale $\bm{g}$.  In un sistema di riferimento $\xi^{\alpha}$ in cui
-questa si muove di moto rettilineo uniforme nello spazio tempo l'equazione del
-moto è
+gravitazionale $\bm{g}$.  In un sistema di riferimento, di coordinate
+$\xi^{\alpha}$, localmente inerziale in cui la particella si muove di moto
+rettilineo uniforme nello spazio-tempo, l'equazione del moto è
 \begin{equation}
   \label{eq:moto-caduta-libera}
   \toder[2]{\xi^{\alpha}}{\tau} = 0,
@@ -81,7 +80,7 @@ oppure, utilizzando la quadrivelocità $u^{\alpha} = \ltoder{x^{\alpha}}{\tau}$,
   \toder[2]{x^{\lambda}}{\tau} + \tensor{\Gamma}{^{\lambda}_{\mu\nu}}
   u^{\nu} u^{\nu} = 0.
 \end{equation}
-La~\eqref{eq:geodesica} è chiama \emph{equazione della geodesica}.
+La~\eqref{eq:geodesica} è chiamata \emph{equazione della geodesica}.
 $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ è un insieme di $4^{3} = 64$ quantità che
 tuttavia, come vedremo, % TODO: farlo vedere oppure non dire "come vedremo" :-P
 non si trasformano, in generale, come un quadritensore di rango $3$.  Dalla
@@ -116,7 +115,7 @@ Minkowski $\eta_{\alpha\beta}$ è simmetrico, infatti
   = g_{\mu\nu}.
 \end{equation}
 
-\section{Relazione fra $g_{\mu\nu}$ e $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$}
+\section{Relazione fra tensore metrico e connessione affine}
 \label{sec:relazione-g-Gamma}
 
 Derivando rispetto a $x^{\lambda}$ l'espressione del tensore
@@ -166,7 +165,8 @@ ricordando che $g_{\mu\nu}$ e $\tensor{\Gamma}{^{\rho}_{\mu\nu}}$ sono
 simmetrici per scambi degli indici $\mu$ e $\nu$.  Definiamo la matrice
 $g^{\nu\sigma}$ come l'inversa di $g_{\nu\sigma}$, cioè
 $g^{\nu\sigma}g_{\rho\nu} = \tensor{\delta}{^{\sigma}_{\rho}}$, allora,
-moltiplicando l'equazione precedente per $g^{\nu\sigma}$ otteniamo
+moltiplicando l'equazione precedente per $g^{\nu\sigma}$ otteniamo la seguente
+relazione fra il tensore metrico e la connessione affine
 \begin{equation}
   \begin{aligned}
     &g^{\nu\sigma}(\partial_{\lambda}g_{\mu\nu} + \partial_{\mu}g_{\lambda\nu}
@@ -232,14 +232,14 @@ Dalla~\eqref{eq:christoffel-approx} risulta
   -\frac{1}{2}\eta^{\lambda\sigma} \partial_{\lambda}h_{00},
 \end{equation}
 in quanto le derivate temporali di $h_{\mu\nu}$ sono nulle in base alla seconda
-condizione che descrive il limite newtoniano.  Notiamo che per $\sigma=0$
+condizione che descrive il limite newtoniano.  Notiamo che per $\sigma=0$ si ha
 $\tensor{\Gamma}{^{0}_{00}}=0$.  La~\eqref{eq:geodesica-approx} corrisponde, al
 variare di $\sigma$, alle equazioni
 \begin{subequations}
   \begin{align}
     \toder[2]{t}{\tau} &= 0 &\text{per $\sigma = 0$}, \\
-    \toder[2]{x^{i}}{\tau} &= \frac{1}{2} \Big( \toder{t}{\tau} \Big)^{2} \nabla
-    h_{00} &\text{per $\sigma = i$}.
+    \toder[2]{x^{i}}{\tau} &= \frac{1}{2} \Big( \toder{t}{\tau} \Big)^{2}
+    (\nabla h_{00})_{i} &\text{per $\sigma = i$}.
   \end{align}
 \end{subequations}
 La seconda equazione ci dice che $\ltoder{t}{\tau}$ è una costante, mentre dalla
@@ -264,21 +264,47 @@ spazio-tempo piatto, cioè si devono annullare tutte le componenti di
 $h_{\mu\nu}$.  Pertanto ricaviamo che la costante deve essere uguale a $0$ e
 $h_{00} = -2\phi$ o, ripristinando la velocità $c$ della luce  nel vuoto,
 \begin{equation}
-  h_{00} = -\frac{2\phi}{c^{2}} = \frac{2GM}{rc^{2}} = \frac{r_{\textup{S}}}{r},
+  h_{00} = -\frac{2\phi}{c^{2}} = \frac{2GM}{rc^{2}} = \frac{r_{\textup{g}}}{r},
 \end{equation}
 in cui
 \begin{equation}
-  r_{\textup{S}} = \frac{2GM}{c^{2}}
+  r_{\textup{g}} = \frac{2GM}{c^{2}}
 \end{equation}
 è il \index{raggio!di Schwarzschild}\emph{raggio di Schwarzschild} del corpo che
 genera il campo gravitazionale.  Dunque
 \begin{equation}
   g_{00} = \eta_{00} + h_{00} = - \Big(1 - \frac{2GM}{rc^{2}} \Big)
 \end{equation}
-e la quantità $h_{00} = r_{\textup{S}}/r$ è una misura delle deviazioni della
+e la quantità $h_{00} = r_{\textup{g}}/r$ è una misura delle deviazioni della
 relatività generale rispetto alle previsioni della gravità newtoniana.
-% TODO: fare la tabellina con il valore del raggio di Schwarzschild per alcuni
-% corpi.
+
+\begin{table}
+  \centering
+  \caption[Valori del raggio di Schwarzschild per diversi corpi]{Valori del
+    raggio di Schwarzschild $r_{\textup{g}}$ per diversi oggetti e valore della
+    correzione $r_{\textup{g}}/r$ sulla superficie dei corpi.  $r$ è il raggio
+    degli oggetti}
+  \label{tab:Schwarzschild}
+  \begin{tabular}{lSSSS}
+    \toprule
+    corpo & {$r_{\textup{g}}$ (\si{\metre})} & {$r$ (\si{\metre})} &
+    {$r_{\textup{g}}/r$} \\
+    \midrule
+    Terra              & 8.7e-3 & 6.4e6 & 1.4e-9 \\
+    Sole               & 3e3    & 7e8   & 4.3e-6 \\
+    nana bianca        & 3e3    & 1e6   & 3e-3   \\
+    stella di neutroni & 3e3    & 1e4   & 0.3    \\
+    buco nero stellare & 3e4    & 3e4   & 1      \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Nella tabella~\ref{tab:Schwarzschild} sono riportati i valori delle deviazioni
+$r_{\textup{g}}/r$ dalla gravitazione newtoniana sulla superficie di alcuni
+corpi.  Mentre per la Terra, il Sole e le nane bianche queste correzioni sono
+molto piccole, non è possibile descrivere le vicinanze di corpi come le stelle
+di neutroni o i buchi neri utilizzando la fisica newtoniana ma bisogna tenere
+necessariamente in considerazione la relatività generale.
+
 
 
 %%% Local Variables:
