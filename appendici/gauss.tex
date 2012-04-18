@@ -1,0 +1,69 @@
+\cleardoublepage
+\chapter{Il teorema di Gauss nello spazio di Minkowski}
+\label{cha:teorema-gauss}
+
+Il teorema di Gauss in $\M$ mette in relazione l'integrale di volume
+(spaziotemporale) della quadridivergenza di un quadrivettore $V^{\alpha}(x)$ con
+un integrale di ipersuperficie di $V^{\alpha}(x)$
+\begin{equation}
+  \int\limits_{\Omega} \partial_{\alpha}V^{\alpha}(x) \dd^{4} x =
+  \int\limits_{\partial\Omega} V^{\alpha}(x) \dd\Sigma_{\alpha},
+\end{equation}
+in cui $\partial\Omega$ è l'ipersuperficie di contorno del volume
+quadrimensionale $\Omega$. Il quadrivettore $\dd\Sigma_{\alpha}$ è l'elemento di
+ipersuperficie
+\begin{equation}
+  \dd\Sigma_{\alpha} = (\dd x^{1}\dd x^{2}\dd x^{3}, \dd x^{0}\dd x^{2}\dd
+  x^{3}, \dd x^{0}\dd x^{1}\dd x^{3}, \dd x^{0}\dd x^{1}\dd x^{2})
+\end{equation}
+che ha come direzione la normale all'ipersuperficie e come modulo la sua area
+$\dd\Sigma$.
+
+% TODO: fare un semplice disegno come quello che ha fatto Ingrosso a lezione
+% (11/04/2012) per aiutare a capire la geometria del sistema.
+Questo teorema ha un'utile applicazione per quanto riguarda i quadrivettori
+$V^{\alpha}(x)$ con quadridivergenza nulla
+\begin{equation}
+  \partial_{\alpha}V^{\alpha}(x) = 0.
+\end{equation}
+Integriamo $\partial_{\alpha}V^{\alpha}(x)$ sul volume $\Omega$ delimitato da
+due ipersuperfici a tempo costante $\Sigma_{1}$ e $\Sigma_{2}$ (cioè individuate
+rispettivamente dalle equazioni $t = t_{1}$ e $t = t_{2}$, con $t_{1}$ e $t_{2}$
+costanti) e da un'ipersuperficie $\Sigma_{\infty}$ posta all'infinito spaziale.
+Per il teorema di Gauss risulta
+\begin{equation}
+  0 = \int\limits_{\Omega} \partial_{\alpha}V^{\alpha}(x) \dd^{4}x =
+  \int\limits_{\Sigma_{2}} V^{\alpha}(x) \dd\Sigma_{\alpha} -
+  \int\limits_{\Sigma_{1}} V^{\alpha}(x) \dd\Sigma_{\alpha} +
+  \int\limits_{\Sigma_{\infty}} V^{\alpha}(x) \dd\Sigma_{\alpha}.
+\end{equation}
+Il segno meno davanti all'integrale su $\Sigma_{1}$ è dovuto al fatto che
+abbiamo orientato entrambe le normali a $\Sigma_{1}$ e $\Sigma_{2}$ nel verso
+crescente del tempo.  Se $V^{\alpha}(x)$ tende abbastanza rapidamente a $0$
+all'infinito spaziale, il terzo integrale nell'equazione precedente è nullo e
+quindi
+\begin{equation}
+  \int\limits_{\Sigma_{2}} V^{\alpha}(x) \dd\Sigma_{\alpha} =
+  \int\limits_{\Sigma_{1}} V^{\alpha}(x) \dd\Sigma_{\alpha}.
+\end{equation}
+Per l'arbitrarietà della scelta delle ipersuperfici $\Sigma_{1}$ e $\Sigma_{2}$,
+ciascuna con la coordinata temporale fissata, dobbiamo concludere che
+l'integrale
+\begin{equation}
+  I(\Sigma) = \int\limits_{\Sigma} V^{\alpha}(x) \dd\Sigma_{\alpha}
+\end{equation}
+non dipende dall'ipersuperficie $\Sigma$, cioè è una costante rispetto al tempo.
+In particolare, se scegliamo un sistema di riferimento nel quale
+$\dd\Sigma_{\alpha} = (\dd^{3} x, 0, 0, 0)$ allora abbiamo mostrato che
+\begin{equation}
+  \partial_{\alpha}V^{\alpha}(x) = 0 \implies \int V^{0}(x) \dd^{3} x =
+  \text{costante in $t$}
+\end{equation}
+se l'integrale è esteso a una regione spaziale sufficientemente grande in modo
+che $V^{\alpha}(x)$ si annulla sul suo bordo.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../astrofisica-teorica"
+%%% fill-column: 80
+%%% End: 

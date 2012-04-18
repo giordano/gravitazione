@@ -17,11 +17,11 @@ speciale è uno spazio quadrimensionale piatto, composto da una coordinata
 temporale e tre spaziali, chiamato \index{spazio!di
   Minkowski}\emph{spazio
   di Minkowski}
-e che indicheremo con il simbolo $\numberset{M}$.  Un elemento dello spazio di
-Minkowski è chiamato \index{evento}\emph{evento}.  Lo spazio di Minkowski si
-distingue dal corrispondente spazio euclideo quadrimensionale $\R^{4}$ e anche
-dallo spazio ordinario tridimensionale $\R^{3}$ in quanto utilizza una metrica
-differente da quelle usualmente adottate in $\R^{3}$ ed $\R^{4}$.
+e che indicheremo con il simbolo $\M$.  Un elemento dello spazio di Minkowski è
+chiamato \index{evento}\emph{evento}.  Lo spazio di Minkowski si distingue dal
+corrispondente spazio euclideo quadrimensionale $\R^{4}$ e anche dallo spazio
+ordinario tridimensionale $\R^{3}$ in quanto utilizza una metrica differente da
+quelle usualmente adottate in $\R^{3}$ ed $\R^{4}$.
 
 Nello spazio ordinario $\R^{3}$ si definisce la metrica, ovvero la distanza fra
 due punti infinitesimamente vicini di coordinate
@@ -98,18 +98,17 @@ coordinate
 \end{equation}
 con $a^{\alpha}$ costanti, che mantenga invariata la distanza fra due eventi,
 cioè la metrica $\dd\tau^{2} = -\eta_{\alpha\beta}\dd x^{\alpha}\dd x^{\beta}$
-in $\numberset{M}$.  Richiediamo che la trasformazione
-$x^{\alpha} \to x'^{\alpha}$ sia lineare per rispettare la condizione di
-omogeneità dello spazio (la lunghezza di una sbarra non deve dipendere dalla
-posizione degli estremi), del tempo (la lunghezza della sbarra non deve
-dipendere dall'istante di tempo in cui la misuriamo) e di isotropia dello spazio
-(la lunghezza della sbarra non deve dipendere neanche dalla direzione in cui la
-guardiamo).  Inoltre, in questo modo un moto rettilineo uniforme in un sistema
-di riferimento inerziale risulta è ancora un moto rettilineo uniforme anche
-nell'altro sistema di riferimento inerziale.  La richiesta di invarianza della
-metrica, invece, permette di soddisfare il principio di relatività.  I
-differenziali delle coordinate nel nuovo sistema si ricavano
-dalla~\eqref{eq:trasformazione-lineare}
+in $\M$.  Richiediamo che la trasformazione $x^{\alpha} \to x'^{\alpha}$ sia
+lineare per rispettare la condizione di omogeneità dello spazio (la lunghezza di
+una sbarra non deve dipendere dalla posizione degli estremi), del tempo (la
+lunghezza della sbarra non deve dipendere dall'istante di tempo in cui la
+misuriamo) e di isotropia dello spazio (la lunghezza della sbarra non deve
+dipendere neanche dalla direzione in cui la guardiamo).  Inoltre, in questo modo
+un moto rettilineo uniforme in un sistema di riferimento inerziale risulta è
+ancora un moto rettilineo uniforme anche nell'altro sistema di riferimento
+inerziale.  La richiesta di invarianza della metrica, invece, permette di
+soddisfare il principio di relatività.  I differenziali delle coordinate nel
+nuovo sistema si ricavano dalla~\eqref{eq:trasformazione-lineare}
 \begin{equation}
   \label{eq:trasformazione-differenziali}
   \dd x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta}.
@@ -894,6 +893,89 @@ cioè
 % parte da un sistema di riferimento in cui la particella si muove con velocità
 % `v', noi invece siamo partiti da un sistema in cui la particella è a riposo.
 
+\section{Formulazione covariante dell'elettrodinamica}
+\label{sec:elettrodinamica-covariante}
+
+In questo paragrafo vogliamo far vedere come il formalismo della relatività
+speciale permetta di riscrivere le leggi dell'elettrodinamica, e in particolare
+le equazioni di Maxwell, in modo manifestamente covariante (o invariante in
+forma) rispetto alle trasformazioni di Lorentz.
+
+Consideriamo, per semplicità, una distribuzione di particelle in cui l'$n$-esima
+particella ha carica $e_{n}$ e occupa, in un certo sistema di riferimento
+tridimensionale, la posizione $\bm{x}_{n}$.  La densità di carica di questa
+distribuzione di particelle al tempo $t$ è data da
+\begin{equation}
+  \rho(\bm{x},t) = \sum_{n} e_{n}\delta^{3}(\bm{x} - \bm{x}_{n}(t)),
+\end{equation}
+mentre la densità di corrente è
+\begin{equation}
+  \bm{J}(\bm{x},t) = \sum_{n} e_{n}\delta^{3}(\bm{x} - \bm{x}_{n}(t))
+  \toder{\bm{x}_{n}(t)}{t}.
+\end{equation}
+Abbiamo qui utilizzato la \index{delta!di Dirac
+  tridimensionale}\emph{delta
+  di Dirac tridimensionale}
+$\delta^{3}(\bm{x} - \bm{x}')$, cioè quella distribuzione che per ogni funzione
+$f$ liscia di tre variabili reali ha la proprietà
+\begin{equation}
+  \int\limits_{\R^{3}} f(\bm{x})\delta^{3}(\bm{x} - \bm{x}') \dd^{3} x =
+  f(\bm{x}').
+\end{equation}
+Possiamo mettere insieme le due quantità $\rho$ e $\bm{J}$ in un quadrivettore
+$J^{\alpha}$ che chiameremo \index{quadricorrente}\emph{quadricorrente}
+\begin{equation}
+  J^{\alpha}(x) = (\rho, \bm{J}) = \sum_{n} e_{n}\delta^{3}(\bm{x} -
+  \bm{x}_{n}(t)) \toder{x^{\alpha}}{t}.
+\end{equation}
+Introduciamo adesso la \index{delta!di Dirac
+  quadrimensionale}\emph{delta
+  di Dirac quadrimensionale}
+$\delta^{4}(x - x') = \delta(t - t')\delta^{3}(\bm{x} - \bm{x}')$, vale a dire
+la distribuzione che per ogni funzione $f$ liscia con dominio in $\M$ soddisfa
+la proprietà
+\begin{equation}
+  \int\limits_{\M} f(x)\delta^{4}(x - y)\dd^{4} x = f(y).
+\end{equation}
+Moltiplicando $J^{\alpha}(x)$ per la delta di Dirac $\delta(t - t')$ e
+integrando sul tempo ricaviamo la seguente espressione
+\begin{equation}
+  \begin{split}
+    J^{\alpha}(x) &= \sum_{n} e_{n}\delta^{3}(\bm{x} - \bm{x}_{n}(t))
+    \toder{x^{\alpha}}{t} \\
+    &= \int_{-\infty}^{+\infty}\dd t' \delta(t - t') \sum_{n}
+    e_{n}\delta^{3}(\bm{x} - \bm{x}_{n}(t')) \toder{x^{\alpha}}{t'} \\
+    &= \int_{-\infty}^{+\infty} \dd \tau \sum_{n} e_{n} \delta^{4}(x -
+    x_{n}(\tau)) \toder{x^{\alpha}}{\tau}.
+  \end{split}
+\end{equation}
+Nell'ultimo passaggio abbiamo effettuato il cambiamento della variabile di
+integrazione da $t'$ all'invariante $\tau$.  Da questa espressione è evidente
+che $J^{\alpha}$ è un quadrivettore: $\dd \tau$ è uno scalare, così come la
+delta di Dirac $\delta^{4}(x - x_{n}(\tau))$, mentre $\ltoder{x^{\alpha}}{\tau}$
+è la quadrivelocità.
+
+In elettrodinamica classica si dimostra l'equazione di continuità
+\begin{equation}
+  \nabla\cdot\bm{J} + \parder{\rho}{t} = 0
+\end{equation}
+che, usando il formalismo relativistico, può essere riscritta in termini della
+quadricorrente come
+\begin{equation}
+  \partial_{\alpha}J^{\alpha} = 0.
+\end{equation}
+Applicando la conseguenza del teorema di Gauss nello spazio di Minkowski
+discussa nell'appendice~\ref{cha:teorema-gauss} alla quadricorrente abbiamo che
+la quantità
+\begin{equation}
+  Q = \int J^{0}\dd V = \int \rho \dd V
+\end{equation}
+è costante rispetto al tempo se l'integrale è esteso a una regione abbastanza
+grande dello spazio in modo da racchiudere tutte le cariche del sistema e che
+sul suo bordo la quadricorrente sia nulla.  Poiché $\rho$ è la densità di
+carica, la quantità $Q$ rappresenta la carica totale del sistema, pertanto
+dall'equazione di continuità discende, grazie al teorema di Gauss, la
+conservazione della carica.
 
 %%% Local Variables:
 %%% mode: latex
