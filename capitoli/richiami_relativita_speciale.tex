@@ -86,12 +86,15 @@ in cui $\tensor{\eta}{_{\alpha\beta}}$ è il
     0  & 0  & 0  & +1
   \end{pmatrix}.
 \end{equation}
-Questo tensore definisce una metrica pseudo euclidea con segnatura $(-+++)$,
+Questo tensore definisce una metrica pseudo euclidea con segnatura
+$(-+++)$,\footnote{In questo testo, se non diversamente specificato, abbiamo
+  adottato questa segnatura, ma non è l'unica possibile nello spazio di
+  Minkowski.  Un'altra segnatura largamente usata è $(+---)$.}
 invece in $\R^{4}$ abbiamo visto che si utilizza la segnatura $(++++)$.  Una
 \index{trasformazione!di Lorentz}\emph{trasformazione di Lorentz} non omogenea è
 una trasformazione lineare nello spazio di Minkowski da un sistema di
-riferimento di coordinate $x^{\alpha}$ a un altro sistema di riferimento di
-coordinate
+riferimento inerziale di coordinate $x^{\alpha}$ a un altro sistema di
+riferimento inerziale di coordinate
 \begin{equation}
   \label{eq:trasformazione-lineare}
   x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta} + a^{\alpha},
@@ -111,8 +114,13 @@ soddisfare il principio di relatività.  I differenziali delle coordinate nel
 nuovo sistema si ricavano dalla~\eqref{eq:trasformazione-lineare}
 \begin{equation}
   \label{eq:trasformazione-differenziali}
-  \dd x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta}.
+  \dd x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}\dd x^{\beta}.
 \end{equation}
+Dall'equazione precedente abbiamo inoltre
+\begin{equation}
+  \tensor{\Lambda}{^{\alpha}_{\beta}} = \parder{x'^{\alpha}}{x^{\beta}}.
+\end{equation}
+
 Affinché una trasformazione lineare~\eqref{eq:trasformazione-lineare} delle
 coordinate sia di Lorentz, cioè affinché conservi la metrica, deve valere
 \begin{equation}
@@ -320,9 +328,10 @@ quello curvo della relatività generale.
 
 Un \index{quadrivettore!controvariante}\emph{quadrivettore controvariante}
 $V^{\alpha} = (V^{0}, V^{1}, V^{2}, V^{3})$ è un insieme di quattro quantità
-che, mediante una trasformazione di Lorentz ristretta omogenea
+che, per effetto di una trasformazione di Lorentz ristretta omogenea
 $x^{\alpha} \to x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta}$, si
-trasformano come le componenti di $\dd x^{\alpha}$, vale a dire
+trasformano come le componenti di $\dd
+x^{\alpha}$~\eqref{eq:trasformazione-differenziali}, vale a dire
 \begin{equation}
   V^{\alpha} \to V'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}V^{\beta}.
 \end{equation}
@@ -391,10 +400,15 @@ da cui ricaviamo la trasformazione, rinominando gli indici,
   x'^{\alpha} \to x^{\alpha} = \tensor{\Lambda}{_{\beta}^{\alpha}}x'^{\beta} -
   a'^{\alpha}.
 \end{equation}
+Osserviamo inoltre che risulta
+\begin{equation}
+  \tensor{\Lambda}{_{\beta}^{\alpha}} = \parder{x^{\alpha}}{x'^{\beta}}.
+\end{equation}
 
 Possiamo passare da un quadrivettore controvariante
 $V^{\alpha} = (V^{0}, V^{i})$ al corrispondente quadrivettore covariante
-$V_{\alpha} = (V_{0}, V_{i})$ moltiplicandolo per il tensore metrico covariante
+$V_{\alpha} = (V_{0}, V_{i})$ moltiplicandolo per il tensore di Minkowski
+covariante
 \begin{equation}
   \label{eq:abbassamento-indice}
   \begin{split}
@@ -408,7 +422,7 @@ Pertanto, mediante questa operazione, chiamata a volte di
 \emph{abbassamento degli indici}, la componente temporale di un quadrivettore
 cambia segno mentre quelle spaziali rimangono immutate.  Analogamente si può
 effettuare l'\emph{innalzamento degli indici} di un quadrivettore covariante
-moltiplicandolo per il tensore metrico controvariante
+moltiplicandolo per il tensore di Minkowski controvariante
 \begin{equation}
   \label{eq:innalzamento-indice}
   U_{\alpha} \to U^{\alpha} = \tensor{\eta}{^{\alpha\beta}}U_{\beta}.
@@ -752,7 +766,7 @@ Questa proprietà del tensore nullo è molto importante poiché ci dice che
 \emph{se due quadritensori, dello stesso tipo, sono uguali in un sistema di
   riferimento inerziale, saranno uguali in qualsiasi sistema di riferimento
   inerziale ottenuto dal primo mediante una trasformazione di Lorentz}.
-Da questa affermazione deduciamo inoltre che
+Da questa affermazione deduciamo inoltre che\label{invarianza-lorentz}
 \emph{qualsiasi legge fisica espressa come un'uguaglianza fra quadritensori è
   automaticamente invariante per trasformazioni di Lorentz}.
 
@@ -901,6 +915,9 @@ speciale permetta di riscrivere le leggi dell'elettrodinamica, e in particolare
 le equazioni di Maxwell, in modo manifestamente covariante (o invariante in
 forma) rispetto alle trasformazioni di Lorentz.
 
+\subsection{Densità di corrente e di caria}
+\label{sec:densita-corrente-carica}
+
 Consideriamo, per semplicità, una distribuzione di particelle in cui l'$n$-esima
 particella ha carica $e_{n}$ e occupa, in un certo sistema di riferimento
 tridimensionale, la posizione $\bm{x}_{n}$.  La densità di carica di questa
@@ -976,6 +993,188 @@ sul suo bordo la quadricorrente sia nulla.  Poiché $\rho$ è la densità di
 carica, la quantità $Q$ rappresenta la carica totale del sistema, pertanto
 dall'equazione di continuità discende, grazie al teorema di Gauss, la
 conservazione della carica.
+
+\subsection{Le equazioni di Maxwell}
+\label{sec:equazioni-maxwell}
+
+Ricordiamo le equazioni di Maxwell
+\begin{subequations}
+  \begin{align}
+    \nabla \cdot \bm{E} &= \rho, \label{eq:maxwell-divE} \\
+    \nabla \times \bm{B} &= \bm{J} + \parder{\bm{E}}{t}, \label{eq:maxwell-rotB}
+    \\
+    \nabla \cdot \bm{B} &= 0, \label{eq:maxwell-divB} \\
+    \nabla \times \bm{E} &= -\parder{\bm{B}}{t}, \label{eq:maxwell-rotE}
+  \end{align}
+\end{subequations}
+in cui i campi elettrico $\bm{E}$ e magnetico $\bm{B}$ sono legati ai potenziali
+scalare $\phi$ e vettore $\bm{A}$ dalle relazioni
+\begin{subequations}
+  \label{eq:campi-potenziali}
+  \begin{align}
+    \bm{E} &= -\nabla\phi - \parder{\bm{A}}{t}, \\
+    \bm{B} &= \nabla \times \bm{A}.
+  \end{align}
+\end{subequations}
+Possiamo mettere insieme i due potenziali per formare un quadrivettore $A^{\mu}$
+(controvariante) chiamato
+\index{quadripotenziale
+  elettromagnetico}\emph{quadripotenziale elettromagnetico}
+\begin{equation}
+  A^{\mu} = (A^{0}, A^{i}) = (\phi, \bm{A}).
+\end{equation}
+Inoltre il quadripotenziale covariante è dato, come al solito, da
+\begin{equation}
+  A_{\mu} = \eta_{\mu\nu}A^{\nu} = (-A^{0}, A^{i}) = (-\phi, \bm{A}).
+\end{equation}
+Introduciamo
+il \index{tensore!del campo
+  elettromagnetico}\emph{tensore
+  del campo elettromagnetico} $F^{\mu\nu}$ definito dalla relazione
+\begin{equation}
+  F_{\alpha\beta} = \partial_{\alpha}A_{\beta} - \partial_{\beta}A_{\alpha}.
+\end{equation}
+Si può verificare che $F_{\alpha\beta}$ è un quadritensore di rango $2$
+completamente covariante, inoltre esso è antisimmetrico, infatti
+\begin{equation}
+  F_{\beta\alpha} = \partial_{\beta}A_{\alpha} - \partial_{\alpha}A_{\beta} =
+  -F_{\alpha\beta}.
+\end{equation}
+Di conseguenza le componenti diagonali $F_{\alpha\alpha}$ (senza sommare) sono
+nulle e le componenti indipendenti di questo quadritensore sono sei.
+Verifichiamo che queste componenti indipendenti corrispondono proprio alle sei
+componenti cartesiane dei campi $\bm{E}$ e $\bm{B}$.
+Dalle~\eqref{eq:campi-potenziali} abbiamo
+\begin{subequations}
+  \begin{align}
+    F_{0i} &= \partial_{0}A_{i} - \partial_{i}A_{0} = \parder{A_{i}}{t}
+    + \parder{\phi}{x^{i}} = -E_{i}, \\
+    F_{12} &= \partial_{1}A_{2} - \partial_{2}A_{1} = \parder{A_{y}}{x}
+    - \parder{A_{x}}{y} = B_{z}, \\
+    F_{13} &= \partial_{1}A_{3} - \partial_{3}A_{1} = \parder{A_{z}}{x}
+    - \parder{A_{x}}{z} = -B_{y}, \\
+    F_{23} &= \partial_{2}A_{3} - \partial_{3}A_{2} = \parder{A_{z}}{y}
+    - \parder{A_{y}}{z} = B_{x}.
+  \end{align}
+\end{subequations}
+L'espressione matriciale di $F_{\alpha\beta}$ è
+\begin{equation}
+  F_{\alpha\beta} =
+  \begin{pmatrix}
+    0     & -E_{x} & -E_{y} & -E_{z} \\
+    E_{x} & 0      & B_{z}  & -B_{y} \\
+    E_{y} & -B_{z} & 0      & B_{x}  \\
+    E_{z} & B_{y}  & -B_{x} & 0
+  \end{pmatrix}.
+\end{equation}
+Il tensore elettromagnetico completamente controvariante è dato da
+$F^{\alpha\beta} = \eta^{\alpha\gamma}\eta^{\beta\delta}F_{\gamma\delta}$ e
+risulta quindi $F^{0i} = -F_{0i}$, $F^{i0} = -F_{i0}$ e $F^{ij} = F_{ij}$.
+Usando le componenti del tensore elettromagnetico si può vedere come le
+componenti dei campi $\bm{E}$ e $\bm{B}$ si modificano per effetto di una
+trasformazione di Lorentz.
+
+A partire dal tensore del campo elettromagnetico è possibile costruire le due
+quantità invarianti (essendo contrazioni complete di quadritensori)
+\begin{subequations}
+  \begin{align}
+    F^{\alpha\beta}F_{\alpha\beta} &= -2(\bm{E}^{2} - \bm{B}^{2}) = 2(\bm{B}^{2}
+    - \bm{E}^{2}), \\
+    \epsilon_{\alpha\beta\gamma\delta}F^{\alpha\beta}F^{\gamma\delta} &= -2
+    \bm{E} \cdot \bm{B}.
+  \end{align}
+\end{subequations}
+Mentre $F^{\alpha\beta}F_{\alpha\beta}$ è uno scalare di Lorentz, la quantità
+$\epsilon_{\alpha\beta\gamma\delta}F^{\alpha\beta}F^{\gamma\delta}$ è uno
+pseudoscalare perché è il prodotto vettoriale del vettore polare $\bm{E}$ e del
+vettore assiale $\bm{B}$.
+
+Grazie al tensore del campo elettromagnetico $F^{^{\alpha\beta}}$ e alla
+quadricorrente $J^{\alpha}$ possiamo scrivere le quattro equazioni di Maxwell
+in forma covariante
+\begin{subequations}
+  \begin{align}
+    \partial_{\alpha}F^{\alpha\beta} &= -J^{\beta}, \label{eq:maxwell-cov1} \\
+    \epsilon^{\alpha\beta\gamma\delta} \partial_{\beta} F_{\gamma\delta} &=
+    0. \label{eq:maxwell-cov2}
+  \end{align}
+\end{subequations}
+La prima di queste equazioni equivale per $\beta=0$ alla~\eqref{eq:maxwell-divE}
+e per $\beta = i$ alle tre componenti della~\eqref{eq:maxwell-rotB}, la seconda
+delle equazioni precedenti equivale per $\alpha = 0$
+alla~\eqref{eq:maxwell-divB} e per $\beta = i$ alle tre componenti
+della~\eqref{eq:maxwell-rotE}.  Il fatto che abbiamo scritto le equazioni di
+Maxwell sotto forma di uguaglianza fra quadrivettori ci dice immediatamente che
+queste sono invarianti per trasformazioni di Lorentz, per quanto spiegato a
+pagina~\pageref{invarianza-lorentz}.  L'equazione
+omogenea~\eqref{eq:maxwell-cov2} può essere espressa anche come
+\begin{equation}
+  \partial_{\alpha}F_{\beta\gamma} + \partial_{\beta}F_{\gamma\alpha}
+  + \partial_{\gamma}F_{\alpha\beta} = 0.
+\end{equation}
+
+Il tensore $F_{\alpha\beta}$ del campo elettromagnetico è invariante per
+trasformazioni di gauge del quadripotenziale del tipo
+$A_{\alpha}(x) \to A'_{\alpha}(x) = A_{\alpha}(x) + \partial_{\alpha}\chi(x)$,
+in cui $\chi(x)$ è una funzione scalare delle coordinate.  Infatti
+\begin{equation}
+  \begin{split}
+    F_{\alpha\beta} \to F'_{\alpha\beta} &= \partial_{\alpha}A'_{\beta}
+    - \partial_{\beta}A'_{\alpha} = \partial_{\alpha}(A_{\beta}
+    + \partial_{\beta}\chi) - \partial_{\beta}(A_{\alpha}
+    + \partial_{\alpha}\chi) \\
+    &= \partial_{\alpha}A_{\beta} - \partial_{\beta}A_{\alpha} =
+    F_{\alpha\beta}.
+  \end{split}
+\end{equation}
+Pertanto i campi elettrico e magnetico non cambiano per effetto di una tale
+trasformazione, come noto dall'elettrodinamica classica.
+
+L'equazione di Maxwell non omogenea in forma covariante~\eqref{eq:maxwell-cov1}
+può anche essere scritta come $\partial^{\alpha}F_{\alpha\beta} = -J_{\beta}$ ed
+esplicitando il tensore del campo elettromagnetico abbiamo
+\begin{equation}
+  \partial^{\alpha}(\partial_{\alpha}A_{\beta} - \partial_{\beta}A_{\alpha})
+  = \partial_{\alpha}\partial^{\alpha}A_{\beta}
+  - \partial_{\beta}\partial^{\alpha}A_{\alpha} = -J_{\beta}.
+\end{equation}
+Adottando la \index{gauge!di Lorenz}gauge di Lorenz
+$\partial^{\alpha}A_{\alpha} = 0$ otteniamo
+l'\index{equazione!di d'Alambert}equazione di d'Alambert non omogenea
+\begin{equation}
+  \partial^{\alpha}\partial_{\alpha}A_{\beta} = \Box^{2}A_{\beta} = \Big(
+  -\parder{}{*{2}{t}} + \nabla^{2} \Big) A_{\beta} = -J_{\beta}.
+\end{equation}
+
+A titolo di informazione diciamo che le equazioni di Maxwell che descrivono il
+campo elettromagnetico possono essere ricavate applicando il principio
+variazionale all'azione di un sistema composto da un campo elettromagnetico e
+delle particelle che interagiscono con esso.  L'azione $S$ di questo sistema è
+formata da tre parti
+\begin{equation}
+  S = S_{\textup{p}} + S_{\textup{pc}} + S_{\textup{c}}.
+\end{equation}
+Il termine $S_{\textup{p}}$ dipende solo dalle proprietà delle particelle,
+quindi è l'azione delle particelle libere ciascuna di massa $m_{n}$ e vale
+$-\sum_{n} m_{n}\int\dd \tau$.  $S_{\textup{pc}}$ è la parte di azione che
+descrive l'interazione fra le particelle del sistema e il campo elettromagnetico
+e vale $-\sum_{n} q_{n}\int A_{\alpha}\dd x^{\alpha}$ per un sistema di
+particelle puntiformi di carica $q_{n}$, $-\int J^{\alpha}A_{\alpha}\dd^{4} x$
+se si considera una distribuzione continua di carica.  Infine, $S_{\textup{c}}$
+dipende solo dalle proprietà del campo, cioè è l'azione in assenza di cariche, e
+vale $-1/(16\pi) \int F^{\alpha\beta}F_{\alpha\beta}\dd^{4} x$, così che
+l'azione complessiva è
+\begin{equation}
+  S = -\sum_{n} m_{n}\int \dd\tau - \int J^{\alpha}A_{\alpha} \dd^{4} x
+  -\frac{1}{16\pi} \int F^{\alpha\beta}F_{\alpha\beta} \dd^{4} x.
+\end{equation}
+Per determinare le equazioni di Maxwell bisogna imporre $\delta S = 0$ trattando
+le componenti $A_{\alpha}$ del quadripotenziale come coordinate generalizzate.
+
+\subsection{Il tensore energia-impulso}
+\label{sec:tensore-energia-impulso}
+
+
 
 %%% Local Variables:
 %%% mode: latex

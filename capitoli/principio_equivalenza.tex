@@ -71,7 +71,7 @@ $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ come
 \end{equation}
 l'equazione del moto può essere riscritta nel seguente modo
 \begin{equation}
-  \label{eq:geodesica}
+  \label{eq:geodetica}
   \toder[2]{x^{\lambda}}{\tau} + \tensor{\Gamma}{^{\lambda}_{\mu\nu}}
   \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} = 0,
 \end{equation}
@@ -80,7 +80,7 @@ oppure, utilizzando la quadrivelocità $u^{\alpha} = \ltoder{x^{\alpha}}{\tau}$,
   \toder[2]{x^{\lambda}}{\tau} + \tensor{\Gamma}{^{\lambda}_{\mu\nu}}
   u^{\nu} u^{\nu} = 0.
 \end{equation}
-La~\eqref{eq:geodesica} è chiamata \emph{equazione della geodesica}.
+La~\eqref{eq:geodetica} è chiamata \emph{equazione della geodetica}.
 $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ è un insieme di $4^{3} = 64$ quantità che
 tuttavia, come vedremo, % TODO: farlo vedere oppure non dire "come vedremo" :-P
 non si trasformano, in generale, come un quadritensore di rango $3$.  Dalla
@@ -181,7 +181,7 @@ relazione fra il tensore metrico e la connessione affine
 \section{Limite newtoniano dell'equazione del moto}
 \label{sec:limite-newtoniano}
 
-Vogliamo vedere come l'equazione del moto~\eqref{eq:geodesica} di una particella
+Vogliamo vedere come l'equazione del moto~\eqref{eq:geodetica} di una particella
 all'interno di un campo gravitazionale si riduce considerando il limite
 newtoniano, vale a dire nelle condizioni
 \begin{itemize}
@@ -210,9 +210,9 @@ La terza condizione può essere formalizzata come
 \begin{equation}
   \toder{x^{i}}{\tau} \ll \toder{t}{\tau},
 \end{equation}
-quindi l'equazione della geodesica si riduce a
+quindi l'equazione della geodetica si riduce a
 \begin{equation}
-  \label{eq:geodesica-approx}
+  \label{eq:geodetica-approx}
   \begin{split}
     0 &= \toder[2]{x^{\sigma}}{\tau} + \tensor{\Gamma}{^{\sigma}_{\lambda\mu}}
     \toder{x^{\lambda}}{\tau} \toder{x^{\mu}}{\tau} \\
@@ -233,7 +233,7 @@ Dalla~\eqref{eq:christoffel-approx} risulta
 \end{equation}
 in quanto le derivate temporali di $h_{\mu\nu}$ sono nulle in base alla seconda
 condizione che descrive il limite newtoniano.  Notiamo che per $\sigma=0$ si ha
-$\tensor{\Gamma}{^{0}_{00}}=0$.  La~\eqref{eq:geodesica-approx} corrisponde, al
+$\tensor{\Gamma}{^{0}_{00}}=0$.  La~\eqref{eq:geodetica-approx} corrisponde, al
 variare di $\sigma$, alle equazioni
 \begin{subequations}
   \begin{align}

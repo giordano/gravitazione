@@ -5,8 +5,8 @@
 \usepackage[italian]{babel}
 
 %%%%% Pacchetti caricati
-% \usepackage[autostyle=true]{csquotes}
-% \usepackage[style=numeric,hyperref,abbreviate=false,backend=biber]{biblatex}
+\usepackage[autostyle=true]{csquotes}
+\usepackage[style=numeric,hyperref,abbreviate=false,backend=biber]{biblatex}
 \usepackage{fancyhdr,emptypage}
 \usepackage{tensor} % per rappresentare i tensori
 \usepackage[font=small,format=hang,labelfont=bf,textformat=period]{caption}
@@ -63,8 +63,8 @@
 % Posiziona le didascalie sopra le tabelle
 \captionsetup[table]{position=top}
 
-% \bibliography{bibliografia} % nome del file contenente la bibliografia
-% \defbibheading{bibliography}[\refname]{\chapter*{#1}\markboth{#1}{#1}}
+\addbibresource{bibliografia.bib} % nome del file contenente la bibliografia
+\defbibheading{bibliography}[\refname]{\chapter*{#1}\markboth{#1}{#1}}
 
 \theoremstyle{plain}
 \newtheorem*{teorema}{Teorema}
@@ -181,6 +181,13 @@
 \input{appendici/gauss}
 
 \backmatter{}
+
+\cleardoublepage{}
+\phantomsection
+\addcontentsline{toc}{chapter}{\refname}
+\nocite{*}
+\printbibliography
+
 \cleardoublepage{}
 \phantomsection
 \addcontentsline{toc}{chapter}{\indexname}
