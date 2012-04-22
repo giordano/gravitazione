@@ -27,10 +27,10 @@ $V^{\alpha}(x)$ con quadridivergenza nulla
   \partial_{\alpha}V^{\alpha}(x) = 0.
 \end{equation}
 Integriamo $\partial_{\alpha}V^{\alpha}(x)$ sul volume $\Omega$ delimitato da
-due ipersuperfici a tempo costante $\Sigma_{1}$ e $\Sigma_{2}$ (cioè individuate
-rispettivamente dalle equazioni $t = t_{1}$ e $t = t_{2}$, con $t_{1}$ e $t_{2}$
-costanti) e da un'ipersuperficie $\Sigma_{\infty}$ posta all'infinito spaziale.
-Per il teorema di Gauss risulta
+due ipersuperfici a tempo costante $\Sigma_{1}$ e $\Sigma_{2}$ (cioè
+parametrizzate rispettivamente dalle equazioni $t = t_{1}$ e $t = t_{2}$, con
+$t_{1}$ e $t_{2}$ fissati) e da un'ipersuperficie $\Sigma_{\infty}$ posta
+all'infinito spaziale.  Per il teorema di Gauss risulta
 \begin{equation}
   0 = \int\limits_{\Omega} \partial_{\alpha}V^{\alpha}(x) \dd^{4}x =
   \int\limits_{\Sigma_{2}} V^{\alpha}(x) \dd\Sigma_{\alpha} -
@@ -54,16 +54,55 @@ l'integrale
 \end{equation}
 non dipende dall'ipersuperficie $\Sigma$, cioè è una costante rispetto al tempo.
 In particolare, se scegliamo un sistema di riferimento nel quale
-$\dd\Sigma_{\alpha} = (\dd^{3} x, 0, 0, 0)$ allora abbiamo mostrato che
+$\dd\Sigma_{\alpha} = (\dd^{3} \bm{x}, 0, 0, 0)$ allora abbiamo mostrato che
 \begin{equation}
-  \partial_{\alpha}V^{\alpha}(x) = 0 \implies \int V^{0}(x) \dd^{3} x =
+  \partial_{\alpha}V^{\alpha}(x) = 0 \implies \int V^{0}(x) \dd^{3} \bm{x} =
   \text{costante in $t$}
 \end{equation}
 se l'integrale è esteso a una regione spaziale sufficientemente grande in modo
 che $V^{\alpha}(x)$ si annulla sul suo bordo.
 
-%%% Local Variables: 
+In maniera analoga si può far vedere che se per un tensore
+$\tensor{T}{^{\alpha\beta}}$ si ha
+\begin{equation}
+  \partial_{\beta}T^{\alpha\beta} = 0,
+\end{equation}
+allora il quadrivettore
+\begin{equation}
+  Q^{\alpha}(\Sigma) = \int\limits_{\Sigma} \tensor{T}{^{\alpha\beta}}\dd
+  \Sigma_{\beta},
+\end{equation}
+in cui $\Sigma$ è una ipersuperficie a tempo costante, non dipende dalla
+superficie $\Sigma$ su cui si calcola l'integrale, cioè è indipendente dal
+tempo, se l'integrale è esteso a tutto lo spazio tridimensionale.  In
+particolare, scelto un sistema di riferimento nel quale
+$\dd\Sigma_{\beta} = (\dd^{3} \bm{x}, 0, 0, 0)$, risulta
+\begin{equation}
+  \partial_{\beta}T^{\alpha\beta} = 0 \implies Q^{\alpha} = \int\limits_{\Sigma}
+  T^{\alpha0} \dd^{3} \bm{x} = \text{costante in $t$}.
+\end{equation}
+
+Più in generale il teorema di Gauss per un tensore
+$T^{\alpha_{1}\alpha_{2}\dots\alpha_{k}}(x)$ di rango $k$ è
+\begin{equation}
+  \int\limits_{\Omega} \partial_{\alpha_{1}}
+  T^{\alpha_{1}\alpha_{2}\dots\alpha_{k}}(x) \dd^{4} x = \int
+  T^{\alpha_{1}\alpha_{2}\dots\alpha_{k}}(x) \dd\Sigma_{\alpha_{1}}.
+\end{equation}
+Se risulta
+\begin{equation}
+  \partial_{\alpha_{1}} T^{\alpha_{1}\alpha_{2}\dots\alpha_{k}}(x) = 0
+\end{equation}
+allora l'integrale su un'ipersuperficie $\Sigma$ a tempo fissato
+\begin{equation}
+  Q^{\alpha_{2}\dots\alpha_{k}}(\Sigma) = \int\limits_{\Sigma}
+  T^{\alpha_{1}\alpha_{2}\dots\alpha_{k}}(x) \dd\Sigma_{\alpha_{1}}
+\end{equation}
+non dipende da $\Sigma$, quindi è costante rispetto al tempo, ed è un tensore di
+rango $k-1$.
+
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../astrofisica-teorica"
 %%% fill-column: 80
-%%% End: 
+%%% End:

@@ -195,17 +195,11 @@ Le trasformazioni di Lorentz con $\det\Lambda = +1$ sono chiamate
     paralleli, in moto l'uno rispetto all'altro}
   \label{fig:trasformazioni-lorentz}
 \end{figure}
-Esempi di trasformazioni di Lorentz proprie sono le rotazioni spaziali, che
-lasciano invariato il tempo, e le \emph{trasformazioni di velocità}, o
-\index{boost}\emph{boost}, vale a dire le trasformazioni tra due sistemi di
-riferimento inerziali con gli assi cartesiani corrispondenti paralleli e in moto
-l'uno rispetto all'altro con velocità costante.
-%%%%% TODO: controllare la validità di questa affermazione:
-La composizione di due trasformazioni di Lorentz è ancora una
-trasformazione di Lorentz.
-%%%%% Fine affermazione da controllare.
 Vediamo come si trasformano le coordinate $x^{\alpha}$ di un evento in un
-sistema di riferimento per effetto di un boost $\bm{v}$.  Consideriamo una
+sistema di riferimento per effetto di una \emph{trasformazione di velocità}, o
+\index{boost}\emph{boost}, vale a dire una trasformazione tra due sistemi di
+riferimento inerziali con gli assi cartesiani corrispondenti paralleli e in moto
+l'uno rispetto all'altro con velocità costante $\bm{v}$.  Consideriamo una
 particella a riposo in un sistema di riferimento $\mathcal{S}$ che si muove con
 velocità $\bm{v} = (v_{1},v_{2},v_{3})$ rispetto a un altro sistema di
 riferimento inerziale $\mathcal{S}'$, come nella
@@ -302,6 +296,32 @@ $\bm{v}$, come
   \end{pmatrix}.
 \end{equation}
 
+Le rotazioni spaziali senza inversioni degli assi e i boost sono trasformazioni
+di Lorentz proprie e ortocrone (ristrette), un'inversione temporale
+\begin{subequations}
+  \begin{align}
+    x^{0} &\to x'^{0} = -x^{0}, \\
+    x^{i} &\to x'^{i} = x^{i}
+  \end{align}
+\end{subequations}
+è una trasformazione di Lorentz impropria e anticrona, un'inversione spaziale
+\begin{subequations}
+  \begin{align}
+    x^{0} &\to x'^{0} = x^{0}, \\
+    x^{i} &\to x'^{i} = - x^{i}
+  \end{align}
+\end{subequations}
+o una rotazione con inversione sono trasformazioni di Lorentz improprie e
+ortocrone, infine un'inversione spazio-temporale, prodotto delle due inversioni
+spaziale e temporale,
+\begin{subequations}
+  \begin{align}
+    x^{0} &\to x'^{0} = - x^{0}, \\
+    x^{i} &\to x'^{i} = - x^{i}
+  \end{align}
+\end{subequations}
+è una trasformazione di Lorentz propria e anticrona.  La composizione di due
+trasformazioni di Lorentz è ancora una trasformazione di Lorentz.
 
 % TODO: scrivere qualcosa!
 \section{\completare{Conseguenze delle trasformazioni di Lorentz}}
@@ -480,6 +500,26 @@ I quadritensori di rango $1$ sono i \index{quadrivettore}\emph{quadrivettori}, i
 quadritensori di rango $0$, che quindi non hanno indici, sono chiamati
 \index{scalare!di Lorentz}\emph{scalari di Lorentz} (o brevemente
 \emph{scalari}) e sono invarianti sotto le trasformazioni di Lorentz.
+
+Uno \index{pseudotensore}\emph{pseudotensore}
+$\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ (con
+$p+q=k$) di rango $k$ e peso $w$ è un insieme di $4^{k}$ quantità che per
+effetto di una generica trasformazione di Lorentz ortocrona $\Lambda$, ma non
+necessariamente propria, si trasformano come
+\begin{equation}
+  \tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} \to
+  \tensor*{{A'}}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}
+  = (\det \Lambda)^{w} \tensor{\Lambda}{^{\alpha_{1}}_{\mu_{i}}} \cdots
+  \tensor{\Lambda}{^{\alpha_{p}}_{\mu_{p}}}
+  \tensor{\Lambda}{_{\beta_{1}}^{\nu_{1}}} \cdots
+  \tensor{\Lambda}{_{\beta_{q}}^{\nu_{q}}}
+  \tensor*{A}{^{\mu_{1}\dots\mu_{p}}_{\nu_{1}\dots\nu_{q}}}.
+\end{equation}
+Le differenze fra tensori e pseudotensori si hanno quando il peso dello
+pseudotesore è dispari e si considerano trasformazioni di Lorentz che
+comprendono un'inversione spaziale, per le quali risulta $\det\Lambda = -1$.
+Gli pseudotensori di rango $0$ sono chiamati \emph{pseudoscalari}, gli
+pseudotensori di rango $1$ sono chiamati \emph{pseudovettori}.
 
 \subsection{Operazioni con i quadritensori}
 \label{sec:operazioni-tensori}
@@ -714,11 +754,20 @@ $\epsilon^{\alpha\beta\gamma\delta}$ è un quadritensore definito da
     \\
     -1 & \text{se $\alpha\beta\gamma\delta$ è una permutazione dispari di
       $0123$,} \\
-    0 & \text{altrimenti.}
+    0 & \text{se due o più indici sono uguali.}
   \end{cases}
 \end{equation}
 Si può far vedere che il tensore così definito non varia cambiando sistema di
 riferimento inerziale.
+
+Poiché sussiste la relazione
+\begin{equation}
+  \epsilon^{\alpha\beta\gamma\delta} = (\det\Lambda)
+  \tensor{\Lambda}{^{\alpha}_{\mu}} \tensor{\Lambda}{^{\beta}_{\nu}}
+  \tensor{\Lambda}{^{\gamma}_{\rho}} \tensor{\Lambda}{^{\delta}_{\sigma}}
+  \epsilon^{\mu\nu\rho\sigma}
+\end{equation}
+il tensore di Levi-Civita è uno pseudotesore di rango $4$ e peso $1$.
 
 \subsubsection{Tensore nullo}
 \label{sec:tensore-nullo}
@@ -915,7 +964,7 @@ speciale permetta di riscrivere le leggi dell'elettrodinamica, e in particolare
 le equazioni di Maxwell, in modo manifestamente covariante (o invariante in
 forma) rispetto alle trasformazioni di Lorentz.
 
-\subsection{Densità di corrente e di caria}
+\subsection{Densità di corrente e di carica}
 \label{sec:densita-corrente-carica}
 
 Consideriamo, per semplicità, una distribuzione di particelle in cui l'$n$-esima
@@ -933,10 +982,10 @@ mentre la densità di corrente è
 Abbiamo qui utilizzato la \index{delta!di Dirac
   tridimensionale}\emph{delta
   di Dirac tridimensionale}
-$\delta^{3}(\bm{x} - \bm{x}')$, cioè quella distribuzione che per ogni funzione
-$f$ liscia di tre variabili reali ha la proprietà
+$\delta^{3}(\bm{x} - \bm{x}')$, cioè quella funzione che per ogni funzione $f$
+liscia di tre variabili reali ha la proprietà
 \begin{equation}
-  \int\limits_{\R^{3}} f(\bm{x})\delta^{3}(\bm{x} - \bm{x}') \dd^{3} x =
+  \int\limits_{\R^{3}} f(\bm{x})\delta^{3}(\bm{x} - \bm{x}') \dd^{3} \bm{x} =
   f(\bm{x}').
 \end{equation}
 Possiamo mettere insieme le due quantità $\rho$ e $\bm{J}$ in un quadrivettore
@@ -949,14 +998,16 @@ Introduciamo adesso la \index{delta!di Dirac
   quadrimensionale}\emph{delta
   di Dirac quadrimensionale}
 $\delta^{4}(x - x') = \delta(t - t')\delta^{3}(\bm{x} - \bm{x}')$, vale a dire
-la distribuzione che per ogni funzione $f$ liscia con dominio in $\M$ soddisfa
-la proprietà
+la funzione che per ogni funzione $f$ liscia con dominio in $\M$ soddisfa la
+proprietà
 \begin{equation}
   \int\limits_{\M} f(x)\delta^{4}(x - y)\dd^{4} x = f(y).
 \end{equation}
-Moltiplicando $J^{\alpha}(x)$ per la delta di Dirac $\delta(t - t')$ e
-integrando sul tempo ricaviamo la seguente espressione
+Tutte le delta di Dirac sono scalari di Lorentz in quanto non cambiano la natura
+tensoriale di $f$.  Moltiplicando $J^{\alpha}(x)$ per la delta di Dirac
+$\delta(t - t')$ e integrando sul tempo ricaviamo la seguente espressione
 \begin{equation}
+  \label{eq:quadricorrente}
   \begin{split}
     J^{\alpha}(x) &= \sum_{n} e_{n}\delta^{3}(\bm{x} - \bm{x}_{n}(t))
     \toder{x^{\alpha}}{t} \\
@@ -1130,6 +1181,22 @@ in cui $\chi(x)$ è una funzione scalare delle coordinate.  Infatti
 Pertanto i campi elettrico e magnetico non cambiano per effetto di una tale
 trasformazione, come noto dall'elettrodinamica classica.
 
+La forza elettromagnetica agente su una particella di carica $q$ in un sistema
+di riferimento in cui essa è a riposo è
+\begin{equation}
+  \label{eq:quadriforza-lorentz}
+  f^{\alpha} = q\eta_{\beta\gamma}F^{\alpha\beta} \toder{x^{\gamma}}{\tau} = q
+  \tensor{F}{^{\alpha}_{\gamma}} \toder{x^{\gamma}}{\tau}.
+\end{equation}
+Per $\alpha = 0$ si ottiene
+\begin{equation}
+  \toder{E}{t} = \bm{F}\cdot\bm{v} = q\bm{E}\cdot\bm{v},
+\end{equation}
+mentre per $\alpha = i$ si ricava la forza di Lorentz
+\begin{equation}
+  \bm{F} = q\bm{E} + q\bm{v}\times\bm{B}.
+\end{equation}
+
 L'equazione di Maxwell non omogenea in forma covariante~\eqref{eq:maxwell-cov1}
 può anche essere scritta come $\partial^{\alpha}F_{\alpha\beta} = -J_{\beta}$ ed
 esplicitando il tensore del campo elettromagnetico abbiamo
@@ -1146,11 +1213,152 @@ l'\index{equazione!di d'Alambert}equazione di d'Alambert non omogenea
   -\parder{}{*{2}{t}} + \nabla^{2} \Big) A_{\beta} = -J_{\beta}.
 \end{equation}
 
-A titolo di informazione diciamo che le equazioni di Maxwell che descrivono il
-campo elettromagnetico possono essere ricavate applicando il principio
-variazionale all'azione di un sistema composto da un campo elettromagnetico e
-delle particelle che interagiscono con esso.  L'azione $S$ di questo sistema è
-formata da tre parti
+\subsection{Equazioni del moto di un campo e tensore energia-impulso}
+\label{sec:tensore-energia-impulso}
+
+In questo paragrafo vogliamo determinare le equazioni del moto di un campo
+$q(x)$ e poi le applicheremo al caso particolare del campo elettromagnetico.
+
+La dinamica di un campo $q(x)$ è descritta da un'azione
+\begin{equation}
+  \label{eq:azione-campo}
+  S = \int\limits_{\Omega} \Lambda\dd^{4} x = \iint \Lambda \dd t\dd^{3} \bm{x},
+\end{equation}
+in cui $\Lambda = \Lambda(q, \lparder{q}{x^{\alpha}}, x^{\alpha})$ è una
+funzione del campo $q$, delle sue derivate $\lparder{q}{x^{\alpha}}$ ed
+eventualmente delle coordinate $x^{\alpha}$.  Poiché l'integrale
+$\int \Lambda\dd^{3} \bm{x}$ è la lagrangiana del sistema $\Lambda$ è chiamata
+\emph{densità di lagrangiana}.  Supporremo che $q$ e le sue derivate si
+annullino all'infinito.
+
+Secondo il principio di Hamilton, le equazioni del moto del campo si ottengono
+ricercando la configurazione del campo che rende stazionaria
+l'azione~\eqref{eq:azione-campo}.  Consideriamo allora una variazione
+$q \to q + \delta q$ del campo, con la condizione che $\delta q$ si annulli sul
+bordo $\partial\Omega$ del volume quadrimensionale $\Omega$ su cui viene
+calcolato l'integrale d'azione.  Le coordinate $x^{\alpha}$ non vengono variate.
+Dobbiamo imporre che l'azione sia stazionaria rispetto alla variazione del
+campo, cioè $\delta S = 0$.  Per brevità adottiamo la notazione
+$q_{,\alpha} = \lparder{q}{x^{\alpha}}$.  In questo modo abbiamo
+\begin{equation}
+  \begin{split}
+    0 &= \delta S = \int \Big( \parder{\Lambda}{q}\delta q
+    + \parder{\Lambda}{q_{,\alpha}}\delta q_{,\alpha} \Big)\dd^{4} x \\
+    &= \int \Big( \parder{\Lambda}{q}\delta q + \parder{}{x^{\alpha}}\Big(
+    \parder{\Lambda}{q_{,\alpha}}\delta q \Big) - \delta q \parder{}{x^{\alpha}}
+    \Big( \parder{\Lambda}{q_{,\alpha}} \Big)\Big)\dd^{4} x.
+  \end{split}
+\end{equation}
+Per il teorema di Gauss nello spazio di Minkowski (vedi
+l'appendice~\ref{cha:teorema-gauss}) il secondo termine nell'integrale diventa
+\begin{equation}
+  \int\limits_{\Omega}  \partial_{\alpha}
+  \Big( \parder{\Lambda}{q_{,\alpha}}\delta q \Big) \dd^{4} x =
+  \int\limits_{\partial\Omega} \parder{\Lambda}{q_{,\alpha}}\delta q \dd^{3}
+  \bm{x} = 0
+\end{equation}
+perché le variazioni $\delta q$ del campo devono essere nulle sul bordo
+$\partial\Omega$.  Allora
+\begin{equation}
+  0 = \delta S = \int \delta q\Big( \parder{\Lambda}{q} - \parder{}{x^{\alpha}}
+  \Big( \parder{\Lambda}{q_{,\alpha}} \Big)\Big)\dd^{4} x.
+\end{equation}
+Si deve avere $\delta S = 0$ per una variazione arbitraria $\delta q$, pertanto
+si deve annullare il termine fra parentesi e così giungiamo all'equazione del
+moto (o \emph{equazione di Eulero-Lagrange}) del campo
+\begin{equation}
+  \label{eq:eulero-lagrange-campi}
+  \parder{}{x^{\alpha}}\parder{\Lambda}{q_{,\alpha}} - \parder{\Lambda}{q} = 0.
+\end{equation}
+
+% TODO: rivedere questa dimostrazione, non mi convince: non si usa il fatto che
+% il sistema sia chiuso, cioè che \Lambda non dipende dalle coordinate.
+\completare{Rivedere questa dimostrazione.}
+Il sistema in esame è chiuso se la densità di lagrangiana $\Lambda$ non dipende
+esplicitamente dalle coordinate $x^{\alpha}$, analogamente al caso meccanico in
+cui la lagrangiana è indipendente dal tempo per un sistema isolato.  Per un
+sistema chiuso possiamo determinare una formula analoga alla legge di
+conservazione dell'energia in meccanica.  Abbiamo
+\begin{equation}
+  \begin{split}
+    \parder{\Lambda}{x^{\alpha}} &= \parder{\Lambda}{q}\parder{q}{x^{\alpha}}
+    + \parder{\Lambda}{q_{,\beta}}\parder{q_{,\beta}}{x^{\alpha}}
+    = \parder{}{x^{\beta}}\Big( \parder{\Lambda}{q_{,\beta}} \Big)q_{,\alpha}
+    + \parder{\Lambda}{q_{,\beta}}\parder{q_{,\beta}}{x^{\alpha}} \\
+    &= \parder{}{x^{\beta}}\Big( \parder{\Lambda}{q_{,\beta}}
+    \Big) \parder{q}{x^{\alpha}}
+    + \parder{\Lambda}{q_{,\beta}} \parder{q}{x^{\alpha},x^{\beta}} \\
+    &= \parder{}{x^{\beta}} \Big( q_{,\alpha} \parder{\Lambda}{q_{,\beta}} \Big).
+  \end{split}
+\end{equation}
+Poiché sussiste inoltre la relazione
+\begin{equation}
+  \parder{\Lambda}{x^{\alpha}} =
+  \tensor{\delta}{^{\beta}_{\alpha}} \parder{\Lambda}{x^{\beta}}
+\end{equation}
+risulta
+\begin{equation}
+  \tensor{\delta}{^{\beta}_{\alpha}} \parder{\Lambda}{x^{\beta}}
+  = \parder{}{x^{\beta}} \Big( q_{,\alpha} \parder{\Lambda}{q_{,\beta}} \Big),
+\end{equation}
+da cui
+\begin{equation}
+  \parder{}{x^{\beta}} \Big( q_{,\alpha}\parder{\Lambda}{q_{,\beta}} -
+  \tensor{\delta}{^{\beta}_{\alpha}}\Lambda \Big) = 0.
+\end{equation}
+Definiamo il \index{tensore!energia-impulso}\emph{tensore energia-impulso}
+$\tensor{T}{^{\beta}_{\alpha}}$ come
+\begin{equation}
+  \label{eq:tensore-energia-impulso}
+  \tensor{T}{^{\beta}_{\alpha}} = q_{,\alpha}\parder{\Lambda}{q_{,\beta}} -
+  \tensor{\delta}{^{\beta}_{\alpha}}\Lambda
+\end{equation}
+quindi l'equazione precedente si può scrivere come
+\begin{equation}
+  \label{eq:div-tens-en-imp}
+  \partial_{\beta} \tensor{T}{^{\beta}_{\alpha}} = 0.
+\end{equation}
+Per il corollario del teorema di Gauss possiamo allora definire il quadrivettore
+\begin{equation}
+  P^{\alpha} = \int T^{0\alpha}\dd V,
+\end{equation}
+in cui l'integrale è esteso a tutto lo spazio, e $P^{\alpha}$ è costante
+rispetto al tempo.
+
+Osserviamo che
+\begin{equation}
+  T^{00} = \parder{q}{x^{0}} \parder{\Lambda}{q_{,0}} - \Lambda
+  = \dot{q} \parder{\Lambda}{\dot{q}} - \Lambda
+\end{equation}
+è la densità di energia associata alla densità di lagrangiana $\Lambda$, infatti
+in meccanica l'energia $E$ di un sistema con lagrangiana $L$ è data da
+\begin{equation}
+  E = \dot{q}\parder{L}{\dot{q}} - L.
+\end{equation}
+Dunque
+\begin{equation}
+  P^{0} = \int T^{00}\dd V = \int \Big( \dot{q}\parder{\Lambda}{\dot{q}} -
+  \Lambda \Big)
+\end{equation}
+rappresenta l'energia del sistema.  Invece
+\begin{equation}
+  T^{0i} = \parder{q}{x^{i}} \parder{\Lambda}{q_{,i}}
+\end{equation}
+è la densità di momento, pertanto
+\begin{equation}
+  P^{i} = \int T^{0i}\dd V
+\end{equation}
+è la componente $i$ della quantità di moto.  Pertanto il quadrivettore
+$P^{\alpha}$ qui definito è proprio il quadrimomento e
+l'equazione~\eqref{eq:div-tens-en-imp} rappresenta la legge di conservazione del
+quadrimomento per un sistema chiuso.  Inoltre $T^{i0}$ è la densità di flusso di
+energia nella direzione $x^{i}$, $T^{ij}$ è la densità di flusso della
+componente $j$ del momento nella direzione $i$.
+
+Le equazioni di Maxwell che descrivono il campo elettromagnetico possono essere
+ricavate applicando il formalismo qui introdotto.  L'azione $S$ di un sistema
+composto da un campo elettromagnetico e delle particelle che interagiscono con
+esso è formata da tre parti
 \begin{equation}
   S = S_{\textup{p}} + S_{\textup{pc}} + S_{\textup{c}}.
 \end{equation}
@@ -1162,17 +1370,142 @@ e vale $-\sum_{n} q_{n}\int A_{\alpha}\dd x^{\alpha}$ per un sistema di
 particelle puntiformi di carica $q_{n}$, $-\int J^{\alpha}A_{\alpha}\dd^{4} x$
 se si considera una distribuzione continua di carica.  Infine, $S_{\textup{c}}$
 dipende solo dalle proprietà del campo, cioè è l'azione in assenza di cariche, e
-vale $-1/(16\pi) \int F^{\alpha\beta}F_{\alpha\beta}\dd^{4} x$, così che
-l'azione complessiva è
+vale $-1/4 \int F^{\alpha\beta}F_{\alpha\beta}\dd^{4}
+x$,\footnote{Abbiamo
+  qui deciso di utilizzare il sistema di unità di Heaviside nel quale il fattore
+  davanti all'integrale vale $-1/4$.  Un altro sistema di unità molto usato è
+  quello di Gauss nel quale il fattore assume il valore $-1/(16\pi)$.}
+così che l'azione complessiva è
 \begin{equation}
   S = -\sum_{n} m_{n}\int \dd\tau - \int J^{\alpha}A_{\alpha} \dd^{4} x
-  -\frac{1}{16\pi} \int F^{\alpha\beta}F_{\alpha\beta} \dd^{4} x.
+  -\frac{1}{4} \int F^{\alpha\beta}F_{\alpha\beta} \dd^{4} x.
 \end{equation}
-Per determinare le equazioni di Maxwell bisogna imporre $\delta S = 0$ trattando
-le componenti $A_{\alpha}$ del quadripotenziale come coordinate generalizzate.
+Per determinare le equazioni di Maxwell in presenza di sorgenti bisogna
+considerare solo le parti dell'azione che coinvolgono il campo, cioè
+\begin{equation}
+  S_{\textup{pc}} + S_{\textup{c}} =  \int (\Lambda_{\textup{pc}} +
+  \Lambda_{\textup{c}}) \dd^{4} x = \int \Big( -J^{\alpha}A_{\alpha}
+  -\frac{1}{4} F^{\alpha\beta}F_{\alpha\beta} \Big) \dd^{4} x
+\end{equation}
+e applicare le equazioni di Eulero-Lagrange~\eqref{eq:eulero-lagrange-campi} a
+\begin{equation}
+  \Lambda = \Lambda_{\textup{pc}} + \Lambda_{\textup{c}} = -J^{\alpha}A_{\alpha}
+  -\frac{1}{4} F^{\alpha\beta}F_{\alpha\beta}.
+\end{equation}
+Le componenti $A_{\alpha}(x)$ del quadripotenziale svolgono il ruolo del campo
+$q(x)$.  Per ottenere le equazioni di Maxwell in assenza di sorgenti si
+considera solo $\Lambda = \Lambda_{\textup{c}}$.
 
-\subsection{Il tensore energia-impulso}
-\label{sec:tensore-energia-impulso}
+Il tensore energia-impulso $T_{\textup{em}}^{\alpha\beta}$ del campo
+elettromagnetico si ottiene dalla definizione~\eqref{eq:tensore-energia-impulso}
+usando $\Lambda_{\textup{c}}$ come densità di lagrangiana e le componenti
+$A_{\mu}$ del quadrimomento come campi
+\begin{equation}
+  T_{\textup{em}}^{\alpha\beta}
+  = \parder{A_{\mu}}{x_{\beta}} \parder{\Lambda_{\textup{c}}}{A_{\mu,\alpha}} -
+  \delta^{\alpha\beta}\Lambda_{\textup{c}} =
+  -F^{\alpha\gamma}\partial^{\beta}A_{\gamma} +
+  \frac{1}{4}\eta^{\alpha\beta}F^{\gamma\delta}F_{\gamma\delta}.
+\end{equation}
+% TODO: da queste parti c'è un po' di casino con i segni, ci sono - che
+% diventano per magia + e viceversa.  Sarebbe il caso di rivedere con calma
+% tutti i calcoli.  All'inizio ho seguito il Barone, alla fine il Weinberg,
+% penso che il problema sia proprio dovuto al fatto che adottano segnature
+% diverse per M...
+Si dimostra che il tensore energia-impulso deve sempre essere simmetrico, ma il
+tensore $T_{\textup{em}}^{\alpha\beta}$ così ottenuto non lo è.  Mediante
+un'opportuna procedura di simmetrizzazione si può giungere alla seguente forma
+simmetrica
+\begin{equation}
+  T_{\textup{em}}^{\alpha\beta} = \tensor{F}{^{\alpha}_{\gamma}}F^{\beta\gamma}
+  - \frac{1}{4}\eta^{\alpha\beta}F_{\gamma\delta}F^{\gamma\delta}.
+\end{equation}
+Osserviamo che in questo modo risulta
+\begin{subequations}
+  \begin{align}
+    T_{\textup{em}}^{00} &= \frac{1}{2}(\bm{E}^{2} + \bm{B}^{2}), \\
+    T_{\textup{em}}^{i0} &= (\bm{E} \times \bm{B})_{i},
+  \end{align}
+\end{subequations}
+che sono, rispettivamente, la densità di energia del campo elettromagnetico e la
+componente $i$ del vettore di Poynting, che rappresenta la densità del flusso
+energia associata al campo elettromagnetico.  Questi risultati sono coerenti con
+quanto detto precedentemente per un campo generico.
+
+Se un sistema non è isolato risulta $\partial_{\beta}T^{\beta\alpha} \neq 0$,
+tuttavia considerando anche tutto ciò che interagisce con questo sistema (in
+modo da avere un sistema complessivamente chiuso) risulta
+$\partial_{\beta}T_{\textup{tot}}^{\beta\alpha} = 0$, in cui
+$\partial_{\beta}T_{\textup{tot}}^{\beta\alpha}$ è il tensore energia-impulso
+totale.  Ora faremo vedere che per un campo elettromagnetico in presenza di
+sorgenti si ha $\partial_{\beta}T_{\textup{em}}^{\beta\alpha} \neq 0$ ma
+$\partial_{\beta}(T_{\textup{p}}^{\beta\alpha} + T_{\textup{em}}^{\beta\alpha})
+= 0$, in cui $T_{\textup{p}}^{\beta\alpha}$ è il tensore energia-impulso
+associato alle particelle che interagiscono con il campo.
+
+Consideriamo un sistema di particelle cariche, ciascuna con quadrimomento
+$p_{n}^{\alpha}(t)$.  In analogia alle definizioni di densità di carica e di
+corrente date nel paragrafo~\ref{sec:densita-corrente-carica}, definiamo la
+densità di momento come
+\begin{equation}
+  T_{\textup{p}}^{\alpha0}(\bm{x}, t) = \sum_{n} p_{n}^{\alpha}(t)
+  \delta^{3}(\bm{x} - \bm{x}_{n}(t))
+\end{equation}
+e il flusso di $p_{n}^{\alpha}$ come
+\begin{equation}
+  T_{\textup{p}}^{\alpha i}(\bm{x}, t) = \sum_{n} p_{n}^{\alpha}(t)
+  \toder{x_{n}^{i}}{t} \delta^{3}(\bm{x} - \bm{x}_{n}(t)).
+\end{equation}
+Allora il tensore energia-impulso per le particelle può essere definito come
+\begin{equation}
+  T_{\textup{p}}^{\alpha\beta}(\bm{x}, t) = \sum_{n} p_{n}^{\alpha}(t)
+  \toder{x_{n}^{\beta}}{t} \delta^{3}(\bm{x} - \bm{x}_{n}(t)).
+\end{equation}
+Osserviamo che
+\begin{equation}
+  p_{n}^{\beta} = E_{n} \toder{x_{n}^{\beta}}{t} =
+  \begin{cases}
+    E_{n} & \text{per $\beta = 0$}, \\
+    E_{n}(\bm{v}_{n})^{i} = \gamma_{n}m_{n}(\bm{v}_{n})^{i} & \text{per $\beta =
+      i$},
+  \end{cases}
+\end{equation}
+quindi $T_{\textup{p}}^{\alpha\beta}$ può essere scritto come
+\begin{equation}
+  T_{\textup{p}}^{\alpha\beta}(\bm{x}, t) = \sum_{n} \frac{p_{n}^{\alpha}
+    p_{n}^{\beta}}{E_{n}} \delta^{3}(\bm{x} - \bm{x}_{n}(t)).
+\end{equation}
+Da questa relazione è evidente che
+$T_{\textup{p}}^{\alpha\beta} = T_{\textup{p}}^{\beta\alpha}$.  Inoltre, in
+analogia alla~\eqref{eq:quadricorrente}, il tensore energia-impulso può essere
+riscritto nella forma
+\begin{equation}
+  T_{\textup{p}}^{\alpha\beta} = \sum_{n} \int p_{n}^{\alpha}
+  \toder{x_{n}^{\beta}}{\tau} \delta^{4}(x - x_{n}(\tau))\dd \tau,
+\end{equation}
+nella quale si vede che $T_{\textup{p}}^{\alpha\beta}$ è effettivamente un
+quadritensore di rango $2$ controvariante, in quanto $p_{n}^{\alpha}$ e
+$\ltoder{x_{n}^{\beta}}{\tau}$ sono quadrivettori controvarianti.  Si può far
+vedere che
+\begin{equation}
+  \partial_{\beta}T_{\textup{p}}^{\alpha\beta} = \sum_{n}
+  \delta^{3}(\bm{x} - \bm{x}_{n}(t)) \toder{p_{n}^{\alpha}}{t} = \sum_{n}
+  \delta^{3}(\bm{x} - \bm{x}_{n}(t)) \toder{\tau}{t}f_{n}^{\alpha}(t) =
+  G^{\alpha}(\bm{x}, t),
+\end{equation}
+in cui $f_{n}^{\alpha}(t)$ è la quadriforza agente sull'$n$-esima particella.
+$G^{\alpha}$ è la densità di forza.  Usando
+l'espressione~\eqref{eq:quadriforza-lorentz} della forza $f_{n}^{\alpha}$ agente
+sulle particelle di carica $q_{n}$ si trova che la densità di forza vale
+\begin{equation}
+  \begin{split}
+    G^{\alpha} &= \sum_{n} \delta^{3}(\bm{x} - \bm{x}_{n}(t))
+    \toder{\tau}{t}q_{n} \tensor{F}{^{\alpha}_{\gamma}} \toder{x^{\gamma}}{\tau} \\
+    &= \tensor{F}{^{\alpha}_{\gamma}} \sum_{n} \delta^{3}(\bm{x} - \bm{x}_{n}(t))
+    q_{n} \toder{x^{\gamma}}{t} = \tensor{F}{^{\alpha}_{\gamma}} J^{\gamma}.
+  \end{split}
+\end{equation}
+
 
 
 
