@@ -1160,6 +1160,7 @@ queste sono invarianti per trasformazioni di Lorentz, per quanto spiegato a
 pagina~\pageref{invarianza-lorentz}.  L'equazione
 omogenea~\eqref{eq:maxwell-cov2} può essere espressa anche come
 \begin{equation}
+  \label{eq:maxwell-cov22}
   \partial_{\alpha}F_{\beta\gamma} + \partial_{\beta}F_{\gamma\alpha}
   + \partial_{\gamma}F_{\alpha\beta} = 0.
 \end{equation}
@@ -1216,8 +1217,9 @@ l'\index{equazione!di d'Alambert}equazione di d'Alambert non omogenea
 \subsection{Equazioni del moto di un campo e tensore energia-impulso}
 \label{sec:tensore-energia-impulso}
 
-In questo paragrafo vogliamo determinare le equazioni del moto di un campo
-$q(x)$ e poi le applicheremo al caso particolare del campo elettromagnetico.
+In questo paragrafo vogliamo determinare le equazioni del moto di un generico
+campo $q(x)$ e poi le applicheremo al caso particolare del campo
+elettromagnetico.
 
 La dinamica di un campo $q(x)$ è descritta da un'azione
 \begin{equation}
@@ -1506,6 +1508,98 @@ sulle particelle di carica $q_{n}$ si trova che la densità di forza vale
   \end{split}
 \end{equation}
 
+Calcoliamo la quadridivergenza del tensore energia-impulso del campo
+elettromagnetico
+\begin{equation}
+  \begin{split}
+    \partial_{\beta}T_{\textup{em}}^{\alpha\beta} &=
+    \tensor{F}{^{\alpha}}_{\gamma}\partial_{\beta}F^{\beta\gamma} +
+    F^{\beta\gamma}\partial_{\beta}\tensor{F}{^{\alpha}_{\gamma}} -
+    \frac{1}{4} \partial_{\beta}
+    (\eta^{\alpha\beta}F_{\gamma\delta}F^{\gamma\delta}) \\
+    &= \tensor{F}{^{\alpha}}_{\gamma}\partial_{\beta}F^{\beta\gamma} +
+    F^{\beta\gamma}\partial_{\beta}\tensor{F}{^{\alpha}_{\gamma}} -
+    \frac{1}{4} \partial^{\alpha}(F_{\gamma\delta}F^{\gamma\delta}) \\
+    &= \tensor{F}{^{\alpha}}_{\gamma}\partial_{\beta}F^{\beta\gamma} +
+    F^{\beta\gamma}\partial_{\beta}\tensor{F}{^{\alpha}_{\gamma}} -
+    \frac{1}{4}(F^{\gamma\delta}\partial^{\alpha}F_{\gamma\delta} +
+    F_{\gamma\delta}\partial^{\alpha}F^{\gamma\delta}) \\
+    &= \tensor{F}{^{\alpha}}_{\gamma}\partial_{\beta}F^{\beta\gamma} +
+    F^{\beta\gamma}\partial_{\beta}\tensor{F}{^{\alpha}_{\gamma}} -
+    \frac{1}{2}F_{\gamma\delta}\partial^{\alpha}F^{\gamma\delta} \\
+    &= \tensor{F}{^{\alpha}}_{\gamma}\partial_{\beta}F^{\beta\gamma} +
+    F^{\beta\gamma}\partial_{\beta}\tensor{F}{^{\alpha}_{\gamma}} -
+    \frac{1}{2}F_{\beta\gamma}\partial^{\alpha}F^{\beta\gamma}.
+  \end{split}
+\end{equation}
+Il secondo termine può essere riscritto come
+\begin{equation}
+  \begin{split}
+    F^{\beta\gamma}\partial_{\beta}\tensor{F}{^{\alpha}_{\gamma}} &=
+    g^{\beta\mu}g^{\gamma\nu}F_{\mu\nu} \partial_{\beta}
+    \tensor{F}{^{\alpha}_{\gamma}} = F_{\mu\nu} \partial^{\mu} F^{\alpha\nu} =
+    F_{\gamma\beta} \partial^{\gamma} F^{\alpha\beta} \\
+    &= -F_{\beta\gamma} \partial^{\gamma} F^{\alpha\beta}.
+  \end{split}
+\end{equation}
+Nell'ultimo passaggio abbiamo sfruttato l'antisimmetria di $F_{\gamma\beta}$.
+Inoltre, dall'equazione di Maxwell omogenea~\eqref{eq:maxwell-cov22} scritta
+nella forma
+$\partial^{\alpha}F^{\beta\gamma} + \partial^{\beta}F^{\gamma\alpha}
++ \partial^{\gamma}F^{\alpha\beta} = 0$ abbiamo
+\begin{equation}
+  -\partial^{\alpha}F^{\beta\gamma} = \partial^{\beta}F^{\gamma\alpha}
+  + \partial^{\gamma}F^{\alpha\beta},
+\end{equation}
+quindi
+\begin{equation}
+  \begin{split}
+    \partial_{\beta}F_{\textup{em}}^{\alpha\beta} &=
+    \tensor{F}{^{\alpha}}_{\gamma}\partial_{\beta}F^{\beta\gamma}
+    -F_{\beta\gamma} \partial^{\gamma} F^{\alpha\beta} +
+    \frac{1}{2}F_{\beta\gamma}(\partial^{\beta}F^{\gamma\alpha}
+    + \partial^{\gamma}F^{\alpha\beta}) \\
+    &= \tensor{F}{^{\alpha}}_{\gamma}\partial_{\beta}F^{\beta\gamma} +
+    \frac{1}{2}F_{\beta\gamma}(\partial^{\beta}F^{\gamma\alpha}
+    - \partial^{\gamma}F^{\alpha\beta}) \\
+    &= \tensor{F}{^{\alpha}}_{\gamma}\partial_{\beta}F^{\beta\gamma} -
+    \frac{1}{2}F_{\beta\gamma}(\partial^{\beta}F^{\alpha\gamma}
+    + \partial^{\gamma}F^{\alpha\beta}).
+  \end{split}
+\end{equation}
+Nell'ultimo passaggio abbiamo nuovamente sfruttato l'antisimmetria del tensore
+del campo elettromagnetico.  L'ultimo termine è nullo poiché
+\begin{equation}
+  \begin{split}
+    F_{\beta\gamma}(\partial^{\beta}F^{\alpha\gamma}
+    + \partial^{\gamma}F^{\alpha\beta}) &=
+    -F_{\gamma\beta}(\partial^{\beta}F^{\alpha\gamma}
+    + \partial^{\gamma}F^{\alpha\beta}) \\
+    &= -F_{\gamma\beta}(\partial^{\gamma}F^{\alpha\beta}
+    + \partial^{\beta}F^{\alpha\gamma}) \\
+    &= -F_{\beta\gamma}(\partial^{\beta}F^{\alpha\gamma}
+    + \partial^{\gamma}F^{\alpha\beta}).
+  \end{split}
+\end{equation}
+Infine, per la legge di Maxwell~\eqref{eq:maxwell-cov1} risulta
+$\partial_{\beta}F^{\beta\gamma} = -J^{\gamma}$, quindi
+\begin{equation}
+  \partial_{\beta}T_{\textup{em}}^{\alpha\beta} =
+  -\tensor{F}{^{\alpha}_{\gamma}}J^{\gamma}
+\end{equation}
+e la quadridivergenza del tensore energia-impulso
+$T_{\textup{tot}}^{\alpha\beta}$ del sistema, isolato, campo elettromagnetico +
+particelle interagenti con il campo è
+\begin{equation}
+  \partial_{\beta}T_{\textup{tot}}^{\alpha\beta}
+  = \partial_{\beta}(T_{\textup{p}}^{\alpha\beta} +
+  T_{\textup{em}}^{\alpha\beta}) = \tensor{F}{^{\alpha}_{\gamma}}J^{\gamma} -
+  \tensor{F}{^{\alpha}_{\gamma}}J^{\gamma} = 0.
+\end{equation}
+
+% TODO: scrivere il paragrafo.  Vedi lezione del 12/04/2012
+\section{\completare{Fluido perfetto}}
+\label{sec:fluido-perfetto}
 
 
 
