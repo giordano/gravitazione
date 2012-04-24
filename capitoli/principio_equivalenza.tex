@@ -77,7 +77,7 @@ l'equazione del moto può essere riscritta nel seguente modo
 \end{equation}
 oppure, utilizzando la quadrivelocità $u^{\alpha} = \ltoder{x^{\alpha}}{\tau}$,
 \begin{equation}
-  \toder[2]{x^{\lambda}}{\tau} + \tensor{\Gamma}{^{\lambda}_{\mu\nu}}
+  \toder{u^{\lambda}}{\tau} + \tensor{\Gamma}{^{\lambda}_{\mu\nu}}
   u^{\nu} u^{\nu} = 0.
 \end{equation}
 La~\eqref{eq:geodetica} è chiamata \emph{equazione della geodetica}.
@@ -177,6 +177,111 @@ relazione fra il tensore metrico e la connessione affine
     + \partial_{\mu}g_{\lambda\nu} - \partial_{\nu}g_{\lambda\mu}).
   \end{aligned}
 \end{equation}
+
+La geodetica è, per definizione, la curva più breve fra due punti, allora
+l'equazione della geodetica~\eqref{eq:geodetica} per una particella in caduta
+libera può essere ricavata applicando il principio variazionale alla distanza
+$S$ fra due eventi $A$ e $B$ nello spazio-tempo
+\begin{equation}
+  S = \int_{A}^{B} \dd\tau.
+\end{equation}
+Conviene parametrizzare la linea d'universo $x^{\mu}$ della particella con un
+arbitrario parametro $p$, cioè $x^{\mu} = x^{\mu}(p)$, quindi
+\begin{equation}
+  S = \int_{A}^{B} \dd\tau = \int_{A}^{\beta} \toder{\tau}{p}\dd p =
+  \int_{A}^{B} \Big( -g_{\mu\nu}\toder{x^{\mu}}{p}\toder{x^{\nu}}{p} \Big)^{1/2}
+  \dd p.
+\end{equation}
+Per ricavare l'equazione del moto dobbiamo imporre che $S$ sia stazionario
+rispetto a variazioni infinitesime $\delta x^{\mu}$ delle coordinate $x^{\mu}$,
+con la condizione che le variazioni sia nulle nei punti $A$ e $B$
+\begin{equation}
+  \label{eq:condizione-variazione}
+  \delta x_{A}^{\mu} = \delta x_{B}^{\mu} = 0.
+\end{equation}
+La variazione della distanza fra i due eventi è
+\begin{equation}
+  \begin{split}
+    \delta S &= \int_{A}^{B} \frac{1}{2}\Big( -g_{\mu\nu} \toder{x^{\mu}}{p}
+    \toder{x^{\nu}}{p} \Big)^{-1/2} \Big( -\parder{g_{\mu\nu}}{x^{\lambda}}
+    \delta x^{\lambda} \toder{x^{m}}{p} \toder{x^{n}}{p} \\
+    &- g_{\mu\nu} \toder{\delta x^{\mu}}{p} \toder{x^{\nu}}{p} - g_{\mu\nu}
+    \toder{x^{\mu}}{p} \toder{\delta x^{\nu}}{p} \Big) \dd p \\
+    &= \int_{A}^{B} \frac{1}{2}\Big( -g_{\mu\nu} \toder{x^{\mu}}{p}
+    \toder{x^{\nu}}{p} \Big)^{-1/2} \Big( -\parder{g_{\mu\nu}}{x^{\lambda}}
+    \delta x^{\lambda} \toder{x^{\mu}}{p} \toder{x^{\nu}}{p} -
+    2g_{\mu\nu}\toder{\delta x^{\mu}}{p} \toder{x^{\nu}}{p} \Big) \dd p.
+  \end{split}
+\end{equation}
+Nell'ultimo passaggio abbiamo sfruttato la simmetria di del tensore metrico
+$g_{\mu\nu}$.  Osserviamo che il primo fattore dell'integrale è
+$\ltoder{p}{\tau}$, così che risulta
+\begin{equation}
+  \delta S = -\int_{A}^{B} \Big( \frac{1}{2}\parder{g_{\mu\nu}}{x^{\lambda}}
+  \delta  x^{\lambda} \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} + g_{\mu\nu}
+  \toder{\delta x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} \Big) \dd \tau.
+\end{equation}
+Integriamo il secondo termine per parti ricordando la
+condizione~\eqref{eq:condizione-variazione}
+\begin{equation}
+  \begin{split}
+    \int_{A}^{\beta} g_{\lambda\nu} \toder{\delta x^{\lambda}}{\tau}
+    \toder{x^{\nu}}{\tau} \dd \tau &= g_{\lambda\nu} \delta x^{\lambda}
+    \toder{x^{\nu}}{\tau} \bigg|_{A}^{B} - \int_{A}^{B} \delta x^{\lambda}
+    \toder{}{\tau} \Big( g_{\lambda\nu} \toder{x^{\nu}}{\tau} \Big) \dd \tau \\
+    &= -\int_{A}^{B} \delta x^{\lambda} \Big( \toder{g_{\lambda\nu}}{\tau}
+    \toder{x^{\nu}}{\tau} + g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} \Big) \dd
+    \tau \\
+    &= -\int_{A}^{B} \delta x^{\lambda}
+    \Big( \parder{g_{\lambda\nu}}{x^{\mu}} \toder{x^{\mu}}{\tau}
+    \toder{x^{\nu}}{\tau} + g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} \Big) \dd
+    \tau.
+  \end{split}
+\end{equation}
+Allora
+\begin{equation}
+  \delta S = -\int_{A}^{B} \delta x^{\lambda} \Big(
+  \frac{1}{2} \parder{g_{\mu\nu}}{x^{\lambda}} \toder{x^{\mu}}{\tau}
+  \toder{x^{\nu}}{\tau} - \parder{g_{\lambda\nu}}{x^{\mu}}
+  \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} -
+  g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} \Big) \dd \tau.
+\end{equation}
+Affinché sia $\delta S = 0$, per l'arbitrarietà della variazione $\delta
+x^{\lambda}$ deve annullarsi la quantità fra parentesi, cioè
+\begin{equation}
+  \Big(\frac{1}{2} \partial_{\lambda} g_{\mu\nu} - \partial_{\mu}g_{\lambda\nu}
+  \Big) \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau}
+  - g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} = 0.
+\end{equation}
+Dal momento che
+\begin{equation}
+  \partial_{\mu}g_{\lambda\nu} \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} =
+  \frac{1}{2} (\partial_{\mu}g_{\lambda\nu} + \partial_{\nu}g_{\lambda\mu})
+  \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau}
+\end{equation}
+possiamo scrivere
+\begin{equation}
+  \frac{1}{2} (\partial_{\lambda} g_{\mu\nu} - \partial_{\mu}g_{\lambda\nu}
+  - \partial_{\nu}g_{\lambda\mu}) \toder{x^{\mu}}{\tau}
+  \toder{x^{\nu}}{\tau} - g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} = 0
+\end{equation}
+e poiché
+$\partial_{\lambda} g_{\mu\nu} - \partial_{\mu}g_{\lambda\nu}
+- \partial_{\nu}g_{\lambda\mu} = 2g_{\rho\lambda}
+\tensor{\Gamma}{^{\rho}_{\nu\mu}}$ abbiamo
+\begin{equation}
+  g_{\rho\lambda} \tensor{\Gamma}{^{\rho}_{\nu\mu}} \toder{x^{\mu}}{\tau}
+  \toder{x^{\nu}}{\tau} - g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} = 0.
+\end{equation}
+Moltiplicando infine ambo i membri per $g^{\lambda\sigma}$ e osservando che
+$g_{\alpha\beta}g^{\alpha\gamma} = \tensor{\delta}{^{\gamma}_{\beta}}$ giungiamo
+all'equazione della geodetica
+\begin{equation}
+  \toder[2]{x^{\sigma}}{\tau} + \tensor{\Gamma}{^{\sigma}_{\nu\mu}}
+  \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} = 0.
+\end{equation}
+
+
 
 \section{Limite newtoniano dell'equazione del moto}
 \label{sec:limite-newtoniano}
