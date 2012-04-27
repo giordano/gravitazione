@@ -530,12 +530,12 @@ pseudotensori di rango $1$ sono chiamati \emph{pseudovettori}.
 
 La combinazione lineare
 \begin{equation}
-  \tensor*{T}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} = a
-  \tensor*{R}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} + b
+  a \tensor*{R}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} + b
   \tensor*{S}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}},
 \end{equation}
 con $a$ e $b$ scalari, di due quadritensori dello stesso tipo è un quadritensore
-ancora dello stesso tipo.  Per esempio, verifichiamo che
+$\tensor*{T}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ ancora
+dello stesso tipo.  Per esempio, verifichiamo che
 \begin{equation}
   \tensor{T}{^{\alpha}_{\beta}} = a \tensor{R}{^{\alpha}_{\beta}} + b
   \tensor{S}{^{\alpha}_{\beta}}
@@ -560,7 +560,7 @@ $\tensor{S}{^{\alpha}_{\beta}}$. Abbiamo
 \subsubsection{Prodotto diretto}
 \label{sec:prodotto-diretto-minkowski}
 
-Il prodotto
+Il \index{prodotto!diretto}prodotto
 $\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}
 \tensor*{B}{^{\alpha_{1}\dots\alpha_{r}}_{\beta_{1}\dots\beta_{s}}}$
 di un quadritensore di tipo $(p,q)$ e di uno di tipo $(r,s)$ è un quadritensore
@@ -588,10 +588,10 @@ Se in un quadritensore di tipo $(p,q)$ $n$ indici controvarianti sono uguali a
 $n$ indici covarianti e si somma su tali indici si ottiene un tensore di tipo
 $(p-n,q-n)$.  Usando la convenzione di Einstein sulla somma si omette il simbolo
 di sommatoria.  Questa operazione viene detta di
-\emph{contrazione degli indici}.  Per esempio, il tensore
-$\tensor{T}{^{\alpha}_{\beta}^{\gamma\delta}}$ è un tensore di tipo $(3,1)$, ma
-se si contraggono l'indice covariante $\beta$ con il terzo indice controvariante
-$\delta$ si ottiene il tensore
+\index{contrazione!degli indici}\emph{contrazione degli indici}.  Per esempio,
+il tensore $\tensor{T}{^{\alpha}_{\beta}^{\gamma\delta}}$ è un tensore di tipo
+$(3,1)$, ma se si contraggono l'indice covariante $\beta$ con il terzo indice
+controvariante $\delta$ si ottiene il tensore
 $\tensor{T}{^{\alpha}_{\beta}^{\gamma\beta}} =
 \tensor{T}{^{\alpha}_{0}^{\gamma 0}} + \tensor{T}{^{\alpha}_{1}^{\gamma 1}} +
 \tensor{T}{^{\alpha}_{2}^{\gamma 2}} + \tensor{T}{^{\alpha}_{3}^{\gamma 3}}$

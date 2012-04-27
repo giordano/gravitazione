@@ -13,7 +13,7 @@ contesto della relatività speciale, i tensori, specificando come si modificano
 per effetto di una trasformazione di Lorentz, la quale è una trasformazione
 lineare fra sistemi di riferimento inerziali.  Nella definizione dei tensori
 intervengono le componenti $\tensor{\Lambda}{^{\alpha}_{\beta}}$ e
-$\tensor{\Lambda}{_{\alpha}^{\\beta}}$ delle matrici di Lorentz associate alle
+$\tensor{\Lambda}{_{\alpha}^{\beta}}$ delle matrici di Lorentz associate alle
 specifiche trasformazioni considerate.
 
 Anche nella relatività generale è utile introdurre i tensori, ma in questa
@@ -36,6 +36,9 @@ all'interno della relatività speciale, a patto di effettuare le sostituzioni
     \tensor{\Lambda}{_{\beta}^{\alpha}} &\to \parder{x^{\alpha}}{x'^{\beta}}.
   \end{align}
 \end{subequations}
+
+\section{Tensori}
+\label{sec:tensori}
 
 Un \emph{tensore}
 $\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ (con
@@ -88,6 +91,22 @@ Le trasformazioni inverse per i vettori controvarianti e covarianti sono
   U'_{\alpha} \to U_{\alpha} = \parder{x'^{\mu}}{x^{\alpha}} U'_{\mu}.
 \end{gather}
 
+Uno \index{pseudotensore}pseudotensore
+$\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ (con
+$p+q=k$) di rango $k$ e peso $w$ è un insieme di $4^{k}$ quantità che per
+effetto di un'arbitraria trasformazione delle coordinate
+$x^{\alpha} \to x'^{\alpha}$ si trasformano come
+\begin{equation}
+  \tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} \to
+  \tensor*{{A'}}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}
+  = \abs*{\parder{x'}{x}}^{w} \parder{x'^{\alpha_{1}}}{x^{\mu_{1}}}
+  \cdots \parder{x'^{\alpha_{p}}}{x^{\mu_{p}}} \parder{x^{\nu_{1}}}{x'^{\beta_{1}}}
+  \cdots \parder{x^{\nu_{q}}}{x'^{\beta_{q}}}
+  \tensor*{A}{^{\mu_{1}\dots\mu_{p}}_{\nu_{1}\dots\nu_{q}}},
+\end{equation}
+in cui $\abs{\lparder{x'}{x}}$ è lo jacobiano della matrice della trasformazione
+delle coordinate.
+
 I differenziali delle coordinate controvarianti sono vettori controvarianti,
 infatti
 \begin{equation}
@@ -98,6 +117,9 @@ La delta di Kronecker definita nella~\eqref{eq:delta-kronecker} è l'unico
 tensore le cui componenti sono uguali in qualsiasi sistema di riferimento, oltre
 agli scalari e al tensore nullo.
 
+\subsection{Tensore metrico}
+\label{sec:tensore-metrico}
+
 In un generico sistema di coordinate $x^{\mu}$, il tensore metrico è dato per
 definizione da
 \begin{equation}
@@ -107,6 +129,7 @@ definizione da
 in cui $\xi^{\alpha}$ è un sistema di coordinate localmente inerziale.  In un
 altro sistema di coordinate $x'^{\mu}$ risulta
 \begin{equation}
+  \label{eq:trasf-tensore-metrico}
   \begin{split}
     g'_{\mu\nu} &=
     \eta_{\alpha\beta} \parder{\xi^{\alpha}}{x'^{\mu}}
@@ -127,6 +150,41 @@ controvariante $g^{\mu\nu}$ come quel tensore tale che
 Si dimostra che $g^{\mu\nu}$ è effettivamente un tensore controvariante di rango
 $2$.
 
+L'opposto del determinante della matrice che rappresenta il tensore metrico
+\begin{equation}
+  g = -\det(g_{\mu\nu})
+\end{equation}
+è uno pseudoscalare di peso $-2$.  Infatti, la
+relazione~\eqref{eq:trasf-tensore-metrico} può essere scritta in forma
+matriciale come
+\begin{equation}
+  g'_{\mu\nu} = \Big( \parder{x}{x'}\Big)^{\textup{T}} g_{\mu\nu}
+  \Big( \parder{x}{x'} \Big),
+\end{equation}
+da cui, passando ai determinanti,
+\begin{equation}
+  \det(g'_{\mu\nu}) = \det(g_{\mu\nu}) \abs*{\parder{x}{x'}}^{2} \implies g' = g
+  \abs*{\parder{x}{x'}}^{2} = g\abs*{\parder{x'}{x}}^{-2}.
+\end{equation}
+In particolare $\sqrt{g}$ è uno pseudoscalare di peso $-1$
+\begin{equation}
+  \sqrt{g'} = \sqrt{g}\abs*{\parder{x'}{x}}^{-1}.
+\end{equation}
+Possiamo usare $\sqrt{g}$ per costruire un elemento infinitesimo di ipervolume
+quadrimensionale invariante per arbitrarie trasformazione di coordinate.
+Infatti osserviamo che mentre nella relatività speciale $\dd^{4} x$ è uno
+scalare di Lorentz, nella relatività generale è uno pseudoscalare di peso $1$
+\begin{equation}
+  \dd^{4} x' = \dd^{4} x \abs*{\parder{x'}{x}}.
+\end{equation}
+Dunque l'elemento infinitesimo di ipersuperficie invariante è
+$\sqrt{g}\dd^{4} x$
+\begin{equation}
+  \sqrt{g'}\dd^{4} x' = \sqrt{g}\abs*{\parder{x'}{x}}^{-1} \dd^{4} x
+  \abs*{\parder{x'}{x}} = \sqrt{g}\dd^{4} x.
+\end{equation}
+
+
 Anche nella relatività generale il tensore metrico può essere usato per
 innalzare a abbassare gli indici dei tensori, per esempio
 \begin{gather}
@@ -134,96 +192,303 @@ innalzare a abbassare gli indici dei tensori, per esempio
   U_{\alpha} \to U^{\alpha} = g^{\alpha\beta} U_{\beta}.
 \end{gather}
 
-% TODO: rivedere tutta la sezione, ho (quasi) solo copia-incollato il
-% corrispondente paragrafo dello spazio di Minkowski.
-\section{\completare{Operazioni con i tensori}}
+\section{Operazioni con i tensori}
 \label{sec:operazioni-tensori}
 
-In questo paragrafo riporteremo le operazioni che si possono effettuare con i
-tensori all'interno della relatività generale.  Nei casi in cui è sufficiente
-solo effettuare le sostituzioni~\eqref{eq:sostituzioni}, ometteremo le
-dimostrazioni delle proprietà che sono state già svolte nel
-paragrafo~\ref{sec:operazioni-tensori-minkowski} per lo spazio di Minkowski.
+In questo paragrafo riporteremo le operazioni, già analizzate nel
+paragrafo~\ref{sec:operazioni-tensori-minkowski}, che si possono effettuare con
+i tensori anche all'interno della relatività generale.  Ometteremo le
+dimostrazioni delle proprietà che sono state già svolte per lo spazio di
+Minkowski poiché è sufficiente effettuare le
+sostituzioni~\eqref{eq:sostituzioni}.
 
-\subsubsection{Combinazione lineare}
-\label{sec:combinazione-lineare}
+\begin{description}
+\item[Combinazione lineare] La combinazione lineare
+  \begin{equation}
+    a \tensor*{R}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} + b
+    \tensor*{S}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}},
+  \end{equation}
+  con $a$ e $b$ scalari, di due tensori dello stesso tipo è un tensore
+  $\tensor*{T}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ ancora
+  dello stesso tipo.
+\item[Prodotto diretto] Il \index{prodotto!diretto}prodotto
+  $\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}
+  \tensor*{B}{^{\alpha_{1}\dots\alpha_{r}}_{\beta_{1}\dots\beta_{s}}}$
+  di un tensore di tipo $(p,q)$ e di uno di tipo $(r,s)$ è un tensore
+  $\tensor*{T}{^{\alpha_{1}\dots\alpha_{p+r}}_{\beta_{1}\dots\beta_{q+s}}}$ di
+  tipo $(p+r,q+s)$.
+\item[Contrazione degli indici] \index{contrazione!degli indici}Se in un tensore
+  di tipo $(p,q)$ si contraggono $n$ indici controvarianti con $n$ indici
+  covarianti si ottiene un tensore di tipo $(p-n,q-n)$.  Si può effettuare la
+  contrazione degli indici anche nel prodotto di due tensori: il prodotto di un
+  tensore di tipo $(p,q)$ e di uno di tipo $(r,s)$ è un tensore di tipo
+  $(p+r,q+s)$, ma se si contraggono $n$ indici si ottiene un tensore di tipo
+  $(p+r-n,q+s-n)$.
+\item[Prodotto scalare] Il prodotto scalare fra due vettori $V$ e $U$ è definito
+  come
+  \begin{equation}
+    V\cdot U = V^{\alpha}U_{\alpha} = g_{\alpha\beta}V^{\alpha}U^{\beta}.
+  \end{equation}
+  Il prodotto scalare di due vettori è un caso particolare di contrazione degli
+  indici nel prodotto fra due tensori.  Dunque il loro prodotto è un tensore di
+  rango $0$, cioè uno scalare e quindi una quantità che non varia per effetto di
+  una trasformazione delle coordinate.
+\end{description}
 
-La combinazione lineare
+Non abbiamo ricordato fra le operazioni la derivazione poiché la derivazione
+ordinaria nella relatività generale non ha le stesse importanti proprietà che
+possiede nella relatività speciale.  Approfondiremo questo discorso nel
+paragrafo~\ref{sec:derivazione-covariante}.
+
+\section{Connessione affine}
+\label{sec:connessione-affine}
+
+Abbiamo definito la connessione affine come
 \begin{equation}
-  \tensor*{T}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} = a
-  \tensor*{R}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} + b
-  \tensor*{S}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}},
+  \tensor{\Gamma}{^{\lambda}_{\mu\nu}}
+  = \parder{x^{\lambda}}{\xi^{\alpha}} \parder{\xi^{\alpha}}{x^{\mu},x^{\nu}},
 \end{equation}
-con $a$ e $b$ scalari, di due tensori dello stesso tipo è un tensore ancora
-dello stesso tipo.
-
-\subsubsection{Prodotto diretto}
-\label{sec:prodotto-diretto}
-
-Il prodotto
-$\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}
-\tensor*{B}{^{\alpha_{1}\dots\alpha_{r}}_{\beta_{1}\dots\beta_{s}}}$
-di un tensore di tipo $(p,q)$ e di uno di tipo $(r,s)$ è un tensore
-$\tensor*{T}{^{\alpha_{1}\dots\alpha_{p+r}}_{\beta_{1}\dots\beta_{q+s}}}$ di
-tipo $(p+r,q+s)$.
-
-\subsubsection{Contrazione degli indici}
-\label{sec:contrazione-indice}
-
-Se in un tensore di tipo $(p,q)$ $n$ indici controvarianti sono uguali a $n$
-indici covarianti e si somma su tali indici si ottiene un tensore di tipo
-$(p-n,q-n)$.  Usando la convenzione di Einstein sulla somma si omette il simbolo
-di sommatoria.  Questa operazione viene detta di contrazione degli indici.  Per
-esempio, il tensore $\tensor{T}{^{\alpha}_{\beta}^{\gamma\delta}}$ è un tensore
-di tipo $(3,1)$, ma se si contraggono l'indice covariante $\beta$ con il terzo
-indice controvariante $\delta$ si ottiene il tensore
-$\tensor{T}{^{\alpha}_{\beta}^{\gamma\beta}} =
-\tensor{T}{^{\alpha}_{0}^{\gamma 0}} + \tensor{T}{^{\alpha}_{1}^{\gamma 1}} +
-\tensor{T}{^{\alpha}_{2}^{\gamma 2}} + \tensor{T}{^{\alpha}_{3}^{\gamma 3}}$
-che è completamente controvariante di rango $2$.
-
-Si può effettuare la contrazione degli indici anche nel prodotto di due tensori:
-il prodotto di un tensore di tipo $(p,q)$ e di uno di tipo $(r,s)$ è un tensore
-di tipo $(p+r,q+s)$, ma se si contraggono $n$ indici si ottiene un tensore di
-tipo $(p+r-n,q+s-n)$.  Per esempio, il tensore
-$\tensor{A}{^{\alpha}_{\beta}^{\gamma\delta}}$ è di tipo $(3,1)$,
-$\tensor{B}{_{\epsilon\zeta}}$ è di tipo $(0,2)$, il prodotto
-$\tensor{A}{^{\alpha}_{\beta}^{\gamma\delta}} \tensor{B}{_{\epsilon\zeta}}$ è un
-tensore di tipo $(3,3)$, ma il prodotto
-$\tensor{A}{^{\alpha}_{\beta}^{\gamma\delta}} \tensor{B}{_{\alpha\delta}}$ con
-due indici contratti è un tensore di tipo $(1,1)$.
-
-\subsubsection{Prodotto scalare di due vettori}
-\label{sec:prodotto-scalare-vettori-minkowski}
-
-Il \emph{prodotto scalare} fra due vettori $V$ e $U$ è definito come
-\begin{equation}
-  \begin{split}
-    V\cdot U &= V^{\alpha}U_{\alpha} =
-    \tensor{\eta}{_{\alpha\beta}}V^{\alpha}U^{\beta} = V^{0}U_{0} + V^{1}U_{1} +
-    V^{2}U_{2} + V^{3}U_{3} \\
-    &= -V^{0}U^{0} + V^{1}U^{1} + V^{2}U^{2} + V^{3}U^{3} = -V^{0}U^{0} +
-    \bm{V}\cdot\bm{U}.
-  \end{split}
-\end{equation}
-
-Il prodotto scalare di due vettori è un caso particolare di contrazione degli
-indici nel prodotto fra due tensori.  Dunque il loro prodotto è un tensore di
-rango $0$, cioè uno scalare e quindi una quantità che non varia per effetto di
-una trasformazione delle coordinate.
-
-Si può definire anche il modulo quadro di un vettore $V$ come il prodotto
-scalare di $V$ per se stesso, vale a dire
+in cui $x^{\alpha}$ è un generico sistema di coordinate e
+$\xi^{\alpha} = \xi^{\alpha}(x^{\alpha})$ un sistema localmente inerziale.
+Considerando un altro sistema di coordinate $x'^{\mu} = x'^{\mu}(\xi^{\alpha})$
+abbiamo
 \begin{equation}
   \begin{split}
-    V\cdot V &= V^{\alpha}V_{\alpha} =
-    \tensor{\eta}{_{\alpha\beta}}V^{\alpha}V^{\beta} = V^{0}V_{0} + V^{1}V_{1} +
-    V^{2}V_{2} + V^{3}V_{3} \\
-    &= -(V^{0})^{2} + (V^{1})^{2} + (V^{2})^{2} + (V^{3})^{2} = -(V^{0})^{2} +
-    \bm{V}^{2}.
+    \tensor{{\Gamma{}'}}{^{\lambda}_{\mu\nu}}
+    &= \parder{x'^{\lambda}}{\xi^{\alpha}} \parder{}{x'^{\mu}}
+    \Big( \parder{\xi^{\alpha}(x)}{x'^{\nu}} \Big)
+    = \parder{x'^{\lambda}}{x^{\sigma}} \parder{x^{\sigma}}{\xi^{\alpha}}
+    \parder{}{x'^{\mu}} \Big( \parder{x^{\sigma}}{x'^{\nu}}
+    \parder{\xi^{\alpha}}{x^{\sigma}} \Big) \\
+    &=  \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{\xi^{\alpha}}
+    \Big( \parder{x^{\sigma}}{x'^{\nu}}
+    \parder{\xi^{\alpha}}{x'^{\mu},x^{\sigma}} +
+    \parder{x^{\sigma}}{x'^{\mu},x'^{\nu}} \parder{\xi^{\alpha}}{x^{\sigma}}
+    \Big) \\
+    &= \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{\xi^{\alpha}}
+    \Big( \parder{x^{\sigma}}{x'^{\nu}} \parder{x^{\tau}}{x'^{\mu}}
+    \parder{\xi^{\alpha}}{x^{\tau},x^{\sigma}} +
+    \parder{x^{\sigma}}{x'^{\mu},x'^{\nu}} \parder{\xi^{\alpha}}{x^{\sigma}}
+    \Big) \\
+    &= \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
+    \parder{x^{\sigma}}{x'^{\nu}} \tensor{\Gamma}{^{\rho}_{\tau\sigma}}
+    + \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu},x'^{\nu}}.
   \end{split}
 \end{equation}
-Anche il modulo quadro di un vettore è uno scalare.
+Questa relazione mostra che la connessione affine non è un tensore: se non ci
+fosse il secondo termine nell'ultimo membro avremmo la formula di trasformazione
+di un tensore di tipo $(1,2)$.
+
+Riscriviamo il secondo termine dell'ultimo membro dell'equazione precedente in
+una forma diversa che ci sarà utile in seguito.  Derivando rispetto a $x'^{\mu}$
+ambo i membri dell'identità
+\begin{equation}
+  \tensor{\delta}{^{\lambda}_{\nu}} = \parder{x'^{\lambda}}{x'^{\nu}}
+  = \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\nu}}
+\end{equation}
+abbiamo
+\begin{equation}
+  0 = \parder{\tensor{\delta}{^{\lambda}_{\nu}}}{x'^{\mu}}
+  = \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu}, x'^{\nu}}
+  + \parder{x^{\rho}}{x'^{\nu}} \parder{x^{\sigma}}{x'^{\mu}}
+  \parder{x'^{\lambda}}{x^{\rho},x^{\sigma}}.
+\end{equation}
+In questo modo la trasformazione della connessione affine può essere riscritta
+come
+\begin{equation}
+  \tensor{{\Gamma{}'}}{^{\lambda}_{\mu\nu}} =
+  -\parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu}, x'^{\nu}}
+  \tensor{\Gamma}{^{\rho}_{\tau\sigma}}
+  + \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu},x'^{\nu}}.
+\end{equation}
+
+\section{Derivazione covariante}
+\label{sec:derivazione-covariante}
+
+Nella relatività ristretta, la derivazione ordinaria di un tensore di rango $k$
+per una coordinata $x^{\lambda}$ produceva un tensore di rango $k+1$.
+All'interno della teoria della relatività ristretta la situazione è differente:
+la derivazione ordinaria di un tensore di rango $k$ per una coordinata
+$x^{\lambda}$ produce un ente che non è, in generale, un tensore di rango $k+1$.
+Per esempio, consideriamo un vettore controvariante $V^{\mu}$ il quale, per
+definizione, si trasformerà, per effetto di un cambiamento di coordinate, come
+\begin{equation}
+  V^{\mu} \to V'^{\mu} = \parder{x'^{\mu}}{x^{\nu}} V^{\nu}.
+\end{equation}
+Derivando rispetto a $x'^{\lambda}$ abbiamo
+\begin{equation}
+  \begin{split}
+    \parder{V'^{\mu}}{x'^{\lambda}}
+    &= \parder{x'^{\mu}}{x^{\nu}} \parder{V^{\nu}}{x'^{\lambda}}
+    + \parder{x'^{\mu}}{x^{\nu},x^{\nu}} V^{\nu} \\
+    &= \parder{x'^{\mu}}{x^{\rho}} \parder{x^{\rho}}{x'^{\nu}}
+    \parder{V^{\nu}}{x'^{\lambda}}
+    + \parder{x'^{\mu}}{x^{\nu},x^{\rho}} \parder{x^{\rho}}{x'^{\lambda}}
+    V^{\nu}.
+  \end{split}
+\end{equation}
+Se nell'ultimo membro ci fosse solo il primo termine avremmo che
+$\lparder{V'^{\mu}}{x'^{\lambda}}$ sarebbe un tensore di rango $2$, tuttavia il
+secondo termine è, in generale, diverso da zero.  Osserviamo che per
+trasformazioni delle coordinate $x^{\mu} \to x'^{\mu}$ lineari, come le
+trasformazioni di Lorentz, il secondo termine si annulla.
+
+Vediamo come si trasforma per effetto di un cambiamento delle coordinate la
+quantità $\tensor{\Gamma}{^{\mu}_{\nu\kappa}} V^{\kappa}$
+\begin{equation}
+  \begin{split}
+    \tensor{{\Gamma{}'}}{^{\mu}_{\lambda\kappa}} V'^{\kappa} &=
+    \Big( \parder{x'^{\mu}}{x^{\nu}} \parder{x^{\sigma}}{x'^{\kappa}}
+    \parder{x^{\rho}}{x'^{\lambda}} \tensor{\Gamma}{^{\nu}_{\rho\sigma}}
+    -\parder{x^{\rho}}{x'^{\nu}} \parder{x^{\sigma}}{x'^{\kappa}}
+    \parder{x'^{\mu}}{x^{\rho},x^{\sigma}} \Big) \parder{x'^{\kappa}}{x^{\eta}}
+    V^{\eta} \\
+    &= \parder{x'^{\mu}}{x^{\nu}}
+    \underbrace{\parder{x^{\sigma}}{x^{\eta}}}_{\tensor{\delta}{^{\sigma}_{\eta}}}
+    \parder{x^{\rho}}{x'^{\lambda}} \tensor{\Gamma}{^{\sigma}_{\rho\sigma}}
+    V^{\eta} - \parder{x^{\rho}}{x'^{\nu}}
+    \underbrace{\parder{x^{\sigma}}{x^{\eta}}}_{\tensor{\delta}{^{\sigma}_{\eta}}}
+    \parder{x'^{\mu}}{x^{\rho},x^{\sigma}} V^{\eta} \\
+    &= \parder{x'^{\mu}}{x^{\nu}} \parder{x^{\rho}}{x'^{\lambda}}
+    \tensor{\Gamma}{^{\nu}_{\rho\sigma}} V^{\sigma}
+    - \parder{x^{\rho}}{x'^{\nu}} \parder{x'^{\mu}}{x^{\rho},x^{\sigma}}
+    V^{\sigma}.
+  \end{split}
+\end{equation}
+Anche in questo caso, se nell'ultimo membro ci fosse solo il primo termine
+$\tensor{\Gamma}{^{\mu}_{\lambda\kappa}} V^{\kappa}$ si trasformerebbe come un
+tensore misto di rango $2$, tuttavia il termine addizionale è uguale e opposto
+al termine addizionale che compare nella trasformazione di
+$\lparder{V^{\mu}}{x^{\lambda}}$, quindi la somma delle due quantità si
+trasforma come un tensore misto di rango $2$, infatti
+\begin{equation}
+  \parder{V'^{\mu}}{x'^{\lambda}} + \tensor{{\Gamma{}'}}{^{\mu}_{\lambda\kappa}}
+  V'^{\kappa} = \parder{x'^{\mu}}{x^{\nu}} \parder{x^{\rho}}{x'^{\lambda}} \Big(
+  \parder{V^{\nu}}{x^{\rho}} + \tensor{\Gamma}{^{\nu}_{\rho\sigma}}
+  V'^{\sigma} \Big).
+\end{equation}
+Definiamo allora la \index{derivata!covariante}\emph{derivata covariante}
+$\tensor{V}{^{\mu}_{;\lambda}}$ di un vettore controvariante $V^{\mu}$ come
+\begin{equation}
+  \tensor{V}{^{\mu}_{;\lambda}} = \tensor{V}{^{\mu}_{,\lambda}} +
+  \tensor{\Gamma}{^{\mu}_{\kappa\lambda}} V^{\kappa}
+\end{equation}
+e per un cambiamento delle coordinate $x^{\mu} \to x'^{\mu}$ si ha
+\begin{equation}
+  \tensor{V}{^{\mu}_{;\lambda}} \to \tensor{{V'}}{^{\mu}_{;\lambda}}
+  = \parder{x'^{\mu}}{x^{\nu}} \parder{x^{\rho}}{x'^{\lambda}}
+  \tensor{V}{^{\nu}_{;\rho}}
+\end{equation}
+cioè la derivata covariante di un vettore è un tensore di rango $2$, in analogia
+alla derivazione ordinaria di un vettore nello spazio di Minkowski.
+
+Ripetendo gli stessi calcoli per un vettore covariante si giunge a definire la
+\index{derivata covariante}derivata covariante $V_{\mu;\nu}$ di un vettore
+covariante $V_{\mu}$ come
+\begin{equation}
+  V_{\mu;\nu} = V_{\mu,\nu} - \tensor{\Gamma}{^{\nu}_{\mu\nu}} V_{\nu}
+\end{equation}
+e per una trasformazione delle coordinate $x^{\mu} \to x'^{\mu}$ risulta
+\begin{equation}
+  V_{\mu;\nu} \to V'_{\mu;\nu}
+  = \parder{x^{\lambda}}{x'^{\mu}} \parder{x^{\rho}}{x'^{\nu}} V_{\lambda;\rho}.
+\end{equation}
+
+Più in generale è possibile definire la \index{derivata covariante}derivata
+covariante di un tensore.  Vediamo il caso particolare di un tensore misto di
+rango $3$
+\begin{subequations}
+  \begin{align}
+    \tensor{T}{^{\mu\sigma}_{\lambda;\rho}} &=
+    \tensor{T}{^{\mu\sigma}_{\lambda,\rho}} + \tensor{\Gamma}{^{\mu}_{\rho\nu}}
+    \tensor{T}{^{\nu\sigma}_{\lambda}} + \tensor{\Gamma}{^{\sigma}_{\rho\nu}}
+    \tensor{T}{^{\mu\nu}_{\lambda}} - \tensor{\Gamma}{^{\nu}_{\rho\lambda}}
+    \tensor{T}{^{\mu\sigma}_{\nu}}, \\
+    \tensor{{T'}}{^{\mu\sigma}_{\lambda;\rho}}
+    &= \parder{x'^{\mu}}{x^{\omega}} \parder{x'^{\sigma}}{x^{\tau}}
+    \parder{x^{\alpha}}{x'^{\lambda}} \parder{x^{\beta}}{x'^{\rho}}
+    \tensor{T}{^{\omega\tau}_{\alpha;\beta}}.
+  \end{align}
+\end{subequations}
+
+Grazie alle proprietà algebriche dei tensori viste nel
+paragrafo~\ref{sec:operazioni-tensori} si possono dimostrare le seguenti
+proprietà della derivata covariante
+\begin{enumerate}
+\item la derivata covariante della combinazione lineare di tensori è uguale alla
+  combinazione lineare delle derivate dei tensori
+  \begin{equation}
+    (\alpha \tensor*{A}{^{\mu_{1}\cdots\mu_{p}}_{\nu_{1}\cdots\nu_{q}}} + \beta
+    \tensor*{B}{^{\mu_{1}\cdots\mu_{p}}_{\nu_{1}\cdots\nu_{q}}})_{;\lambda} =
+    \alpha \tensor*{A}{^{\mu_{1}\cdots\mu_{p}}_{\nu_{1}\cdots\nu_{q};\lambda}} +
+    \beta \tensor*{B}{^{\mu_{1}\cdots\mu_{p}}_{\nu_{1}\cdots\nu_{q};\lambda}},
+  \end{equation}
+  con $\alpha$ e $\beta$ scalari;
+\item la derivata covariante del \index{prodotto!diretto}prodotto diretto di due
+  tensori segue la \index{regola!di Leibniz}\emph{regola di Leibniz}
+  \begin{equation}
+    (\tensor*{A}{^{\mu_{1}\cdots\mu_{p}}_{\nu_{1}\cdots\nu_{q}}}
+    \tensor*{B}{^{\mu_{1}\cdots\mu_{r}}_{\nu_{1}\cdots\nu_{s}}})_{;\lambda} =
+    \tensor*{A}{^{\mu_{1}\cdots\mu_{p}}_{\nu_{1}\cdots\nu_{q};\lambda}}
+    \tensor*{B}{^{\mu_{1}\cdots\mu_{r}}_{\nu_{1}\cdots\nu_{s}}} +
+    \tensor*{A}{^{\mu_{1}\cdots\mu_{p}}_{\nu_{1}\cdots\nu_{q}}}
+    \tensor*{B}{^{\mu_{1}\cdots\mu_{r}}_{\nu_{1}\cdots\nu_{s};\lambda}};
+  \end{equation}
+\item la derivata covariante della \index{contrazione!degli indici}contrazione
+  di un tensore è uguale alla contrazione della derivata covariante del
+  tensore.  Per esempio
+  \begin{equation}
+    \tensor{T}{^{\mu\lambda}_{\lambda;\rho}} =
+    \tensor{T}{^{\mu\lambda}_{\lambda,\rho}} +
+    \tensor{\Gamma}{^{\mu}_{\sigma\rho}}\tensor{T}{^{\sigma\lambda}_{\lambda}}.
+  \end{equation}
+  Infatti
+  \begin{equation}
+    \begin{split}
+      \tensor{T}{^{\mu\lambda}_{\lambda;\rho}} &=
+      \tensor{T}{^{\mu\lambda}_{\lambda,\rho}} +
+      \tensor{\Gamma}{^{\mu}_{\sigma\rho}}\tensor{T}{^{\sigma\lambda}_{\lambda}}
+      + \tensor{\Gamma}{^{\lambda}_{\sigma\rho}}
+      \tensor{T}{^{\mu\sigma}_{\lambda}} -
+      \tensor{\Gamma}{^{\sigma}_{\lambda\rho}}
+      \tensor{T}{^{\mu\lambda}_{\sigma}} \\
+      &= \tensor{T}{^{\mu\lambda}_{\lambda,\rho}} +
+      \tensor{\Gamma}{^{\mu}_{\sigma\rho}}\tensor{T}{^{\sigma\lambda}_{\lambda}}
+      + \tensor{\Gamma}{^{\sigma}_{\lambda\rho}}
+      \tensor{T}{^{\mu\lambda}_{\sigma}} -
+      \tensor{\Gamma}{^{\sigma}_{\lambda\rho}}
+      \tensor{T}{^{\mu\lambda}_{\sigma}} \\
+      &= \tensor{T}{^{\mu\lambda}_{\lambda,\rho}} +
+      \tensor{\Gamma}{^{\mu}_{\sigma\rho}}\tensor{T}{^{\sigma\lambda}_{\lambda}}
+    \end{split}
+  \end{equation}
+  in cui nel penultimo passaggio abbiamo scambiato gli indici muti $\lambda$ e
+  $\sigma$ del terzo termine.
+\end{enumerate}
+
+La derivata covariante del tensore metrico $g_{\mu\nu}$ è nulla poiché in un
+sistema di coordinate localmente inerziale il tensore metrico è uguale al
+tensore di Minkowski $\eta_{\mu\nu}$ e la derivata covariante del tensore di
+Minkowski è uguale al tensore nullo.  Poiché il tensore nullo non cambia per
+trasformazioni arbitrarie delle coordinate, la derivata covariante del tensore
+metrico è nulla in qualsiasi sistema di coordinate.  Formalmente questo può
+essere fatto vedere calcolando direttamente la derivata covariante di
+$g_{\mu\nu}$
+\begin{equation}
+  g_{\mu\nu;\lambda} = g_{\mu\nu,\lambda} -
+  \tensor{\Gamma}{^{\rho}_{\lambda\mu}}g_{\rho\nu} -
+  \tensor{\Gamma}{^{\rho}_{\lambda\nu}}g_{\rho\mu}
+\end{equation}
+e dalla~\eqref{eq:foo} abbiamo proprio $g_{\mu\nu;\lambda} = 0$.  Questo
+risultato significa che l'operazione di abbassamento degli indici (o
+innalzamento nel caso di $g^{\mu\nu}$) e derivazione covariante commutano, cioè
+\begin{subequations}
+  \begin{gather}
+    (g_{\mu\nu}V^{\nu})_{;\lambda}=g_{\mu\nu}(\tensor{V}{^{\nu}_{;\lambda}}), \\
+    (g^{\mu\nu}V_{\nu})_{;\lambda} = g^{\mu\nu}(V_{\nu;\lambda}).
+  \end{gather}
+
+\end{subequations}
 
 %%% Local Variables:
 %%% mode: latex

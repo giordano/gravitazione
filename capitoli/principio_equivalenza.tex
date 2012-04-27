@@ -82,10 +82,10 @@ oppure, utilizzando la quadrivelocità $u^{\alpha} = \ltoder{x^{\alpha}}{\tau}$,
 \end{equation}
 La~\eqref{eq:geodetica} è chiamata \emph{equazione della geodetica}.
 $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ è un insieme di $4^{3} = 64$ quantità che
-tuttavia, come vedremo, % TODO: farlo vedere oppure non dire "come vedremo" :-P
-non si trasformano, in generale, come un quadritensore di rango $3$.  Dalla
-definizione di connessione affine abbiamo inoltre che questa è simmetrica
-rispetto agli indici inferiori, cioè
+tuttavia, come vedremo nel paragrafo~\ref{sec:connessione-affine}, non si
+trasformano, in generale, come un quadritensore di rango $3$.  Dalla definizione
+di connessione affine abbiamo inoltre che questa è simmetrica rispetto agli
+indici inferiori, cioè
 $\tensor{\Gamma}{^{\lambda}_{\mu\nu}} = \tensor{\Gamma}{^{\lambda}_{\nu\mu}}$.
 
 L'intervallo di tempo proprio
@@ -135,6 +135,7 @@ affine~\eqref{eq:connessione-affine} risulta
 \end{equation}
 quindi
 \begin{equation}
+  \label{eq:foo}
   \begin{split}
     \partial_{\lambda}g_{\mu\nu} &=
     \tensor{\Gamma}{^{\rho}_{\lambda\mu}} \parder{\xi^{\alpha}}{x^{\rho}}
@@ -165,17 +166,26 @@ ricordando che $g_{\mu\nu}$ e $\tensor{\Gamma}{^{\rho}_{\mu\nu}}$ sono
 simmetrici per scambi degli indici $\mu$ e $\nu$.  Definiamo la matrice
 $g^{\nu\sigma}$ come l'inversa di $g_{\nu\sigma}$, cioè
 $g^{\nu\sigma}g_{\rho\nu} = \tensor{\delta}{^{\sigma}_{\rho}}$, allora,
-moltiplicando l'equazione precedente per $g^{\nu\sigma}$ otteniamo la seguente
-relazione fra il tensore metrico e la connessione affine
+moltiplicando l'equazione precedente per $g^{\nu\sigma}$
 \begin{equation}
-  \begin{aligned}
-    &g^{\nu\sigma}(\partial_{\lambda}g_{\mu\nu} + \partial_{\mu}g_{\lambda\nu}
-    - \partial_{\nu}g_{\mu\lambda}) = 2\tensor{\Gamma}{^{\sigma}_{\lambda\mu}}
-    \iff \\
-    &\tensor{\Gamma}{^{\sigma}_{\lambda\mu}} =
-    \frac{1}{2} g^{\nu\sigma} (\partial_{\lambda}g_{\mu\nu}
-    + \partial_{\mu}g_{\lambda\nu} - \partial_{\nu}g_{\lambda\mu}).
-  \end{aligned}
+  g^{\nu\sigma}(\partial_{\lambda}g_{\mu\nu} + \partial_{\mu}g_{\lambda\nu}
+  - \partial_{\nu}g_{\mu\lambda}) = 2\tensor{\Gamma}{^{\sigma}_{\lambda\mu}}
+\end{equation}
+otteniamo la seguente relazione fra il tensore metrico e la connessione
+affine\footnote{Presentiamo un utile metodo per ricordare la relazione fra
+  tensore metrico e connessione affine.  Osservando che il tensore metrico è
+  simmetrico, la connessione affine è simmetrica nei suoi due indici inferiori e
+  che nella relazione compaiono due derivate con il segno $+$ e una con il segno
+  $-$ deduciamo che nell'unica derivata con il segno $-$ il tensore metrico deve
+  avere gli stessi indici inferiori della connessione affine e la derivata è
+  fatta rispetto all'indice libero, nelle derivate con il segno $+$ il tensore
+  metrico ha sempre uno degli indici uguale all'indice muto e l'altro uguale a
+  uno degli indici inferiori della connessione affine mentre la derivata è fatta
+  rispetto all'altro indice inferiore della connessione affine.}
+\begin{equation}
+  \tensor{\Gamma}{^{\sigma}_{\lambda\mu}} =
+  \frac{1}{2} g^{\nu\sigma} (\partial_{\lambda}g_{\mu\nu}
+  + \partial_{\mu}g_{\lambda\nu} - \partial_{\nu}g_{\lambda\mu}).
 \end{equation}
 
 La geodetica è, per definizione, la curva più breve fra due punti, allora
@@ -280,8 +290,6 @@ all'equazione della geodetica
   \toder[2]{x^{\sigma}}{\tau} + \tensor{\Gamma}{^{\sigma}_{\nu\mu}}
   \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} = 0.
 \end{equation}
-
-
 
 \section{Limite newtoniano dell'equazione del moto}
 \label{sec:limite-newtoniano}
