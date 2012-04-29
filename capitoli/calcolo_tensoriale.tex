@@ -1,5 +1,4 @@
 \cleardoublepage{}
-
 \chapter{Calcolo tensoriale nella relatività generale}
 \label{cha:calcolo-tensoriale}
 
@@ -243,7 +242,7 @@ paragrafo~\ref{sec:derivazione-covariante}.
 \section{Connessione affine}
 \label{sec:connessione-affine}
 
-Abbiamo definito la connessione affine come
+Abbiamo definito la \index{connessione!affine}connessione affine come
 \begin{equation}
   \tensor{\Gamma}{^{\lambda}_{\mu\nu}}
   = \parder{x^{\lambda}}{\xi^{\alpha}} \parder{\xi^{\alpha}}{x^{\mu},x^{\nu}},
@@ -293,8 +292,8 @@ abbiamo
   + \parder{x^{\rho}}{x'^{\nu}} \parder{x^{\sigma}}{x'^{\mu}}
   \parder{x'^{\lambda}}{x^{\rho},x^{\sigma}}.
 \end{equation}
-In questo modo la trasformazione della connessione affine può essere riscritta
-come
+In questo modo la trasformazione della \index{connessione!affine}connessione
+affine può essere riscritta come
 \begin{equation}
   \tensor{{\Gamma{}'}}{^{\lambda}_{\mu\nu}} =
   -\parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu}, x'^{\nu}}
@@ -313,6 +312,7 @@ $x^{\lambda}$ produce un ente che non è, in generale, un tensore di rango $k+1$
 Per esempio, consideriamo un vettore controvariante $V^{\mu}$ il quale, per
 definizione, si trasformerà, per effetto di un cambiamento di coordinate, come
 \begin{equation}
+  \label{eq:trasf-vettore}
   V^{\mu} \to V'^{\mu} = \parder{x'^{\mu}}{x^{\nu}} V^{\nu}.
 \end{equation}
 Derivando rispetto a $x'^{\lambda}$ abbiamo
@@ -383,10 +383,10 @@ cioè la derivata covariante di un vettore è un tensore di rango $2$, in analog
 alla derivazione ordinaria di un vettore nello spazio di Minkowski.
 
 Ripetendo gli stessi calcoli per un vettore covariante si giunge a definire la
-\index{derivata covariante}derivata covariante $V_{\mu;\nu}$ di un vettore
+\index{derivata!covariante}derivata covariante $V_{\mu;\nu}$ di un vettore
 covariante $V_{\mu}$ come
 \begin{equation}
-  V_{\mu;\nu} = V_{\mu,\nu} - \tensor{\Gamma}{^{\nu}_{\mu\nu}} V_{\nu}
+  V_{\mu;\nu} = V_{\mu,\nu} - \tensor{\Gamma}{^{\lambda}_{\mu\nu}} V_{\lambda}
 \end{equation}
 e per una trasformazione delle coordinate $x^{\mu} \to x'^{\mu}$ risulta
 \begin{equation}
@@ -394,9 +394,17 @@ e per una trasformazione delle coordinate $x^{\mu} \to x'^{\mu}$ risulta
   = \parder{x^{\lambda}}{x'^{\mu}} \parder{x^{\rho}}{x'^{\nu}} V_{\lambda;\rho}.
 \end{equation}
 
-Più in generale è possibile definire la \index{derivata covariante}derivata
+Più in generale è possibile definire la \index{derivata!covariante}derivata
 covariante di un tensore.  Vediamo il caso particolare di un tensore misto di
-rango $3$
+rango
+tre\footnote{Presentiamo un metodo per ricordare la formula di derivazione
+  covariante di un tensore: il primo termine è la corrispondente derivazione
+  ordinaria del tensore, i successivi sono del tipo $s\Gamma T$ cui $T$ ha, di
+  volta in volta a rotazione, un solo indice muto e i restanti liberi, $\Gamma$
+  ha gli indici adeguati per saturare l'indice muto e compensare i due restanti
+  indici liberi (di cui uno è sempre quello inferiore rispetto a cui si deriva,
+  $\rho$ nell'esempio), $s$ vale $+1$ se l'indice muto di $T$ è controvariante,
+  $-1$ se è covariante.}
 \begin{subequations}
   \begin{align}
     \tensor{T}{^{\mu\sigma}_{\lambda;\rho}} &=
@@ -484,11 +492,158 @@ risultato significa che l'operazione di abbassamento degli indici (o
 innalzamento nel caso di $g^{\mu\nu}$) e derivazione covariante commutano, cioè
 \begin{subequations}
   \begin{gather}
-    (g_{\mu\nu}V^{\nu})_{;\lambda}=g_{\mu\nu}(\tensor{V}{^{\nu}_{;\lambda}}), \\
-    (g^{\mu\nu}V_{\nu})_{;\lambda} = g^{\mu\nu}(V_{\nu;\lambda}).
+    (g_{\mu\nu}V^{\nu})_{;\lambda} = g_{\mu\nu;\lambda}V^{\nu} +
+    g_{\mu\nu}\tensor{V}{^{\nu}_{;\lambda}} =
+    g_{\mu\nu}\tensor{V}{^{\nu}_{;\lambda}}, \\
+    (g^{\mu\nu}V_{\nu})_{;\lambda} = \tensor{g}{^{\mu\nu}_{;\lambda}}V_{\nu} +
+    g^{\mu\nu}V_{\nu;\lambda} = g^{\mu\nu}V_{\nu;\lambda}.
   \end{gather}
-
 \end{subequations}
+
+La derivata covariante di uno scalare è uguale alla sua derivata ordinaria.
+Infatti, sia $S$ uno scalare e $\tensor{V}{^{\mu}_{\nu}}$ un tensore tale che la
+sua contrazione $\tensor{V}{^{\mu}_{\mu}}$ sia uguale a $S$, allora
+\begin{equation}
+  S_{;\lambda} = \tensor{V}{^{\mu}_{\mu;\lambda}} =
+  \tensor{V}{^{\mu}_{\mu,\lambda}} + \tensor{\Gamma}{^{\mu}_{\sigma\lambda}}
+  \tensor{V}{^{\sigma}_{\mu}} - \tensor{\Gamma}{^{\mu}_{\sigma\lambda}}
+  \tensor{V}{^{\sigma}_{\mu}} = \tensor{V}{^{\mu}_{\mu,\lambda}} = S_{,\lambda}.
+\end{equation}
+
+Poiché la connessione affine è simmetrica rispetto ai suoi due indici inferiori,
+il rotore covariante è uguale al rotore ordinario, infatti
+\begin{equation}
+  V_{\mu;\nu} - V_{\nu;\mu} = (V_{\mu,\nu} -
+  \tensor{\Gamma}{^{\sigma}_{\mu\nu}}V_{\sigma}) - (V_{\nu,\mu} -
+  \tensor{\Gamma}{^{\sigma}_{\nu\mu}} V_{\sigma}) = V_{\mu,\nu} - V_{\nu,\mu}.
+\end{equation}
+
+Calcoliamo la divergenza covariante $\tensor{V}{^{\mu}_{;\mu}}$ di un vettore
+controvariante $V^{\mu}$
+\begin{equation}
+  \tensor{V}{^{\mu}_{;\mu}} = \tensor{V}{^{\mu}_{,\mu}} +
+  \tensor{\Gamma}{^{\mu}_{\mu\lambda}} V^{\lambda}.
+\end{equation}
+Osserviamo che
+\begin{equation}
+  \tensor{\Gamma}{^{\mu}_{\mu\lambda}} =
+  \frac{1}{2}(g^{\mu\rho}g_{\mu\rho,\lambda} + g^{\mu\rho}g_{\lambda\rho,\mu}
+  - g^{\mu\rho}g_{\mu\lambda,\rho}) = \frac{1}{2}g^{\mu\rho}g_{\mu\rho,\lambda}.
+\end{equation}
+% TODO: mettere la dimostrazione se riesco a farla o capirla
+Inoltre si dimostra che
+\begin{equation}
+  g^{\mu\rho} = \frac{1}{g} \parder{g}{g_{\mu\rho}},
+\end{equation}
+in cui $g = -\det(g_{\mu\nu})$, allora possiamo scrivere
+\begin{equation}
+  \tensor{\Gamma}{^{\mu}_{\mu\lambda}} = \frac{1}{2}
+  \frac{1}{g} \parder{g}{g_{\mu\rho}} \parder{g_{\mu\rho}}{x^{\lambda}} =
+  \frac{1}{2} \frac{1}{g} \parder{g}{x^{\lambda}} = \frac{1}{2} \parder{\ln
+    g}{x^{\lambda}} = \parder{\ln \sqrt{g}}{x^{\lambda}} =
+  \frac{1}{\sqrt{g}} \parder{\sqrt{g}}{x^{\lambda}}
+\end{equation}
+e quindi
+\begin{equation}
+  \tensor{V}{^{\mu}_{;\mu}} = \parder{V^{\mu}}{x^{\mu}} +
+  \tensor{\Gamma}{^{\mu}_{\mu\lambda}} V^{\lambda} = \parder{V^{\mu}}{x^{\mu}} +
+  \frac{1}{\sqrt{g}} \parder{\sqrt{g}}{x^{\lambda}}V^{\lambda} =
+  \frac{1}{\sqrt{g}} \parder{}{x^{\mu}}(\sqrt{g}V^{\mu}).
+\end{equation}
+
+\subsection{Differenziale covariante e trasporto parallelo}
+\label{sec:trasporto-parallelo}
+
+Abbiamo visto che la derivata ordinaria $\lparder{V^{\mu}}{x^{\lambda}}$ di un
+vettore non è un tensore di rango $2$, questo è dovuto al fatto che il
+differenziale ordinario $\dd V^{\mu}$ di un vettore $V^{\mu}$ non è un vettore,
+come invece succedeva nello spazio piatto di Minkowski.  Infatti
+dalla~\eqref{eq:trasf-vettore} abbiamo
+\begin{equation}
+  \dd V^{\mu} \to \dd V'^{\mu} = \parder{x'^{\mu}}{x^{\nu}} \dd V^{\nu}
+  + \parder{x'^{\mu}}{x^{\nu},x^{\lambda}} V^{\nu} \dd x^{\lambda}
+\end{equation}
+e solo nel caso di trasformazioni lineari delle coordinate il secondo termine si
+annulla e il differenziale si trasforma come un vettore.  Il motivo di ciò
+risiede nel fatto che il differenziale di un vettore è dato dalla differenza dei
+vettori $V^{\mu}(x + \dd x)$ e $V^{\mu}$ valutati in due punti diversi dello
+spazio e le leggi di trasformazione dei tensori in uno spazio curvo, come quello
+della relatività generale, dipendono dalla posizione.
+
+Nasce allora l'esigenza di definire un differenziale di un vettore (o, più in
+generale, di un tensore) che abbia a sua volta natura vettoriale (o tensoriale).
+Per ovviare al problema della diversa posizione in cui vengono valutati i
+vettori $V^{\mu}(x + \dd x)$ e $V^{\mu}(x)$ possiamo pensare di ``trasportare''
+il vettore $V^{\mu}(x)$ dal punto $x$ al punto $x + \dd x$, mantenendo lo stesso
+modulo e la stessa direzione rispetto alla curva $x^{\lambda}$.  In questo modo
+si può introdurre il
+\index{differenziale!covariante}\emph{differenziale covariante} $\cdd V^{\mu}$
+di un vettore $V^{\mu}$ definito come la differenza fra il vettore
+$V^{\mu}(x + \dd x)$ valutato nel punto $x + \dd x$ e il vettore $V^{\mu}(x)$
+\emph{trasportato parallelamente} nel punto $x + \dd x$
+\begin{equation}
+  \begin{split}
+    \cdd V^{\mu} &= V^{\mu}(x + \dd x) - V^{*\mu}(x + \dd x) = V^{\mu}(x + \dd x)
+    - (V^{\mu}(x) + \delta V^{\mu}) \\
+    &= \dd V^{\mu} - \delta V^{\mu},
+  \end{split}
+\end{equation}
+in cui $\delta V^{\mu}$ è la variazione del vettore dovuta al suo
+\index{trasporto!parallelo}\emph{trasporto parallelo} dal punto $x^{\lambda}$ al
+punto $x^{\lambda} + \dd x^{\lambda}$.  Questa variazione deve essere nulla in
+uno spazio piatto.
+
+Definiamo $\delta V^{\mu}$ in modo che $\cdd V^{\mu}$ sia un vettore
+controvariante.  Per fare questo consideriamo un sistema di coordinate inerziali
+$x'^{\mu}$ e imponiamo che $\cdd V^{\mu}$ si trasformi, per effetto di un
+cambiamento di coordinate $x^{\mu} \to x'^{\mu}$, come un vettore, cioè
+\begin{equation}
+  \cdd V^{\mu} \to \cdd V'^{\mu} = \parder{x'^{\mu}}{x^{\nu}} \cdd V^{\nu}
+  = \parder{x'^{\mu}}{x^{\nu}} \dd V^{\nu} - \parder{x'^{\mu}}{x^{\nu}} \delta
+  V^{\nu}.
+\end{equation}
+D'altra parte nel sistema di coordinate $x'^{\mu}$ abbiamo
+$\cdd V'^{\mu} = \dd x'^{\mu} - \delta V'^{\mu}$, ma poiché questo sistema di
+coordinate è piatto la variazione $\delta V'^{\mu}$ deve essere nulla, cioè il
+differenziale covariante si deve trasformare come il differenziale ordinario
+\begin{equation}
+  \cdd V'^{\mu} = \dd V'^{\mu} = \parder{x'^{\mu}}{x^{\nu}} \dd V^{\nu}
+  + \parder{x'^{\mu}}{x^{\rho},x^{\lambda}} V^{\rho} \dd x^{\lambda}
+\end{equation}
+quindi, per confronto ricaviamo
+\begin{equation}
+  - \parder{x'^{\mu}}{x^{\nu}} \delta V^{\nu}
+  = \parder{x'^{\mu}}{x^{\rho},x^{\lambda}} V^{\rho} \dd x^{\lambda}
+\end{equation}
+da cui
+\begin{equation}
+  \delta V^{\nu} =
+  - \parder{x'^{\mu}}{x^{\rho},x^{\lambda}} \parder{x^{\nu}}{x'^{\mu}} V^{\rho}
+  \dd x^{\lambda}.
+\end{equation}
+Riconosciamo che il fattore di fronte a $V^{\rho} \dd x^{\lambda}$ è la
+connessione affine $\tensor{\Gamma}{^{\nu}_{\rho\lambda}}$, quindi possiamo
+definire il \index{differenziale!covariante}\emph{differenziale covariante} di
+un vettore controvariante come
+\begin{equation}
+  \cdd V^{\mu} = \dd V^{\mu} + \tensor{\Gamma}{^{\mu}_{\rho\lambda}} V^{\rho} \dd
+  x^{\lambda}.
+\end{equation}
+Osserviamo inoltre che risulta
+\begin{equation}
+  \cdd V^{\mu} = \parder{V^{\mu}}{x^{\lambda}} \dd x^{\lambda} +
+  \tensor{\Gamma}{^{\mu}_{\rho\lambda}} V^{\rho} \dd x^{\lambda} =
+  \tensor{V}{^{\mu}_{;\lambda}} \dd x^{\lambda}.
+\end{equation}
+
+Poiché $\delta V^{\mu} = 0$ in un sistema inerziale, in un tale sistema si deve
+anche annullare la \index{connessione!affine}connessione affine.  Questo fa
+vedere di nuovo che $\tensor{\Gamma}{^{\mu}_{\rho\lambda}}$ non può essere un
+tensore: un tensore nullo in un sistema di coordinate è nullo in ogni altro
+sistema di coordinate.
+% TODO: parlare, nei paragrafi precedenti, del principio di generale covarianza
+% per spiegare come scrivere rapidamente le equazioni della relatività
+% generale.  Qui fare l'esempio dell'equazione della geodetica.
 
 %%% Local Variables:
 %%% mode: latex

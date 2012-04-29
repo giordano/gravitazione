@@ -83,6 +83,7 @@
 
 % Operatori
 \newcommand*{\dd}{\mathop{}\!\mathrm{d}} % Operatore differenziale \dd
+\newcommand*{\cdd}{\mathop{}\!\mathrm{D}} % Differenziale covariante \cdd
 \DeclareMathOperator{\uimm}{\mathrm{i}} % unità immaginaria
 % Operatore valore assoluto \abs{x}. Usa \abs*{} per le frazioni
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
@@ -92,6 +93,8 @@
 %% Derivate
 % Derivata totale: \toder[ordine]{funzione}{variabile}
 \newcommand*{\toder}[3][]{\frac{{\dd^{#1}}#2}{\dd {#3}^{#1}}}
+% Derivata covariante: \covder[ordine]{funzione}{variabile}
+\newcommand*{\covder}[3][]{\frac{{\cdd^{#1}}#2}{\cdd {#3}^{#1}}}
 % Derivata parziale \parder[ordine]{funzione}{variabile}
 % Per la definizione del comando `parder' (per inserire le derivate parziali)
 % vedi
