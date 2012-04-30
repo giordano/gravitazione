@@ -550,6 +550,15 @@ e quindi
   \frac{1}{\sqrt{g}} \parder{\sqrt{g}}{x^{\lambda}}V^{\lambda} =
   \frac{1}{\sqrt{g}} \parder{}{x^{\mu}}(\sqrt{g}V^{\mu}).
 \end{equation}
+Questo risultato ci permette di scrivere il \index{teorema!di Gauss}teorema di
+Gauss in forma covariante, ricordando che l'elemento invariante infinitesimo di
+volume quadrimensionale è $\sqrt{g}\dd^{4} x$,
+\begin{equation}
+  \int\limits_{\Omega} \tensor{V}{^{\mu}_{;\mu}} \sqrt{g} \dd^{4} x =
+  \int\limits_{\Omega} \frac{1}{\sqrt{g}} \parder{}{x^{\mu}}(\sqrt{g}V^{\mu})
+  \sqrt{g} \dd^{4} x = \int\limits_{\partial\Omega} V^{\mu} \sqrt{g}
+  \dd\Sigma_{\mu}.
+\end{equation}
 
 \subsection{Differenziale covariante e trasporto parallelo}
 \label{sec:trasporto-parallelo}
@@ -603,7 +612,7 @@ cambiamento di coordinate $x^{\mu} \to x'^{\mu}$, come un vettore, cioè
   V^{\nu}.
 \end{equation}
 D'altra parte nel sistema di coordinate $x'^{\mu}$ abbiamo
-$\cdd V'^{\mu} = \dd x'^{\mu} - \delta V'^{\mu}$, ma poiché questo sistema di
+$\cdd V'^{\mu} = \dd V'^{\mu} - \delta V'^{\mu}$, ma poiché questo sistema di
 coordinate è piatto la variazione $\delta V'^{\mu}$ deve essere nulla, cioè il
 differenziale covariante si deve trasformare come il differenziale ordinario
 \begin{equation}
@@ -636,14 +645,57 @@ Osserviamo inoltre che risulta
   \tensor{V}{^{\mu}_{;\lambda}} \dd x^{\lambda}.
 \end{equation}
 
+Se la curva $x^{\mu}$ è parametrizzata dal tempo proprio $\tau$ definiamo la
+\emph{derivata lungo la curva} $x^{\mu}$ di $V^{\mu}$ come
+\begin{equation}
+  \covder{V^{\mu}}{\tau} = \tensor{V}{^{\mu}_{;\lambda}}
+  \toder{x^{\lambda}}{\tau} = \toder{V^{\mu}}{\tau} +
+  \tensor{\Gamma}{^{\mu}_{\rho\lambda}} V^{\rho} \toder{x^{\lambda}}{\tau}.
+\end{equation}
+
 Poiché $\delta V^{\mu} = 0$ in un sistema inerziale, in un tale sistema si deve
 anche annullare la \index{connessione!affine}connessione affine.  Questo fa
 vedere di nuovo che $\tensor{\Gamma}{^{\mu}_{\rho\lambda}}$ non può essere un
 tensore: un tensore nullo in un sistema di coordinate è nullo in ogni altro
 sistema di coordinate.
-% TODO: parlare, nei paragrafi precedenti, del principio di generale covarianza
-% per spiegare come scrivere rapidamente le equazioni della relatività
-% generale.  Qui fare l'esempio dell'equazione della geodetica.
+
+\section{Applicazioni del principio di generale covarianza}
+\label{sec:applicazioni-generale-covarianza}
+
+Grazie al formalismo introdotto in questo capitolo possiamo adottare l'algoritmo
+che ci apprestiamo a esporre per determinare quale sia l'effetto della gravità
+sui sistemi fisici: si scrive l'equazione che descrive il sistema, in assenza di
+gravità, con il formalismo della relatività speciale e
+\begin{itemize}
+\item si sostituisce il tensore metrico $g_{\mu\nu}$ al tensore metrico di
+  Minkowski $\eta_{\mu\nu}$;
+\item si sostituiscono le derivate covarianti alle derivate ordinarie e i
+  differenziali covarianti ai differenziali ordinari;
+\item si utilizzano opportune potenze di $\sqrt{g}$ per saturare a $0$ i pesi
+  degli pseudotensori.
+\end{itemize}
+L'equazione così ottenuta sarà generalmente covariante e valida in assenza di
+gravità e quindi, per il \index{principio!di generale covarianza}principio di
+generale covarianza, sarà valida anche in presenza di campi gravitazionali.  È
+possibile fare ciò a patto che si lavori su scale sufficientemente piccole
+rispetto al raggio d'azione del campo gravitazionale.
+
+Questo algoritmo ci permette, per esempio, di ricavare in maniera rapida
+l'equazione del moto di una particella soggetta solo a un campo gravitazionale.
+In assenza di gravità la particella è libera, quindi la sua equazione del moto è
+\begin{equation}
+  \toder{u^{\mu}}{\tau} = 0,
+\end{equation}
+in cui $u^{\mu}$ è la \index{quadrivelocità}quadrivelocità della particella.  In
+presenza del campo gravitazionale, secondo le prescrizioni precedente,
+l'equazione del moto si scrive come
+\begin{equation}
+  0 = \covder{u^{\mu}}{\tau} = \toder{u^{\mu}}{\tau} +
+  \tensor{\Gamma}{^{\mu}_{\lambda\nu}} u^{\lambda} \toder{x^{\nu}}{\tau} =
+  \toder{u^{\mu}}{\tau} + \tensor{\Gamma}{^{\mu}_{\lambda\nu}} u^{\lambda}
+  u^{\nu},
+\end{equation}
+che è l'equazione della geodetica~\eqref{eq:geodetica2}.
 
 %%% Local Variables:
 %%% mode: latex
