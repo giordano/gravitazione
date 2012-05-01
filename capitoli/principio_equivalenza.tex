@@ -43,7 +43,7 @@ dalla~\eqref{eq:moto-caduta-libera} abbiamo
 \begin{equation}
   \label{eq:moto1}
   0 = \toder{}{\tau}\toder{\xi^{\alpha}}{\tau} = \toder{}{\tau}
-  \Big( \parder{\xi^{\alpha}}{x^{\mu}}\toder{x^{\mu}}{\tau} \Big)
+  \bigg( \parder{\xi^{\alpha}}{x^{\mu}}\toder{x^{\mu}}{\tau} \bigg)
   = \parder{\xi^{\alpha}}{x^{\mu},x^{\nu}} \toder{x^{\nu}}{\tau}
   \toder{x^{\mu}}{\tau} + \parder{\xi^{\alpha}}{x^{\mu}}
   \toder[2]{x^{\mu}}{\tau}.
@@ -59,8 +59,8 @@ quindi moltiplicando la~\eqref{eq:moto1} per
 $\lparder{x^{\lambda}}{\xi^{\alpha}}$ l'equazione del moto diventa
 \begin{equation}
   \tensor{\delta}{^{\lambda}_{\mu}} \toder[2]{x^{\mu}}{\tau} +
-  \Big( \parder{\xi^{\alpha}}{x^{\mu},x^{\nu}} \parder{x^{\lambda}}{\xi^{\alpha}}
-  \Big) \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} = 0.
+  \bigg(\parder{\xi^{\alpha}}{x^{\mu},x^{\nu}}\parder{x^{\lambda}}{\xi^{\alpha}}
+  \bigg) \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} = 0.
 \end{equation}
 Definendo la \index{connessione!affine}\emph{connessione affine}
 $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ come
@@ -205,8 +205,8 @@ Conviene parametrizzare la linea d'universo $x^{\mu}$ della particella con un
 arbitrario parametro $p$, cioè $x^{\mu} = x^{\mu}(p)$, quindi
 \begin{equation}
   S = \int_{A}^{B} \dd\tau = \int_{A}^{\beta} \toder{\tau}{p}\dd p =
-  \int_{A}^{B} \Big( -g_{\mu\nu}\toder{x^{\mu}}{p}\toder{x^{\nu}}{p} \Big)^{1/2}
-  \dd p.
+  \int_{A}^{B} \bigg( -g_{\mu\nu}\toder{x^{\mu}}{p}\toder{x^{\nu}}{p}
+  \bigg)^{1/2} \dd p.
 \end{equation}
 Per ricavare l'equazione del moto dobbiamo imporre che $S$ sia stazionario
 rispetto a variazioni infinitesime $\delta x^{\mu}$ delle coordinate $x^{\mu}$,
@@ -218,24 +218,24 @@ con la condizione che le variazioni sia nulle nei punti $A$ e $B$
 La variazione della distanza fra i due eventi è
 \begin{equation}
   \begin{split}
-    \delta S &= \int_{A}^{B} \frac{1}{2}\Big( -g_{\mu\nu} \toder{x^{\mu}}{p}
-    \toder{x^{\nu}}{p} \Big)^{-1/2} \Big( -\parder{g_{\mu\nu}}{x^{\lambda}}
+    \delta S &= \int_{A}^{B} \frac{1}{2}\bigg( -g_{\mu\nu} \toder{x^{\mu}}{p}
+    \toder{x^{\nu}}{p} \bigg)^{-1/2} \bigg( -\parder{g_{\mu\nu}}{x^{\lambda}}
     \delta x^{\lambda} \toder{x^{m}}{p} \toder{x^{n}}{p} \\
     &- g_{\mu\nu} \toder{\delta x^{\mu}}{p} \toder{x^{\nu}}{p} - g_{\mu\nu}
-    \toder{x^{\mu}}{p} \toder{\delta x^{\nu}}{p} \Big) \dd p \\
-    &= \int_{A}^{B} \frac{1}{2}\Big( -g_{\mu\nu} \toder{x^{\mu}}{p}
-    \toder{x^{\nu}}{p} \Big)^{-1/2} \Big( -\parder{g_{\mu\nu}}{x^{\lambda}}
+    \toder{x^{\mu}}{p} \toder{\delta x^{\nu}}{p} \bigg) \dd p \\
+    &= \int_{A}^{B} \frac{1}{2}\bigg( -g_{\mu\nu} \toder{x^{\mu}}{p}
+    \toder{x^{\nu}}{p} \bigg)^{-1/2} \bigg( -\parder{g_{\mu\nu}}{x^{\lambda}}
     \delta x^{\lambda} \toder{x^{\mu}}{p} \toder{x^{\nu}}{p} -
-    2g_{\mu\nu}\toder{\delta x^{\mu}}{p} \toder{x^{\nu}}{p} \Big) \dd p.
+    2g_{\mu\nu}\toder{\delta x^{\mu}}{p} \toder{x^{\nu}}{p} \bigg) \dd p.
   \end{split}
 \end{equation}
 Nell'ultimo passaggio abbiamo sfruttato la simmetria di del tensore metrico
 $g_{\mu\nu}$.  Osserviamo che il primo fattore dell'integrale è
 $\ltoder{p}{\tau}$, così che risulta
 \begin{equation}
-  \delta S = -\int_{A}^{B} \Big( \frac{1}{2}\parder{g_{\mu\nu}}{x^{\lambda}}
+  \delta S = -\int_{A}^{B} \bigg( \frac{1}{2}\parder{g_{\mu\nu}}{x^{\lambda}}
   \delta  x^{\lambda} \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} + g_{\mu\nu}
-  \toder{\delta x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} \Big) \dd \tau.
+  \toder{\delta x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} \bigg) \dd \tau.
 \end{equation}
 Integriamo il secondo termine per parti ricordando la
 condizione~\eqref{eq:condizione-variazione}
@@ -244,29 +244,29 @@ condizione~\eqref{eq:condizione-variazione}
     \int_{A}^{\beta} g_{\lambda\nu} \toder{\delta x^{\lambda}}{\tau}
     \toder{x^{\nu}}{\tau} \dd \tau &= g_{\lambda\nu} \delta x^{\lambda}
     \toder{x^{\nu}}{\tau} \bigg|_{A}^{B} - \int_{A}^{B} \delta x^{\lambda}
-    \toder{}{\tau} \Big( g_{\lambda\nu} \toder{x^{\nu}}{\tau} \Big) \dd \tau \\
-    &= -\int_{A}^{B} \delta x^{\lambda} \Big( \toder{g_{\lambda\nu}}{\tau}
-    \toder{x^{\nu}}{\tau} + g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} \Big) \dd
+    \toder{}{\tau} \bigg( g_{\lambda\nu} \toder{x^{\nu}}{\tau} \bigg) \dd\tau \\
+    &= -\int_{A}^{B} \delta x^{\lambda} \bigg( \toder{g_{\lambda\nu}}{\tau}
+    \toder{x^{\nu}}{\tau} + g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} \bigg) \dd
     \tau \\
     &= -\int_{A}^{B} \delta x^{\lambda}
-    \Big( \parder{g_{\lambda\nu}}{x^{\mu}} \toder{x^{\mu}}{\tau}
-    \toder{x^{\nu}}{\tau} + g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} \Big) \dd
+    \bigg( \parder{g_{\lambda\nu}}{x^{\mu}} \toder{x^{\mu}}{\tau}
+    \toder{x^{\nu}}{\tau} + g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} \bigg) \dd
     \tau.
   \end{split}
 \end{equation}
 Allora
 \begin{equation}
-  \delta S = -\int_{A}^{B} \delta x^{\lambda} \Big(
+  \delta S = -\int_{A}^{B} \delta x^{\lambda} \bigg(
   \frac{1}{2} \parder{g_{\mu\nu}}{x^{\lambda}} \toder{x^{\mu}}{\tau}
   \toder{x^{\nu}}{\tau} - \parder{g_{\lambda\nu}}{x^{\mu}}
   \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} -
-  g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} \Big) \dd \tau.
+  g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} \bigg) \dd \tau.
 \end{equation}
 Affinché sia $\delta S = 0$, per l'arbitrarietà della variazione $\delta
 x^{\lambda}$ deve annullarsi la quantità fra parentesi, cioè
 \begin{equation}
-  \Big(\frac{1}{2} \partial_{\lambda} g_{\mu\nu} - \partial_{\mu}g_{\lambda\nu}
-  \Big) \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau}
+  \bigg(\frac{1}{2} \partial_{\lambda} g_{\mu\nu} - \partial_{\mu}g_{\lambda\nu}
+  \bigg) \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau}
   - g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} = 0.
 \end{equation}
 Dal momento che
@@ -335,12 +335,12 @@ quindi l'equazione della geodetica si riduce a
   \begin{split}
     0 &= \toder[2]{x^{\sigma}}{\tau} + \tensor{\Gamma}{^{\sigma}_{\lambda\mu}}
     \toder{x^{\lambda}}{\tau} \toder{x^{\mu}}{\tau} \\
-    &= \toder[2]{x^{\sigma}}{\tau} + \tensor{\Gamma}{^{\sigma}_{00}} \Big(
-    \toder{t}{\tau} \Big)^{2} + 2\tensor{\Gamma}{^{\sigma}_{0i}} \toder{t}{\tau}
+    &= \toder[2]{x^{\sigma}}{\tau} + \tensor{\Gamma}{^{\sigma}_{00}} \bigg(
+    \toder{t}{\tau} \bigg)^{2} + 2\tensor{\Gamma}{^{\sigma}_{0i}}\toder{t}{\tau}
     \toder{x^{i}}{\tau} + \tensor{\Gamma}{^{\sigma}_{ij}} \toder{x^{i}}{\tau}
     \toder{x^{j}}{\tau} \\
-    &\approx \toder[2]{x^{\sigma}}{\tau} + \tensor{\Gamma}{^{\sigma}_{00}} \Big(
-    \toder{t}{\tau} \Big)^{2}.
+    &\approx \toder[2]{x^{\sigma}}{\tau} + \tensor{\Gamma}{^{\sigma}_{00}}\bigg(
+    \toder{t}{\tau} \bigg)^{2}.
   \end{split}
 \end{equation}
 Dalla~\eqref{eq:christoffel-approx} risulta
@@ -357,7 +357,7 @@ variare di $\sigma$, alle equazioni
 \begin{subequations}
   \begin{align}
     \toder[2]{t}{\tau} &= 0 &\text{per $\sigma = 0$}, \\
-    \toder[2]{x^{i}}{\tau} &= \frac{1}{2} \Big( \toder{t}{\tau} \Big)^{2}
+    \toder[2]{x^{i}}{\tau} &= \frac{1}{2} \bigg( \toder{t}{\tau} \bigg)^{2}
     (\nabla h_{00})_{i} &\text{per $\sigma = i$}.
   \end{align}
 \end{subequations}
@@ -392,7 +392,7 @@ in cui
 è il \index{raggio!di Schwarzschild}\emph{raggio di Schwarzschild} del corpo che
 genera il campo gravitazionale.  Dunque
 \begin{equation}
-  g_{00} = \eta_{00} + h_{00} = - \Big(1 - \frac{2GM}{rc^{2}} \Big)
+  g_{00} = \eta_{00} + h_{00} = - \bigg(1 - \frac{2GM}{rc^{2}} \bigg)
 \end{equation}
 e la quantità $h_{00} = r_{\textup{g}}/r$ è una misura delle deviazioni della
 relatività generale rispetto alle previsioni della gravità newtoniana.

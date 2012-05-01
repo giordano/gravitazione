@@ -703,14 +703,14 @@ rango 1) covariante
 Definiamo l'operatore
 \index{quadrigradiente!covariante}\emph{quadrigradiente covariante} come
 \begin{equation}
-  \partial_{\alpha} = \parder{}{x^{\alpha}} = \Big( \parder{}{t}, \nabla\Big)
+  \partial_{\alpha} = \parder{}{x^{\alpha}} = \bigg( \parder{}{t}, \nabla\bigg)
 \end{equation}
 e l'operatore
 \index{quadrigradiente!controvariante}\emph{quadrigradiente controvariante} come
 \begin{equation}
   \partial^{\alpha} = \parder{}{x_{\alpha}} =
-  \tensor{\eta}{^{\alpha\beta}} \partial_{\beta} = \Big( -\parder{}{t},
-  \nabla\Big).
+  \tensor{\eta}{^{\alpha\beta}} \partial_{\beta} = \bigg( -\parder{}{t},
+  \nabla\bigg).
 \end{equation}
 Infine introduciamo l'operatore \index{d'Alambertiano}\emph{d'Alambertiano}
 definito da
@@ -832,14 +832,14 @@ la derivata di $x^{\alpha}$ rispetto al tempo proprio $\tau$:
 e poiché risulta
 \begin{equation}
   \dd \tau = \sqrt{\dd t^{2} - \dd \bm{x}^{2}} = \dd t \sqrt{1 -
-    \Big(\toder{\bm{x}}{t}\Big)^{2}} = \dd t\sqrt{1 - v^{2}} = \frac{\dd
+    \bigg(\toder{\bm{x}}{t}\bigg)^{2}} = \dd t\sqrt{1 - v^{2}} = \frac{\dd
     t}{\gamma(v)}
 \end{equation}
 abbiamo che la quadrivelocità è uguale a
 \begin{equation}
   \begin{split}
     v^{\alpha} &= \toder{x^{\alpha}}{t}\toder{t}{\tau} = \toder{x^{\alpha}}{t}
-    \gamma(v) = \gamma(v) \Big(\toder{x^{0}}{t}, \toder{\bm{x}}{t}\Big) =
+    \gamma(v) = \gamma(v) \bigg(\toder{x^{0}}{t}, \toder{\bm{x}}{t}\bigg) =
     \gamma(v)(1,\bm{v}) \\
     &= (\gamma(v), \gamma(v)\bm{v}).
   \end{split}
@@ -879,8 +879,8 @@ momento nel nuovo sistema di riferimento
   \begin{split}
     (\bm{p}')_{i} &= (p')^{i} = \tensor{\Lambda}{^{i}_{\beta}}p^{\beta} =
     \tensor{\Lambda}{^{i}_{0}}p^{0} + \tensor{\Lambda}{^{j}_{j}}p^{j} \\
-    &= \gamma(V) V_{i}E + \Big( \delta_{ij} +
-    V_{i}V_{j}\frac{\gamma(V)-1}{V^{2}}\Big)p^{j} \\
+    &= \gamma(V) V_{i}E + \bigg( \delta_{ij} +
+    V_{i}V_{j}\frac{\gamma(V)-1}{V^{2}}\bigg)p^{j} \\
     &= \gamma(V) V_{i}E + p_{i} +
     V_{i}V_{j}p^{j}\frac{\gamma(V)-1}{V^{2}} \\
     &= \gamma(V) V_{i}E + p_{i} + V_{i} \bm{V} \cdot \bm{p}
@@ -889,8 +889,8 @@ momento nel nuovo sistema di riferimento
 \end{equation}
 cioè
 \begin{equation}
-  \bm{p}' = \bm{p} + \Big(\gamma(V) E + \bm{V} \cdot \bm{p}
-  \frac{\gamma(V)-1}{V^{2}}\Big)\bm{V}.
+  \bm{p}' = \bm{p} + \bigg(\gamma(V) E + \bm{V} \cdot \bm{p}
+  \frac{\gamma(V)-1}{V^{2}}\bigg)\bm{V}.
 \end{equation}
 % NOTA: i risultati delle trasformazioni di momento ed energia sono differenti
 % dalle formule [4.103] e [4.104], pagina 132, del Barone.  Weinberg definisce
@@ -943,7 +943,7 @@ Abbiamo
     \begin{split}
       f'^{i} &= \tensor{\Lambda}{^{i}_{\alpha}}f^{\alpha} =
       \tensor{\Lambda}{^{i}_{0}}f^{0} + \tensor{\Lambda}{^{i}_{j}}f^{j}
-      = \Big( \delta_{ij} + V_{i}V_{j}\frac{\gamma(V) - 1}{V^{2}} \Big)f^{j} \\
+      = \bigg( \delta_{ij} + V_{i}V_{j}\frac{\gamma(V) - 1}{V^{2}} \bigg)f^{j}\\
       &= f^{i} + V_{i}V_{j}f^{j}\frac{\gamma(V) - 1}{V^{2}} = f^{i} + V_{i}
       \bm{V} \cdot \bm{f} \frac{\gamma(V) - 1}{V^{2}},
     \end{split}
@@ -1211,8 +1211,8 @@ Adottando la \index{gauge!di Lorenz}gauge di Lorenz
 $\partial^{\alpha}A_{\alpha} = 0$ otteniamo
 l'\index{equazione!di d'Alambert}equazione di d'Alambert non omogenea
 \begin{equation}
-  \partial^{\alpha}\partial_{\alpha}A_{\beta} = \Box^{2}A_{\beta} = \Big(
-  -\parder{}{*{2}{t}} + \nabla^{2} \Big) A_{\beta} = -J_{\beta}.
+  \partial^{\alpha}\partial_{\alpha}A_{\beta} = \Box^{2}A_{\beta} = \bigg(
+  -\parder{}{*{2}{t}} + \nabla^{2} \bigg) A_{\beta} = -J_{\beta}.
 \end{equation}
 
 \subsection{Equazioni del moto di un campo e tensore energia-impulso}
@@ -1245,26 +1245,26 @@ campo, cioè $\delta S = 0$.  Per brevità adottiamo la notazione
 $q_{,\alpha} = \lparder{q}{x^{\alpha}}$.  In questo modo abbiamo
 \begin{equation}
   \begin{split}
-    0 &= \delta S = \int \Big( \parder{\Lambda}{q}\delta q
-    + \parder{\Lambda}{q_{,\alpha}}\delta q_{,\alpha} \Big)\dd^{4} x \\
-    &= \int \Big( \parder{\Lambda}{q}\delta q + \parder{}{x^{\alpha}}\Big(
-    \parder{\Lambda}{q_{,\alpha}}\delta q \Big) - \delta q \parder{}{x^{\alpha}}
-    \Big( \parder{\Lambda}{q_{,\alpha}} \Big)\Big)\dd^{4} x.
+    0 &= \delta S = \int \bigg( \parder{\Lambda}{q}\delta q
+    + \parder{\Lambda}{q_{,\alpha}}\delta q_{,\alpha} \bigg)\dd^{4} x \\
+    &= \int \bigg( \parder{\Lambda}{q}\delta q + \parder{}{x^{\alpha}}\bigg(
+    \parder{\Lambda}{q_{,\alpha}}\delta q \bigg) - \delta q\parder{}{x^{\alpha}}
+    \bigg( \parder{\Lambda}{q_{,\alpha}} \bigg)\bigg)\dd^{4} x.
   \end{split}
 \end{equation}
 Per il teorema di Gauss nello spazio di Minkowski (vedi
 l'appendice~\ref{cha:teorema-gauss}) il secondo termine nell'integrale diventa
 \begin{equation}
   \int\limits_{\Omega}  \partial_{\alpha}
-  \Big( \parder{\Lambda}{q_{,\alpha}}\delta q \Big) \dd^{4} x =
+  \bigg( \parder{\Lambda}{q_{,\alpha}}\delta q \bigg) \dd^{4} x =
   \int\limits_{\partial\Omega} \parder{\Lambda}{q_{,\alpha}}\delta q \dd^{3}
   \bm{x} = 0
 \end{equation}
 perché le variazioni $\delta q$ del campo devono essere nulle sul bordo
 $\partial\Omega$.  Allora
 \begin{equation}
-  0 = \delta S = \int \delta q\Big( \parder{\Lambda}{q} - \parder{}{x^{\alpha}}
-  \Big( \parder{\Lambda}{q_{,\alpha}} \Big)\Big)\dd^{4} x.
+  0 = \delta S = \int \delta q\bigg( \parder{\Lambda}{q} - \parder{}{x^{\alpha}}
+  \bigg( \parder{\Lambda}{q_{,\alpha}} \bigg)\bigg)\dd^{4} x.
 \end{equation}
 Si deve avere $\delta S = 0$ per una variazione arbitraria $\delta q$, pertanto
 si deve annullare il termine fra parentesi e così giungiamo all'equazione del
@@ -1286,12 +1286,12 @@ conservazione dell'energia in meccanica.  Abbiamo
   \begin{split}
     \parder{\Lambda}{x^{\alpha}} &= \parder{\Lambda}{q}\parder{q}{x^{\alpha}}
     + \parder{\Lambda}{q_{,\beta}}\parder{q_{,\beta}}{x^{\alpha}}
-    = \parder{}{x^{\beta}}\Big( \parder{\Lambda}{q_{,\beta}} \Big)q_{,\alpha}
+    = \parder{}{x^{\beta}}\bigg( \parder{\Lambda}{q_{,\beta}} \bigg)q_{,\alpha}
     + \parder{\Lambda}{q_{,\beta}}\parder{q_{,\beta}}{x^{\alpha}} \\
-    &= \parder{}{x^{\beta}}\Big( \parder{\Lambda}{q_{,\beta}}
-    \Big) \parder{q}{x^{\alpha}}
+    &= \parder{}{x^{\beta}}\bigg( \parder{\Lambda}{q_{,\beta}}
+    \bigg) \parder{q}{x^{\alpha}}
     + \parder{\Lambda}{q_{,\beta}} \parder{q}{x^{\alpha},x^{\beta}} \\
-    &= \parder{}{x^{\beta}} \Big( q_{,\alpha} \parder{\Lambda}{q_{,\beta}} \Big).
+    &= \parder{}{x^{\beta}}\bigg(q_{,\alpha} \parder{\Lambda}{q_{,\beta}}\bigg).
   \end{split}
 \end{equation}
 Poiché sussiste inoltre la relazione
@@ -1302,12 +1302,12 @@ Poiché sussiste inoltre la relazione
 risulta
 \begin{equation}
   \tensor{\delta}{^{\beta}_{\alpha}} \parder{\Lambda}{x^{\beta}}
-  = \parder{}{x^{\beta}} \Big( q_{,\alpha} \parder{\Lambda}{q_{,\beta}} \Big),
+  = \parder{}{x^{\beta}} \bigg( q_{,\alpha} \parder{\Lambda}{q_{,\beta}} \bigg),
 \end{equation}
 da cui
 \begin{equation}
-  \parder{}{x^{\beta}} \Big( q_{,\alpha}\parder{\Lambda}{q_{,\beta}} -
-  \tensor{\delta}{^{\beta}_{\alpha}}\Lambda \Big) = 0.
+  \parder{}{x^{\beta}} \bigg( q_{,\alpha}\parder{\Lambda}{q_{,\beta}} -
+  \tensor{\delta}{^{\beta}_{\alpha}}\Lambda \bigg) = 0.
 \end{equation}
 Definiamo il \index{tensore!energia-impulso}\emph{tensore energia-impulso}
 $\tensor{T}{^{\beta}_{\alpha}}$ come
@@ -1340,8 +1340,8 @@ in meccanica l'energia $E$ di un sistema con lagrangiana $L$ è data da
 \end{equation}
 Dunque
 \begin{equation}
-  P^{0} = \int T^{00}\dd V = \int \Big( \dot{q}\parder{\Lambda}{\dot{q}} -
-  \Lambda \Big)
+  P^{0} = \int T^{00}\dd V = \int \bigg( \dot{q}\parder{\Lambda}{\dot{q}} -
+  \Lambda \bigg)
 \end{equation}
 rappresenta l'energia del sistema.  Invece
 \begin{equation}
@@ -1387,8 +1387,8 @@ Per determinare le equazioni di Maxwell in presenza di sorgenti bisogna
 considerare solo le parti dell'azione che coinvolgono il campo, cioè
 \begin{equation}
   S_{\textup{pc}} + S_{\textup{c}} =  \int (\Lambda_{\textup{pc}} +
-  \Lambda_{\textup{c}}) \dd^{4} x = \int \Big( -J^{\alpha}A_{\alpha}
-  -\frac{1}{4} F^{\alpha\beta}F_{\alpha\beta} \Big) \dd^{4} x
+  \Lambda_{\textup{c}}) \dd^{4} x = \int \bigg( -J^{\alpha}A_{\alpha}
+  -\frac{1}{4} F^{\alpha\beta}F_{\alpha\beta} \bigg) \dd^{4} x
 \end{equation}
 e applicare le equazioni di Eulero-Lagrange~\eqref{eq:eulero-lagrange-campi} a
 \begin{equation}

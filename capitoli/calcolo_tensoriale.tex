@@ -157,8 +157,8 @@ L'opposto del determinante della matrice che rappresenta il tensore metrico
 relazione~\eqref{eq:trasf-tensore-metrico} può essere scritta in forma
 matriciale come
 \begin{equation}
-  g'_{\mu\nu} = \Big( \parder{x}{x'}\Big)^{\textup{T}} g_{\mu\nu}
-  \Big( \parder{x}{x'} \Big),
+  g'_{\mu\nu} = \bigg( \parder{x}{x'}\bigg)^{\textup{T}} g_{\mu\nu}
+  \bigg( \parder{x}{x'} \bigg),
 \end{equation}
 da cui, passando ai determinanti,
 \begin{equation}
@@ -255,20 +255,20 @@ abbiamo
   \begin{split}
     \tensor{{\Gamma{}'}}{^{\lambda}_{\mu\nu}}
     &= \parder{x'^{\lambda}}{\xi^{\alpha}} \parder{}{x'^{\mu}}
-    \Big( \parder{\xi^{\alpha}(x)}{x'^{\nu}} \Big)
+    \bigg( \parder{\xi^{\alpha}(x)}{x'^{\nu}} \bigg)
     = \parder{x'^{\lambda}}{x^{\sigma}} \parder{x^{\sigma}}{\xi^{\alpha}}
-    \parder{}{x'^{\mu}} \Big( \parder{x^{\sigma}}{x'^{\nu}}
-    \parder{\xi^{\alpha}}{x^{\sigma}} \Big) \\
+    \parder{}{x'^{\mu}} \bigg( \parder{x^{\sigma}}{x'^{\nu}}
+    \parder{\xi^{\alpha}}{x^{\sigma}} \bigg) \\
     &=  \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{\xi^{\alpha}}
-    \Big( \parder{x^{\sigma}}{x'^{\nu}}
+    \bigg( \parder{x^{\sigma}}{x'^{\nu}}
     \parder{\xi^{\alpha}}{x'^{\mu},x^{\sigma}} +
     \parder{x^{\sigma}}{x'^{\mu},x'^{\nu}} \parder{\xi^{\alpha}}{x^{\sigma}}
-    \Big) \\
+    \bigg) \\
     &= \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{\xi^{\alpha}}
-    \Big( \parder{x^{\sigma}}{x'^{\nu}} \parder{x^{\tau}}{x'^{\mu}}
+    \bigg( \parder{x^{\sigma}}{x'^{\nu}} \parder{x^{\tau}}{x'^{\mu}}
     \parder{\xi^{\alpha}}{x^{\tau},x^{\sigma}} +
     \parder{x^{\sigma}}{x'^{\mu},x'^{\nu}} \parder{\xi^{\alpha}}{x^{\sigma}}
-    \Big) \\
+    \bigg) \\
     &= \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
     \parder{x^{\sigma}}{x'^{\nu}} \tensor{\Gamma}{^{\rho}_{\tau\sigma}}
     + \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu},x'^{\nu}}.
@@ -338,10 +338,10 @@ quantità $\tensor{\Gamma}{^{\mu}_{\nu\kappa}} V^{\kappa}$
 \begin{equation}
   \begin{split}
     \tensor{{\Gamma{}'}}{^{\mu}_{\lambda\kappa}} V'^{\kappa} &=
-    \Big( \parder{x'^{\mu}}{x^{\nu}} \parder{x^{\sigma}}{x'^{\kappa}}
+    \bigg( \parder{x'^{\mu}}{x^{\nu}} \parder{x^{\sigma}}{x'^{\kappa}}
     \parder{x^{\rho}}{x'^{\lambda}} \tensor{\Gamma}{^{\nu}_{\rho\sigma}}
     -\parder{x^{\rho}}{x'^{\nu}} \parder{x^{\sigma}}{x'^{\kappa}}
-    \parder{x'^{\mu}}{x^{\rho},x^{\sigma}} \Big) \parder{x'^{\kappa}}{x^{\eta}}
+    \parder{x'^{\mu}}{x^{\rho},x^{\sigma}} \bigg) \parder{x'^{\kappa}}{x^{\eta}}
     V^{\eta} \\
     &= \parder{x'^{\mu}}{x^{\nu}}
     \underbrace{\parder{x^{\sigma}}{x^{\eta}}}_{\tensor{\delta}{^{\sigma}_{\eta}}}
@@ -363,9 +363,9 @@ $\lparder{V^{\mu}}{x^{\lambda}}$, quindi la somma delle due quantità si
 trasforma come un tensore misto di rango $2$, infatti
 \begin{equation}
   \parder{V'^{\mu}}{x'^{\lambda}} + \tensor{{\Gamma{}'}}{^{\mu}_{\lambda\kappa}}
-  V'^{\kappa} = \parder{x'^{\mu}}{x^{\nu}} \parder{x^{\rho}}{x'^{\lambda}} \Big(
-  \parder{V^{\nu}}{x^{\rho}} + \tensor{\Gamma}{^{\nu}_{\rho\sigma}}
-  V'^{\sigma} \Big).
+  V'^{\kappa} = \parder{x'^{\mu}}{x^{\nu}} \parder{x^{\rho}}{x'^{\lambda}}
+  \bigg( \parder{V^{\nu}}{x^{\rho}} + \tensor{\Gamma}{^{\nu}_{\rho\sigma}}
+  V'^{\sigma} \bigg).
 \end{equation}
 Definiamo allora la \index{derivata!covariante}\emph{derivata covariante}
 $\tensor{V}{^{\mu}_{;\lambda}}$ di un vettore controvariante $V^{\mu}$ come
@@ -581,8 +581,8 @@ della relatività generale, dipendono dalla posizione
 \begin{equation}
   \begin{split}
     \dd V'^{\mu} &= V'^{\mu}(x' + \dd x') - V'^{\mu}(x') \\
-    &= \Big( \parder{x'^{\mu}}{x^{\nu}} \Big) \bigg|_{x' + \dd x'}V^{\nu}(x +
-    \dd x) - \Big( \parder{x'^{\mu}}{x^{\nu}} \Big) \bigg|_{x'} V^{\nu}(x).
+    &= \bigg( \parder{x'^{\mu}}{x^{\nu}} \bigg) \bigg|_{x' + \dd x'}V^{\nu}(x +
+    \dd x) - \bigg( \parder{x'^{\mu}}{x^{\nu}} \bigg) \bigg|_{x'} V^{\nu}(x).
   \end{split}
 \end{equation}
 
