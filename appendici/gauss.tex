@@ -20,18 +20,42 @@ ipersuperficie
 che ha come direzione la normale all'ipersuperficie e come modulo la sua area
 $\dd\Sigma$.
 
-% TODO: fare un semplice disegno come quello che ha fatto Ingrosso a lezione
-% (11/04/2012) per aiutare a capire la geometria del sistema.
+\begin{figure}
+  \centering
+  \tdplotsetmaincoords{70}{100}
+  \begin{tikzpicture}[tdplot_main_coords,font=\footnotesize,scale=5,
+    piano/.style={gray!20!white,opacity=0.85}]
+    \node[shape=coordinate] (O1) at (0,0,0) {};
+    \draw[->] (O1) -- ++(1,0,0) node[anchor=north east] {$x$}; % asse x
+    \draw[->] (O1) -- ++(0,1,0) node[anchor=north west] {$y$}; % asse y
+    \draw[->] (O1) -- ++(0,0,1) node[anchor=south] {$t$}; % asse temporale
+    \filldraw[piano] (0,0,0.1) node[black,left] {$t_{1}$} -- ++(0,1,0) --
+    ++(1,0,0) node[black,above left] {$\Sigma_{1}$} -- ++(0,-1,0) -- ++(-1,0,0);
+    \filldraw[piano] (0,0,0.9) node[black,left] {$t_{2}$} -- ++(0,1,0) --
+    ++(1,0,0) node[black,above left] {$\Sigma_{2}$} -- ++(0,-1,0) -- ++(-1,0,0);
+    \draw[->] (0.5,0.5,0.1) -- ++(0,0,0.3) node[above] {$\versor{n}_{1}$};
+    \draw[->] (0.5,0.5,0.9) -- ++(0,0,0.3) node[above] {$\versor{n}_{2}$};
+    \node at (0.3,0.3,0.5) {$\Omega$};
+  \end{tikzpicture}
+  \caption[Volume quadrimensionale delimitato da iperpiani a tempo
+  costante]{Volume quadrimensionale $\Omega$ delimitato dagli iperpiani a tempo
+    $t$ costante $\Sigma_{1}$ e $\Sigma_{2}$.  Sono riportate solo due
+    dimensioni spaziali, $x$ e $y$.  Gli iperpiani $\Sigma_{1}$ e $\Sigma_{2}$
+    si estendono verso l'infinito spaziale e sono chiusi dall'iperpiano
+    $\Sigma_{\infty}$, non riportato nella figura}
+  \label{fig:teorema-gauss}
+\end{figure}
 Questo teorema ha un'utile applicazione per quanto riguarda i quadrivettori
 $V^{\alpha}(x)$ con quadridivergenza nulla
 \begin{equation}
   \partial_{\alpha}V^{\alpha}(x) = 0.
 \end{equation}
-Integriamo $\partial_{\alpha}V^{\alpha}(x)$ sul volume $\Omega$ delimitato da
-due ipersuperfici a tempo costante $\Sigma_{1}$ e $\Sigma_{2}$ (cioè
-parametrizzate rispettivamente dalle equazioni $t = t_{1}$ e $t = t_{2}$, con
-$t_{1}$ e $t_{2}$ fissati) e da un'ipersuperficie $\Sigma_{\infty}$ posta
-all'infinito spaziale.  Per il teorema di Gauss risulta
+Con riferimento alla figura~\ref{fig:teorema-gauss}, integriamo
+$\partial_{\alpha}V^{\alpha}(x)$ sul volume $\Omega$ delimitato da due
+ipersuperfici a tempo costante $\Sigma_{1}$ e $\Sigma_{2}$ (cioè parametrizzate
+rispettivamente dalle equazioni $t = t_{1}$ e $t = t_{2}$, con $t_{1}$ e $t_{2}$
+fissati) e da un'ipersuperficie $\Sigma_{\infty}$ posta all'infinito spaziale.
+Per il teorema di Gauss risulta
 \begin{equation}
   0 = \int\limits_{\Omega} \partial_{\alpha}V^{\alpha}(x) \dd^{4}x =
   \int\limits_{\Sigma_{2}} V^{\alpha}(x) \dd\Sigma_{\alpha} -
@@ -39,10 +63,10 @@ all'infinito spaziale.  Per il teorema di Gauss risulta
   \int\limits_{\Sigma_{\infty}} V^{\alpha}(x) \dd\Sigma_{\alpha}.
 \end{equation}
 Il segno meno davanti all'integrale su $\Sigma_{1}$ è dovuto al fatto che
-abbiamo orientato entrambe le normali a $\Sigma_{1}$ e $\Sigma_{2}$ nel verso
-crescente del tempo.  Se $V^{\alpha}(x)$ tende abbastanza rapidamente a $0$
-all'infinito spaziale, il terzo integrale nell'equazione precedente è nullo e
-quindi
+abbiamo orientato le normali $\versor{n}_{1}$ e $\versor{n}_{2}$ degli
+iperpiani, rispettivamente, $\Sigma_{1}$ e $\Sigma_{2}$ nel verso crescente del
+tempo.  Se $V^{\alpha}(x)$ tende abbastanza rapidamente a $0$ all'infinito
+spaziale, il terzo integrale nell'equazione precedente è nullo e quindi
 \begin{equation}
   \int\limits_{\Sigma_{2}} V^{\alpha}(x) \dd\Sigma_{\alpha} =
   \int\limits_{\Sigma_{1}} V^{\alpha}(x) \dd\Sigma_{\alpha}.
@@ -61,7 +85,7 @@ $\dd\Sigma_{\alpha} = (\dd^{3} \bm{x}, 0, 0, 0)$ allora abbiamo mostrato che
   \text{costante in $t$}
 \end{equation}
 se l'integrale è esteso a una regione spaziale sufficientemente grande in modo
-che $V^{\alpha}(x)$ si annulla sul suo bordo.
+che $V^{\alpha}(x)$ si annulla sul suo bordo.\index{teorema!di Gauss}
 
 In maniera analoga si può far vedere che se per un tensore
 $\tensor{T}{^{\alpha\beta}}$ si ha

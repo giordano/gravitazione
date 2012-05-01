@@ -560,8 +560,8 @@ volume quadrimensionale è $\sqrt{g}\dd^{4} x$,
   \dd\Sigma_{\mu}.
 \end{equation}
 
-\subsection{Differenziale covariante e trasporto parallelo}
-\label{sec:trasporto-parallelo}
+\subsection{Differenziale covariante}
+\label{sec:differenziale-covariante}
 
 Abbiamo visto che la derivata ordinaria $\lparder{V^{\mu}}{x^{\lambda}}$ di un
 vettore non è un tensore di rango $2$, questo è dovuto al fatto che il
@@ -577,7 +577,15 @@ annulla e il differenziale si trasforma come un vettore.  Il motivo di ciò
 risiede nel fatto che il differenziale di un vettore è dato dalla differenza dei
 vettori $V^{\mu}(x + \dd x)$ e $V^{\mu}$ valutati in due punti diversi dello
 spazio e le leggi di trasformazione dei tensori in uno spazio curvo, come quello
-della relatività generale, dipendono dalla posizione.
+della relatività generale, dipendono dalla posizione
+\begin{equation}
+  \begin{split}
+    \dd V'^{\mu} &= V'^{\mu}(x' + \dd x') - V'^{\mu}(x') \\
+    &= \Big( \parder{x'^{\mu}}{x^{\nu}} \Big) \bigg|_{x' + \dd x'}V^{\nu}(x +
+    \dd x) - \Big( \parder{x'^{\mu}}{x^{\nu}} \Big) \bigg|_{x'} V^{\nu}(x).
+  \end{split}
+\end{equation}
+
 
 Nasce allora l'esigenza di definire un differenziale di un vettore (o, più in
 generale, di un tensore) che abbia a sua volta natura vettoriale (o tensoriale).
@@ -658,6 +666,15 @@ anche annullare la \index{connessione!affine}connessione affine.  Questo fa
 vedere di nuovo che $\tensor{\Gamma}{^{\mu}_{\rho\lambda}}$ non può essere un
 tensore: un tensore nullo in un sistema di coordinate è nullo in ogni altro
 sistema di coordinate.
+
+% TODO: scrivere questa sezione.  Lezione del 27/04/2012
+\subsubsection{\completare{Esempio}}
+\label{sec:esempio}
+
+% TODO: scrivere questa sezione.  Lezione del 27/04/2012.  Vedi anche
+% Ohanian-Ruffini, pagina 351
+\subsection{\completare{Effetto De Sitter}}
+\label{sec:effetto-de-sitter}
 
 \section{Applicazioni del principio di generale covarianza}
 \label{sec:applicazioni-generale-covarianza}

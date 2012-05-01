@@ -5,7 +5,7 @@ PRINCIPALE		= astrofisica-teorica
 PRINCIPALE_TEX		= $(PRINCIPALE).tex
 PRINCIPALE_PDF		= $(PRINCIPALE).pdf
 BIBLIOGRAFIA		= bibliografia.bib
-CAPITOLI_TEX		= $(wildcard capitoli/*.tex)
+CAPITOLI_TEX		= $(wildcard capitoli/*.tex) $(wildcard appendici/*.tex)
 INIZIO_FINE_TEX		= $(wildcard MaterialeInizialeFinale/*.tex)
 TUTTI_TEX		= $(PRINCIPALE_TEX) $(CAPITOLI_TEX) $(INIZIO_FINE_TEX) \
 	$(BIBLIOGRAFIA)
