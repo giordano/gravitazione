@@ -73,10 +73,10 @@ $\tensor{A}{_{\alpha_{1}\dots\alpha_{k}}}$ e si trasforma come
   \tensor{A}{_{\mu_{1}\dots\mu_{k}}}.
 \end{equation}
 In particolare, i tensori di rango $0$, che quindi non hanno indici, sono
-chiamati \emph{scalari} e sono invarianti sotto trasformazioni arbitrarie di
-coordinate, i tensori di rango $1$ sono i \emph{vettori}.  Distinguiamo fra
-vettori controvarianti $V^{\alpha}$, i quali si trasformano, per cambianti di
-coordinate $x^{\alpha} \to x'^{\alpha}$, come
+chiamati \index{scalare}\emph{scalari} e sono invarianti sotto trasformazioni
+arbitrarie di coordinate, i tensori di rango $1$ sono i \emph{vettori}.
+Distinguiamo fra vettori controvarianti $V^{\alpha}$, i quali si trasformano,
+per cambianti di coordinate $x^{\alpha} \to x'^{\alpha}$, come
 \begin{equation}
   V^{\alpha} \to V'^{\alpha} = \parder{x'^{\alpha}}{x^{\mu}}V^{\mu},
 \end{equation}
@@ -112,15 +112,16 @@ infatti
   \dd x'^{\alpha} = \parder{x'^{\alpha}}{x^{\mu}} \dd x^{\mu}.
 \end{equation}
 
-La delta di Kronecker definita nella~\eqref{eq:delta-kronecker} è l'unico
-tensore le cui componenti sono uguali in qualsiasi sistema di riferimento, oltre
-agli scalari e al tensore nullo.
+La \index{delta!di Kronecker quadrimensionale}delta di Kronecker definita
+nella~\eqref{eq:delta-kronecker} è l'unico tensore le cui componenti sono uguali
+in qualsiasi sistema di riferimento, oltre agli \index{scalare}scalari e al
+tensore nullo.
 
 \subsection{Tensore metrico}
 \label{sec:tensore-metrico}
 
-In un generico sistema di coordinate $x^{\mu}$, il tensore metrico è dato per
-definizione da
+In un generico sistema di coordinate $x^{\mu}$, il
+\index{tensore!metrico}tensore metrico è dato per definizione da
 \begin{equation}
   g_{\mu\nu} =
   \eta_{\alpha\beta} \parder{\xi^{\alpha}}{x^{\mu}} \parder{\xi^{\beta}}{x^{\nu}},
@@ -140,9 +141,10 @@ altro sistema di coordinate $x'^{\mu}$ risulta
   \end{split}
 \end{equation}
 Osserviamo che, a differenza del caso dello spazio di Minkowski piatto, nello
-spazio-tempo curvo della relatività generale il tensore metrico $g_{\mu\nu}$ non
-è invariante per trasformazioni delle coordinate.  Definiamo il tensore metrico
-controvariante $g^{\mu\nu}$ come quel tensore tale che
+spazio-tempo curvo della relatività generale il \index{tensore!metrico}tensore
+metrico $g_{\mu\nu}$ non è invariante per trasformazioni delle coordinate.
+Definiamo il tensore metrico controvariante $g^{\mu\nu}$ come quel tensore tale
+che
 \begin{equation}
   g_{\mu\rho}g^{\mu\sigma} = \tensor{\delta}{^{\sigma}_{\rho}}.
 \end{equation}
@@ -183,9 +185,8 @@ $\sqrt{g}\dd^{4} x$
   \abs*{\parder{x'}{x}} = \sqrt{g}\dd^{4} x.
 \end{equation}
 
-
-Anche nella relatività generale il tensore metrico può essere usato per
-innalzare a abbassare gli indici dei tensori, per esempio
+Anche nella relatività generale il \index{tensore!metrico}tensore metrico può
+essere usato per innalzare a abbassare gli indici dei tensori, per esempio
 \begin{gather}
   V^{\alpha} \to V_{\alpha} = g_{\alpha\beta} V^{\beta}, \\
   U_{\alpha} \to U^{\alpha} = g^{\alpha\beta} U_{\beta}.
@@ -474,14 +475,14 @@ proprietà della derivata covariante
   $\sigma$ del terzo termine.
 \end{enumerate}
 
-La derivata covariante del tensore metrico $g_{\mu\nu}$ è nulla poiché in un
-sistema di coordinate localmente inerziale il tensore metrico è uguale al
-tensore di Minkowski $\eta_{\mu\nu}$ e la derivata covariante del tensore di
-Minkowski è uguale al tensore nullo.  Poiché il tensore nullo non cambia per
-trasformazioni arbitrarie delle coordinate, la derivata covariante del tensore
-metrico è nulla in qualsiasi sistema di coordinate.  Formalmente questo può
-essere fatto vedere calcolando direttamente la derivata covariante di
-$g_{\mu\nu}$
+La derivata covariante del \index{tensore!metrico}tensore metrico $g_{\mu\nu}$ è
+nulla poiché in un sistema di coordinate localmente inerziale il tensore metrico
+è uguale al \index{tensore!metrico di Minkowski}tensore di Minkowski
+$\eta_{\mu\nu}$ e la derivata covariante del tensore di Minkowski è uguale al
+tensore nullo.  Poiché il tensore nullo non cambia per trasformazioni arbitrarie
+delle coordinate, la derivata covariante del tensore metrico è nulla in
+qualsiasi sistema di coordinate.  Formalmente questo può essere fatto vedere
+calcolando direttamente la derivata covariante di $g_{\mu\nu}$
 \begin{equation}
   g_{\mu\nu;\lambda} = g_{\mu\nu,\lambda} -
   \tensor{\Gamma}{^{\rho}_{\lambda\mu}}g_{\rho\nu} -
@@ -684,10 +685,12 @@ che ci apprestiamo a esporre per determinare quale sia l'effetto della gravità
 sui sistemi fisici: si scrive l'equazione che descrive il sistema, in assenza di
 gravità, con il formalismo della relatività speciale e
 \begin{itemize}
-\item si sostituisce il tensore metrico $g_{\mu\nu}$ al tensore metrico di
-  Minkowski $\eta_{\mu\nu}$;
-\item si sostituiscono le derivate covarianti alle derivate ordinarie e i
-  differenziali covarianti ai differenziali ordinari;
+\item si sostituisce il \index{tensore!metrico}tensore metrico $g_{\mu\nu}$ al
+  \index{tensore!metrico di Minkowski}tensore metrico di Minkowski
+  $\eta_{\mu\nu}$;
+\item si sostituiscono le \index{derivata!covariante}derivate covarianti alle
+  derivate ordinarie e i \index{differenziale!covariante}differenziali
+  covarianti ai differenziali ordinari;
 \item si utilizzano opportune potenze di $\sqrt{g}$ per saturare a $0$ i pesi
   degli pseudotensori.
 \end{itemize}

@@ -67,8 +67,8 @@ con $\alpha$ che varia fra $0$, $1$, $2$ e $3$ e $i$ fra $1$, $2$ e $3$.  La
   x^{\alpha} \dd x^{\beta},
 \end{equation}
 in cui $\tensor{\eta}{_{\alpha\beta}}$ è il
-\index{tensore!metrico covariante di
-  Minkowski}\emph{tensore metrico covariante di Minkowski}
+\index{tensore!metrico di Minkowski}\emph{tensore metrico covariante di
+  Minkowski}
 \begin{equation}
   \label{eq:tensore-metrico-controvariante}
   \tensor{\eta}{_{\alpha\beta}} =
@@ -373,9 +373,8 @@ dove
   \tensor{\eta}{^{\beta\delta}} \tensor{\Lambda}{^{\gamma}_{\delta}}.
 \end{equation}
 La matrice $\tensor{\eta}{^{\alpha\beta}}$ è il
-\index{tensore!metrico controvariante di
-  Minkowski}\emph{tensore
-  metrico controvariante di Minkowski}
+\index{tensore!metrico di Minkowski}\emph{tensore metrico controvariante di
+  Minkowski}
 ed è numericamente uguale a $\tensor{\eta}{_{\alpha\beta}}$, vale a dire
 \begin{equation}
   \tensor{\eta}{^{\alpha\beta}} = \tensor{\eta}{_{\alpha\beta}}.
@@ -383,7 +382,7 @@ ed è numericamente uguale a $\tensor{\eta}{_{\alpha\beta}}$, vale a dire
 Osserviamo che
 \begin{equation}
   \label{eq:delta-kronecker}
-  \tensor{\eta}{^{\alpha\gamma}} \tensor{\eta}{_{\beta\gamma}} =
+  \eta^{\alpha\gamma} \eta_{\beta\gamma} = \tensor{\eta}{^{\alpha}_{\beta}} =
   \tensor{\delta}{^{\alpha}_{\beta}} = \tensor{\delta}{_{\alpha}^{\beta}} =
   \begin{cases}
     1 & \text{se } \alpha = \beta, \\
@@ -391,10 +390,8 @@ Osserviamo che
   \end{cases}
 \end{equation}
 in cui $\tensor{\delta}{^{\alpha}_{\beta}} = \tensor{\delta}{_{\alpha}^{\beta}}$
-è la \index{delta!di Kronecker
-  quadrimensionale}\emph{delta
-  di Kronecker quadrimensionale}.
-Usando la relazione fondamentale delle trasformazioni di
+è la \index{delta!di Kronecker quadrimensionale}\emph{delta di Kronecker
+  quadrimensionale}. Usando la relazione fondamentale delle trasformazioni di
 Lorentz~\eqref{eq:rel-fond-tensore-metrico} abbiamo
 \begin{equation}
   \tensor{\Lambda}{_{\alpha}^{\gamma}} \tensor{\Lambda}{^{\alpha}_{\beta}} =
@@ -499,8 +496,8 @@ $\tensor{A}{_{\alpha_{1}\dots\alpha_{k}}}$ e si trasforma come
 \end{equation}
 I quadritensori di rango $1$ sono i \index{quadrivettore}\emph{quadrivettori}, i
 quadritensori di rango $0$, che quindi non hanno indici, sono chiamati
-\index{scalare!di Lorentz}\emph{scalari di Lorentz} (o brevemente
-\emph{scalari}) e sono invarianti sotto le trasformazioni di Lorentz.
+\index{scalare}\emph{scalari di Lorentz} (o brevemente \emph{scalari}) e sono
+invarianti sotto le trasformazioni di Lorentz.
 
 Uno \index{pseudotensore}\emph{pseudotensore}
 $\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ (con
@@ -1297,24 +1294,26 @@ conservazione dell'energia in meccanica.  Abbiamo
 Poiché sussiste inoltre la relazione
 \begin{equation}
   \parder{\Lambda}{x^{\alpha}} =
-  \tensor{\delta}{^{\beta}_{\alpha}} \parder{\Lambda}{x^{\beta}}
+  \tensor{\delta}{^{\beta}_{\alpha}} \parder{\Lambda}{x^{\beta}} =
+  \tensor{\eta}{^{\beta}_{\alpha}} \parder{\Lambda}{x^{\beta}},
 \end{equation}
-risulta
+in cui abbiamo ricordato la definizione~\eqref{eq:delta-kronecker}
+della\index{delta!di Kronecker quadrimensionale} delta di Kronecker, risulta
 \begin{equation}
-  \tensor{\delta}{^{\beta}_{\alpha}} \parder{\Lambda}{x^{\beta}}
+  \tensor{\eta}{^{\beta}_{\alpha}} \parder{\Lambda}{x^{\beta}}
   = \parder{}{x^{\beta}} \bigg( q_{,\alpha} \parder{\Lambda}{q_{,\beta}} \bigg),
 \end{equation}
 da cui
 \begin{equation}
   \parder{}{x^{\beta}} \bigg( q_{,\alpha}\parder{\Lambda}{q_{,\beta}} -
-  \tensor{\delta}{^{\beta}_{\alpha}}\Lambda \bigg) = 0.
+  \tensor{\eta}{^{\beta}_{\alpha}}\Lambda \bigg) = 0.
 \end{equation}
 Definiamo il \index{tensore!energia-impulso}\emph{tensore energia-impulso}
 $\tensor{T}{^{\beta}_{\alpha}}$ come
 \begin{equation}
   \label{eq:tensore-energia-impulso}
   \tensor{T}{^{\beta}_{\alpha}} = q_{,\alpha}\parder{\Lambda}{q_{,\beta}} -
-  \tensor{\delta}{^{\beta}_{\alpha}}\Lambda
+  \tensor{\eta}{^{\beta}_{\alpha}}\Lambda
 \end{equation}
 quindi l'equazione precedente si può scrivere come
 \begin{equation}
@@ -1406,7 +1405,7 @@ $A_{\mu}$ del quadrimomento come campi
 \begin{equation}
   T_{\textup{em}}^{\alpha\beta}
   = \parder{A_{\mu}}{x_{\beta}} \parder{\Lambda_{\textup{c}}}{A_{\mu,\alpha}} -
-  \delta^{\alpha\beta}\Lambda_{\textup{c}} =
+  \eta^{\alpha\beta}\Lambda_{\textup{c}} =
   -F^{\alpha\gamma}\partial^{\beta}A_{\gamma} +
   \frac{1}{4}\eta^{\alpha\beta}F^{\gamma\delta}F_{\gamma\delta}.
 \end{equation}
