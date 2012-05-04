@@ -1,0 +1,177 @@
+\cleardoublepage
+\chapter{Dimostrazioni di alcune relazioni}
+\label{cha:dimostrazioni}
+
+\section{Dimostrazione delle relazioni
+  \texorpdfstring{\eqref{eq:g_mu_rho-determinante}}{(3.49)}}
+\label{sec:dimostr-determinante}
+
+Sia $A$ una matrice quadrata reale di ordine $n$
+\begin{equation}
+  A =
+  \begin{pmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+  \end{pmatrix},
+\end{equation}
+il suo determinante $D$ si può calcolare, avendo fissato una riga $i$, con lo
+\emph{sviluppo di Laplace}
+\begin{equation}
+  D = \det A = \sum_{j=1}^{n} a_{ij}A_{ij}
+\end{equation}
+in cui $A_{ij}$ è il \emph{complemento algebrico} dell'elemento $a_{ij}$, cioè
+il determinante della matrice che si ottiene da $A$ sopprimendo l'$i$-esima riga
+e la $j$-esima colonna moltiplicato per $+1$ se $i+j$ è pari, per $-1$ se $i+j$
+è dispari.  Lo sviluppo di Laplace può anche essere svolto fissando la colonna
+$j$ e sommando sull'indice di riga $i$.  Dunque, la derivata di $D$ fatta
+rispetto all'elemento $a_{ij}$ è il suo coefficiente nello sviluppo di Laplace,
+cioè il complemento algebrico corrispondente
+\begin{equation}
+  \label{eq:deriv-determinante}
+  \parder{D}{a_{ij}} = A_{ij}.
+\end{equation}
+
+La matrice $B = A^{-1}$ inversa di $A$ con determinante non nullo è quella
+matrice di ordine $n$ tale che
+\begin{equation}
+  A B = B A = I_{n},
+\end{equation}
+dove $I_{n} = (\delta_{ij})_{i,j=1}^{n}$ è la matrice identità di ordine
+$n$. Per la regola di Cramer gli elementi $b_{ij}$ della matrice inversa sono
+dati dal rapporto $A_{ji}/D$, cioè la matrice $B$ può essere così scritta
+\begin{equation}
+  B = A^{-1} =
+  \begin{pmatrix}
+    b_{11} & b_{12} & \cdots & b_{1n} \\
+    b_{21} & b_{22} & \cdots & b_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    b_{n1} & b_{n2} & \cdots & b_{nn}
+  \end{pmatrix} =
+  \begin{pmatrix}
+    \dfrac{A_{11}}{D} & \dfrac{A_{21}}{D} & \cdots & \dfrac{A_{n1}}{D} \\[2.0ex]
+    \dfrac{A_{11}}{D} & \dfrac{A_{22}}{D} & \cdots & \dfrac{A_{n2}}{D} \\[2.0ex]
+    \vdots            & \vdots            & \ddots & \vdots            \\[2.0ex]
+    \dfrac{A_{1n}}{D} & \dfrac{A_{2n}}{D} & \cdots & \dfrac{A_{nn}}{D}
+  \end{pmatrix}.
+\end{equation}
+Inoltre per la regola di Binet risulta $\det B = 1/\det A = 1/D$.
+
+Il tensore metrico covariante $g_{\mu\nu}$ è un insieme di $4^{2}$ quantità
+reali che possono essere raccolte in una matrice $4 \times 4$
+\begin{equation}
+  g_{\mu\nu} =
+  \begin{pmatrix}
+    g_{00} & g_{01} & g_{02} & g_{03} \\
+    g_{10} & g_{11} & g_{12} & g_{13} \\
+    g_{20} & g_{21} & g_{22} & g_{23} \\
+    g_{30} & g_{31} & g_{32} & g_{33}
+  \end{pmatrix}.
+\end{equation}
+Dall'equazione~\eqref{eq:deriv-determinante} abbiamo che la derivata di
+$g = -\det(g_{\mu\nu})$ rispetto all'elemento $g_{\mu\nu}$ è
+\begin{equation}
+  \parder{g}{g_{\mu\nu}} = -m_{\mu\nu},
+\end{equation}
+in cui $m_{\mu\nu}$ è il complemento algebrico dell'elemento $g_{\mu\nu}$.  Il
+tensore metrico controvariante $g^{\mu\nu}$ è la matrice inversa di
+$g_{\mu\nu}$, quindi, sfruttando la simmetria del tensore metrico, abbiamo
+\begin{equation}
+  g^{\mu\nu} = g^{\nu\mu} = \frac{m_{\mu\nu}}{-g} =
+  \frac{1}{g} \parder{g}{g_{\mu\nu}}.
+\end{equation}
+Applicando lo stesso ragionamento a $g^{\mu\nu}$ troviamo
+($G = -\det(g^{\mu\nu}) = 1/\det(g_{\mu\nu}) = 1/g$)
+\begin{equation}
+  g_{\mu\nu} = \frac{1}{G} \parder{G}{g^{\mu\nu}} =
+  \frac{1}{G} \parder{G}{g} \parder{g}{g^{\mu\nu}} = g \bigg(- \frac{1}{g^{2}}
+  \bigg) \parder{g}{g^{\mu\nu}} = - \frac{1}{g} \parder{g}{g^{\mu\nu}}.
+\end{equation}
+
+\section{Dimostrazione della
+  relazione~\texorpdfstring{\eqref{eq:derivate-miste-vettore}}{(4.17)}}
+\label{sec:dimostr-derivate-miste-vettore}
+
+La derivata covariante
+$V_{\mu;\nu} = V_{\mu,\nu} - \tensor{\Gamma}{^{\lambda}_{\mu\nu}} V_{\lambda}$
+di un vettore covariante $V_{\mu}$ è un tensore $T_{\mu\nu}$ di rango $2$
+completamente covariante e la sua derivata covariante è
+\begin{equation}
+  \begin{split}
+    V_{\mu;\nu;\kappa} &= T_{\mu\nu;\kappa} = T_{\mu\nu,k} -
+    \tensor{\Gamma}{^{\sigma}_{\kappa\nu}} T_{\mu\sigma} -
+    \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} T_{\sigma\nu} \\
+    &= V_{\mu,\nu,\kappa} -
+    \tensor{\Gamma}{^{\lambda}_{\mu\nu,\kappa}}V_{\lambda} -
+    \tensor{\Gamma}{^{\lambda}_{\mu\nu}} V_{\lambda,\kappa} -
+    \tensor{\Gamma}{^{\sigma}_{\kappa\nu}} (V_{\mu,\sigma} -
+    \tensor{\Gamma}{^{\lambda}_{\mu\sigma}} V_{\lambda}) -
+    \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} (V_{\sigma,\nu} -
+    \tensor{\Gamma}{^{\lambda}_{\sigma\nu}} V_{\lambda}).
+  \end{split}
+\end{equation}
+Allo stesso modo si calcola la derivata covariante seconda con ordine inverso
+\begin{equation}
+  V_{\mu;\kappa;\nu} = V_{\mu,\kappa,\nu} -
+    \tensor{\Gamma}{^{\lambda}_{\mu\kappa,\nu}}V_{\lambda} -
+    \tensor{\Gamma}{^{\lambda}_{\mu\kappa}} V_{\lambda,\nu} -
+    \tensor{\Gamma}{^{\sigma}_{\nu\kappa}} (V_{\mu,\sigma} -
+    \tensor{\Gamma}{^{\lambda}_{\mu\sigma}} V_{\lambda}) -
+    \tensor{\Gamma}{^{\sigma}_{\mu\nu}} (V_{\sigma,\kappa} -
+    \tensor{\Gamma}{^{\lambda}_{\sigma\kappa}} V_{\lambda}).
+\end{equation}
+Nel valutare la differenza $V_{\mu;\nu;\kappa} - V_{\mu;\kappa;\nu}$ tutti i
+termini simmetrici per lo scambio $\nu \leftrightarrow \kappa$ si annullano, che
+sono quelli contenenti le derivate prime e seconde di $V_{\mu}$,
+% TODO: non ho mica capito perché si annullano alcuni termini contenenti le
+% derivate prime
+quindi rimane
+\begin{equation}
+  V_{\mu;\nu;\kappa} - V_{\mu;\kappa;\nu} =
+  (-\tensor{\Gamma}{^{\lambda}_{\mu\nu,\kappa}} +
+  \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} \tensor{\Gamma}{^{\lambda}_{\sigma\nu}}
+  + \tensor{\Gamma}{_{\mu\kappa,\nu}} - \tensor{\Gamma}{^{\sigma}_{\mu\nu}}
+  \tensor{\Gamma}{^{\lambda}_{\sigma\kappa}}) V_{\lambda} =
+  -\tensor{R}{^{\lambda}_{\mu\nu\kappa}} V_{\lambda}.
+\end{equation}
+
+\section{Dimostrazione dell'identità di Bianchi}
+\label{sec:dimostr-identita-bianchi}
+
+Per verificare \index{identità!di Bianchi}l'identità di
+Bianchi~\eqref{eq:bianchi} conviene verificarla in un sistema di coordinate
+localmente inerziali, quindi sarà valida in tutto lo spazio dato il carattere
+tensoriale di $R_{\lambda\mu\nu\kappa}$.  In questo sistema di coordinate la
+connessione affine si annulla e la derivata covariante coincide con la derivata
+ordinaria, dunque dalla~\eqref{eq:riemann-covariante} abbiamo
+\begin{subequations}
+  \begin{align}
+    R_{\lambda\mu\nu\kappa;\eta} &=
+    \frac{1}{2} \partial_{\eta}(\partial_{\kappa} \partial_{\mu} g_{\lambda\nu}
+    - \partial_{\kappa} \partial_{\lambda} g_{\mu\nu}
+    - \partial_{\nu} \partial_{\mu} g_{\lambda\kappa}
+    + \partial_{\nu} \partial_{\lambda} g_{\mu\nu}), \\
+    R_{\lambda\mu\kappa\eta;\nu} &=
+    \frac{1}{2} \partial_{\nu}(\partial_{\eta} \partial_{\mu} g_{\lambda\kappa}
+    - \partial_{\nu} \partial_{\lambda} g_{\mu\kappa}
+    - \partial_{\kappa} \partial_{\mu} g_{\lambda\eta}
+    + \partial_{\kappa} \partial_{\lambda} g_{\mu\eta}), \\
+    R_{\lambda\mu\eta\nu;\kappa} &= \frac{1}{2} \partial_{\kappa}(\partial_{\nu}
+    \partial_{\mu} g_{\lambda\eta} - \partial_{\nu} \partial_{\lambda}
+    g_{\mu\eta} - \partial_{\eta} \partial_{\mu} g_{\lambda\nu}
+    + \partial_{\eta} \partial_{\lambda} g_{\mu\nu}).
+  \end{align}
+\end{subequations}
+Sommando membro a membro queste tre relazioni si ottiene l'identità di Bianchi
+\begin{equation}
+  R_{\lambda\mu\nu\kappa;\eta} + R_{\lambda\mu\kappa\eta;\nu} +
+  R_{\lambda\mu\eta\nu;\kappa} = 0.
+\end{equation}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../astrofisica-teorica"
+%%% fill-column: 80
+%%% End:

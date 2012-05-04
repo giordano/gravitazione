@@ -1,0 +1,456 @@
+\cleardoublepage
+\chapter{Equazioni del campo gravitazionale}
+\label{cha:equazioni-campo-grav}
+
+\section{Tensore di Riemann}
+\label{sec:tensore-riemann}
+
+\subsection{Definizione e proprietà algebriche}
+\label{sec:definizione-proprietà-riemann}
+
+Si può far vedere che l'unico tensore ottenibile dal tensore metrico e dalle sue
+derivate prime e seconde è il \emph{tensore di curvatura di Riemann-Christoffel}
+o, semplicemente, \index{tensore!di Riemann}\emph{tensore di Riemann}
+\begin{equation}
+  \tensor{R}{^{\lambda}_{\mu\nu\kappa}}
+  = \parder{\tensor{\Gamma}{^{\lambda}_{\mu\nu}}}{x^{\kappa}}
+  - \parder{\tensor{\Gamma}{^{\lambda}_{\mu\kappa}}}{x^{\nu}} +
+  \tensor{\Gamma}{^{\eta}_{\mu\nu}} \tensor{\Gamma}{^{\lambda}_{\eta\kappa}} -
+  \tensor{\Gamma}{^{\eta}_{\mu\kappa}} \tensor{\Gamma}{^{\lambda}_{\eta\nu}}.
+\end{equation}
+Il tensore di Riemann è lineare nelle derivate seconde del tensore metrico.
+
+Per analizzare le proprietà algebriche del tensore di Riemann conviene
+considerare la sua forma completamente covariante
+\begin{equation}
+  \label{eq:riemann-covariante}
+  \begin{split}
+    R_{\lambda\mu\nu\kappa} &= g_{\lambda\sigma}
+    \tensor{R}{^{\sigma}_{\mu\nu\kappa}} = g_{\lambda\sigma}
+    \bigg( \parder{\tensor{\Gamma}{^{\lambda}_{\mu\nu}}}{x^{\kappa}}
+    - \parder{\tensor{\Gamma}{^{\lambda}_{\mu\kappa}}}{x^{\nu}} +
+    \tensor{\Gamma}{^{\eta}_{\mu\nu}} \tensor{\Gamma}{^{\lambda}_{\eta\kappa}} -
+    \tensor{\Gamma}{^{\eta}_{\mu\kappa}}
+    \tensor{\Gamma}{^{\lambda}_{\eta\nu}} \bigg) \\
+    &= \frac{1}{2} \bigg( \parder{g_{\lambda\nu}}{x^{\kappa}, x^{\mu}}
+    - \parder{g_{\mu\nu}}{x^{\kappa}, x^{\lambda}}
+    - \parder{g_{\lambda\kappa}}{x^{\nu}, x^{\mu}}
+    + \parder{g_{\mu\kappa}}{x^{\nu}, x^{\lambda}} \bigg) \\
+    &+ g_{\eta\sigma} (\tensor{\Gamma}{^{\eta}_{\nu\lambda}}
+    \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} -
+    \tensor{\Gamma}{^{\eta}_{\kappa\lambda}}
+    \tensor{\Gamma}{^{\sigma}_{\mu\nu}}).
+  \end{split}
+\end{equation}
+Questa relazione ci tornerà utile quando considereremo il limite newtoniano
+delle equazioni di Einstein.  Da questa espressione si vede che
+\begin{enumerate}
+\item \label{item:antisimmetria-riemann} il tensore di Riemann è antisimmetrico
+  rispetto allo scambio fra primo e secondo indice e allo scambio fra terzo e
+  quarto indice
+  \begin{equation}
+    R_{\lambda\mu\nu\kappa} = -R_{\mu\lambda\nu\kappa} =
+    -R_{\lambda\mu\kappa\nu} = R_{\mu\lambda\kappa\nu};
+  \end{equation}
+\item \label{item:simmetria-riemann} il tensore di Riemann
+  $R_{\lambda\mu\nu\kappa}$ è simmetrico rispetto allo scambio fra la prima
+  coppia indici $(\lambda,\mu)$ con la seconda coppia $(\nu,\kappa)$
+  \begin{equation}
+    R_{\lambda\mu\nu\kappa} = R_{\nu\kappa\lambda\mu};
+  \end{equation}
+\item \label{item:ciclicita-riemann} è valida la seguente relazione di ciclicità
+  (si noti che il primo indice è tenuto fisso, si fanno ruotare gli altri tre)
+  \begin{equation}
+    \label{eq:ciclicita-riemann}
+    R_{\lambda\mu\nu\kappa} + R_{\lambda\kappa\mu\nu} + R_{\lambda\nu\kappa\mu}
+    = 0.
+  \end{equation}
+\end{enumerate}
+
+A causa delle proprietà appena elencate, delle $4^{4} = 256$ componenti del
+tensore di Riemann solo $20$ sono indipendenti.  Per far vedere ciò consideriamo
+il caso generale di uno spazio $n$-dimensionale.  Il tensore di Riemann può
+essere immaginato come una matrice quadrata simmetrica (per la proprietà di
+simmetria~\ref{item:simmetria-riemann}) di ordine $d$ del tipo
+$R_{(\lambda\mu)(\nu\kappa)}$, con indici $(\lambda\mu)$ e $(\nu\kappa)$.  Il
+valore dell'ordine $d$ di questa matrice è dato dal numero di valori
+indipendenti che assumono i due indici che, per la proprietà di
+antisimmetria~\ref{item:antisimmetria-riemann}, sono uguali al numero di
+elementi indipendenti di una matrice $n \times n$ antisimmetrica, cioè
+$d = n(n-1)/2$.  Dunque gli elementi indipendenti di
+$R_{(\lambda\mu)(\nu\kappa)}$ si riducono
+\begin{equation}
+  \frac{1}{2} d (d + 1) = \frac{1}{2}\bigg( \frac{1}{2}n(n-1) \bigg) \bigg(
+  \frac{1}{2}n(n-1) +1 \bigg) = \frac{1}{8}n(n-1)(n^{2} - n +2).
+\end{equation}
+% TODO: provare a capire per bene il perché dell'affermazione successiva e a
+% spiegarlo in maniera semplice.  Per esempio vedi
+% http://www.maths.tcd.ie/~houghton/TEACHING/442/notes/22Oct2002.pdf
+% http://sergeysk.wordpress.com/2011/01/21/number-of-independent-components-of-the-riemann-curvature-tensor/
+% http://ned.ipac.caltech.edu/level5/March01/Carroll3/Carroll3.html (è il
+% capitolo 3 del Carrol)
+Infine, la relazione di ciclicità~\eqref{eq:ciclicita-riemann} corrisponde a
+$\binom{n}{4}$ equazioni differenti, allora abbiamo altrettanti ulteriori
+vincoli, così che gli elementi indipendenti del tensore di Riemann
+$n$-dimensionale sono
+\begin{equation}
+  C_{n} = \frac{1}{8}n(n-1)(n^{2} - n +2) - \binom{n}{4} =
+  \frac{1}{12}n^{2}(n^{2} - 1).
+\end{equation}
+Ponendo $n=4$ abbiamo che nello spazio-tempo quadrimensionale gli elementi
+indipendenti del tensore di Riemann sono $C_{4} = 20$, come avevamo
+preannunciato.
+
+La contrazione fra primo e terzo indice del tensore di Riemann dà il
+\index{tensore!di Ricci}\emph{tensore di Ricci}
+\begin{equation}
+  R_{\mu\kappa} = g^{\lambda\nu} R_{\lambda\mu\nu\kappa} =
+  \tensor{R}{^{\nu}_{\mu\nu\kappa}}
+  = \parder{\tensor{\Gamma}{^{\nu}_{\mu\nu}}}{x^{\kappa}}
+  - \parder{\tensor{\Gamma}{^{\nu}_{\mu\kappa}}}{x^{\nu}} +
+  \tensor{\Gamma}{^{\eta}_{\mu\nu}} \tensor{\Gamma}{^{\nu}_{\eta\kappa}} -
+  \tensor{\Gamma}{^{\eta}_{\mu\kappa}} \tensor{\Gamma}{^{\nu}_{\eta\nu}}.
+\end{equation}
+Il tensore di Ricci è simmetrico per la proprietà~\ref{item:simmetria-riemann}
+di simmetria del tensore di Riemann, infatti
+\begin{equation}
+  \label{eq:simmetria-riemann}
+  R_{\mu\kappa} = g^{\lambda\nu} R_{\lambda\mu\nu\kappa} = g^{\lambda\nu}
+  R_{\nu\kappa\lambda\mu} = g^{\nu\lambda} R_{\nu\kappa\lambda\mu} =
+  R_{\kappa\mu}.
+\end{equation}
+Dunque delle $4^{2} = 16$ componenti del tensore solo $10$ sono indipendenti.
+Inoltre il tensore di Ricci è essenzialmente l'unico tensore non nullo che si
+può ottenere dalla contrazione del tensore di Riemann.  Contraendo primo e
+secondo indice, per la proprietà~\ref{item:antisimmetria-riemann} di
+antisimmetria del tensore di Riemann si ha
+\begin{equation}
+  \tensor{R}{^{\mu}_{\mu\nu\kappa}} = g^{\lambda\mu}
+  R_{\lambda\mu\nu\kappa} = -g^{\lambda\mu} R_{\mu\lambda\nu\kappa} =
+  -g^{\mu\lambda}R_{\mu\lambda\nu\kappa} =
+  -g^{\lambda\mu}R_{\lambda\mu\nu\kappa} = 0.
+\end{equation}
+Analogamente, contraendo terzo e quarto indice si ottiene
+\begin{equation}
+  \tensor{R}{_{\lambda\mu}^{\kappa}_{\kappa}} = g^{\nu\kappa}
+  R_{\lambda\mu\nu\kappa} = 0.
+\end{equation}
+Contraendo secondo e quarto indice del tensore di Riemann si ottiene di nuovo il
+tensore di Ricci, invece contraendo primo e quarto indice oppure secondo terzo
+si ottiene ancora il tensore di Ricci così come da noi definito ma con il segno
+opposto.  Infatti, moltiplicando tutti i membri
+della~\eqref{eq:simmetria-riemann} per $g^{\lambda\nu}$ troviamo
+\begin{equation}
+  \tensor{R}{^{\nu}_{\mu\nu\kappa}} = -\tensor{R}{_{\mu}^{\nu}_{\nu\kappa}} =
+  -\tensor{R}{^{\nu}_{\mu\kappa\nu}} = \tensor{R}{_{\mu}^{\nu}_{\kappa\nu}}.
+\end{equation}
+
+L'ulteriore contrazione del tensore di Riemann dà la
+\index{curvatura scalare}\emph{curvatura scalare}
+\begin{equation}
+  R = g^{\mu\nu}R_{\mu\nu} = \tensor{R}{^{\mu}_{\mu}}.
+\end{equation}
+
+\subsection{Tensore di Riemann e curvatura dello spazio}
+\label{sec:riemann-curvatura}
+
+Anche in uno spazio piatto è possibile introdurre una metrica non costante su
+tutto lo spazio che faccia apparire lo spazio curvo, come se ci fosse un campo
+gravitazionale.  Questo è il caso, per esempio, delle coordinate sferiche o
+cilindriche nello spazio cartesiano $\R^{3}$.  Siamo allora interessati a
+cercare uno strumento che ci permetta di discriminare fra uno spazio-tempo
+intrinsecamente curvo, perché permeato da un reale campo gravitazionale, e uno
+spazio-tempo piatto, cioè lo spazio di Minkowski, in cui si fa uso di coordinate
+curvilinee.  Se siamo nella seconda situazione, in questo spazio di Minkowski è
+possibile effettuare una trasformazione delle coordinate
+$x^{\alpha} \to \xi^{\alpha}(x)$ da un sistema di coordinate curvilinee
+$x^{\alpha}$ con tensore metrico $\gamma_{\mu\nu}$ non costante a un sistema di
+coordinate $\xi^{\alpha}(x)$ con tensore metrico uguale al tensore di Minkowski
+$\eta_{\alpha\beta}$ e in tutto lo spazio si ha
+\begin{equation}
+  \eta_{\alpha\beta} =
+  g_{\mu\nu} \parder{x^{\mu}}{\xi^{\alpha}} \parder{x^{\nu}}{\xi^{\beta}}.
+\end{equation}
+Per il \index{principio!di equivalenza}principio di equivalenza, in ogni punto
+$X$ dello spazio è possibile individuare un sistema di coordinate localmente
+inerziali $\xi_{X}$ che soddisfano la relazione precedente in un intorno
+infinitesimo di $X$.  Noi invece vogliamo scoprire se esista un sistema di
+coordinate $\xi^{\alpha}$ che soddisfi la relazione in tutto lo spazio.
+
+Lo strumento a cui siamo interessati è il tensore di Riemann, infatti è
+possibile dimostrare il seguente
+\begin{teorema}
+  Condizioni necessarie e sufficienti affinché sia possibile effettuare una
+  trasformazione di coordinate $x \to \xi$ tale che in tutto lo spazio sia
+  valida la relazione
+  \begin{equation}
+    \label{eq:tensore-spazio-piatto}
+    \eta_{\alpha\beta} =
+    g_{\mu\nu} \parder{x^{\mu}}{\xi^{\alpha}} \parder{x^{\nu}}{\xi^{\beta}}
+  \end{equation}
+  sono
+  \begin{enumerate}
+  \item il \index{tensore!di Riemann}tensore di Riemann si annulla in tutto lo
+    spazio
+    \begin{equation}
+      \tensor{R}{^{\lambda}_{\mu\nu\kappa}} = 0;
+    \end{equation}
+  \item in qualche punto $X$ la matrice $g_{\mu\nu}(X)$ ha tre autovalori
+    positivi e uno negativo.
+  \end{enumerate}
+\end{teorema}
+Il fatto che sia valida la relazione~\eqref{eq:tensore-spazio-piatto} significa
+che la metrica è quella usuale dello spazio di Minkowski
+$\dd \tau^{2} = \dd t^{2} - \dd\bm{x}^{2}$, l'annullarsi del tensore di Riemann
+invece significa che la curvatura dello spazio è nulla, il teorema precedente
+dichiara l'equivalenza fra queste due condizioni.  In questo modo il tensore di
+Riemann ci permette di verificare se nello spazio sia presente un reale campo
+gravitazionale.
+
+Un altro modo che permette di mostrare che il tensore di Riemann caratterizza la
+curvatura dello spazio, e quindi evidenzia la presenza di un campo
+gravitazionale, è il seguente.  Dato un vettore covariante $V_{\mu}$ si dimostra
+(vedi appendice~\ref{sec:dimostr-derivate-miste-vettore}) che le sue derivate
+covarianti seconde miste non commutano
+\begin{equation}
+  \label{eq:derivate-miste-vettore}
+  V_{\mu;\nu;\kappa} - V_{\mu;\kappa;\nu} = -V_{\lambda}
+  \tensor{R}{^{\lambda}_{\mu\nu\kappa}}.
+\end{equation}
+Si trovano inoltre analoghe relazioni per i vettori controvarianti o, più in
+generale, per i tensori
+\begin{subequations}
+  \begin{gather}
+    \tensor{V}{^{\mu}_{;\nu;\kappa}} - \tensor{V}{^{\mu}_{;\kappa;\nu}} =
+    V^{\sigma} \tensor{R}{^{\lambda}_{\sigma\nu\kappa}}, \\
+    \tensor{T}{^{\lambda}_{\mu;\nu;\kappa}} -
+    \tensor{T}{^{\lambda}_{\mu;\kappa;\nu}} = \tensor{T}{^{\sigma}_{\mu}}
+    \tensor{R}{^{\lambda}_{\sigma\nu\kappa}} - \tensor{T}{^{\lambda}_{\sigma}}
+    \tensor{R}{^{\sigma}_{\mu\nu\kappa}}.
+  \end{gather}
+\end{subequations}
+Nello spazio di Minkowski le derivate covarianti coincidono con le derivate
+ordinarie e le derivate seconde miste commutano
+\begin{equation}
+  V_{\mu,\nu,\kappa} = \parder{V_{\mu}}{x^{\nu}, x^{\kappa}}
+  = \parder{V_{\mu}}{x^{\kappa}, x^{\nu}} = V_{\mu,\kappa,\nu}
+\end{equation}
+e questo è possibile solo se il tensore di Riemann è identicamente nullo in
+tutto lo spazio.
+
+\subsection{Identità di Bianchi}
+\label{sec:identita-bianchi}
+
+Si dimostra (vedi l'appendice~\ref{sec:dimostr-identita-bianchi}) la seguente
+relazione
+\begin{equation}
+  \label{eq:bianchi}
+  R_{\lambda\mu\nu\kappa;\eta} + R_{\lambda\mu\kappa\eta;\nu} +
+  R_{\lambda\mu\eta\nu;\kappa} = 0
+\end{equation}
+chiamata \index{identità!di Bianchi}\emph{identità di Bianchi}.  Contraiamo gli
+indici $\lambda$ e $\nu$ moltiplicando ambo i membri per $g^{\lambda\nu}$
+\begin{equation}
+  \begin{split}
+    \tensor{R}{^{\nu}_{\mu\nu\kappa;\eta}} +
+      \tensor{R}{^{\nu}_{\mu\kappa\eta;\nu}} +
+    \tensor{R}{^{\nu}_{\mu\eta\nu;\kappa}} &= R_{\mu\kappa;\eta} +
+    \tensor{R}{^{\nu}_{\mu\kappa\eta;\nu}} - R_{\mu\eta;\kappa} \\
+    &= R_{\mu\kappa;\eta} - \tensor{R}{^{\nu}_{\mu\eta\kappa;\nu}} -
+    R_{\mu\eta;\kappa} = 0.
+  \end{split}
+\end{equation}
+Abbiamo sfruttato il fatto che innalzamento degli indici e derivazione
+covariante commutano.  Contraendo ulteriormente gli indici $\mu$ e $\kappa$,
+cioè moltiplicando gli ultimi due membri per $g^{\mu\kappa}$, otteniamo
+\begin{equation}
+  R_{;\eta} - \tensor{R}{^{\nu}_{\eta;\nu}} -
+  \tensor{R}{^{\kappa}_{\eta;\kappa}} = R_{;\eta} - 2
+  \tensor{R}{^{\mu}_{\eta;\mu}} = 0,
+\end{equation}
+poiché $\kappa$ e $\nu$ sono entrambi indici muti che abbiamo rinominato $\mu$.
+Questa relazione può anche essere scritta come
+\begin{equation}
+  \bigg( \tensor{R}{^{\mu}_{\eta}} - \frac{1}{2} \tensor{\delta}{^{\mu}_{\eta}}
+  R \bigg)_{;\mu} = 0
+\end{equation}
+e moltiplicando ancora per $g^{\eta\nu}$
+\begin{equation}
+  \bigg( R^{\mu\nu} - \frac{1}{2} g^{\mu\nu} R\bigg)_{;\mu} = 0.
+\end{equation}
+La quantità all'interno delle parentesi è il
+\index{tensore!di Einstein}\emph{tensore di Einstein}
+\begin{equation}
+  G^{\mu\nu} = R^{\mu\nu} - \frac{1}{2} g^{\mu\nu}R
+\end{equation}
+e abbiamo dunque mostrato che ha quadridivergenza nulla
+\begin{equation}
+  \tensor{G}{^{\mu\nu}_{;\mu}} = \bigg( R^{\mu\nu} - \frac{1}{2} g^{\mu\nu}
+  R\bigg)_{;\mu} = 0.
+\end{equation}
+
+% TODO: scrivere qualcosa.  Vedi lezioni dei giorni 03-04/05/2012
+\subsection{\completare{Equazione di deviazione geodetica}}
+\label{sec:deviazione-geodetica}
+
+\section{Equazioni di Einstein}
+\label{sec:equazioni-einstein}
+
+\emph{Nota: in questo paragrafo indicheremo esplicitamente la velocità della
+  luce $c$.}
+
+Vogliamo ora determinare le equazioni del campo gravitazionale $g_{\mu\nu}$ a
+partire dal principio variazionale di Hamilton.  Assumiamo che l'azione $S$ sia
+somma di una componente $S_{\textup{g}}$ che descrive solo il campo
+gravitazionale e una componente $S_{\textup{m}}$ relativa alla materia che
+interagisce con il campo.  L'azione deve essere uno scalare, in modo che risulti
+invariante per trasformazioni arbitrarie delle coordinate, e dipenderà dal
+tensore metrico, dalle sue derivate prime, dalle coordinate generalizzate $q$ e
+dalle velocità generalizzate $\lparder{q}{x^{\lambda}}$,
+$S = S(g_{\mu\nu}, \lparder{g_{\mu\nu}}{x^{\lambda}}; q,
+\lparder{q}{x^{\lambda}})$.
+Hilbert propose questa espressione per l'azione del campo
+gravitazionale\footnote{Il fattore davanti all'integrale è stato scelto in
+  maniera tale che nel limite newtoniano si ottenga l'equazione di Poisson
+  $\nabla^{2} \phi = 4\pi G\rho$.}
+\begin{equation}
+  S_{\textup{g}} = -\frac{c^{3}}{16\pi G} \int R \sqrt{g} \dd^{4} x,
+\end{equation}
+chiamata \index{azione!di Hilbert-Einstein} \emph{azione di Hilbert-Einstein}.
+$G = \SI{6.673 84(80)e-11}{\cubic\metre\per\kilo\metre\per\second\squared}$ è la
+\index{costante!di gravitazione universale}
+\emph{costante di gravitazione universale}.  L'azione della materia ha invece
+espressione
+\begin{equation}
+  S_{\textup{m}} = \frac{1}{c} \int \Lambda \sqrt{g} \dd^{4} x,
+\end{equation}
+in cui $\Lambda = \Lambda(g^{\mu\nu}, \partial_{\lambda}g^{\mu\nu})$ è la densità
+di lagrangiana associata al sistema che interagisce con il campo
+gravitazionale.  L'interazione fra il campo e la materia è inclusa in
+$S_{\textup{m}}$.
+
+Per determinare le equazioni del campo gravitazionale dobbiamo richiedere che
+l'azione sia stazionaria rispetto alle variazioni, a volume fissato,
+$\delta g_{\mu\nu}$ del campo che devono soddisfare inoltre la condizione che si
+annullino sul bordo dell'ipervolume di integrazione.  Dunque dobbiamo imporre
+$\delta S = \delta(S_{\textup{g}} + S_{\textup{m}}) = 0$.  Calcoliamo il
+contributo di $\delta S_{\textup{g}}$
+\begin{equation}
+  \label{eq:var-HE}
+  \begin{split}
+    \delta \int R \sqrt{g} \dd^{4} x &= \delta \int g^{\mu\nu} R_{\mu\nu}
+    \sqrt{g} \dd^{4} x \\
+    &= \int (\delta g^{\mu\nu} R_{\mu\nu} \sqrt{g} + g^{\mu\nu} R_{\mu\nu}
+    \delta \sqrt{g} + g^{\mu\nu} \delta R_{\mu\nu} \sqrt{g}) \dd^{4} x.
+  \end{split}
+\end{equation}
+Osserviamo che
+\begin{equation}
+  \delta\sqrt{g} = \parder{\sqrt{g}}{g} \parder{g}{g^{\mu\nu}} \delta g^{\mu\nu}
+  = \frac{1}{2 \sqrt{g}} (-g g_{\mu\nu} ) \delta g^{\mu\nu} = - \frac{1}{2}
+  g_{\mu\nu} \sqrt{g} \delta g^{\mu\nu},
+\end{equation}
+in cui abbiamo ricordato la~\eqref{eq:g_mu_rho-determinante2}.  Sostituendo
+nella~\eqref{eq:var-HE} otteniamo
+\begin{equation}
+  \delta \int R \sqrt{g} \dd^{4} x = \int \bigg( R_{\mu\nu} - \frac{1}{2}
+  g_{\mu\nu} R \bigg)\sqrt{g} \delta g^{\mu\nu} \dd^{4} x + \int g^{\mu\nu}
+  \delta R_{\mu\nu} \sqrt{g} \dd^{4} x.
+\end{equation}
+Mostriamo che il secondo integrale è nullo.  Innanzitutto la
+\index{tensore!di Ricci!variazione del}variazione del tensore di Ricci può
+essere espressa in termini di variazioni della connessione affine mediante
+l'\index{identità!di Palatini}% TODO: vedere di dimostrarla
+\emph{identità di
+  Palatini}\footnote{Si
+  noti che la variazione della connessione affine è un tensore poiché è la
+  differenza fra due connessioni affini, la quale è un tensore come visto nel
+  paragrafo~\ref{sec:connessione-affine}.}
+\begin{equation}
+  \delta R_{\mu\nu} = (\delta \tensor{\Gamma}{^{\lambda}_{\mu\lambda}})_{;\nu} -
+  (\delta \tensor{\Gamma}{^{\lambda}_{\mu\nu}})_{;\lambda}.
+\end{equation}
+Allora si può riscrivere l'integrale in esame come
+\begin{equation}
+  \int g^{\mu\nu} \delta R_{\mu\nu} \sqrt{g} \dd^{4} x = \int (g^{\mu\nu} \delta
+  \tensor{\Gamma}{^{\lambda}_{\mu\lambda;\nu}} - g^{\mu\nu} \delta
+  \tensor{\Gamma}{^{\lambda}_{\mu\nu;\lambda}}) \sqrt{g} \dd^{4} x
+\end{equation}
+e per il teorema di Gauss in forma covariante~\eqref{eq:gauss-covariante}
+ricaviamo
+\begin{equation}
+  \begin{split}
+    \int g^{\mu\nu} \delta R_{\mu\nu} \sqrt{g} \dd^{4} x &= \int (\delta
+    \tensor{\Gamma}{^{\lambda\nu}_{\lambda;\nu}} - \delta
+    \tensor{\Gamma}{^{\lambda\nu}_{\nu;\lambda}}) \sqrt{g} \dd^{4} x \\
+    &= \int \delta \tensor{\Gamma}{^{\lambda\nu}_{\lambda}} \sqrt{g} \dd
+    \Sigma_{\nu} - \int \delta \tensor{\Gamma}{^{\lambda\nu}_{\lambda}} \sqrt{g}
+    \dd \Sigma_{\lambda} = 0
+  \end{split}
+\end{equation}
+poiché gli integrali sulle ipersuperfici vanno calcolati sul bordo
+dell'ipervolume costante su cui si calcola la variazione dell'azione e sul bordo
+sono nulle le variazioni di $g_{\mu\nu}$ e quindi anche della connessione
+affine, la quale dipende dal tensore metrico.  Dunque abbiamo trovato che la
+variazione dell'azione di Hilbert-Einstein è
+\begin{equation}
+  \delta S_{\textup{g}} = -\frac{c^{3}}{16\pi G} \int \bigg( R_{\mu\nu} -
+  \frac{1}{2} g_{\mu\nu} R \bigg)\sqrt{g} \delta g^{\mu\nu} \dd^{4} x.
+\end{equation}
+
+Per calcolare la variazione $\delta S_{\textup{m}}$ dell'azione associata alla
+materia ragioniamo in maniera analoga a quanto fatto nel
+paragrafo~\ref{sec:tensore-energia-impulso}
+\begin{equation}
+  \begin{split}
+    \delta S_{\textup{m}} &= \delta \int
+    \Lambda(g^{\mu\nu}, \tensor{g}{^{\mu\nu}_{,\lambda}}) \sqrt{g} \dd^{4} x =
+    \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}} \delta g^{\mu\nu}
+    + \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \delta
+    \tensor{g}{^{\mu\nu}_{,\lambda}} \bigg) \dd^{4} x \\
+    &= \frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}} \delta
+    g^{\mu\nu} + \parder{}{x^{\lambda}}
+    \bigg( \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \delta
+    g^{\mu\nu}\bigg) - \delta g^{\mu\nu} \parder{}{x^{\lambda}}
+    \bigg( \parder{\sqrt{g}\Lambda}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
+    \bigg) \dd^{4} x \\
+    &= \frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
+    - \parder{}{x^{\lambda}}
+    \bigg( \parder{\sqrt{g}\Lambda}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
+    \bigg) \delta g^{\mu\nu} \dd^{4} x.
+  \end{split}
+\end{equation}
+Nell'ultimo passaggio abbiamo sfruttato il fatto che l'integrale del secondo
+termine si trasforma, per il teorema di Gauss, in un integrale sul bordo del
+volume di integrazione sul quale le variazioni $\delta g^{\mu\nu}$ sono nulle.
+Introduciamo il tensore $T_{\mu\nu}$ definito da
+\begin{equation}
+  \frac{1}{2} \sqrt{g} T_{\mu\nu} = \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
+  - \parder{}{x^{\lambda}}
+  \bigg( \parder{\sqrt{g}\Lambda}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
+\end{equation}
+così la variazione dell'azione della materia diventa
+\begin{equation}
+  \delta S_{\textup{m}} = \frac{1}{2c} \int T_{\mu\nu} \delta g^{\mu\nu}
+  \sqrt{g} \dd^{4} x
+\end{equation}
+e la condizione di stazionarietà dell'azione totale del sistema campo
+gravitazionale + particelle interagenti è
+\begin{equation}
+  \delta S = \delta(S_{\textup{g}} + S_{\textup{m}}) = \int \bigg(
+  -\frac{c^{3}}{16\pi G} \bigg( R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R \bigg) +
+  \frac{1}{2} T_{\mu\nu} \bigg) \sqrt{g} \delta g^{\mu\nu} \dd^{4} x = 0.
+\end{equation}
+Data l'arbitrarietà delle variazioni $\delta g^{\mu\nu}$ ricaviamo
+\begin{equation}
+  \label{eq:einstein}
+  R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = \frac{8\pi G}{c^{4}} T_{\mu\nu}
+\end{equation}
+che sono le \emph{equazioni del campo gravitazionale} in presenza di sorgenti,
+chiamate anche \emph{equazioni di Einstein}.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../astrofisica-teorica"
+%%% fill-column: 80
+%%% End:

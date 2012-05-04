@@ -1,11 +1,11 @@
-\cleardoublepage{}
+\cleardoublepage
 \chapter{Calcolo tensoriale nella relatività generale}
 \label{cha:calcolo-tensoriale}
 
-\emph{Nota: da questo capitolo in poi useremo, per brevità, i termini
-  \emph{tensore} e \emph{vettore} in luogo di, rispettivamente,
-  \emph{quadritensore} e \emph{quadrivettore} se questo non dovesse generare
-  ambiguità.}
+\emph{Nota: da questo capitolo in poi ometteremo, per brevità, il prefisso
+  \emph{quadri-} dove ciò non dovesse generare ambiguità.  Per esempio, useremo
+  i termini \emph{tensore} e \emph{vettore} in luogo di, rispettivamente,
+  \emph{quadritensore} e \emph{quadrivettore}.}
 
 Nel paragrafo~\ref{sec:calcolo-tensoriale-minkowski} abbiamo introdotto, nel
 contesto della relatività speciale, i tensori, specificando come si modificano
@@ -63,7 +63,7 @@ $\tensor{A}{^{\alpha_{1}\dots\alpha_{k}}}$ e si trasforma come
   \cdots \parder{x'^{\alpha_{k}}}{x^{\mu_{k}}}
   \tensor{A}{^{\mu_{1}\dots\mu_{k}}}.
 \end{equation}
-Un quadritensore di rango $k$ completamente covariante è del tipo
+Un tensore di rango $k$ completamente covariante è del tipo
 $\tensor{A}{_{\alpha_{1}\dots\alpha_{k}}}$ e si trasforma come
 \begin{equation}
   \tensor{A}{_{\alpha_{1}\dots\alpha_{k}}} \to
@@ -115,7 +115,7 @@ infatti
 La \index{delta!di Kronecker quadrimensionale}delta di Kronecker definita
 nella~\eqref{eq:delta-kronecker} è l'unico tensore le cui componenti sono uguali
 in qualsiasi sistema di riferimento, oltre agli \index{scalare}scalari e al
-tensore nullo.
+\index{tensore!nullo}tensore nullo.
 
 \subsection{Tensore metrico}
 \label{sec:tensore-metrico}
@@ -300,6 +300,34 @@ affine può essere riscritta come
   -\parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu}, x'^{\nu}}
   \tensor{\Gamma}{^{\rho}_{\tau\sigma}}
   + \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu},x'^{\nu}}.
+\end{equation}
+
+% La dimostrazione seguente è presa da Moshe Carmeli "Relativity: Modern
+% Large-Scale Spacetime Structure of the Cosmos".  Vedi
+% http://books.google.it/books?id=tZ2ilHyrkGUC&pg=PA110&lpg=PA110&dq=%22difference+between+two+affine+connections%22&source=bl&ots=Y1irJ0ao0z&sig=d2qZCZDSHPuD5-ykQM6C6hnXufQ&hl=it&sa=X&ei=Qn2mT87ALKzP4QTaluG_CQ&ved=0CE4Q6AEwAQ#v=onepage&q=%22difference%20between%20two%20affine%20connections%22&f=false
+La connessione affine non è un tensore, ma la differenza fra due connessioni
+affini è un tensore.  Infatti, siano $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ e
+$\tensor{\tilde\Gamma}{^{\lambda}_{\mu\nu}}$ due distinte connessioni affini,
+allora per un cambiamento di coordinate $x^{\mu} \to x'^{\mu}$ la loro
+differenza
+$\tensor{T}{^{\lambda}_{\mu\nu}} = \tensor{\Gamma}{^{\lambda}_{\mu\nu}} -
+\tensor{\tilde\Gamma}{^{\lambda}_{\mu\nu}}$ si trasforma come
+\begin{equation}
+  \begin{split}
+    \tensor{T}{^{\lambda}_{\mu\nu}} \to \tensor{{T'}}{^{\lambda}_{\mu\nu}}
+    &= \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
+    \parder{x^{\sigma}}{x'^{\nu}} \tensor{\Gamma}{^{\rho}_{\tau\sigma}}
+    + \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu},x'^{\nu}} \\
+    &- \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
+    \parder{x^{\sigma}}{x'^{\nu}} \tensor{\tilde\Gamma}{^{\rho}_{\tau\sigma}}
+    - \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu},x'^{\nu}} \\
+    &= \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
+    \parder{x^{\sigma}}{x'^{\nu}} \tensor{\Gamma}{^{\rho}_{\tau\sigma}}
+    - \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
+    \parder{x^{\sigma}}{x'^{\nu}} \tensor{\tilde\Gamma}{^{\rho}_{\tau\sigma}} \\
+    &= \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
+    \parder{x^{\sigma}}{x'^{\nu}} \tensor{T}{^{\rho}_{\tau\sigma}}.
+  \end{split}
 \end{equation}
 
 \section{Derivazione covariante}
@@ -531,12 +559,18 @@ Osserviamo che
   \frac{1}{2}(g^{\mu\rho}g_{\mu\rho,\lambda} + g^{\mu\rho}g_{\lambda\rho,\mu}
   - g^{\mu\rho}g_{\mu\lambda,\rho}) = \frac{1}{2}g^{\mu\rho}g_{\mu\rho,\lambda}.
 \end{equation}
-% TODO: mettere la dimostrazione se riesco a farla o capirla
-Inoltre si dimostra che
-\begin{equation}
-  g^{\mu\rho} = \frac{1}{g} \parder{g}{g_{\mu\rho}},
-\end{equation}
-in cui $g = -\det(g_{\mu\nu})$, allora possiamo scrivere
+Inoltre si dimostrano le seguenti relazioni (vedi
+l'appendice~\ref{sec:dimostr-determinante})
+\begin{subequations}
+  \label{eq:g_mu_rho-determinante}
+  \begin{align}
+    g^{\mu\rho} &= \frac{1}{g} \parder{g}{g_{\mu\rho}}, \\
+    g_{\mu\rho} &= -
+    \frac{1}{g} \parder{g}{g^{\mu\rho}}, \label{eq:g_mu_rho-determinante2}
+  \end{align}
+\end{subequations}
+in cui $g = -\det(g_{\mu\nu})$, allora, usando in particolare la prima, possiamo
+scrivere
 \begin{equation}
   \tensor{\Gamma}{^{\mu}_{\mu\lambda}} = \frac{1}{2}
   \frac{1}{g} \parder{g}{g_{\mu\rho}} \parder{g_{\mu\rho}}{x^{\lambda}} =
@@ -555,6 +589,7 @@ Questo risultato ci permette di scrivere il \index{teorema!di Gauss}teorema di
 Gauss in forma covariante, ricordando che l'elemento invariante infinitesimo di
 volume quadrimensionale è $\sqrt{g}\dd^{4} x$,
 \begin{equation}
+  \label{eq:gauss-covariante}
   \int\limits_{\Omega} \tensor{V}{^{\mu}_{;\mu}} \sqrt{g} \dd^{4} x =
   \int\limits_{\Omega} \frac{1}{\sqrt{g}} \parder{}{x^{\mu}}(\sqrt{g}V^{\mu})
   \sqrt{g} \dd^{4} x = \int\limits_{\partial\Omega} V^{\mu} \sqrt{g}
@@ -586,7 +621,6 @@ della relatività generale, dipendono dalla posizione
     \dd x) - \bigg( \parder{x'^{\mu}}{x^{\nu}} \bigg) \bigg|_{x'} V^{\nu}(x).
   \end{split}
 \end{equation}
-
 
 Nasce allora l'esigenza di definire un differenziale di un vettore (o, più in
 generale, di un tensore) che abbia a sua volta natura vettoriale (o tensoriale).
