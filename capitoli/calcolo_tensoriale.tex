@@ -27,7 +27,9 @@ di Lorentz $x^{\alpha} \to x'^{\alpha}$ sono dati da
   \end{align}
 \end{subequations}
 Definiremo i tensori, in relatività generale, in maniera analoga a quanto fatto
-all'interno della relatività speciale, a patto di effettuare le sostituzioni
+all'interno della relatività speciale, cioè prendendo come riferimento le
+trasformazioni dei differenziali delle coordinate controvarianti.  Rispetto al
+caso delle relatività speciale bisognerà, però, effettuare le sostituzioni
 \begin{subequations}
   \label{eq:sostituzioni}
   \begin{align}
@@ -39,11 +41,17 @@ all'interno della relatività speciale, a patto di effettuare le sostituzioni
 \section{Tensori}
 \label{sec:tensori}
 
+I differenziali delle coordinate controvarianti si trasformano, per effetto di
+una trasformazione arbitraria delle coordinate $x^{\alpha} \to x'^{\alpha}$,
+come
+\begin{equation}
+  \dd x'^{\alpha} = \parder{x'^{\alpha}}{x^{\mu}} \dd x^{\mu}.
+\end{equation}
 Un \emph{tensore}
 $\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ (con
 $p + q = k$) di rango $k$ è un insieme di $4^{k}$ quantità che sotto una
 trasformazione arbitraria delle coordinate $x^{\alpha} \to x'^{\alpha}$ si
-trasformano come
+trasformano come il differenziale delle coordinate controvarianti
 \begin{equation}
   \tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} \to
   \tensor*{{A'}}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} =
@@ -106,16 +114,22 @@ $x^{\alpha} \to x'^{\alpha}$ si trasformano come
 in cui $\abs{\lparder{x'}{x}}$ è lo jacobiano della matrice della trasformazione
 delle coordinate.
 
-I differenziali delle coordinate controvarianti sono vettori controvarianti,
-infatti
-\begin{equation}
-  \dd x'^{\alpha} = \parder{x'^{\alpha}}{x^{\mu}} \dd x^{\mu}.
-\end{equation}
-
 La \index{delta!di Kronecker quadrimensionale}delta di Kronecker definita
 nella~\eqref{eq:delta-kronecker} è l'unico tensore le cui componenti sono uguali
 in qualsiasi sistema di riferimento, oltre agli \index{scalare}scalari e al
 \index{tensore!nullo}tensore nullo.
+
+Si noti che adesso le coordinate controvarianti non costituiscono più un
+vettore.  Infatti, dopo una trasformazione generica, le nuove coordinate
+$x'^{\alpha} = x'^{\alpha}(x)$ sono una funzione delle vecchie coordinate
+$x^{\alpha} = x^{\alpha}(x')$.  Questa funzione è del tutto arbitraria in quanto
+dipende dalla trasformazione, solo nel caso di trasformazioni lineari si ha
+$x'^{\alpha} = \tensor{m}{^{\alpha}_{\beta}} x^{\beta}$, con
+$\tensor{m}{^{\alpha}_{\beta}}$ matrice costante, e si può anche scrivere
+\begin{equation}
+  x'^{\alpha} = \parder{x'^{\alpha}}{x^{\beta}} x^{\beta}.
+\end{equation}
+Questo è proprio il caso delle trasformazioni di Lorentz.
 
 \subsection{Tensore metrico}
 \label{sec:tensore-metrico}
@@ -219,11 +233,15 @@ sostituzioni~\eqref{eq:sostituzioni}.
   tipo $(p+r,q+s)$.
 \item[Contrazione degli indici] \index{contrazione!degli indici}Se in un tensore
   di tipo $(p,q)$ si contraggono $n$ indici controvarianti con $n$ indici
-  covarianti si ottiene un tensore di tipo $(p-n,q-n)$.  Si può effettuare la
-  contrazione degli indici anche nel prodotto di due tensori: il prodotto di un
-  tensore di tipo $(p,q)$ e di uno di tipo $(r,s)$ è un tensore di tipo
-  $(p+r,q+s)$, ma se si contraggono $n$ indici si ottiene un tensore di tipo
-  $(p+r-n,q+s-n)$.
+  covarianti si ottiene un tensore di tipo $(p-n,q-n)$.  La contrazione di un
+  tensore di rango superiore a $2$ non è univoca, si può scegliere di contrarre
+  differenti coppie di indici ottenendo di volta in volta un risultato, in
+  generale, diverso.  Ciascuna operazione di contrazione si effettua
+  moltiplicando per il tensore metrico che ha per indici i due indici che si
+  vogliono contrarre.  Si può effettuare la contrazione degli indici anche nel
+  prodotto di due tensori: il prodotto di un tensore di tipo $(p,q)$ e di uno di
+  tipo $(r,s)$ è un tensore di tipo $(p+r,q+s)$, ma se si contraggono $n$ indici
+  si ottiene un tensore di tipo $(p+r-n,q+s-n)$.
 \item[Prodotto scalare] Il prodotto scalare fra due vettori $V$ e $U$ è definito
   come
   \begin{equation}
@@ -688,13 +706,24 @@ Osserviamo inoltre che risulta
   \tensor{V}{^{\mu}_{;\lambda}} \dd x^{\lambda}.
 \end{equation}
 
-Se la curva $x^{\mu}$ è parametrizzata dal tempo proprio $\tau$ definiamo la
-\emph{derivata lungo la curva} $x^{\mu}$ di $V^{\mu}$ come
+Consideriamo una curva $x^{\lambda}(\tau)$ parametrizzata dal tempo proprio
+$\tau$.  Uno spostamento infinitesimo lungo tale curva è dato da
+$\dd x^{\lambda} = \lparder{x^{\lambda}}{\tau} \dd \tau = u^{\lambda} \dd \tau$,
+quindi il differenziale covariante di $V^{\mu}$ si può scrivere come
 \begin{equation}
-  \covder{V^{\mu}}{\tau} = \tensor{V}{^{\mu}_{;\lambda}}
-  \toder{x^{\lambda}}{\tau} = \toder{V^{\mu}}{\tau} +
-  \tensor{\Gamma}{^{\mu}_{\rho\lambda}} V^{\rho} \toder{x^{\lambda}}{\tau}.
+  \cdd V^{\mu} = \dd V^{\mu} + \tensor{\Gamma}{^{\mu}_{\rho\lambda}} V^{\rho}
+  u^{\lambda }\dd \tau.
 \end{equation}
+Allora il limite del rapporto incrementale $\cdd V^{\mu}/\dd \tau$ definisce la
+\index{derivata!lungo una curva}\emph{derivata lungo la curva}
+$x^{\lambda}(\tau)$ di $V^{\mu}$ come
+\begin{equation}
+  \curder{V^{\mu}} = \tensor{V}{^{\mu}_{;\lambda}} \toder{x^{\lambda}}{\tau} =
+  \toder{V^{\mu}}{\tau} + \tensor{\Gamma}{^{\mu}_{\rho\lambda}} V^{\rho}
+  \toder{x^{\lambda}}{\tau}.
+\end{equation}
+La derivata lungo una curva è un vettore in quanto è il prodotto fra il tensore
+$\tensor{V}{^{\mu}_{;\lambda}}$ e il vettore $\ltoder{x^{\lambda}}{\tau}$.
 
 Poiché $\delta V^{\mu} = 0$ in un sistema inerziale, in un tale sistema si deve
 anche annullare la \index{connessione!affine}connessione affine.  Questo fa
@@ -744,7 +773,7 @@ in cui $u^{\mu}$ è la \index{quadrivelocità}quadrivelocità della particella. 
 presenza del campo gravitazionale, secondo le prescrizioni precedente,
 l'equazione del moto si scrive come
 \begin{equation}
-  0 = \covder{u^{\mu}}{\tau} = \toder{u^{\mu}}{\tau} +
+  0 = \curder{u^{\mu}} = \toder{u^{\mu}}{\tau} +
   \tensor{\Gamma}{^{\mu}_{\lambda\nu}} u^{\lambda} \toder{x^{\nu}}{\tau} =
   \toder{u^{\mu}}{\tau} + \tensor{\Gamma}{^{\mu}_{\lambda\nu}} u^{\lambda}
   u^{\nu},

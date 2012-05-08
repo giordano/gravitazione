@@ -1,0 +1,191 @@
+\cleardoublepage
+\chapter{Convenzioni e notazioni usate}
+\label{cha:notazioni}
+
+Nella teoria della relatività generale sono diffuse diverse notazioni e
+convenzioni sui segni e i fattori numerici che compaiono in alcune formule.
+Nella tabella~\ref{tab:notazione} è riportata la notazione adottata negli
+appunti.  Gran parte dei presenti appunti si basano
+su~\textcite{weinberg:gravitation}, quindi, se non diversamente specificato,
+adotteremo le stesse convenzioni di questo testo.  Riportiamo di seguito in
+dettagli le convenzioni scelte.
+
+Con le lettere greche ($\alpha,\beta,\dots,\mu,\nu,\dots$) rappresenteremo
+indici che possono assumere i valori $0$, $1$, $2$ e $3$, mentre con le lettere
+latine ($a,b,\dots,i,j,\dots$) indici che assumono i valori $1$, $2$, $3$.  Si
+noti che \textcite{landau:campo} seguono la convenzione opposta: gli indici
+latini assumono i valori $0$, $1$, $2$ e $3$, gli indici greci $1$, $2$ e $3$.
+
+Dove non chiaramente dichiarato il contrario, adottiamo, come è di consuetudine
+all'interno della relatività, la \index{convenzione!di Einstein per la somma}
+\emph{convenzione di Einstein per la somma}: se in un termine un indice compare
+due volte, di cui una volta controvariante (sopra) e una volta covariante
+(sotto), esso è chiamato \index{indice!muto}\emph{muto} (o \emph{contratto}), si
+sottintende una somma sui possibili valori che l'indice può assumere e si omette
+il simbolo di sommatoria.  Gli indici non muti sono chiamati
+\index{indice!libero}\emph{liberi}.  In un'identità fra tensori gli indici
+liberi devono comparire in ugual numero e nelle stesse posizioni (superiormente
+o inferiormente) in ambo i membri.  Sebbene possa succedere che, casualmente, in
+un certo sistema di riferimento le componenti controvarianti di un tensore $A$
+siano uguali alle componenti covarianti di un altro tensore $B$
+\begin{equation}
+  \tensor{A}{^{\alpha}_{\beta}^{\gamma}} = B^{\alpha\beta\gamma},
+\end{equation}
+questo non è valido in un altro sistema di riferimento e l'equazione precedente
+non è, quindi, legittima.  Si noti inoltre che questa non è corretta dal punto
+di vista tensoriale poiché l'indice libero $\beta$ è in un membro controvariante
+e nell'altro covariante.  L'espressione
+$A^{\mu\sigma}B_{\mu} = A^{0\sigma}B_{0} + A^{i\sigma}B_{i}$, scritta
+utilizzando la convenzione di Einstein, equivale, esplicitando la sommatoria, a
+\begin{equation}
+  \sum_{\mu=0}^{3} A^{\mu\sigma}B_{\mu} = A^{0\sigma}B_{0} + \sum_{i=1}^{3}
+  A^{i\sigma}B_{i} = A^{0\sigma}B_{0} + A^{1\sigma}B_{1} + A^{2\sigma}B_{2} +
+  A^{3\sigma}B_{3},
+\end{equation}
+in cui gli indici $\mu$ e $i$ sono muti e $\sigma$ è libero.  Gli indici muti
+sono così denominati poiché non compaiono nell'espressione esplicita.  Gli
+indici muti possono essere rinominati (e spesso eseguiremo questa operazione
+senza dichiararla esplicitamente) a patto di non utilizzare indici muti già
+utilizzati in quel termine oppure indici liberi.  Quindi l'espressione
+$\tensor{T}{^{\alpha\beta\gamma}_{\alpha\gamma}}$ può essere anche scritta come
+$\tensor{T}{^{\mu\beta\nu}_{\mu\nu}}$ ma \emph{non} come
+$\tensor{T}{^{\beta\beta\gamma}_{\beta\gamma}}$ oppure
+$\tensor{T}{^{\alpha\beta\alpha}_{\alpha\alpha}}$.
+
+La velocità della luce nel vuoto $c = \SI{299792458}{\metre\per\second}$ è posta
+uguale a $1$.  Di conseguenza tutte le velocità sono adimensionali (in
+particolare sono espresse in unità di $c$), lunghezze e tempo hanno la stessa
+dimensione.  Per ristabilire la coerenza dimensionale delle equazioni bisogna
+utilizzare l'adeguato numero di potenze di $c$.
+
+Il tensore metrico di Minkowski $\eta_{\alpha\beta}$ ha, per noi, segnatura
+$-+++$.  I testi \textcites{barone:relativita,landau:campo,ohanian:gravitazione}
+adottano la segnatura opposta $+---$.
+
+Il tensore di Riemann è definito come
+\begin{equation}
+    \tensor{R}{^{\lambda}_{\mu\nu\kappa}}
+  = \parder{\tensor{\Gamma}{^{\lambda}_{\mu\nu}}}{x^{\kappa}}
+  - \parder{\tensor{\Gamma}{^{\lambda}_{\mu\kappa}}}{x^{\nu}} +
+  \tensor{\Gamma}{^{\eta}_{\mu\nu}} \tensor{\Gamma}{^{\lambda}_{\eta\kappa}} -
+  \tensor{\Gamma}{^{\eta}_{\mu\kappa}} \tensor{\Gamma}{^{\lambda}_{\eta\nu}}.
+\end{equation}
+I testi \textcites{barone:relativita,landau:campo,ohanian:gravitazione}
+definiscono il tensore di Riemann con il segno opposto rispetto a quello qui
+stabilito.
+
+Il tensore di Ricci $R_{\mu\kappa}$ è ottenuto contraendo il primo e il terzo
+indice del tensore di Riemann $\tensor{R}{^{\lambda}_{\mu\nu\kappa}}$, o
+equivalentemente il secondo e il quarto indice.  Al contrario,
+\textcite{ohanian:gravitazione} definiscono il tensore di Ricci contraendo primo
+e quarto indice $R_{\mu\kappa} = \tensor{R}{^{\lambda}_{\mu\kappa\lambda}}$ e si
+ottiene così un tensore opposto rispetto a quello da noi definito.
+
+\begin{longtable}{c
+    p{.37\textwidth}
+    p{.28\textwidth}}
+  % intestazione iniziale
+  \caption{Notazione usata in questi appunti}
+  \label{tab:notazione} \\
+  \toprule
+  Simbolo & Significato & Riferimento \\
+  \midrule
+  \endfirsthead
+  % intestazione normale
+  \multicolumn{3}{l}{\footnotesize\itshape
+    Continua dalla pagina precedente} \\
+  \toprule
+  Simbolo & Significato & Riferimento \\
+  \midrule
+  \endhead
+  % piede normale
+  \midrule \multicolumn{3}{r}{\footnotesize\itshape
+    Continua nella prossima pagina} \\
+  \endfoot
+  % piede finale
+  \bottomrule \multicolumn{3}{r}{\footnotesize\itshape
+    Si conclude dalla pagina precedente} \\
+  \endlastfoot
+  % inizio corpo della tabella
+  $\bm{A} = (A^{1}, A^{2}, A^{3})$ & Vettore tridimensionale di componenti
+  $A^{1}$, $A^2$ e $A^{3}$. & \\
+  $A^{\mu} = (A^{0}, \bm{A})$ & Quadrivettore controvariante di componente
+  temporale $A^{0}$ e componenti spaziali $\bm{A}$. & Vedi
+  paragrafo~\ref{sec:calcolo-tensoriale-minkowski} e
+  capitolo~\ref{cha:calcolo-tensoriale}. \\
+  $A_{\mu} = (A_{0}, \bm{A})$ & Quadrivettore covariante con componente
+  temporale $A_{0}$ e componente spaziale $\bm{A}$. & Vedi
+  paragrafo~\ref{sec:calcolo-tensoriale-minkowski} e
+  capitolo~\ref{cha:calcolo-tensoriale}. \\
+  $\tensor*{T}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ &
+  Quadritensore. & Vedi paragrafo~\ref{sec:calcolo-tensoriale-minkowski} e
+  capitolo~\ref{cha:calcolo-tensoriale}. \\
+  $\dd \tau^{2} = \dd t^{2} - \dd \bm{x}^{2}$ & Metrica nello spazio di
+  Minkowski. & Vedi paragrafo~\ref{sec:trasformazioni-lorentz}. \\
+  $\eta_{\alpha\beta}$ & Tensore metrico di Minkowski. & Vedi
+  paragrafo~\ref{sec:trasformazioni-lorentz}. \\
+  $\tensor{\delta}{^{\alpha}_{\beta}}$ & Delta di Kronecker quadrimensionale. &
+  Vedi paragrafo~\ref{sec:trasformazioni-lorentz}. \\
+  $\tensor{\Lambda}{^{\alpha}_{\beta}}$ & Componente della matrice di Lorentz. &
+  Vedi paragrafo~\ref{sec:trasformazioni-lorentz}. \\
+  $\gamma(v) = \dfrac{1}{\sqrt{1-v^{2}}}$ & Fattore di Lorentz associato al
+  boost $v$. & Vedi paragrafo~\ref{sec:trasformazioni-lorentz}. \\
+  $\partial_{\mu} A_{\nu} = A_{\nu,\mu} =
+  \displaystyle\parder{A_{\nu}}{x^{\mu}}$
+  & Derivata ordinaria di $A_{\nu}$ rispetto alla coordinata $x^{\mu}$. & Vedi
+  paragrafo~\ref{sec:derivazione-minkowski}. \\
+  $\partial^{\mu} A_{\nu} = \tensor{A}{_{\nu}^{,\mu}} =
+  \displaystyle\parder{A_{\nu}}{x_{\mu}}$
+  & Derivata ordinaria di $A_{\nu}$ rispetto alla coordinata $x_{\mu}$. & Vedi
+  paragrafo~\ref{sec:derivazione-minkowski}. \\
+  $ \Box^{2} = \partial^{\alpha}\partial_{\alpha}$ & Operatore d'Alambertiano. &
+  Vedi paragrafo~\ref{sec:derivazione-minkowski}. \\
+  $\epsilon^{\alpha\beta\gamma\delta}$ & Tensore di Levi-Civita & Vedi
+  paragrafo~\ref{sec:tensore-levi-civita}. \\
+  $\dd^{4} x = \dd x^{0}\dd x^{1}\dd x^{2}\dd x^{3}$ & Elemento infinitesimo di
+  volume quadrimensionale. & \\
+  $\dd \Sigma_{\mu}$ & Elemento infinitesimo di ipersuperficie
+  tridimensionale. & Vedi appendice~\ref{cha:teorema-gauss}. \\
+  $\dd^{3} \bm{x} = \dd V$ & Elemento infinitesimo di volume tridimensionale. &
+  \\
+  $F^{\alpha\beta}$ & Tensore del campo elettromagnetico. & Vedi
+  paragrafo~\ref{sec:equazioni-maxwell}. \\
+  $S = \displaystyle\int \Lambda \dd^{4} x$ & Azione associata alla densità di
+  lagrangiana $\Lambda$. & Vedi paragrafo~\ref{sec:tensore-energia-impulso}. \\
+  $\tensor{T}{^{\beta}_{\alpha}}$ & Tensore energia-impulso. & Vedi
+  paragrafo~\ref{sec:tensore-energia-impulso}. \\[1.6ex]
+  $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ & Connessione affine. & Vedi
+  paragrafi~\ref{sec:equazione-moto}, \ref{sec:relazione-g-Gamma} e
+  \ref{sec:derivazione-covariante}. \\
+  $g_{\mu\nu}$ & Tensore metrico nella relatività generale. & Vedi
+  paragrafi~\ref{sec:equazione-moto}, \ref{sec:relazione-g-Gamma} e
+  \ref{sec:tensore-metrico}. \\
+  $r_{\textup{G}} = r_{\textup{S}}$ & Raggio di Schwarzschild. & Vedi
+  paragrafo~\ref{sec:limite-newtoniano}. \\[1.6ex]
+  $\sqrt{g} = \sqrt{-\det(g_{\mu\nu})}$ & Radice quadrata dell'opposto del
+  determinante del tensore metrico. & Vedi
+  paragrafo~\ref{sec:tensore-metrico}. \\
+  $V_{\mu;\nu} = \displaystyle\covder{V_{\mu}}{x^{\nu}}$ & Derivata covariante
+  di $V_{\mu}$ rispetto alla coordinata $x^{\nu}$. & Vedi
+  paragrafo~\ref{sec:derivazione-covariante}. \\
+  $\cdd V_{\mu}$ & Differenziale covariante di $V_{\mu}$. & Vedi
+  paragrafo~\ref{sec:differenziale-covariante}. \\[1.6ex]
+  $\displaystyle\curder{V_{\mu}}$ & Derivata di $V_{\mu}$ lungo una curva
+  parametrizzata da $\tau$. & Vedi
+  paragrafo~\ref{sec:differenziale-covariante}. \\
+  $\tensor{R}{^{\lambda}_{\mu\nu\kappa}}$ & Tensore di curvatura di
+  Riemann-Christoffel. & Vedi paragrafo~\ref{sec:tensore-riemann}. \\
+  $R_{\mu\kappa} = \tensor{R}{^{\lambda}_{\mu\lambda\kappa}}$ & Tensore di
+  Ricci. & Vedi paragrafo~\ref{sec:tensore-riemann}. \\[1.6ex]
+  $R = \tensor{R}{^{\mu}_{\mu}}$ & Curvatura scalare & Vedi
+  paragrafo~\ref{sec:tensore-riemann}. \\[1.6ex]
+  $G^{\mu\nu} = R^{\mu\nu} - \dfrac{1}{2} g^{\mu\nu}R$ & Tensore di Einstein &
+  Vedi paragrafo~\ref{sec:identita-bianchi}. \\
+\end{longtable}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../astrofisica-teorica"
+%%% fill-column: 80
+%%% End:

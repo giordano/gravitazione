@@ -93,7 +93,8 @@ Applicando lo stesso ragionamento a $g^{\mu\nu}$ troviamo
   relazione~\texorpdfstring{\eqref{eq:derivate-miste-vettore}}{(4.17)}}
 \label{sec:dimostr-derivate-miste-vettore}
 
-La derivata covariante
+Per calcolare $V_{\mu;\nu;\kappa} - V_{\mu;\kappa;\nu}$ ricordiamo che la
+derivata covariante
 $V_{\mu;\nu} = V_{\mu,\nu} - \tensor{\Gamma}{^{\lambda}_{\mu\nu}} V_{\lambda}$
 di un vettore covariante $V_{\mu}$ è un tensore $T_{\mu\nu}$ di rango $2$
 completamente covariante e la sua derivata covariante è
@@ -111,7 +112,8 @@ completamente covariante e la sua derivata covariante è
     \tensor{\Gamma}{^{\lambda}_{\sigma\nu}} V_{\lambda}).
   \end{split}
 \end{equation}
-Allo stesso modo si calcola la derivata covariante seconda con ordine inverso
+Dopo aver determinato $V_{\mu;\nu;\kappa}$ è sufficiente invertire $\nu$ e
+$\kappa$ per trovare $V_{\mu;\kappa;\nu}$
 \begin{equation}
   V_{\mu;\kappa;\nu} = V_{\mu,\kappa,\nu} -
     \tensor{\Gamma}{^{\lambda}_{\mu\kappa,\nu}}V_{\lambda} -
@@ -122,11 +124,9 @@ Allo stesso modo si calcola la derivata covariante seconda con ordine inverso
     \tensor{\Gamma}{^{\lambda}_{\sigma\kappa}} V_{\lambda}).
 \end{equation}
 Nel valutare la differenza $V_{\mu;\nu;\kappa} - V_{\mu;\kappa;\nu}$ tutti i
-termini simmetrici per lo scambio $\nu \leftrightarrow \kappa$ si annullano, che
-sono quelli contenenti le derivate prime e seconde di $V_{\mu}$,
-% TODO: non ho mica capito perché si annullano alcuni termini contenenti le
-% derivate prime
-quindi rimane
+termini simmetrici per lo scambio $\nu \leftrightarrow \kappa$ si annullano,
+vale a dire i termini contenenti le derivate prime e seconde di $V_{\mu}$
+(osserva che $\lambda$ e $\sigma$ sono entrambi indici muti), quindi rimane
 \begin{equation}
   V_{\mu;\nu;\kappa} - V_{\mu;\kappa;\nu} =
   (-\tensor{\Gamma}{^{\lambda}_{\mu\nu,\kappa}} +

@@ -12,7 +12,7 @@
 \usepackage{tensor} % per rappresentare i tensori
 \usepackage[font=small,format=hang,labelfont=bf,textformat=period]{caption}
 % per tabelle e figure
-\usepackage{booktabs,graphicx,subfig}
+\usepackage{booktabs,longtable,graphicx,subfig}
 \usepackage{tikz,tikz-3dplot}
 % `mathtools' serve per definire la norma e il valore assoluto
 \usepackage{mathtools}
@@ -94,8 +94,11 @@
 %% Derivate
 % Derivata totale: \toder[ordine]{funzione}{variabile}
 \newcommand*{\toder}[3][]{\frac{{\dd^{#1}}#2}{\dd {#3}^{#1}}}
-% Derivata covariante: \covder[ordine]{funzione}{variabile}
-\newcommand*{\covder}[3][]{\frac{{\cdd^{#1}}#2}{\cdd {#3}^{#1}}}
+% Derivata covariante: \covder[ordine]{tensore}{variabile}
+\newcommand*{\covder}[3][]{\frac{{\cdd^{#1}}#2}{\dd {#3}^{#1}}}
+% Derivata lungo una curva: \covder[ordine]{tensore}
+\newcommand*{\curder}[2][]{\frac{{\cdd^{#1}}#2}{\cdd \tau^{#1}}}
+
 % Derivata parziale \parder[ordine]{funzione}{variabile}
 % Per la definizione del comando `parder' (per inserire le derivate parziali)
 % vedi
@@ -174,6 +177,8 @@
 \tableofcontents{} % indice generale
 \cleardoublepage{}
 \listoffigures{} % elenco delle figure
+
+\input{capitoli/notazione}
 
 \cleardoublepage{}
 \mainmatter{}
