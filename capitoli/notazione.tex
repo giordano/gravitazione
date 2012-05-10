@@ -1,6 +1,7 @@
 \cleardoublepage
 \chapter{Convenzioni e notazioni usate}
 \label{cha:notazioni}
+\markboth{Convenzioni e notazioni usate}{Convenzioni e notazioni usate}
 
 Nella teoria della relatività generale sono diffuse diverse notazioni e
 convenzioni sui segni e i fattori numerici che compaiono in alcune formule.
@@ -58,32 +59,36 @@ particolare sono espresse in unità di $c$), lunghezze e tempo hanno la stessa
 dimensione.  Per ristabilire la coerenza dimensionale delle equazioni bisogna
 utilizzare l'adeguato numero di potenze di $c$.
 
-Il tensore metrico di Minkowski $\eta_{\alpha\beta}$ ha, per noi, segnatura
-$-+++$.  I testi \textcites{barone:relativita,landau:campo,ohanian:gravitazione}
-adottano la segnatura opposta $+---$.
-
-Il tensore di Riemann è definito come
-\begin{equation}
-    \tensor{R}{^{\lambda}_{\mu\nu\kappa}}
-  = \parder{\tensor{\Gamma}{^{\lambda}_{\mu\nu}}}{x^{\kappa}}
-  - \parder{\tensor{\Gamma}{^{\lambda}_{\mu\kappa}}}{x^{\nu}} +
-  \tensor{\Gamma}{^{\eta}_{\mu\nu}} \tensor{\Gamma}{^{\lambda}_{\eta\kappa}} -
-  \tensor{\Gamma}{^{\eta}_{\mu\kappa}} \tensor{\Gamma}{^{\lambda}_{\eta\nu}}.
-\end{equation}
-I testi \textcites{barone:relativita,landau:campo,ohanian:gravitazione}
-definiscono il tensore di Riemann con il segno opposto rispetto a quello qui
-stabilito.
-
-Il tensore di Ricci $R_{\mu\kappa}$ è ottenuto contraendo il primo e il terzo
-indice del tensore di Riemann $\tensor{R}{^{\lambda}_{\mu\nu\kappa}}$, o
-equivalentemente il secondo e il quarto indice.  Al contrario,
-\textcite{ohanian:gravitazione} definiscono il tensore di Ricci contraendo primo
-e quarto indice $R_{\mu\kappa} = \tensor{R}{^{\lambda}_{\mu\kappa\lambda}}$ e si
-ottiene così un tensore opposto rispetto a quello da noi definito.
+Alcuni fondamentali tensori della relatività generale vengono definiti dai
+diversi autori adottando diverse scelte di segni.  In particolare i tensori in
+questione sono
+\begin{subequations}
+  \label{eq:convenzione-segni}
+  \begin{align}
+    \eta_{\mu\nu} &= S_{1} \cdot \diag(-1,+1,+1,+1), \\
+    \tensor{R}{^{\lambda}_{\mu\nu\kappa}} &= S_{2} \cdot
+    (\tensor{\Gamma}{^{\lambda}_{\mu\kappa,\nu}} -
+    \tensor{\Gamma}{^{\lambda}_{\mu\nu,\kappa}} +
+    \tensor{\Gamma}{^{\eta}_{\mu\kappa}} \tensor{\Gamma}{^{\lambda}_{\eta\nu}} -
+    \tensor{\Gamma}{^{\eta}_{\mu\nu}}
+    \tensor{\Gamma}{^{\lambda}_{\eta\kappa}}), \\
+    G_{\mu\nu} &= S_{3} \cdot \frac{8\pi G}{c^{4}} T_{\mu\nu}, \\
+    R_{\mu\kappa} &= S_{2} \cdot S_{3} \cdot
+    \tensor{R}{^{\lambda}_{\mu\lambda\kappa}},
+  \end{align}
+\end{subequations}
+in cui $\eta_{\mu\nu}$ è il tensore metrico di Minkowski,
+$\tensor{R}{^{\lambda}_{\mu\nu\kappa}}$ è il tensore di Riemann, $R_{\mu\kappa}$
+è il tensore di Ricci e $G_{\mu\nu}$ è il tensore di Einstein e $S_{1}$,
+$S_{2}$, $S_{3}$ sono i segni che possono essere scelti uguali a $+$ oppure $-$.
+In questi appunti seguiamo la stessa convenzione di
+\textcite{weinberg:gravitation} ovvero $(S_{1}, S_{2}, S_{3}) = (+--)$.  I testi
+\textcites{barone:relativita,landau:campo} adottano la convenzione $(-++)$,
+mentre \textcite{ohanian:gravitazione} hanno scelto la convenzione $(-+-)$.
 
 \begin{longtable}{c
-    p{.37\textwidth}
-    p{.28\textwidth}}
+    p{.40\textwidth}
+    p{.23\textwidth}}
   % intestazione iniziale
   \caption{Notazione usata in questi appunti}
   \label{tab:notazione} \\
@@ -110,77 +115,75 @@ ottiene così un tensore opposto rispetto a quello da noi definito.
   $\bm{A} = (A^{1}, A^{2}, A^{3})$ & Vettore tridimensionale di componenti
   $A^{1}$, $A^2$ e $A^{3}$. & \\
   $A^{\mu} = (A^{0}, \bm{A})$ & Quadrivettore controvariante di componente
-  temporale $A^{0}$ e componenti spaziali $\bm{A}$. & Vedi
-  paragrafo~\ref{sec:calcolo-tensoriale-minkowski} e
+  temporale $A^{0}$ e componenti spaziali $\bm{A}$. &
+  Paragrafo~\ref{sec:calcolo-tensoriale-minkowski} e
   capitolo~\ref{cha:calcolo-tensoriale}. \\
   $A_{\mu} = (A_{0}, \bm{A})$ & Quadrivettore covariante con componente
-  temporale $A_{0}$ e componente spaziale $\bm{A}$. & Vedi
-  paragrafo~\ref{sec:calcolo-tensoriale-minkowski} e
+  temporale $A_{0}$ e componente spaziale $\bm{A}$. &
+  Paragrafo~\ref{sec:calcolo-tensoriale-minkowski} e
   capitolo~\ref{cha:calcolo-tensoriale}. \\
   $\tensor*{T}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ &
-  Quadritensore. & Vedi paragrafo~\ref{sec:calcolo-tensoriale-minkowski} e
+  Quadritensore. & Paragrafo~\ref{sec:calcolo-tensoriale-minkowski} e
   capitolo~\ref{cha:calcolo-tensoriale}. \\
   $\dd \tau^{2} = \dd t^{2} - \dd \bm{x}^{2}$ & Metrica nello spazio di
-  Minkowski. & Vedi paragrafo~\ref{sec:trasformazioni-lorentz}. \\
-  $\eta_{\alpha\beta}$ & Tensore metrico di Minkowski. & Vedi
-  paragrafo~\ref{sec:trasformazioni-lorentz}. \\
+  Minkowski. & Paragrafo~\ref{sec:trasformazioni-lorentz}. \\
+  $\eta_{\alpha\beta}$ & Tensore metrico di Minkowski. &
+  Paragrafo~\ref{sec:trasformazioni-lorentz}. \\
   $\tensor{\delta}{^{\alpha}_{\beta}}$ & Delta di Kronecker quadrimensionale. &
-  Vedi paragrafo~\ref{sec:trasformazioni-lorentz}. \\
+  Paragrafo~\ref{sec:trasformazioni-lorentz}. \\
   $\tensor{\Lambda}{^{\alpha}_{\beta}}$ & Componente della matrice di Lorentz. &
-  Vedi paragrafo~\ref{sec:trasformazioni-lorentz}. \\
+  Paragrafo~\ref{sec:trasformazioni-lorentz}. \\
   $\gamma(v) = \dfrac{1}{\sqrt{1-v^{2}}}$ & Fattore di Lorentz associato al
-  boost $v$. & Vedi paragrafo~\ref{sec:trasformazioni-lorentz}. \\
+  boost $v$. & Paragrafo~\ref{sec:trasformazioni-lorentz}. \\
   $\partial_{\mu} A_{\nu} = A_{\nu,\mu} =
   \displaystyle\parder{A_{\nu}}{x^{\mu}}$
-  & Derivata ordinaria di $A_{\nu}$ rispetto alla coordinata $x^{\mu}$. & Vedi
-  paragrafo~\ref{sec:derivazione-minkowski}. \\
+  & Derivata ordinaria di $A_{\nu}$ rispetto alla coordinata $x^{\mu}$. &
+  Paragrafo~\ref{sec:derivazione-minkowski}. \\
   $\partial^{\mu} A_{\nu} = \tensor{A}{_{\nu}^{,\mu}} =
   \displaystyle\parder{A_{\nu}}{x_{\mu}}$
-  & Derivata ordinaria di $A_{\nu}$ rispetto alla coordinata $x_{\mu}$. & Vedi
-  paragrafo~\ref{sec:derivazione-minkowski}. \\
+  & Derivata ordinaria di $A_{\nu}$ rispetto alla coordinata $x_{\mu}$. &
+  Paragrafo~\ref{sec:derivazione-minkowski}. \\
   $ \Box^{2} = \partial^{\alpha}\partial_{\alpha}$ & Operatore d'Alambertiano. &
-  Vedi paragrafo~\ref{sec:derivazione-minkowski}. \\
-  $\epsilon^{\alpha\beta\gamma\delta}$ & Tensore di Levi-Civita & Vedi
-  paragrafo~\ref{sec:tensore-levi-civita}. \\
+  Paragrafo~\ref{sec:derivazione-minkowski}. \\
+  $\epsilon^{\alpha\beta\gamma\delta}$ & Tensore di Levi-Civita &
+  Paragrafo~\ref{sec:tensore-levi-civita}. \\
   $\dd^{4} x = \dd x^{0}\dd x^{1}\dd x^{2}\dd x^{3}$ & Elemento infinitesimo di
   volume quadrimensionale. & \\
   $\dd \Sigma_{\mu}$ & Elemento infinitesimo di ipersuperficie
-  tridimensionale. & Vedi appendice~\ref{cha:teorema-gauss}. \\
+  tridimensionale. & Appendice~\ref{cha:teorema-gauss}. \\
   $\dd^{3} \bm{x} = \dd V$ & Elemento infinitesimo di volume tridimensionale. &
   \\
-  $F^{\alpha\beta}$ & Tensore del campo elettromagnetico. & Vedi
-  paragrafo~\ref{sec:equazioni-maxwell}. \\
+  $F^{\alpha\beta}$ & Tensore del campo elettromagnetico. &
+  Paragrafo~\ref{sec:equazioni-maxwell}. \\
   $S = \displaystyle\int \Lambda \dd^{4} x$ & Azione associata alla densità di
-  lagrangiana $\Lambda$. & Vedi paragrafo~\ref{sec:tensore-energia-impulso}. \\
-  $\tensor{T}{^{\beta}_{\alpha}}$ & Tensore energia-impulso. & Vedi
-  paragrafo~\ref{sec:tensore-energia-impulso}. \\[1.6ex]
-  $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ & Connessione affine. & Vedi
-  paragrafi~\ref{sec:equazione-moto}, \ref{sec:relazione-g-Gamma} e
+  lagrangiana $\Lambda$. & Paragrafo~\ref{sec:tensore-energia-impulso}. \\
+  $\tensor{T}{^{\beta}_{\alpha}}$ & Tensore energia-impulso. &
+  Paragrafo~\ref{sec:tensore-energia-impulso}. \\[1.6ex]
+  $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ & Connessione affine. &
+  Paragrafi~\ref{sec:equazione-moto}, \ref{sec:relazione-g-Gamma} e
   \ref{sec:derivazione-covariante}. \\
-  $g_{\mu\nu}$ & Tensore metrico nella relatività generale. & Vedi
-  paragrafi~\ref{sec:equazione-moto}, \ref{sec:relazione-g-Gamma} e
+  $g_{\mu\nu}$ & Tensore metrico nella relatività generale. &
+  Paragrafi~\ref{sec:equazione-moto}, \ref{sec:relazione-g-Gamma} e
   \ref{sec:tensore-metrico}. \\
-  $r_{\textup{G}} = r_{\textup{S}}$ & Raggio di Schwarzschild. & Vedi
-  paragrafo~\ref{sec:limite-newtoniano}. \\[1.6ex]
+  $r_{\textup{g}} \equiv r_{\textup{S}}$ & Raggio di Schwarzschild. &
+  Paragrafo~\ref{sec:limite-newtoniano}. \\[1.6ex]
   $\sqrt{g} = \sqrt{-\det(g_{\mu\nu})}$ & Radice quadrata dell'opposto del
-  determinante del tensore metrico. & Vedi
-  paragrafo~\ref{sec:tensore-metrico}. \\
+  determinante del tensore metrico. & Paragrafo~\ref{sec:tensore-metrico}. \\
   $V_{\mu;\nu} = \displaystyle\covder{V_{\mu}}{x^{\nu}}$ & Derivata covariante
-  di $V_{\mu}$ rispetto alla coordinata $x^{\nu}$. & Vedi
-  paragrafo~\ref{sec:derivazione-covariante}. \\
-  $\cdd V_{\mu}$ & Differenziale covariante di $V_{\mu}$. & Vedi
-  paragrafo~\ref{sec:differenziale-covariante}. \\[1.6ex]
+  di $V_{\mu}$ rispetto alla coordinata $x^{\nu}$. &
+  Paragrafo~\ref{sec:derivazione-covariante}. \\
+  $\cdd V_{\mu}$ & Differenziale covariante di $V_{\mu}$. &
+  Paragrafo~\ref{sec:differenziale-covariante}. \\[1.6ex]
   $\displaystyle\curder{V_{\mu}}$ & Derivata di $V_{\mu}$ lungo una curva
-  parametrizzata da $\tau$. & Vedi
-  paragrafo~\ref{sec:differenziale-covariante}. \\
+  parametrizzata da $\tau$. & Paragrafo~\ref{sec:differenziale-covariante}. \\
   $\tensor{R}{^{\lambda}_{\mu\nu\kappa}}$ & Tensore di curvatura di
-  Riemann-Christoffel. & Vedi paragrafo~\ref{sec:tensore-riemann}. \\
+  Riemann-Christoffel. & Paragrafo~\ref{sec:tensore-riemann}. \\
   $R_{\mu\kappa} = \tensor{R}{^{\lambda}_{\mu\lambda\kappa}}$ & Tensore di
-  Ricci. & Vedi paragrafo~\ref{sec:tensore-riemann}. \\[1.6ex]
-  $R = \tensor{R}{^{\mu}_{\mu}}$ & Curvatura scalare & Vedi
-  paragrafo~\ref{sec:tensore-riemann}. \\[1.6ex]
+  Ricci. & Paragrafo~\ref{sec:tensore-riemann}. \\[1.6ex]
+  $R = \tensor{R}{^{\mu}_{\mu}}$ & Curvatura scalare &
+  Paragrafo~\ref{sec:tensore-riemann}. \\[1.6ex]
   $G^{\mu\nu} = R^{\mu\nu} - \dfrac{1}{2} g^{\mu\nu}R$ & Tensore di Einstein &
-  Vedi paragrafo~\ref{sec:identita-bianchi}. \\
+  Paragrafo~\ref{sec:identita-bianchi}. \\
 \end{longtable}
 
 

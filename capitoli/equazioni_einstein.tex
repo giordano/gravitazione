@@ -312,9 +312,13 @@ $S = S(g_{\mu\nu}, \lparder{g_{\mu\nu}}{x^{\lambda}}; q,
 Hilbert propose questa espressione per l'azione del campo
 gravitazionale\footnote{Il fattore davanti all'integrale è stato scelto in
   maniera tale che nel limite newtoniano si ottenga l'equazione di Poisson
-  $\nabla^{2} \phi = 4\pi G\rho$.}
+  $\nabla^{2} \phi = 4\pi G\rho$.  Si noti che i testi
+  \textcites{barone:relativita,landau:campo} utilizzano l'espressione
+  $S_{\textup{g}} = -c^{3}/(16\pi G) \int R \sqrt{g} \dd^{4} x$ a causa della
+  diversa convenzione dei segni rispetto a quella da noi scelta.  Vedi
+  pagina~\pageref{eq:convenzione-segni}.}
 \begin{equation}
-  S_{\textup{g}} = -\frac{c^{3}}{16\pi G} \int R \sqrt{g} \dd^{4} x,
+  S_{\textup{g}} = \frac{c^{3}}{16\pi G} \int R \sqrt{g} \dd^{4} x,
 \end{equation}
 chiamata \index{azione!di Hilbert-Einstein} \emph{azione di Hilbert-Einstein}.
 $G = \SI{6.673 84(80)e-11}{\cubic\metre\per\kilo\metre\per\second\squared}$ è la
@@ -394,7 +398,7 @@ sono nulle le variazioni di $g_{\mu\nu}$ e quindi anche della connessione
 affine, la quale dipende dal tensore metrico.  Dunque abbiamo trovato che la
 variazione dell'azione di Hilbert-Einstein è
 \begin{equation}
-  \delta S_{\textup{g}} = -\frac{c^{3}}{16\pi G} \int \bigg( R_{\mu\nu} -
+  \delta S_{\textup{g}} = \frac{c^{3}}{16\pi G} \int \bigg( R_{\mu\nu} -
   \frac{1}{2} g_{\mu\nu} R \bigg)\sqrt{g} \delta g^{\mu\nu} \dd^{4} x.
 \end{equation}
 
@@ -438,13 +442,13 @@ e la condizione di stazionarietà dell'azione totale del sistema campo
 gravitazionale + particelle interagenti è
 \begin{equation}
   \delta S = \delta(S_{\textup{g}} + S_{\textup{m}}) = \int \bigg(
-  -\frac{c^{3}}{16\pi G} \bigg( R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R \bigg) +
+  \frac{c^{3}}{16\pi G} \bigg( R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R \bigg) +
   \frac{1}{2} T_{\mu\nu} \bigg) \sqrt{g} \delta g^{\mu\nu} \dd^{4} x = 0.
 \end{equation}
 Data l'arbitrarietà delle variazioni $\delta g^{\mu\nu}$ ricaviamo
 \begin{equation}
   \label{eq:einstein}
-  R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = \frac{8\pi G}{c^{4}} T_{\mu\nu}
+  R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = -\frac{8\pi G}{c^{4}} T_{\mu\nu}
 \end{equation}
 che sono le \emph{equazioni del campo gravitazionale} in presenza di sorgenti,
 chiamate anche \emph{equazioni di Einstein}.
