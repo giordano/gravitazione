@@ -1271,43 +1271,51 @@ moto (o \emph{equazione di Eulero-Lagrange}) del campo
   \parder{}{x^{\alpha}}\parder{\Lambda}{q_{,\alpha}} - \parder{\Lambda}{q} = 0.
 \end{equation}
 
-% TODO: rivedere questa dimostrazione, non mi convince: non si usa il fatto che
-% il sistema sia chiuso, cioè che \Lambda non dipende dalle coordinate.
-\completare{Rivedere questa dimostrazione.}
+% Nota: sembra che nessuno sia in grado di fare il calcolo del quadrigradiente
+% del tensore energia impulso senza fare confusione fra derivazione parziale e
+% totale.
 Il sistema in esame è chiuso se la densità di lagrangiana $\Lambda$ non dipende
 esplicitamente dalle coordinate $x^{\alpha}$, analogamente al caso meccanico in
 cui la lagrangiana è indipendente dal tempo per un sistema isolato.  Per un
 sistema chiuso possiamo determinare una formula analoga alla legge di
-conservazione dell'energia in meccanica.  Abbiamo
+conservazione dell'energia in meccanica.  Sfruttando le equazioni di
+Eulero-Lagrange~\eqref{eq:eulero-lagrange-campi} e cambiando leggermente la
+notazione abbiamo
 \begin{equation}
   \begin{split}
-    \parder{\Lambda}{x^{\alpha}} &= \parder{\Lambda}{q}\parder{q}{x^{\alpha}}
-    + \parder{\Lambda}{q_{,\beta}}\parder{q_{,\beta}}{x^{\alpha}}
-    = \parder{}{x^{\beta}}\bigg( \parder{\Lambda}{q_{,\beta}} \bigg)q_{,\alpha}
-    + \parder{\Lambda}{q_{,\beta}}\parder{q_{,\beta}}{x^{\alpha}} \\
-    &= \parder{}{x^{\beta}}\bigg( \parder{\Lambda}{q_{,\beta}}
-    \bigg) \parder{q}{x^{\alpha}}
-    + \parder{\Lambda}{q_{,\beta}} \parder{q}{x^{\alpha},x^{\beta}} \\
-    &= \parder{}{x^{\beta}}\bigg(q_{,\alpha} \parder{\Lambda}{q_{,\beta}}\bigg).
+    \toder{\Lambda}{x^{\alpha}} &= \parder{\Lambda}{q}\toder{q}{x^{\alpha}}
+    + \parder{\Lambda}{q_{,\beta}}\toder{q_{,\beta}}{x^{\alpha}}
+    + \parder{\Lambda}{x^{\alpha}} =
+    \toder{}{x^{\beta}}\bigg( \parder{\Lambda}{q_{,\beta}} \bigg)q_{,\alpha}
+    + \parder{\Lambda}{q_{,\beta}}\toder{q_{,\beta}}{x^{\alpha}}
+    + \parder{\Lambda}{x^{\alpha}} \\
+    &= \toder{}{x^{\beta}}\bigg( \parder{\Lambda}{q_{,\beta}} \bigg) q_{,\alpha}
+    + \parder{\Lambda}{q_{,\beta}} \toder{q_{,\alpha}}{x^{\beta}}
+    + \parder{\Lambda}{x^{\alpha}} \\
+    &= \toder{}{x^{\beta}}\bigg(q_{,\alpha} \parder{\Lambda}{q_{,\beta}}\bigg)
+    + \parder{\Lambda}{x^{\alpha}}.
   \end{split}
 \end{equation}
 Poiché sussiste inoltre la relazione
 \begin{equation}
-  \parder{\Lambda}{x^{\alpha}} =
-  \tensor{\delta}{^{\beta}_{\alpha}} \parder{\Lambda}{x^{\beta}} =
-  \tensor{\eta}{^{\beta}_{\alpha}} \parder{\Lambda}{x^{\beta}},
+  \toder{\Lambda}{x^{\alpha}} =
+  \tensor{\delta}{^{\beta}_{\alpha}} \toder{\Lambda}{x^{\beta}} =
+  \tensor{\eta}{^{\beta}_{\alpha}} \toder{\Lambda}{x^{\beta}},
 \end{equation}
 in cui abbiamo ricordato la definizione~\eqref{eq:delta-kronecker}
 della\index{delta!di Kronecker quadrimensionale} delta di Kronecker, risulta
 \begin{equation}
-  \tensor{\eta}{^{\beta}_{\alpha}} \parder{\Lambda}{x^{\beta}}
-  = \parder{}{x^{\beta}} \bigg( q_{,\alpha} \parder{\Lambda}{q_{,\beta}} \bigg),
+  \tensor{\eta}{^{\beta}_{\alpha}} \toder{\Lambda}{x^{\beta}}
+  = \toder{}{x^{\beta}} \bigg( q_{,\alpha} \parder{\Lambda}{q_{,\beta}} \bigg) +
+  \parder{\Lambda}{x^{\alpha}},
 \end{equation}
 da cui
 \begin{equation}
-  \parder{}{x^{\beta}} \bigg( q_{,\alpha}\parder{\Lambda}{q_{,\beta}} -
-  \tensor{\eta}{^{\beta}_{\alpha}}\Lambda \bigg) = 0.
+  \toder{}{x^{\beta}} \bigg( q_{,\alpha}\toder{\Lambda}{q_{,\beta}} -
+  \tensor{\eta}{^{\beta}_{\alpha}}\Lambda \bigg) =
+  -\parder{\Lambda}{x^{\alpha}}.
 \end{equation}
+Se il sistema è chiuso il termine $\lparder{\Lambda}{x^{\alpha}}$ è nullo.
 Definiamo il \index{tensore!energia-impulso}\emph{tensore energia-impulso}
 $\tensor{T}{^{\beta}_{\alpha}}$ come
 \begin{equation}
@@ -1315,7 +1323,7 @@ $\tensor{T}{^{\beta}_{\alpha}}$ come
   \tensor{T}{^{\beta}_{\alpha}} = q_{,\alpha}\parder{\Lambda}{q_{,\beta}} -
   \tensor{\eta}{^{\beta}_{\alpha}}\Lambda
 \end{equation}
-quindi l'equazione precedente si può scrivere come
+quindi l'equazione precedente si può scrivere, per un sistema chiuso, come
 \begin{equation}
   \label{eq:div-tens-en-imp}
   \partial_{\beta} \tensor{T}{^{\beta}_{\alpha}} = 0.
