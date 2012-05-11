@@ -104,6 +104,7 @@ preannunciato.
 La contrazione fra primo e terzo indice del tensore di Riemann dà il
 \index{tensore!di Ricci}\emph{tensore di Ricci}
 \begin{equation}
+  \label{eq:tens-ricci}
   R_{\mu\kappa} = g^{\lambda\nu} R_{\lambda\mu\nu\kappa} =
   \tensor{R}{^{\nu}_{\mu\nu\kappa}}
   = \parder{\tensor{\Gamma}{^{\nu}_{\mu\nu}}}{x^{\kappa}}
@@ -529,7 +530,7 @@ Dalla~\eqref{eq:riemann-covariante} abbiamo
   \bigg( \parder{h_{\lambda\nu}}{x^{\kappa}, x^{\mu}}
   - \parder{h_{\mu\nu}}{x^{\kappa},
     x^{\lambda}}- \parder{h_{\lambda\kappa}}{x^{\nu}, x^{\mu}}
-  + \parder{h_{\mu\kappa}}{x^{\nu}, x^{\lambda}} \bigg) \\ 
+  + \parder{h_{\mu\kappa}}{x^{\nu}, x^{\lambda}} \bigg) \\
   &+ \eta_{\eta\sigma} (\tensor{\Gamma}{^{\eta}_{\nu\lambda}}
   \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} -
   \tensor{\Gamma}{^{\eta}_{\kappa\lambda}}
@@ -552,6 +553,246 @@ di $R_{00}$ ottenute troviamo l'equazione di Poisson per il campo gravitazionale
 \begin{equation}
   \nabla^{2} \phi = 4\pi G\rho.
 \end{equation}
+
+\section{Campo gravitazionale statico e a simmetria sferica}
+\label{sec:campo-statico-sferico}
+
+Vogliamo determinare la metrica per un campo gravitazionale a simmetria sferica
+e statico, cioè tale che $\dd\tau^{2} = -g_{\mu\nu}\dd x^{\mu}\dd x^{\nu}$ non
+dipenda dalla coordinata temporale $x^{0}$ e dipenda dalle coordinate spaziali
+solo attraverso delle quantità invarianti per rotazioni, cioè
+$\bm{x} \cdot \dd\bm{x}$, $\bm{x} \cdot \bm{x}$, $\dd\bm{x} \cdot \dd\bm{x}$.
+La forma più generale per una metrica con queste proprietà è
+\begin{equation}
+  \dd\tau^{2} = F(r) \dd t^{2} - 2E(r) \bm{x} \cdot \dd\bm{x} \dd t -
+  D(r)(\bm{x} \cdot \dd\bm{x})^{2} - C(r)\dd\bm{x}^{2},
+\end{equation}
+in cui $F$, $E$, $D$ e $C$ sono funzioni di $r = \norm{\bm{x}}$.  Data la
+simmetria del sistema che vogliamo analizzare conviene passare in coordinate
+sferiche
+\begin{subequations}
+  \begin{align}
+    x^{1} &= r \sin\theta \cos\phi, \\
+    x^{2} &= r \sin\theta \sin\phi, \\
+    x^{3} &= r \cos\theta
+  \end{align}
+\end{subequations}
+così che la metrica diventa
+\begin{equation}
+  \dd\tau^{2} = F(r) \dd t^{2} - 2E(r) r\dd r\dd t - r^{2}D(r)\dd r^{2} -
+  C(r)(\dd r^{2} + r^{2}\dd\theta^{2} + r^{2}\sin^{2}\theta \dd\phi^{2}).
+\end{equation}
+La libertà che si ha, in relatività generale, nella scelta del sistema di
+coordinate ci consente di semplificare questa espressione.  Consideriamo dunque
+la trasformazione della coordinate temporale $t \to t' = t + \phi(r)$ con la
+condizione
+\begin{equation}
+  \toder{\phi}{r} = - r\frac{E(r)}{F(r)}
+\end{equation}
+in modo da annullare il termine $g_{rt}$ del tensore metrico.  Così la metrica
+diventa
+\begin{equation}
+  \dd \tau^{2} = F(r)\dd t'^{2} - G(r)\dd r^{2} -C(r)(\dd r^{2} +
+  r^{2}\dd\theta^{2} + r^{2}\sin^{2}\theta \dd\phi^{2})
+\end{equation}
+con
+\begin{equation}
+  G(r) = r^{2} \bigg(D(r) + \frac{E^{2}(r)}{F(r)} \bigg).
+\end{equation}
+Effettuando inoltre la trasformazione $r \to r' = C(r)r^{2}$ otteniamo la
+\index{metrica!forma standard della}\emph{forma standard} della metrica
+\begin{equation}
+  \label{eq:metrica-standard}
+  \dd\tau^{2} = B(r')\dd t'^{2} - A(r')\dd r'^{2} - r'^{2}(\dd\theta^{2} +
+  \sin^{2}\theta \dd\phi^{2}),
+\end{equation}
+in cui
+\begin{subequations}
+  \begin{align}
+    B(r) &= F(r), \\
+    A(r) &= \bigg(1 + \frac{G(r)}{C(r)} \bigg) \bigg( 1 + \frac{r}{2C(r)}
+    \toder{C(r)}{r} \bigg)^{-2}.
+  \end{align}
+\end{subequations}
+Rinominando le variabili $r'$ e $t'$ in $r$ e $t$, il tensore metrico è
+rappresentato dalla seguente matrice diagonale
+\begin{equation}
+  g_{\mu\nu} =
+  \begin{pmatrix}
+    g_{tt}       & g_{tr}       & g_{t\theta}      & g_{t\phi}      \\
+    g_{rt}       & g_{rr}       & g_{r\theta}      & g_{r\phi}      \\
+    g_{\theta t} & g_{\theta r} & g_{\theta\theta} & g_{\theta\phi} \\
+    g_{\phi t}   & g_{\phi r}   & g_{\phi\theta}   & g_{\phi\phi}
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    -B(r) & 0    & 0     & 0 \\
+    0     & A(r) & 0     & 0 \\
+    0     & 0    & r^{2} & 0 \\
+    0     & 0    & 0     & r^{2}\sin^{2}\theta
+  \end{pmatrix}.
+\end{equation}
+Poiché $g_{\mu\nu}$ è diagonale, gli elementi del tensore metrico controvariante
+sono semplicemente $g^{\mu\nu} = 1/g_{\mu\nu}$
+\begin{equation}
+  g^{\mu\nu} =
+  \begin{pmatrix}
+    g^{tt}       & g^{tr}       & g^{t\theta}      & g^{t\phi}      \\
+    g^{rt}       & g^{rr}       & g^{r\theta}      & g^{r\phi}      \\
+    g^{\theta t} & g^{\theta r} & g^{\theta\theta} & g^{\theta\phi} \\
+    g^{\phi t}   & g^{\phi r}   & g^{\phi\theta}   & g^{\phi\phi}
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    -B^{-1}(r) & 0         & 0      & 0 \\
+    0          & A^{-1}(r) & 0      & 0 \\
+    0          & 0         & r^{-2} & 0 \\
+    0          & 0         & 0      & r^{-2}\sin^{-2}\theta
+  \end{pmatrix}.
+\end{equation}
+Osserviamo che $g = -\det(g_{\mu\nu}) = r^{4}A(r)B(r)\sin^{2}\theta$, quindi
+l'elemento di volume invariante è
+\begin{equation}
+  \sqrt{-g} \dd^{4} x = r^{2}\sqrt{A(r) B(r)} \sin\theta \dd^{4} x.
+\end{equation}
+
+Le connessioni affini possono essere calcolate con la
+formula~\eqref{eq:connessione-metrica}.  Si trova che le uniche componenti non
+nulle sono
+\begin{subequations}
+  \begin{align}
+    \tensor{\Gamma}{^{r}_{rr}} &= \frac{A'(r)}{2A(r)}, &
+    \tensor{\Gamma}{^{r}_{\theta\theta}} &= -\frac{r}{A(r)}, &
+    \tensor{\Gamma}{^{r}_{\phi\phi}} &= -\frac{r \sin^{2}\theta}{A(r)}, \\
+    \tensor{\Gamma}{^{r}_{tt}} &= \frac{B'(r)}{2A(r)}, &
+    \tensor{\Gamma}{^{\theta}_{r\theta}} &=
+    \tensor{\Gamma}{^{\theta}_{\theta r}} = \frac{1}{r}, &
+    \tensor{\Gamma}{^{\theta}_{\phi\phi}} &= -\sin\theta \cos\theta, \\
+    \tensor{\Gamma}{^{\phi}_{\phi r}} &= \tensor{\Gamma}{^{\phi}_{r\phi}} =
+    \frac{1}{r}, & \tensor{\Gamma}{^{\phi}_{\phi\theta}} &=
+    \tensor{\Gamma}{^{\phi}_{\theta\phi}} = \cot\theta, &
+    \tensor{\Gamma}{^{t}_{tr}} &= \tensor{\Gamma}{^{t}_{rt}} =
+    \frac{B'(r)}{2B(r)}.
+  \end{align}
+\end{subequations}
+L'apice indica la derivazione rispetto a $r$.
+
+Dopo di ciò è possibile calcolare il tensore di Ricci usando la sua
+definizione~\eqref{eq:tens-ricci}.  Grazie all'invarianza per rotazioni e
+l'indipendenza dal tempo della metrica, anche il tensore di Ricci è diagonale
+con componenti non nulle
+\begin{subequations}
+  \label{eq:ricci-sferico}
+  \begin{align}
+    R_{tt} &= -\frac{B''(r)}{2A(r)} +
+    \frac{B'(r)}{A(r)}\frac{B'(r)}{B(r)}\bigg(\frac{A'(r)}{A(r)} +
+    \frac{B'(r)}{B(r)}\bigg) -
+    \frac{1}{r}\frac{B'(r)}{A(r)}, \\
+    R_{rr} &= \frac{B''(r)}{2B(r)} - \frac{1}{4}
+    \frac{B'(r)}{B(r)}\bigg(\frac{A'(r)}{A(r)} + \frac{B'(r)}{B(r)}\bigg) -
+    \frac{1}{r}\frac{A'(r)}{A(r)}, \\
+    R_{\theta\theta} &= -1 + \frac{r}{2A(r)}\bigg(-\frac{A'(r)}{A(r)} +
+    \frac{B'(r)}{B(r)}\bigg) + \frac{1}{A(r)}, \\
+    R_{\phi\phi} &= R_{\theta\theta} \sin^{2}\theta.
+  \end{align}
+\end{subequations}
+Osserviamo infine che risulta
+\begin{equation}
+  \label{eq:bar}
+  \frac{R_{tt}}{B(r)} + \frac{R_{rr}}{A(r)} =
+  -\frac{1}{rA(r)}\bigg(\frac{A'(r)}{A(r)} + \frac{B'(r)}{B(r)}\bigg).
+\end{equation}
+
+\subsection{Metrica di Schwarzschild}
+\label{sec:metrica-schwarzschild}
+
+La soluzione di Schwarzschild delle equazioni di Einstein descrive il campo
+gravitazionale all'esterno di un corpo sferico non rotante e in assenza di
+materia, cioè con tensore energia-impulso nullo.  Applicheremo i risultati che
+otterremo al campo gravitazionale generato dal Sole.
+
+Abbiamo visto che in assenza di materia le equazioni di Einstein comportano che
+$R_{\mu\nu} = 0$.  Di conseguenza, ponendo uguale a $0$ il secondo membro
+della~\eqref{eq:bar} abbiamo
+\begin{equation}
+  \frac{A'(r)}{A(r)} = -\frac{B'(r)}{B(r)}
+\end{equation}
+da cui
+\begin{equation}
+  \ln A(r) = - \ln B(r) + \text{costante} \implies A(r)B(R) = \text{costante}.
+\end{equation}
+Per determinare il valore della costante notiamo che a distanza infinita dal
+campo gravitazionale la metrica deve tendere a quella di Minkowski, che in
+coordinate sferiche si esprime come
+\begin{equation}
+  \dd\tau^{2} = \dd t^{2} -\dd r^{2} - r^{2}\dd\theta^{2} - r^{2}\sin^{2}\theta
+  \dd\phi^{2}.
+\end{equation}
+Confrontando con la metrica nella forma standard~\eqref{eq:metrica-standard}
+troviamo che deve risultare $A(r), B(R) \xrightarrow{r \to +\infty} 1$ e dalla
+costanza del prodotto $A(r)B(r)$ deduciamo che esso vale $1$ e quindi
+$A(r) = 1/B(r)$.  Sostituendo questo risultato nelle
+componenti~\eqref{eq:ricci-sferico} del tensore di Ricci abbiamo
+\begin{subequations}
+  \begin{align}
+    R_{\theta\theta} &= -1 + rB'(r) + B(r), \\
+    R_{rr} &= \frac{B''(r)}{2B(r)} + \frac{B'(r)}{rB(r)} =
+    \frac{R'_{\theta\theta}(r)}{2rB(r)}.
+  \end{align}
+\end{subequations}
+Imponendo che anche la componente $R_{\theta\theta}$ si annulli, da cui deriva
+inoltre che anche $R_{rr}$ e $R_{\phi\phi}$ sono nulle, si ricava
+\begin{equation}
+  \toder{}{r}(rBr(r)) = 1 \implies rB(r) = r + \text{costante} \implies B(r) = 1
+  + \frac{\text{costante}}{r}.
+\end{equation}
+Per determinare il valore di questa nuova costante poniamo la condizione che a
+grandi distanze dal corpo che genera il campo, in cui il campo diventa debole,
+sia valida l'approssimazione vista nel paragrafo~\ref{sec:limite-newtoniano}
+\begin{equation}
+  g_{00} = -1 + \frac{r_{\textup{S}}}{r},
+\end{equation}
+con $r_{\textup{S}}$ raggio di Schwarzschild del corpo.  Osservando allora che
+$g_{00} = g_{tt} = -B(r)$ abbiamo che la costante che vogliamo determinare vale
+proprio $r_{\textup{S}}$ e in definitiva la
+\index{metrica!di Schwarzschild}\emph{metrica di Schwarzschild}, per campi a
+simmetria sferica e indipendenti dal tempo, è data da
+\begin{equation}
+  \dd s^{2} = c^{2} \dd\tau^{2} = \bigg(1 - \frac{r_{\textup{S}}}{r} \bigg)c^{2}
+  \dd t^{2} - \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dd r^{2} -
+  r^{2}\dd\theta^{2} - r^{2}\sin^{2}\theta \dd\phi^{2}.
+\end{equation}
+Osserviamo che questa metrica ha una singolarità per $r = r_{\textup{S}}$ e
+un'altra per $r = 0$.  Nel caso specifico del Sole, e di numerosi altri corpi,
+la prima singolarità non costituisce un problema poiché la metrica vale
+all'esterno del corpo e il raggio di questa stella è molto più piccolo del suo
+raggio di Schwarzschild.  Si dimostra inoltre che la singolarità per
+$r = r_{\textup{S}}$ è eliminabile adottando un opportuno sistema di coordinate,
+quindi non è, in realtà, una singolarità fisica.
+
+Concludiamo osservando che il \index{teorema!di Birkhoff}
+\emph{teorema di Birkhoff} afferma che
+\emph{un campo gravitazionale a simmetria sferica in assenza di materia deve
+  essere statico},
+quindi l'ipotesi di staticità del campo è superflua in quanto conseguenza della
+sua particolare simmetria.
+
+\section{Verifiche sperimentali della relatività generale}
+\label{sec:verififiche-relativita}
+
+Grazie alla metrica di Schwarzschild siamo in grado di fare delle previsioni
+teoriche riguardo alcuni fenomeni osservabili nel sistema solare, le quali sono
+state confermate sperimentalmente e hanno permesso il riconoscimento della
+validità della teoria della relatività generale.
+
+\subsection{Precessione del perielio}
+\label{sec:precessione-perielio}
+
+\subsection{Deflessione della luce}
+\label{sec:deflessione-luce}
+
+\subsection{Radar echo delay}
+\label{sec:radar-echo-delay}
 
 
 
