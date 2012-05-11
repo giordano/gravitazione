@@ -297,7 +297,7 @@ e abbiamo dunque mostrato che ha quadridivergenza nulla
 \label{sec:equazioni-einstein}
 
 \emph{Nota: in questo paragrafo indicheremo esplicitamente la velocità della
-  luce $c$.}
+  luce nel vuoto $c$.}
 
 Vogliamo ora determinare le equazioni del campo gravitazionale $g_{\mu\nu}$ a
 partire dal principio variazionale di Hamilton.  Assumiamo che l'azione $S$ sia
@@ -433,6 +433,8 @@ Introduciamo il tensore $T_{\mu\nu}$ definito da
   - \parder{}{x^{\lambda}}
   \bigg( \parder{\sqrt{g}\Lambda}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
 \end{equation}
+% TODO: spiegare da qualche parte che questo è proprio il tensore
+% energia-impulso (e mettere \index{tensore!energia-impulso})
 così la variazione dell'azione della materia diventa
 \begin{equation}
   \delta S_{\textup{m}} = \frac{1}{2c} \int T_{\mu\nu} \delta g^{\mu\nu}
@@ -448,10 +450,110 @@ gravitazionale + particelle interagenti è
 Data l'arbitrarietà delle variazioni $\delta g^{\mu\nu}$ ricaviamo
 \begin{equation}
   \label{eq:einstein}
-  R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = -\frac{8\pi G}{c^{4}} T_{\mu\nu}
+  G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = -\frac{8\pi G}{c^{4}}
+  T_{\mu\nu}
 \end{equation}
 che sono le \emph{equazioni del campo gravitazionale} in presenza di sorgenti,
 chiamate anche \emph{equazioni di Einstein}.
+
+Moltiplicando gli ultimi due membri per $g^{\mu\nu}$, in modo da contrarre gli
+indici $\mu$ e $\nu$, otteniamo
+\begin{equation}
+  R - \frac{1}{2}4R = -R = -\frac{8\pi G}{c^{4}}\tensor{T}{^{\lambda}_{\lambda}}
+\end{equation}
+e sostituendo nella~\eqref{eq:einstein} otteniamo un'espressione alternativa per
+le equazioni di Einstein
+\begin{equation}
+  R_{\mu\nu} = -\frac{8\pi G}{c^{4}} \bigg( T_{\mu\nu} -
+  \frac{1}{2}g_{\mu\nu}\tensor{T}{^{\lambda}_{\lambda}} \bigg).
+\end{equation}
+Da qui possiamo osservare che nel vuoto, cioè in assenza di materia, il tensore
+energia-impulso è nullo quindi le equazioni di Einstein si riducono a
+\begin{equation}
+  R_{\mu\nu} = 0.
+\end{equation}
+Si noti che questa equazione non significa che uno spazio-tempo vuoto è anche
+piatto, per avere quest'ultima condizione deve verificarsi la condizione più
+forte $\tensor{R}{^{\lambda}_{\mu\nu\kappa}} = 0$.
+
+\subsection{Limite newtoniano delle equazioni di Einstein}
+\label{sec:limite-newtoniano-einstein}
+
+Vogliamo determinare il limite newtoniano (campi gravitazionali deboli e
+statici, velocità non relativistiche) delle equazioni di Einstein e per fare
+questo lavoriamo in maniera analoga a quanto fatto nel
+paragrafo~\ref{sec:limite-newtoniano}, quindi poniamo
+$g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}$.  Ci aspettiamo che il tensore
+energia-impulso sia in queste condizioni
+\completare{(il Landau lo dimostra nel paragrafo 35)}
+\begin{subequations}
+  \begin{align}
+    T_{ij} &= \rho c^{2} v_{i} v_{j}, \\
+    T_{00} &= \rho c^{2},
+  \end{align}
+\end{subequations}
+in cui $\rho$ è la densità di massa a riposo (e quindi $\rho c^{2}$ è la densità
+di energia a riposo) e $v_{\mu}$ la quadrivelocità.  Per l'ipotesi di velocità
+non relativistiche si devono trascurare le componenti spaziali della
+quadrivelocità rispetto alla componente temporale, cioè $v_{i} = 0$, e quindi
+$T_{ij} = 0$ da cui abbiamo inoltre
+\begin{equation}
+  0 = G_{ij} \approx R_{ij} - \frac{1}{2}\eta_{ij}R.
+\end{equation}
+Allora l'unica equazione di Einstein rilevante è quella con $G_{00}$.
+Contraendo gli indici dell'equazione precedente otteniamo
+\begin{equation}
+  \eta^{ij}R_{ij} \approx \frac{1}{2} \eta_{ij}\eta^{ij} R = \frac{3}{2} R.
+\end{equation}
+Il tensore di Ricci può essere approssimato come
+\begin{equation}
+  R = g^{\mu\nu}R_{\mu\nu} \approx \eta^{\mu\nu} R_{\mu\nu} = \eta^{00}R_{00} +
+  \eta^{ij}R_{ij} = -R_{00} + \frac{3}{2} R
+\end{equation}
+dunque $R \approx 2 R_{00}$.  Sostituendo nell'equazione di Einstein abbiamo
+\begin{equation}
+  G_{00} = R_{00} - \frac{1}{2} \eta_{00}R = R_{00} + \frac{1}{2} R = 2 R_{00} =
+  -\frac{8\pi G}{c^{4}} T_{00} = -\frac{8\pi G}{c^{4}} \rho c^{2}
+\end{equation}
+da cui
+\begin{equation}
+  R_{00} = -\frac{4\pi G}{c^{2}} \rho.
+\end{equation}
+D'altra parte osserviamo che
+\begin{equation}
+  R_{00} = g^{\mu\nu}R_{\mu 0\nu 0} \approx \eta^{\mu\nu}R_{\mu 0\nu 0}
+\end{equation}
+Dalla~\eqref{eq:riemann-covariante} abbiamo
+\begin{align}
+  R_{\lambda\mu\nu\kappa} &\approx \frac{1}{2}
+  \bigg( \parder{h_{\lambda\nu}}{x^{\kappa}, x^{\mu}}
+  - \parder{h_{\mu\nu}}{x^{\kappa},
+    x^{\lambda}}- \parder{h_{\lambda\kappa}}{x^{\nu}, x^{\mu}}
+  + \parder{h_{\mu\kappa}}{x^{\nu}, x^{\lambda}} \bigg) \\ 
+  &+ \eta_{\eta\sigma} (\tensor{\Gamma}{^{\eta}_{\nu\lambda}}
+  \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} -
+  \tensor{\Gamma}{^{\eta}_{\kappa\lambda}}
+  \tensor{\Gamma}{^{\sigma}_{\mu\nu}})
+\end{align}
+e in particolare, sfruttando l'ipotesi di campi costanti,
+\begin{subequations}
+  \begin{align}
+    R_{0000} &\approx 0, \\
+    R_{i0j0} &\approx \frac{1}{2} \parder{h_{00}}{x^{i},x^{j}}
+  \end{align}
+\end{subequations}
+allora
+\begin{equation}
+  R_{00} = \eta^{00}R_{0000} + \eta^{ij}R_{i0j0} = \delta^{ij}R_{i0j0} \approx
+  \frac{1}{2}\nabla^{2} h_{00} = -\nabla^{2}\frac{\phi}{c^{2}}
+\end{equation}
+avendo ricordato la~\eqref{eq:h00}.  Dunque mettendo insieme le due espressioni
+di $R_{00}$ ottenute troviamo l'equazione di Poisson per il campo gravitazionale
+\begin{equation}
+  \nabla^{2} \phi = 4\pi G\rho.
+\end{equation}
+
+
 
 %%% Local Variables:
 %%% mode: latex
