@@ -318,6 +318,8 @@ gravitazionale\footnote{Il fattore davanti all'integrale è stato scelto in
   $S_{\textup{g}} = -c^{3}/(16\pi G) \int R \sqrt{g} \dd^{4} x$ a causa della
   diversa convenzione dei segni rispetto a quella da noi scelta.  Vedi
   pagina~\pageref{eq:convenzione-segni}.}
+% TODO: controllare effettivamente il segno dell'azione, sul Weinberg sta con il
+% segno -.
 \begin{equation}
   S_{\textup{g}} = \frac{c^{3}}{16\pi G} \int R \sqrt{g} \dd^{4} x,
 \end{equation}
@@ -633,23 +635,8 @@ rappresentato dalla seguente matrice diagonale
   \end{pmatrix}.
 \end{equation}
 Poiché $g_{\mu\nu}$ è diagonale, gli elementi del tensore metrico controvariante
-sono semplicemente $g^{\mu\nu} = 1/g_{\mu\nu}$
-\begin{equation}
-  g^{\mu\nu} =
-  \begin{pmatrix}
-    g^{tt}       & g^{tr}       & g^{t\theta}      & g^{t\phi}      \\
-    g^{rt}       & g^{rr}       & g^{r\theta}      & g^{r\phi}      \\
-    g^{\theta t} & g^{\theta r} & g^{\theta\theta} & g^{\theta\phi} \\
-    g^{\phi t}   & g^{\phi r}   & g^{\phi\theta}   & g^{\phi\phi}
-  \end{pmatrix}
-  =
-  \begin{pmatrix}
-    -B^{-1}(r) & 0         & 0      & 0 \\
-    0          & A^{-1}(r) & 0      & 0 \\
-    0          & 0         & r^{-2} & 0 \\
-    0          & 0         & 0      & r^{-2}\sin^{-2}\theta
-  \end{pmatrix}.
-\end{equation}
+sono semplicemente $g^{\mu\nu} = 1/g_{\mu\nu}$, quindi
+$g^{\mu\nu} = \diag(-B^{-1}(r), A^{-1}(r), r^{-2}, r^{-2}\sin^{-2}\theta)$.
 Osserviamo che $g = -\det(g_{\mu\nu}) = r^{4}A(r)B(r)\sin^{2}\theta$, quindi
 l'elemento di volume invariante è
 \begin{equation}
@@ -696,12 +683,19 @@ con componenti non nulle
     R_{\phi\phi} &= R_{\theta\theta} \sin^{2}\theta.
   \end{align}
 \end{subequations}
-Osserviamo infine che risulta
+Osserviamo che risulta
 \begin{equation}
   \label{eq:bar}
   \frac{R_{tt}}{B(r)} + \frac{R_{rr}}{A(r)} =
   -\frac{1}{rA(r)}\bigg(\frac{A'(r)}{A(r)} + \frac{B'(r)}{B(r)}\bigg).
 \end{equation}
+
+Concludiamo dicendo che si può dimostrare il \index{teorema!di Birkhoff}
+\emph{teorema di Birkhoff} il quale afferma che
+\emph{un campo gravitazionale a simmetria sferica in assenza di materia deve
+  essere statico},
+quindi l'ipotesi di staticità del campo è superflua in quanto conseguenza della
+sua particolare simmetria.
 
 \subsection{Metrica di Schwarzschild}
 \label{sec:metrica-schwarzschild}
@@ -758,9 +752,10 @@ proprio $r_{\textup{S}}$ e in definitiva la
 \index{metrica!di Schwarzschild}\emph{metrica di Schwarzschild}, per campi a
 simmetria sferica e indipendenti dal tempo, è data da
 \begin{equation}
-  \dd s^{2} = c^{2} \dd\tau^{2} = \bigg(1 - \frac{r_{\textup{S}}}{r} \bigg)c^{2}
-  \dd t^{2} - \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dd r^{2} -
-  r^{2}\dd\theta^{2} - r^{2}\sin^{2}\theta \dd\phi^{2}.
+  \label{eq:metrica-schwarzschild}
+  \dd\tau^{2} = \bigg(1 - \frac{r_{\textup{S}}}{r} \bigg) \dd t^{2} - \bigg(1 -
+  \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dd r^{2} - r^{2}\dd\theta^{2} -
+  r^{2}\sin^{2}\theta \dd\phi^{2}.
 \end{equation}
 Osserviamo che questa metrica ha una singolarità per $r = r_{\textup{S}}$ e
 un'altra per $r = 0$.  Nel caso specifico del Sole, e di numerosi altri corpi,
@@ -770,23 +765,89 @@ raggio di Schwarzschild.  Si dimostra inoltre che la singolarità per
 $r = r_{\textup{S}}$ è eliminabile adottando un opportuno sistema di coordinate,
 quindi non è, in realtà, una singolarità fisica.
 
-Concludiamo osservando che il \index{teorema!di Birkhoff}
-\emph{teorema di Birkhoff} afferma che
-\emph{un campo gravitazionale a simmetria sferica in assenza di materia deve
-  essere statico},
-quindi l'ipotesi di staticità del campo è superflua in quanto conseguenza della
-sua particolare simmetria.
-
 \section{Verifiche sperimentali della relatività generale}
 \label{sec:verififiche-relativita}
 
-Grazie alla metrica di Schwarzschild siamo in grado di fare delle previsioni
+Adottando la metrica di Schwarzschild siamo in grado di fare delle previsioni
 teoriche riguardo alcuni fenomeni osservabili nel sistema solare, le quali sono
 state confermate sperimentalmente e hanno permesso il riconoscimento della
 validità della teoria della relatività generale.
 
-\subsection{Precessione del perielio}
+\subsection{\completare{Precessione del perielio}}
 \label{sec:precessione-perielio}
+
+La prima legge di Keplero afferma che l'orbita descritta dai pianeti è
+un'ellisse.  Questo risultato è rigorosamente vero nel caso in cui il pianeta
+interagisce solo con la stella intorno a cui orbita.  La presenza di altri
+eventuali pianeti perturba il sistema facendo in modo che l'orbita non sia
+chiusa ma piuttosto una rosetta, si ha quindi una precessione del perielio.  Per
+esempio, dalle osservazioni astronomiche si è scoperto che il perielio di
+Mercurio si sposta di circa \ang{;;574} ogni cento anni.  Utilizzano la
+meccanica newtoniana e tenendo conto della presenza di tutti i pianeti
+conosciuti si prevede una precessione del perielio di Mercurio pari a circa
+\ang{;;532}.  Per risolvere questa incongruenza sono state proposte diverse
+ipotesi, fra cui la presenza di un corpo perturbante, come un nuovo pianeta o un
+satellite di Mercurio.  Tuttavia questi corpi non sono mai stati trovati e
+faremo vedere che la relatività generale è in grado di risolvere questo
+problema.
+
+% TODO: capire per bene i passaggi dell'Adler
+Per determinare l'orbita del pianeta dobbiamo risolvere il problema variazionale
+\begin{equation}
+  \delta \int \dd \tau = 0
+\end{equation}
+in cui $\delta\tau$ è la metrica di Schwarzschild.  Questo problema può essere
+risolto più facilmente considerando la seguente formulazione equivalente
+\begin{equation}
+  \delta \int \bigg(\bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)\dot{t}^{2} -
+  \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dot{r}^{2} -
+  r^{2}(\dot{\theta}^{2} + \sin^{2}\theta \dot{\phi}^{2}) \bigg) \dd \tau = 0.
+\end{equation}
+Il punto indica la derivazione rispetto al tempo proprio $\tau$.  Da qui si
+ottengono tre equazioni di Eulero-Lagrange per le coordinate, rispettivamente,
+$\theta$, $\phi$ e $t$
+\begin{subequations}
+  \begin{gather}
+    \toder{}{\tau}(r^{2}\dot{\theta}) = r^{2}\sin\theta\cos\theta
+    \dot{\phi}^{2}, \label{eq:mercurio-mu} \\
+    \toder{}{\tau}(r^{2} \sin^{2}\theta \dot{\phi}) = 0, \label{eq:mercurio-phi}
+    \\
+    \toder{}{\tau}\bigg(\bigg(1 - \frac{r_{\textup{S}}}{r}\bigg) \dot{t} \bigg)
+    = 0. \label{eq:mercurio-t}
+  \end{gather}
+\end{subequations}
+Non abbiamo usato l'equazione di Eulero-Lagrange per la coordinata $r$ poiché è
+più semplice dividere l'intervallo di tempo proprio di
+Schwarzschild~\eqref{eq:metrica-schwarzschild} per $\dd\tau^{2}$ ottenendo
+questa equazione differenziale in $r$
+\begin{equation}
+  \label{eq:mercurio-r}
+  1 = \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)\dot{t}^{2} - \bigg(1 -
+  \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dot{r}^{2} - r^{2}(\dot{\theta}^{2} +
+  \sin^{2}\theta \dot{\phi}^{2}).
+\end{equation}
+
+Notiamo che associando all'equazione differenziale~\eqref{eq:mercurio-mu} le
+condizioni iniziali $\theta = \pi/2$ e $\dot{\theta} = 0$, la funzione costante
+$\theta(\tau) = \pi/2$ costituisce l'unica soluzione di questo problema di
+Cauchy.  Ciò significa che con un'opportuna scelta delle coordinate il moto del
+pianeta si svolge in un piano, così come succede anche in meccanica classica.
+Sostituendo $\theta = \pi/2$ nella~\eqref{eq:mercurio-phi} abbiamo
+\begin{equation}
+  \toder{}{\tau}(r^{2}\dot{\phi}) = 0 \implies r^{2}\dot{\phi} = h =
+  \text{costante}
+\end{equation}
+cioè il pianeta si muove con velocità areolare costante, come nel problema di
+Keplero classico.  Invece dalla~\eqref{eq:mercurio-t} otteniamo
+\begin{equation}
+  \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)\dot{t} = l = \text{costante}.
+\end{equation}
+Sostituendo tutti questi risultati nella~\eqref{eq:mercurio-r} troviamo
+\begin{equation}
+  1 = \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)^{-1}l^{2} - \bigg(1 -
+  \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dot{r}^{2} - \frac{h^{2}}{r^{2}}.
+\end{equation}
+
 
 \subsection{Deflessione della luce}
 \label{sec:deflessione-luce}
