@@ -569,9 +569,9 @@ La forma più generale per una metrica con queste proprietà è
   \dd\tau^{2} = F(r) \dd t^{2} - 2E(r) \bm{x} \cdot \dd\bm{x} \dd t -
   D(r)(\bm{x} \cdot \dd\bm{x})^{2} - C(r)\dd\bm{x}^{2},
 \end{equation}
-in cui $F$, $E$, $D$ e $C$ sono funzioni di $r = \norm{\bm{x}}$.  Data la
-simmetria del sistema che vogliamo analizzare conviene passare in coordinate
-sferiche
+in cui $F$, $E$, $D$ e $C$ sono funzioni della distanza dall'origine del campo
+gravitazionale $r = \norm{\bm{x}}$.  Data la simmetria del sistema che vogliamo
+analizzare conviene passare in coordinate sferiche
 \begin{subequations}
   \begin{align}
     x^{1} &= r \sin\theta \cos\phi, \\
@@ -773,39 +773,64 @@ teoriche riguardo alcuni fenomeni osservabili nel sistema solare, le quali sono
 state confermate sperimentalmente e hanno permesso il riconoscimento della
 validità della teoria della relatività generale.
 
-\subsection{\completare{Precessione del perielio}}
+\subsection{Precessione del perielio}
 \label{sec:precessione-perielio}
 
+\begin{figure}
+  \centering
+  \includegraphics{figure/precessione_perielio}
+  % figura presa da
+  % http://commons.wikimedia.org/wiki/File:Perihelion_precession.svg
+  \caption{Precessione del perielio di un pianeta}
+  \label{fig:precessione-perielio}
+\end{figure}
 La prima legge di Keplero afferma che l'orbita descritta dai pianeti è
 un'ellisse.  Questo risultato è rigorosamente vero nel caso in cui il pianeta
 interagisce solo con la stella intorno a cui orbita.  La presenza di altri
 eventuali pianeti perturba il sistema facendo in modo che l'orbita non sia
-chiusa ma piuttosto una rosetta, si ha quindi una precessione del perielio.  Per
-esempio, dalle osservazioni astronomiche si è scoperto che il perielio di
-Mercurio si sposta di circa \ang{;;574} ogni cento anni.  Utilizzano la
-meccanica newtoniana e tenendo conto della presenza di tutti i pianeti
-conosciuti si prevede una precessione del perielio di Mercurio pari a circa
-\ang{;;532}.  Per risolvere questa incongruenza sono state proposte diverse
-ipotesi, fra cui la presenza di un corpo perturbante, come un nuovo pianeta o un
-satellite di Mercurio.  Tuttavia questi corpi non sono mai stati trovati e
-faremo vedere che la relatività generale è in grado di risolvere questo
-problema.
+chiusa ma piuttosto una rosetta, si ha quindi una precessione del perielio, come
+rappresentato nella figura~\ref{fig:precessione-perielio}.  Per esempio, dalle
+osservazioni astronomiche si è scoperto che il perielio di Mercurio si sposta di
+circa \ang{;;575} ogni cento anni.  Utilizzano la meccanica newtoniana e tenendo
+conto della presenza di tutti i pianeti conosciuti si prevede una precessione
+del perielio di Mercurio pari a circa \ang{;;532}.  Per risolvere questa
+incongruenza sono state proposte diverse ipotesi, fra cui la presenza di un
+corpo perturbante come un nuovo pianeta, più interno di Mercurio, o un satellite
+di Mercurio.  Tuttavia questi corpi non sono mai stati trovati e faremo vedere
+che la relatività generale è in grado di risolvere questo problema.
 
 % TODO: capire per bene i passaggi dell'Adler
-Per determinare l'orbita del pianeta dobbiamo risolvere il problema variazionale
+Per determinare l'orbita di un pianeta abbiamo bisogno di quattro equazioni per
+le quattro coordinate spazio-temporali sferiche $t$, $r$, $\theta$ e $\phi$.
+Una prima equazione differenziale per la coordinata $r$ si ottiene dividendo
+l'intervallo di tempo proprio di Schwarzschild~\eqref{eq:metrica-schwarzschild}
+per $\dd\tau^{2}$
+\begin{equation}
+  \label{eq:mercurio-r}
+  \bigg(\toder{\tau}{\tau}\bigg)^{2} = 1 = \bigg(1 -
+  \frac{r_{\textup{S}}}{r}\bigg)\dot{t}^{2} - \bigg(1 -
+  \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dot{r}^{2} - r^{2}(\dot{\theta}^{2} +
+  \sin^{2}\theta \dot{\phi}^{2}).
+\end{equation}
+Il punto sopra le variabili indica la derivazione rispetto al tempo proprio
+$\tau$.  Per determinare le altre equazioni dobbiamo risolvere il problema
+variazionale
 \begin{equation}
   \delta \int \dd \tau = 0
 \end{equation}
-in cui $\delta\tau$ è la metrica di Schwarzschild.  Questo problema può essere
+in cui $\dd\tau$ è la metrica di Schwarzschild.  Questo problema può essere
 risolto più facilmente considerando la seguente formulazione equivalente
 \begin{equation}
-  \delta \int \bigg(\bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)\dot{t}^{2} -
-  \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dot{r}^{2} -
-  r^{2}(\dot{\theta}^{2} + \sin^{2}\theta \dot{\phi}^{2}) \bigg) \dd \tau = 0.
+  \begin{split}
+    \delta\int \dd\tau &= \delta \int \bigg(\toder{\tau}{\tau}\bigg)^{2} \dd
+    \tau \\
+    &= \delta \int \bigg(\bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)\dot{t}^{2} -
+    \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dot{r}^{2} -
+    r^{2}(\dot{\theta}^{2} + \sin^{2}\theta \dot{\phi}^{2}) \bigg) \dd \tau = 0.
+  \end{split}
 \end{equation}
-Il punto indica la derivazione rispetto al tempo proprio $\tau$.  Da qui si
-ottengono tre equazioni di Eulero-Lagrange per le coordinate, rispettivamente,
-$\theta$, $\phi$ e $t$
+Da qui si ottengono tre equazioni di Eulero-Lagrange per le coordinate,
+rispettivamente, $\theta$, $\phi$ e $t$
 \begin{subequations}
   \begin{gather}
     \toder{}{\tau}(r^{2}\dot{\theta}) = r^{2}\sin\theta\cos\theta
@@ -816,16 +841,8 @@ $\theta$, $\phi$ e $t$
     = 0. \label{eq:mercurio-t}
   \end{gather}
 \end{subequations}
-Non abbiamo usato l'equazione di Eulero-Lagrange per la coordinata $r$ poiché è
-più semplice dividere l'intervallo di tempo proprio di
-Schwarzschild~\eqref{eq:metrica-schwarzschild} per $\dd\tau^{2}$ ottenendo
-questa equazione differenziale in $r$
-\begin{equation}
-  \label{eq:mercurio-r}
-  1 = \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)\dot{t}^{2} - \bigg(1 -
-  \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dot{r}^{2} - r^{2}(\dot{\theta}^{2} +
-  \sin^{2}\theta \dot{\phi}^{2}).
-\end{equation}
+Non abbiamo scritto l'equazione di Eulero-Lagrange per la coordinata $r$ poiché
+utilizzeremo la~\eqref{eq:mercurio-r}.
 
 Notiamo che associando all'equazione differenziale~\eqref{eq:mercurio-mu} le
 condizioni iniziali $\theta = \pi/2$ e $\dot{\theta} = 0$, la funzione costante
@@ -844,10 +861,205 @@ Keplero classico.  Invece dalla~\eqref{eq:mercurio-t} otteniamo
 \end{equation}
 Sostituendo tutti questi risultati nella~\eqref{eq:mercurio-r} troviamo
 \begin{equation}
+  \label{eq:mercurio-r2}
   1 = \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)^{-1}l^{2} - \bigg(1 -
   \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dot{r}^{2} - \frac{h^{2}}{r^{2}}.
 \end{equation}
 
+Per determinare l'equazione dell'orbita conviene pensare la coordinata $r$ come
+funzione di $\phi$, quindi indicando con l'apice la derivazione rispetto a
+$\phi$ abbiamo
+\begin{equation}
+  \dot{r} = \toder{r}{\tau} = \toder{r}{\phi} \toder{\phi}{\tau} = r' \dot{\phi}
+  = r' \frac{h}{r^{2}}
+\end{equation}
+e ponendo $u = 1/r$, con
+\begin{equation}
+  \dot{r} = \frac{h}{r^{2}}r' = \frac{h}{r^{2}}\toder{r}{\phi} =
+  hu^{2}\toder{}{\phi} \frac{1}{u} = -hu^{2}\frac{u'}{u^{2}} = -hu',
+\end{equation}
+la~\eqref{eq:mercurio-r2} diventa
+\begin{equation}
+  (1 - r_{\textup{S}}u) = l^{2} - h^{2}u'^{2} - h^{2}u^{2}(1 - r_{\textup{S}}u),
+\end{equation}
+da cui, riarrangiando,
+\begin{equation}
+  \label{eq:mercurio-u'}
+  u'^{2} = \frac{l^{2} - 1}{h^{2}} + \frac{r_{\textup{S}}}{h^{2}}u - u^{2} +
+  r_{\textup{S}}u^{3} \equiv f(u).
+\end{equation}
+Questa equazione può essere integrata nel seguente modo
+\begin{equation}
+  \toder{u}{\phi} = \sqrt{f(u)} \implies \dd\phi = f^{-1/2}(u) \dd u \implies
+  \phi = \phi_{0} + \int_{u_{0}}^{u} f^{-1/2}(\tilde{u}) \dd \tilde{u}.
+\end{equation}
+Sebbene questa sia una soluzione esatta, non è utile a livello pratico perché
+fornisce solo un'espressione implicita di $u$, e quindi $r$, rispetto a $\phi$.
+L'idea, a questo punto, è quella di scrivere un'equazione differenziale del
+secondo ordine.  Derivando rispetto a $\phi$ la~\eqref{eq:mercurio-u'} abbiamo
+\begin{equation}
+  2u'u'' = \frac{r_{\textup{S}}}{h^{2}}u' - 2uu' + 3r_{\textup{S}}u^{2}u' = 0
+  \implies u'\bigg(2u'' - \frac{r_{\textup{S}}}{h^{2}} + 2u -
+  3r_{\textup{S}}u^{2}\bigg) = 0.
+\end{equation}
+Una soluzione di questa equazione è $u' = 0$, cioè
+$u(\phi) = 1/r(\phi) = \text{costante}$.  Tuttavia questa situazione non ci
+interessa poiché descrive un moto circolare, essendo la distanza dal centro del
+campo costante, quindi non c'è un perielio e non è possibile osservare la sua
+precessione.  L'altra possibile soluzione è
+\begin{equation}
+  \label{eq:binet-relativ}
+  2u'' - \frac{r_{\textup{S}}}{h^{2}} + 2u - 3r_{\textup{S}}u^{2} = 0 \implies
+  u'' + u = \frac{r_{\textup{S}}}{2h^{2}} + \frac{3}{2}r_{\textup{S}}u^{2} =
+  \frac{GM}{r^{4}(\ltoder{\phi}{\tau})^{2}} + \frac{3}{2}r_{\textup{S}}u^{2},
+\end{equation}
+in cui $M$ è la massa del corpo che genera il campo gravitazionale.  Ricordiamo
+che nel problema di Keplero classico, l'\index{equazione!di Binet}equazione di
+Binet è
+\begin{equation}
+  \label{eq:binet}
+  u'' + u = \frac{GM}{r^{4}(\ltoder{\phi}{t})^{2}}.
+\end{equation}
+Osserviamo che per piccole velocità
+$\ltoder{\phi}{\tau} \approx \ltoder{\phi}{t}$.  Inoltre per i pianeti del
+sistema solare risulta
+\begin{equation}
+  \frac{3r_{\textup{S}}u^{2}/2}{r_{\textup{S}}/(2h^{2})} = 3u^{2}h^{2} \ll 1,
+\end{equation}
+infatti
+\begin{equation}
+  3u^{2}h^{2} = \frac{3}{r^{2}}r^{4} \bigg(\toder{\phi}{\tau}\bigg)^{2} = 3r^{2}
+  \bigg(\toder{\phi}{\tau}\bigg)^{2} = 3 v_{\textup{t}}^{2},
+\end{equation}
+in cui $v_{\textup{t}} = r\ltoder{\phi}{t}$ è la velocità tangenziale del corpo,
+espressa in unità di $c$ poiché abbiamo posto $c = 1$.  Per Mercurio, il pianeta
+più interno del sistema solare e quindi con la maggior velocità tangenziale,
+$3 v_{\textup{t}}^{2} = \num{7.7e-8}$, quindi possiamo considerare il termine
+$3r_{\textup{S}}u^{2}/2$ nella~\eqref{eq:binet-relativ} come una debole
+perturbazione.  In dettaglio, vogliamo risolvere l'equazione
+\begin{equation}
+  u'' + u = A + \frac{\epsilon u^{2}}{A},
+\end{equation}
+con $A = r_{\textup{S}}/(2h^{2})$ e $\epsilon = 3Ar_{\textup{S}}/2  \ll 1$.
+Cerchiamo soluzioni del tipo
+\begin{equation}
+  u(\phi) = u_{0}(\phi) + \epsilon v(\phi),
+\end{equation}
+con $u_{0}(\phi)$ soluzione dell'equazione di Binet classica
+\begin{equation}
+  \label{eq:binet-2}
+  u_{0}'' + u_{0} = A
+\end{equation}
+cioè
+\begin{equation}
+  u_{0} = A + B\cos(\phi + \delta),
+\end{equation}
+con $B$ e $\delta$ costanti reali di integrazione.  Ruotando opportunamente il
+sistema di riferimento si può fare in modo che $\delta = 0$ cosicché $u_{0}$
+diventa
+\begin{equation}
+  \label{eq:sol-binet}
+  u_{0}(\phi) = A + B\cos\phi.
+\end{equation}
+Dunque l'equazione da risolvere è
+\begin{equation}
+  (u_{0}'' + \epsilon v'') + (u_{0} + \epsilon v) = A + \epsilon \frac{(u_{0} +
+    \epsilon v)^{2}}{A} = A + \epsilon \frac{u_{0}^{2}}{A} +
+  \mathcal{O}(\epsilon^{2}).
+\end{equation}
+Tenendo conto della~\eqref{eq:binet-2} l'equazione per $v(\phi)$ al primo ordine
+in $\epsilon$ è
+\begin{equation}
+  \begin{split}
+    v'' + v &= \frac{u_{0}^{2}}{A} = A + 2B\cos\phi +
+    \frac{B^{2}}{A}\cos^{2}\phi \\
+    &= \bigg(A + \frac{B^{2}}{2A}\bigg) + 2B\cos\phi +
+    \frac{B^{2}}{2A}\cos(2\phi),
+\end{split}
+\end{equation}
+in cui abbiamo ricordato l'identità trigonometrica
+$\cos^{2}\phi = (1 + \cos(2\phi))/2$.  Dunque questa è l'equazione differenziale
+del secondo ordine relativa al termine che perturba l'orbita dei pianeti.
+Questa equazione è lineare, quindi la soluzione può essere espressa come somma
+delle soluzioni delle tre equazioni seguenti
+\begin{subequations}
+  \begin{align}
+    v_{a}'' + v_{a} &= A + \frac{B^{2}}{2A} \implies v_{a}(\phi) = A +
+    \frac{B^{2}}{2A}, \\
+    v_{b}'' + v_{b} &= 2B\cos\phi \implies v_{b}(\phi) = B\phi \sin\phi, \\
+    v_{c}'' + v_{c} &= \frac{B^{2}}{2A}\cos(2\phi) \implies v_{c}(\phi) =
+    -\frac{B^{2}}{6A}\cos(2\phi),
+  \end{align}
+\end{subequations}
+dunque
+\begin{equation}
+  v(\phi) = v_{a}(\phi) + v_{b}(\phi) + v_{c}(\phi) = A + \frac{B^{2}}{2A} +
+  B\phi\sin\phi - \frac{B^{2}}{6A}\cos(2\phi)
+\end{equation}
+e in questo modo $u(\phi)$ è data da
+\begin{equation}
+  \begin{split}
+    u(\phi) &= u_{0}(\phi) + \epsilon v(\phi) \\
+    &= A + B\cos\phi + \epsilon A + \frac{\epsilon B^{2}}{2A} + \epsilon
+    B\phi\sin\phi - \frac{\epsilon B^{2}}{6A}\cos(2\phi).
+  \end{split}
+\end{equation}
+Al primo ordine in $\epsilon$ abbiamo
+\begin{equation}
+  \cos(\phi - \epsilon\phi) = \cos\phi \cos(\epsilon\phi) + \sin\phi
+  \sin(\epsilon\phi) \approx \cos\phi + \epsilon\phi\sin\phi,
+\end{equation}
+allora
+\begin{equation}
+  \frac{1}{r(\phi)} = u(\phi) \approx A + B\cos(\phi - \epsilon\phi) +
+  \epsilon\bigg(A + \frac{B^{2}}{2A} - \frac{B^{2}}{6A}\cos(2\phi)\bigg).
+\end{equation}
+L'ultimo termine, fra parentesi, induce una piccola variazione nella distanza
+radiale del pianeta, ma è periodica per via del termine $\cos(2\phi)$, quindi
+non può essere responsabile della precessione del suo perielio.  Il resto della
+funzione $u(\phi)$ si differenzia dalla soluzione~\eqref{eq:sol-binet}
+dell'equazione di Binet per la presenza di $-\epsilon\phi$ nell'argomento del
+coseno e questo rende $u(\phi)$ non periodico rispetto alla coordinata $\phi$.
+Infatti il perielio si ha quando $r(\phi)$ è minimo, vale a dire quando
+$u(\phi)$ è massimo e ciò si verifica quando il coseno del secondo termine vale
+$1$, cioè quando
+\begin{equation}
+  \phi_{n}(1 - \epsilon) = 2\pi n \implies \phi_{n} = \frac{2\pi n}{1 -
+    \epsilon} \approx 2\pi n(1 + \epsilon)
+\end{equation}
+con $n$ numero di rivoluzioni compiute dal pianeta intorno al Sole a partire da
+un istante iniziale fissato.  Pertanto il perielio si ha dopo una variazione
+della coordinata $\phi$ di
+\begin{equation}
+  \Delta\phi = \phi_{n+1} - \phi_{n} = 2\pi(1 + \epsilon)
+\end{equation}
+invece di $2\pi$ come succede per un moto periodico.  La relatività generale
+prevede allora una precessione del perielio dei pianeti nel loro moto intorno al
+Sole, indipendentemente dalla presenza perturbatrice di altri corpi.  Stimiamo
+il valore $\delta\phi$ di questa precessione per verificare se è in accordo con
+i dati sperimentali.  Per i pianeti del sistema solare
+$r_{\textup{S}} = 2GM_{\odot}$ è il raggio di Schwarzschild del Sole, allora
+\begin{equation}
+  \delta\phi = 2\pi\epsilon = 2\pi \frac{3}{4}\frac{r_{\textup{S}}^{2}}{h^{2}} =
+  6\pi \frac{G^{2}M_{\odot}^{2}}{h^{2}}.
+\end{equation}
+In particolare per il pianeta Mercurio si ha
+\begin{equation}
+  \delta\phi = \ang{;;0.1036}
+\end{equation}
+e la precessione dopo cento anni, ricordando che il suo periodo orbitale è di
+$87.8$ giorni, è data da
+\begin{equation}
+  \delta_{100}\phi = \frac{\delta\phi \cdot 100 \cdot 365.25}{87.8} =
+  \ang{;;43}.
+\end{equation}
+All'inizio della sezione abbiamo ricordato che la precessione secolare di
+Mercurio è di circa \ang{;;575}, possiamo ora concludere che di questi, circa
+\ang{;;43} sono dovuti a effetti di relatività generale e circa \ang{;;532} alla
+perturbazione indotta dalla presenza degli altri pianeti.  Mercurio è il pianeta
+del sistema solare per il quale la precessione relativistica del perielio è più
+evidente in quanto è il più interno e quindi il più influenzato dal campo
+gravitazionale del Sole.
 
 \subsection{Deflessione della luce}
 \label{sec:deflessione-luce}
