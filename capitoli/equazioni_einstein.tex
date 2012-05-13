@@ -851,12 +851,14 @@ Cauchy.  Ciò significa che con un'opportuna scelta delle coordinate il moto del
 pianeta si svolge in un piano, così come succede anche in meccanica classica.
 Sostituendo $\theta = \pi/2$ nella~\eqref{eq:mercurio-phi} abbiamo
 \begin{equation}
+  \label{eq:mercurio-phi2}
   \toder{}{\tau}(r^{2}\dot{\phi}) = 0 \implies r^{2}\dot{\phi} = h =
   \text{costante}
 \end{equation}
 cioè il pianeta si muove con velocità areolare costante, come nel problema di
 Keplero classico.  Invece dalla~\eqref{eq:mercurio-t} otteniamo
 \begin{equation}
+  \label{eq:mercurio-t2}
   \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)\dot{t} = l = \text{costante}.
 \end{equation}
 Sostituendo tutti questi risultati nella~\eqref{eq:mercurio-r} troviamo
@@ -898,6 +900,7 @@ fornisce solo un'espressione implicita di $u$, e quindi $r$, rispetto a $\phi$.
 L'idea, a questo punto, è quella di scrivere un'equazione differenziale del
 secondo ordine.  Derivando rispetto a $\phi$ la~\eqref{eq:mercurio-u'} abbiamo
 \begin{equation}
+  \label{eq:mercurio1}
   2u'u'' = \frac{r_{\textup{S}}}{h^{2}}u' - 2uu' + 3r_{\textup{S}}u^{2}u' = 0
   \implies u'\bigg(2u'' - \frac{r_{\textup{S}}}{h^{2}} + 2u -
   3r_{\textup{S}}u^{2}\bigg) = 0.
@@ -1064,8 +1067,150 @@ gravitazionale del Sole.
 \subsection{Deflessione della luce}
 \label{sec:deflessione-luce}
 
-\subsection{Radar echo delay}
-\label{sec:radar-echo-delay}
+In questo paragrafo studieremo il moto di un fotone nel campo gravitazionale di
+un corpo massivo, in particolare del Sole.
+
+% TODO: non ho mai classificato gli intervalli nei tipi `luce', `spazio' o
+% `tempo', quindi o lo faccio da qualche parte o riformulo la frase seguente.
+% Dovrei anche spiegare cos'è la linea d'universo.
+In relatività speciale, per due eventi separati da un intervallo di tipo luce la
+distanza vale $\dd\tau^{2} = 0$ e assumiamo che lo stesso valga anche in
+relatività generale.  Assumiamo inoltre che l'equazione della
+geodetica~\eqref{eq:geodetica} sia valida anche per le particelle prive di massa
+come i fotoni.  Tuttavia dobbiamo fare attenzione al fatto che, proprio in virtù
+del fatto che $\dd\tau^{2} = 0$, non possiamo parametrizzare la linea d'universo
+di un fotone, o di una qualsiasi particella con massa nulla, usando il tempo
+proprio $\tau$.  Piuttosto dobbiamo utilizzare un differente parametro $q$ tale
+che l'equazione della geodetica
+\begin{equation}
+  \toder[2]{x^{\mu}}{q} + \tensor{\Gamma}{^{\mu}_{\lambda\nu}}
+  \toder{x^{\lambda}}{q} \toder{x^{\nu}}{q} = 0
+\end{equation}
+abbia senso.  A partire da questa equazione si possono ricavare nuovamente,
+sempre con l'assunzione $\theta = \pi/2$, le relazioni~\eqref{eq:mercurio-phi2}
+e \eqref{eq:mercurio-t2}.  La~\eqref{eq:mercurio-r2} va modificata in questo
+modo tenendo conto del fatto che $\dd\tau^{2} = 0$
+\begin{equation}
+  0 = \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)^{-1}l^{2} - \bigg(1 -
+  \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dot{r}^{2} - \frac{h^{2}}{r^{2}}.
+\end{equation}
+Svolgendo i calcoli in maniera analoga a quanto visto nel paragrafo precedente e
+ponendo sempre $u = 1/r$ si arriva all'equazione
+\begin{equation}
+  u'\bigg(u'' + u - \frac{3}{2}r_{\textup{S}}u^{2}\bigg) = 0.
+\end{equation}
+Si possono avere due situazioni
+\begin{equation}
+  \label{eq:deflessione1}
+  u'' + u - \frac{3}{2}r_{\textup{S}}u^{2} = 0
+\end{equation}
+oppure
+\begin{equation}
+  u' = 0 \implies u(\phi) = u_{0} = \text{costante},
+\end{equation}
+ma quest'ultima soluzione deve essere scartata per ragioni di stabilità.
+Osserviamo che si poteva giungere direttamente alla~\eqref{eq:deflessione1}
+partendo dalla~\eqref{eq:mercurio1} e ponendo $\dd\tau = 0$.  Il termine
+$3r_{\textup{S}}u^{2}/2$ è una piccola perturbazione rispetto a $u$, infatti
+\begin{equation}
+  \frac{3r_{\textup{S}}u^{2}/2}{u} = \frac{3r_{\textup{S}}u}{2} =
+  \frac{3r_{\textup{S}}}{2r}.
+\end{equation}
+Considerando il caso del Sole, $r_{\textup{S}} = \SI{3}{\kilo\metre}$ e la
+distanza $r$ rispetto alla sua origine a cui un fotone può passare è maggiore o
+uguale al raggio $R_{\odot} = \SI{7e5}{\kilo\metre}$, quindi
+$3r_{\textup{S}}u^{2}/(2u) \ll 1$.  Allora cerchiamo una soluzione dell'equazione
+\begin{equation}
+  u'' + u = \epsilon u^{2},
+\end{equation}
+con $\epsilon = 3r_{\textup{S}}/2$, del tipo
+\begin{equation}
+  u(\phi) = u_{0}(\phi) + \epsilon v(\phi).
+\end{equation}
+Sostituendo nell'equazione da risolvere abbiamo
+\begin{equation}
+  \label{eq:deflessione2}
+  u_{0}'' + u_{0} + \epsilon v'' + \epsilon v = \epsilon u_{0}^{2} +
+  \mathcal{O}(\epsilon^{2}).
+\end{equation}
+I termini di ordine zero in $\epsilon$ danno
+\begin{equation}
+  u_{0}'' + u_{0} = 0,
+\end{equation}
+la cui soluzione generale è
+\begin{equation}
+  u_{0}(\phi) = A\cos(\phi + \delta),
+\end{equation}
+con $A$ e $\delta$ costanti di integrazione.  Ruotando il sistema di coordinate
+è possibile annullare $\delta$ cosicché il valore approssimato $r = 1/u_{0}$
+della coordinata radiale soddisfi la relazione
+\begin{equation}
+  r \cos\phi = \frac{1}{A} = \text{costante}.
+\end{equation}
+Il prodotto $r\cos\phi$ è la coordinata cartesiana $x$, quindi questa è
+l'equazione di una retta parallela all'asse $y$.  Potevamo attenderci questo
+risultato: in prima approssimazione il raggio di luce non viene deviato dal
+campo gravitazionale del Sole.  Inoltre la distanza $r_{0}$ di minimo
+avvicinamento al corpo si ha per $\cos\phi = 1$, cioè
+$r_{0} = 1/A \implies u_{0} = (\cos\phi)/r_{0}$.  Uguagliando i termini di
+ordine uno in $\epsilon$ troviamo
+\begin{equation}
+  \label{eq:deflessione3}
+  v'' + v = u_{0}^{2} = u_{0}^{2} = \frac{\cos^{2}\phi}{r_{0}^{2}} = \frac{1 +
+    \cos(2\phi)}{2r_{0}^{2}}.
+\end{equation}
+Cerchiamo soluzioni del tipo
+\begin{equation}
+  v(\phi) = \alpha + \beta\cos(2\phi)
+\end{equation}
+con $\alpha$ e $\beta$ costanti di integrazione da determinare.  Sostituendo
+nella~\eqref{eq:deflessione3} otteniamo
+\begin{equation}
+  v'' + v = \alpha - 3\beta\cos(2\phi).
+\end{equation}
+Confrontando con la~\eqref{eq:deflessione3} abbiamo
+\begin{subequations}
+  \begin{align}
+    \alpha &= \frac{1}{2r_{0}^{2}}, \\
+    \beta &= - \frac{1}{6r_{0}^{2}},
+  \end{align}
+\end{subequations}
+quindi
+\begin{equation}
+  v(\phi) = \frac{1}{2r_{0}^{2}} - \frac{\cos(2\phi)}{6r_{0}^{2}} =
+  \frac{2}{3r_{0}^{2}} - \frac{\cos^{2}\phi}{3r_{0}^{2}}.
+\end{equation}
+In definitiva
+\begin{equation}
+  \label{eq:deflessione4}
+  u(\phi) = u_{0}(\phi) + v(\phi) = \frac{\cos\phi}{r_{0}} +
+  \frac{2\epsilon}{3r_{0}^{2}} - \frac{\epsilon\cos^{2}\phi}{3r_{0}^{2}}.
+\end{equation}
+% TODO: fare una figura altrimenti si capisce piuttosto poco
+La traiettoria del fotone è, dunque, una retta (data dal termine
+$(\cos\phi)/r_{0}$) disturbata da una piccola perturbazione dell'ordine di
+$\epsilon$.  L'effetto di questa perturbazione è il seguente: il fotone si
+avvicina al Sole in linea retta, quando l'influenza del campo gravitazionale
+della stella non è più trascurabile il fotone viene leggermente deflesso, quindi
+si allontana nuovamente in linea retta.  Calcoliamo la deflessione del fotone.
+Le direzioni asintotiche seguite dal fotone si ottengono calcolando il limite
+$r \to \infty$ o, il che è equivalente, $u \to 0$ nella~\eqref{eq:deflessione4}
+\begin{equation}
+  0 = \frac{\cos\phi}{r_{0}} + \frac{2\epsilon}{3r_{0}^{2}} -
+  \frac{\epsilon\cos^{2}\phi}{3r_{0}^{2}} \implies \cos^{2}\phi -
+  \frac{3r_{0}}{\epsilon}\cos\phi - 2 = 0.
+\end{equation}
+Le soluzioni sono
+\begin{equation}
+  \cos\phi = \frac{3r_{0}}{2\epsilon}\bigg(1 \pm \sqrt{1 +
+    \frac{8\epsilon^{2}}{9r_{0}^{2}}}\bigg),
+\end{equation}
+ma l'unica accettabile è quella con il segno $-$, poiché quella con il segno $+$
+rende il coseno maggiore di $1$.
+
+
+\subsection{Ritardo dei segnali radar}
+\label{sec:ritardo-radar}
 
 
 
