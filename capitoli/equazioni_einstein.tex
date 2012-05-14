@@ -1245,7 +1245,54 @@ di Sole del 1919.
 \subsection{Ritardo dei segnali radar}
 \label{sec:ritardo-radar}
 
+L'ultimo fenomeno di cui ci interessiamo è il ritardo nel tempo di volo dei
+segnali radar rispetto a quanto previsto dalla relatività speciale in uno
+spazio-tempo piatto.  Ciò è dovuto al fatto che i fotoni non si muovono lungo
+linee rette ma lungo le geodetiche, che hanno lunghezza maggiore rispetto.
+Questo fenomeno può essere osservato inviando un segnale radar a un pianeta in
+congiunzione superiore e misurando il tempo necessario affinché il segnale vada
+verso il pianeta e torni sulla Terra.  Tuttavia l'esecuzione di esperimenti su
+questo fenomeno presentano delle difficoltà di tipo pratico, delle quali non ci
+occuperemo.
 
+% TODO: mettere anche qui una figura e rielaborare il testo altrimenti non si
+% capisce niente.  Dopo aver fatto la figura, parlare in generale di distanza di
+% minimo avvicinamento piuttosto che di raggio solare.
+Senza entrare nei dettagli dei conti forniamo i risultati delle previsioni
+teoriche della relatività generale.  In un spazio-tempo piatto, il tempo
+$\tau(r,R_{\odot})$ necessario per un fotone per giungere tangente sulla
+superficie del Sole da un punto a distanza $r$ dal centro della stella è dato
+semplicemente dal rapporto fra la distanza euclidea fra questi due punti e la
+velocità dei fotoni nel vuoto
+\begin{equation}
+  \tau(r, R_{\odot}) = \frac{\sqrt{r^{2} - R_{\odot}^{2}}}{c}.
+\end{equation}
+La correzione relativistica per , che tiene conto della curvatura dello spazio tempo
+prodotta dal campo gravitazionale del Sole, è
+\begin{equation}
+  \begin{split}
+    t(r,R_{\odot}) &\approx \tau(r,R_{\odot}) + \Delta t(r,R_{\odot}) \\
+    &= \frac{\sqrt{r^{2} - R_{\odot}^{2}}}{c} + \frac{2GM_{\odot}}{c^{3}} \ln
+    \frac{r + \sqrt{r^{2} - R_{\odot}^{2}}}{R_{\odot}} +
+    \frac{GM_{\odot}}{c^{3}} \sqrt{\frac{r - R_{\odot}}{r + R_{\odot}}}.
+  \end{split}
+\end{equation}
+Il tempo $t_{\textup{tot}}$ totale di volo del fotone per andare dalla Terra, a
+distanza $r_{1}$ dal Sole, a un pianeta a distanza $r_{2}$ in congiunzione
+superiore è
+\begin{equation}
+  \begin{split}
+    t_{\textup{tot}} &= 2(t(r_{1},R_{\odot}) + t(r_{2},R_{\odot})) \\
+    &= 2(\tau(r_{1},R_{\odot}) + \Delta t(r_{1},R_{\odot}) +
+    \tau(r_{2},R_{\odot}) + \Delta t(r_{2},R_{\odot})).
+  \end{split}
+\end{equation}
+Considerando il sistema Terra-Mercurio, il ritardo
+$\Delta t = 2(\Delta t(r_{1},R_{\odot}) + \Delta t(r_{2},R_{\odot}))$ rispetto
+alla previsione $2(\tau(r_{1},R_{\odot}) + \tau(r_{2},R_{\odot}))$ in uno
+spazio-tempo piatto vale \SI{240}{\micro\second}, che corrisponde a una distanza
+di \SI{72}{\kilo\metre}, su un tempo di volo totale $t_{\textup{tot}}$ di
+\SI{20}{\minute}.
 
 %%% Local Variables:
 %%% mode: latex
