@@ -313,15 +313,9 @@ $S = S(g_{\mu\nu}, \lparder{g_{\mu\nu}}{x^{\lambda}}; q,
 Hilbert propose questa espressione per l'azione del campo
 gravitazionale\footnote{Il fattore davanti all'integrale è stato scelto in
   maniera tale che nel limite newtoniano si ottenga l'equazione di Poisson
-  $\nabla^{2} \phi = 4\pi G\rho$.  Si noti che i testi
-  \textcites{barone:relativita,landau:campo} utilizzano l'espressione
-  $S_{\textup{g}} = -c^{3}/(16\pi G) \int R \sqrt{g} \dd^{4} x$ a causa della
-  diversa convenzione dei segni rispetto a quella da noi scelta.  Vedi
-  pagina~\pageref{eq:convenzione-segni}.}
-% TODO: controllare effettivamente il segno dell'azione, sul Weinberg sta con il
-% segno -.
+  $\nabla^{2} \phi = 4\pi G\rho$.}
 \begin{equation}
-  S_{\textup{g}} = \frac{c^{3}}{16\pi G} \int R \sqrt{g} \dd^{4} x,
+  S_{\textup{g}} = -\frac{c^{3}}{16\pi G} \int R \sqrt{g} \dd^{4} x,
 \end{equation}
 chiamata \index{azione!di Hilbert-Einstein} \emph{azione di Hilbert-Einstein}.
 $G = \SI{6.673 84(80)e-11}{\cubic\metre\per\kilo\metre\per\second\squared}$ è la
@@ -329,7 +323,7 @@ $G = \SI{6.673 84(80)e-11}{\cubic\metre\per\kilo\metre\per\second\squared}$ è l
 \emph{costante di gravitazione universale}.  L'azione della materia ha invece
 espressione
 \begin{equation}
-  S_{\textup{m}} = \frac{1}{c} \int \Lambda \sqrt{g} \dd^{4} x,
+  S_{\textup{m}} = -\frac{1}{c} \int \Lambda \sqrt{g} \dd^{4} x,
 \end{equation}
 in cui $\Lambda = \Lambda(g^{\mu\nu}, \partial_{\lambda}g^{\mu\nu})$ è la densità
 di lagrangiana associata al sistema che interagisce con il campo
@@ -401,7 +395,7 @@ sono nulle le variazioni di $g_{\mu\nu}$ e quindi anche della connessione
 affine, la quale dipende dal tensore metrico.  Dunque abbiamo trovato che la
 variazione dell'azione di Hilbert-Einstein è
 \begin{equation}
-  \delta S_{\textup{g}} = \frac{c^{3}}{16\pi G} \int \bigg( R_{\mu\nu} -
+  \delta S_{\textup{g}} = -\frac{c^{3}}{16\pi G} \int \bigg( R_{\mu\nu} -
   \frac{1}{2} g_{\mu\nu} R \bigg)\sqrt{g} \delta g^{\mu\nu} \dd^{4} x.
 \end{equation}
 
@@ -410,18 +404,18 @@ materia ragioniamo in maniera analoga a quanto fatto nel
 paragrafo~\ref{sec:tensore-energia-impulso}
 \begin{equation}
   \begin{split}
-    \delta S_{\textup{m}} &= \delta \int
+    \delta S_{\textup{m}} &= -\frac{1}{c} \delta \int
     \Lambda(g^{\mu\nu}, \tensor{g}{^{\mu\nu}_{,\lambda}}) \sqrt{g} \dd^{4} x =
-    \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}} \delta g^{\mu\nu}
-    + \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \delta
-    \tensor{g}{^{\mu\nu}_{,\lambda}} \bigg) \dd^{4} x \\
-    &= \frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}} \delta
+    -\frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}} \delta
+    g^{\mu\nu} + \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}}
+    \delta \tensor{g}{^{\mu\nu}_{,\lambda}} \bigg) \dd^{4} x \\
+    &= -\frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}} \delta
     g^{\mu\nu} + \parder{}{x^{\lambda}}
     \bigg( \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \delta
     g^{\mu\nu}\bigg) - \delta g^{\mu\nu} \parder{}{x^{\lambda}}
     \bigg( \parder{\sqrt{g}\Lambda}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
     \bigg) \dd^{4} x \\
-    &= \frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
+    &= -\frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
     - \parder{}{x^{\lambda}}
     \bigg( \parder{\sqrt{g}\Lambda}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
     \bigg) \delta g^{\mu\nu} \dd^{4} x.
@@ -440,13 +434,13 @@ Introduciamo il tensore $T_{\mu\nu}$ definito da
 % energia-impulso (e mettere \index{tensore!energia-impulso})
 così la variazione dell'azione della materia diventa
 \begin{equation}
-  \delta S_{\textup{m}} = \frac{1}{2c} \int T_{\mu\nu} \delta g^{\mu\nu}
+  \delta S_{\textup{m}} = -\frac{1}{2c} \int T_{\mu\nu} \delta g^{\mu\nu}
   \sqrt{g} \dd^{4} x
 \end{equation}
 e la condizione di stazionarietà dell'azione totale del sistema campo
 gravitazionale + particelle interagenti è
 \begin{equation}
-  \delta S = \delta(S_{\textup{g}} + S_{\textup{m}}) = \int \bigg(
+  \delta S = \delta(S_{\textup{g}} + S_{\textup{m}}) = -\int \bigg(
   \frac{c^{3}}{16\pi G} \bigg( R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R \bigg) +
   \frac{1}{2} T_{\mu\nu} \bigg) \sqrt{g} \delta g^{\mu\nu} \dd^{4} x = 0.
 \end{equation}
