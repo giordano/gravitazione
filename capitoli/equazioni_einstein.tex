@@ -1186,7 +1186,8 @@ In definitiva
   u(\phi) = u_{0}(\phi) + v(\phi) = \frac{\cos\phi}{r_{0}} +
   \frac{2\epsilon}{3r_{0}^{2}} - \frac{\epsilon\cos^{2}\phi}{3r_{0}^{2}}.
 \end{equation}
-% TODO: fare una figura altrimenti si capisce piuttosto poco
+% TODO: fare una figura altrimenti si capisce piuttosto poco e riformulare il
+% testo seguente in modo da adattarsi alla figura.
 La traiettoria del fotone è, dunque, una retta (data dal termine
 $(\cos\phi)/r_{0}$) disturbata da una piccola perturbazione dell'ordine di
 $\epsilon$.  L'effetto di questa perturbazione è il seguente: il fotone si
@@ -1206,8 +1207,40 @@ Le soluzioni sono
     \frac{8\epsilon^{2}}{9r_{0}^{2}}}\bigg),
 \end{equation}
 ma l'unica accettabile è quella con il segno $-$, poiché quella con il segno $+$
-rende il coseno maggiore di $1$.
+rende il coseno maggiore di $1$.  Sviluppando la soluzione accettabile al primo
+ordine in $\epsilon$ abbiamo
+\begin{equation}
+  \cos\phi = \frac{3r_{0}}{2\epsilon}\bigg(1 - \sqrt{1 +
+    \frac{8\epsilon^{2}}{9r_{0}^{2}}}\bigg) \approx \frac{3r_{0}}{2\epsilon}\bigg(1 - 1 -
+  \frac{4\epsilon^{2}}{9r_{0}^{2}}\bigg) = -\frac{2\epsilon}{3r_{0}} =
+  -\frac{r_{\textup{S}}}{r_{0}}.
+\end{equation}
+Abbiamo già osservato che per i fotoni che passano nelle vicinanze del Sole
+risulta $r_{\textup{S}}/r \ll 1$, quindi $\phi \approx \pm \pi/2$, allora
+possiamo porre $\psi = \pi/2 + \delta$, da cui
+\begin{equation}
+  -\frac{r_{\textup{S}}}{r_{0}} = \cos\phi = \cos(\pi/2 + \delta) = -\sin\delta.
+\end{equation}
+Dal momento che $\delta$ è molto piccolo possiamo approssimare il seno
+dell'angolo con l'angolo stesso e quindi
+\begin{equation}
+  \delta = \frac{r_{\textup{S}}}{r_{0}}.
+\end{equation}
+La deflessione $\Delta$ è il doppio di questo angolo, dunque, ripristinando il
+valore della velocità della luce,
+\begin{equation}
+  \Delta = 2\delta = \frac{2r_{\textup{S}}}{r_{0}} = \frac{4GM}{c^{2}r_{0}}.
+\end{equation}
 
+Per quanto riguarda la deviazione dei raggi di luce da parte del campo
+gravitazionale del Sole, supponendo che la distanza di minimo avvicinamento sia
+proprio pari al raggio solare $R_{\odot}$, l'angolo di deflessione vale
+\begin{equation}
+  \Delta_{\odot} = \frac{4GM_{\odot}}{c^{2}R_{\odot}} = \ang{;;1.75}.
+\end{equation}
+Questa previsione teorica è stata confermata in numerosi esperimenti via via più
+accurati, il primo dei quali fu realizzato da Eddington durante l'eclissi totale
+di Sole del 1919.
 
 \subsection{Ritardo dei segnali radar}
 \label{sec:ritardo-radar}
