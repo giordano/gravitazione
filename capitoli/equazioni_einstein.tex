@@ -323,7 +323,7 @@ $G = \SI{6.673 84(80)e-11}{\cubic\metre\per\kilo\metre\per\second\squared}$ è l
 \emph{costante di gravitazione universale}.  L'azione della materia ha invece
 espressione
 \begin{equation}
-  S_{\textup{m}} = -\frac{1}{c} \int \Lambda \sqrt{g} \dd^{4} x,
+  S_{\textup{m}} = \frac{1}{c} \int \Lambda \sqrt{g} \dd^{4} x,
 \end{equation}
 in cui $\Lambda = \Lambda(g^{\mu\nu}, \partial_{\lambda}g^{\mu\nu})$ è la densità
 di lagrangiana associata al sistema che interagisce con il campo
@@ -404,18 +404,18 @@ materia ragioniamo in maniera analoga a quanto fatto nel
 paragrafo~\ref{sec:tensore-energia-impulso}
 \begin{equation}
   \begin{split}
-    \delta S_{\textup{m}} &= -\frac{1}{c} \delta \int
+    \delta S_{\textup{m}} &= \frac{1}{c} \delta \int
     \Lambda(g^{\mu\nu}, \tensor{g}{^{\mu\nu}_{,\lambda}}) \sqrt{g} \dd^{4} x =
-    -\frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}} \delta
+    \frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}} \delta
     g^{\mu\nu} + \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}}
     \delta \tensor{g}{^{\mu\nu}_{,\lambda}} \bigg) \dd^{4} x \\
-    &= -\frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}} \delta
+    &= \frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}} \delta
     g^{\mu\nu} + \parder{}{x^{\lambda}}
     \bigg( \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \delta
     g^{\mu\nu}\bigg) - \delta g^{\mu\nu} \parder{}{x^{\lambda}}
     \bigg( \parder{\sqrt{g}\Lambda}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
     \bigg) \dd^{4} x \\
-    &= -\frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
+    &= \frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
     - \parder{}{x^{\lambda}}
     \bigg( \parder{\sqrt{g}\Lambda}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
     \bigg) \delta g^{\mu\nu} \dd^{4} x.
@@ -424,9 +424,12 @@ paragrafo~\ref{sec:tensore-energia-impulso}
 Nell'ultimo passaggio abbiamo sfruttato il fatto che l'integrale del secondo
 termine si trasforma, per il teorema di Gauss, in un integrale sul bordo del
 volume di integrazione sul quale le variazioni $\delta g^{\mu\nu}$ sono nulle.
-Introduciamo il tensore $T_{\mu\nu}$ definito da
+Introduciamo il tensore $T_{\mu\nu}$ definito
+da\footnote{Si noti che \textcites{barone:relativita,landau:campo} definisco
+  questo tensore con il segno opposto a causa della diversa convenzione sui
+  segni.  Vedi pagina~\pageref{eq:convenzione-segni}.}
 \begin{equation}
-  \frac{1}{2} \sqrt{g} T_{\mu\nu} = \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
+  -\frac{1}{2} \sqrt{g} T_{\mu\nu} = \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
   - \parder{}{x^{\lambda}}
   \bigg( \parder{\sqrt{g}\Lambda}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
 \end{equation}
@@ -442,7 +445,7 @@ gravitazionale + particelle interagenti è
 \begin{equation}
   \delta S = \delta(S_{\textup{g}} + S_{\textup{m}}) = -\int \bigg(
   \frac{c^{3}}{16\pi G} \bigg( R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R \bigg) +
-  \frac{1}{2} T_{\mu\nu} \bigg) \sqrt{g} \delta g^{\mu\nu} \dd^{4} x = 0.
+  \frac{1}{2c} T_{\mu\nu} \bigg) \sqrt{g} \delta g^{\mu\nu} \dd^{4} x = 0.
 \end{equation}
 Data l'arbitrarietà delle variazioni $\delta g^{\mu\nu}$ ricaviamo
 \begin{equation}

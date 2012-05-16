@@ -1212,7 +1212,7 @@ l'\index{equazione!di d'Alambert}equazione di d'Alambert non omogenea
   -\parder{}{*{2}{t}} + \nabla^{2} \bigg) A_{\beta} = -J_{\beta}.
 \end{equation}
 
-\subsection{Equazioni del moto di un campo e tensore energia-impulso}
+\section{Equazioni del moto di un campo e tensore energia-impulso}
 \label{sec:tensore-energia-impulso}
 
 In questo paragrafo vogliamo determinare le equazioni del moto di un generico
@@ -1268,7 +1268,7 @@ si deve annullare il termine fra parentesi e così giungiamo all'equazione del
 moto (o \emph{equazione di Eulero-Lagrange}) del campo
 \begin{equation}
   \label{eq:eulero-lagrange-campi}
-  \parder{}{x^{\alpha}}\parder{\Lambda}{q_{,\alpha}} - \parder{\Lambda}{q} = 0.
+  \parder{\Lambda}{q} - \parder{}{x^{\alpha}}\parder{\Lambda}{q_{,\alpha}} = 0.
 \end{equation}
 
 % Nota: sembra che nessuno sia in grado di fare il calcolo del quadrigradiente
@@ -1317,11 +1317,14 @@ da cui
 \end{equation}
 Se il sistema è chiuso il termine $\lparder{\Lambda}{x^{\alpha}}$ è nullo.
 Definiamo il \index{tensore!energia-impulso}\emph{tensore energia-impulso}
-$\tensor{T}{^{\beta}_{\alpha}}$ come
+$\tensor{T}{^{\beta}_{\alpha}}$ come\footnote{Si noti che
+  \textcites{barone:relativita,landau:campo} definisco il tensore
+  energia-impulso con il segno opposto a causa della diversa convenzione sui
+  segni.  Vedi pagina~\pageref{eq:convenzione-segni}.}
 \begin{equation}
   \label{eq:tensore-energia-impulso}
-  \tensor{T}{^{\beta}_{\alpha}} = q_{,\alpha}\parder{\Lambda}{q_{,\beta}} -
-  \tensor{\eta}{^{\beta}_{\alpha}}\Lambda
+  \tensor{T}{^{\beta}_{\alpha}} = \tensor{\eta}{^{\beta}_{\alpha}}\Lambda -
+  q_{,\alpha}\parder{\Lambda}{q_{,\beta}}
 \end{equation}
 quindi l'equazione precedente si può scrivere, per un sistema chiuso, come
 \begin{equation}
@@ -1337,33 +1340,35 @@ rispetto al tempo.
 
 Osserviamo che
 \begin{equation}
-  T^{00} = \parder{q}{x^{0}} \parder{\Lambda}{q_{,0}} - \Lambda
-  = \dot{q} \parder{\Lambda}{\dot{q}} - \Lambda
+  T^{00} = \Lambda - \parder{q}{x^{0}} \parder{\Lambda}{q_{,0}} =  \Lambda -
+  \dot{q} \parder{\Lambda}{\dot{q}}
 \end{equation}
-è la densità di energia associata alla densità di lagrangiana $\Lambda$, infatti
-in meccanica l'energia $E$ di un sistema con lagrangiana $L$ è data da
+è l'opposto della densità di energia associata alla densità di lagrangiana
+$\Lambda$, infatti in meccanica l'energia $E$ di un sistema con lagrangiana $L$
+è data da
 \begin{equation}
   E = \dot{q}\parder{L}{\dot{q}} - L.
 \end{equation}
 Dunque
 \begin{equation}
-  P^{0} = \int T^{00}\dd V = \int \bigg( \dot{q}\parder{\Lambda}{\dot{q}} -
-  \Lambda \bigg)
+  P^{0} = \int T^{00}\dd V = \int \bigg(\Lambda -
+  \dot{q}\parder{\Lambda}{\dot{q}}\bigg) \dd V
 \end{equation}
-rappresenta l'energia del sistema.  Invece
+rappresenta l'opposto dell'energia del sistema.  Invece
 \begin{equation}
-  T^{0i} = \parder{q}{x^{i}} \parder{\Lambda}{q_{,i}}
+  T^{0i} = -\parder{q}{x^{i}} \parder{\Lambda}{q_{,i}}
 \end{equation}
-è la densità di momento, pertanto
+è l'opposto della densità di momento, pertanto
 \begin{equation}
   P^{i} = \int T^{0i}\dd V
 \end{equation}
-è la componente $i$ della quantità di moto.  Pertanto il quadrivettore
-$P^{\alpha}$ qui definito è proprio il quadrimomento e
-l'equazione~\eqref{eq:div-tens-en-imp} rappresenta la legge di conservazione del
-quadrimomento per un sistema chiuso.  Inoltre $T^{i0}$ è la densità di flusso di
-energia nella direzione $x^{i}$, $T^{ij}$ è la densità di flusso della
-componente $j$ del momento nella direzione $i$.
+è l'opposto della componente $i$ della quantità di moto.  Abbiamo così fatto
+vedere che il quadrivettore $P^{\alpha}$ qui definito è proprio il
+quadrimomento, a meno del segno, e l'equazione~\eqref{eq:div-tens-en-imp}
+rappresenta la legge di conservazione del quadrimomento per un sistema chiuso.
+Inoltre $T^{i0}$ è la densità di flusso di energia nella direzione $x^{i}$,
+$T^{ij}$ è la densità di flusso della componente $j$ del momento nella direzione
+$i$.
 
 Le equazioni di Maxwell che descrivono il campo elettromagnetico possono essere
 ricavate applicando il formalismo qui introdotto.
@@ -1413,16 +1418,11 @@ usando $\Lambda_{\textup{c}}$ come densità di lagrangiana e le componenti
 $A_{\mu}$ del quadrimomento come campi
 \begin{equation}
   T_{\textup{em}}^{\alpha\beta}
-  = \parder{A_{\mu}}{x_{\beta}} \parder{\Lambda_{\textup{c}}}{A_{\mu,\alpha}} -
-  \eta^{\alpha\beta}\Lambda_{\textup{c}} =
-  -F^{\alpha\gamma}\partial^{\beta}A_{\gamma} +
-  \frac{1}{4}\eta^{\alpha\beta}F^{\gamma\delta}F_{\gamma\delta}.
+  = \eta^{\alpha\beta}\Lambda_{\textup{c}}
+  - \parder{A_{\mu}}{x_{\beta}} \parder{\Lambda_{\textup{c}}}{A_{\mu,\alpha}} =
+  F^{\alpha\gamma}\partial^{\beta}A_{\gamma} -
+  \frac{1}{4}\eta^{\alpha\beta}F_{\gamma\delta}F^{\gamma\delta}.
 \end{equation}
-% TODO: da queste parti c'è un po' di casino con i segni, ci sono - che
-% diventano per magia + e viceversa.  Sarebbe il caso di rivedere con calma
-% tutti i calcoli.  All'inizio ho seguito il Barone, alla fine il Weinberg,
-% penso che il problema sia proprio dovuto al fatto che adottano segnature
-% diverse per M...
 Si dimostra che il tensore energia-impulso deve sempre essere simmetrico, ma il
 tensore $T_{\textup{em}}^{\alpha\beta}$ così ottenuto non lo è.  Mediante
 un'opportuna procedura di simmetrizzazione si può giungere alla seguente forma
