@@ -2,8 +2,63 @@
 \chapter{Dimostrazioni di alcune relazioni}
 \label{cha:dimostrazioni}
 
-\section{Dimostrazione delle relazioni
-  \texorpdfstring{\eqref{eq:g_mu_rho-determinante}}{(3.49)}}
+\section{Dimostrazione della
+  relazione~\texorpdfstring{\eqref{eq:correzione-metrica-controvariante}}
+  {(2.32)}}
+\label{sec:dimostr-correz-metrica-controvariante}
+
+Nel caso di campo gravitazionale debole, la correzione al tensore metrico
+covariante al primo ordine negli infinitesimi è
+\begin{equation}
+  \label{eq:correzione-metrica-covariante}
+  g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu},
+\end{equation}
+con $h_{\mu\nu} \ll 1$.  Anche $g^{\mu\nu}$ dovrà differire di poco dal tensore
+di Minkowski controvariante
+\begin{equation}
+    \label{eq:correzione-metrica-controvariante2}
+  g^{\mu\nu} = \eta^{\mu\nu} + c^{\mu\nu}
+\end{equation}
+ma le correzioni $c^{\mu\nu}$ alle componenti del tensore metrico controvariante
+non sono semplicemente
+$c^{\mu\nu} = h^{\mu\nu} = \eta^{\mu\lambda}\eta^{\nu\sigma} h_{\lambda\sigma}$
+perché $g^{\mu\nu}$ e $g_{\mu\nu}$ sono legati dalla relazione
+\begin{equation}
+  g_{\mu\nu}g^{\nu\lambda} = \tensor{\delta}{_{\mu}^{\lambda}}.
+\end{equation}
+Infatti sostituendo le espressioni~\eqref{eq:correzione-metrica-covariante} e
+\eqref{eq:correzione-metrica-controvariante2} dei tensori metrici nell'equazione
+precedente abbiamo
+\begin{equation}
+  \tensor{\delta}{_{\mu}^{\lambda}} = (\eta_{\mu\nu} +
+  h_{\mu\nu})(\eta^{\nu\lambda} + c^{\nu\lambda}) =
+  \tensor{\delta}{_{\mu}^{\lambda}} + \tensor{c}{_{\mu}^{\lambda}} +
+  \tensor{h}{_{\mu}^{\lambda}} + h_{\mu\nu}c^{\nu\lambda},
+\end{equation}
+quindi deve risultare
+\begin{equation}
+  0 = \tensor{c}{_{\mu}^{\lambda}} + \tensor{h}{_{\mu}^{\lambda}} +
+  h_{\mu\nu}c^{\nu\lambda} \implies \tensor{c}{_{\mu}^{\lambda}} =
+  -\tensor{h}{_{\mu}^{\lambda}} - h_{\mu\nu}c^{\nu\lambda}.
+\end{equation}
+Innalzando in ambo i membri l'indice libero $\mu$ ricaviamo
+\begin{equation}
+  c^{\mu\lambda} = -h^{\mu\lambda} - \tensor{h}{^{\mu}_{\nu}}c^{\nu\lambda} =
+  -h^{\mu\lambda} -\tensor{h}{^{\mu}_{\nu}}(-h^{\nu\lambda} -
+  \tensor{h}{^{\nu}_{\rho}} c^{\rho\lambda}) = -h^{\mu\lambda} +
+  \tensor{h}{^{\mu}_{\nu}}h^{\nu\lambda} + \mathcal{O}(h^{3}).
+\end{equation}
+Quindi trascurando termini infinitesimi superiori al terzo ordine, il tensore
+metrico controvariante nell'approssimazione di campo debole è dato da
+\begin{equation}
+  g^{\mu\nu} = \eta^{\mu\nu} + c^{\mu\nu} \approx \eta^{\mu\nu} - h^{\mu\lambda}
+  + \tensor{h}{^{\mu}_{\nu}}h^{\nu\lambda}.
+\end{equation}
+Fermandosi al primo ordine della perturbazione si ha
+$g^{\mu\nu} \approx \eta^{\mu\nu} - h^{\mu\nu}$.
+
+\section{Dimostrazione delle
+  relazioni~\texorpdfstring{\eqref{eq:g_mu_rho-determinante}}{(3.51)}}
 \label{sec:dimostr-determinante}
 
 Sia $A$ una matrice quadrata reale di ordine $n$

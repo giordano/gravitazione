@@ -316,8 +316,19 @@ tensore di Minkowski dello spazio-tempo piatto
 \begin{equation}
   g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu},
 \end{equation}
-con $\abs{h_{\mu\nu}} \ll 1$.  Calcoliamo la connessione affine al primo ordine
-della perturbazione $h_{\mu\nu}$
+in cui $\abs{h_{\mu\nu}} \ll 1$ sono piccole correzioni che determinano il campo
+gravitazionale.  Per convenzione decidiamo che le operazioni di innalzamento e
+abbassamento degli indici di $h_{\mu\nu}$ vengano eseguite con il tensore
+metrico non perturbato $\eta_{\mu\nu}$.  La correzione al primo ordine negli
+infinitesimi per il tensore metrico controvariante è data da (vedi
+appendice~\ref{sec:dimostr-correz-metrica-controvariante})
+\begin{equation}
+  \label{eq:correzione-metrica-controvariante}
+  g^{\mu\nu} = \eta^{\mu\nu} - h^{\mu\nu},
+\end{equation}
+dove $h^{\mu\nu} = \eta^{\mu\lambda}\eta^{\nu\sigma} h_{\lambda\sigma}$.
+Calcoliamo la connessione affine al primo ordine della perturbazione
+$h_{\mu\nu}$
 \begin{equation}
   \label{eq:christoffel-approx}
   \tensor{\Gamma}{^{\sigma}_{\mu\nu}} = \frac{1}{2}g^{\lambda\sigma}
@@ -385,11 +396,11 @@ $h_{\mu\nu}$.  Pertanto ricaviamo che la costante deve essere uguale a $0$ e
 $h_{00} = -2\phi$ o, ripristinando la velocità $c$ della luce  nel vuoto,
 \begin{equation}
   \label{eq:h00}
-  h_{00} = -\frac{2\phi}{c^{2}} = \frac{2GM}{rc^{2}} = \frac{r_{\textup{g}}}{r},
+  h_{00} = -\frac{2\phi}{c^{2}} = \frac{2GM}{rc^{2}} = \frac{r_{\textup{S}}}{r},
 \end{equation}
 in cui
 \begin{equation}
-  r_{\textup{g}} = \frac{2GM}{c^{2}}
+  r_{\textup{S}} = \frac{2GM}{c^{2}}
 \end{equation}
 è il \index{raggio!di Schwarzschild}\emph{raggio di Schwarzschild} (o
 \emph{raggio gravitazionale}) del corpo che genera il campo gravitazionale.
@@ -397,20 +408,20 @@ Dunque
 \begin{equation}
   g_{00} = \eta_{00} + h_{00} = - \bigg(1 - \frac{2GM}{rc^{2}} \bigg)
 \end{equation}
-e la quantità $h_{00} = r_{\textup{g}}/r$ è una misura delle deviazioni della
+e la quantità $h_{00} = r_{\textup{S}}/r$ è una misura delle deviazioni della
 relatività generale rispetto alle previsioni della gravità newtoniana.
 
 \begin{table}
   \centering
   \caption[Valori del raggio di Schwarzschild per diversi corpi]{Valori del
-    raggio di Schwarzschild $r_{\textup{g}}$ per diversi oggetti e valore della
-    correzione $r_{\textup{g}}/r$ sulla superficie dei corpi.  $r$ è il raggio
+    raggio di Schwarzschild $r_{\textup{S}}$ per diversi oggetti e valore della
+    correzione $r_{\textup{S}}/r$ sulla superficie dei corpi.  $r$ è il raggio
     degli oggetti}
   \label{tab:Schwarzschild}
   \begin{tabular}{lSSSS}
     \toprule
-    corpo & {$r_{\textup{g}}$ (\si{\metre})} & {$r$ (\si{\metre})} &
-    {$r_{\textup{g}}/r$} \\
+    corpo & {$r_{\textup{S}}$ (\si{\metre})} & {$r$ (\si{\metre})} &
+    {$r_{\textup{S}}/r$} \\
     \midrule
     Terra              & 8.7e-3 & 6.4e6 & 1.4e-9 \\
     Sole               & 3e3    & 7e8   & 4.3e-6 \\
@@ -421,7 +432,7 @@ relatività generale rispetto alle previsioni della gravità newtoniana.
   \end{tabular}
 \end{table}
 Nella tabella~\ref{tab:Schwarzschild} sono riportati i valori delle deviazioni
-$r_{\textup{g}}/r$ dalla gravitazione newtoniana sulla superficie di alcuni
+$r_{\textup{S}}/r$ dalla gravitazione newtoniana sulla superficie di alcuni
 corpi.  Mentre per la Terra, il Sole e le nane bianche queste correzioni sono
 molto piccole, non è possibile descrivere le vicinanze di corpi come le stelle
 di neutroni o i buchi neri utilizzando la fisica newtoniana ma bisogna tenere

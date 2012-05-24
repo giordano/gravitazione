@@ -87,6 +87,8 @@
 % Operatori
 \newcommand*{\dd}{\mathop{}\!\mathrm{d}} % Operatore differenziale \dd
 \newcommand*{\cdd}{\mathop{}\!\mathrm{D}} % Differenziale covariante \cdd
+\DeclareMathOperator{\e}{\mathrm{e}} % Numero di Eulero
+\DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\uimm}{\mathrm{i}} % unità immaginaria
 % Operatore valore assoluto \abs{x}. Usa \abs*{} per le frazioni
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
@@ -100,6 +102,10 @@
 \newcommand*{\covder}[3][]{\frac{{\cdd^{#1}}#2}{\dd {#3}^{#1}}}
 % Derivata lungo una curva: \covder[ordine]{tensore}
 \newcommand*{\curder}[2][]{\frac{{\cdd^{#1}}#2}{\cdd \tau^{#1}}}
+% operatore d'alambertiano.  Definisco un comando specifico nel caso in cui si
+% decidesse di cambiare la notazione (per esempio \Box invece di \Box^{2}).
+\newcommand{\dalamb}{\Box^{2}}
+
 
 % Derivata parziale \parder[ordine]{funzione}{variabile}
 % Per la definizione del comando `parder' (per inserire le derivate parziali)
@@ -138,8 +144,6 @@
 % comando è molto più complesso e permette di inserire le derivate miste, a
 % differenza del secondo.
 
-\DeclareMathOperator{\e}{\mathrm{e}} % Costante di Eulero
-\DeclareMathOperator{\diag}{diag}
 % Versore. Esempi: versore x: `\versore{x}', versore i: \versor{\imath}, versore
 % j: \versor{\jmath} (solo `i' e `j' richiedono `\imath' e `\jmath', altrimenti
 % il puntino litiga con `\hat')
@@ -188,6 +192,7 @@
 \input{capitoli/principio_equivalenza}
 \input{capitoli/calcolo_tensoriale}
 \input{capitoli/equazioni_einstein}
+\input{capitoli/onde_grav}
 
 \appendix{}
 \input{appendici/gauss}

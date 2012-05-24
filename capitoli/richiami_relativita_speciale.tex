@@ -717,7 +717,7 @@ e l'operatore
 Infine introduciamo l'operatore \index{d'Alambertiano}\emph{d'Alambertiano}
 definito da
 \begin{equation}
-  \Box^{2} = \partial^{\alpha}\partial_{\alpha} = - \parder{}{*2t} + \nabla^{2}.
+  \dalamb = \partial^{\alpha}\partial_{\alpha} = - \parder{}{*2t} + \nabla^{2}.
 \end{equation}
 Poiché il d'Alambertiano è il modulo quadro del quadrigradiente, esso è un
 operatore differenziale scalare.
@@ -1208,9 +1208,109 @@ Adottando la \index{gauge!di Lorenz}gauge di Lorenz
 $\partial^{\alpha}A_{\alpha} = 0$ otteniamo
 l'\index{equazione!di d'Alambert}equazione di d'Alambert non omogenea
 \begin{equation}
-  \partial^{\alpha}\partial_{\alpha}A_{\beta} = \Box^{2}A_{\beta} = \bigg(
+  \partial^{\alpha}\partial_{\alpha}A_{\beta} = \dalamb A_{\beta} = \bigg(
   -\parder{}{*{2}{t}} + \nabla^{2} \bigg) A_{\beta} = -J_{\beta}.
 \end{equation}
+Possiamo effettuare una trasformazione di gauge
+$A_{\alpha} \to A'_{\alpha} = A_{\alpha} + \partial_{\alpha}\chi$ compatibile
+con la condizione di Lorenz a patto che la funzione scalare $\chi$ che genera la
+trasformazione abbia d'Alambertiano nullo $\dalamb \chi = 0$, infatti
+\begin{equation}
+  \partial^{\alpha} A'_{\alpha} = \partial^{\alpha} A_{\alpha}
+  + \partial^{\alpha}\partial_{\alpha} \chi = 0
+\end{equation}
+solo se
+$\dalamb \chi = \partial^{\alpha}\partial_{\alpha} \chi = -\partial^{\alpha}
+A_{\alpha} = 0$.
+
+\subsection{Onde elettromagnetiche nel vuoto}
+\label{sec:onde-elettromagnetiche}
+
+Nel vuoto la quadricorrente è nulla quindi si ha
+\begin{equation}
+  \dalamb A_{\beta} = 0.
+\end{equation}
+La soluzione generale di questa equazione è una sovrapposizione lineare di onde
+piane del tipo
+\begin{equation}
+  A_{\alpha} = \Re \{e_{\alpha} \e^{\uimm k^{\lambda} x_{\lambda}}\},
+\end{equation}
+in cui $k^{\lambda} = (\omega, \bm{k})$ è il
+\index{quadrivettore!d'onda}\emph{quadrivettore d'onda} e $e_{\alpha}$ il
+quadrivettore, costante, ampiezza del quadripotenziale.  Se ci limitiamo a
+eseguire solo operazioni lineari su $A_{\alpha}$, possiamo omettere, per
+semplicità, il simbolo $\Re$.  Sostituendo l'espressione onda piana di
+$A_{\alpha}$ nell'equazione di D'alambert omogenea abbiamo
+\begin{equation}
+  0 = \partial^{\beta}\partial_{\beta} A_{\alpha} = \partial^{\beta}\partial_{\beta}
+  e_{\alpha} \e^{\uimm k^{\lambda} x_{\lambda}} = (\uimm k_{\beta})(\uimm
+  k^{\beta}) e_{\alpha} \e^{\uimm k^{\lambda} x_{\lambda}} = -(-\omega^{2} +
+  \bm{k}^{2}) e_{\alpha} \e^{\uimm k^{\lambda} x_{\lambda}}
+\end{equation}
+che implica
+\begin{equation}
+  \omega = \norm{\bm{k}} \iff 2\pi\nu = \frac{2\pi}{\lambda} \iff \lambda\nu=1,
+\end{equation}
+cioè le onde si muovono alla velocità della luce nel vuoto (che abbiamo posto
+uguale a $1$), come ci si aspetta.  Di conseguenza il modulo del quadrivettore
+d'onda è nullo $k^{\alpha}k_{\alpha} = -\omega^{2} + \bm{k}^{2} = 0$.  D'altra
+parte la gauge di Lorenz comporta
+\begin{equation}
+  0 = \partial^{\alpha} A_{\alpha} = \uimm k^{\alpha} e_{\alpha} \e^{\uimm
+    k^{\lambda}x_{\lambda}},
+\end{equation}
+cioè l'ortogonalità fra il quadrivettore d'onda, che indica la sua direzione di
+propagazione, e l'ampiezza delle onde
+\begin{equation}
+  k^{\alpha} e_{\alpha} = 0.
+\end{equation}
+In questo caso si dice che le onde sono \emph{trasversali}.  Questa relazione ci
+permette di determinare una delle componenti di $e_{\alpha}$ in funzione delle
+altre.  Per esempio, se scegliamo la direzione dell'asse $z$ lungo la direzione
+di propagazione dell'onda allora $k^{\lambda} = (k, 0, 0, k)$ e risulta
+\begin{equation}
+  0 = k^{\alpha} e_{\alpha} = k^{0}e_{0} + k^{3}e_{3} = k(e_{0} + e_{3}) \iff
+  e_{0} = -e_{3}.
+\end{equation}
+Inoltre abbiamo visto che nella condizione di Lorenz è possibile effettuare una
+trasformazione di gauge del tipo
+$A_{\alpha} \to A'_{\alpha} = A_{\alpha} + \partial_{\alpha}\chi$ con $\chi$
+funzione scalare con d'Alambertiano nullo.  Allora anche $\chi$ ha come
+soluzione la sovrapposizione di onde piane, scalari, del
+tipo\footnote{Si noti che \textcite[258]{weinberg:gravitation} pone
+  $\chi = \Re \{\uimm \epsilon\e^{\uimm k^{\lambda}x_{\lambda}}\}$, con
+  $\epsilon = -\uimm \tilde\chi$.}
+\begin{equation}
+  \chi = \Re \{\tilde{\chi} \e^{\uimm k^{\lambda}x_{\lambda}}\}
+\end{equation}
+e, dal momento che (omettendo nuovamente il simbolo $\Re$)
+$\partial_{\alpha} \chi = \uimm k_{\alpha}
+\tilde{\chi}\e^{\uimm k^{\lambda}x_{\lambda}}$,
+la trasformazione di gauge del quadripotenziale è
+\begin{equation}
+  A_{\alpha} \to A'_{\alpha} = A_{\alpha} + \partial_{\alpha}\chi = e_{\alpha}
+  \e^{\uimm k^{\lambda}x_{\lambda}} + \uimm k_{\alpha}  \tilde{\chi}\e^{\uimm
+    k^{\lambda}x_{\lambda}} = (e_{\alpha} + \uimm k_{\alpha} \tilde\chi)\e^{\uimm
+    k^{\lambda}x_{\lambda}} = e'_{\alpha}\e^{\uimm k^{\lambda}x_{\lambda}}.
+\end{equation}
+Dopo aver eseguito questa trasformazione di gauge, la libertà sul valore di
+$\tilde\chi$ ci permette di annullare un'altra componente di $e'_{\alpha}$,
+infatti scegliendo $\tilde\chi = \uimm e_{0}/k$ abbiamo
+\begin{subequations}
+  \begin{align}
+    e'_{0} &= e_{0} + \uimm k_{0} \tilde\chi = 0, \\
+    e'_{3} &= -e'_{0} = 0, \\
+    e'_{1} &= e_{1} + \uimm k_{1} \tilde\chi = e_{1}, \\
+    e'_{2} &= e_{2} + \uimm k_{2} \tilde\chi = e_{2}.
+  \end{align}
+\end{subequations}
+Dunque la condizione di ortogonalità fra $k_{\alpha}$ e $e_{\alpha}$, derivante
+dalla gauge di Lorenz, ha comportato la diminuzione del numero di componenti
+indipendenti di $e_{\alpha}$ da quattro a tre e la libertà sulla scelta della
+trasformazione di gauge ha ridotto questo numero a due.  Nel nostro caso
+ciascuna delle onde piane si propaga lungo l'asse $z$ e le componendi
+indipendenti, quelle che hanno reale significato fisico e rappresentano le
+polarizzazioni fisiche dell'onda, sono $e_{1}$ ed $e_{2}$.
 
 \section{Equazioni del moto di un campo e tensore energia-impulso}
 \label{sec:tensore-energia-impulso}
