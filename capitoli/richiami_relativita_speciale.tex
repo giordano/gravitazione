@@ -1024,7 +1024,8 @@ che $J^{\alpha}$ è un quadrivettore: $\dd \tau$ è uno scalare, così come la
 delta di Dirac $\delta^{4}(x - x_{n}(\tau))$, mentre $\ltoder{x^{\alpha}}{\tau}$
 è la quadrivelocità.
 
-In elettrodinamica classica si dimostra l'equazione di continuità
+In elettrodinamica classica si dimostra
+l'\index{equazione!di continuità}\emph{equazione di continuità}
 \begin{equation}
   \nabla\cdot\bm{J} + \parder{\rho}{t} = 0
 \end{equation}
@@ -1049,7 +1050,7 @@ conservazione della carica.
 \subsection{Le equazioni di Maxwell}
 \label{sec:equazioni-maxwell}
 
-Ricordiamo le equazioni di Maxwell
+Ricordiamo le \index{equazioni!di Maxwell}\emph{equazioni di Maxwell}
 \begin{subequations}
   \begin{align}
     \nabla \cdot \bm{E} &= \rho, \label{eq:maxwell-divE} \\
@@ -1139,8 +1140,8 @@ pseudoscalare perché è il prodotto vettoriale del vettore polare $\bm{E}$ e de
 vettore assiale $\bm{B}$.
 
 Grazie al tensore del campo elettromagnetico $F^{^{\alpha\beta}}$ e alla
-quadricorrente $J^{\alpha}$ possiamo scrivere le quattro equazioni di Maxwell
-in forma covariante
+quadricorrente $J^{\alpha}$ possiamo scrivere le quattro
+\index{equazioni!di Maxwell}equazioni di Maxwell in forma covariante
 \begin{subequations}
   \begin{align}
     \partial_{\alpha}F^{\alpha\beta} &= -J^{\beta}, \label{eq:maxwell-cov1} \\
@@ -1152,9 +1153,10 @@ La prima di queste equazioni equivale per $\beta=0$ alla~\eqref{eq:maxwell-divE}
 e per $\beta = i$ alle tre componenti della~\eqref{eq:maxwell-rotB}, la seconda
 delle equazioni precedenti equivale per $\alpha = 0$
 alla~\eqref{eq:maxwell-divB} e per $\beta = i$ alle tre componenti
-della~\eqref{eq:maxwell-rotE}.  Il fatto che abbiamo scritto le equazioni di
-Maxwell sotto forma di uguaglianza fra quadrivettori ci dice immediatamente che
-queste sono invarianti per trasformazioni di Lorentz, per quanto spiegato a
+della~\eqref{eq:maxwell-rotE}.  Il fatto che abbiamo scritto le
+\index{equazioni!di Maxwell}equazioni di Maxwell sotto forma di uguaglianza fra
+quadrivettori ci dice immediatamente che queste sono invarianti per
+trasformazioni di Lorentz, per quanto spiegato a
 pagina~\pageref{invarianza-lorentz}.  L'equazione
 omogenea~\eqref{eq:maxwell-cov2} può essere espressa anche come
 \begin{equation}
@@ -1196,9 +1198,10 @@ mentre per $\alpha = i$ si ricava la forza di Lorentz
   \bm{F} = q\bm{E} + q\bm{v}\times\bm{B}.
 \end{equation}
 
-L'equazione di Maxwell non omogenea in forma covariante~\eqref{eq:maxwell-cov1}
-può anche essere scritta come $\partial^{\alpha}F_{\alpha\beta} = -J_{\beta}$ ed
-esplicitando il tensore del campo elettromagnetico abbiamo
+L'\index{equazioni!di Maxwell}equazione di Maxwell non omogenea in forma
+covariante~\eqref{eq:maxwell-cov1} può anche essere scritta come
+$\partial^{\alpha}F_{\alpha\beta} = -J_{\beta}$ ed esplicitando il tensore del
+campo elettromagnetico abbiamo
 \begin{equation}
   \partial^{\alpha}(\partial_{\alpha}A_{\beta} - \partial_{\beta}A_{\alpha})
   = \partial_{\alpha}\partial^{\alpha}A_{\beta}
@@ -1224,7 +1227,7 @@ $\dalamb \chi = \partial^{\alpha}\partial_{\alpha} \chi = -\partial^{\alpha}
 A_{\alpha} = 0$.
 
 \subsection{Onde elettromagnetiche nel vuoto}
-\label{sec:onde-elettromagnetiche}
+\label{sec:onde-elettromagnetiche-vuoto}
 
 Nel vuoto la quadricorrente è nulla quindi si ha
 \begin{equation}
@@ -1313,6 +1316,237 @@ ciascuna delle onde piane si propaga lungo l'asse $z$ e le componendi
 indipendenti, quelle che hanno reale significato fisico e rappresentano le
 polarizzazioni fisiche dell'onda, sono $e_{1}$ ed $e_{2}$.
 
+\subsection{Onde elettromagnetiche in presenza di cariche in moto}
+\label{sec:onde-elettromagnetiche-cariche}
+
+\emph{Nota: in questo paragrafo esplicitiamo la velocità della luce nel vuoto e
+  adottiamo il sistema di unità di Gauss.}
+
+In presenza di cariche in moto, l'equazione da risolvere nella gauge di Lorenz è
+(usando il sistema di unità di Gauss)
+\begin{equation}
+  \dalamb A_{\beta} = -\frac{4\pi}{c}J_{\beta},
+\end{equation}
+in cui il secondo membro è diverso da zero.  Questa equazione equivale, al
+variare di $\beta$, alle quattro seguenti equazioni differenziali lineari non
+omogenee
+\begin{subequations}
+  \begin{align}
+    \label{eq:maxwell-cariche-i}
+    \nabla^{2} \bm{A} - \frac{1}{c^{2}} \parder{\bm{A}}{*{2}{t}} &=
+    -\frac{4\pi}{c} \bm{J}, \qquad \text{per $\beta = 1, 2, 3$}, \\
+    \nabla^{2} \phi - \frac{1}{c^{2}} \parder{\phi}{*{2}{t}} &= -4\pi \rho,
+    \qquad \text{per $\beta = 0$}. \label{eq:maxwell-cariche-0}
+  \end{align}
+\end{subequations}
+La soluzione di ciascuna di queste equazioni è data dalla somma della soluzione
+generale dell'equazione omogenea associata e di un integrale particolare
+dell'equazione completa.
+% TODO: magari fare una figura che spieghi meglio la situazione descritta di
+% seguito.
+Per determinare l'integrale particolare, suddividiamo l'intero spazio in
+volumetti infinitesimi $\dd V$ e calcoliamo il campo elettrico generato da una
+particella, di carica $\dd q(t)$ (generalmente dipendente dal tempo), in moto
+nel volumetto.  Grazie alla linearità delle equazioni, il potenziale effettivo
+sarà dato dalla somma dei contributi al potenziale provenienti da tutti i
+volumetti che costituiscono lo spazio.
+
+Cominciamo col risolvere la~\eqref{eq:maxwell-cariche-0}.  Per ogni volumetto
+infinitesimo, poniamo l'origine del sistema di riferimento nel suo centro in
+modo che l'equazione~\eqref{eq:maxwell-cariche-0} possa essere scritta come
+\begin{equation}
+  \nabla^{2} \phi - - \frac{1}{c^{2}} \parder{\phi}{*{2}{t}} = -4\pi \rho =
+  -4\pi \dd q(t) \delta(\bm{R}),
+\end{equation}
+in cui $\rho = \dd q(t) \delta(\bm{R})$ è la densità di carica e $\bm{R}$ la
+distanza dall'origine del sistema di riferimento.  Poiché la delta di Dirac
+$\\delta (\bm{R})$ è nulla ovunque, eccetto che nell'origine del sistema,
+abbiamo
+\begin{equation}
+  \nabla^{2} \phi - \frac{1}{c^{2}} \parder{\phi}{*{2}{t}} = 0.
+\end{equation}
+Grazie alla nostra scelta del sistema di riferimento, $\phi$ è sfericamente
+simmetrico, quindi l'operatore d'Alambertiano assume la forma
+$\dalamb = (1/R^{2})\lparder{}{R}(R^{2}\lparder{}{R})$, da cui
+\begin{equation}
+  \frac{1}{R^{2}}\parder{}{R}\bigg(R^{2} \parder{\phi}{R}\bigg) -
+  \frac{1}{c^{2}} \parder{\phi}{*{2}{t}} = 0.
+\end{equation}
+Ipotizziamo per il potenziale $\phi$ una soluzione del tipo $\phi = \chi/R$, con
+$\chi = \chi(R,t)$.  Inserendo questo nell'equazione precedente otteniamo la
+seguente equazione per $\chi$
+\begin{equation}
+  \parder{\chi}{*{2}{R}} - \frac{1}{c^{2}} \parder{\chi}{*{2}{t}} = 0
+\end{equation}
+che è una delle forme dell'equazione di d'Alambert delle onde, quindi una
+soluzione di $\chi$ è data dalla somma di due funzioni $f_{1}$ e $f_{2}$
+dipendenti, rispettivamente, dalle variabili $\xi = t-R/c$ e $\eta = t+R/c$
+\begin{equation}
+  \chi(R,T) = f_{1} + f_{2} = f_{1}(t - R/c) + f_{2}(t + R/c).
+\end{equation}
+Vogliamo determinare solo un integrale particolare
+della~\eqref{eq:maxwell-cariche-0}, quindi possiamo fare in modo che una delle
+due funzioni $f_{1}$ e $f_{2}$ si annulli.  È conveniente porre $f_{2} = 0$,
+quindi abbiamo
+\begin{equation}
+  \phi = \frac{\chi}{R} = \frac{\chi(t - R/c)}{R}.
+\end{equation}
+La funzione $\chi$ non è ancora del tutto definita.  In particolare non abbiamo
+posto alcuna condizione sul suo comportamento nell'origine del sistema di
+riferimento.  Notiamo che per $R \to 0$, il potenziale diverge, allora le sue
+derivate spaziali crescono più rapidamente rispetto alle derivate temporali,
+dunque possiamo trascurare $\lparder[2]{\phi}{c^{2}t}$ rispetto a
+$\nabla^{2} \phi$ ottenendo l'\index{equazione!di Poisson}
+\emph{equazione di Poisson}
+\begin{equation}
+  \nabla^{2} \phi = -4\pi\rho
+\end{equation}
+dalla quale si ricava la legge di Coulomb.  Abbiamo così trovato che vicino
+all'origine il potenziale $\phi$ deve essere quello della legge di Coulomb, per
+cui deve risultare $\chi = \dd q$, cioè
+\begin{equation}
+  \phi = \frac{\dd q(t - R/c)}{R}.
+\end{equation}
+Il potenziale generato da tutti i volumetti $\dd V$ si ottiene ponendo
+$\dd q = \rho\dd V$ e integrando su tutto lo spazio.  Il potenziale nel punto
+$\bm{r}$ al tempo $t$ è
+\begin{equation}
+  \label{eq:potenz-rit-phi}
+  \phi(\bm{r}, t) = \int \frac{\rho(\bm{r}', t - R/c)}{R} \dd V'.
+\end{equation}
+Qui $\bm{R} = \bm{r} - \bm{r}'$ indica la distanza fra il punto $\bm{r}$ in cui
+si calcola il potenziale e il punto $\bm{r}'$ in cui si trova l'elemento
+infinitesimo di volume $\dd V'$.  La densità di carica $\rho$ deve essere
+calcolata all'istante $t - R/c$ poiché l'informazione non viaggia a velocità
+infinita ma con velocità $c$ e $R/c$ è il tempo che essa impiega per andare dal
+punto $\bm{r}'$ in cui si trova la sorgente del campo al punto $\bm{r}$.  Per
+questo motivo la soluzione da noi determinata, nella gauge di Lorenz, è detta
+\index{potenziale!ritardato}\emph{potenziale ritardato}.  Allo stesso modo si
+può determinare per la~\eqref{eq:maxwell-cariche-i} una soluzione del tipo
+potenziale ritardato
+\begin{equation}
+  \label{eq:potenz-rit-A}
+  \bm{A} = \frac{1}{c} \int \frac{\bm{J}(\bm{r}',t - R/c )}{R} \dd V'.
+\end{equation}
+A queste soluzioni particolari vanno sommate le soluzioni delle equazioni
+omogenee, determinate in modo da soddisfare le condizioni del sistema.
+
+\subsubsection{Radiazione di dipolo}
+\label{sec:radiazione-dipolo}
+
+Supponiamo adesso di voler calcolare l'intensità dell'energia irradiata dal
+sistema di cariche a una distanza molto più grande della dimensione $a$ del
+sistema stesso.  Fissiamo l'origine del sistema di riferimento all'interno della
+distribuzione di cariche.  Indichiamo ancora con $\bm{r}$ la posizione del punto
+in cui calcoliamo il campo elettromagnetico, $\bm{r}'$ la posizione in cui si
+trova l'elemento infinitesimo di carica $\dd q = \rho\dd V$ e con
+$\bm{R} = \bm{r} - \bm{r}'$ il vettore che va dall'elemento di carica al punto
+di osservazione.  Porsi a grandi distanze dal sistema significa che
+$r \gg r' \sim a$, quindi si ha
+\begin{equation}
+  R = \norm{\bm{r} - \bm{r}'} \approx r - \versor{n}\cdot\bm{r}',
+\end{equation}
+dove $\versor{n} = \bm{r}/\norm{\bm{r}}$.  Sostituiamo questa espressione di $R$
+nelle formule~\eqref{eq:potenz-rit-phi} e \eqref{eq:potenz-rit-A} dei potenziali
+ritardati
+\begin{subequations}
+  \begin{align}
+    \phi (\bm{r}, t) &= \frac{1}{r} \int \rho(\bm{r}', t - (r/c -
+    \versor{n}\cdot\bm{r}'/c)) \dd V', \\
+    \bm{A}(\bm{r}, t) &= \frac{1}{rc} \int \bm{J}(\bm{r}', t - (r/c -
+    \versor{n}\cdot\bm{r}'/c)) \dd V'.
+  \end{align}
+\end{subequations}
+Nel denominatore delle funzioni integrande abbiamo potuto trascurare
+$\versor{n}\cdot\bm{r}'$ rispetto a $r$, che è costante rispetto alla variabile
+di integrazione.  Non è in generale possibile effettuare la stessa operazione
+nell'argomento delle densità $\rho$ e $\bm{J}$, poiché queste potrebbero variare
+in maniera significativa nel tempo $\versor{n}\cdot\bm{r}'/c$.  Tuttavia, sotto
+opportune ipotesi che ora determineremo, è possibile trascurare
+$\versor{n}\cdot\bm{r}'/c$ nell'argomento delle densità.  Indichiamo con
+$T = a/v$ l'ordine di grandezza del tempo nel quale la distribuzione di carica
+varia sensibilmente, con $v$ ordine di grandezza delle velocità delle cariche.
+Se queste si muovono molto più lentamente rispetto alla luce nel vuoto,
+$v \ll c$, allora le densità $\rho$ e $\bm{J}$ variano in maniera sensibile in
+un tempo $T$ molto più grande rispetto a $a/c \sim \versor{n}\cdot\bm{r}'/c$,
+quindi in questo caso possiamo scrivere
+\begin{subequations}
+  \begin{align}
+    \phi (\bm{r}, t) &= \frac{1}{r} \int \rho(\bm{r}', t - r/c) \dd V', \\
+    \bm{A}(\bm{r}, t) &= \frac{1}{rc} \int \bm{J}(\bm{r}', t - r/c) \dd V'.
+  \end{align}
+\end{subequations}
+La condizione $T \gg a/c$ equivale anche a dire che le dimensioni del sistema
+sono molto più piccole della lunghezza d'onda della radiazione emessa
+$a \ll cT = \lambda$.  Poiché ci troviamo a grandi distanze dalla sorgente e
+poiché $a \ll \lambda$, le onde emesse dal sistema possono essere considerate,
+in piccole regioni dello spazio, come onde piane.  Il potenziale vettore
+$\bm{A}$ può anche essere scritto come
+\begin{equation}
+  \bm{A} = \frac{1}{rc} \int \bm{J}|_{t-r/c} \dd V
+\end{equation}
+e non dipende, così, dalle variabili di integrazione.  Ponendo
+$\bm{J} = \rho \bm{v}$ abbiamo
+\begin{equation}
+  \bm{A} = \frac{1}{rc} \int (\rho\bm{v})|_{t-r/c} \dd V = \frac{1}{rc} \sum_{i}
+  q_{i}\bm{v}_{i} = \frac{1}{rc} \dot{\bm{d}},
+\end{equation}
+con $\bm{v}_{i}$ velocità della particella $i$-esima calcolata al tempo
+$t-r/c$ e
+\begin{equation}
+  \bm{d} = \sum_{i} q_{i} \bm{r}_{i}
+\end{equation}
+momento di dipolo totale del sistema, sempre calcolato al tempo $t-r/c$.
+
+Per un'onda piana risulta
+$\bm{E} = \bm{B} \times \versor{n} \iff \bm{B} = -\bm{E}\times \versor{n}$ (cioè
+$\bm{E}$, $\bm{B}$ e $\versor{n}$ costituiscono una terna di vettori ortogonali
+e $\bm{E}$ e $\bm{B}$ hanno lo stesso modulo) e
+\begin{subequations}
+  \begin{align}
+    % Nota: il Landau dice (nota 2) di pagina 228) che l'equazione seguente non
+    % è corretta e bisogna invece usare E = (1/c) (\dot{\bm{A}} \times
+    % \versor{n}) \times \versor{n}.  Spiegazione della (43.7) di pagina 151:
+    % nel calcolo di \bm{H} usa la formula di derivazione composta per \bm{A},
+    % dato che dipende solo da t' = t -x/c, quindi c'è il prodotto vettoriale
+    % fra il gradiente di t' (che a quanto pare è uguale a -\versor{n}/c) e
+    % \bm{A}', cioè la derivata rispetto a t' di \bm{A}.
+    \bm{E} &= -\frac{1}{c} \parder{\bm{A}}{t} = -\frac{1}{c} \dot{\bm{A}} =
+    -\frac{1}{c^{2}} \frac{\ddot{\bm{d}}}{r}, \\
+    \bm{B} &= -\bm{E}\times \versor{n} = \frac{1}{c} \dot{\bm{A}} \times
+    \versor{n} = \frac{1}{c^{2}} \frac{\ddot{\bm{d}}}{r} \times \versor{n},
+  \end{align}
+\end{subequations}
+in cui il punto rappresenta la derivata rispetto al tempo.  Inoltre ricordiamo
+che il modulo \index{vettore!di Poynting}\emph{vettore di Poynting}
+\begin{equation}
+  \bm{S} = \frac{c}{4\pi} \bm{E} \times \bm{B} = \frac{c}{4\pi} B^{2} \versor{n}
+  = \frac{1}{4\pi c^{3}r^{2}}(\ddot{\bm{d}}\times\versor{n})^{2} \versor{n}
+\end{equation}
+rappresenta la potenza che per unità di superficie viene emessa attraverso una
+superficie perpendicolare alla direzione di propagazione della radiazione.
+L'intensità $\dd I$ emessa nell'elemento di angolo solido $\dd\Omega$ alla
+distanza $r$ può essere calcolata determinando la potenza emessa attraverso
+l'elemento $r^{2}\dd\Omega$ di una superficie sferica di raggio $r$ con centro
+nell'origine del sistema di riferimento.  Allora $\dd I$ è dato dal prodotto fra
+il modulo del vettore di Poynting e l'elemento $r^{2}\dd\Omega$, cioè
+\begin{equation}
+  \dd I = \norm{\bm{S}} r^{2} \dd\Omega = \frac{1}{4\pi
+    c^{3}r^{2}}(\ddot{\bm{d}}\times\versor{n})^{2} r^{2} \dd\Omega =
+  \frac{1}{4\pi c^{3}} (\ddot{\bm{d}})^{2} \sin^{2}\theta \dd\Omega,
+\end{equation}
+in cui $\theta$ è l'angolo compreso fra i vettori $\ddot{\bm{d}}$ e
+$\versor{n}$.  L'intensità totale $I$ emessa dalla radiazione è data
+dall'integrale su tutto l'angolo solido, quindi dobbiamo sostituire
+$\dd\Omega = 2\pi \sin\theta \dd\theta$ e integrare su $\theta$ fra $0$ e $\pi$
+\begin{equation}
+  I = \int \dd I = \frac{2\pi}{4\pi c^{3}} (\ddot{\bm{d}})^{2} \int_{0}^{\pi}
+  \sin^{3}\theta \dd\theta = \frac{2}{3c^{2}}(\ddot{\bm{d}})^{2}.
+\end{equation}
+Questa è dunque l'energia emessa, per unità di tempo, dal sistema
+nell'approssimazione di dipolo appena sviluppata ed è nulla se il momento di
+dipolo è nullo (o almeno se $\ddot{\bm{d}} = \bm{0}$).
+
 \section{Equazioni del moto di un campo e tensore energia-impulso}
 \label{sec:tensore-energia-impulso}
 
@@ -1366,7 +1600,8 @@ $\partial\Omega$.  Allora
 \end{equation}
 Si deve avere $\delta S = 0$ per una variazione arbitraria $\delta q$, pertanto
 si deve annullare il termine fra parentesi e così giungiamo all'equazione del
-moto (o \emph{equazione di Eulero-Lagrange}) del campo
+moto (o \index{equazione!di Eulero-Lagrange}\emph{equazione di Eulero-Lagrange})
+del campo
 \begin{equation}
   \label{eq:eulero-lagrange-campi}
   \parder{\Lambda}{q} - \parder{}{x^{\alpha}}\parder{\Lambda}{q_{,\alpha}} = 0.
@@ -1471,11 +1706,11 @@ Inoltre $T^{i0}$ è la densità di flusso di energia nella direzione $x^{i}$,
 $T^{ij}$ è la densità di flusso della componente $j$ del momento nella direzione
 $i$.
 
-Le equazioni di Maxwell che descrivono il campo elettromagnetico possono essere
-ricavate applicando il formalismo qui introdotto.
-\index{azione!del campo elettromagnetico}L'azione $S$ di un sistema composto da
-un campo elettromagnetico e delle particelle che interagiscono con esso è
-formata da tre parti
+Le \index{equazioni!di Maxwell}equazioni di Maxwell che descrivono il campo
+elettromagnetico possono essere ricavate applicando il formalismo qui
+introdotto.  \index{azione!del campo elettromagnetico}L'azione $S$ di un sistema
+composto da un campo elettromagnetico e delle particelle che interagiscono con
+esso è formata da tre parti
 \begin{equation}
   S = S_{\textup{p}} + S_{\textup{pc}} + S_{\textup{c}}.
 \end{equation}
@@ -1490,15 +1725,16 @@ dipende solo dalle proprietà del campo, cioè è l'azione in assenza di cariche
 vale $-1/4 \int F^{\alpha\beta}F_{\alpha\beta}\dd^{4}
 x$,\footnote{Abbiamo
   qui deciso di utilizzare il sistema di unità di Heaviside nel quale il fattore
-  davanti all'integrale vale $-1/4$.  Un altro sistema di unità molto usato è
-  quello di Gauss nel quale il fattore assume il valore $-1/(16\pi)$.}
-così che l'azione complessiva è
+  davanti all'integrale vale $-1/4$.  Nel sistema di unità di Gauss, usato nel
+  paragrafo~\ref{sec:onde-elettromagnetiche-cariche}, il fattore assume il
+  valore $-1/(16\pi)$.}  così che l'azione complessiva è
 \begin{equation}
   S = -\sum_{n} m_{n}\int \dd\tau - \int J^{\alpha}A_{\alpha} \dd^{4} x
   -\frac{1}{4} \int F^{\alpha\beta}F_{\alpha\beta} \dd^{4} x.
 \end{equation}
-Per determinare le equazioni di Maxwell in presenza di sorgenti bisogna
-considerare solo le parti dell'azione che coinvolgono il campo, cioè
+Per determinare le \index{equazioni!di Maxwell}equazioni di Maxwell in presenza
+di sorgenti bisogna considerare solo le parti dell'azione che coinvolgono il
+campo, cioè
 \begin{equation}
   S_{\textup{pc}} + S_{\textup{c}} =  \int (\Lambda_{\textup{pc}} +
   \Lambda_{\textup{c}}) \dd^{4} x = \int \bigg( -J^{\alpha}A_{\alpha}
@@ -1510,8 +1746,8 @@ e applicare le equazioni di Eulero-Lagrange~\eqref{eq:eulero-lagrange-campi} a
   -\frac{1}{4} F^{\alpha\beta}F_{\alpha\beta}.
 \end{equation}
 Le componenti $A_{\alpha}(x)$ del quadripotenziale svolgono il ruolo del campo
-$q(x)$.  Per ottenere le equazioni di Maxwell in assenza di sorgenti si
-considera solo $\Lambda = \Lambda_{\textup{c}}$.
+$q(x)$.  Per ottenere le \index{equazioni!di Maxwell}equazioni di Maxwell in
+assenza di sorgenti si considera solo $\Lambda = \Lambda_{\textup{c}}$.
 
 Il tensore energia-impulso $T_{\textup{em}}^{\alpha\beta}$ del campo
 elettromagnetico si ottiene dalla definizione~\eqref{eq:tensore-energia-impulso}

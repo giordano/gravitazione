@@ -2,23 +2,26 @@
 \label{cha:onde-grav}
 
 Nel paragrafo~\ref{sec:campo-statico-sferico} abbiamo risolto le equazioni di
-Einstein nel vuoto in un campo a simmetria sferica.  In questo capitolo ci
-occuperemo della risoluzione delle equazioni di Einstein nel vuoto e
+Einstein nel vuoto in un campo gravitazionale a simmetria sferica.  In questo
+capitolo ci occuperemo della risoluzione delle equazioni di Einstein
 nell'approssimazione di campo debole, quindi ci serviremo di alcuni risultati
 trovati nei paragrafi~\ref{sec:limite-newtoniano} e
 \ref{sec:limite-newtoniano-einstein}.  Troveremo che il campo gravitazionale può
-emettere radiazione, analogamente a quanto succede per il campo
-elettromagnetico, come abbiamo visto nel
-paragrafo~\ref{sec:onde-elettromagnetiche}.  Sebbene questo risultato sarà
-ottenuto nell'approssimazione di campo debole, è un fatto del tutto generale, ma
-la trattazione non approssimata presenta notevoli difficoltà matematiche legate
-alla non linearità delle equazioni di Einstein.
+emettere radiazione analogamente a quanto succede per il campo elettromagnetico,
+come abbiamo visto nei paragrafi~\ref{sec:onde-elettromagnetiche-vuoto} e
+\ref{sec:onde-elettromagnetiche-cariche}.
 
-\section{Approssimazione di campo debole}
-\label{sec:approx-campo-debole-onde}
+Sebbene questo risultato sarà ottenuto nell'approssimazione di campo debole, è
+un fatto del tutto generale, ma la trattazione non approssimata presenta
+notevoli difficoltà matematiche legate alla non linearità delle equazioni di
+Einstein.
 
-Ricordiamo che nell'approssimazione di campo debole il tensore metrico
-covariante è dato da
+\section{Onde gravitazionali nel vuoto}
+\label{sec:onde-grav-vuoto}
+
+In questo paragrafo risolviamo, in particolare, le equazioni di Einstein nel
+vuoto, cioè con $T^{\mu\nu} = 0$.  Ricordiamo che nell'approssimazione di campo
+debole il tensore metrico covariante è dato da
 \begin{equation}
   g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu},
 \end{equation}
@@ -69,7 +72,7 @@ $h_{\mu\nu}$, è dato da
   \end{split}
 \end{equation}
 in cui $h = \tensor{h}{^{\lambda}_{\lambda}} = \eta^{\mu\lambda} h_{\mu\lambda}$
-è la contrazione della perturbazione.  Nel vuoto allora abbiamo
+è la traccia della perturbazione.  Nel vuoto allora abbiamo
 \begin{equation}
   R_{\mu\nu} = \frac{1}{2} (\dalamb h_{\mu\nu} + \partial_{\mu}\partial_{\nu} h
   - \partial^{\lambda}\partial_{\nu} h_{\mu\lambda}
@@ -207,7 +210,7 @@ onde piane del tipo
 \end{equation}
 Queste sono le \index{onda!gravitazionale}\emph{onde gravitazionali}.
 Dalla~\eqref{eq:einstein-lineare} abbiamo (omettendo il simbolo $\Re$ per quanto
-detto nel paragrafo~\ref{sec:onde-elettromagnetiche})
+detto nel paragrafo~\ref{sec:onde-elettromagnetiche-vuoto})
 \begin{equation}
   0 = \dalamb h_{\mu\nu} = \uimm k^{\lambda} \uimm k_{\lambda} e_{\mu\nu}
   \e^{\uimm k^{\lambda}x_{\lambda}} \implies k^{\lambda}k_{\lambda} = 0,
@@ -329,7 +332,7 @@ indipendenti, la condizione armonica diminuisce questo numero a sei e la libert�
 di scelta sulla trasformazione di gauge fissa il numero di componenti
 indipendenti a due, in maniera analoga a quello che succede per le onde
 elettromagnetico nel vuoto.  Sono quindi due gli stati di polarizzazione fisica
-delle onde gravitazionali.  Tutte queste condizioni determinano la
+delle onde gravitazionali.  Questa scelta di coordinate determina la
 \index{gauge!trasversa a traccia nulla}\emph{gauge trasversa a traccia nulla}:
 ``a traccia nulla'' perché
 $\tensor{e}{^{\mu}_{\mu}} = \tensor{e}{^{0}_{0}} + \tensor{e}{^{1}_{1}} +
@@ -338,8 +341,28 @@ $\tensor{e}{^{\mu}_{\mu}} = \tensor{e}{^{0}_{0}} + \tensor{e}{^{1}_{1}} +
 ``trasversa'' perché le componenti non nulle del tensore di polarizzazione sono
 sulle direzioni perpendicolari alla direzione di propagazione dell'onda (per
 un'onda gravitazionale che si muovo lungo l'asse $z$ sono non nulle le
-componenti associate agli assi $x$ e $y$).
+componenti associate agli assi $x$ e $y$).  Poiché i tensori di polarizzazione
+rappresentano l'ampiezza delle onde da cui è costituito $h_{\mu\nu}$, anche
+$h_{\mu\nu}$ sarà trasverso e con traccia $h = \tensor{h}{^{\mu}_{\mu}}$ nulla.
 
+% TODO: completare dopo aver rivisto i calcoli, al momento non mi convincono
+% molto.  Vedi appunti dei giorni 24-25/05/2012
+\section{\completare{Tecniche di rivelazione delle onde gravitazionali}}
+\label{sec:rivelazione-onde}
+
+Consideriamo due particelle $A$ e $B$, descritte rispettivamente dalle linee
+d'universo $x^{\mu}_{A} = x^{\mu}(\tau)$ e
+$x^{\mu}_{B} = x^{\mu}_{A}(\tau) + \delta x^{\mu}(\tau)$, cioè il vettore
+$\delta x^{\mu}(\tau)$ rappresenta la separazione fra $A$ e $B$.  Dall'equazione
+di deviazione geodetica % TODO: mettere riferimento
+sappiamo che
+\begin{equation}
+  \curder[2]{\delta x^{\mu}} = \tensor{R}{^{\lambda}_{\nu\mu\rho}} \delta
+  x^{\mu} \toder{x^{\nu}}{\tau} \toder{x^{\rho}}{\tau}
+\end{equation}
+
+\section{Onde gravitazionali in presenza di masse in moto}
+\label{sec:onde-grav-masse}
 
 
 
