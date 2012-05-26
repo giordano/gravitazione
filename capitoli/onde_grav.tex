@@ -65,11 +65,283 @@ $h_{\mu\nu}$, è dato da
     + \partial_{\lambda}\partial^{\lambda} h_{\mu\nu}) \\
     &= \frac{1}{2} (\dalamb h_{\mu\nu} + \partial_{\mu}\partial_{\nu} h
     - \partial^{\lambda}\partial_{\nu} h_{\mu\lambda}
-    - \partial_{\mu}\partial^{\nu} h_{\nu\lambda}),
+    - \partial_{\mu}\partial^{\lambda} h_{\nu\lambda}),
   \end{split}
 \end{equation}
-in cui $h = \tensor{h}{^{\lambda}_{\lambda}}$ è la contrazione della
-perturbazione.
+in cui $h = \tensor{h}{^{\lambda}_{\lambda}} = \eta^{\mu\lambda} h_{\mu\lambda}$
+è la contrazione della perturbazione.  Nel vuoto allora abbiamo
+\begin{equation}
+  R_{\mu\nu} = \frac{1}{2} (\dalamb h_{\mu\nu} + \partial_{\mu}\partial_{\nu} h
+  - \partial^{\lambda}\partial_{\nu} h_{\mu\lambda}
+  - \partial_{\mu}\partial^{\lambda} h_{\nu\lambda}) = 0.
+\end{equation}
+
+A questo punto vogliamo manipolare l'espressione ottenuta per il tensore di
+Ricci in modo che le equazioni di Einstein nel vuoto si linearizzino, diventando
+analoghe alle equazioni di Maxwell nel vuoto $\dalamb A_{\beta} = 0$.  Come nel
+caso elettromagnetico, è possibile fare ciò scegliendo una gauge opportuna.  In
+questo caso conviene scegliere la \index{gauge!armonica}\emph{gauge armonica}
+\begin{equation}
+  \label{eq:gauge-armonica}
+  \partial_{\mu} \tensor{h}{^{\mu}_{\nu}} =
+  \frac{1}{2}\partial_{\nu}\tensor{h}{^{\mu}_{\mu}}.
+\end{equation}
+Infatti usando questa gauge gli ultimi tre termini del tensore di Ricci si
+annullano
+\begin{equation}
+  \begin{split}
+    \partial_{\mu}\partial_{\nu} h - \partial^{\lambda}\partial_{\nu}
+    h_{\mu\lambda} - \partial_{\mu}\partial^{\lambda} h_{\nu\lambda}
+    &= \partial_{\mu}(2 \partial_{\lambda}\tensor{h}{^{\lambda}_{\nu}})
+    - \partial_{\nu}(\partial_{\lambda}\tensor{h}{^{\lambda}_{\mu}})
+    - \partial_{\lambda}\partial_{\mu} \tensor{h}{^{\lambda}_{\nu}} \\
+    &= \partial_{\mu}\partial_{\lambda} \tensor{h}{^{\lambda}_{\nu}}
+    - \partial_{\nu}(\partial_{\lambda} \tensor{h}{^{\lambda}_{\mu}}) \\
+    &= \partial_{\mu}\bigg(\frac{1}{2}\partial_{\nu}
+    \tensor{h}{^{\lambda}_{\lambda}}\bigg)
+    - \partial_{\nu}\bigg(\frac{1}{2}\partial_{\mu}
+    \tensor{h}{^{\lambda}_{\lambda}}\bigg) = 0
+  \end{split}
+\end{equation}
+e quindi $R_{\mu\nu} = \dalamb h_{\mu\nu}/2$.  Le equazioni di Einstein nel
+vuoto si possono, in questo modo, scrivere nella seguente forma lineare
+\begin{equation}
+  \label{eq:einstein-lineare}
+  \dalamb h_{\mu\nu} = 0.
+\end{equation}
+Osserviamo che la condizione di gauge armonica~\eqref{eq:gauge-armonica} si può
+anche porre nella forma
+$\Gamma^{\lambda} = \eta^{\mu\nu} = \tensor{\Gamma}{^{\lambda}_{\mu\nu}} = 0$ in
+quanto
+\begin{equation}
+  \begin{split}
+    0 &=\eta^{\mu\nu} \tensor{\Gamma}{^{\lambda}_{\mu\nu}} = \frac{1}{2}
+    \eta^{\lambda\sigma} (\partial^{\mu}h_{\mu\sigma} + \partial^{\mu}
+    h_{\mu\sigma} - \partial_{\sigma}\tensor{h}{^{\mu}_{\mu}}) \\
+    &= \frac{1}{2} (\partial^{\mu} \tensor{h}{_{\mu}^{\lambda}} + \partial^{\mu}
+    \tensor{h}{_{\mu}^{\lambda}} - \partial^{\lambda} \tensor{h}{^{\mu}_{\mu}}),
+  \end{split}
+\end{equation}
+da cui
+\begin{equation}
+  \partial^{\lambda} \tensor{h}{^{\mu}_{\mu}} = 2 \partial^{\mu}
+  \tensor{h}{_{\mu}^{\lambda}}
+\end{equation}
+che equivale alla~\eqref{eq:gauge-armonica}.
+
+Si può sempre scegliere un sistema di riferimento in cui sia valida la
+condizione armonica.  Sia $x^{\mu}$ un sistema di coordinate in cui questa
+condizione non è valida, allora possiamo effettuare la trasformazione
+infinitesima $x^{\mu} \to x'^{\mu} = x^{\mu} + \epsilon^{\mu}(x)$, con
+$\abs{\epsilon^{\mu}(x)} \ll 1$, richiedendo che la metrica si possa ancora
+sviluppare come $g'_{\mu\nu} = \eta_{\mu\nu} + h'_{\mu\nu}$, in modo da poter
+ancora ottenere la forma linearizzata~\eqref{eq:einstein-lineare} delle
+equazioni di Einstein.  Possiamo determinare un'espressione esplicita per
+$h'_{\mu\nu}$ imponendo che il tensore metrico controvariante nel nuovo sistema
+$g'^{\mu\nu} = \eta^{\mu\nu} - h'^{\mu\nu}$ si trasformi come un tensore
+controvariante di rango $2$.  Trascurando termini del secondo ordine in
+$\epsilon$ o dell'ordine di $h\epsilon$ abbiamo
+\begin{equation}
+  \begin{split}
+    g'^{\mu\nu} &=
+    g^{\lambda\rho} \parder{x'^{\mu}}{x^{\lambda}} \parder{x'^{\nu}}{x^{\rho}} =
+    (\eta^{\lambda\rho} + h^{\lambda\rho}) (\tensor{\delta}{^{\mu}_{\lambda}}
+    + \partial_{\lambda}\epsilon^{\mu}) (\tensor{\delta}{^{\nu}_{\rho}}
+    + \partial_{\rho} \epsilon^{\nu}) \\
+    &= (\eta^{\mu\rho} - h^{\mu\rho} +
+    \eta^{\lambda\rho}\partial_{\lambda}\epsilon^{\mu} -
+    \underbrace{h^{\lambda\rho} \partial_{\lambda}
+      \epsilon^{\mu}}_{\mathcal{O}(h\epsilon)})
+    (\tensor{\delta}{^{\nu}_{\rho}} + \partial_{\rho} \epsilon^{\nu}) \\
+    &\approx \eta^{\mu\nu} - h^{\mu\nu} + \eta^{\lambda\nu}\partial_{\lambda}
+    \epsilon^{\mu} + \eta^{\mu\rho}\partial_{\rho} \epsilon^{\nu} -
+    \underbrace{h^{\mu\rho}\partial_{\rho}\epsilon^{\nu}}_{\mathcal{O}(h\epsilon)}
+    + \underbrace{\partial^{\rho} \epsilon^{\mu} \partial_{\rho}
+      \epsilon^{\nu}}_{\mathcal{O}(\epsilon^{2})} \\
+    & \approx \eta^{\mu\nu} - h^{\mu\nu} + \partial^{\nu} \epsilon^{\mu}
+    + \partial^{\mu} \epsilon^{\nu}.
+  \end{split}
+\end{equation}
+Dunque
+\begin{equation}
+  h'^{\mu\nu} = h^{\mu\nu} - \partial^{\nu} \epsilon^{\mu} + \partial^{\mu}
+  \epsilon^{\nu}.
+\end{equation}
+In questo nuovo sistema di riferimento calcoliamo ambo i membri
+della~\eqref{eq:gauge-armonica}
+\begin{equation}
+  \begin{split}
+    &\partial_{\mu} \tensor{{h'}}{^{\mu}_{\nu}} = \frac{1}{2}\partial_{\nu}
+    \tensor{{h'}}{^{\mu}_{\mu}} \iff \\
+    &\partial_{\mu} \tensor{h}{^{\mu}_{\nu}}
+    - \partial_{\mu} \partial_{\nu} \epsilon^{\nu}
+    - \partial_{\mu}\partial^{\mu} \epsilon_{\nu}
+    = -\frac{1}{2} \partial_{\nu} \partial_{\mu} \epsilon^{\mu} -
+    \frac{1}{2}\partial_{\nu} \partial_{\mu} \epsilon^{\mu} +
+    \frac{1}{2} \partial_{\nu} \tensor{h}{^{\mu}_{\mu}} \iff \\
+    &\partial_{\mu} \tensor{h}{^{\mu}_{\nu}}
+    - \partial_{\mu}\partial^{\mu} \epsilon_{\nu}
+    = \frac{1}{2} \partial_{\nu} \tensor{h}{^{\mu}_{\mu}}.
+  \end{split}
+\end{equation}
+Quindi se scegliamo il generatore $\epsilon_{\nu}$ della trasformazione
+infinitesima delle coordinate tale che
+\begin{equation}
+  \dalamb \epsilon_{\nu} = \partial_{\mu} \tensor{h}{^{\mu}_{\nu}} -
+  \frac{1}{2} \partial_{\nu} \tensor{h}{^{\mu}_{\mu}}
+\end{equation}
+allora nel nuovo sistema di riferimento la condizione
+armonica~\eqref{eq:gauge-armonica} sarà soddisfatta.  Se la condizione era già
+valida nel sistema di partenza, bisognerà allora porre
+$\dalamb \epsilon_{\nu} = 0$.  Questa libertà di scelta ricorda la libertà che
+si ha nella gauge di Lorenz per il potenziale elettromagnetico.
+
+Abbiamo visto che con la gauge armonica~\eqref{eq:gauge-armonica} l'equazione di
+Einstein nel vuoto può essere scritta nella forma
+lineare~\eqref{eq:einstein-lineare}, che è del tutto analoga alle equazioni di
+Maxwell~\eqref{eq:maxwell-vuoto-lorenz} nel vuoto con la gauge di Lorenz, quindi
+anche per $h_{\mu\nu}$ la soluzione generale sarà una sovrapposizione lineare di
+onde piane del tipo
+\begin{equation}
+  h_{\mu\nu} = \Re\{e_{\mu\nu} \e^{\uimm k^{\lambda}x_{\lambda}} \}.
+\end{equation}
+Queste sono le \index{onda!gravitazionale}\emph{onde gravitazionali}.
+Dalla~\eqref{eq:einstein-lineare} abbiamo (omettendo il simbolo $\Re$ per quanto
+detto nel paragrafo~\ref{sec:onde-elettromagnetiche})
+\begin{equation}
+  0 = \dalamb h_{\mu\nu} = \uimm k^{\lambda} \uimm k_{\lambda} e_{\mu\nu}
+  \e^{\uimm k^{\lambda}x_{\lambda}} \implies k^{\lambda}k_{\lambda} = 0,
+\end{equation}
+cioè le onde si muovono, come quelle elettromagnetiche, alla velocità della luce
+nel vuoto.  Inoltre dalla gauge armonica~\eqref{eq:gauge-armonica} abbiamo
+\begin{equation}
+  \uimm k_{\lambda} \tensor{e}{^{\lambda}_{\nu}} \e^{\uimm
+    k^{\lambda}x_{\lambda}} = \frac{\uimm}{2} k_{\nu}
+  \tensor{e}{^{\lambda}_{\lambda}} \e^{\uimm k^{\lambda}x_{\lambda}} \iff
+  k_{\lambda} \tensor{e}{^{\lambda}_{\nu}} = \frac{1}{2} k_{\nu}
+  \tensor{e}{^{\lambda}_{\lambda}}.
+\end{equation}
+Dal momento che $h_{\mu\nu}$ è simmetrico nello scambio degli indici, lo dovrà
+essere anche $e_{\mu\nu}$, chiamato \index{tensore!di polarizzazione}
+\emph{tensore di polarizzazione}, il quale quindi avrà indipendenti al più dieci
+delle sue sedici componenti.  Al variare di $\nu$ nell'equazione precedente ci
+sono quattro ulteriori relazioni che legano le componenti del tensore di
+polarizzazione, quindi il numero di componenti indipendenti non può superare
+sei.
+
+Scegliamo l'asse $z$ lungo la direzione di propagazione dell'onda, di modo
+che il vettore d'onda abbia la forma
+$k^{\mu} = (k^{0}, k^{1}, k^{2}, k^{3}) = (k, 0, 0, k)$.  Ponendo nell'equazione
+precedente $\nu = 1$ abbiamo
+\begin{equation}
+  k_{\mu}\tensor{e}{^{\mu}_{1}} = \frac{1}{2} k_{1}\tensor{e}{^{\mu}_{\mu}} = 0.
+\end{equation}
+Esplicitiamo il primo membro
+\begin{equation}
+  k_{0} \tensor{e}{^{0}_{1}} + k_{3} \tensor{e}{^{3}_{1}} = 0 \implies
+  \tensor{e}{^{0}_{1}} = -\tensor{e}{^{3}_{1}} \implies e_{01} = -e_{31}.
+\end{equation}
+Analogamente per $\nu = 2$ si trova
+\begin{equation}
+  k_{\mu} \tensor{e}{^{\mu}_{2}} = \frac{1}{2} k_{2} \tensor{e}{^{\mu}_{\mu}} =
+  0 \implies e_{02} = -e_{32}.
+\end{equation}
+Per $\nu = 0$ risulta
+\begin{equation}
+  \begin{split}
+    &k_{\mu} \tensor{e}{^{\mu}_{0}} = \frac{1}{2} k_{0}\tensor{e}{^{\mu}_{\mu}}
+    = \frac{1}{2}\eta_{00}k^{0}\tensor{e}{^{\mu}_{\mu}} =
+    -\frac{1}{2}k^{0}\tensor{e}{^{\mu}_{\mu}} \implies \\
+    &k^{0} e_{00} + k^{3}e_{30} = -\frac{1}{2}k^{0}(\tensor{e}{^{1}_{1}} +
+    \tensor{e}{^{2}_{2}} + \tensor{e}{^{3}_{3}} - e_{00})
+  \end{split}
+\end{equation}
+e poiché $\tensor{e}{^{i}_{i}} = \eta^{ij}e_{ij} = \delta^{ij}e_{ij} = e_{ii}$
+ricaviamo
+\begin{equation}
+  e_{00} + e_{30} = -\frac{1}{2}(e_{11} + e_{22} + e_{33} - e_{00}).
+\end{equation}
+In maniera simile, per $\nu = 3$ si trova
+\begin{equation}
+  e_{03} + e_{33} = \frac{1}{2}(e_{11} + e_{22} + e_{33} - e_{00}).
+\end{equation}
+Sommando membro a membro le ultime due equazioni e sfruttando la simmetria del
+tensore di polarizzazione abbiamo
+\begin{equation}
+  e_{03} = -\frac{1}{2}(e_{33} + e_{00})
+\end{equation}
+e inserendo questo risultato nell'equazione trovata per $\nu = 3$ otteniamo
+\begin{equation}
+  e_{22} = -e_{11}.
+\end{equation}
+Riepilogando, fino a questo punto abbiamo trovato per un'onda gravitazionale che
+si propaga lungo l'asse $z$ si ha
+\begin{subequations}
+  \begin{align}
+    e_{01} &= -e_{31}, \\
+    e_{02} &= -e_{32}, \\
+    e_{03} &= -\frac{1}{2}(e_{33} + e_{00}), \\
+    e_{22} &= -e_{11}.
+  \end{align}
+\end{subequations}
+Abbiamo dedotto tutto ciò nell'ipotesi che sia valida la condizione
+armonica~\eqref{eq:gauge-armonica}.  Effettuiamo una trasformazione infinitesima
+delle coordinate $x^{\mu} \to x'^{\mu} = x^{\mu} + \epsilon^{\mu}(x)$.  Affinché
+sia ancora valida l'equazione di Einstein linearizzata e la gauge armonica
+abbiamo visto che deve valere $\dalamb \epsilon^{\mu} = 0$.  Poiché anche
+$\epsilon^{\mu}$ soddisfa l'equazione delle onde, la sua soluzione sarà data
+dalla sovrapposizione lineare di onde del tipo
+\begin{equation}
+  \epsilon^{\mu} = \Re\{\tilde\epsilon^{\mu}\e^{\uimm k^{\lambda}x_{\lambda}}\}.
+\end{equation}
+La perturbazione della metrica in questo nuovo sistema è
+\begin{equation}
+  h'_{\mu\nu} = \Re\{e'_{\mu\nu} \e^{\uimm k^{\lambda}x_{\lambda}}\} =
+  h_{\mu\nu} - \partial_{\nu}\epsilon_{\mu} - \partial_{\mu}\epsilon_{\nu}
+\end{equation}
+e poiché
+$\partial_{\nu}\epsilon_{\mu} = \uimm k_{\nu}\tilde\epsilon_{\mu}
+\e^{\uimm k^{\lambda}x_{\lambda}}$ si ha
+\begin{equation}
+  e'_{\mu\nu} = e_{\mu\nu} - \uimm k_{\nu}\tilde\epsilon_{\mu} - \uimm
+  k_{\mu}\tilde\epsilon_{\nu}.
+\end{equation}
+Così risulta
+\begin{subequations}
+  \begin{align}
+    e'_{11} &= e_{11} - \uimm k_{1} \tilde\epsilon_{1} - \uimm
+    k_{1}\tilde\epsilon_{1} = e_{11}, \\
+    e'_{12} &= e_{12} - \uimm k_{2}\tilde\epsilon_{1} - \uimm
+    k_{1}\tilde\epsilon_{2} = e_{12}, \\
+    e'_{13} &= e_{13} - \uimm k_{3}\tilde\epsilon_{1} - \uimm
+    k_{1}\tilde\epsilon_{3} = e_{13} - \uimm k_{3}\tilde\epsilon_{1} = 0
+  \end{align}
+\end{subequations}
+avendo posto $\tilde\epsilon_{1} = -\uimm e_{13}/k_{3}$.
+% TODO: controllare i seguenti calcoli
+Scegliendo in maniera opportuna gli altri $\epsilon_{\mu}$ si possono annullare
+anche $e'_{13} = e'_{23} = e'_{33} = e'_{00} = 0$ e anche
+$e_{01} = -e_{31} = e_{02} = -e_{32} = e_{03} = 0$, quindi rimangono diversi da
+zero solo le componenti $e_{22} = -e_{11}$ e $e_{12} = e_{21}$ per un'onda che
+si propaga lungo l'asse $z$.  Abbiamo trovato che la simmetria del tensore di
+polarizzazione riduce da sedici a dieci il numero di sue componenti
+indipendenti, la condizione armonica diminuisce questo numero a sei e la libertà
+di scelta sulla trasformazione di gauge fissa il numero di componenti
+indipendenti a due, in maniera analoga a quello che succede per le onde
+elettromagnetico nel vuoto.  Sono quindi due gli stati di polarizzazione fisica
+delle onde gravitazionali.  Tutte queste condizioni determinano la
+\index{gauge!trasversa a traccia nulla}\emph{gauge trasversa a traccia nulla}:
+``a traccia nulla'' perché
+$\tensor{e}{^{\mu}_{\mu}} = \tensor{e}{^{0}_{0}} + \tensor{e}{^{1}_{1}} +
+\tensor{e}{^{2}_{2}} + \tensor{e}{^{3}_{3}} = \tensor{e}{^{1}_{1}} +
+\tensor{e}{^{2}_{2}} = 0$,
+``trasversa'' perché le componenti non nulle del tensore di polarizzazione sono
+sulle direzioni perpendicolari alla direzione di propagazione dell'onda (per
+un'onda gravitazionale che si muovo lungo l'asse $z$ sono non nulle le
+componenti associate agli assi $x$ e $y$).
+
+
+
 
 %%% Local Variables:
 %%% mode: latex
