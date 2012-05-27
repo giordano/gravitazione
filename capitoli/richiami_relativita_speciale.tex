@@ -23,7 +23,7 @@ utilizza una metrica differente da quelle usualmente adottate in $\R^{3}$ ed
 $\R^{4}$.
 
 Nello spazio ordinario $\R^{3}$ si definisce la metrica, ovvero la distanza fra
-due punti infinitesimamente vicini di coordinate
+due punti infinitesimamente vicini di coordinate cartesiane
 $\bm{x} = (x,y,z) \equiv (x_{1},x_{2},x_{3})$ e
 $\bm{x} + \dd \bm{x} = (x+\dd x,y+\dd y,z+\dd z) \equiv (x_{1}+\dd
 x_{1},x_{2}+\dd x_{2},x_{3}+\dd x_{3})$ come
@@ -42,8 +42,8 @@ dove $\delta_{ij}$ è il tensore metrico dato da
 \end{equation}
 Allo stesso modo, nello spazio $\R^{4}$ si utilizza il tensore metrico
 rappresentato da $\diag (+1,+1,+1,+1)$.  Una generica trasformazione lineare
-omogenea delle coordinate $(x,y,z) \equiv (x_{1},x_{2},x_{3})$ che lasci
-invariate la metrica, cioè che soddisfi la condizione
+omogenea delle coordinate cartesiane $(x,y,z) \equiv (x_{1},x_{2},x_{3})$ che
+lasci invariate la metrica, cioè che soddisfi la condizione
 $\dd\bm{x}^{2} = \dd\bm{x}'^{2}$, può essere scritta come
 \begin{equation}
   x'_{i} = \sum_{j=1}^{3} R_{ij}x_{j}, \qquad i,j = 1,2,3,
@@ -53,7 +53,8 @@ di rotazione.
 
 Nello spaziotempo di Minkowski definiamo le
 \index{coordinata!controvariante}\emph{coordinate controvarianti} di un evento
-che avviene al tempo $t$ nel punto dello spazio tridimensionale $\bm{x}$ come
+che avviene al tempo $t$ nel punto $\bm{x}$ dello spazio tridimensionale con
+coordinate cartesiane $(x,y,z) \equiv (x^{1}, x^{2}, x^{3})$ come
 \begin{equation}
   \label{eq:coord-controvariante}
   x^{\alpha} = (x^{0},x^{i}) = (t, \bm{x}),
@@ -84,7 +85,10 @@ in cui $\tensor{\eta}{_{\alpha\beta}}$ è il
     0  & 0  & 0  & +1
   \end{pmatrix}.
 \end{equation}
-Questo tensore definisce una metrica pseudo euclidea con segnatura
+Se si scelgono coordinate spaziali non cartesiane, come per esempio le
+coordinate sferiche o cilindriche, il tensore metrico assume una forma
+differente.  Se non diversamente specificato useremo sempre coordinate spaziali
+cartesiane.  Questo tensore definisce una metrica pseudo euclidea con segnatura
 $(-+++)$,\footnote{In questo testo, se non diversamente specificato, abbiamo
   adottato questa segnatura, ma non è l'unica possibile nello spazio di
   Minkowski.  Un'altra segnatura largamente usata è $(+---)$.}
@@ -1319,12 +1323,13 @@ polarizzazioni fisiche dell'onda, sono $e_{1}$ ed $e_{2}$.
 \subsection{Onde elettromagnetiche in presenza di cariche in moto}
 \label{sec:onde-elettromagnetiche-cariche}
 
-\emph{Nota: in questo paragrafo esplicitiamo la velocità della luce nel vuoto e
-  adottiamo il sistema di unità di Gauss.}
+\emph{Nota: in questo paragrafo esplicitiamo la velocità $c$ della luce nel
+  vuoto e adottiamo il sistema di unità di Gauss.}
 
 In presenza di cariche in moto, l'equazione da risolvere nella gauge di Lorenz è
 (usando il sistema di unità di Gauss)
 \begin{equation}
+  \label{eq:maxwell-cariche}
   \dalamb A_{\beta} = -\frac{4\pi}{c}J_{\beta},
 \end{equation}
 in cui il secondo membro è diverso da zero.  Questa equazione equivale, al
@@ -1450,6 +1455,7 @@ dove $\versor{n} = \bm{r}/\norm{\bm{r}}$.  Sostituiamo questa espressione di $R$
 nelle formule~\eqref{eq:potenz-rit-phi} e \eqref{eq:potenz-rit-A} dei potenziali
 ritardati
 \begin{subequations}
+  \label{eq:potenz-em-distanti}
   \begin{align}
     \phi (\bm{r}, t) &= \frac{1}{r} \int \rho(\bm{r}', t - (r/c -
     \versor{n}\cdot\bm{r}'/c)) \dd V', \\
@@ -1478,25 +1484,28 @@ quindi in questo caso possiamo scrivere
 \end{subequations}
 La condizione $T \gg a/c$ equivale anche a dire che le dimensioni del sistema
 sono molto più piccole della lunghezza d'onda della radiazione emessa
-$a \ll cT = \lambda$.  Poiché ci troviamo a grandi distanze dalla sorgente e
-poiché $a \ll \lambda$, le onde emesse dal sistema possono essere considerate,
-in piccole regioni dello spazio, come onde piane.  Il potenziale vettore
-$\bm{A}$ può anche essere scritto come
+$a \ll cT = \lambda$.  Se oltre a trovarci a grandi distanze dalla sorgente
+risulta anche che $R$ sia molto più grande della lunghezza $\lambda$ delle onde
+emesse dal sistema, queste possono essere considerate, in piccole regioni dello
+spazio, come onde piane.  Una regione in cui è valida la condizione
+$R \gg \lambda \gg a$ è detta \index{zona!delle onde}\emph{zona delle onde}.
+Il potenziale vettore $\bm{A}$ può anche essere scritto come
 \begin{equation}
-  \bm{A} = \frac{1}{rc} \int \bm{J}|_{t-r/c} \dd V
+  \bm{A} = \frac{1}{rc} \int \bm{J}|_{t-r/c} \dd V'
 \end{equation}
 e non dipende, così, dalle variabili di integrazione.  Ponendo
 $\bm{J} = \rho \bm{v}$ abbiamo
 \begin{equation}
-  \bm{A} = \frac{1}{rc} \int (\rho\bm{v})|_{t-r/c} \dd V = \frac{1}{rc} \sum_{i}
-  q_{i}\bm{v}_{i} = \frac{1}{rc} \dot{\bm{d}},
+  \bm{A} = \frac{1}{rc} \int (\rho\bm{v})|_{t-r/c} \dd V' = \frac{1}{rc}
+  \sum_{i} q_{i}\bm{v}_{i} = \frac{1}{rc} \dot{\bm{d}},
 \end{equation}
 con $\bm{v}_{i}$ velocità della particella $i$-esima calcolata al tempo
 $t-r/c$ e
 \begin{equation}
   \bm{d} = \sum_{i} q_{i} \bm{r}_{i}
 \end{equation}
-momento di dipolo totale del sistema, sempre calcolato al tempo $t-r/c$.
+\index{momento!di dipolo di carica}\emph{momento di dipolo di carica} del
+sistema, sempre calcolato al tempo $t-r/c$.
 
 Per un'onda piana risulta
 $\bm{E} = \bm{B} \times \versor{n} \iff \bm{B} = -\bm{E}\times \versor{n}$ (cioè
@@ -1540,12 +1549,60 @@ $\versor{n}$.  L'intensità totale $I$ emessa dalla radiazione è data
 dall'integrale su tutto l'angolo solido, quindi dobbiamo sostituire
 $\dd\Omega = 2\pi \sin\theta \dd\theta$ e integrare su $\theta$ fra $0$ e $\pi$
 \begin{equation}
+  \label{eq:energia-dipolo}
   I = \int \dd I = \frac{2\pi}{4\pi c^{3}} (\ddot{\bm{d}})^{2} \int_{0}^{\pi}
   \sin^{3}\theta \dd\theta = \frac{2}{3c^{2}}(\ddot{\bm{d}})^{2}.
 \end{equation}
 Questa è dunque l'energia emessa, per unità di tempo, dal sistema
-nell'approssimazione di dipolo appena sviluppata ed è nulla se il momento di
-dipolo è nullo (o almeno se $\ddot{\bm{d}} = \bm{0}$).
+nell'approssimazione di dipolo appena sviluppata.  Poiché
+$\ddot{\bm{d}} = \sum_{i} q_{i} \dot{\bm{v}}_{i}$, le cariche emettono
+radiazione se sono accelerate.  Non si ha emissione di radiazione neanche se le
+cariche costituiscono un sistema isolato e hanno tutte lo stesso rapporto fra
+carica $q_{i}$ e massa $m_{i}$ perché
+\begin{equation}
+  \bm{d} = \sum_{i} \frac{q_{i}}{m_{i}} m_{i} \bm{r}_{i} = \text{costante}
+  \sum_{i} m_{i} \bm{r}_{i} = \text{costante} \cdot M_{\textup{tot}}
+  \bm{R}_{\textup{cm}},
+\end{equation}
+in cui $M_{\textup{tot}} = \sum_{i} m_{i}$ è la massa totale delle particelle e
+$\bm{R}_{\textup{cm}}$ è il raggio vettore del centro di massa del sistema, e
+dal momento che siamo nell'approssimazione non relativistica $v_{i} \ll c$ in un
+sistema isolato si ha $\ddot{\bm{R}}_{\textup{cm}} = \bm{0}$.
+
+I calcoli svolti per giungere alla formula~\eqref{eq:energia-dipolo}
+dell'energia emessa da un sistema di cariche è stata ottenuta sviluppando il
+potenziale vettore in serie di potenze di $a/\lambda \ll 1$ e arrestandosi al
+primo ordine.  È possibile continuare lo sviluppo di $\bm{A}$ in serie di
+potenze di $a/\lambda$ includendo i termini successivi dello sviluppo (quindi
+senza trascurare $\versor{n}\times\bm{r}'/c$ nell'argomento delle densità $\rho$
+e $\bm{J}$) ottenendo il seguente risultato per l'energia emessa dal sistema di
+cariche nell'unità di tempo
+\begin{equation}
+  I = \underbrace{\frac{2}{3c^{3}} (\ddot{\bm{d}})^{2}}_{\text{dipolo di carica}} +
+  \underbrace{\frac{2}{3c^{3}} (\ddot{\bm{m}})^{2}}_{\text{dipolo magnetico}} +
+  \underbrace{\frac{1}{180c^{5}}
+    (\dddot{D}_{\alpha\beta})^{2}}_{\text{quadrupolo di carica}} + \cdots
+\end{equation}
+con $\bm{m} = \sum_{i} q_{i} \bm{r}_{i} \times \bm{v}_{i}/(2c)$
+\index{momento!di dipolo magnetico}\emph{momento di dipolo magnetico} e
+$D_{\alpha\beta} = \sum_{i} q_{i}(3x_{\alpha}x_{\beta} -
+\delta_{\alpha\beta}r_{i}^{2})$
+\index{momento!di quadrupolo di carica}\emph{momento di quadrupolo di carica}.
+Sebbene i termini di dipolo magnetico e quadrupolo di carica siano generalmente
+trascurabili rispetto al termine di dipolo di carica, essi diventano i
+principali nello sviluppo in multipoli dei potenziali nei casi in cui è assente
+la radiazione di dipolo di carica, per esempio perché risulta
+$\ddot{\bm{d}} = \bm{0}$.  Osserviamo infine che per un sistema di cariche
+isolate in cui il rapporto $q_{i}/m_{i}$ è uguale per tutte le particelle è
+nullo il termine di radiazione di dipolo magnetico, oltre a quello di dipolo di
+carica, infatti ($m_{i} \bm{v}_{i} = \bm{p}_{i}$ poiché $v_{i} \ll c$)
+\begin{equation}
+  \bm{m} = \sum_{i} \frac{q_{i}}{2m_{i}c} m_{i} \bm{r}_{i} \times \bm{v}_{i}
+  \propto \sum_{i} \bm{r}_{i} \times \bm{p}_{i} = \bm{L}_{\textup{tot}},
+\end{equation}
+con $\bm{L}_{\textup{tot}}$ momento angolare totale del sistema, e per un
+sistema non relativistico isolato
+$\dot{\bm{L}}_{\textup{tot}} = \bm{0} \implies \dot{\bm{m}} = \bm{0}$.
 
 \section{Equazioni del moto di un campo e tensore energia-impulso}
 \label{sec:tensore-energia-impulso}

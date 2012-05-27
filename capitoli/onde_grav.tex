@@ -333,8 +333,8 @@ di scelta sulla trasformazione di gauge fissa il numero di componenti
 indipendenti a due, in maniera analoga a quello che succede per le onde
 elettromagnetico nel vuoto.  Sono quindi due gli stati di polarizzazione fisica
 delle onde gravitazionali.  Questa scelta di coordinate determina la
-\index{gauge!trasversa a traccia nulla}\emph{gauge trasversa a traccia nulla}:
-``a traccia nulla'' perché
+\index{gauge!trasversa a traccia nulla}\emph{gauge trasversa a traccia nulla}
+(gauge TT): ``a traccia nulla'' perché
 $\tensor{e}{^{\mu}_{\mu}} = \tensor{e}{^{0}_{0}} + \tensor{e}{^{1}_{1}} +
 \tensor{e}{^{2}_{2}} + \tensor{e}{^{3}_{3}} = \tensor{e}{^{1}_{1}} +
 \tensor{e}{^{2}_{2}} = 0$,
@@ -344,6 +344,25 @@ un'onda gravitazionale che si muovo lungo l'asse $z$ sono non nulle le
 componenti associate agli assi $x$ e $y$).  Poiché i tensori di polarizzazione
 rappresentano l'ampiezza delle onde da cui è costituito $h_{\mu\nu}$, anche
 $h_{\mu\nu}$ sarà trasverso e con traccia $h = \tensor{h}{^{\mu}_{\mu}}$ nulla.
+
+In teoria dei campi si fa la seguente classificazione:
+\begin{itemize}
+\item un \emph{campo scalare} è un campo che rimane invariato per trasformazioni
+  arbitrarie delle coordinate.  Un campo scalare ha spin $0$;
+\item un \emph{campo vettoriale} è un campo che, per effetto di un cambiamento
+  arbitrario delle coordinate, si trasforma come un vettore.  Un campo
+  vettoriale ha spin $1$;
+\item un \emph{campo tensoriale} è un campo che si trasforma come un tensore di
+  rango $2$ sotto un cambiamento di coordinate.  Un campo tensoriale ha spin
+  $2$.
+\end{itemize}
+Possiamo quindi osservare che i fotoni, i quanti del campo elettromagnetico,
+sono descritti dal campo vettoriale $A_{\mu}$ e quindi hanno spin $1$ e massa
+nulla in quanto il modulo quadro $k^{\mu}k_{\mu}$ del vettore d'onda è nullo,
+come visto nel paragrafo~\ref{sec:onde-elettromagnetiche-vuoto}.  Gli ipotetici
+quanti del campo gravitazionale, i \index{gravitone}\emph{gravitoni}, sono
+descritti dal campo tensoriale $h_{\mu\nu}$, quindi sono particelle con spin $2$
+e anch'essi massa nulla perché $k^{\mu}k_{\mu} = 0$.
 
 % TODO: completare dopo aver rivisto i calcoli, al momento non mi convincono
 % molto.  Vedi appunti dei giorni 24-25/05/2012
@@ -364,7 +383,192 @@ sappiamo che
 \section{Onde gravitazionali in presenza di masse in moto}
 \label{sec:onde-grav-masse}
 
+\emph{Nota: in questo paragrafo esplicitiamo la velocità $c$ della luce nel
+  vuoto.}
 
+Studiamo adesso un campo gravitazionale debole generato da masse in movimento
+con velocità $v \ll c$.  Abbiamo visto che nell'approssimazione di campo debole
+$R_{\mu\nu} = \dalamb h/2$, quindi l'equazione di Einstein in presenza della
+materia~\eqref{eq:einstein} diventa
+% TODO: introdurre nel paragrafo sulle onde gravitazionali nel vuoto il tensore
+% \tau_{\mu\nu} e spiegare che contiene termini del secondo ordine in R_{\mu\nu}
+% - \frac{1}{2} \delta^{\mu\nu}R.
+\begin{equation}
+  \label{eq:einstein-lineare-materia1}
+  \dalamb \bigg(h_{\mu\nu} - \frac{1}{2}\delta_{\mu\nu}h \bigg) = -\frac{16\pi
+    G}{c^{4}} \tau_{\mu\nu}.
+\end{equation}
+Introduciamo il tensore $\tensor{\psi}{^{\mu}_{\nu}}$ definito da
+\begin{equation}
+  \tensor{\psi}{^{\mu}_{\nu}} = \tensor{h}{^{\mu}_{\nu}} - \frac{1}{2}
+  \tensor{h}{^{\mu}_{\nu}} h.
+\end{equation}
+Osserviamo che nella gauge TT $h = 0$ e quindi
+$\tensor{\psi}{^{\mu}_{\nu}} = \tensor{h}{^{\mu}_{\nu}}$.  La gauge
+armonica~\eqref{eq:gauge-armonica} può essere definita rispetto a
+$\tensor{\psi}{^{\mu}_{\nu}}$ come
+\begin{equation}
+  \label{eq:gauge-armonica2}
+  \partial_{\mu}\tensor{\psi}{^{\mu}_{\nu}} = 0
+\end{equation}
+e l'equazione di Einstein linearizzata~\eqref{eq:einstein-lineare-materia1} in
+presenza di materia come
+\begin{equation}
+  \label{eq:einstein-lineare-materia2}
+  \dalamb \tensor{\psi}{^{\mu}_{\nu}} = -\frac{16\pi G}{c^{4}}
+  \tensor{\tau}{^{\mu}_{\nu}}.
+\end{equation}
+Da qui deriva inoltre che se è verificata la condizione
+armonica~\eqref{eq:gauge-armonica2} risulta anche
+\begin{equation}
+  \label{eq:gauge-armonica-tau}
+  \partial_{\mu}\tensor{\tau}{^{\mu}_{\nu}} = 0,
+\end{equation}
+che sostituisce l'equazione più generale $\tensor{T}{^{\mu}_{\nu;\mu}} = 0$.
+
+Vogliamo determinare il campo gravitazionale a grandi distanze rispetto al
+sistema in esame, in particolare nella \index{zona!delle onde}zona delle onde,
+cioè in una regione a distanza molto maggiore rispetto alla lunghezza delle onde
+irradiate dal sistema.  Dunque possiamo seguire gli stessi metodi utilizzati nel
+paragrafo~\ref{sec:onde-elettromagnetiche-cariche} ottenendo le formule per
+$\tensor{\psi}{^{\mu}_{\nu}}$ analoghe alle formule dei potenziali
+elettromagnetici ritardati.  D'altra parte osserviamo che l'equazione di
+Einstein~\eqref{eq:einstein-lineare-materia2} in presenza di masse in moto,
+nella gauge armonica, è formalmente uguale all'equazione di
+Maxwell~\ref{eq:maxwell-cariche} in presenza di cariche in moto, nella gauge di
+Lorenz, quindi possiamo scrivere direttamente la soluzione
+\begin{equation}
+  \tensor{\psi}{^{\mu}_{\nu}} = \frac{4G}{c^{4}}\int
+  \frac{(\tensor{\tau}{^{\mu}_{\nu}})|_{t - R/c}}{R} \dd V',
+\end{equation}
+in cui si è usata la stessa notazione del
+paragrafo~\ref{sec:onde-elettromagnetiche-cariche}.  Poiché inoltre le velocità
+con cui si muovono i corpi sono molto più piccole di quelle della luce nel
+vuoto, possiamo adottare l'approssimazione di dipolo e scrivere
+\begin{equation}
+  \label{eq:psi-mu-nu}
+  \tensor{\psi}{^{\mu}_{\nu}} = \frac{4G}{c^{4}r} \int
+  (\tensor{\tau}{^{\mu}_{\nu}})|_{t-r/c} \dd V'.
+\end{equation}
+In seguito ometteremo, per brevità, di specificare che le funzione integrande
+devono essere valutate all'istante $t-r/c$.
+% Nota: nel paragrafo 110 il Landau fa dei calcoli molto strani: abbassa un
+% indice muto (cioè cambia la posizione verticale di un solo indice della coppia
+% di indici muti), definisce il tensore D_{\alpha\beta} completamente covariante
+% uguale a un oggetto che è somma di un tensore completamente controvariante e
+% un altro completamente covariante.  Magari a me sfugge qualcosa ma per il
+% momento questi calcoli non mi convincono.  Ho seguito invece il Gasperini,
+% "Relatività generale e teoria della gravitazione", il quale fa calcoli
+% analoghi ma più sensati.
+Dalla~\eqref{eq:gauge-armonica-tau}, osservando che $\tau_{\mu\nu}$ è simmetrico
+rispetto allo scambio degli indici,
+\begin{subequations}
+  \begin{align}
+    \label{eq:baz1}
+    \partial^{k}\tau_{ik} + \partial^{0}\tau_{i0} = 0, \\
+    \label{eq:baz2}
+    \partial^{k}\tau_{0k} + \partial^{0}\tau_{00} = 0.
+  \end{align}
+\end{subequations}
+Moltiplichiamo la prima di queste equazioni per $x_{j}$ e integriamo su tutto lo spazio
+\begin{equation}
+  \begin{split}
+    \partial^{0} \int \tau_{i0} x_{j} \dd V &= -\int \partial^{k} \tau_{ik} x_{j}
+    \dd V = - \int \partial^{k}(\tau_{ik} x_{j}) \dd V + \int \tau_{ik}
+    \tensor{\delta}{^{k}_{j}} \dd V = \\
+    &= - \int \partial^{k}(\tau_{ik} x_{j}) \dd V + \int \tau_{ij} \dd V.
+  \end{split}
+\end{equation}
+Il primo integrale dell'ultimo membro può essere trasformato, usando il teorema
+di Gauss, in un integrale sulla superficie all'infinito di $\tau_{ik}x_{j}$, ma
+poiché $\tau_{ik}$ è nullo all'infinito l'integrale è uguale a zero.  Dunque
+\begin{equation}
+  \int \tau_{ij} \dd V = \partial^{0} \int \tau_{i0} x_{j} \dd V =
+  \frac{1}{2} \partial^{0} \int (\tau_{i0} x_{j} + \tau_{j0}x_{i}) \dd V.
+\end{equation}
+Abbiamo simmetrizzato l'integrale a secondo membro perché $\tau_{ij}$ è
+simmetrico.  Svolgendo analoghe considerazioni, moltiplichiamo
+la~\eqref{eq:baz2} per $x_{i}x_{j}$ e integriamo su tutto lo spazio
+\begin{equation}
+  \begin{split}
+    \partial^{0} \int \tau_{00} x_{i} x_{j} \dd V &= -\int \partial^{k}
+    \tau_{0k} x_{i} x_{j} \dd V \\
+    &= -\int \partial^{k}(\tau_{0k} x_{i} x_{j}) \dd V + \int \tau_{0k}
+    \tensor{\delta}{^{k}_{i}} x_{j} \dd V + \int \tau_{0k} x_{i}
+    \tensor{\delta}{^{k}_{j}} \dd V \\
+    &= \int (\tau_{0j}x_{i} + \tau_{0i}x_{j}) \dd V.
+  \end{split}
+\end{equation}
+Mettendo insieme i due risultati ottenuti abbiamo
+\begin{equation}
+  \begin{split}
+    \int \tau_{ij} \dd V &= \frac{1}{2} \partial^{0} \int \tau_{0j}x_{i} +
+    \tau_{0i}x_{j}) \dd V = \frac{1}{2}(\partial^{0})^{2} \int \tau_{00} x_{i}
+    x_{j} \dd V \\
+    &= \frac{1}{2c^{2}} \parder{}{*{2}{t}} \int \tau_{00} x_{i} x_{j} \dd V.
+  \end{split}
+\end{equation}
+Questa equazione ci dice che tutti gli integrali di volume delle componenti
+$\tau_{ij}$ possono essere espressi come integrali della componente $\tau_{00}$
+che coincide con la componente $T_{00}$ del tensore energia-impulso del sistema
+di masse, quindi $\tau_{00} = \rho c^{2}$, con $\rho$ densità di massa a
+riposo.  Sostituiamo nella~\eqref{eq:psi-mu-nu}
+\begin{equation}
+  \psi_{ij} = \frac{2G}{c^{4}r} \parder{}{*{2}{t}}\int \rho x_{i} x_{j} \dd V.
+\end{equation}
+Come abbiamo visto nel caso elettromagnetico, nella zona delle onde, cioè per
+$R \gg \lambda \gg a$, le onde possono essere trattate, in piccole regioni dello
+spazio, come piane.  Adottando inoltre la gauge TT, nella quale $\psi_{ij} =
+h_{ij}$, abbiamo
+\begin{equation}
+  \label{eq:h-ij}
+  h_{ij} = \frac{2G}{c^{4}r} \parder{}{*{2}{t}}\int \rho x_{i} x_{j} \dd V =
+  \frac{2G}{3c^{4}r} \bigg(\ddot{Q}_{ij} + \delta_{ij}\parder{}{*{2}{t}} \int
+  \rho r^{2} \dd V\bigg),
+\end{equation}
+in cui
+\begin{equation}
+  Q_{\alpha\beta} = \int \rho(3x_{\alpha} x_{\beta} - r^{2}\delta_{\alpha\beta})
+  \dd V
+\end{equation}
+è il \index{momento!di quadrupolo di massa}
+\emph{momento di quadrupolo delle masse} e il punto indica la derivazione
+rispetto al tempo.
+
+Si può dimostrare che
+% TODO: introdurre il tensore t_{\alpha\beta}
+\begin{equation}
+  t_{\mu\nu} = \frac{c^{4}}{32\pi G} \partial_{\mu}
+  \tensor{h}{^{\lambda}_{\rho}} \partial_{\nu} \tensor{h}{^{\rho}_{\lambda}}
+\end{equation}
+Inoltre per un'onda piana che si propaga in una direzione $x^{i}$, il flusso di
+energia è diretto lungo lo stesso asse $x^{i}$ ed è determinato da $ct^{0i}$.
+In particolare, supponendo che l'onda gravitazionale si propaghi lungo $x^{1}$,
+le uniche componenti non nulle di $h_{\mu\nu}$ nella gauge TT sono
+$h_{22} = -h_{33}$ e $h_{23} = h_{32}$ e il flusso di energia è dato da
+\begin{equation}
+  ct^{01} = \frac{c^{3}}{16\pi G}\bigg((\dot{h}_{23})^{2} +
+  \frac{1}{4}(\dot{h}_{22} - \dot{h}_{33})^{2}\bigg).
+\end{equation}
+Inserendo la~\eqref{eq:h-ij} in questa formula abbiamo
+\begin{subequations}
+  \begin{align}
+    h_{23} &= \frac{2G}{3c^{4}r} \ddot{Q}_{23}, \\
+    h_{22} - h_{33} &= \frac{2G}{3c^{4}r}(\ddot{Q}_{22} - \ddot{Q}_{33}), \\
+    ct^{01} &= \frac{G}{36\pi c^{5}r}\bigg((\dddot{Q}_{23})^{2} +
+    \frac{1}{4}(\dddot{Q}_{22} - \dddot{Q}_{33})^{2}\bigg).
+  \end{align}
+\end{subequations}
+Per ottenere l'energia totale $I$ emessa, nell'unità di tempo, dal sistema
+bisogna moltiplicare la media di $ct^{01}$ su tutti gli stati di polarizzazione
+per $r^{2}\dd\Omega$ e integrare su tutto l'angolo solido.  Si può far vedere
+che in questo modo si ottiene il seguente risultato
+\begin{equation}
+  I = \frac{G}{45c^{5}} \dddot{Q}_{ij} \dddot{Q}^{ij}.
+\end{equation}
+Osserviamo che l'energia emessa dal sistema è proporzionale $G/c^{5}$, che è un
+fattore estremamente piccolo, quindi l'efficienza di emissione di radiazione da
+parte di masse in movimento è, generalmente, molto bassa.
 
 %%% Local Variables:
 %%% mode: latex
