@@ -16,11 +16,10 @@ un fatto del tutto generale, ma la trattazione non approssimata presenta
 notevoli difficoltà matematiche legate alla non linearità delle equazioni di
 Einstein.
 
-\section{Onde gravitazionali nel vuoto}
-\label{sec:onde-grav-vuoto}
+\section{Pseudotensore energia-impulso del campo gravitazionale}
+\label{sec:energ-impulso-grav}
 
-In questo paragrafo risolviamo, in particolare, le equazioni di Einstein nel
-vuoto, cioè con $T^{\mu\nu} = 0$.  Ricordiamo che nell'approssimazione di campo
+Ricordiamo che nell'approssimazione di campo
 debole il tensore metrico covariante è dato da
 \begin{equation}
   g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu},
@@ -31,11 +30,57 @@ con $\abs{h_{\mu\nu}} \ll 1$, mentre il tensore metrico controvariante è
 \end{equation}
 con $h^{\mu\nu} = \eta^{\mu\lambda}\eta^{\mu\sigma} h^{\lambda\sigma}$.
 L'innalzamento e l'abbassamento degli indici di $h_{\mu\nu}$ si esegue con il
-tensore metrico non perturbato $\eta_{\mu\nu}$.
-Dalla~\eqref{eq:christoffel-approx} abbiamo che la connessione affine
-approssimata al primo ordine in $h_{\mu\nu}$ è
+tensore metrico non perturbato $\eta_{\mu\nu}$.  Per linearizzare le equazioni
+di Einsetin dobbiamo sviluppare $G_{\mu\nu}$ in serie di potenze di $h_{\mu\nu}$
+e considerare solo i termini del primo ordine.
+
+Innanzitutto osserviamo che possiamo sviluppare il tensore di Ricci in serie di
+potenze di $h_{\mu\nu}$ nel seguente modo
 \begin{equation}
-  \tensor{\Gamma}{^{\lambda}_{\mu\nu}} \approx \frac{1}{2}\eta^{\sigma\lambda}
+  R_{\mu\nu} = R_{\mu\nu}^{(0)} + R_{\mu\nu}^{(1)} + R_{\mu\nu}^{(2)} +
+  \mathcal{O}(h^{3}) = R_{\mu\nu}^{(1)} + R_{\mu\nu}^{(2)} + \mathcal{O}(h^{3}),
+\end{equation}
+con $R_{\mu\nu}^{(0)} = 0$.  L'equazione di Einstein esatta, in presenza di
+materia, può essere scritta in questo modo
+\begin{equation}
+  \label{eq:einstein-lineare-esatta}
+  \bigg(R_{\mu\nu}^{(1)} - \frac{1}{2}\eta_{\mu\nu}R^{(1)}\bigg) = -8\pi
+  G(T_{\mu\nu} + t_{\mu\nu}),
+\end{equation}
+in cui $R^{(1)} = \eta^{\mu\nu}R_{\mu\nu}^{(1)}$ e $t_{\mu\nu}$ è definito da
+\begin{equation}
+  8\pi G t_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}\eta_{\mu\nu} R - R_{\mu\nu}^{(1)}
+  + \frac{1}{2}\eta_{\mu\nu}R^{(1)} \approx R_{\mu\nu}^{(2)} -
+  \frac{1}{2}(g_{\mu\nu}R)^{(2)}.
+\end{equation}
+Dunque $t_{\mu\nu}$ contiene solo termini superiori al primo ordine in
+$h_{\mu\nu}$.  La~\eqref{eq:einstein-lineare-esatta} può essere interpretata
+come un'equazione d'onda lineare in $h_{\mu\nu}$ in cui il termine di sorgente
+$\tau_{\mu\nu} = T_{\mu\nu} + t_{\mu\nu}$ dipende esplicitamente dal campo
+gravitazionale $h_{\mu\nu}$ stesso.  Questo ci suggerisce che $h_{\mu\nu}$ è
+generato dal flusso e dalla densità totale dell'energia e del momento e
+$t_{\mu\nu}$ rappresenta il ``tensore'' energia-impulso del solo campo
+gravitazionale.\footnote{In realtà si dimostra che $t_{\mu\nu}$ si comporta come
+  uno pseudotensore.  Vedi~\textcite[367-374]{landau:campo}.}
+Allora $\tau_{\mu\nu}$, che differisce da $T_{\mu\nu}$ solo per termini del
+secondo ordine in $h_{\mu\nu}$ derivanti da $R_{\mu\nu} - \eta_{\mu\nu}R/2$, può
+essere interpretato come il ``tensore'' energia-impulso totale comprendente i
+contributi della materia e del campo
+gravitazionale.\footnote{Ulteriori prove a sostegno di questa interpretazione
+  sono riportate in~\textcite[165-171]{weinberg:gravitation}.}
+
+Trascurare nelle equazioni di Einstein i termini superiori al primo ordine di
+infinitesimo significa pertanto trascurare i contributi dell'energia del campo
+gravitazionale stesso.
+
+\section{Onde gravitazionali nel vuoto}
+\label{sec:onde-grav-vuoto}
+
+In questo paragrafo risolviamo, in particolare, le equazioni di Einstein nel
+vuoto, cioè con $\tau^{\mu\nu} = 0$.  Dalla~\eqref{eq:christoffel-approx}
+abbiamo che la connessione affine approssimata al primo ordine in $h_{\mu\nu}$ è
+\begin{equation}
+  \tensor{\Gamma}{^{\lambda}_{\mu\nu}^{(1)}} \approx \frac{1}{2}\eta^{\sigma\lambda}
   (\partial_{\mu}h_{\nu\sigma} + \partial_{\nu}h_{\mu\sigma}
   - \partial_{\sigma}h_{\mu\nu})
 \end{equation}
@@ -43,14 +88,15 @@ e quindi il tensore di Ricci, trascurando i termini superiori al primo ordine in
 $h_{\mu\nu}$, è dato da
 \begin{equation}
   \begin{split}
-    R_{\mu\nu} &= \partial_{\nu}\tensor{\Gamma}{^{\lambda}_{\mu\lambda}}
-    - \partial_{\lambda} \tensor{\Gamma}{^{\lambda}_{\mu\nu}} +
-    \overbrace{\tensor{\Gamma}{^{\eta}_{\mu\lambda}}
-      \tensor{\Gamma}{^{\lambda}_{\eta\nu}} -
-      \tensor{\Gamma}{^{\eta}_{\mu\nu}}
-      \tensor{\Gamma}{^{\lambda}_{\eta\lambda}}}^{\mathcal{O}(h^{2})}
-    \approx \partial_{\nu}\tensor{\Gamma}{^{\lambda}_{\mu\lambda}}
-    - \partial_{\lambda} \tensor{\Gamma}{^{\lambda}_{\mu\nu}} \\
+    R_{\mu\nu}^{(1)} &= \partial_{\nu}
+    \tensor{\Gamma}{^{\lambda}_{\mu\lambda}^{(1)}}
+    - \partial_{\lambda} \tensor{\Gamma}{^{\lambda}_{\mu\nu}^{(1)}} +
+    \overbrace{\tensor{\Gamma}{^{\eta}_{\mu\lambda}^{(1)}}
+      \tensor{\Gamma}{^{\lambda}_{\eta\nu}^{(1)}} -
+      \tensor{\Gamma}{^{\eta}_{\mu\nu}^{(1)}}
+      \tensor{\Gamma}{^{\lambda}_{\eta\lambda}^{(1)}}}^{\mathcal{O}(h^{2})} \\
+    &\approx \partial_{\nu}\tensor{\Gamma}{^{\lambda}_{\mu\lambda}^{(1)}}
+    - \partial_{\lambda} \tensor{\Gamma}{^{\lambda}_{\mu\nu}^{(1)}} \\
     &= \frac{1}{2}\partial_{\nu} (\eta^{\lambda\sigma}(\partial_{\mu}
     h_{\sigma\lambda} + \partial_{\lambda}h_{\mu\sigma}
     - \partial_{\sigma}h_{\mu\lambda})) -
@@ -74,9 +120,9 @@ $h_{\mu\nu}$, è dato da
 in cui $h = \tensor{h}{^{\lambda}_{\lambda}} = \eta^{\mu\lambda} h_{\mu\lambda}$
 è la traccia della perturbazione.  Nel vuoto allora abbiamo
 \begin{equation}
-  R_{\mu\nu} = \frac{1}{2} (\dalamb h_{\mu\nu} + \partial_{\mu}\partial_{\nu} h
-  - \partial^{\lambda}\partial_{\nu} h_{\mu\lambda}
-  - \partial_{\mu}\partial^{\lambda} h_{\nu\lambda}) = 0.
+  R_{\mu\nu}^{(1)} = \frac{1}{2} (\dalamb h_{\mu\nu}
+  + \partial_{\mu}\partial_{\nu} h - \partial^{\lambda}\partial_{\nu}
+  h_{\mu\lambda} - \partial_{\mu}\partial^{\lambda} h_{\nu\lambda}) = 0.
 \end{equation}
 
 A questo punto vogliamo manipolare l'espressione ottenuta per il tensore di
@@ -96,39 +142,34 @@ annullano
     \partial_{\mu}\partial_{\nu} h - \partial^{\lambda}\partial_{\nu}
     h_{\mu\lambda} - \partial_{\mu}\partial^{\lambda} h_{\nu\lambda}
     &= \partial_{\mu}(2 \partial_{\lambda}\tensor{h}{^{\lambda}_{\nu}})
-    - \partial_{\nu}(\partial_{\lambda}\tensor{h}{^{\lambda}_{\mu}})
+    - \partial_{\nu}\partial_{\lambda}\tensor{h}{^{\lambda}_{\mu}}
     - \partial_{\lambda}\partial_{\mu} \tensor{h}{^{\lambda}_{\nu}} \\
     &= \partial_{\mu}\partial_{\lambda} \tensor{h}{^{\lambda}_{\nu}}
-    - \partial_{\nu}(\partial_{\lambda} \tensor{h}{^{\lambda}_{\mu}}) \\
+    - \partial_{\nu}\partial_{\lambda} \tensor{h}{^{\lambda}_{\mu}} \\
     &= \partial_{\mu}\bigg(\frac{1}{2}\partial_{\nu}
     \tensor{h}{^{\lambda}_{\lambda}}\bigg)
     - \partial_{\nu}\bigg(\frac{1}{2}\partial_{\mu}
     \tensor{h}{^{\lambda}_{\lambda}}\bigg) = 0
   \end{split}
 \end{equation}
-e quindi $R_{\mu\nu} = \dalamb h_{\mu\nu}/2$.  Le equazioni di Einstein nel
-vuoto si possono, in questo modo, scrivere nella seguente forma lineare
+e quindi $R_{\mu\nu}^{(1)} = \dalamb h_{\mu\nu}/2$.  Le equazioni di Einstein
+nel vuoto si possono, in questo modo, scrivere nella seguente forma lineare
 \begin{equation}
   \label{eq:einstein-lineare}
   \dalamb h_{\mu\nu} = 0.
 \end{equation}
-Osserviamo che la condizione di gauge armonica~\eqref{eq:gauge-armonica} si può
-anche porre nella forma
-$\Gamma^{\lambda} = \eta^{\mu\nu} = \tensor{\Gamma}{^{\lambda}_{\mu\nu}} = 0$ in
-quanto
+Osserviamo che la condizione di gauge armonica si può anche porre nella forma
+$\eta^{\mu\nu}\tensor{\Gamma}{^{\lambda}_{\mu\nu}} = 0$ in quanto
 \begin{equation}
   \begin{split}
     0 &=\eta^{\mu\nu} \tensor{\Gamma}{^{\lambda}_{\mu\nu}} = \frac{1}{2}
     \eta^{\lambda\sigma} (\partial^{\mu}h_{\mu\sigma} + \partial^{\mu}
     h_{\mu\sigma} - \partial_{\sigma}\tensor{h}{^{\mu}_{\mu}}) \\
     &= \frac{1}{2} (\partial^{\mu} \tensor{h}{_{\mu}^{\lambda}} + \partial^{\mu}
-    \tensor{h}{_{\mu}^{\lambda}} - \partial^{\lambda} \tensor{h}{^{\mu}_{\mu}}),
+    \tensor{h}{_{\mu}^{\lambda}} - \partial^{\lambda} \tensor{h}{^{\mu}_{\mu}})
+    \iff \partial^{\lambda} \tensor{h}{^{\mu}_{\mu}} = 2 \partial^{\mu}
+    \tensor{h}{_{\mu}^{\lambda}}
   \end{split}
-\end{equation}
-da cui
-\begin{equation}
-  \partial^{\lambda} \tensor{h}{^{\mu}_{\mu}} = 2 \partial^{\mu}
-  \tensor{h}{_{\mu}^{\lambda}}
 \end{equation}
 che equivale alla~\eqref{eq:gauge-armonica}.
 
@@ -317,16 +358,21 @@ Così risulta
     e'_{12} &= e_{12} - \uimm k_{2}\tilde\epsilon_{1} - \uimm
     k_{1}\tilde\epsilon_{2} = e_{12}, \\
     e'_{13} &= e_{13} - \uimm k_{3}\tilde\epsilon_{1} - \uimm
-    k_{1}\tilde\epsilon_{3} = e_{13} - \uimm k_{3}\tilde\epsilon_{1} = 0
+    k_{1}\tilde\epsilon_{3} = e_{13} - \uimm k\tilde\epsilon_{1} = 0, \\
+    e'_{23} &= e_{23} - \uimm k_{3}\tilde\epsilon_{2} - \uimm
+    k_{2}\tilde\epsilon_{3} = e_{23} - \uimm k\tilde\epsilon_{2} = 0, \\
+    e'_{33} &= e_{33} - 2\uimm k_{3}\tilde\epsilon_{3} = 0, \\
+    e'_{00} &= e_{00} - 2\uimm k_{0}\tilde\epsilon_{0} = 0,
   \end{align}
 \end{subequations}
-avendo posto $\tilde\epsilon_{1} = -\uimm e_{13}/k_{3}$.
-% TODO: controllare i seguenti calcoli
-Scegliendo in maniera opportuna gli altri $\epsilon_{\mu}$ si possono annullare
-anche $e'_{13} = e'_{23} = e'_{33} = e'_{00} = 0$ e anche
-$e_{01} = -e_{31} = e_{02} = -e_{32} = e_{03} = 0$, quindi rimangono diversi da
-zero solo le componenti $e_{22} = -e_{11}$ e $e_{12} = e_{21}$ per un'onda che
-si propaga lungo l'asse $z$.  Abbiamo trovato che la simmetria del tensore di
+avendo posto $\tilde\epsilon_{1} = -\uimm e_{13}/k$,
+$\tilde\epsilon_{2} = -\uimm e_{23}/k$,
+$\tilde\epsilon_{3} = -\uimm e_{33}/(2k)$ e
+$\tilde\epsilon_{0} = -\uimm e_{00}/(2k)$.  Inoltre avevamo visto che
+$e'_{01} = -e'_{31} = 0$, $e'_{02} = -e'_{32} = 0$ e
+$e'_{03} = -(e'_{33}+e'_{00})/2 = 0$, quindi per un'onda che si propaga lungo
+l'asse $z$ rimangono diversi da zero solo le componenti $e_{22} = -e_{11}$ e
+$e_{12} = e_{21}$.  Abbiamo trovato che la simmetria del tensore di
 polarizzazione riduce da sedici a dieci il numero di sue componenti
 indipendenti, la condizione armonica diminuisce questo numero a sei e la libertà
 di scelta sulla trasformazione di gauge fissa il numero di componenti
@@ -344,6 +390,18 @@ un'onda gravitazionale che si muovo lungo l'asse $z$ sono non nulle le
 componenti associate agli assi $x$ e $y$).  Poiché i tensori di polarizzazione
 rappresentano l'ampiezza delle onde da cui è costituito $h_{\mu\nu}$, anche
 $h_{\mu\nu}$ sarà trasverso e con traccia $h = \tensor{h}{^{\mu}_{\mu}}$ nulla.
+In particolare, per un'onda che si muove lungo l'asse $z$, $h_{\mu\nu}$ è dato
+dalla parte reale di
+\begin{equation}
+  \begin{pmatrix}
+    0 & 0      & 0       & 0 \\
+    0 & e_{11} & e_{12}  & 0 \\
+    0 & e_{12} & -e_{11} & 0 \\
+    0 & 0      & 0       & 0
+  \end{pmatrix}\cdot \e^{\uimm k^{\lambda}x_{\lambda}}.
+\end{equation}
+A volte si scrive $h_{\mu\nu}^{\textup{TT}}$ per specificare che si è scelta la
+gauge trasversa a traccia nulla.
 
 In teoria dei campi si fa la seguente classificazione:
 \begin{itemize}
@@ -364,8 +422,7 @@ quanti del campo gravitazionale, i \index{gravitone}\emph{gravitoni}, sono
 descritti dal campo tensoriale $h_{\mu\nu}$, quindi sono particelle con spin $2$
 e anch'essi massa nulla perché $k^{\mu}k_{\mu} = 0$.
 
-% TODO: completare dopo aver rivisto i calcoli, al momento non mi convincono
-% molto.  Vedi appunti dei giorni 24-25/05/2012
+% TODO: completare, vedi appunti del 25/05/2012
 \section{\completare{Tecniche di rivelazione delle onde gravitazionali}}
 \label{sec:rivelazione-onde}
 
@@ -376,9 +433,79 @@ $\delta x^{\mu}(\tau)$ rappresenta la separazione fra $A$ e $B$.  Dall'equazione
 di deviazione geodetica % TODO: mettere riferimento
 sappiamo che
 \begin{equation}
-  \curder[2]{\delta x^{\mu}} = \tensor{R}{^{\lambda}_{\nu\mu\rho}} \delta
-  x^{\mu} \toder{x^{\nu}}{\tau} \toder{x^{\rho}}{\tau}
+  \curder[2]{\delta x^{\lambda}} = \tensor{R}{^{\lambda}_{\nu\mu\rho}} \delta
+  x^{\mu} \toder{x^{\nu}}{\tau} \toder{x^{\rho}}{\tau}.
 \end{equation}
+Abbiamo poi visto che nell'approssimazione di campo debole le uniche componenti
+non nulle del tensore di Riemann sono
+$R_{j0k0} = R_{0j0k} = -R_{j00k} = -R_{0jk0}$.  Inoltre nella gauge TT tutte le
+componenti $h_{\mu 0} = h_{0\mu}$ sono nulle, quindi
+dalla~\eqref{eq:riemann-approx} abbiamo
+\begin{equation}
+  R_{j0k0}^{(1)} = R_{0j0k}^{(1)} = \frac{1}{2}(\partial_{k}\partial_{j}h_{00}
+  - \partial_{k}\partial_{0}h_{j0} - \partial_{0}\partial_{j}h_{0k}
+  + \partial_{0}\partial_{0}h_{jk}) = \frac{1}{2}\ddot{h}^{\textup{TT}}_{jk,00}.
+\end{equation}
+Se i corpi si muovono con velocità piccole, molto minori di quella della luce
+nel vuoto, allora $\dd\tau \approx\dd t$ e l'equazione di deviazione geodetica
+diventa
+\begin{equation}
+  \toder[2]{\delta x^{j}}{t} = \frac{1}{2} \parder{}{*{2}{t}}
+  \tensor{h}{^{j}_{k}}\delta x^{k}.
+\end{equation}
+Se le due particelle sono a riposo a una distanza costante $\delta x^{j}(0)$
+prima che l'onda arrivi (cioè con $h_{jk} = 0$), la soluzione di questa
+equazione è
+\begin{equation}
+  \label{eq:spostamento-onda-grav}
+  \delta x^{j}(t) = \delta x^{k}(0) \bigg(\tensor{\delta}{^{j}_{k}} +
+  \frac{1}{2}\tensor{h}{^{j}_{k}}(x^{\mu}(t))\bigg).
+\end{equation}
+Questo risultato ci permette di analizzare l'effetto di un'onda gravitazionale
+che investe un sistema di due corpi inizialmente in quiete.
+
+% TODO: mettere qualche figura per chiarire meglio ed eventualmente rielaborare
+% il testo, se necessario.
+Consideriamo un'onda gravitazionale che si propaga lungo la direzione $z$, per
+la quale allora le uniche componenti non nulle di $h_{\mu\nu}$ nella gauge TT
+sono
+\begin{subequations}
+  \begin{align}
+    h_{11}^{\textup{TT}} &= - h_{22}^{\textup{TT}}, \\
+    h_{12}^{\textup{TT}} &= h_{21}^{\textup{TT}}.
+  \end{align}
+\end{subequations}
+Supponiamo che i due corpi siano allineati nella direzione $z$ a una posizione
+iniziale reciproca costante $\delta x^{j}(0) = (0,0,L_{0})$, allora
+dalla~\eqref{eq:spostamento-onda-grav} abbiamo che dopo il passaggio dell'onda
+\begin{equation}
+  \delta x^{j}(t) = \delta x^{k}(0)\bigg(\tensor{\delta}{^{j}_{k}} + \frac{1}{2}
+  \tensor{h}{^{j}_{k}}\bigg) = \delta x^{3}(0)\bigg(\tensor{\delta}{^{j}_{3}} +
+  \frac{1}{2}\tensor{h}{^{j}_{3}}\bigg) = \delta x^{3}(0)
+  \tensor{\delta}{^{j}_{3}},
+\end{equation}
+cioè la separazione rimane costante $\delta x^{j}(t) = \delta x^{j}(0)$.
+Supponiamo ora che i due corpi siano allineati lungo una direzione
+perpendicolare a $z$, per esempio $y$, con separazione iniziale
+$\delta x^{j}(0) = (0,L_{0},0)$.  Dopo il passaggio dell'onda,
+dalla~\eqref{eq:spostamento-onda-grav} risulta
+\begin{equation}
+  \delta x^{j}(t) = \delta x^{k}(0) \bigg(\tensor{\delta}{^{j}_{k}} +
+  \frac{1}{2}\tensor{h}{^{j}_{k}}(x^{\mu}(t))\bigg) = \delta
+  x^{2}(0)\bigg(\tensor{\delta}{^{j}_{2}} +
+  \frac{1}{2}\tensor{h}{^{j}_{2}}(x^{\mu}(t))\bigg),
+\end{equation}
+quindi le separazioni fra i due corpi lungo $x$ e lungo $y$ cambiano.  Questi
+fatti ci suggeriscono delle possibili tecniche per la rivelazione diretta delle
+onde gravitazionali.  Tuttavia, prima di illustrarle, dobbiamo osservare che il
+rapporto fra la variazione $\Delta L$ della distanza fra i corpi, indotta dal
+passaggio dell'onda, e la distanza iniziale $L_{0}$ è dell'ordine di
+\begin{equation}
+  \frac{\Delta L}{L_{0}} \sim h
+\end{equation}
+che è generalmente una quantità molto piccola.  Come vedremo, la precisione
+richiesta negli esperimenti che si propongono di mettere in evidenza le onde
+gravitazionali in questo modo è molto elevata.
 
 \section{Onde gravitazionali in presenza di masse in moto}
 \label{sec:onde-grav-masse}
@@ -388,11 +515,8 @@ sappiamo che
 
 Studiamo adesso un campo gravitazionale debole generato da masse in movimento
 con velocità $v \ll c$.  Abbiamo visto che nell'approssimazione di campo debole
-$R_{\mu\nu} = \dalamb h/2$, quindi l'equazione di Einstein in presenza della
-materia~\eqref{eq:einstein} diventa
-% TODO: introdurre nel paragrafo sulle onde gravitazionali nel vuoto il tensore
-% \tau_{\mu\nu} e spiegare che contiene termini del secondo ordine in R_{\mu\nu}
-% - \frac{1}{2} \delta^{\mu\nu}R.
+$R_{\mu\nu}^{(1)} = \dalamb h/2$, quindi l'equazione di Einstein in presenza
+della materia~\eqref{eq:einstein-lineare-esatta} diventa
 \begin{equation}
   \label{eq:einstein-lineare-materia1}
   \dalamb \bigg(h_{\mu\nu} - \frac{1}{2}\delta_{\mu\nu}h \bigg) = -\frac{16\pi
@@ -401,18 +525,18 @@ materia~\eqref{eq:einstein} diventa
 Introduciamo il tensore $\tensor{\psi}{^{\mu}_{\nu}}$ definito da
 \begin{equation}
   \tensor{\psi}{^{\mu}_{\nu}} = \tensor{h}{^{\mu}_{\nu}} - \frac{1}{2}
-  \tensor{h}{^{\mu}_{\nu}} h.
+  \tensor{\delta}{^{\mu}_{\nu}} h.
 \end{equation}
 Osserviamo che nella gauge TT $h = 0$ e quindi
 $\tensor{\psi}{^{\mu}_{\nu}} = \tensor{h}{^{\mu}_{\nu}}$.  La gauge
-armonica~\eqref{eq:gauge-armonica} può essere definita rispetto a
+armonica~\eqref{eq:gauge-armonica} può essere definita con riferimento a
 $\tensor{\psi}{^{\mu}_{\nu}}$ come
 \begin{equation}
   \label{eq:gauge-armonica2}
   \partial_{\mu}\tensor{\psi}{^{\mu}_{\nu}} = 0
 \end{equation}
 e l'equazione di Einstein linearizzata~\eqref{eq:einstein-lineare-materia1} in
-presenza di materia come
+presenza di materia si scrive come
 \begin{equation}
   \label{eq:einstein-lineare-materia2}
   \dalamb \tensor{\psi}{^{\mu}_{\nu}} = -\frac{16\pi G}{c^{4}}
@@ -536,7 +660,6 @@ in cui
 rispetto al tempo.
 
 Si può dimostrare che
-% TODO: introdurre il tensore t_{\alpha\beta}
 \begin{equation}
   t_{\mu\nu} = \frac{c^{4}}{32\pi G} \partial_{\mu}
   \tensor{h}{^{\lambda}_{\rho}} \partial_{\nu} \tensor{h}{^{\rho}_{\lambda}}

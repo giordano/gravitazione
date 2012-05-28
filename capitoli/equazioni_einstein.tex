@@ -284,8 +284,9 @@ La quantità all'interno delle parentesi è il
 \begin{equation}
   G^{\mu\nu} = R^{\mu\nu} - \frac{1}{2} g^{\mu\nu}R
 \end{equation}
-e abbiamo dunque mostrato che ha quadridivergenza nulla
+e abbiamo dunque mostrato che ha quadridivergenza covariante nulla
 \begin{equation}
+  \label{eq:divergenza-tens-einstein}
   \tensor{G}{^{\mu\nu}_{;\mu}} = \bigg( R^{\mu\nu} - \frac{1}{2} g^{\mu\nu}
   R\bigg)_{;\mu} = 0.
 \end{equation}
@@ -455,6 +456,9 @@ Data l'arbitrarietà delle variazioni $\delta g^{\mu\nu}$ ricaviamo
 \end{equation}
 che sono le \emph{equazioni del campo gravitazionale} in presenza di sorgenti,
 chiamate anche \index{equazioni!di Einstein}\emph{equazioni di Einstein}.
+Osserviamo che dalla~\eqref{eq:divergenza-tens-einstein} deriva che anche il
+tensore energia-impulso della materia ha quadridivergenza covariante nulla
+$\tensor{T}{^{\mu\nu}_{;\mu}} = 0$.
 
 Moltiplicando gli ultimi due membri per $g^{\mu\nu}$, in modo da contrarre gli
 indici $\mu$ e $\nu$, otteniamo
@@ -524,18 +528,27 @@ D'altra parte osserviamo che
 \begin{equation}
   R_{00} = g^{\mu\nu}R_{\mu 0\nu 0} \approx \eta^{\mu\nu}R_{\mu 0\nu 0}
 \end{equation}
-Dalla~\eqref{eq:riemann-covariante} abbiamo
-\begin{align}
-  R_{\lambda\mu\nu\kappa} &\approx \frac{1}{2}
-  \bigg( \parder{h_{\lambda\nu}}{x^{\kappa}, x^{\mu}}
-  - \parder{h_{\mu\nu}}{x^{\kappa},
-    x^{\lambda}}- \parder{h_{\lambda\kappa}}{x^{\nu}, x^{\mu}}
-  + \parder{h_{\mu\kappa}}{x^{\nu}, x^{\lambda}} \bigg) \\
-  &+ \eta_{\eta\sigma} (\tensor{\Gamma}{^{\eta}_{\nu\lambda}}
-  \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} -
-  \tensor{\Gamma}{^{\eta}_{\kappa\lambda}}
-  \tensor{\Gamma}{^{\sigma}_{\mu\nu}})
-\end{align}
+Dalla~\eqref{eq:riemann-covariante}, arrestandoci ai termini del primo ordine in
+$h_{\mu\nu}$, abbiamo
+\begin{equation}
+  \label{eq:riemann-approx}
+  \begin{split}
+    R_{\lambda\mu\nu\kappa} &\approx \frac{1}{2}
+    \bigg( \parder{h_{\lambda\nu}}{x^{\kappa}, x^{\mu}}
+    - \parder{h_{\mu\nu}}{x^{\kappa},
+      x^{\lambda}}- \parder{h_{\lambda\kappa}}{x^{\nu}, x^{\mu}}
+    + \parder{h_{\mu\kappa}}{x^{\nu}, x^{\lambda}} \bigg) \\
+    &+ \eta_{\eta\sigma}
+    (\underbrace{\tensor{\Gamma}{^{\eta}_{\nu\lambda}}
+      \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} -
+      \tensor{\Gamma}{^{\eta}_{\kappa\lambda}}
+      \tensor{\Gamma}{^{\sigma}_{\mu\nu}}}_{\mathcal{O}(h^{2})}) \\
+    &= \frac{1}{2} \bigg( \parder{h_{\lambda\nu}}{x^{\kappa}, x^{\mu}}
+    - \parder{h_{\mu\nu}}{x^{\kappa},
+      x^{\lambda}}- \parder{h_{\lambda\kappa}}{x^{\nu}, x^{\mu}}
+    + \parder{h_{\mu\kappa}}{x^{\nu}, x^{\lambda}} \bigg) + \mathcal{O}(h^{2})
+  \end{split}
+\end{equation}
 e in particolare, sfruttando l'ipotesi di campi costanti,
 \begin{subequations}
   \begin{align}
@@ -1016,14 +1029,14 @@ allora
   \epsilon\bigg(A + \frac{B^{2}}{2A} - \frac{B^{2}}{6A}\cos(2\phi)\bigg).
 \end{equation}
 L'ultimo termine, fra parentesi, induce una piccola variazione nella distanza
-radiale del pianeta, ma è periodica per via del termine $\cos(2\phi)$, quindi
-non può essere responsabile della precessione del suo perielio.  Il resto della
-funzione $u(\phi)$ si differenzia dalla soluzione~\eqref{eq:sol-binet}
-dell'equazione di Binet per la presenza di $-\epsilon\phi$ nell'argomento del
-coseno e questo rende $u(\phi)$ non periodico rispetto alla coordinata $\phi$.
-Infatti il perielio si ha quando $r(\phi)$ è minimo, vale a dire quando
-$u(\phi)$ è massimo e ciò si verifica quando il coseno del secondo termine vale
-$1$, cioè quando
+radiale del pianeta, ma non può essere responsabile della precessione del
+perielio poiché il termine $\cos(2\phi)$ ha periodo sottomultiplo intero di
+$2\pi$ (quindi dopo un'intera rivoluzione di $\Delta \phi = 2\pi$ assume di
+nuovo lo stesso valore).  Il resto della funzione $u(\phi)$ si differenzia dalla
+soluzione~\eqref{eq:sol-binet} dell'equazione di Binet per la presenza di
+$-\epsilon\phi$ nell'argomento del coseno.  Il perielio si ha quando $r(\phi)$ è
+minimo, vale a dire quando $u(\phi)$ è massimo e ciò si verifica quando il
+coseno del secondo termine vale $1$, cioè quando
 \begin{equation}
   \phi_{n}(1 - \epsilon) = 2\pi n \implies \phi_{n} = \frac{2\pi n}{1 -
     \epsilon} \approx 2\pi n(1 + \epsilon)
@@ -1034,7 +1047,7 @@ della coordinata $\phi$ di
 \begin{equation}
   \Delta\phi = \phi_{n+1} - \phi_{n} = 2\pi(1 + \epsilon)
 \end{equation}
-invece di $2\pi$ come succede per un moto periodico.  La relatività generale
+invece di $2\pi$ come succede per un'orbita chiusa.  La relatività generale
 prevede allora una precessione del perielio dei pianeti nel loro moto intorno al
 Sole, indipendentemente dalla presenza perturbatrice di altri corpi.  Stimiamo
 il valore $\delta\phi$ di questa precessione per verificare se è in accordo con

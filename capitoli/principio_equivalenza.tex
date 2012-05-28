@@ -319,11 +319,20 @@ tensore di Minkowski dello spazio-tempo piatto
 \end{equation}
 in cui $\abs{h_{\mu\nu}} \ll 1$ sono piccole correzioni che determinano il campo
 gravitazionale.  Poiché sia $g_{\mu\nu}$ sia $\eta_{\mu\nu}$ sono simmetrici
-nello scambio degli indici, tale dovrà essere anche $h_{\mu\nu}$.  Per
-convenzione decidiamo che le operazioni di innalzamento e abbassamento degli
-indici di $h_{\mu\nu}$ vengano eseguite con il tensore metrico non perturbato
-$\eta_{\mu\nu}$.  La correzione al primo ordine negli infinitesimi per il
-tensore metrico controvariante è data da (vedi
+nello scambio degli indici, tale dovrà essere anche $h_{\mu\nu}$.  Osserviamo
+che
+\begin{equation}
+  \tensor{h}{^{\mu}_{\nu}} = g_{\nu\lambda}h^{\mu\lambda} =
+  \eta_{\nu\lambda}h^{\mu\lambda} + h_{\nu\lambda}h^{\mu\lambda} =
+  \eta_{\nu\lambda}h^{\mu\lambda} + \mathcal{O}(h^{2}),
+\end{equation}
+cioè al primo ordine della perturbazione della metrica le operazioni di
+innalzamento e abbassamento degli indici di $h_{\mu\nu}$ vengono eseguite con il
+tensore metrico non perturbato $\eta_{\mu\nu}$ invece che con il tensore metrico
+``completo'' $g_{\mu\nu}$.  Nel seguito, trattando campi deboli in cui la
+metrica è approssimabile con $g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}$,
+seguiremo sempre questa convenzione.  Inoltre la correzione al primo ordine
+negli infinitesimi per il tensore metrico controvariante è data da (vedi
 appendice~\ref{sec:dimostr-correz-metrica-controvariante})
 \begin{equation}
   \label{eq:correzione-metrica-controvariante}
@@ -419,7 +428,8 @@ relatività generale rispetto alle previsioni della gravità newtoniana.
   \caption[Valori del raggio di Schwarzschild per diversi corpi]{Valori del
     raggio di Schwarzschild $r_{\textup{S}}$ per diversi oggetti e valore della
     correzione $r_{\textup{S}}/r$ sulla superficie dei corpi.  $r$ è il raggio
-    degli oggetti}
+    degli oggetti.  Questi valori sono approssimativi, sono rilevanti gli ordini
+    di grandezza}
   \label{tab:Schwarzschild}
   \begin{tabular}{lSSSS}
     \toprule
