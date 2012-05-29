@@ -617,6 +617,23 @@ Minkowski che ha per indici i due indici che si vogliono contrarre, per esempio
 $\tensor{T}{_{\gamma\beta}^{\gamma\beta}} = \eta_{\alpha\gamma}
 \eta^{\beta\delta} \tensor{T}{^{\alpha}_{\beta}^{\gamma}_{\delta}}$.
 
+Due indici contratti possono essere scambiati di posto: l'indice covariante può
+diventare controvariante e, allo stesso tempo, l'indice controvariante diventare
+covariante, senza modificare il risultato.  Sfrutteremo spesso questa proprietà.
+Per esempio, quindi, abbiamo
+$A^{\mu\nu}\tensor{B}{_{\mu}^{\lambda}} =
+\tensor{A}{_{\mu}^{\nu}}B^{\mu\lambda}$.  Mostriamolo
+\begin{equation}
+  A^{\mu\nu}\tensor{B}{_{\mu}^{\lambda}} =
+  \eta^{\mu\alpha}\tensor{A}{_{\alpha}^{\nu}} \eta_{\mu\beta}B^{\beta\lambda} =
+  \eta^{\mu\alpha}\eta_{\mu\beta} \tensor{A}{_{\alpha}^{\nu}}B^{\beta\lambda} =
+  \tensor{\delta}{^{\alpha}_{\beta}}\tensor{A}{_{\alpha}^{\nu}}B^{\beta\lambda}
+  = \tensor{A}{_{\alpha}^{\nu}}B^{\alpha\lambda}.
+\end{equation}
+Non è invece possibile abbassare o alzare solo uno dei due indici muti lasciando
+l'altro nella propria posizione, altrimenti si contravviene alla convenzione di
+Einstein per la somma descritta a pagina~\pageref{cha:notazioni}.
+
 Si può effettuare la contrazione degli indici anche nel prodotto di due
 quadritensori: il prodotto di un quadritensore di tipo $(p,q)$ e di uno di tipo
 $(r,s)$ è un quadritensore di tipo $(p+r,q+s)$, ma se si contraggono $n$ indici

@@ -214,7 +214,8 @@ paragrafo~\ref{sec:operazioni-tensori-minkowski}, che si possono effettuare con
 i tensori anche all'interno della relatività generale.  Ometteremo le
 dimostrazioni delle proprietà che sono state già svolte per lo spazio di
 Minkowski poiché è sufficiente effettuare le
-sostituzioni~\eqref{eq:sostituzioni}.
+sostituzioni~\eqref{eq:sostituzioni} e usare il tensore metrico $g_{\mu\nu}$ al
+posto del tensore di Minkowski $\eta_{\mu\nu}$.
 
 \begin{description}
 \item[Combinazione lineare] La combinazione lineare
@@ -238,10 +239,14 @@ sostituzioni~\eqref{eq:sostituzioni}.
   differenti coppie di indici ottenendo di volta in volta un risultato, in
   generale, diverso.  Ciascuna operazione di contrazione si effettua
   moltiplicando per il tensore metrico che ha per indici i due indici che si
-  vogliono contrarre.  Si può effettuare la contrazione degli indici anche nel
-  prodotto di due tensori: il prodotto di un tensore di tipo $(p,q)$ e di uno di
-  tipo $(r,s)$ è un tensore di tipo $(p+r,q+s)$, ma se si contraggono $n$ indici
-  si ottiene un tensore di tipo $(p+r-n,q+s-n)$.
+  vogliono contrarre.  Due indici contratti possono essere scambiati di posto:
+  l'indice covariante può diventare controvariante e, allo stesso tempo,
+  l'indice controvariante diventare covariante, senza modificare il risultato.
+  Non è invece possibile abbassare o alzare solo uno dei due indici muti.  Si
+  può effettuare la contrazione degli indici anche nel prodotto di due tensori:
+  il prodotto di un tensore di tipo $(p,q)$ e di uno di tipo $(r,s)$ è un
+  tensore di tipo $(p+r,q+s)$, ma se si contraggono $n$ indici si ottiene un
+  tensore di tipo $(p+r-n,q+s-n)$.
 \item[Prodotto scalare] Il prodotto scalare fra due vettori $V$ e $U$ è definito
   come
   \begin{equation}
