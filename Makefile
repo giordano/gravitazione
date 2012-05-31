@@ -1,7 +1,7 @@
 ##### Variabili
 SHELL			= /bin/sh
 CARTELLA		= $(shell basename $$(pwd))
-PRINCIPALE		= astrofisica-teorica
+PRINCIPALE		= gravitazione
 PRINCIPALE_TEX		= $(PRINCIPALE).tex
 PRINCIPALE_PDF		= $(PRINCIPALE).pdf
 BIBLIOGRAFIA		= bibliografia.bib
