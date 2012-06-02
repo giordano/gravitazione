@@ -89,9 +89,9 @@ Se si scelgono coordinate spaziali non cartesiane, come per esempio le
 coordinate sferiche o cilindriche, il tensore metrico assume una forma
 differente.  Se non diversamente specificato useremo sempre coordinate spaziali
 cartesiane.  Questo tensore definisce una metrica pseudo euclidea con segnatura
-$(-+++)$,\footnote{In questo testo, se non diversamente specificato, abbiamo
-  adottato questa segnatura, ma non è l'unica possibile nello spazio di
-  Minkowski.  Un'altra segnatura largamente usata è $(+---)$.}
+$(-+++)$,\footnote{In questo testo abbiamo adottato questa segnatura, ma non è
+  l'unica possibile nello spazio di Minkowski.  Un'altra segnatura largamente
+  usata è $(+---)$.}
 invece in $\R^{4}$ abbiamo visto che si utilizza la segnatura $(++++)$.  Una
 \index{trasformazione!di Lorentz}\emph{trasformazione di Lorentz} non omogenea è
 una trasformazione lineare nello spazio di Minkowski da un sistema di
@@ -616,6 +616,23 @@ Ciascuna operazione di contrazione si effettua moltiplicando per il tensore di
 Minkowski che ha per indici i due indici che si vogliono contrarre, per esempio
 $\tensor{T}{_{\gamma\beta}^{\gamma\beta}} = \eta_{\alpha\gamma}
 \eta^{\beta\delta} \tensor{T}{^{\alpha}_{\beta}^{\gamma}_{\delta}}$.
+
+Due indici contratti possono essere scambiati di posto: l'indice covariante può
+diventare controvariante e, allo stesso tempo, l'indice controvariante diventare
+covariante, senza modificare il risultato.  Sfrutteremo spesso questa proprietà.
+Per esempio, quindi, abbiamo
+$A^{\mu\nu}\tensor{B}{_{\mu}^{\lambda}} =
+\tensor{A}{_{\mu}^{\nu}}B^{\mu\lambda}$.  Mostriamolo
+\begin{equation}
+  A^{\mu\nu}\tensor{B}{_{\mu}^{\lambda}} =
+  \eta^{\mu\alpha}\tensor{A}{_{\alpha}^{\nu}} \eta_{\mu\beta}B^{\beta\lambda} =
+  \eta^{\mu\alpha}\eta_{\mu\beta} \tensor{A}{_{\alpha}^{\nu}}B^{\beta\lambda} =
+  \tensor{\delta}{^{\alpha}_{\beta}}\tensor{A}{_{\alpha}^{\nu}}B^{\beta\lambda}
+  = \tensor{A}{_{\alpha}^{\nu}}B^{\alpha\lambda}.
+\end{equation}
+Non è invece possibile abbassare o alzare solo uno dei due indici muti lasciando
+l'altro nella propria posizione, altrimenti si contravviene alla convenzione di
+Einstein per la somma descritta a pagina~\pageref{cha:notazioni}.
 
 Si può effettuare la contrazione degli indici anche nel prodotto di due
 quadritensori: il prodotto di un quadritensore di tipo $(p,q)$ e di uno di tipo
@@ -1711,7 +1728,7 @@ da cui
 Se il sistema è chiuso il termine $\lparder{\Lambda}{x^{\alpha}}$ è nullo.
 Definiamo il \index{tensore!energia-impulso}\emph{tensore energia-impulso}
 $\tensor{T}{^{\beta}_{\alpha}}$ come\footnote{Si noti che
-  \textcites{barone:relativita,landau:campo} definisco il tensore
+  \textcites{barone:relativita,landau:campi} definisco il tensore
   energia-impulso con il segno opposto a causa della diversa convenzione sui
   segni.  Vedi pagina~\pageref{eq:convenzione-segni}.}
 \begin{equation}
@@ -1817,10 +1834,15 @@ $A_{\mu}$ del quadrimomento come campi
   F^{\alpha\gamma}\partial^{\beta}A_{\gamma} -
   \frac{1}{4}\eta^{\alpha\beta}F_{\gamma\delta}F^{\gamma\delta}.
 \end{equation}
-Si dimostra che il tensore energia-impulso deve sempre essere simmetrico, ma il
-tensore $T_{\textup{em}}^{\alpha\beta}$ così ottenuto non lo è.  Mediante
-un'opportuna procedura di simmetrizzazione si può giungere alla seguente forma
-simmetrica
+Si
+dimostra\footnote{Vedi \textcite[419]{barone:relativita},
+  \textcite[111]{landau:campi}.}
+che il tensore energia-impulso deve sempre essere simmetrico, ma il tensore
+$T_{\textup{em}}^{\alpha\beta}$ così ottenuto non lo è.  Mediante un'opportuna
+procedura di
+simmetrizzazione\footnote{Questo metodo è dovuto a Belinfante e Rosenfeld.
+  Vedi~\textcite[437]{barone:relativita}, \textcite[114]{landau:campi}.}
+si può giungere alla seguente forma simmetrica
 \begin{equation}
   T_{\textup{em}}^{\alpha\beta} = \tensor{F}{^{\alpha}_{\gamma}}F^{\beta\gamma}
   - \frac{1}{4}\eta^{\alpha\beta}F_{\gamma\delta}F^{\gamma\delta}.
@@ -1891,7 +1913,7 @@ riscritto nella forma
 nella quale si vede che $T_{\textup{p}}^{\alpha\beta}$ è effettivamente un
 quadritensore di rango $2$ controvariante, in quanto $p_{n}^{\alpha}$ e
 $\ltoder{x_{n}^{\beta}}{\tau}$ sono quadrivettori controvarianti.  Si può far
-vedere che
+vedere che\footnote{Vedi~\textcite[44]{weinberg:gravitation}.}
 \begin{equation}
   \partial_{\beta}T_{\textup{p}}^{\alpha\beta} = \sum_{n}
   \delta^{3}(\bm{x} - \bm{x}_{n}(t)) \toder{p_{n}^{\alpha}}{t} = \sum_{n}
