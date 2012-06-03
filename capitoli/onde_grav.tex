@@ -684,15 +684,145 @@ Inserendo la~\eqref{eq:h-ij} in questa formula abbiamo
 \end{subequations}
 Per ottenere l'energia totale $I$ emessa, nell'unità di tempo, dal sistema
 bisogna moltiplicare la media di $ct^{01}$ su tutti gli stati di polarizzazione
-per $r^{2}\dd\Omega$ e integrare su tutto l'angolo solido.  Si può far
-vedere\footnote{Vedi~\textcite[460-461]{landau:campi}.} che in questo modo si
-ottiene il seguente risultato
+per $r^{2}\dd\Omega$ e integrare su tutto l'angolo solido.  Sviluppando i
+calcoli si ottiene il seguente
+risultato\footnote{Vedi~\textcite[460-461]{landau:campi}.}
 \begin{equation}
   I = \frac{G}{45c^{5}} \dddot{Q}_{ij} \dddot{Q}^{ij}.
 \end{equation}
 Osserviamo che l'energia emessa dal sistema è proporzionale $G/c^{5}$, che è un
 fattore estremamente piccolo, quindi l'efficienza di emissione di radiazione da
 parte di masse in movimento è, generalmente, molto bassa.
+
+% TODO: completare, ci sono solo tante formule slegate e da ricontrollare.  Vedi
+% lezione del 31/05/2012
+\section{\completare{Sorgenti di onde gravitazionali}}
+\label{sec:sorgenti-onde-grav}
+
+% TODO: questa equazione non mi convince molto, controllarla
+\begin{equation}
+  h_{\mu\nu}(t, \bm{x}) = -\frac{4G}{c^{4}R} \int\limits_{V} T_{\mu\nu}|_{t-R/c}
+  \dd V
+\end{equation}
+
+\begin{equation}
+  h_{\mu\nu}(t, \bm{x}) \approx \frac{2G}{c^{4}R} \ddot{D}_{\mu\nu}(t-R/c)
+\end{equation}
+
+\begin{equation}
+  D_{\alpha\beta} \approx \int \rho x_{\alpha}  x_{\beta} = MR^{2}
+\end{equation}
+qui $R$ rappresenta le dimensioni del sistema.
+
+\begin{equation}
+  \dddot{D}_{\alpha\beta} \approx \frac{MR^{2}}{T^{3}} \sim \frac{MV^{3}}{R} =
+  \frac{MV^{3}}{R} \frac{G^{2}c^{4}}{G^{2}c^{4}}
+\end{equation}
+con $T=R/V$ tempo caratteristico per l'attraversamento del sistema da parte dei
+corpi, i quali si muovono alla velocità $V$.  Ponendo $L_{0} = c^{5}/G =
+\SI{3.6e59}{\erg\per\second}$ si ottiene
+\begin{equation}
+  I \sim L_{0}\bigg(\frac{r_{\textup{S}}}{r}\bigg)^{2} \bigg(\frac{v}{c}\bigg)
+\end{equation}
+Per il teorema del viriale $2K + U = 0$, con $K$ energia cinetica e $U$ energia
+potenziale gravitazionale, allora
+\begin{equation}
+  MV^{2} \approx \frac{MR^{2}}{T^{2}} \sim \frac{GM^{2}}{R}
+\end{equation}
+da cui
+\begin{equation}
+  I \sim L_{0} \bigg(\frac{r_{\textup{S}}}{R}\bigg)^{5},
+\end{equation}
+quindi per poter avere un'emissione efficiente di onde gravitazionali bisogna
+avere oggetti collassati, cioè corpi per i quali si ha $r_{\textup{S}} \sim R$.
+
+\subsection{\completare{Rotatore rigido}}
+\label{sec:rotatore-rigido}
+
+Sbarra rigida in rotazione, $\phi = \SI{1}{\metre}$, $l = \SI{20}{\metre}$,
+$\rho = \SI{8}{\gram\per\centi\metre\cubed}$, $M = \SI{500}{\tonne}$,
+$t = \text{tensione limite} = \SI{3e9}{\dyne\per\centi\metre\cubed} \implies
+\omega = \SI{28}{\radian\per\second}$.
+\begin{equation}
+  I \sim \frac{G}{c^{5}} M^{2}\omega^{6}L^{4} \sim \SI{8e-21}{\erg\per\second}
+\end{equation}
+Dunque in laboratorio non è possibile produrre onde gravitazionali rilevabili
+con la strumentazione oggi a nostra disposizione.
+
+Pianeta del sistema solare con momento di quadrupolo di massa non nullo.  Per il
+pianeta Giove $\omega \approx \SI[per-mode=reciprocal]{2e-8}{\per\second}$,
+$M \approx \SI{2e30}{\gram}$, $R \approx \SI{8e13}{\centi\metre}$.
+\begin{equation}
+  I \approx \frac{G}{c^{5}} M^{2}\omega^{6}R^{4} = \SI{5.3}{\kilo\watt} =
+  \SI{5.3e10}{\erg\per\second} \ll L_{\odot} = \SI{3.9e33}{\erg\per\second}
+\end{equation}
+
+\subsubsection{\completare{Sistema binario}}
+\label{sec:sistema-binario}
+
+Energia emessa da un sistema binario sotto forma di onde gravitazionali
+\begin{equation}
+  I = \frac{32}{5} \frac{G}{c^{5}} \mu^{2} \omega^{6} r^{4} = \frac{32}{5}
+  \frac{G^{4} m_{1}^{2} m_{2}^{2} (m_{1} + m_{2})}{c^{5}r^{5}}
+\end{equation}
+con
+\begin{equation}
+  \omega^{2} = \frac{G(m_{1} + m_{2})}{r^{3}}
+\end{equation}
+
+Poiché le due stelle si attraggono, diminuisce l'energia potenziale del sistema,
+che viene emessa sotto forma di onde gravitazionali, e diminuisce anche la
+distanza
+\begin{equation}
+  \toder{r}{t} = -\frac{64}{5}\frac{G^{3}}{c^{5}} \frac{m_{1}m_{2}(m_{1} +
+    m_{2})}{r^{3}}
+\end{equation}
+
+Sistema binario molto legato costituito da due stelle di neutroni: PSR B1913+16,
+distante da noi \SI{7.3}{\kilo\parsec},
+$m_{1} \approx m_{2} \approx \SI{1.4}{\solarmass}$, distanza fra le stelle
+$\SI{1.9e11}{\centi\metre} = \SI{1.9e6}{\kilo\metre}$.
+
+\subsection{\completare{Collasso gravitazionale}}
+\label{sec:collasso-grav}
+
+Altre sorgenti: buchi neri supermassivi al centro delle galassie (sono sorgenti
+continue), collasso gravitazionale di un corpo non sfericamente simmetrico
+\begin{equation}
+  e = \frac{a-b}{a+b}
+\end{equation}
+$M = \SI{1}{\solarmass}$
+
+Per la conservazione del momento angolare, la frequenza di rotazione dopo il
+collasso è
+\begin{equation}
+  \omega = \omega_{0}\bigg(\frac{R_{0}}{R}\bigg)
+\end{equation}
+Dimensione prima del collasso $R_{0} = \SI{700e3}{\kilo\metre}$, dimensione dopo
+il collasso $R = \SI{10}{\kilo\metre}$, quindi $R_{0}/R \approx \num{1e8}$
+\begin{equation}
+  \omega \approx 10^{8} \omega_{0} \implies T = \frac{2\pi}{\omega} \approx
+  \SI{1e-3}{\second}
+\end{equation}
+
+\begin{equation}
+  I = \frac{32}{5} \frac{G}{c^{5}} \mathcal{I}^{2} \omega^{6} e^{2}
+\end{equation}
+$\mathcal{I} = \text{momento di inerzia} = MR^{2}$, $e = 10^{-4}$
+
+Energia rotazionale alla formazione della stella di neutroni
+\begin{equation}
+  E = \frac{1}{2} \mathcal{I} \omega^{2} \approx \SI{1e53}{\erg}
+\end{equation}
+$\omega \approx \SI[per-mode=reciprocal]{e4}{\per\second}$.
+
+$I \approx \SI{e47}{\erg\per\second}$.  Se l'energia emessa per unità di tempo
+rimane sempre costante allora l'energia rotazionale dovrebbe esaurirsi in
+\begin{equation}
+  \Delta t = \frac{E}{I} = ....
+\end{equation}
+cioè dopo questo periodo di tempo la stella dovrebbe smettere di ruotare e
+arrestarsi. [...]
 
 %%% Local Variables:
 %%% mode: latex
