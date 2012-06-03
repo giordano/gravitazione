@@ -23,6 +23,7 @@
 % restituisce erroneamente lettere in tondo, non in corsivo e non funziona con
 % le lettere greche.
 \usepackage{bm}
+\usepackage[long,nodayofweek]{datetime}
 \usepackage{makeidx}
 \usepackage{siunitx}
 \usepackage{hyperref}
@@ -186,7 +187,32 @@
 \date{}
 \begin{document}
 \frontmatter{}
-\maketitle
+
+%% copertina, rielaborazione dell'esempio `\titleGP' di pagina 34 del file di
+%% documentazione `titlepages.pdf'
+\thispagestyle{empty}
+\begingroup
+\newdateformat{mydate}{\THEDAY{}~\monthname[\THEMONTH{}]~\THEYEAR{}}
+\centering
+\vspace*{\baselineskip}
+\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+\rule{\textwidth}{0.4pt}\\[\baselineskip]
+{\LARGE\scshape Gravitazione\\ e \\[0.3\baselineskip]
+  Cosmologia}\\[0.2\baselineskip]
+\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+\rule{\textwidth}{1.6pt}\\[\baselineskip]
+\scshape
+Appunti del corso tenuto dal professor Gabriele Ingrosso \\
+Lecce, a. a. 2011-2012\par
+\vspace*{2\baselineskip}
+Curato da \\[\baselineskip]
+{\Large Mosè Giordano\par}
+{\itshape Università del Salento\par}
+\vfill
+\includegraphics[width=2cm]{figure/logo_unisalento}\\
+{\scshape \mydate\today}\par
+\endgroup
+%% Fine copertina
 
 \cleardoublepage{}
 \tableofcontents{} % indice generale
