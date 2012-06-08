@@ -458,7 +458,7 @@ prima che l'onda arrivi (cioè con $h_{jk} = 0$), la soluzione di questa
 equazione è
 \begin{equation}
   \label{eq:spostamento-onda-grav}
-  \delta x^{j}(t) = \delta x^{k}(0) \bigg(\tensor{\delta}{^{j}_{k}} +
+  \delta x^{j}(t) \approx \delta x^{k}(0) \bigg(\tensor{\delta}{^{j}_{k}} +
   \frac{1}{2}\tensor{h}{^{j}_{k}}(x^{\mu}(t))\bigg).
 \end{equation}
 Questo risultato ci permette di analizzare l'effetto di un'onda gravitazionale
@@ -484,9 +484,9 @@ dalla~\eqref{eq:spostamento-onda-grav} abbiamo che dopo il passaggio dell'onda
   \frac{1}{2}\tensor{h}{^{j}_{3}}\bigg) = \delta x^{3}(0)
   \tensor{\delta}{^{j}_{3}},
 \end{equation}
-cioè la separazione rimane costante $\delta x^{j}(t) = \delta x^{j}(0)$.
-Supponiamo ora che i due corpi siano allineati lungo una direzione
-perpendicolare a $z$, per esempio $y$, con separazione iniziale
+cioè la separazione rimane costante $\delta x^{j}(t) = \delta x^{j}(0)$ lungo
+ogni direzione $j$.  Supponiamo ora che i due corpi siano allineati lungo una
+direzione perpendicolare a $z$, per esempio $y$, con separazione iniziale
 $\delta x^{j}(0) = (0,L_{0},0)$.  Dopo il passaggio dell'onda,
 dalla~\eqref{eq:spostamento-onda-grav} risulta
 \begin{equation}
@@ -652,7 +652,7 @@ h_{ij}$, abbiamo
 \end{equation}
 in cui
 \begin{equation}
-  Q_{\alpha\beta} = \int \rho(3x_{\alpha} x_{\beta} - r^{2}\delta_{\alpha\beta})
+  Q_{ij} = \int \rho(3x_{i} x_{j} - r^{2}\delta_{ij})
   \dd V
 \end{equation}
 è il \index{momento!di quadrupolo di massa}
@@ -699,42 +699,48 @@ parte di masse in movimento è, generalmente, molto bassa.
 \section{\completare{Sorgenti di onde gravitazionali}}
 \label{sec:sorgenti-onde-grav}
 
-% TODO: questa equazione non mi convince molto, controllarla
-\begin{equation}
-  h_{\mu\nu}(t, \bm{x}) = -\frac{4G}{c^{4}R} \int\limits_{V} T_{\mu\nu}|_{t-R/c}
-  \dd V
-\end{equation}
+Le onde gravitazionali possono essere generate in diversi modi, fra i quali
+rotatore rigido, sistemi di stelle binarie, urto frontale di due oggetti, buchi
+neri supermassivi al centro delle galassie, collasso gravitazionale di un corpo
+non sfericamente simmetrico.  In questo paragrafo ne considereremo alcuni in
+particolare.
 
+Innanzitutto determiniamo l'ordine di grandezza dell'energia irradiata da un
+sistema che emette onde gravitazionali.  Consideriamo un sistema costituito da
+due corpi di uguale massa $M$ che impiegano un tempo $T = r/v$ per attraversare
+l'intero sistema di dimensione $r$ alla velocità $v$.  Il momento di inerzia è
+dato da $\int \rho x_{i} x_{j} \dd V$, possiamo approssimare allora ogni
+componente del tensore momento di quadrupolo di massa con
 \begin{equation}
-  h_{\mu\nu}(t, \bm{x}) \approx \frac{2G}{c^{4}R} \ddot{D}_{\mu\nu}(t-R/c)
+  Q_{ij} \approx 3 \int \rho x_{i} x_{j} \dd V = 3 M r^{2}
 \end{equation}
-
+e si può stimare la sua derivata temporale terza dividendo $Q_{ij}$ per $T^{3}$
 \begin{equation}
-  D_{\alpha\beta} \approx \int \rho x_{\alpha}  x_{\beta} = MR^{2}
+  \dddot{Q}_{ij} \approx 3 \frac{Mr^{2}}{T^{3}} = 3 \frac{Mv^{3}}{r}.
 \end{equation}
-qui $R$ rappresenta le dimensioni del sistema.
-
+Poniamo $L_{0} = c^{5}/G = \SI{3.6e59}{\erg\per\second}$, allora
 \begin{equation}
-  \dddot{D}_{\alpha\beta} \approx \frac{MR^{2}}{T^{3}} \sim \frac{MV^{3}}{R} =
-  \frac{MV^{3}}{R} \frac{G^{2}c^{4}}{G^{2}c^{4}}
+  I = \frac{G}{45c^{5}} \dddot{Q}_{ij} \dddot{Q}^{ij} \approx \frac{G}{45c^{5}}
+  \frac{G^{2}}{c^{10}} \bigg(3 \frac{M v^{3}}{r}\bigg)^{2} \frac{c^{10}}{G} \sim
+  L_{0} \bigg(\frac{r_{\textup{S}}}{r}\bigg)^{2} \bigg(\frac{v}{c}\bigg)^{6}.
 \end{equation}
-con $T=R/V$ tempo caratteristico per l'attraversamento del sistema da parte dei
-corpi, i quali si muovono alla velocità $V$.  Ponendo $L_{0} = c^{5}/G =
-\SI{3.6e59}{\erg\per\second}$ si ottiene
+I sistemi astrofisici sono generalmente legati gravitazionalmente, allora per il
+teorema del viriale $2K + U = 0$, con $K = Mv^{2}/2 \approx M r^{2}/(2T^{2})$
+energia cinetica e $U = -GM/r$ energia potenziale gravitazionale, risulta
 \begin{equation}
-  I \sim L_{0}\bigg(\frac{r_{\textup{S}}}{r}\bigg)^{2} \bigg(\frac{v}{c}\bigg)
-\end{equation}
-Per il teorema del viriale $2K + U = 0$, con $K$ energia cinetica e $U$ energia
-potenziale gravitazionale, allora
-\begin{equation}
-  MV^{2} \approx \frac{MR^{2}}{T^{2}} \sim \frac{GM^{2}}{R}
+  \frac{Mr^{2}}{T^{2}} \approx \frac{GM^{2}}{r},
 \end{equation}
 da cui
 \begin{equation}
-  I \sim L_{0} \bigg(\frac{r_{\textup{S}}}{R}\bigg)^{5},
+  T^{2} \approx \frac{r^{3}}{GM} \implies \frac{v^{2}}{c^{2}} =
+  \frac{r^{2}}{cT^{2}} \approx \frac{GM}{rc^{2}} \sim \frac{r_{\textup{S}}}{r}.
+\end{equation}
+In definitiva
+\begin{equation}
+  I \sim L_{0} \bigg(\frac{r_{\textup{S}}}{r}\bigg)^{5},
 \end{equation}
 quindi per poter avere un'emissione efficiente di onde gravitazionali bisogna
-avere oggetti collassati, cioè corpi per i quali si ha $r_{\textup{S}} \sim R$.
+avere oggetti collassati, cioè corpi per i quali si ha $r_{\textup{S}} \sim r$.
 
 \subsection{\completare{Rotatore rigido}}
 \label{sec:rotatore-rigido}
@@ -757,39 +763,57 @@ $M \approx \SI{2e30}{\gram}$, $R \approx \SI{8e13}{\centi\metre}$.
   \SI{5.3e10}{\erg\per\second} \ll L_{\odot} = \SI{3.9e33}{\erg\per\second}
 \end{equation}
 
-\subsubsection{\completare{Sistema binario}}
+\subsection{Sistema binario}
 \label{sec:sistema-binario}
 
-Energia emessa da un sistema binario sotto forma di onde gravitazionali
+Per un sistema binario di corpi in orbita circolare, con massa ridotta
+$\mu = m_{1}m_{2}/(m_{1} + m_{2})$, si trova (\textcite[461]{landau:campi},
+\textcite[986]{misner:gravitation}, \textcite[476]{shapiro:black-holes}) che
+l'energia $I$ emessa nell'unità di tempo sotto forma di onde gravitazionali è
+data da
 \begin{equation}
-  I = \frac{32}{5} \frac{G}{c^{5}} \mu^{2} \omega^{6} r^{4} = \frac{32}{5}
-  \frac{G^{4} m_{1}^{2} m_{2}^{2} (m_{1} + m_{2})}{c^{5}r^{5}}
+  -\toder{E}{t} = I = \frac{32}{5} \frac{G}{c^{5}} \mu^{2} \omega^{6} r^{4} =
+  \frac{32}{5} \frac{G^{4} m_{1}^{2} m_{2}^{2} (m_{1} + m_{2})}{c^{5}r^{5}}
 \end{equation}
 con
 \begin{equation}
-  \omega^{2} = \frac{G(m_{1} + m_{2})}{r^{3}}
+  \omega^{2} = \frac{G(m_{1} + m_{2})}{r^{3}}.
 \end{equation}
-
 Poiché le due stelle si attraggono, diminuisce l'energia potenziale del sistema,
 che viene emessa sotto forma di onde gravitazionali, e diminuisce anche la
-distanza
+distanza.  Nel caso di orbite circolari $E = -Gm_{1}m_{2}/(2r)$, allora la
+variazione della distanza reciproca $r$ fra i due corpi varia, nell'unità di
+tempo, come
 \begin{equation}
-  \toder{r}{t} = -\frac{64}{5}\frac{G^{3}}{c^{5}} \frac{m_{1}m_{2}(m_{1} +
-    m_{2})}{r^{3}}
+  \toder{r}{t} = -\frac{Gm_{1}m_{2}}{2} \toder{(1/E)}{t} =
+  \frac{2r^{2}}{Gm_{1}m_{2}} \toder{E}{t} = -\frac{64}{5}\frac{G^{3}}{c^{5}}
+  \frac{m_{1}m_{2}(m_{1} + m_{2})}{r^{3}}.
 \end{equation}
 
-Sistema binario molto legato costituito da due stelle di neutroni: PSR B1913+16,
-distante da noi \SI{7.3}{\kilo\parsec},
-$m_{1} \approx m_{2} \approx \SI{1.4}{\solarmass}$, distanza fra le stelle
-$\SI{1.9e11}{\centi\metre} = \SI{1.9e6}{\kilo\metre}$.
+A circa \SI{7.3}{\kilo\parsec} di distanza da noi esiste un sistema binario
+molto legato costituito da due stelle di neutroni, di cui una è la pulsar PSR
+B1913+16 (scoperta da Hulse e Taylor nel 1974), in orbita l'una attorno
+all'altra con un periodo di circa $8$ ore.  Questo sistema è importante perché
+fornisce una forte evidenza sperimentale, seppur indiretta, dell'esistenza di
+onde gravitazionali.  Grazie alle regolari emissioni di impulsi elettromagnetici
+da parte delle pulsar, è stato possibile misurare i parametri orbitali del
+sistema.  Le misure della precessione del perielio del sistema sono in perfetto
+accordo con le previsioni della teoria della relatività generale se si tiene
+conto dell'energia emessa sotto forma di onde gravitazionali da parte della
+pulsar.  Le masse delle due stelle sono di circa $\SI{1.4}{\solarmass}$, la
+distanza fra le stelle è circa
+$\SI{1.9e11}{\centi\metre} = \SI{1.9e6}{\kilo\metre}$ e la pulsar si muove alla
+velocità di \SI{300}{\kilo\metre\per\second}.  Questo sistema binario funge da
+laboratorio per la verifica di previsioni della teoria della relatività
+riguardanti lo shift Doppler e gravitazionale, oltre alla precessione del
+perielio e le onde gravitazionali.
 
 \subsection{\completare{Collasso gravitazionale}}
 \label{sec:collasso-grav}
 
-Altre sorgenti: buchi neri supermassivi al centro delle galassie (sono sorgenti
-continue), collasso gravitazionale di un corpo non sfericamente simmetrico
+Collasso gravitazionale di un corpo non sfericamente simmetrico
 \begin{equation}
-  e = \frac{a-b}{a+b}
+  e = \frac{a-b}{(a+b)/2}
 \end{equation}
 $M = \SI{1}{\solarmass}$
 
