@@ -757,7 +757,8 @@ con la strumentazione oggi a nostra disposizione.
 
 Pianeta del sistema solare con momento di quadrupolo di massa non nullo.  Per il
 pianeta Giove $\omega \approx \SI[per-mode=reciprocal]{2e-8}{\per\second}$,
-$M \approx \SI{2e30}{\gram}$, $R \approx \SI{8e13}{\centi\metre}$.
+$M \approx \SI{2e30}{\gram}$, $R \approx
+\SI{8e13}{\centi\metre}$. (\textcite[272]{weinberg:gravitation})
 \begin{equation}
   I \approx \frac{G}{c^{5}} M^{2}\omega^{6}R^{4} = \SI{5.3}{\kilo\watt} =
   \SI{5.3e10}{\erg\per\second} \ll L_{\odot} = \SI{3.9e33}{\erg\per\second}
@@ -811,42 +812,38 @@ perielio e le onde gravitazionali.
 \subsection{\completare{Collasso gravitazionale}}
 \label{sec:collasso-grav}
 
-Collasso gravitazionale di un corpo non sfericamente simmetrico
-\begin{equation}
-  e = \frac{a-b}{(a+b)/2}
-\end{equation}
-$M = \SI{1}{\solarmass}$
+Un'altra forte sorgente di onde è il collasso gravitazionale di un corpo.
+Poiché un corpo sfericamente simmetrico produrrebbe un campo a simmetria sferica
+che, per il teorema di Birkhoff, sarebbe anche statico, affinché si abbia
+produzione di onde è necessario che il corpo non sia dotato di simmetria
+sferica.
 
-Per la conservazione del momento angolare, la frequenza di rotazione dopo il
-collasso è
+Un esempio di questo fenomeno è quello di una stella che collassa in una pulsar
+di massa dell'ordine di $M \sim \SI{1}{\solarmass}$.  Approssimiamo la stella
+originaria con un ellissoide di ellitticità
 \begin{equation}
-  \omega = \omega_{0}\bigg(\frac{R_{0}}{R}\bigg)
+  e = \frac{\text{differenza fra i raggi equatoriali}}{\text{raggio equatoriale
+      medio}}  = \frac{a-b}{(a+b)/2} ~ 10^{-4},
 \end{equation}
-Dimensione prima del collasso $R_{0} = \SI{700e3}{\kilo\metre}$, dimensione dopo
-il collasso $R = \SI{10}{\kilo\metre}$, quindi $R_{0}/R \approx \num{1e8}$
+con $a$ e $b$ raggi equatoriali dell'ellissoide dell'ordine di
+$R_{0} \sim \SI{700e3}{\kilo\metre}$.  Dopo il collasso la pulsar ha una
+dimensione di $R \sim \SI{10}{\kilo\metre}$ e ruota con pulsazione
+$\omega \sim \SI[per-mode=reciprocal]{e4}{\per\second}$.  L'energia emessa per
+unità di tempo sotto forma di onde gravitazionali è
+(\textcite[488]{shapiro:black-holes}, \textcite[272]{weinberg:gravitation})
 \begin{equation}
-  \omega \approx 10^{8} \omega_{0} \implies T = \frac{2\pi}{\omega} \approx
-  \SI{1e-3}{\second}
+  I = \frac{32}{5} \frac{G}{c^{5}} \mathcal{I}^{2} \omega^{6} e^{2} \sim
+  \SI{e47}{\erg\per\second}
 \end{equation}
-
+con $\mathcal{I} = \text{momento di inerzia} \sim MR^{2}$ momento d'inerzia del
+corpo.  L'Energia rotazionale alla formazione della pulsar è
 \begin{equation}
-  I = \frac{32}{5} \frac{G}{c^{5}} \mathcal{I}^{2} \omega^{6} e^{2}
+  E = \frac{1}{2} \mathcal{I} \omega^{2} \sim \SI{e53}{\erg}.
 \end{equation}
-$\mathcal{I} = \text{momento di inerzia} = MR^{2}$, $e = 10^{-4}$
-
-Energia rotazionale alla formazione della stella di neutroni
-\begin{equation}
-  E = \frac{1}{2} \mathcal{I} \omega^{2} \approx \SI{1e53}{\erg}
-\end{equation}
-$\omega \approx \SI[per-mode=reciprocal]{e4}{\per\second}$.
-
-$I \approx \SI{e47}{\erg\per\second}$.  Se l'energia emessa per unità di tempo
-rimane sempre costante allora l'energia rotazionale dovrebbe esaurirsi in
-\begin{equation}
-  \Delta t = \frac{E}{I} = ....
-\end{equation}
-cioè dopo questo periodo di tempo la stella dovrebbe smettere di ruotare e
-arrestarsi. [...]
+Se la formula per l'energia emessa per unità di tempo rimane sempre valida (in
+particolare non varia) allora l'energia rotazionale dovrebbe esaurirsi in un
+tempo $\Delta t = \frac{E}{I}$ dell'ordine dell'anno, cioè dopo questo periodo
+di tempo la stella dovrebbe smettere di ruotare e arrestarsi.
 
 %%% Local Variables:
 %%% mode: latex
