@@ -514,9 +514,68 @@ gravitazionali in questo modo è molto elevata.
   vuoto.}
 
 Studiamo adesso un campo gravitazionale debole generato da masse in movimento
-con velocità $v \ll c$.  Abbiamo visto che nell'approssimazione di campo debole
-$R_{\mu\nu}^{(1)} = \dalamb h/2$, quindi l'equazione di Einstein in presenza
-della materia~\eqref{eq:einstein-lineare-esatta} diventa
+con velocità $v \ll c$.  Possiamo ottenere immediatamente delle stime degli
+ordini di grandezza delle quantità coinvolte ricordando che nello studio delle
+onde elettromagnetiche in presenza di cariche in moto
+(paragrafo~\ref{sec:radiazione-dipolo}) abbiamo trovato che i termini principali
+nello sviluppo in multipoli dell'energia emessa dal sistema per unità di tempo è
+dato dalla formula~\eqref{eq:potenza-onde-em}
+\begin{equation}
+  I_{\textup{em}} = \underbrace{\frac{2}{3c^{3}}
+    (\ddot{\bm{d}}_{\textup{em}})^{2}}_{\text{dipolo di carica}} +
+  \underbrace{\frac{2}{3c^{3}} (\ddot{\bm{m}}_{\textup{em}})^{2}}_{\text{dipolo
+      magnetico}} +
+  \underbrace{\frac{1}{180c^{5}}
+    \dddot{Q}_{ij,\textup{em}}\dddot{Q}^{ij,\textup{em}}}_{\text{quadrupolo di
+      carica}} + \cdots
+\end{equation}
+con $\bm{d}_{\textup{em}} = \sum_{k} q_{k} \bm{r}_{k}$ momento di dipolo di
+carica,
+$\bm{m}_{\textup{em}} = \sum_{k} q_{k} \bm{r}_{k} \times \bm{v}_{k}/(2c)$
+momento di dipolo magnetico e
+$Q_{ij,\textup{em}} = \sum_{k} q_{k}(3x_{i}x_{j} -\delta_{ij}r_{k}^{2})$ momento
+di quadrupolo di carica.  Per passare al caso gravitazionale possiamo effettuare
+la sostituzione $\text{carica} \to \text{massa}$, vale a dire $q_{k} \to m_{k}$.
+In questo modo
+\begin{subequations}
+  \begin{align}
+    \bm{d}_{\textup{g}} &= \sum_{k} m_{k} \bm{r}_{k} = M \bm{R}_{\textup{cm}},\\
+    \begin{split}
+      \bm{m}_{\textup{g}} &= \sum_{k} (\text{posizione del corpo $k$}) \times
+      (\text{corrente dovuta al corpo $k$}) \\
+      &= \sum_{k} \bm{r}_{k} \times (m_{k} \bm{v}_{k}) = \bm{L},
+    \end{split} \\
+    Q_{ij,\textup{g}} &= \sum_{k} m_{k}(3x_{i}x_{j} -
+    \delta_{ij}r_{k}^{2}),
+  \end{align}
+\end{subequations}
+in cui $M = \sum_{k} m_{k}$ è la massa totale delle particelle del sistema,
+$\bm{R}_{\textup{cm}} = \sum_{k} m_{k} \bm{r}_{k}/M$ è la posizione del centro
+di massa e $\bm{L}$ è il momento angolare totale.  Per un sistema non
+relativistico isolato, cioè per nel quale non agiscono forze esterne né è
+presente un momento torcente esterno diverso da zero, risulta
+\begin{subequations}
+  \begin{align}
+    \ddot{\bm{d}}_{\textup{g}} &= M \ddot{\bm{R}}_{\textup{cm}} =
+    \dot{\bm{P}} = \bm{0}, \\
+    \dot{\bm{m}}_{\textup{g}} &= \dot{\bm{L}} = \bm{\tau} = \bm{0},
+  \end{align}
+\end{subequations}
+con $\bm{P}$ quantità di moto totale del sistema e $\bm{\tau}$ momento torcente
+totale.  Dunque per un sistema di masse in moto con velocità $v \ll c$ che
+emettono onde gravitazionali i due termini di dipoli, i principali nello
+sviluppo in multipoli dell'energia emessa, sono nulli e il termine dominante
+sarà quello di quadrupolo, del tipo
+\begin{equation}
+  \frac{1}{45c^{5}}\dddot{D}_{ij}\dddot{D}^{ij}.
+\end{equation}
+Il fattore numerico $45$, invece di $180$ del caso elettromagnetico, è legato al
+fatto che il campo gravitazionale ha spin $2$, mentre il campo elettromagnetico
+ha spin $1$.\footnote{Vedi \textcite[471]{shapiro:black-holes}.}
+
+Esaminiamo più in dettaglio il problema.  Sappiamo che nell'approssimazione di
+campo debole $R_{\mu\nu}^{(1)} = \dalamb h_{\mu\nu}/2$, quindi l'equazione di
+Einstein in presenza della materia~\eqref{eq:einstein-lineare-esatta} diventa
 \begin{equation}
   \label{eq:einstein-lineare-materia1}
   \dalamb \bigg(h_{\mu\nu} - \frac{1}{2}\delta_{\mu\nu}h \bigg) = -\frac{16\pi
@@ -694,39 +753,43 @@ Osserviamo che l'energia emessa dal sistema è proporzionale $G/c^{5}$, che è u
 fattore estremamente piccolo, quindi l'efficienza di emissione di radiazione da
 parte di masse in movimento è, generalmente, molto bassa.
 
-% TODO: completare, ci sono solo tante formule slegate e da ricontrollare.  Vedi
-% lezione del 31/05/2012
-\section{\completare{Sorgenti di onde gravitazionali}}
+\section{Sorgenti di onde gravitazionali}
 \label{sec:sorgenti-onde-grav}
 
 Le onde gravitazionali possono essere generate in diversi modi, fra i quali
-rotatore rigido, sistemi di stelle binarie, urto frontale di due oggetti, buchi
-neri supermassivi al centro delle galassie, collasso gravitazionale di un corpo
-non sfericamente simmetrico.  In questo paragrafo ne considereremo alcuni in
-particolare.
+sorgenti di laboratorio, sorgenti astronomiche, sistemi binari, urto frontale di
+due oggetti, buchi neri supermassivi al centro delle galassie, collasso
+gravitazionale di un corpo non sfericamente simmetrico.  In questo paragrafo ne
+considereremo alcuni in particolare.
+
+\subsection{Potenza emessa}
+\label{sec:potenza-emessa}
 
 Innanzitutto determiniamo l'ordine di grandezza dell'energia irradiata da un
 sistema che emette onde gravitazionali.  Consideriamo un sistema costituito da
 due corpi di uguale massa $M$ che impiegano un tempo $T = r/v$ per attraversare
-l'intero sistema di dimensione $r$ alla velocità $v$.  Il momento di inerzia è
-dato da $\int \rho x_{i} x_{j} \dd V$, possiamo approssimare allora ogni
+l'intero sistema di dimensione $r$ alla velocità $v$.  Approssimiamo ogni
 componente del tensore momento di quadrupolo di massa con
 \begin{equation}
-  Q_{ij} \approx 3 \int \rho x_{i} x_{j} \dd V = 3 M r^{2}
+  \begin{split}
+    Q_{ij} &\approx (\text{massa del sistema che si muove}) \cdot
+    (\text{dimensione del sistema})^{2} \\
+    &= M r^{2}
+  \end{split}
 \end{equation}
 e si può stimare la sua derivata temporale terza dividendo $Q_{ij}$ per $T^{3}$
 \begin{equation}
-  \dddot{Q}_{ij} \approx 3 \frac{Mr^{2}}{T^{3}} = 3 \frac{Mv^{3}}{r}.
+  \dddot{Q}_{ij} \approx \frac{Mr^{2}}{T^{3}} = \frac{Mv^{3}}{r}.
 \end{equation}
 Poniamo $L_{0} = c^{5}/G = \SI{3.6e59}{\erg\per\second}$, allora
 \begin{equation}
   I = \frac{G}{45c^{5}} \dddot{Q}_{ij} \dddot{Q}^{ij} \approx \frac{G}{45c^{5}}
-  \frac{G^{2}}{c^{10}} \bigg(3 \frac{M v^{3}}{r}\bigg)^{2} \frac{c^{10}}{G} \sim
+  \frac{G^{2}}{c^{10}} \bigg(\frac{M v^{3}}{r}\bigg)^{2} \frac{c^{10}}{G} \sim
   L_{0} \bigg(\frac{r_{\textup{S}}}{r}\bigg)^{2} \bigg(\frac{v}{c}\bigg)^{6}.
 \end{equation}
 I sistemi astrofisici sono generalmente legati gravitazionalmente, allora per il
 teorema del viriale $2K + U = 0$, con $K = Mv^{2}/2 \approx M r^{2}/(2T^{2})$
-energia cinetica e $U = -GM/r$ energia potenziale gravitazionale, risulta
+energia cinetica e $U = -GM/r$ energia potenziale gravitazionale, cioè
 \begin{equation}
   \frac{Mr^{2}}{T^{2}} \approx \frac{GM^{2}}{r},
 \end{equation}
@@ -742,37 +805,38 @@ In definitiva
 quindi per poter avere un'emissione efficiente di onde gravitazionali bisogna
 avere oggetti collassati, cioè corpi per i quali si ha $r_{\textup{S}} \sim r$.
 
-\subsection{\completare{Rotatore rigido}}
-\label{sec:rotatore-rigido}
+\subsection{Sorgenti di laboratorio}
+\label{sec:sorgenti-laboratorio}
 
-Sbarra rigida in rotazione, $\phi = \SI{1}{\metre}$, $l = \SI{20}{\metre}$,
-$\rho = \SI{8}{\gram\per\centi\metre\cubed}$, $M = \SI{500}{\tonne}$,
-$t = \text{tensione limite} = \SI{3e9}{\dyne\per\centi\metre\cubed} \implies
-\omega = \SI{28}{\radian\per\second}$.
+Onde gravitazionali possono essere prodotte in laboratorio usando una trave in
+rotazione intorno al suo punto medio.  Consideriamo una trave di acciaio con
+raggio $r = \SI{1}{\metre}$, lunga $l = \SI{20}{\metre}$, di densità
+$\rho = \SI{7.8}{\gram\per\centi\metre\cubed}$, massa $M = \SI{490}{\tonne}$,
+carico di rottura $t = \SI{3e9}{\dyne\per\centi\metre\squared}$.  La velocità di
+rotazione massima $\omega$ si ottiene bilanciando la forza centrifuga con il
+carico di rottura
 \begin{equation}
-  I \sim \frac{G}{c^{5}} M^{2}\omega^{6}L^{4} \sim \SI{8e-21}{\erg\per\second}
+  \omega = \sqrt{\frac{8t}{\rho l^{2}}} = \SI{28}{\radian\per\second}.
+\end{equation}
+Per questo sistema, la potenza emessa come onde gravitazionali è data
+da\footnote{Vedi~\textcite[980]{misner:gravitation}.}
+\begin{equation}
+  I = \frac{2}{45} M^{2} l^{2} \omega^{6} = \SI{2.2e-22}{\erg\per\second}.
 \end{equation}
 Dunque in laboratorio non è possibile produrre onde gravitazionali rilevabili
 con la strumentazione oggi a nostra disposizione.
-
-Pianeta del sistema solare con momento di quadrupolo di massa non nullo.  Per il
-pianeta Giove $\omega \approx \SI[per-mode=reciprocal]{2e-8}{\per\second}$,
-$M \approx \SI{2e30}{\gram}$, $R \approx
-\SI{8e13}{\centi\metre}$. (\textcite[272]{weinberg:gravitation})
-\begin{equation}
-  I \approx \frac{G}{c^{5}} M^{2}\omega^{6}R^{4} = \SI{5.3}{\kilo\watt} =
-  \SI{5.3e10}{\erg\per\second} \ll L_{\odot} = \SI{3.9e33}{\erg\per\second}
-\end{equation}
 
 \subsection{Sistema binario}
 \label{sec:sistema-binario}
 
 Per un sistema binario di corpi in orbita circolare, con massa ridotta
-$\mu = m_{1}m_{2}/(m_{1} + m_{2})$, si trova (\textcite[461]{landau:campi},
-\textcite[986]{misner:gravitation}, \textcite[476]{shapiro:black-holes}) che
-l'energia $I$ emessa nell'unità di tempo sotto forma di onde gravitazionali è
-data da
+$\mu = m_{1}m_{2}/(m_{1} + m_{2})$, si
+trova\footnote{Vedi \textcite[461]{landau:campi},
+  \textcite[986]{misner:gravitation}, \textcite[476]{shapiro:black-holes}.}
+che l'energia $I$ emessa nell'unità di tempo sotto forma di onde gravitazionali
+è data da
 \begin{equation}
+  \label{eq:potenza-onde-sistema-binario}
   -\toder{E}{t} = I = \frac{32}{5} \frac{G}{c^{5}} \mu^{2} \omega^{6} r^{4} =
   \frac{32}{5} \frac{G^{4} m_{1}^{2} m_{2}^{2} (m_{1} + m_{2})}{c^{5}r^{5}}
 \end{equation}
@@ -780,7 +844,7 @@ con
 \begin{equation}
   \omega^{2} = \frac{G(m_{1} + m_{2})}{r^{3}}.
 \end{equation}
-Poiché le due stelle si attraggono, diminuisce l'energia potenziale del sistema,
+Poiché i due corpi si attraggono, diminuisce l'energia potenziale del sistema,
 che viene emessa sotto forma di onde gravitazionali, e diminuisce anche la
 distanza.  Nel caso di orbite circolari $E = -Gm_{1}m_{2}/(2r)$, allora la
 variazione della distanza reciproca $r$ fra i due corpi varia, nell'unità di
@@ -790,6 +854,23 @@ tempo, come
   \frac{2r^{2}}{Gm_{1}m_{2}} \toder{E}{t} = -\frac{64}{5}\frac{G^{3}}{c^{5}}
   \frac{m_{1}m_{2}(m_{1} + m_{2})}{r^{3}}.
 \end{equation}
+
+Consideriamo il sistema composto dal Sole e dal pianeta Giove.  Poiché la massa
+di Giove $M = \SI{2e30}{\gram}$ è molto più piccola della massa del Sole
+$M_{\odot} = \SI{2e33}{\gram}$, la massa ridotta $\mu$ del sistema può essere
+approssimata con quella di Giove.  Inserendo i dati orbitali del pianeta
+$\omega = \SI[per-mode=reciprocal]{2e-8}{\per\second}$,
+$r = \SI{8e13}{\centi\metre}$ nella~\eqref{eq:potenza-onde-sistema-binario}
+abbiamo che la potenza emessa da Giove sotto forma di onde gravitazionali è
+\begin{equation}
+  I = \frac{32}{5} \frac{G}{c^{5}} M^{2} \omega^{6} r^{4} =
+  \SI{5.3e10}{\erg\per\second}.
+\end{equation}
+Per confronto, la radiazione gravitazionale emessa dalle collisioni termiche del
+plasma solare è\footnote{Vedi~\textcite[266]{weinberg:gravitation}.}
+dell'ordine di \SI{e15}{\erg\per\second}.  Sono necessari tempi scala molto più
+grandi dell'età del sistema solare per poter osservare degli effetti sull'orbita
+di Giove dovuti alla perdita di energia per radiazione gravitazionale.
 
 A circa \SI{7.3}{\kilo\parsec} di distanza da noi esiste un sistema binario
 molto legato costituito da due stelle di neutroni, di cui una è la pulsar PSR
@@ -809,6 +890,8 @@ laboratorio per la verifica di previsioni della teoria della relatività
 riguardanti lo shift Doppler e gravitazionale, oltre alla precessione del
 perielio e le onde gravitazionali.
 
+% TODO: sistemare le ultime considerazioni, dopo di che il paragrafo dovrebbe
+% essere completo.
 \subsection{\completare{Collasso gravitazionale}}
 \label{sec:collasso-grav}
 
@@ -827,23 +910,24 @@ originaria con un ellissoide di ellitticità
 \end{equation}
 con $a$ e $b$ raggi equatoriali dell'ellissoide dell'ordine di
 $R_{0} \sim \SI{700e3}{\kilo\metre}$.  Dopo il collasso la pulsar ha una
-dimensione di $R \sim \SI{10}{\kilo\metre}$ e ruota con pulsazione
-$\omega \sim \SI[per-mode=reciprocal]{e4}{\per\second}$.  L'energia emessa per
-unità di tempo sotto forma di onde gravitazionali è
-(\textcite[488]{shapiro:black-holes}, \textcite[272]{weinberg:gravitation})
+dimensione di $R \sim \SI{10}{\kilo\metre}$ e ruota con velocità angolare
+$\omega \sim \SI[per-mode=reciprocal]{e4}{\per\second}$.  La potenza emessa
+sotto forma di onde gravitazionali
+è\footnote{Vedi \textcite[488]{shapiro:black-holes},
+  \textcite[272]{weinberg:gravitation}.}
 \begin{equation}
   I = \frac{32}{5} \frac{G}{c^{5}} \mathcal{I}^{2} \omega^{6} e^{2} \sim
   \SI{e47}{\erg\per\second}
 \end{equation}
-con $\mathcal{I} = \text{momento di inerzia} \sim MR^{2}$ momento d'inerzia del
-corpo.  L'Energia rotazionale alla formazione della pulsar è
+con $\mathcal{I} = \text{momento di inerzia} \sim MR^{2}$.  L'energia
+rotazionale alla formazione della pulsar è
 \begin{equation}
   E = \frac{1}{2} \mathcal{I} \omega^{2} \sim \SI{e53}{\erg}.
 \end{equation}
 Se la formula per l'energia emessa per unità di tempo rimane sempre valida (in
-particolare non varia) allora l'energia rotazionale dovrebbe esaurirsi in un
-tempo $\Delta t = \frac{E}{I}$ dell'ordine dell'anno, cioè dopo questo periodo
-di tempo la stella dovrebbe smettere di ruotare e arrestarsi.
+particolare non varia l'ellitticità) allora l'energia rotazionale dovrebbe
+esaurirsi in un tempo $\Delta t = E/I$ dell'ordine dell'anno, cioè dopo questo
+periodo di tempo la stella dovrebbe smettere di ruotare.
 
 %%% Local Variables:
 %%% mode: latex

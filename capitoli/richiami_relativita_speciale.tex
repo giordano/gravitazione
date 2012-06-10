@@ -1519,7 +1519,7 @@ $\bm{J} = \rho \bm{v}$ abbiamo
 con $\bm{v}_{i}$ velocità della particella $i$-esima calcolata al tempo
 $t-r/c$ e
 \begin{equation}
-  \bm{d} = \sum_{i} q_{i} \bm{r}_{i}
+  \bm{d} = \sum_{k} q_{k} \bm{r}_{k}
 \end{equation}
 \index{momento!di dipolo di carica}\emph{momento di dipolo di carica} del
 sistema, sempre calcolato al tempo $t-r/c$.
@@ -1572,18 +1572,17 @@ $\dd\Omega = 2\pi \sin\theta \dd\theta$ e integrare su $\theta$ fra $0$ e $\pi$
 \end{equation}
 Questa è dunque l'energia emessa, per unità di tempo, dal sistema
 nell'approssimazione di dipolo appena sviluppata.  Poiché
-$\ddot{\bm{d}} = \sum_{i} q_{i} \dot{\bm{v}}_{i}$, le cariche emettono
-radiazione se sono accelerate.  Non si ha emissione di radiazione neanche se le
-cariche costituiscono un sistema isolato e hanno tutte lo stesso rapporto fra
-carica $q_{i}$ e massa $m_{i}$ perché
+$\ddot{\bm{d}} = \sum_{k} q_{k} \dot{\bm{v}}_{k}$, le cariche emettono
+radiazione se sono accelerate.  Non si ha emissione di radiazione di dipolo
+neanche se le cariche costituiscono un sistema isolato e hanno tutte lo stesso
+rapporto fra carica $q_{k}$ e massa $m_{k}$ perché
 \begin{equation}
-  \bm{d} = \sum_{i} \frac{q_{i}}{m_{i}} m_{i} \bm{r}_{i} = \text{costante}
-  \sum_{i} m_{i} \bm{r}_{i} = \text{costante} \cdot M_{\textup{tot}}
-  \bm{R}_{\textup{cm}},
+  \bm{d} = \sum_{k} \frac{q_{k}}{m_{k}} m_{k} \bm{r}_{k} = \text{costante}
+  \sum_{k} m_{k} \bm{r}_{k} = \text{costante} \cdot M \bm{R}_{\textup{cm}},
 \end{equation}
-in cui $M_{\textup{tot}} = \sum_{i} m_{i}$ è la massa totale delle particelle e
+in cui $M = \sum_{k} m_{k}$ è la massa totale delle particelle e
 $\bm{R}_{\textup{cm}}$ è il raggio vettore del centro di massa del sistema, e
-dal momento che siamo nell'approssimazione non relativistica $v_{i} \ll c$ in un
+dal momento che siamo nell'approssimazione non relativistica $v_{k} \ll c$ in un
 sistema isolato si ha $\ddot{\bm{R}}_{\textup{cm}} = \bm{0}$.
 
 I calcoli svolti per giungere alla formula~\eqref{eq:energia-dipolo}
@@ -1592,34 +1591,34 @@ potenziale vettore in serie di potenze di $a/\lambda \ll 1$ e arrestandosi al
 primo ordine.  È possibile continuare lo sviluppo di $\bm{A}$ in serie di
 potenze di $a/\lambda$ includendo i termini successivi dello sviluppo (quindi
 senza trascurare $\versor{n}\times\bm{r}'/c$ nell'argomento delle densità $\rho$
-e $\bm{J}$) ottenendo il seguente risultato per l'energia emessa dal sistema di
-cariche nell'unità di tempo
+e $\bm{J}$) ottenendo\footnote{Vedi \textcite[249-251]{landau:campi}.} il
+seguente risultato per l'energia emessa dal sistema di cariche nell'unità di
+tempo
 \begin{equation}
+  \label{eq:potenza-onde-em}
   I = \underbrace{\frac{2}{3c^{3}} (\ddot{\bm{d}})^{2}}_{\text{dipolo di carica}} +
   \underbrace{\frac{2}{3c^{3}} (\ddot{\bm{m}})^{2}}_{\text{dipolo magnetico}} +
   \underbrace{\frac{1}{180c^{5}}
-    (\dddot{D}_{\alpha\beta})^{2}}_{\text{quadrupolo di carica}} + \cdots
+    \dddot{Q}_{ij}\dddot{Q}^{ij}}_{\text{quadrupolo di carica}} + \cdots
 \end{equation}
-con $\bm{m} = \sum_{i} q_{i} \bm{r}_{i} \times \bm{v}_{i}/(2c)$
+con $\bm{m} = \sum_{k} q_{k} \bm{r}_{k} \times \bm{v}_{k}/(2c)$
 \index{momento!di dipolo magnetico}\emph{momento di dipolo magnetico} e
-$D_{\alpha\beta} = \sum_{i} q_{i}(3x_{\alpha}x_{\beta} -
-\delta_{\alpha\beta}r_{i}^{2})$
+$Q_{ij} = \sum_{k} q_{k}(3x_{i}x_{j} - \delta_{ij}r_{k}^{2})$
 \index{momento!di quadrupolo di carica}\emph{momento di quadrupolo di carica}.
 Sebbene i termini di dipolo magnetico e quadrupolo di carica siano generalmente
 trascurabili rispetto al termine di dipolo di carica, essi diventano i
 principali nello sviluppo in multipoli dei potenziali nei casi in cui è assente
 la radiazione di dipolo di carica, per esempio perché risulta
 $\ddot{\bm{d}} = \bm{0}$.  Osserviamo infine che per un sistema di cariche
-isolate in cui il rapporto $q_{i}/m_{i}$ è uguale per tutte le particelle è
+isolate in cui il rapporto $q_{k}/m_{k}$ è uguale per tutte le particelle è
 nullo il termine di radiazione di dipolo magnetico, oltre a quello di dipolo di
-carica, infatti ($m_{i} \bm{v}_{i} = \bm{p}_{i}$ poiché $v_{i} \ll c$)
+carica, infatti ($m_{k} \bm{v}_{k} = \bm{p}_{k}$ poiché $v_{k} \ll c$)
 \begin{equation}
-  \bm{m} = \sum_{i} \frac{q_{i}}{2m_{i}c} m_{i} \bm{r}_{i} \times \bm{v}_{i}
-  \propto \sum_{i} \bm{r}_{i} \times \bm{p}_{i} = \bm{L}_{\textup{tot}},
+  \bm{m} = \sum_{k} \frac{q_{k}}{2m_{k}c} m_{k} \bm{r}_{k} \times \bm{v}_{k}
+  \propto \sum_{k} \bm{r}_{k} \times \bm{p}_{k} = \bm{L},
 \end{equation}
-con $\bm{L}_{\textup{tot}}$ momento angolare totale del sistema, e per un
-sistema non relativistico isolato
-$\dot{\bm{L}}_{\textup{tot}} = \bm{0} \implies \dot{\bm{m}} = \bm{0}$.
+con $\bm{L}$ momento angolare totale del sistema, e per un sistema non
+relativistico isolato $\dot{\bm{L}} = \bm{0} \implies \dot{\bm{m}} = \bm{0}$.
 
 \section{Equazioni del moto di un campo e tensore energia-impulso}
 \label{sec:tensore-energia-impulso}
