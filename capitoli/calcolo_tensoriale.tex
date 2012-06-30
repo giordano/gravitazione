@@ -304,7 +304,7 @@ di un tensore di tipo $(1,2)$.
 
 Riscriviamo il secondo termine dell'ultimo membro dell'equazione precedente in
 una forma diversa che ci sarà utile in seguito.  Derivando rispetto a $x'^{\mu}$
-ambo i membri dell'identità
+il primo e l'ultimo membro dell'identità
 \begin{equation}
   \tensor{\delta}{^{\lambda}_{\nu}} = \parder{x'^{\lambda}}{x'^{\nu}}
   = \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\nu}}
@@ -319,17 +319,20 @@ abbiamo
 In questo modo la trasformazione della \index{connessione!affine}connessione
 affine può essere riscritta come
 \begin{equation}
-  \tensor{{\Gamma{}'}}{^{\lambda}_{\mu\nu}} =
-  -\parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu}, x'^{\nu}}
-  \tensor{\Gamma}{^{\rho}_{\tau\sigma}}
-  + \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu},x'^{\nu}}.
+  \tensor{{\Gamma{}'}}{^{\lambda}_{\mu\nu}}
+  = \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
+  \parder{x^{\sigma}}{x'^{\nu}} \tensor{\Gamma}{^{\rho}_{\tau\sigma}}
+  - \parder{x^{\rho}}{x'^{\nu}} \parder{x^{\sigma}}{x'^{\mu}}
+  \parder{x'^{\lambda}}{x^{\rho},x^{\sigma}}.
 \end{equation}
 
 % La dimostrazione seguente è presa da Moshe Carmeli "Relativity: Modern
 % Large-Scale Spacetime Structure of the Cosmos".  Vedi
 % http://books.google.it/books?id=tZ2ilHyrkGUC&pg=PA110&lpg=PA110&dq=%22difference+between+two+affine+connections%22&source=bl&ots=Y1irJ0ao0z&sig=d2qZCZDSHPuD5-ykQM6C6hnXufQ&hl=it&sa=X&ei=Qn2mT87ALKzP4QTaluG_CQ&ved=0CE4Q6AEwAQ#v=onepage&q=%22difference%20between%20two%20affine%20connections%22&f=false
-La connessione affine non è un tensore, ma la differenza fra due connessioni
-affini è un tensore.  Infatti, siano $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ e
+La connessione affine non è un tensore, ma la
+\index{connessione!affine!differenza fra due connessioni affini}differenza fra
+due connessioni affini è un tensore.  Infatti, siano
+$\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ e
 $\tensor{\tilde\Gamma}{^{\lambda}_{\mu\nu}}$ due distinte connessioni affini,
 allora per un cambiamento di coordinate $x^{\mu} \to x'^{\mu}$ la loro
 differenza

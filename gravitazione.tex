@@ -1,6 +1,6 @@
 \documentclass[a4paper,twoside,openright,fleqn,11pt]{book}
 \usepackage[T1]{fontenc}
-\usepackage[light]{kpfonts}
+\usepackage[light,slantedGreeks]{kpfonts}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 
@@ -78,6 +78,11 @@
 % varianti
 \renewcommand{\phi}{\varphi}
 \renewcommand{\epsilon}{\varepsilon}
+
+% Comando per indicare la variazione di una quantità.  Deve produrre una delta
+% maiuscola diritta, visto che carico il pacchetto `kpfonts' con l'opzione
+% `slantedGreeks' uso la macro `\Deltaup'.
+\newcommand{\var}{\Deltaup}
 
 % comando per evidenziare le sezioni da completare o espandere.  NOTA: è un
 % comando provvisorio, serve solo durante la scrittura del testo, ricordarsi di

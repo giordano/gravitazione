@@ -324,7 +324,9 @@ chiamata \index{azione!di Hilbert-Einstein} \emph{azione di Hilbert-Einstein}.
 $G = \SI{6.673 84(80)e-11}{\cubic\metre\per\kilo\metre\per\second\squared}$ è la
 \index{costante!di gravitazione universale}
 \emph{costante di gravitazione universale}.  L'azione della materia ha invece
-espressione
+espressione\footnote{In uno spazio-tempo piatto $g = 1$, quindi
+  $S_{\textup{m}} = (1/c)\int \Lambda \dd^{4} x = \iint \Lambda \dd t\dd^{3}
+  \bm{x}$, come nella~\eqref{eq:azione-campo}.}
 \begin{equation}
   S_{\textup{m}} = \frac{1}{c} \int \Lambda \sqrt{g} \dd^{4} x,
 \end{equation}
@@ -407,20 +409,20 @@ materia ragioniamo in maniera analoga a quanto fatto nel
 paragrafo~\ref{sec:tensore-energia-impulso}
 \begin{equation}
   \begin{split}
-    \delta S_{\textup{m}} &= \frac{1}{c} \delta \int
-    \Lambda(g^{\mu\nu}, \tensor{g}{^{\mu\nu}_{,\lambda}}) \sqrt{g} \dd^{4} x =
-    \frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}} \delta
-    g^{\mu\nu} + \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}}
+    \delta S_{\textup{m}} &= \frac{1}{c} \delta \int \Lambda(g^{\mu\nu},
+    \tensor{g}{^{\mu\nu}_{,\lambda}}) \sqrt{g} \dd^{4} x = \frac{1}{c} \int
+    \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}} \delta g^{\mu\nu}
+    + \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}}
     \delta \tensor{g}{^{\mu\nu}_{,\lambda}} \bigg) \dd^{4} x \\
     &= \frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}} \delta
     g^{\mu\nu} + \parder{}{x^{\lambda}}
     \bigg( \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \delta
     g^{\mu\nu}\bigg) - \delta g^{\mu\nu} \parder{}{x^{\lambda}}
-    \bigg( \parder{\sqrt{g}\Lambda}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
+    \bigg( \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
     \bigg) \dd^{4} x \\
     &= \frac{1}{c} \int \bigg( \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
     - \parder{}{x^{\lambda}}
-    \bigg( \parder{\sqrt{g}\Lambda}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
+    \bigg( \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
     \bigg) \delta g^{\mu\nu} \dd^{4} x.
   \end{split}
 \end{equation}
@@ -434,7 +436,7 @@ da\footnote{Si noti che \textcites{barone:relativita,landau:campi} definisco
 \begin{equation}
   -\frac{1}{2} \sqrt{g} T_{\mu\nu} = \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
   - \parder{}{x^{\lambda}}
-  \bigg( \parder{\sqrt{g}\Lambda}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
+  \bigg( \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
 \end{equation}
 % TODO: spiegare da qualche parte che questo è proprio il tensore
 % energia-impulso (e mettere \index{tensore!energia-impulso})
@@ -1039,8 +1041,8 @@ allora
 L'ultimo termine, fra parentesi, induce una piccola variazione nella distanza
 radiale del pianeta, ma non può essere responsabile della precessione del
 perielio poiché il termine $\cos(2\phi)$ ha periodo sottomultiplo intero di
-$2\pi$ (quindi dopo un'intera rivoluzione di $\Delta \phi = 2\pi$ assume di
-nuovo lo stesso valore).  Il resto della funzione $u(\phi)$ si differenzia dalla
+$2\pi$ (quindi dopo un'intera rivoluzione di $\var \phi = 2\pi$ assume di nuovo
+lo stesso valore).  Il resto della funzione $u(\phi)$ si differenzia dalla
 soluzione~\eqref{eq:sol-binet} dell'equazione di Binet per la presenza di
 $-\epsilon\phi$ nell'argomento del coseno.  Il perielio si ha quando $r(\phi)$ è
 minimo, vale a dire quando $u(\phi)$ è massimo e ciò si verifica quando il
@@ -1053,7 +1055,7 @@ con $n$ numero di rivoluzioni compiute dal pianeta intorno al Sole a partire da
 un istante iniziale fissato.  Pertanto il perielio si ha dopo una variazione
 della coordinata $\phi$ di
 \begin{equation}
-  \Delta\phi = \phi_{n+1} - \phi_{n} = 2\pi(1 + \epsilon)
+  \var\phi = \phi_{n+1} - \phi_{n} = 2\pi(1 + \epsilon)
 \end{equation}
 invece di $2\pi$ come succede per un'orbita chiusa.  La relatività generale
 prevede allora una precessione del perielio dei pianeti nel loro moto intorno al
@@ -1245,17 +1247,17 @@ dell'angolo con l'angolo stesso e quindi
 \begin{equation}
   \delta = \frac{r_{\textup{S}}}{r_{0}}.
 \end{equation}
-La deflessione $\Delta$ è il doppio di questo angolo, dunque, ripristinando il
+La deflessione $\var$ è il doppio di questo angolo, dunque, ripristinando il
 valore della velocità della luce,
 \begin{equation}
-  \Delta = 2\delta = \frac{2r_{\textup{S}}}{r_{0}} = \frac{4GM}{c^{2}r_{0}}.
+  \var = 2\delta = \frac{2r_{\textup{S}}}{r_{0}} = \frac{4GM}{c^{2}r_{0}}.
 \end{equation}
 
 Per quanto riguarda la deviazione dei raggi di luce da parte del campo
 gravitazionale del Sole, supponendo che la distanza di minimo avvicinamento sia
 proprio pari al raggio solare $R_{\odot}$, l'angolo di deflessione vale
 \begin{equation}
-  \Delta_{\odot} = \frac{4GM_{\odot}}{c^{2}R_{\odot}} = \ang{;;1.75}.
+  \var_{\odot} = \frac{4GM_{\odot}}{c^{2}R_{\odot}} = \ang{;;1.75}.
 \end{equation}
 Questa previsione teorica è stata confermata in numerosi esperimenti via via più
 accurati, il primo dei quali fu realizzato da Eddington durante l'eclissi totale
@@ -1293,7 +1295,7 @@ La correzione relativistica per , che tiene conto della curvatura dello spazio t
 prodotta dal campo gravitazionale del Sole, è
 \begin{equation}
   \begin{split}
-    t(r,R_{\odot}) &\approx \tau(r,R_{\odot}) + \Delta t(r,R_{\odot}) \\
+    t(r,R_{\odot}) &\approx \tau(r,R_{\odot}) + \var t(r,R_{\odot}) \\
     &= \frac{\sqrt{r^{2} - R_{\odot}^{2}}}{c} + \frac{2GM_{\odot}}{c^{3}} \ln
     \frac{r + \sqrt{r^{2} - R_{\odot}^{2}}}{R_{\odot}} +
     \frac{GM_{\odot}}{c^{3}} \sqrt{\frac{r - R_{\odot}}{r + R_{\odot}}}.
@@ -1305,13 +1307,13 @@ superiore è
 \begin{equation}
   \begin{split}
     t_{\textup{tot}} &= 2(t(r_{1},R_{\odot}) + t(r_{2},R_{\odot})) \\
-    &= 2(\tau(r_{1},R_{\odot}) + \Delta t(r_{1},R_{\odot}) +
-    \tau(r_{2},R_{\odot}) + \Delta t(r_{2},R_{\odot})).
+    &= 2(\tau(r_{1},R_{\odot}) + \var t(r_{1},R_{\odot}) +
+    \tau(r_{2},R_{\odot}) + \var t(r_{2},R_{\odot})).
   \end{split}
 \end{equation}
 Considerando il sistema Terra-Mercurio, il ritardo
-$\Delta t = 2(\Delta t(r_{1},R_{\odot}) + \Delta t(r_{2},R_{\odot}))$ rispetto
-alla previsione $2(\tau(r_{1},R_{\odot}) + \tau(r_{2},R_{\odot}))$ in uno
+$\var t = 2(\var t(r_{1},R_{\odot}) + \var t(r_{2},R_{\odot}))$ rispetto alla
+previsione $2(\tau(r_{1},R_{\odot}) + \tau(r_{2},R_{\odot}))$ in uno
 spazio-tempo piatto vale \SI{240}{\micro\second}, che corrisponde a una distanza
 di \SI{72}{\kilo\metre}, su un tempo di volo totale $t_{\textup{tot}}$ di
 \SI{20}{\minute}.
