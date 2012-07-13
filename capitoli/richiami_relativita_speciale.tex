@@ -5,14 +5,16 @@
 \section{Trasformazioni di Lorentz}
 \label{sec:trasformazioni-lorentz}
 
-Per il \index{principio!di relatività}\emph{principio di relatività} tutte le
-leggi fisiche assumono la stessa forma in qualsiasi sistema di riferimento
-inerziale.  In particolare, all'interno della teoria della relatività speciale
-le leggi fisiche devono essere invarianti per trasformazioni di Lorentz.  In
-questo capitolo dedurremo le trasformazioni di Lorentz e richiameremo alcuni
-concetto di relatività speciale.
+La relatività speciale, o ristretta, si basa su due postulati:
+\begin{enumerate}
+\item\emph{tutte le leggi fisiche assumono la stessa forma in qualsiasi sistema
+    di riferimento inerziale (\index{principio!di relatività}principio di
+    relatività)};
+\item \emph{la velocità della luce nel vuoto ha lo stesso valore in tutti i
+    sistemi di riferimento inerziali (costanza della velocità della luce)}.
+\end{enumerate}
 
-L'ambiente in cui si verificano i fenomeni fisici descritti dalla relatività
+L'ambiente in cui si svolgono i fenomeni fisici descritti dalla relatività
 speciale è uno spazio quadrimensionale piatto, composto da una coordinata
 temporale e tre spaziali, chiamato \index{spazio!di Minkowski}
 \emph{spazio di Minkowski} e che indicheremo con il simbolo $\M$.  Un elemento
@@ -89,8 +91,8 @@ Se si scelgono coordinate spaziali non cartesiane, come per esempio le
 coordinate sferiche o cilindriche, il tensore metrico assume una forma
 differente.  Se non diversamente specificato useremo sempre coordinate spaziali
 cartesiane.  Questo tensore definisce una metrica pseudo euclidea con segnatura
-$(-+++)$,\footnote{In questo testo abbiamo adottato questa segnatura, ma non è
-  l'unica possibile nello spazio di Minkowski.  Un'altra segnatura largamente
+$(-+++)$,\footnote{Nelle presenti note abbiamo adottato questa segnatura, ma non
+  è l'unica possibile nello spazio di Minkowski.  Un'altra segnatura largamente
   usata è $(+---)$.}
 invece in $\R^{4}$ abbiamo visto che si utilizza la segnatura $(++++)$.  Una
 \index{trasformazione!di Lorentz}\emph{trasformazione di Lorentz} non omogenea è
@@ -101,19 +103,24 @@ riferimento inerziale di coordinate
   \label{eq:trasformazione-lineare}
   x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta} + a^{\alpha},
 \end{equation}
-con $a^{\alpha}$ costanti, che mantenga invariata la distanza fra due eventi,
-cioè la metrica $\dd\tau^{2} = -\eta_{\alpha\beta}\dd x^{\alpha}\dd x^{\beta}$
-in $\M$.  Richiediamo che la trasformazione $x^{\alpha} \to x'^{\alpha}$ sia
-lineare per rispettare la condizione di omogeneità dello spazio (la lunghezza di
-una sbarra non deve dipendere dalla posizione degli estremi), del tempo (la
-lunghezza della sbarra non deve dipendere dall'istante di tempo in cui la
-misuriamo) e di isotropia dello spazio (la lunghezza della sbarra non deve
-dipendere neanche dalla direzione in cui la guardiamo).  Inoltre, in questo modo
-un moto rettilineo uniforme in un sistema di riferimento inerziale risulta è
-ancora un moto rettilineo uniforme anche nell'altro sistema di riferimento
-inerziale.  La richiesta di invarianza della metrica, invece, permette di
-soddisfare il principio di relatività.  I differenziali delle coordinate nel
-nuovo sistema si ricavano dalla~\eqref{eq:trasformazione-lineare}
+con $\tensor{\Lambda}{^{\alpha}_{\beta}}$ e $a^{\alpha}$ costanti, che mantenga
+invariata la distanza fra due eventi, cioè la metrica
+$\dd\tau^{2} = -\eta_{\alpha\beta}\dd x^{\alpha}\dd x^{\beta}$ in $\M$.
+Richiediamo che la trasformazione $x^{\alpha} \to x'^{\alpha}$ sia lineare per
+rispettare la condizione di omogeneità dello spazio (la lunghezza di una sbarra
+non deve dipendere dalla posizione degli estremi), del tempo (la lunghezza della
+sbarra non deve dipendere dall'istante di tempo in cui la misuriamo) e di
+isotropia dello spazio (la lunghezza della sbarra non deve dipendere neanche
+dalla direzione in cui la guardiamo).  In questo modo un moto rettilineo
+uniforme in un sistema di riferimento inerziale è ancora un moto rettilineo
+uniforme anche nell'altro sistema di riferimento inerziale.  L'importanza delle
+trasformazioni di Lorentz risiede nel fatto che una trasformazione fra due
+sistemi di riferimento che sia coerente con i postulati della relatività
+ristretta deve essere tale da lasciare invariata la
+metrica.\footnote{Per una dimostrazione di questa proprietà
+  vedi~\textcite[34-37]{barone:relativita}.}
+I differenziali delle coordinate nel nuovo sistema si ricavano
+dalla~\eqref{eq:trasformazione-lineare}
 \begin{equation}
   \label{eq:trasformazione-differenziali}
   \dd x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}\dd x^{\beta}.
@@ -133,9 +140,8 @@ coordinate sia di Lorentz, cioè affinché conservi la metrica, deve valere
     &= \dd \tau^{2} = -\tensor{\eta}{_{\gamma\delta}} \dd x^{\gamma} \dd x^{\delta},
   \end{split}
 \end{equation}
-da cui, semplificando nel terzo e nel quinto membro
-$\dd x^{\gamma}\dd x^{\delta}$, otteniamo la relazione fondamentale del tensore
-metrico
+da cui, confrontando terzo e quinto membro, otteniamo la relazione fondamentale
+del tensore metrico
 \begin{equation}
   \label{eq:rel-fond-tensore-metrico}
   \tensor{\eta}{_{\alpha\beta}} \tensor{\Lambda}{^{\alpha}_{\gamma}}
@@ -249,10 +255,9 @@ Ponendo $\gamma = \delta = 0$ nella~\eqref{eq:rel-fond-tensore-metrico} risulta
 quindi
 \begin{equation}
   (\tensor{\Lambda}{^{0}_{0}})^{2} = 1 +
-  \sum_{i}(\tensor{\Lambda}{^{i}_{0}})^{2} = 1 +
-  \sum_{i}(v_{i}\tensor{\Lambda}{^{0}_{0}})^{2} \geq 1,
+  \sum_{i}(\tensor{\Lambda}{^{i}_{0}})^{2} \geq 1,
 \end{equation}
-cioè deve aversi
+cioè per ogni trasformazione di Lorentz deve aversi
 \begin{equation}
   \tensor{\Lambda}{^{0}_{0}} \geq 1 \text{ oppure } \tensor{\Lambda}{^{0}_{0}}
   \leq -1.
@@ -260,8 +265,8 @@ cioè deve aversi
 Le trasformazioni con $\tensor{\Lambda}{^{0}_{0}} \geq +1$ sono chiamate
 \emph{ortocrone}, quelle con $\tensor{\Lambda}{^{0}_{0}} \leq -1$
 \emph{anticrone}.  Le trasformazioni di Lorentz proprie e ortocrone sono dette
-\emph{trasformazioni di Lorentz ristrette} o \emph{speciali}.  Considerando una
-trasformazione ristretta inoltre abbiamo
+\emph{trasformazioni di Lorentz ristrette} o \emph{speciali}.  Richiedendo che
+il boost sia una trasformazione ristretta abbiamo
 \begin{equation}
   \tensor{\Lambda}{^{0}_{0}} = \frac{1}{\sqrt{1-\sum_{i}(v_{i})^{2}}} =
   \frac{1}{\sqrt{1-v^{2}}} = \gamma(v) \equiv \gamma,
@@ -439,7 +444,7 @@ covariante
     &= (\tensor{\eta}{_{00}}V^{0}, \delta_{i\beta}V^{\beta}) = (-V^{0}, V^{i}).
   \end{split}
 \end{equation}
-Pertanto, mediante questa operazione, chiamata a volte di
+Pertanto, mediante questa operazione, chiamata a volte
 \emph{abbassamento degli indici}, la componente temporale di un quadrivettore
 cambia segno mentre quelle spaziali rimangono immutate.  Analogamente si può
 effettuare l'\emph{innalzamento degli indici} di un quadrivettore covariante
@@ -873,10 +878,10 @@ prodotto fra la massa a riposo $m$ della particella e la quadrivelocità
   p^{\alpha} = (p^{0},p^{i}) = m v^{\alpha} = m (v^{0}, v^{i}) = (m\gamma(v),
   m\gamma(v)\bm{v}).
 \end{equation}
-Ricordando che l'energia totale $E$ di una particella è definita come $m\gamma(v)$
-troviamo che la prima componente del quadrivettore momento è proprio l'energia
-totale, mentre le componenti $p^{i}$ sono le componenti del momento
-$\bm{p} = m\gamma(v)\bm{v}$
+Ricordando che l'energia totale $E$ di una particella è definita come
+$m\gamma(v)$ troviamo che la prima componente del quadrivettore momento è
+proprio l'energia totale, mentre le componenti $p^{i}$ sono le componenti del
+momento relativistico $\bm{p} = m\gamma(v)\bm{v}$
 \begin{equation}
   p^{\alpha} = (E, \bm{p}).
 \end{equation}
