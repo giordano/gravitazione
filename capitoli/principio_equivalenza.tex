@@ -107,9 +107,13 @@ dove
   g_{\mu\nu} =
   \eta_{\alpha\beta} \parder{\xi^{\alpha}}{x^{\mu}} \parder{\xi^{\beta}}{x^{\nu}}
 \end{equation}
-è il \index{tensore!metrico}\emph{tensore metrico}.  Osserviamo che $g_{\mu\nu}$
-è simmetrico rispetto allo scambio degli indici in quanto il tensore metrico di
-Minkowski $\eta_{\alpha\beta}$ è simmetrico, infatti
+è il \index{tensore!metrico}\emph{tensore metrico}.  Il tensore metrico, a
+differenza del tensore di Minkowski, in generale non è diagonale ed è funzione
+delle coordinate poiché il valore delle derivate varia punto per punto.  Quindi
+dovremmo scrivere $g_{\mu\nu}(x)$ ma per brevità ometteremo di specificare la
+dipendenza dal punto.  Osserviamo che $g_{\mu\nu}$ è simmetrico rispetto allo
+scambio degli indici in quanto il tensore metrico di Minkowski
+$\eta_{\alpha\beta}$ è simmetrico, infatti
 \begin{equation}
   g_{\nu\mu} =
   \eta_{\alpha\beta} \parder{\xi^{\alpha}}{x^{\nu}}\parder{\xi^{\beta}}{x^{\mu}}
@@ -171,14 +175,14 @@ $\partial_{\nu}g_{\mu\lambda}$ si giunge all'equazione
     - \partial_{\nu}g_{\mu\lambda} &=
     \tensor{\Gamma}{^{\rho}_{\lambda\mu}}g_{\rho\nu} +
     \tensor{\Gamma}{^{\rho}_{\lambda\nu}}g_{\rho\mu} +
-    \tensor{\Gamma}{^{\rho}_{\mu\lambda}}g_{\rho_{\nu}} +
+    \tensor{\Gamma}{^{\rho}_{\mu\lambda}}g_{\rho\nu} +
     \tensor{\Gamma}{^{\rho}_{\mu\nu}}g_{\rho\lambda} \\
     &- \tensor{\Gamma}{^{\rho}_{\nu\mu}}g_{\rho\lambda} -
     \tensor{\Gamma}{^{\rho}_{\nu\lambda}}g_{\rho\mu} \\
     &= 2g_{\rho\nu} \tensor{\Gamma}{^{\rho}_{\lambda\mu}},
   \end{split}
 \end{equation}
-ricordando che $g_{\mu\nu}$ e $\tensor{\Gamma}{^{\rho}_{\mu\nu}}$ sono
+avendo ricordato che $g_{\mu\nu}$ e $\tensor{\Gamma}{^{\rho}_{\mu\nu}}$ sono
 simmetrici per scambi degli indici $\mu$ e $\nu$.  Definiamo la matrice
 $g^{\nu\sigma}$ come l'inversa di $g_{\nu\sigma}$, cioè
 $g^{\nu\sigma}g_{\rho\nu} = \tensor{\delta}{^{\sigma}_{\rho}}$, allora,
@@ -210,8 +214,7 @@ affine\footnote{Presentiamo un utile metodo per ricordare la relazione fra
   + \partial_{\mu}g_{\lambda\nu} - \partial_{\nu}g_{\lambda\mu}).
 \end{equation}
 
-La geodetica è, per definizione, la curva più breve fra due punti, allora
-l'equazione della geodetica~\eqref{eq:geodetica} per una particella in caduta
+L'equazione della geodetica~\eqref{eq:geodetica} per una particella in caduta
 libera può essere ricavata applicando il principio variazionale alla distanza
 $S$ fra due eventi $A$ e $B$ nello spazio-tempo
 \begin{equation}
@@ -245,7 +248,7 @@ La variazione della distanza fra i due eventi è
     2g_{\mu\nu}\toder{\delta x^{\mu}}{p} \toder{x^{\nu}}{p} \bigg) \dd p.
   \end{split}
 \end{equation}
-Nell'ultimo passaggio abbiamo sfruttato la simmetria di del tensore metrico
+Nell'ultimo passaggio abbiamo sfruttato la simmetria del tensore metrico
 $g_{\mu\nu}$.  Osserviamo che il primo fattore dell'integrale è
 $\ltoder{p}{\tau}$, così che risulta
 \begin{equation}
@@ -278,8 +281,8 @@ Allora
   \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} -
   g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} \bigg) \dd \tau.
 \end{equation}
-Affinché sia $\delta S = 0$, per l'arbitrarietà della variazione $\delta
-x^{\lambda}$ deve annullarsi la quantità fra parentesi, cioè
+Affinché sia $\delta S = 0$, per l'arbitrarietà della variazione
+$\delta x^{\lambda}$ deve annullarsi la quantità fra parentesi, cioè
 \begin{equation}
   \bigg(\frac{1}{2} \partial_{\lambda} g_{\mu\nu} - \partial_{\mu}g_{\lambda\nu}
   \bigg) \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau}
@@ -306,13 +309,22 @@ $(\partial_{\lambda} g_{\mu\nu} - \partial_{\mu}g_{\lambda\nu}
   g_{\rho\lambda} \tensor{\Gamma}{^{\rho}_{\nu\mu}} \toder{x^{\mu}}{\tau}
   \toder{x^{\nu}}{\tau} - g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} = 0.
 \end{equation}
-Moltiplicando infine ambo i membri per $g^{\lambda\sigma}$ e osservando che
+Moltiplicando infine ambo i membri per $g^{\lambda\sigma}$ e ricordando che
 $g_{\alpha\beta}g^{\alpha\gamma} = \tensor{\delta}{^{\gamma}_{\beta}}$ giungiamo
 all'\index{equazione!della geodetica}equazione della geodetica
 \begin{equation}
   \toder[2]{x^{\sigma}}{\tau} + \tensor{\Gamma}{^{\sigma}_{\nu\mu}}
   \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} = 0.
 \end{equation}
+Poiché abbiamo ricavato questa equazione determinando il percorso che deve
+seguire un corpo in caduta libera in un campo gravitazionale in maniera tale che
+la distanza percorsa sia un estremo (e in particolare si tratta spesso di un
+minimo), possiamo dare un'interpretazione geometrica \emph{a posteriori}
+dell'equazione del moto: un corpo in caduta libera all'interno di un campo
+gravitazionale si muoverà lungo un percorso il più breve (o lungo) possibile fra
+due eventi nello spazio-tempo deformato dalla presenza del campo e la distanza è
+misurata dal tempo proprio.  Un percorso simile è chiamato \emph{geodetica}, da
+cui il nome dell'equazione~\eqref{eq:geodetica}.
 
 \section{Limite newtoniano dell'equazione del moto}
 \label{sec:limite-newtoniano}
@@ -348,7 +360,7 @@ tensore metrico non perturbato $\eta_{\mu\nu}$ invece che con il tensore metrico
 metrica è approssimabile con $g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}$,
 seguiremo sempre questa convenzione.  Inoltre la correzione al primo ordine
 negli infinitesimi per il tensore metrico controvariante è data da (vedi
-appendice~\ref{sec:dimostr-correz-metrica-controvariante})
+l'appendice~\ref{sec:dimostr-correz-metrica-controvariante})
 \begin{equation}
   \label{eq:correzione-metrica-controvariante}
   g^{\mu\nu} = \eta^{\mu\nu} - h^{\mu\nu},
@@ -391,8 +403,8 @@ Dalla~\eqref{eq:christoffel-approx} risulta
 \end{equation}
 in quanto le derivate temporali di $h_{\mu\nu}$ sono nulle in base alla seconda
 condizione che descrive il limite newtoniano.  Notiamo che per $\sigma=0$ si ha
-$\tensor{\Gamma}{^{0}_{00}}=0$.  La~\eqref{eq:geodetica-approx} corrisponde, al
-variare di $\sigma$, alle equazioni
+$\tensor{\Gamma}{^{0}_{00}}=0$.  Allora la~\eqref{eq:geodetica-approx}
+corrisponde, al variare di $\sigma$, alle equazioni
 \begin{subequations}
   \begin{align}
     \toder[2]{t}{\tau} &= 0 &\text{per $\sigma = 0$}, \\
@@ -400,8 +412,8 @@ variare di $\sigma$, alle equazioni
     (\nabla h_{00})_{i} &\text{per $\sigma = i$}.
   \end{align}
 \end{subequations}
-La seconda equazione ci dice che $\ltoder{t}{\tau}$ è una costante, mentre dalla
-prima, dividendo per $(\ltoder{t}{\tau})^{2}$, abbiamo
+La prima equazione ci dice che $\ltoder{t}{\tau}$ è una costante, mentre dalla
+seconda, dividendo per $(\ltoder{t}{\tau})^{2}$, abbiamo
 \begin{equation}
   \toder[2]{\bm{x}}{t} = \frac{1}{2}\nabla h_{00}.
 \end{equation}

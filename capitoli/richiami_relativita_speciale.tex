@@ -151,8 +151,9 @@ Questa relazione impone $10$ condizioni indipendenti in quanto il tensore
 metrico $\tensor{\eta}{_{\gamma\delta}}$ è simmetrico quindi solo $10$ delle sue
 $16$ componenti sono indipendenti.
 
-Indicando con $\Lambda$ la matrice $4 \times 4$ i cui elementi sono le
-$\tensor{\Lambda}{^{\alpha}_{\beta}}$
+Ciascuna trasformazione di Lorentz è rappresentabile con una specifica
+\emph{matrice di Lorentz} $\Lambda$, di dimensione $4 \times 4$, i cui elementi
+sono le $\tensor{\Lambda}{^{\alpha}_{\beta}}$
 \begin{equation}
   \Lambda =
   \begin{pmatrix}
@@ -164,9 +165,10 @@ $\tensor{\Lambda}{^{\alpha}_{\beta}}$
     \tensor{\Lambda}{^{2}_{2}} & \tensor{\Lambda}{^{2}_{3}} \\
     \tensor{\Lambda}{^{3}_{0}} & \tensor{\Lambda}{^{3}_{1}} &
     \tensor{\Lambda}{^{3}_{2}} & \tensor{\Lambda}{^{3}_{3}}
-  \end{pmatrix},
+  \end{pmatrix}.
 \end{equation}
-l'equazione matriciale equivalente alla~\eqref{eq:rel-fond-tensore-metrico} è
+Possiamo scrivere la~\eqref{eq:rel-fond-tensore-metrico} nella seguente forma
+matriciale
 \begin{equation}
   \Lambda^{\textup{T}}\eta\Lambda = \eta
 \end{equation}
@@ -207,10 +209,11 @@ Vediamo come si trasformano le coordinate $x^{\alpha}$ di un evento in un
 sistema di riferimento per effetto di una \emph{trasformazione di velocità}, o
 \index{boost}\emph{boost}, vale a dire una trasformazione tra due sistemi di
 riferimento inerziali con gli assi cartesiani corrispondenti paralleli e in moto
-l'uno rispetto all'altro con velocità costante $\bm{v}$.  Consideriamo una
-particella a riposo in un sistema di riferimento $\mathcal{S}$ che si muove con
-velocità $\bm{v} = (v_{1},v_{2},v_{3})$ rispetto a un altro sistema di
-riferimento inerziale $\mathcal{S}'$, come nella
+l'uno rispetto all'altro con velocità costante $\bm{v}$.  Vogliamo quindi
+determinare la forma esplicita della matrice di Lorentz per il caso particolare
+di un boost.  Consideriamo una particella a riposo in un sistema di riferimento
+$\mathcal{S}$ che si muove con velocità $\bm{v} = (v_{1},v_{2},v_{3})$ rispetto
+a un altro sistema di riferimento inerziale $\mathcal{S}'$, come nella
 figura~\ref{fig:trasformazioni-lorentz}.\footnote{Si noti che il sistema di
   riferimento $\mathcal{S}$ vede il sistema $\mathcal{S}'$ muoversi con velocità
   $-\bm{v}$.  Numerosi autori considerano il sistema di riferimento
@@ -328,8 +331,9 @@ spaziale e temporale,
     x^{i} &\to x'^{i} = - x^{i}
   \end{align}
 \end{subequations}
-è una trasformazione di Lorentz propria e anticrona.  La composizione di due
-trasformazioni di Lorentz è ancora una trasformazione di Lorentz.
+è una trasformazione di Lorentz propria e anticrona.  Infine osserviamo che la
+composizione di due trasformazioni di Lorentz è ancora una trasformazione di
+Lorentz.
 
 % TODO: scrivere qualcosa!  Lezione del 29/03/2012
 \section{\completare{Conseguenze delle trasformazioni di Lorentz}}
@@ -468,7 +472,13 @@ nella~\eqref{eq:innalzamento-indice} si trasforma come un quadrivettore
 controvariante.
 
 Possiamo generalizzare le definizioni date finora introducendo il concetto di
-quadritensore.  Un \index{quadritensore}\emph{quadritensore}
+quadritensore.  Un
+\index{quadritensore}\emph{quadritensore}\footnote{A rigore si dovrebbe parlare
+  di quadritensore di componenti
+  $\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$,
+  tuttavia attraverso tutte queste note useremo lo stesso simbolo per indicare
+  un quadritensore e le sue componenti, come abbiamo in realtà già fatto
+  finora.}
 $\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ (con
 $p + q = k$) di rango $k$ è un insieme di $4^{k}$ quantità che sotto una
 trasformazione di Lorentz ristretta omogenea
@@ -507,7 +517,8 @@ quadritensori di rango $0$, che quindi non hanno indici, sono chiamati
 \index{scalare}\emph{scalari di Lorentz} (o brevemente \emph{scalari}) e sono
 invarianti sotto le trasformazioni di Lorentz.
 
-Uno \index{pseudotensore}\emph{pseudotensore}
+Uno \index{pseudotensore}\emph{pseudotensore} (o
+\index{densità!tensoriale|see{pseudotensore}}\emph{densità tensoriale})
 $\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ (con
 $p+q=k$) di rango $k$ e peso $w$ è un insieme di $4^{k}$ quantità che per
 effetto di una generica trasformazione di Lorentz ortocrona $\Lambda$, ma non
@@ -999,12 +1010,12 @@ forma) rispetto alle trasformazioni di Lorentz.
 
 Consideriamo, per semplicità, una distribuzione di particelle in cui l'$n$-esima
 particella ha carica $e_{n}$ e occupa, in un certo sistema di riferimento
-tridimensionale, la posizione $\bm{x}_{n}$.  La densità di carica di questa
-distribuzione di particelle al tempo $t$ è data da
+tridimensionale, la posizione $\bm{x}_{n}$.  La \index{densità!di carica}densità
+di carica di questa distribuzione di particelle al tempo $t$ è data da
 \begin{equation}
   \rho(\bm{x},t) = \sum_{n} e_{n}\delta^{3}(\bm{x} - \bm{x}_{n}(t)),
 \end{equation}
-mentre la densità di corrente è
+mentre la \index{densità!di corrente}densità di corrente è
 \begin{equation}
   \bm{J}(\bm{x},t) = \sum_{n} e_{n}\delta^{3}(\bm{x} - \bm{x}_{n}(t))
   \toder{\bm{x}_{n}(t)}{t}.
@@ -1646,8 +1657,8 @@ in cui $\Lambda = \Lambda(q, \lparder{q}{x^{\alpha}}, x^{\alpha})$ è una
 funzione del campo $q$, delle sue derivate $\lparder{q}{x^{\alpha}}$ ed
 eventualmente delle coordinate $x^{\alpha}$.  Poiché l'integrale
 $\int \Lambda\dd^{3} \bm{x}$ è la lagrangiana del sistema $\Lambda$ è chiamata
-\emph{densità di lagrangiana}.  Supporremo che $q$ e le sue derivate si
-annullino all'infinito.
+\index{densità!di lagrangiana}\emph{densità di lagrangiana}.  Supporremo che $q$
+e le sue derivate si annullino all'infinito.
 
 Secondo il principio variazionale di Hamilton, le equazioni del moto del campo
 si ottengono ricercando la configurazione del campo che rende stazionaria

@@ -28,8 +28,10 @@ di Lorentz $x^{\alpha} \to x'^{\alpha}$ sono dati da
 \end{subequations}
 Definiremo i tensori, in relatività generale, in maniera analoga a quanto fatto
 all'interno della relatività speciale, cioè prendendo come riferimento le
-trasformazioni dei differenziali delle coordinate controvarianti.  Rispetto al
-caso delle relatività speciale bisognerà, però, effettuare le sostituzioni
+trasformazioni dei differenziali delle coordinate controvarianti che però adesso
+non saranno le costanti $\tensor{\Lambda}{^{\alpha}_{\beta}}$ ma, in generale,
+delle funzioni delle coordinate.  Rispetto al caso delle relatività speciale
+bisognerà allora effettuare le sostituzioni
 \begin{subequations}
   \label{eq:sostituzioni}
   \begin{align}
@@ -98,7 +100,7 @@ Le trasformazioni inverse per i vettori controvarianti e covarianti sono
   U'_{\alpha} \to U_{\alpha} = \parder{x'^{\mu}}{x^{\alpha}} U'_{\mu}.
 \end{gather}
 
-Uno \index{pseudotensore}pseudotensore
+Uno \index{pseudotensore}pseudotensore (o \emph{densità tensoriale})
 $\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ (con
 $p+q=k$) di rango $k$ e peso $w$ è un insieme di $4^{k}$ quantità che per
 effetto di un'arbitraria trasformazione delle coordinate
@@ -111,13 +113,21 @@ $x^{\alpha} \to x'^{\alpha}$ si trasformano come
   \cdots \parder{x^{\nu_{q}}}{x'^{\beta_{q}}}
   \tensor*{A}{^{\mu_{1}\dots\mu_{p}}_{\nu_{1}\dots\nu_{q}}},
 \end{equation}
-in cui $\abs{\lparder{x'}{x}}$ è lo jacobiano della matrice della trasformazione
-delle coordinate.
+in cui $\abs{\lparder{x'}{x}}$ è lo jacobiano della trasformazione delle
+coordinate.
 
 La \index{delta!di Kronecker quadrimensionale}delta di Kronecker definita
 nella~\eqref{eq:delta-kronecker} è l'unico tensore le cui componenti sono uguali
 in qualsiasi sistema di riferimento, oltre agli \index{scalare}scalari e al
-\index{tensore!nullo}tensore nullo.
+\index{tensore!nullo}tensore nullo.  Poiché anche nella relatività generale il
+tensore nullo rimane invariato in ogni sistema di riferimento, è valido anche in
+questo contesto il fatto che
+\emph{se due tensori, dello stesso tipo, sono uguali in un sistema di
+  riferimento, saranno uguali in qualsiasi sistema di riferimento ottenuto dal
+  primo mediante una trasformazione arbitraria delle coordinate}.
+Pertanto
+\emph{una legge fisica espressa sotto forma di identità tensoriale è
+  automaticamente generalmente covariante}.
 
 Si noti che adesso le coordinate controvarianti non costituiscono più un
 vettore.  Infatti, dopo una trasformazione generica, le nuove coordinate
@@ -154,11 +164,12 @@ altro sistema di coordinate $x'^{\mu}$ risulta
     &= g_{\rho\sigma} \parder{x^{\rho}}{x'^{\mu}} \parder{x^{\sigma}}{x'^{\nu}}.
   \end{split}
 \end{equation}
+Dunque si tratta effettivamente di un tensore covariante di rango $2$.
 Osserviamo che, a differenza del caso dello spazio di Minkowski piatto, nello
 spazio-tempo curvo della relatività generale il \index{tensore!metrico}tensore
-metrico $g_{\mu\nu}$ non è invariante per trasformazioni delle coordinate.
-Definiamo il tensore metrico controvariante $g^{\mu\nu}$ come quel tensore tale
-che
+metrico $g_{\mu\nu}$ non è invariante per trasformazioni delle coordinate.  Nel
+capitolo precedente abbiamo già introdotto il tensore metrico controvariante
+$g^{\mu\nu}$ come quel tensore tale che
 \begin{equation}
   g_{\mu\rho}g^{\mu\sigma} = \tensor{\delta}{^{\sigma}_{\rho}}.
 \end{equation}
@@ -181,7 +192,15 @@ da cui, passando ai determinanti,
   \det(g'_{\mu\nu}) = \det(g_{\mu\nu}) \abs*{\parder{x}{x'}}^{2} \implies g' = g
   \abs*{\parder{x}{x'}}^{2} = g\abs*{\parder{x'}{x}}^{-2}.
 \end{equation}
-In particolare $\sqrt{g}$ è uno pseudoscalare di peso $-1$
+In particolare, considerando una trasformazione da un sistema di riferimento
+inerziale, con $g_{\mu\nu} = \eta_{\mu\nu}$, a uno arbitrario abbiamo
+\begin{equation}
+  \det(g'_{\mu\nu}) = \det(\eta_{\mu\nu})\abs*{\parder{x}{x'}}^{2} = -
+  \abs*{\parder{x}{x'}}^{2} < 0.
+\end{equation}
+Quindi si ha sempre $g > 0$ e ha senso considerare la sua radice quadrata
+$\sqrt{g}$.  Poiché $g$ è uno pseudoscalare di peso $-2$, $\sqrt{g}$ è uno
+pseudoscalare di peso $-1$
 \begin{equation}
   \sqrt{g'} = \sqrt{g}\abs*{\parder{x'}{x}}^{-1}.
 \end{equation}
@@ -303,7 +322,10 @@ fosse il secondo termine nell'ultimo membro avremmo la formula di trasformazione
 di un tensore di tipo $(1,2)$.
 
 Riscriviamo il secondo termine dell'ultimo membro dell'equazione precedente in
-una forma diversa che ci sarà utile in seguito.  Derivando rispetto a $x'^{\mu}$
+una forma diversa che ci sarà utile in seguito.
+% verrà usata nel paragrafo sulla derivazione covariante, *non* cancellare
+% questo capoverso!
+Derivando rispetto a $x'^{\mu}$
 il primo e l'ultimo membro dell'identità
 \begin{equation}
   \tensor{\delta}{^{\lambda}_{\nu}} = \parder{x'^{\lambda}}{x'^{\nu}}
@@ -361,9 +383,9 @@ si trasforma come un tensore di tipo $(1,2)$
 \label{sec:derivazione-covariante}
 
 Nella relatività ristretta, la derivazione ordinaria di un tensore di rango $k$
-per una coordinata $x^{\lambda}$ produceva un tensore di rango $k+1$.
-All'interno della teoria della relatività generale la situazione è differente:
-la derivazione ordinaria di un tensore di rango $k$ per una coordinata
+per una coordinata $x^{\lambda}$ produce un tensore di rango $k+1$.  All'interno
+della teoria della relatività generale la situazione è differente: la
+derivazione ordinaria di un tensore di rango $k$ per una coordinata
 $x^{\lambda}$ produce un ente che non è, in generale, un tensore di rango $k+1$.
 Per esempio, consideriamo un vettore controvariante $V^{\mu}$ il quale, per
 definizione, si trasformerà, per effetto di un cambiamento di coordinate, come
@@ -376,9 +398,9 @@ Derivando rispetto a $x'^{\lambda}$ abbiamo
   \begin{split}
     \parder{V'^{\mu}}{x'^{\lambda}}
     &= \parder{x'^{\mu}}{x^{\nu}} \parder{V^{\nu}}{x'^{\lambda}}
-    + \parder{x'^{\mu}}{x^{\nu},x^{\nu}} V^{\nu} \\
-    &= \parder{x'^{\mu}}{x^{\rho}} \parder{x^{\rho}}{x'^{\nu}}
-    \parder{V^{\nu}}{x'^{\lambda}}
+    + \parder{x'^{\mu}}{x'^{\lambda},x^{\nu}} V^{\nu} \\
+    &= \parder{x'^{\mu}}{x^{\nu}} \parder{x^{\rho}}{x'^{\lambda}}
+    \parder{V^{\nu}}{x^{\rho}}
     + \parder{x'^{\mu}}{x^{\nu},x^{\rho}} \parder{x^{\rho}}{x'^{\lambda}}
     V^{\nu}.
   \end{split}
@@ -401,7 +423,7 @@ quantità $\tensor{\Gamma}{^{\mu}_{\nu\kappa}} V^{\kappa}$
     V^{\eta} \\
     &= \parder{x'^{\mu}}{x^{\nu}}
     \underbrace{\parder{x^{\sigma}}{x^{\eta}}}_{\tensor{\delta}{^{\sigma}_{\eta}}}
-    \parder{x^{\rho}}{x'^{\lambda}} \tensor{\Gamma}{^{\sigma}_{\rho\sigma}}
+    \parder{x^{\rho}}{x'^{\lambda}} \tensor{\Gamma}{^{\nu}_{\rho\sigma}}
     V^{\eta} - \parder{x^{\rho}}{x'^{\nu}}
     \underbrace{\parder{x^{\sigma}}{x^{\eta}}}_{\tensor{\delta}{^{\sigma}_{\eta}}}
     \parder{x'^{\mu}}{x^{\rho},x^{\sigma}} V^{\eta} \\
@@ -413,8 +435,8 @@ quantità $\tensor{\Gamma}{^{\mu}_{\nu\kappa}} V^{\kappa}$
 \end{equation}
 Anche in questo caso, se nell'ultimo membro ci fosse solo il primo termine
 $\tensor{\Gamma}{^{\mu}_{\lambda\kappa}} V^{\kappa}$ si trasformerebbe come un
-tensore misto di rango $2$, tuttavia il termine addizionale è uguale e opposto
-al termine addizionale che compare nella trasformazione di
+tensore misto di rango $2$, tuttavia il termine addizionale è opposto al termine
+addizionale che compare nella trasformazione di
 $\lparder{V^{\mu}}{x^{\lambda}}$, quindi la somma delle due quantità si
 trasforma come un tensore misto di rango $2$, infatti
 \begin{equation}
@@ -627,10 +649,10 @@ volume quadrimensionale è $\sqrt{g}\dd^{4} x$,
 \label{sec:differenziale-covariante}
 
 Abbiamo visto che la derivata ordinaria $\lparder{V^{\mu}}{x^{\lambda}}$ di un
-vettore non è un tensore di rango $2$, questo è dovuto al fatto che il
-differenziale ordinario $\dd V^{\mu}$ di un vettore $V^{\mu}$ non è un vettore,
-come invece succedeva nello spazio piatto di Minkowski.  Infatti
-dalla~\eqref{eq:trasf-vettore} abbiamo
+vettore non è un tensore di rango $2$, in quanto il differenziale ordinario
+$\dd V^{\mu}$ di un vettore $V^{\mu}$ non è un vettore, come invece succede
+nello spazio piatto di Minkowski.  Infatti dalla~\eqref{eq:trasf-vettore}
+abbiamo
 \begin{equation}
   \dd V^{\mu} \to \dd V'^{\mu} = \parder{x'^{\mu}}{x^{\nu}} \dd V^{\nu}
   + \parder{x'^{\mu}}{x^{\nu},x^{\lambda}} V^{\nu} \dd x^{\lambda}
@@ -638,7 +660,7 @@ dalla~\eqref{eq:trasf-vettore} abbiamo
 e solo nel caso di trasformazioni lineari delle coordinate il secondo termine si
 annulla e il differenziale si trasforma come un vettore.  Il motivo di ciò
 risiede nel fatto che il differenziale di un vettore è dato dalla differenza dei
-vettori $V^{\mu}(x + \dd x)$ e $V^{\mu}$ valutati in due punti diversi dello
+vettori $V^{\mu}(x + \dd x)$ e $V^{\mu}(x)$ valutati in due punti diversi dello
 spazio e le leggi di trasformazione dei tensori in uno spazio curvo, come quello
 della relatività generale, dipendono dalla posizione
 \begin{equation}
@@ -659,7 +681,8 @@ si può introdurre il
 \index{differenziale!covariante}\emph{differenziale covariante} $\cdd V^{\mu}$
 di un vettore $V^{\mu}$ definito come la differenza fra il vettore
 $V^{\mu}(x + \dd x)$ valutato nel punto $x + \dd x$ e il vettore $V^{\mu}(x)$
-\emph{trasportato parallelamente} nel punto $x + \dd x$
+\emph{trasportato parallelamente} nel punto $x + \dd x$ (indichiamo con
+$V^{*\mu}(x + \dd x)$ il vettore trasportato parallelamente)
 \begin{equation}
   \begin{split}
     \cdd V^{\mu} &= V^{\mu}(x + \dd x) - V^{*\mu}(x + \dd x) = V^{\mu}(x + \dd x)
@@ -717,7 +740,7 @@ Osserviamo inoltre che risulta
 
 Consideriamo una curva $x^{\lambda}(\tau)$ parametrizzata dal tempo proprio
 $\tau$.  Uno spostamento infinitesimo lungo tale curva è dato da
-$\dd x^{\lambda} = \lparder{x^{\lambda}}{\tau} \dd \tau = u^{\lambda} \dd \tau$,
+$\dd x^{\lambda} = (\lparder{x^{\lambda}}{\tau}) \dd \tau = u^{\lambda}\dd\tau$,
 quindi il differenziale covariante di $V^{\mu}$ si può scrivere come
 \begin{equation}
   \cdd V^{\mu} = \dd V^{\mu} + \tensor{\Gamma}{^{\mu}_{\rho\lambda}} V^{\rho}
