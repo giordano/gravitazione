@@ -872,7 +872,8 @@ abbiamo che la quadrivelocità è uguale a
     &= (\gamma(v), \gamma(v)\bm{v}).
   \end{split}
 \end{equation}
-Il \index{quadrimomento}\emph{quadrimomento} della particella è definito come il
+Notiamo che per $\norm{v} \ll 1$ il fattore lorentziano vale $1$.  Il
+\index{quadrimomento}\emph{quadrimomento} della particella è definito come il
 prodotto fra la massa a riposo $m$ della particella e la quadrivelocità
 \begin{equation}
   p^{\alpha} = (p^{0},p^{i}) = m v^{\alpha} = m (v^{0}, v^{i}) = (m\gamma(v),
@@ -2063,9 +2064,9 @@ vero per ogni sistema comovente, senza alcuna direzione privilegiata, implica in
 particolare che $\tilde T^{ij}$ è proporzionale alla matrice identità
 $\delta^{ij}$ e il fattore di proporzionalità sarà dunque la pressione $p$ del
 fluido: $\tilde T^{ij} = p \delta^{ij}$.  Infine, $\tilde T^{00}$ è la densità
-di energia, uguale alla densità di massa $\rho$ avendo posto $c = 1$.  In
-definitiva, il tensore energia-impulso di un fluido perfetto in un sistema
-comovente è
+di energia, uguale alla densità di massa $\rho$ avendo posto la velocità della
+luce nel vuoto $c = 1$.  In definitiva, il tensore energia-impulso di un fluido
+perfetto in un sistema comovente è
 \begin{equation}
   \tilde T^{\alpha\beta} =
   \begin{pmatrix}
@@ -2077,9 +2078,9 @@ comovente è
 \end{equation}
 
 Per ottenere il tensore energia-impulso $T^{\alpha\beta}$ del fluido perfetto in
-un qualsiasi altro sistema di riferimento in moto con velocità $\bm{u}$ rispetto
-a un sistema comovente rispetto al fluido basta effettuare un boost di
-$\bm{u}$:
+un qualsiasi altro sistema di riferimento in moto macroscopico con velocità
+$\bm{u}$ rispetto a un sistema comovente rispetto al fluido basta effettuare un
+boost di $\bm{u}$:
 $T^{\alpha\beta} =
 \tensor{\Lambda}{^{\alpha}_{\mu}}\tensor{\Lambda}{^{\beta}_{\nu}}\tilde
 T^{\mu\nu}$
@@ -2088,9 +2089,9 @@ T^{\mu\nu}$
     \begin{split}
       T^{00} &= \tensor{\Lambda}{^{0}_{\mu}} \tensor{\Lambda}{^{0}_{\nu}} \tilde
       T^{\mu\nu} = \tensor{\Lambda}{^{0}_{i}} \tensor{\Lambda}{^{0}_{j}} \tilde
-      T^{ij} + (\tensor{\Lambda}{^{0}_{0}})^{2} \tilde T^{00} \\
-      &= \gamma^{2} u_{i} u_{j} p \delta^{ij} + \gamma^{2} \rho = \frac{\rho +
-        pu^{2}}{1-u^{2}},
+      T^{ij} + (\tensor{\Lambda}{^{0}_{0}})^{2} \tilde T^{00} = \gamma^{2} u_{i}
+      u_{j} p \delta^{ij} + \gamma^{2} \rho \\
+      &= \frac{\rho +pu^{2}}{1-u^{2}},
     \end{split} \\
     \begin{split}
       T^{i0} &= \tensor{\Lambda}{^{i}_{\mu}} \tensor{\Lambda}{^{0}_{\nu}} \tilde
@@ -2100,9 +2101,9 @@ T^{\mu\nu}$
       &= \bigg(\tensor{\delta}{^{i}_{k}} + u^{i}u_{k}\frac{\gamma -
         1}{u^{2}}\bigg) u_{l} \gamma p \delta^{kl} + u^{i} \gamma^{2} \rho \\
       &= \bigg(\tensor{\delta}{^{i}_{k}} + u^{i}u_{k}\frac{\gamma - 1}{u^{2}}\bigg)
-      u^{k} \gamma p + u^{i} \gamma^{2} \rho \\
-      &= (u^{i} + u^{i}(\gamma - 1)) \gamma p + u^{i} \gamma^{2} \rho =
-      u^{i}\gamma^{2} p + u^{i} \gamma^{2} \rho = \frac{p + \rho}{1 -
+      u^{k} \gamma p + u^{i} \gamma^{2} \rho = (u^{i} + u^{i}(\gamma - 1))
+      \gamma p + u^{i} \gamma^{2} \rho \\
+      &= u^{i}\gamma^{2} p + u^{i} \gamma^{2} \rho = \frac{p + \rho}{1 -
         u^{2}}u^{i},
     \end{split} \\
     \begin{split}
@@ -2116,23 +2117,27 @@ T^{\mu\nu}$
       &= \bigg(\tensor{\delta}{^{i}_{k}} + u^{i}u_{k}\frac{\gamma -
         1}{u^{2}}\bigg) \bigg(\delta^{jk} + u^{j}u^{k}\frac{\gamma -
         1}{u^{2}}\bigg) p + u^{i}u^{j} \gamma^{2} \rho \\
-      &= p \delta^{ij} + \frac{p + \rho}{1 - u^{2}}u^{i}u^{j}.
+      &= \bigg(\delta^{ij} + 2 u^{i}u^{j} \frac{\gamma - 1}{u^{2}} +
+      u^{i}u^{j}\frac{(\gamma - 1)^{2}}{u^{2}}\bigg)p + u^{i}u^{j} \gamma^{2}
+      \rho \\
+      &= \bigg(\delta^{ij} + u^{i}u^{j}\gamma^{2}\bigg)p + u^{i}u^{j} \gamma^{2}
+      \rho = p \delta^{ij} + \frac{p + \rho}{1 - u^{2}}u^{i}u^{j}.
     \end{split}
   \end{align}
 \end{subequations}
 Questi risultati possono essere messi insieme nella seguente espressione
-compatta
+compatta\index{fluido!perfetto}
 \begin{equation}
-  T^{\alpha\beta} = \eta^{\alpha\beta}p + (p + \rho)u^{\alpha}u^{\beta},
+  T^{\alpha\beta} = \eta^{\alpha\beta}p + (p + \rho)U^{\alpha}U^{\beta},
 \end{equation}
-con $u^{\mu} = (\gamma(u), \gamma(u) \bm{u})$ quadrivelocità associata al
+con $U^{\mu} = (\gamma(u), \gamma(u) \bm{u})$ quadrivelocità associata al
 vettore velocità $\bm{u}$.  Si riottiene l'espressione di
 $\tilde T^{\alpha\beta}$ ponendo
-$\bm{u} = \bm{0} \implies u^{\mu} = (1, \bm{0})$.
+$\bm{u} = \bm{0} \implies U^{\mu} = (1, \bm{0})$.
 
-Nel caso in cui le particelle del fluido si muovono a velocità molto più piccole
-di quella della luce nel vuoto (ma la velocità macroscopico del fluido è
-arbitraria), il tensore energia-impulso $\tilde T^{\alpha\beta}$ assume
+Nel caso in cui le particelle del fluido si muovono con velocità molto più
+piccole di quella della luce nel vuoto (ma la velocità macroscopica $\bm{u}$ del
+fluido è arbitraria), il tensore energia-impulso $\tilde T^{\alpha\beta}$ assume
 un'espressione più semplice.  Innanzitutto nella densità di energia $\rho$
 possiamo trascurare tutti i termini piccoli rispetto alla densità di energia di
 riposo $\rho_{0}$, con $\rho_{0}$ somma delle masse a riposo delle particelle
@@ -2141,13 +2146,14 @@ anche la pressione data dall'energia del moto microscopico delle molecole è
 trascurabile rispetto alla densità di energia a riposo $\rho$, quindi possiamo
 scrivere
 \begin{equation}
-  \tilde T^{\alpha\beta} = \rho_{0} u^{\alpha} u^{\beta}.
+  \tilde T^{\alpha\beta} = \rho_{0} U^{\alpha} U^{\beta}.
 \end{equation}
-In questo regime $u^{\mu}= (1, \bm{u})$, quindi in particolare abbiamo
+Se anche il moto macroscopico è lento il fattore lorentziano vale $1$, quindi
+$U^{\mu}= (1, \bm{u})$ e abbiamo\index{fluido!perfetto}
 \begin{subequations}
   \begin{align}
     \tilde T^{00} &= \rho_{0}, \\
-    \tilde T^{ij} &= \rho_{0} u^{i} u^{j}.
+    \tilde T^{ij} &= \rho_{0} U^{i} U^{j}.
   \end{align}
 \end{subequations}
 
