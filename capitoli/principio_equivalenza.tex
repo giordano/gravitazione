@@ -19,9 +19,9 @@ leggi della relatività speciale.
 \label{sec:equazione-moto}
 
 Consideriamo una particella in caduta libera all'interno di un campo
-gravitazionale $\bm{g}$.  In un sistema di riferimento, di coordinate
-$\xi^{\alpha}$, localmente inerziale in cui la particella si muove di moto
-rettilineo uniforme nello spazio-tempo, l'equazione del moto è
+gravitazionale.  In un sistema di riferimento, di coordinate $\xi^{\alpha}$,
+localmente inerziale in cui la particella si muove di moto rettilineo uniforme
+nello spazio-tempo, l'equazione del moto è
 \begin{equation}
   \label{eq:moto-caduta-libera}
   \toder[2]{\xi^{\alpha}}{\tau} = 0,
@@ -51,9 +51,9 @@ dalla~\eqref{eq:moto-caduta-libera} abbiamo
 Supponendo che ciascuna delle quattro coordinate $x^{\mu}$ sia indipendente
 dalle altre possiamo scrivere le relazioni
 \begin{equation}
-  \parder{x^{\mu}}{x^{\nu}} = \tensor{\delta}{^{\mu}_{\nu}}
-  \implies \parder{x^{\mu}}{\xi^{\alpha}} \parder{\xi^{\alpha}}{x^{\nu}} =
-  \tensor{\delta}{^{\mu}_{\nu}},
+  \parder{x^{\lambda}}{x^{\mu}} = \tensor{\delta}{^{\lambda}_{\mu}}
+  \implies \parder{x^{\lambda}}{\xi^{\alpha}} \parder{\xi^{\alpha}}{x^{\mu}} =
+  \tensor{\delta}{^{\lambda}_{\mu}},
 \end{equation}
 quindi moltiplicando la~\eqref{eq:moto1} per
 $\lparder{x^{\lambda}}{\xi^{\alpha}}$ l'equazione del moto diventa
@@ -91,19 +91,6 @@ affine abbiamo inoltre che questa è simmetrica rispetto agli indici inferiori,
 cioè
 $\tensor{\Gamma}{^{\lambda}_{\mu\nu}} = \tensor{\Gamma}{^{\lambda}_{\nu\mu}}$.
 
-Dall'equazione della geodetica risulta che il moto di una particella in un campo
-gravitazionale è determinato dalla connessione affine.  Inoltre
-$\ltoder{u^{\lambda}}{\tau}$ è la quadriaccelerazione del corpo, allora possiamo
-interpretare la quantità
-$-m\tensor{\Gamma}{^{\lambda}_{\mu\nu}} u^{\mu} u^{\nu}$ come la quadriforza
-agente sul corpo all'interno del campo gravitazionale.  Come vedremo nel
-paragrafo~\ref{sec:relazione-g-Gamma}, le derivate di $g_{\mu\nu}$ definiscono
-il campo $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ e quindi il tensore metrico può
-essere visto come il ``potenziale'' del campo gravitazionale.  In effetti nel
-paragrafo~\ref{sec:limite-newtoniano} vedremo che nel limite newtoniano la
-componente $g_{00}$ del tensore metrico è strettamente legata al potenziale
-gravitazionale classico.
-
 L'intervallo di tempo proprio
 $\dd\tau^{2} = -\eta_{\alpha\beta} \dd\xi^{\alpha} \dd\xi^{\beta}$ può essere
 espresso rispetto alle coordinate $x^{\mu}$ come
@@ -130,6 +117,19 @@ Minkowski $\eta_{\alpha\beta}$ è simmetrico, infatti
   \eta_{\beta\alpha} \parder{\xi^{\beta}}{x^{\mu}} \parder{\xi^{\alpha}}{x^{\nu}}
   = g_{\mu\nu}.
 \end{equation}
+
+Dall'equazione della geodetica risulta che il moto di una particella in un campo
+gravitazionale è determinato dalla connessione affine.  Inoltre
+$\ltoder{u^{\lambda}}{\tau}$ è la quadriaccelerazione del corpo, allora possiamo
+interpretare la quantità
+$-m\tensor{\Gamma}{^{\lambda}_{\mu\nu}} u^{\mu} u^{\nu}$ come la quadriforza
+agente sul corpo all'interno del campo gravitazionale.  Come vedremo nel
+paragrafo~\ref{sec:relazione-g-Gamma}, le derivate di $g_{\mu\nu}$ definiscono
+il campo $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ e quindi il tensore metrico può
+essere visto come il ``potenziale'' del campo gravitazionale.  In effetti nel
+paragrafo~\ref{sec:limite-newtoniano} vedremo che nel limite newtoniano la
+componente $g_{00}$ del tensore metrico è strettamente legata al potenziale
+gravitazionale classico.
 
 \section{Relazione fra tensore metrico e connessione affine}
 \label{sec:relazione-g-Gamma}
@@ -182,7 +182,8 @@ ricordando che $g_{\mu\nu}$ e $\tensor{\Gamma}{^{\rho}_{\mu\nu}}$ sono
 simmetrici per scambi degli indici $\mu$ e $\nu$.  Definiamo la matrice
 $g^{\nu\sigma}$ come l'inversa di $g_{\nu\sigma}$, cioè
 $g^{\nu\sigma}g_{\rho\nu} = \tensor{\delta}{^{\sigma}_{\rho}}$, allora,
-moltiplicando l'equazione precedente per $g^{\nu\sigma}$
+moltiplicando primo e ultimo membro dell'equazione precedente per
+$g^{\nu\sigma}$
 \begin{equation}
   g^{\nu\sigma}(\partial_{\lambda}g_{\mu\nu} + \partial_{\mu}g_{\lambda\nu}
   - \partial_{\nu}g_{\mu\lambda}) = 2\tensor{\Gamma}{^{\sigma}_{\lambda\mu}}
@@ -256,7 +257,7 @@ Integriamo il secondo termine per parti ricordando la
 condizione~\eqref{eq:condizione-variazione}
 \begin{equation}
   \begin{split}
-    \int_{A}^{\beta} g_{\lambda\nu} \toder{\delta x^{\lambda}}{\tau}
+    \int_{A}^{B} g_{\lambda\nu} \toder{\delta x^{\lambda}}{\tau}
     \toder{x^{\nu}}{\tau} \dd \tau &= \bigg[g_{\lambda\nu} \delta x^{\lambda}
     \toder{x^{\nu}}{\tau} \bigg]_{A}^{B} - \int_{A}^{B} \delta x^{\lambda}
     \toder{}{\tau} \bigg( g_{\lambda\nu} \toder{x^{\nu}}{\tau} \bigg) \dd\tau \\
@@ -284,21 +285,22 @@ x^{\lambda}$ deve annullarsi la quantità fra parentesi, cioè
   \bigg) \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau}
   - g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} = 0.
 \end{equation}
-Dal momento che
+Sfruttando il fatto che gli indici muti possono essere scambiati possiamo
+scrivere
 \begin{equation}
   \partial_{\mu}g_{\lambda\nu} \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau} =
   \frac{1}{2} (\partial_{\mu}g_{\lambda\nu} + \partial_{\nu}g_{\lambda\mu})
-  \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau}
+  \toder{x^{\mu}}{\tau} \toder{x^{\nu}}{\tau},
 \end{equation}
-possiamo scrivere
+quindi
 \begin{equation}
   \frac{1}{2} (\partial_{\lambda} g_{\mu\nu} - \partial_{\mu}g_{\lambda\nu}
   - \partial_{\nu}g_{\lambda\mu}) \toder{x^{\mu}}{\tau}
   \toder{x^{\nu}}{\tau} - g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} = 0
 \end{equation}
 e poiché
-$\partial_{\lambda} g_{\mu\nu} - \partial_{\mu}g_{\lambda\nu}
-- \partial_{\nu}g_{\lambda\mu} = 2g_{\rho\lambda}
+$(\partial_{\lambda} g_{\mu\nu} - \partial_{\mu}g_{\lambda\nu}
+- \partial_{\nu}g_{\lambda\mu})/2 = g_{\rho\lambda}
 \tensor{\Gamma}{^{\rho}_{\nu\mu}}$ abbiamo
 \begin{equation}
   g_{\rho\lambda} \tensor{\Gamma}{^{\rho}_{\nu\mu}} \toder{x^{\mu}}{\tau}

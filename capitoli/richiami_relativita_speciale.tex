@@ -1020,7 +1020,7 @@ Possiamo mettere insieme le due quantità $\rho$ e $\bm{J}$ in un quadrivettore
 $J^{\alpha}$ che chiameremo \index{quadricorrente}\emph{quadricorrente}
 \begin{equation}
   J^{\alpha}(x) = (\rho, \bm{J}) = \sum_{n} e_{n}\delta^{3}(\bm{x} -
-  \bm{x}_{n}(t)) \toder{x^{\alpha}}{t}.
+  \bm{x}_{n}(t)) \toder{x_{n}^{\alpha}}{t}.
 \end{equation}
 Introduciamo adesso la \index{delta!di Dirac quadrimensionale}
 \emph{delta di Dirac quadrimensionale}
@@ -1037,11 +1037,11 @@ $\delta(t - t')$ e integrando sul tempo ricaviamo la seguente espressione
   \label{eq:quadricorrente}
   \begin{split}
     J^{\alpha}(x) &= \sum_{n} e_{n}\delta^{3}(\bm{x} - \bm{x}_{n}(t))
-    \toder{x^{\alpha}}{t} \\
+    \toder{x_{n}^{\alpha}}{t} \\
     &= \int_{-\infty}^{+\infty}\dd t' \delta(t - t') \sum_{n}
-    e_{n}\delta^{3}(\bm{x} - \bm{x}_{n}(t')) \toder{x^{\alpha}}{t'} \\
+    e_{n}\delta^{3}(\bm{x} - \bm{x}_{n}(t')) \toder{x_{n}^{\alpha}}{t'} \\
     &= \int_{-\infty}^{+\infty} \dd \tau \sum_{n} e_{n} \delta^{4}(x -
-    x_{n}(\tau)) \toder{x^{\alpha}}{\tau}.
+    x_{n}(\tau)) \toder{x_{n}^{\alpha}}{\tau}.
   \end{split}
 \end{equation}
 Nell'ultimo passaggio abbiamo effettuato il cambiamento della variabile di
@@ -1116,11 +1116,11 @@ completamente covariante, inoltre esso è antisimmetrico, infatti
   F_{\beta\alpha} = \partial_{\beta}A_{\alpha} - \partial_{\alpha}A_{\beta} =
   -F_{\alpha\beta}.
 \end{equation}
-Di conseguenza le componenti diagonali $F_{\alpha\alpha}$ (senza sommare) sono
-nulle e le componenti indipendenti di questo quadritensore sono sei.
-Verifichiamo che queste componenti indipendenti corrispondono proprio alle sei
-componenti cartesiane dei campi $\bm{E}$ e $\bm{B}$.
-Dalle~\eqref{eq:campi-potenziali} abbiamo
+Di conseguenza le componenti diagonali $F_{\alpha\alpha}$ sono nulle e le
+componenti indipendenti di questo quadritensore sono sei.  Verifichiamo che
+queste componenti indipendenti corrispondono proprio alle sei componenti
+cartesiane dei campi $\bm{E}$ e $\bm{B}$.  Dalle~\eqref{eq:campi-potenziali}
+abbiamo
 \begin{subequations}
   \begin{align}
     F_{0i} &= \partial_{0}A_{i} - \partial_{i}A_{0} = \parder{A_{i}}{t}
@@ -1133,7 +1133,11 @@ Dalle~\eqref{eq:campi-potenziali} abbiamo
     - \parder{A_{y}}{z} = B_{x}.
   \end{align}
 \end{subequations}
-L'espressione matriciale di $F_{\alpha\beta}$ è
+Le ultime tre componenti possono essere sintetizzate in
+\begin{equation}
+  F_{ij} = \partial_{i}A_{j} - \partial_{j}A_{i} = \epsilon_{ijk}B^{k}.
+\end{equation}
+In definitiva l'espressione matriciale di $F_{\alpha\beta}$ è
 \begin{equation}
   F_{\alpha\beta} =
   \begin{pmatrix}
@@ -1162,7 +1166,7 @@ quantità invarianti (essendo contrazioni complete di quadritensori)
 \end{subequations}
 Mentre $F^{\alpha\beta}F_{\alpha\beta}$ è uno scalare di Lorentz, la quantità
 $\epsilon_{\alpha\beta\gamma\delta}F^{\alpha\beta}F^{\gamma\delta}$ è uno
-pseudoscalare perché è il prodotto vettoriale del vettore polare $\bm{E}$ e del
+pseudoscalare perché è il prodotto scalare del vettore polare $\bm{E}$ e del
 vettore assiale $\bm{B}$.
 
 Grazie al tensore del campo elettromagnetico $F^{^{\alpha\beta}}$ e alla
@@ -1255,7 +1259,7 @@ A_{\alpha} = 0$.
 \subsection{Onde elettromagnetiche nel vuoto}
 \label{sec:onde-elettromagnetiche-vuoto}
 
-Nel vuoto la quadricorrente è nulla quindi si ha
+In assenza di sorgenti, cioè nel vuoto, la quadricorrente è nulla quindi si ha
 \begin{equation}
   \label{eq:maxwell-vuoto-lorenz}
   \dalamb A_{\beta} = 0.
@@ -1782,7 +1786,10 @@ quadrimomento, a meno del segno, e l'equazione~\eqref{eq:div-tens-en-imp}
 rappresenta la legge di conservazione del quadrimomento per un sistema chiuso.
 Inoltre $T^{i0}$ è la densità di flusso di energia nella direzione $x^{i}$,
 $T^{ij}$ è la densità di flusso della componente $j$ del momento nella direzione
-$i$.
+$i$.  Equivalentemente, $T^{ij}$ può essere interpretata come la componente $j$
+della forza per unità di area su una superficie perpendicolare all'asse $i$.  La
+parte ``spaziale'' del tensore energia impulso, $T^{ij}$, è chiamata anche
+\emph{tensore degli sforzi} (è un tensore tridimensionale di rango $2$).
 
 Le \index{equazioni!di Maxwell}equazioni di Maxwell che descrivono il campo
 elettromagnetico possono essere ricavate applicando il formalismo qui
@@ -1841,9 +1848,9 @@ $A_{\mu}$ del quadrimomento come campi
 Si
 dimostra\footnote{Vedi \textcite[419]{barone:relativita},
   \textcite[111]{landau:campi}.}
-che il tensore energia-impulso deve sempre essere simmetrico, ma il tensore
-$T_{\textup{em}}^{\alpha\beta}$ così ottenuto non lo è.  Mediante un'opportuna
-procedura di
+che, per ragioni puramente fisiche, il tensore energia-impulso deve sempre
+essere simmetrico, ma il tensore $T_{\textup{em}}^{\alpha\beta}$ così ottenuto
+non lo è.  Mediante un'opportuna procedura di
 simmetrizzazione\footnote{Questo metodo è dovuto a Belinfante e Rosenfeld.
   Vedi~\textcite[437]{barone:relativita}, \textcite[114]{landau:campi}.}
 si può giungere alla seguente forma simmetrica
@@ -1931,9 +1938,10 @@ sulle particelle di carica $q_{n}$ si trova che la densità di forza vale
 \begin{equation}
   \begin{split}
     G^{\alpha} &= \sum_{n} \delta^{3}(\bm{x} - \bm{x}_{n}(t))
-    \toder{\tau}{t}q_{n} \tensor{F}{^{\alpha}_{\gamma}} \toder{x^{\gamma}}{\tau} \\
-    &= \tensor{F}{^{\alpha}_{\gamma}} \sum_{n} \delta^{3}(\bm{x} - \bm{x}_{n}(t))
-    q_{n} \toder{x^{\gamma}}{t} = \tensor{F}{^{\alpha}_{\gamma}} J^{\gamma}.
+    \toder{\tau}{t}q_{n} \tensor{F}{^{\alpha}_{\gamma}}
+    \toder{x_{n}^{\gamma}}{\tau} = \tensor{F}{^{\alpha}_{\gamma}} \sum_{n}
+    \delta^{3}(\bm{x} - \bm{x}_{n}(t)) q_{n} \toder{x_{n}^{\gamma}}{t} \\
+    &= \tensor{F}{^{\alpha}_{\gamma}} J^{\gamma}.
   \end{split}
 \end{equation}
 
@@ -1965,7 +1973,7 @@ Il secondo termine può essere riscritto come
 \begin{equation}
   \begin{split}
     F^{\beta\gamma}\partial_{\beta}\tensor{F}{^{\alpha}_{\gamma}} &=
-    g^{\beta\mu}g^{\gamma\nu}F_{\mu\nu} \partial_{\beta}
+    \eta^{\beta\mu}\eta^{\gamma\nu}F_{\mu\nu} \partial_{\beta}
     \tensor{F}{^{\alpha}_{\gamma}} = F_{\mu\nu} \partial^{\mu} F^{\alpha\nu} =
     F_{\gamma\beta} \partial^{\gamma} F^{\alpha\beta} \\
     &= -F_{\beta\gamma} \partial^{\gamma} F^{\alpha\beta}.
@@ -2026,10 +2034,122 @@ particelle interagenti con il campo è
   \tensor{F}{^{\alpha}_{\gamma}}J^{\gamma} = 0.
 \end{equation}
 
-% TODO: scrivere il paragrafo.  Vedi lezione del 12/04/2012
-\section{\completare{Fluido perfetto}}
+\section{Fluido perfetto relativistico}
 \label{sec:fluido-perfetto}
 
+Numerosi corpi macroscopici, compreso, in certe condizioni, l'intero Universo,
+possono essere descritti da un \emph{\index{fluido!perfetto}fluido perfetto}
+relativistico, cioè un
+\emph{fluido costituito da un gran numero di particelle (in modo che possa
+  essere considerato praticamente come un corpo continuo) che appare isotropo a
+  un osservatore comovente}.
+Un sistema di coordinate comoventi con il fluido è sistema nel quale il fluido
+appare punto per punto a riposo.  Un fluido perfetto si può caratterizzare anche
+come un fluido privo di viscosità e in cui non ci sia conduzione di calore.  La
+viscosità è la presenza di forze parallele alle interfacce tra le varie porzioni
+del fluido.
+
+Per ricavare il tensore energia-impulso di un fluido perfetto possiamo sfruttare
+l'interpretazione fisica che abbiamo dato per ciascuna delle sue componente.
+Iniziamo col considerare il fluido in un sistema comovente indichiamo con
+$\tilde T^{\alpha\beta}$ il tensore energia-impulso in questo sistema.  Poiché
+non c'è conduzione di calore, il flusso di energia è quello associato alle
+particelle, che nel sistema comovente è nullo, dunque
+$\tilde T^{0i} = \tilde T^{i0} = 0$.  Ricordiamo che $\tilde T^{ij}$ è la
+componente $j$ della forza per unità di area su una superficie perpendicolare
+all'asse $i$, quindi l'assenza di viscosità in un fluido perfetto comporta che
+il tensore degli sforzi $\tilde T^{ij}$ è diagonale.  Il fatto che questo sia
+vero per ogni sistema comovente, senza alcuna direzione privilegiata, implica in
+particolare che $\tilde T^{ij}$ è proporzionale alla matrice identità
+$\delta^{ij}$ e il fattore di proporzionalità sarà dunque la pressione $p$ del
+fluido: $\tilde T^{ij} = p \delta^{ij}$.  Infine, $\tilde T^{00}$ è la densità
+di energia, uguale alla densità di massa $\rho$ avendo posto $c = 1$.  In
+definitiva, il tensore energia-impulso di un fluido perfetto in un sistema
+comovente è
+\begin{equation}
+  \tilde T^{\alpha\beta} =
+  \begin{pmatrix}
+    \rho & 0 & 0 & 0 \\
+    0    & p & 0 & 0 \\
+    0    & 0 & p & 0 \\
+    0    & 0 & 0 & p
+  \end{pmatrix}.
+\end{equation}
+
+Per ottenere il tensore energia-impulso $T^{\alpha\beta}$ del fluido perfetto in
+un qualsiasi altro sistema di riferimento in moto con velocità $\bm{u}$ rispetto
+a un sistema comovente rispetto al fluido basta effettuare un boost di
+$\bm{u}$:
+$T^{\alpha\beta} =
+\tensor{\Lambda}{^{\alpha}_{\mu}}\tensor{\Lambda}{^{\beta}_{\nu}}\tilde
+T^{\mu\nu}$
+\begin{subequations}
+  \begin{align}
+    \begin{split}
+      T^{00} &= \tensor{\Lambda}{^{0}_{\mu}} \tensor{\Lambda}{^{0}_{\nu}} \tilde
+      T^{\mu\nu} = \tensor{\Lambda}{^{0}_{i}} \tensor{\Lambda}{^{0}_{j}} \tilde
+      T^{ij} + (\tensor{\Lambda}{^{0}_{0}})^{2} \tilde T^{00} \\
+      &= \gamma^{2} u_{i} u_{j} p \delta^{ij} + \gamma^{2} \rho = \frac{\rho +
+        pu^{2}}{1-u^{2}},
+    \end{split} \\
+    \begin{split}
+      T^{i0} &= \tensor{\Lambda}{^{i}_{\mu}} \tensor{\Lambda}{^{0}_{\nu}} \tilde
+      T^{\mu\nu} = \tensor{\Lambda}{^{i}_{k}} \tensor{\Lambda}{^{0}_{l}} \tilde
+      T^{kl} + \tensor{\Lambda}{^{i}_{0}} \tensor{\Lambda}{^{0}_{0}} \tilde
+      T^{00} \\
+      &= \bigg(\tensor{\delta}{^{i}_{k}} + u^{i}u_{k}\frac{\gamma -
+        1}{u^{2}}\bigg) u_{l} \gamma p \delta^{kl} + u^{i} \gamma^{2} \rho \\
+      &= \bigg(\tensor{\delta}{^{i}_{k}} + u^{i}u_{k}\frac{\gamma - 1}{u^{2}}\bigg)
+      u^{k} \gamma p + u^{i} \gamma^{2} \rho \\
+      &= (u^{i} + u^{i}(\gamma - 1)) \gamma p + u^{i} \gamma^{2} \rho =
+      u^{i}\gamma^{2} p + u^{i} \gamma^{2} \rho = \frac{p + \rho}{1 -
+        u^{2}}u^{i},
+    \end{split} \\
+    \begin{split}
+      T^{ij} &= \tensor{\Lambda}{^{i}_{\mu}} \tensor{\Lambda}{^{j}_{\nu}} \tilde
+      T^{\mu\nu} = \tensor{\Lambda}{^{i}_{k}} \tensor{\Lambda}{^{j}_{l}} \tilde
+      T^{kl} + \tensor{\Lambda}{^{i}_{0}} \tensor{\Lambda}{^{j}_{0}} \tilde
+      T^{00} \\
+      &= \bigg(\tensor{\delta}{^{i}_{k}} + u^{i}u_{k}\frac{\gamma -
+        1}{u^{2}}\bigg) \bigg(\tensor{\delta}{^{j}_{l}} + u^{j}u_{l}\frac{\gamma
+        - 1}{u^{2}}\bigg) p \delta^{kl} + u^{i}u^{j} \gamma^{2} \rho \\
+      &= \bigg(\tensor{\delta}{^{i}_{k}} + u^{i}u_{k}\frac{\gamma -
+        1}{u^{2}}\bigg) \bigg(\delta^{jk} + u^{j}u^{k}\frac{\gamma -
+        1}{u^{2}}\bigg) p + u^{i}u^{j} \gamma^{2} \rho \\
+      &= p \delta^{ij} + \frac{p + \rho}{1 - u^{2}}u^{i}u^{j}.
+    \end{split}
+  \end{align}
+\end{subequations}
+Questi risultati possono essere messi insieme nella seguente espressione
+compatta
+\begin{equation}
+  T^{\alpha\beta} = \eta^{\alpha\beta}p + (p + \rho)u^{\alpha}u^{\beta},
+\end{equation}
+con $u^{\mu} = (\gamma(u), \gamma(u) \bm{u})$ quadrivelocità associata al
+vettore velocità $\bm{u}$.  Si riottiene l'espressione di
+$\tilde T^{\alpha\beta}$ ponendo
+$\bm{u} = \bm{0} \implies u^{\mu} = (1, \bm{0})$.
+
+Nel caso in cui le particelle del fluido si muovono a velocità molto più piccole
+di quella della luce nel vuoto (ma la velocità macroscopico del fluido è
+arbitraria), il tensore energia-impulso $\tilde T^{\alpha\beta}$ assume
+un'espressione più semplice.  Innanzitutto nella densità di energia $\rho$
+possiamo trascurare tutti i termini piccoli rispetto alla densità di energia di
+riposo $\rho_{0}$, con $\rho_{0}$ somma delle masse a riposo delle particelle
+contenute nell'unità di volume proprio del fluido.  In questo caso, inoltre,
+anche la pressione data dall'energia del moto microscopico delle molecole è
+trascurabile rispetto alla densità di energia a riposo $\rho$, quindi possiamo
+scrivere
+\begin{equation}
+  \tilde T^{\alpha\beta} = \rho_{0} u^{\alpha} u^{\beta}.
+\end{equation}
+In questo regime $u^{\mu}= (1, \bm{u})$, quindi in particolare abbiamo
+\begin{subequations}
+  \begin{align}
+    \tilde T^{00} &= \rho_{0}, \\
+    \tilde T^{ij} &= \rho_{0} u^{i} u^{j}.
+  \end{align}
+\end{subequations}
 
 
 %%% Local Variables:
