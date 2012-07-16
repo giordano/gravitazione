@@ -147,7 +147,7 @@ della~\eqref{eq:simmetria-riemann} per $g^{\lambda\nu}$ troviamo
   -\tensor{R}{^{\nu}_{\mu\kappa\nu}} = \tensor{R}{_{\mu}^{\nu}_{\kappa\nu}}.
 \end{equation}
 
-L'ulteriore contrazione del tensore di Riemann dà la
+L'ulteriore contrazione del tensore di Ricci dà la
 \index{curvatura scalare}\emph{curvatura scalare}
 \begin{equation}
   R = g^{\mu\nu}R_{\mu\nu} = \tensor{R}{^{\mu}_{\mu}}.
@@ -516,7 +516,7 @@ Contraendo gli indici dell'equazione precedente otteniamo
 \begin{equation}
   \eta^{ij}R_{ij} \approx \frac{1}{2} \eta_{ij}\eta^{ij} R = \frac{3}{2} R.
 \end{equation}
-Il tensore di Ricci può essere approssimato come
+La curvatura scalare può essere approssimata come
 \begin{equation}
   R = g^{\mu\nu}R_{\mu\nu} \approx \eta^{\mu\nu} R_{\mu\nu} = \eta^{00}R_{00} +
   \eta^{ij}R_{ij} = -R_{00} + \frac{3}{2} R
@@ -688,12 +688,11 @@ con componenti non nulle
 \begin{subequations}
   \label{eq:ricci-sferico}
   \begin{align}
-    R_{tt} &= -\frac{B''(r)}{2A(r)} +
-    \frac{B'(r)}{A(r)}\frac{B'(r)}{B(r)}\bigg(\frac{A'(r)}{A(r)} +
-    \frac{B'(r)}{B(r)}\bigg) -
+    R_{tt} &= -\frac{B''(r)}{2A(r)} + \frac{1}{4} \frac{B'(r)}{A(r)}
+    \bigg(\frac{A'(r)}{A(r)} + \frac{B'(r)}{B(r)}\bigg) -
     \frac{1}{r}\frac{B'(r)}{A(r)}, \\
-    R_{rr} &= \frac{B''(r)}{2B(r)} - \frac{1}{4}
-    \frac{B'(r)}{B(r)}\bigg(\frac{A'(r)}{A(r)} + \frac{B'(r)}{B(r)}\bigg) -
+    R_{rr} &= \frac{B''(r)}{2B(r)} - \frac{1}{4} \frac{B'(r)}{B(r)}
+    \bigg(\frac{A'(r)}{A(r)} + \frac{B'(r)}{B(r)}\bigg) -
     \frac{1}{r}\frac{A'(r)}{A(r)}, \\
     R_{\theta\theta} &= -1 + \frac{r}{2A(r)}\bigg(-\frac{A'(r)}{A(r)} +
     \frac{B'(r)}{B(r)}\bigg) + \frac{1}{A(r)}, \\

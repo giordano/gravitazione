@@ -40,6 +40,14 @@ bisognerà allora effettuare le sostituzioni
   \end{align}
 \end{subequations}
 
+Le uniche ipotesi che facciamo sulla trasformazione delle coordinate
+$x^{\mu} \to x'^{\mu}$ è che sia rappresentata da una funzione biunivoca,
+differenziabile (in modo che abbia senso calcolare la matrice jacobiana
+$\lparder{x'^{\mu}}{x^{\mu}}$ della trasformazione), invertibile e con inverso a
+sua volta differenziabile.  La trasformazione deve quindi avere determinante
+jacobiano $\abs{\lparder{x'^{\mu}}{x^{\mu}}}$ non nullo, cioè non singolare, e
+questo ci permetterà di definire anche nel presente contesto gli pseudotensori.
+
 \section{Tensori}
 \label{sec:tensori}
 
@@ -171,7 +179,8 @@ metrico $g_{\mu\nu}$ non è invariante per trasformazioni delle coordinate.  Nel
 capitolo precedente abbiamo già introdotto il tensore metrico controvariante
 $g^{\mu\nu}$ come quel tensore tale che
 \begin{equation}
-  g_{\mu\rho}g^{\mu\sigma} = \tensor{\delta}{^{\sigma}_{\rho}}.
+  g_{\mu\rho}g^{\mu\sigma} = \tensor{g}{^{\sigma}_{\rho}} =
+  \tensor{\delta}{^{\sigma}_{\rho}}.
 \end{equation}
 Si dimostra che $g^{\mu\nu}$ è effettivamente un tensore controvariante di rango
 $2$.
@@ -206,8 +215,11 @@ pseudoscalare di peso $-1$
 \end{equation}
 Possiamo usare $\sqrt{g}$ per costruire un elemento infinitesimo di ipervolume
 quadrimensionale invariante per arbitrarie trasformazione di coordinate.
-Infatti osserviamo che mentre nella relatività speciale $\dd^{4} x$ è uno
-scalare di Lorentz, nella relatività generale è uno pseudoscalare di peso $1$
+Osserviamo che, come nella relatività
+speciale,\footnote{Nella relatività speciale $\dd^{4} x$ può essere considerato
+  uno scalare di Lorentz vero e proprio solo se ci si limita a considerare
+  unicamente trasformazioni di Lorentz proprie, per le quali $\det \Lambda =
+  1$.} $\dd^{4} x$ è uno pseudoscalare di peso $1$
 \begin{equation}
   \dd^{4} x' = \dd^{4} x \abs*{\parder{x'}{x}}.
 \end{equation}
@@ -299,7 +311,7 @@ abbiamo
     \tensor{{\Gamma{}'}}{^{\lambda}_{\mu\nu}}
     &= \parder{x'^{\lambda}}{\xi^{\alpha}} \parder{}{x'^{\mu}}
     \bigg( \parder{\xi^{\alpha}(x)}{x'^{\nu}} \bigg)
-    = \parder{x'^{\lambda}}{x^{\sigma}} \parder{x^{\sigma}}{\xi^{\alpha}}
+    = \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{\xi^{\alpha}}
     \parder{}{x'^{\mu}} \bigg( \parder{x^{\sigma}}{x'^{\nu}}
     \parder{\xi^{\alpha}}{x^{\sigma}} \bigg) \\
     &=  \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{\xi^{\alpha}}
@@ -383,9 +395,9 @@ si trasforma come un tensore di tipo $(1,2)$
 \label{sec:derivazione-covariante}
 
 Nella relatività ristretta, la derivazione ordinaria di un tensore di rango $k$
-per una coordinata $x^{\lambda}$ produce un tensore di rango $k+1$.  All'interno
-della teoria della relatività generale la situazione è differente: la
-derivazione ordinaria di un tensore di rango $k$ per una coordinata
+rispetto a una coordinata $x^{\lambda}$ produce un tensore di rango $k+1$.
+All'interno della teoria della relatività generale la situazione è differente:
+la derivazione ordinaria di un tensore di rango $k$ per una coordinata
 $x^{\lambda}$ produce un ente che non è, in generale, un tensore di rango $k+1$.
 Per esempio, consideriamo un vettore controvariante $V^{\mu}$ il quale, per
 definizione, si trasformerà, per effetto di un cambiamento di coordinate, come
@@ -476,13 +488,13 @@ Più in generale è possibile definire la \index{derivata!covariante}derivata
 covariante di un tensore.  Vediamo il caso particolare di un tensore misto di
 rango
 tre\footnote{Presentiamo un metodo per ricordare la formula di derivazione
-  covariante di un tensore: il primo termine è la corrispondente derivazione
-  ordinaria del tensore, i successivi sono del tipo $s\Gamma T$ cui $T$ ha, di
-  volta in volta a rotazione, un solo indice muto e i restanti liberi, $\Gamma$
-  ha gli indici adeguati per saturare l'indice muto e compensare i due restanti
-  indici liberi (di cui uno è sempre quello inferiore rispetto a cui si deriva,
-  $\rho$ nell'esempio), $s$ vale $+1$ se l'indice muto di $T$ è controvariante,
-  $-1$ se è covariante.}
+  covariante di un tensore di rango qualsiasi: il primo termine è la
+  corrispondente derivazione ordinaria del tensore, i successivi sono del tipo
+  $s\Gamma T$ cui $T$ ha, di volta in volta a rotazione, un solo indice muto e i
+  restanti liberi, $\Gamma$ ha gli indici adeguati per saturare l'indice muto e
+  compensare i due restanti indici liberi (di cui uno è sempre quello inferiore
+  rispetto a cui si deriva, $\rho$ nell'esempio), $s$ vale $+1$ se l'indice muto
+  di $T$ è controvariante, $-1$ se è covariante.}
 \begin{subequations}
   \begin{align}
     \tensor{T}{^{\mu\sigma}_{\lambda;\rho}} &=
