@@ -579,15 +579,17 @@ campo debole $R_{\mu\nu}^{(1)} = \dalamb h_{\mu\nu}/2$, quindi l'equazione di
 Einstein in presenza della materia~\eqref{eq:einstein-lineare-esatta} diventa
 \begin{equation}
   \label{eq:einstein-lineare-materia1}
-  \dalamb \bigg(h_{\mu\nu} - \frac{1}{2}\delta_{\mu\nu}h \bigg) = -\frac{16\pi
-    G}{c^{4}} \tau_{\mu\nu}.
+  \dalamb \bigg(\tensor{h}{^{\mu}_{\nu}} - \frac{1}{2}
+  \tensor{\eta}{^{\mu}_{\nu}}h \bigg) =\dalamb \bigg(\tensor{h}{^{\mu}_{\nu}}
+  - \frac{1}{2} \tensor{\delta}{^{\mu}_{\nu}}h \bigg) = -\frac{16\pi G}{c^{4}}
+  \tensor{\tau}{^{\mu}_{\nu}}.
 \end{equation}
 Introduciamo il tensore $\tensor{\psi}{^{\mu}_{\nu}}$ definito da
 \begin{equation}
   \tensor{\psi}{^{\mu}_{\nu}} = \tensor{h}{^{\mu}_{\nu}} - \frac{1}{2}
   \tensor{\delta}{^{\mu}_{\nu}} h.
 \end{equation}
-Osserviamo che nella gauge TT $h = 0$ e quindi
+Osserviamo che nella gauge TT risulta $h = 0$ e quindi
 $\tensor{\psi}{^{\mu}_{\nu}} = \tensor{h}{^{\mu}_{\nu}}$.  La gauge
 armonica~\eqref{eq:gauge-armonica} può essere definita con riferimento a
 $\tensor{\psi}{^{\mu}_{\nu}}$ come
@@ -619,8 +621,8 @@ $\tensor{\psi}{^{\mu}_{\nu}}$ analoghe alle formule dei potenziali
 elettromagnetici ritardati.  D'altra parte osserviamo che l'equazione di
 Einstein~\eqref{eq:einstein-lineare-materia2} in presenza di masse in moto,
 nella gauge armonica, è formalmente uguale all'equazione di
-Maxwell~\ref{eq:maxwell-cariche} in presenza di cariche in moto, nella gauge di
-Lorenz, quindi possiamo scrivere direttamente la soluzione
+Maxwell~\eqref{eq:maxwell-cariche} in presenza di cariche in moto, nella gauge
+di Lorenz, quindi possiamo scrivere direttamente la soluzione
 \begin{equation}
   \tensor{\psi}{^{\mu}_{\nu}} = \frac{4G}{c^{4}}\int
   \frac{(\tensor{\tau}{^{\mu}_{\nu}})|_{t - R/c}}{R} \dd V',

@@ -166,7 +166,7 @@ spazio-tempo piatto, cioè lo spazio di Minkowski, in cui si fa uso di coordinat
 curvilinee.  Se siamo nella seconda situazione, in questo spazio di Minkowski è
 possibile effettuare una trasformazione delle coordinate
 $x^{\alpha} \to \xi^{\alpha}(x)$ da un sistema di coordinate curvilinee
-$x^{\alpha}$ con tensore metrico $\gamma_{\mu\nu}$ non costante a un sistema di
+$x^{\alpha}$ con tensore metrico $g_{\mu\nu}$ non costante a un sistema di
 coordinate $\xi^{\alpha}(x)$ con tensore metrico uguale al tensore di Minkowski
 $\eta_{\alpha\beta}$ e in tutto lo spazio si ha
 \begin{equation}
@@ -620,9 +620,10 @@ con
 \end{equation}
 Effettuando inoltre la trasformazione $r \to r' = C(r)r^{2}$ otteniamo la
 \index{metrica!forma standard della}\emph{forma standard} della metrica
+(rinominiamo le variabili $r'$ e $t'$ in $r$ e $t$)
 \begin{equation}
   \label{eq:metrica-standard}
-  \dd\tau^{2} = B(r')\dd t'^{2} - A(r')\dd r'^{2} - r'^{2}(\dd\theta^{2} +
+  \dd\tau^{2} = B(r)\dd t^{2} - A(r)\dd r^{2} - r^{2}(\dd\theta^{2} +
   \sin^{2}\theta \dd\phi^{2}),
 \end{equation}
 in cui
@@ -633,8 +634,7 @@ in cui
     \toder{C(r)}{r} \bigg)^{-2}.
   \end{align}
 \end{subequations}
-Rinominando le variabili $r'$ e $t'$ in $r$ e $t$, il tensore metrico è
-rappresentato dalla seguente matrice diagonale
+Il tensore metrico è rappresentato dalla seguente matrice diagonale
 \begin{equation}
   g_{\mu\nu} =
   \begin{pmatrix}
@@ -779,7 +779,7 @@ simmetria sferica e indipendenti dal tempo, è data da
 Osserviamo che questa metrica ha una singolarità per $r = r_{\textup{S}}$ e
 un'altra per $r = 0$.  Nel caso specifico del Sole, e di numerosi altri corpi,
 la prima singolarità non costituisce un problema poiché la metrica vale
-all'esterno del corpo e il raggio di questa stella è molto più piccolo del suo
+all'esterno del corpo e il raggio di questa stella è molto più grande del suo
 raggio di Schwarzschild.  Si
 dimostra\footnote{Vedi~\textcite[511]{barone:relativita},
   \textcite[403-404]{landau:campi}, \textcite[207-208]{weinberg:gravitation}.}
@@ -852,8 +852,9 @@ risolto più facilmente considerando la seguente formulazione equivalente
     r^{2}(\dot{\theta}^{2} + \sin^{2}\theta \dot{\phi}^{2}) \bigg) \dd \tau = 0.
   \end{split}
 \end{equation}
-Da qui si ottengono tre equazioni di Eulero-Lagrange per le coordinate,
-rispettivamente, $\theta$, $\phi$ e $t$
+Da qui, considerando la funzione integranda come una lagrangiana, si ottengono
+tre equazioni di Eulero-Lagrange per le coordinate, rispettivamente, $\theta$,
+$\phi$ e $t$
 \begin{subequations}
   \begin{gather}
     \toder{}{\tau}(r^{2}\dot{\theta}) = r^{2}\sin\theta\cos\theta
@@ -905,7 +906,7 @@ e ponendo $u = 1/r$, con
 \end{equation}
 la~\eqref{eq:mercurio-r2} diventa
 \begin{equation}
-  (1 - r_{\textup{S}}u) = l^{2} - h^{2}u'^{2} - h^{2}u^{2}(1 - r_{\textup{S}}u),
+  1 - r_{\textup{S}}u = l^{2} - h^{2}u'^{2} - h^{2}u^{2}(1 - r_{\textup{S}}u),
 \end{equation}
 da cui, riarrangiando,
 \begin{equation}
@@ -920,8 +921,12 @@ Questa equazione può essere integrata nel seguente modo
 \end{equation}
 Sebbene questa sia una soluzione esatta, non è utile a livello pratico perché
 fornisce solo un'espressione implicita di $u$, e quindi $r$, rispetto a $\phi$.
-L'idea, a questo punto, è quella di scrivere un'equazione differenziale del
-secondo ordine.  Derivando rispetto a $\phi$ la~\eqref{eq:mercurio-u'} abbiamo
+Nella risoluzione del problema di Keplero classico si giunge all'equazione di
+Binet che è un'equazione differenziale del secondo ordine in $u$.  Per risolvere
+il problema nella relatività generale, a questo punto, l'idea è quella di
+ottenere un'equazione differenziale del secondo ordine in $u$ da confrontare con
+l'equazione di Binet.  Derivando rispetto a $\phi$ la~\eqref{eq:mercurio-u'}
+abbiamo
 \begin{equation}
   \label{eq:mercurio1}
   2u'u'' = \frac{r_{\textup{S}}}{h^{2}}u' - 2uu' + 3r_{\textup{S}}u^{2}u'
@@ -939,9 +944,8 @@ precessione.  L'altra possibile soluzione è
   u'' + u = \frac{r_{\textup{S}}}{2h^{2}} + \frac{3}{2}r_{\textup{S}}u^{2} =
   \frac{GM}{r^{4}(\ltoder{\phi}{\tau})^{2}} + \frac{3}{2}r_{\textup{S}}u^{2},
 \end{equation}
-in cui $M$ è la massa del corpo che genera il campo gravitazionale.  Ricordiamo
-che nel problema di Keplero classico, l'\index{equazione!di Binet}equazione di
-Binet è
+in cui $M$ è la massa del corpo che genera il campo gravitazionale.  Nel
+problema di Keplero classico, l'\index{equazione!di Binet}equazione di Binet è
 \begin{equation}
   \label{eq:binet}
   u'' + u = \frac{GM}{r^{4}(\ltoder{\phi}{t})^{2}}.
@@ -955,7 +959,7 @@ sistema solare risulta
 infatti
 \begin{equation}
   3u^{2}h^{2} = \frac{3}{r^{2}}r^{4} \bigg(\toder{\phi}{\tau}\bigg)^{2} = 3r^{2}
-  \bigg(\toder{\phi}{\tau}\bigg)^{2} = 3 v_{\textup{t}}^{2},
+  \bigg(\toder{\phi}{\tau}\bigg)^{2} \approx 3 v_{\textup{t}}^{2},
 \end{equation}
 in cui $v_{\textup{t}} = r\ltoder{\phi}{t}$ è la velocità tangenziale del corpo,
 espressa in unità di $c$ poiché abbiamo posto $c = 1$.  Per Mercurio, il pianeta
@@ -1090,8 +1094,12 @@ gravitazionale del Sole.
 \subsection{Deflessione della luce}
 \label{sec:deflessione-luce}
 
-In questo paragrafo studieremo il moto di un fotone nel campo gravitazionale di
-un corpo massivo, in particolare del Sole.
+Secondo la teoria newtoniana, solo i corpi dotati di massa sono soggetti
+all'attrazione gravitazionale.  In questo paragrafo vedremo che un fotone (così
+come qualsiasi corpo privo di massa) risente della presenza di un campo
+gravitazionale, come quello generato dal Sole, deviando la propria traiettoria.
+Questo fenomeno è comprensibile ricordando che tutti i corpi si muovono lungo
+geodetiche in uno spazio-tempo curvo.
 
 % TODO: non ho mai classificato gli intervalli nei tipi `luce', `spazio' o
 % `tempo', quindi o lo faccio da qualche parte o riformulo la frase seguente.
@@ -1122,10 +1130,10 @@ ponendo sempre $u = 1/r$ si arriva all'equazione
 \begin{equation}
   u'\bigg(u'' + u - \frac{3}{2}r_{\textup{S}}u^{2}\bigg) = 0.
 \end{equation}
-Si possono avere due situazioni
+Si possono avere due situazioni:
 \begin{equation}
   \label{eq:deflessione1}
-  u'' + u - \frac{3}{2}r_{\textup{S}}u^{2} = 0
+  u'' + u - \frac{3}{2}r_{\textup{S}}u^{2} = 0,
 \end{equation}
 oppure
 \begin{equation}
@@ -1133,8 +1141,10 @@ oppure
 \end{equation}
 ma quest'ultima soluzione deve essere scartata per ragioni di stabilità.
 Osserviamo che si poteva giungere direttamente alla~\eqref{eq:deflessione1}
-partendo dalla~\eqref{eq:mercurio1} e ponendo $\dd\tau = 0$.  Il termine
-$3r_{\textup{S}}u^{2}/2$ è una piccola perturbazione rispetto a $u$, infatti
+partendo dalla~\eqref{eq:mercurio1} e ponendo
+$\dd\tau^{2} = 0 \implies 1/h^{2} = (\ltoder{\tau}{\phi})^{2}/r^{4} = 0$.  Il
+termine $3r_{\textup{S}}u^{2}/2$ è una piccola perturbazione rispetto a $u$,
+infatti
 \begin{equation}
   \frac{3r_{\textup{S}}u^{2}/2}{u} = \frac{3r_{\textup{S}}u}{2} =
   \frac{3r_{\textup{S}}}{2r}.
@@ -1162,11 +1172,11 @@ I termini di ordine zero in $\epsilon$ danno
 \end{equation}
 la cui soluzione generale è
 \begin{equation}
-  u_{0}(\phi) = A\cos(\phi + \delta),
+  u_{0}(\phi) = A\cos(\phi + \phi_{0}),
 \end{equation}
-con $A$ e $\delta$ costanti di integrazione.  Ruotando il sistema di coordinate
-è possibile annullare $\delta$ cosicché il valore approssimato $r = 1/u_{0}$
-della coordinata radiale soddisfi la relazione
+con $A$ e $\phi_{0}$ costanti di integrazione.  Ruotando il sistema di
+coordinate è possibile annullare $\phi_{0}$ cosicché il valore approssimato
+$r = 1/u_{0}$ della coordinata radiale soddisfi la relazione
 \begin{equation}
   r \cos\phi = \frac{1}{A} = \text{costante}.
 \end{equation}
@@ -1240,7 +1250,7 @@ ordine in $\epsilon$ abbiamo
 \end{equation}
 Abbiamo già osservato che per i fotoni che passano nelle vicinanze del Sole
 risulta $r_{\textup{S}}/r \ll 1$, quindi $\phi \approx \pm \pi/2$, allora
-possiamo porre $\psi = \pi/2 + \delta$, da cui
+possiamo porre $\phi = \pi/2 + \delta$, con $\delta \ll 1$, da cui
 \begin{equation}
   -\frac{r_{\textup{S}}}{r_{0}} = \cos\phi = \cos(\pi/2 + \delta) = -\sin\delta.
 \end{equation}
@@ -1271,12 +1281,12 @@ di Sole del 1919.
 L'ultimo fenomeno di cui ci interessiamo è il ritardo nel tempo di volo dei
 segnali radar rispetto a quanto previsto dalla relatività speciale in uno
 spazio-tempo piatto.  Ciò è dovuto al fatto che i fotoni non si muovono lungo
-linee rette ma lungo le geodetiche, che hanno lunghezza maggiore rispetto.
-Questo fenomeno può essere osservato inviando un segnale radar a un pianeta in
-congiunzione superiore e misurando il tempo necessario affinché il segnale vada
-verso il pianeta e torni sulla Terra.  Tuttavia l'esecuzione di esperimenti su
-questo fenomeno presentano delle difficoltà di tipo pratico, delle quali non ci
-occuperemo.
+linee rette ma lungo le geodetiche, che hanno lunghezza maggiore rispetto alle
+linee rette in uno spazio-tempo piatto.  Questo fenomeno può essere osservato
+inviando un segnale radar a un pianeta in congiunzione superiore e misurando il
+tempo necessario affinché il segnale vada verso il pianeta e torni sulla Terra.
+Tuttavia l'esecuzione di esperimenti su questo fenomeno presentano delle
+difficoltà di tipo pratico, delle quali non ci occuperemo.
 
 % TODO: mettere anche qui una figura e rielaborare il testo altrimenti non si
 % capisce niente.  Dopo aver fatto la figura, parlare in generale di distanza di
@@ -1293,8 +1303,8 @@ fra questi due punti e la velocità dei fotoni nel vuoto
 \begin{equation}
   \tau(r, R_{\odot}) = \frac{\sqrt{r^{2} - R_{\odot}^{2}}}{c}.
 \end{equation}
-La correzione relativistica per , che tiene conto della curvatura dello spazio tempo
-prodotta dal campo gravitazionale del Sole, è
+La correzione relativistica per $\tau(r, R_{\odot})$, che tiene conto della
+curvatura dello spazio tempo prodotta dal campo gravitazionale del Sole, è
 \begin{equation}
   \begin{split}
     t(r,R_{\odot}) &\approx \tau(r,R_{\odot}) + \var t(r,R_{\odot}) \\
