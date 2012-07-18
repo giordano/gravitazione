@@ -40,10 +40,12 @@ potenze di $h_{\mu\nu}$ nel seguente modo
   R_{\mu\nu} = R_{\mu\nu}^{(0)} + R_{\mu\nu}^{(1)} + R_{\mu\nu}^{(2)} +
   \mathcal{O}(h^{3}) = R_{\mu\nu}^{(1)} + R_{\mu\nu}^{(2)} + \mathcal{O}(h^{3}),
 \end{equation}
-con $R_{\mu\nu}^{(0)} = 0$.  L'equazione di Einstein esatta, in presenza di
-materia, può essere scritta in questo modo
+con $R_{\mu\nu}^{(0)} = 0$ perché nel limite di campo gravitazionale
+completamente assente il tensore di Riemann è nullo, così come quello di Ricci.
+L'equazione di Einstein esatta, in presenza di materia, può essere scritta in
+questo modo
 \begin{equation}
-  \label{eq:einstein-esatta}
+  \label{eq:einstein-lineare-esatta}
   \bigg(R_{\mu\nu}^{(1)} - \frac{1}{2}\eta_{\mu\nu}R^{(1)}\bigg) = -8\pi
   G(T_{\mu\nu} + t_{\mu\nu}),
 \end{equation}
@@ -54,8 +56,8 @@ in cui $R^{(1)} = \eta^{\mu\nu}R_{\mu\nu}^{(1)}$ e $t_{\mu\nu}$ è definito da
   \frac{1}{2}(g_{\mu\nu}R)^{(2)}.
 \end{equation}
 Dunque $t_{\mu\nu}$ contiene solo termini superiori al primo ordine in
-$h_{\mu\nu}$.  La~\eqref{eq:einstein-esatta} può essere interpretata come
-un'equazione d'onda in $h_{\mu\nu}$ in cui il termine di sorgente
+$h_{\mu\nu}$.  La~\eqref{eq:einstein-lineare-esatta} può essere interpretata
+come un'equazione d'onda lineare in $h_{\mu\nu}$ in cui il termine di sorgente
 $\tau_{\mu\nu} = T_{\mu\nu} + t_{\mu\nu}$ dipende esplicitamente dal campo
 gravitazionale $h_{\mu\nu}$ stesso.  Questo ci suggerisce che $h_{\mu\nu}$ è
 generato dal flusso e dalla densità totale dell'energia e del momento e
@@ -579,56 +581,51 @@ ha spin $1$.\footnote{Vedi \textcite[471]{shapiro:black-holes}.}
 
 Esaminiamo più in dettaglio il problema.  Sappiamo che nell'approssimazione di
 campo debole $R_{\mu\nu}^{(1)} = \dalamb h_{\mu\nu}/2$, quindi l'equazione di
-Einstein in presenza della materia~\eqref{eq:einstein-esatta} diventa
+Einstein in presenza della materia~\eqref{eq:einstein-lineare-esatta} diventa
 \begin{equation}
   \label{eq:einstein-lineare-materia1}
-  \dalamb \bigg(\tensor{h}{^{\mu}_{\nu}} - \frac{1}{2}
-  \tensor{\eta}{^{\mu}_{\nu}}h \bigg) =\dalamb \bigg(\tensor{h}{^{\mu}_{\nu}}
-  - \frac{1}{2} \tensor{\delta}{^{\mu}_{\nu}}h \bigg) = -\frac{16\pi G}{c^{4}}
-  \tensor{\tau}{^{\mu}_{\nu}}.
+  \dalamb \bigg(h_{\mu\nu} - \frac{1}{2} \eta_{\mu\nu}h \bigg) = -\frac{16\pi
+    G}{c^{4}} \tau_{\mu\nu}.
 \end{equation}
-Introduciamo il tensore $\tensor{\psi}{^{\mu}_{\nu}}$ definito da
+Introduciamo il tensore $\psi_{\mu\nu}$ definito da
 \begin{equation}
-  \tensor{\psi}{^{\mu}_{\nu}} = \tensor{h}{^{\mu}_{\nu}} - \frac{1}{2}
-  \tensor{\delta}{^{\mu}_{\nu}} h.
+  \psi_{\mu\nu} = h_{\mu\nu} - \frac{1}{2} \eta_{\mu\nu} h.
 \end{equation}
 Osserviamo che nella gauge TT risulta $h = 0$ e quindi
-$\tensor{\psi}{^{\mu}_{\nu}} = \tensor{h}{^{\mu}_{\nu}}$.  La gauge
-armonica~\eqref{eq:gauge-armonica} può essere definita con riferimento a
-$\tensor{\psi}{^{\mu}_{\nu}}$ come
+$\psi_{\mu\nu} = h_{\mu\nu}$.  La gauge armonica~\eqref{eq:gauge-armonica} può
+essere definita con riferimento a $\psi_{\mu\nu}$ come
 \begin{equation}
   \label{eq:gauge-armonica2}
-  \partial_{\mu}\tensor{\psi}{^{\mu}_{\nu}} = 0
+  \partial_{\mu}\psi^{\mu\nu} = 0
 \end{equation}
 e l'equazione di Einstein linearizzata~\eqref{eq:einstein-lineare-materia1} in
 presenza di materia si scrive come
 \begin{equation}
   \label{eq:einstein-lineare-materia2}
-  \dalamb \tensor{\psi}{^{\mu}_{\nu}} = -\frac{16\pi G}{c^{4}}
-  \tensor{\tau}{^{\mu}_{\nu}}.
+  \dalamb \psi_{\mu\nu} = -\frac{16\pi G}{c^{4}} \tau_{\mu\nu}.
 \end{equation}
 Da qui deriva inoltre che se è verificata la condizione
 armonica~\eqref{eq:gauge-armonica2} risulta anche
 \begin{equation}
   \label{eq:gauge-armonica-tau}
-  \partial_{\mu}\tensor{\tau}{^{\mu}_{\nu}} = 0,
+  \partial_{\mu}\tau^{\mu\nu} = 0,
 \end{equation}
-che sostituisce l'equazione più generale $\tensor{T}{^{\mu}_{\nu;\mu}} = 0$.
+che sostituisce l'equazione più generale $\tensor{T}{^{\mu\nu}_{;\mu}} = 0$.
 
 Vogliamo determinare il campo gravitazionale a grandi distanze rispetto al
 sistema in esame, in particolare nella \index{zona!delle onde}zona delle onde,
 cioè in una regione a distanza molto maggiore rispetto alla lunghezza delle onde
 irradiate dal sistema.  Dunque possiamo seguire gli stessi metodi utilizzati nel
 paragrafo~\ref{sec:onde-elettromagnetiche-cariche} ottenendo le formule per
-$\tensor{\psi}{^{\mu}_{\nu}}$ analoghe alle formule dei potenziali
-elettromagnetici ritardati.  D'altra parte osserviamo che l'equazione di
+$\psi_{\mu\nu}$ analoghe alle formule dei potenziali elettromagnetici ritardati.
+D'altra parte osserviamo che l'equazione di
 Einstein~\eqref{eq:einstein-lineare-materia2} in presenza di masse in moto,
 nella gauge armonica, è formalmente uguale all'equazione di
 Maxwell~\eqref{eq:maxwell-cariche} in presenza di cariche in moto, nella gauge
 di Lorenz, quindi possiamo scrivere direttamente la soluzione
 \begin{equation}
-  \tensor{\psi}{^{\mu}_{\nu}} = \frac{4G}{c^{4}}\int
-  \frac{(\tensor{\tau}{^{\mu}_{\nu}})|_{t - R/c}}{R} \dd V',
+  \psi_{\mu\nu} = \frac{4G}{c^{4}}\int \frac{(\tau_{\mu\nu})|_{t - R/c}}{R} \dd
+  V',
 \end{equation}
 in cui si è usata la stessa notazione del
 paragrafo~\ref{sec:onde-elettromagnetiche-cariche}.  Poiché inoltre le velocità
@@ -636,8 +633,7 @@ con cui si muovono i corpi sono molto più piccole di quelle della luce nel
 vuoto, possiamo adottare l'approssimazione di dipolo e scrivere
 \begin{equation}
   \label{eq:psi-mu-nu}
-  \tensor{\psi}{^{\mu}_{\nu}} = \frac{4G}{c^{4}r} \int
-  (\tensor{\tau}{^{\mu}_{\nu}})|_{t-r/c} \dd V'.
+  \psi_{\mu\nu} = \frac{4G}{c^{4}r} \int(\tau_{\mu\nu})|_{t-r/c} \dd V'.
 \end{equation}
 In seguito ometteremo, per brevità, di specificare che le funzione integrande
 devono essere valutate all'istante $t-r/c$.
@@ -753,7 +749,7 @@ per $r^{2}\dd\Omega$ e integrare su tutto l'angolo solido.  Sviluppando i
 calcoli si ottiene il seguente
 risultato\footnote{Vedi~\textcite[460-461]{landau:campi}.}
 \begin{equation}
-  I = \frac{G}{45c^{5}} \dddot{Q}_{ij} \dddot{Q}^{ij}.
+  I = \frac{G}{45c^{5}} \langle \dddot{Q}_{ij} \dddot{Q}^{ij}\rangle.
 \end{equation}
 Osserviamo che l'energia emessa dal sistema è proporzionale $G/c^{5}$, che è un
 fattore estremamente piccolo, quindi l'efficienza di emissione di radiazione da
