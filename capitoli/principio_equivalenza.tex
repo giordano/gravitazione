@@ -126,14 +126,17 @@ Dall'equazione della geodetica risulta che il moto di una particella in un campo
 gravitazionale è determinato dalla connessione affine.  Inoltre
 $\ltoder{u^{\lambda}}{\tau}$ è la quadriaccelerazione del corpo, allora possiamo
 interpretare la quantità
-$-m\tensor{\Gamma}{^{\lambda}_{\mu\nu}} u^{\mu} u^{\nu}$ come la quadriforza
+$-m\tensor{\Gamma}{^{\lambda}_{\mu\nu}} u^{\mu} u^{\nu}$ come la ``quadriforza''
 agente sul corpo all'interno del campo gravitazionale.  Come vedremo nel
 paragrafo~\ref{sec:relazione-g-Gamma}, le derivate di $g_{\mu\nu}$ definiscono
 il campo $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ e quindi il tensore metrico può
 essere visto come il ``potenziale'' del campo gravitazionale.  In effetti nel
 paragrafo~\ref{sec:limite-newtoniano} vedremo che nel limite newtoniano la
 componente $g_{00}$ del tensore metrico è strettamente legata al potenziale
-gravitazionale classico.
+gravitazionale classico.  Chiaramente queste interpretazioni della connessione
+affine e del tensore metrico sono solo un'analogia fisica derivante dal
+confronto con le equazioni newtoniane del moto
+$\bm{F} = m \bm{a} = - \nabla\phi$.
 
 \section{Relazione fra tensore metrico e connessione affine}
 \label{sec:relazione-g-Gamma}
@@ -376,6 +379,12 @@ $h_{\mu\nu}$
   (\partial_{\mu}h_{\nu\lambda} + \partial_{\nu}h_{\mu\lambda}
   - \partial_{\lambda}h_{\mu\nu}).
 \end{equation}
+Nel paragrafo~\ref{sec:equazione-moto} abbiamo interpretato il tensore metrico
+come il potenziale gravitazionale.  Nello studio del limite newtoniano
+$h_{\mu\nu}$ rappresenta la deviazione rispetto al caso di assenza di gravità
+($g_{\mu\nu} = \eta_{\mu\nu}$), quindi ci aspettiamo che il potenziale
+gravitazionale newtoniano sia contenuto interamente in questo termine.
+
 La terza condizione può essere formalizzata come
 \begin{equation}
   \toder{x^{i}}{\tau} \ll \toder{t}{\tau},
@@ -421,19 +430,22 @@ L'equazione newtoniana del moto è
 \begin{equation}
   \bm{a}_{\textup{N}} = \toder[2]{\bm{x}}{t} = -\nabla\phi,
 \end{equation}
-in cui $\phi$ è il potenziale newtoniano del campo gravitazionale.  Nel caso di
-un campo gravitazionale prodotto da un corpo sferico di massa $M$ e raggio $R$,
-l'espressione del potenziale a distanza $r > R$ è $\phi = -GM/r$.  Confrontando
-le due equazioni precedenti troviamo
+in cui $\phi$ è il potenziale newtoniano del campo gravitazionale, legato alla
+distribuzione di massa $\rho$ dall'\index{equazione!di Poisson}equazione di
+Poisson $\nabla^{2} \phi = 4\pi G\rho$.  Confrontando le due equazioni
+precedenti troviamo
 \begin{equation}
   h_{00} = -2\phi + \text{costante}.
 \end{equation}
 A grandi distanze dal corpo, cioè nel limite $r \to \infty$, il potenziale
-$\phi$ si annulla, il campo gravitazionale è assente e il tensore metrico
-$g_{\mu\nu}$ deve tendere al tensore di Minkowski $\eta_{\mu\nu}$ dello
+newtoniano $\phi$ si annulla, il campo gravitazionale è assente e il tensore
+metrico $g_{\mu\nu}$ deve tendere al tensore di Minkowski $\eta_{\mu\nu}$ dello
 spazio-tempo piatto, cioè si devono annullare tutte le componenti di
 $h_{\mu\nu}$.  Pertanto ricaviamo che la costante deve essere uguale a $0$ e
-$h_{00} = -2\phi$ o, ripristinando la velocità $c$ della luce  nel vuoto,
+$h_{00} = -2\phi$ o, ripristinando la velocità $c$ della luce nel vuoto,
+$h_{00} = -2\phi/c^{2}$.  Nel caso particolare di un campo gravitazionale
+prodotto da un corpo sferico di massa $M$ e raggio $R$, l'espressione del
+potenziale a distanza $r > R$ è $\phi = -GM/r$, quindi
 \begin{equation}
   \label{eq:h00}
   h_{00} = -\frac{2\phi}{c^{2}} = \frac{2GM}{rc^{2}} = \frac{r_{\textup{S}}}{r},
@@ -444,12 +456,16 @@ in cui
 \end{equation}
 è il \index{raggio!di Schwarzschild}\emph{raggio di Schwarzschild} (o
 \emph{raggio gravitazionale}) del corpo che genera il campo gravitazionale.
-Dunque
+Dunque abbiamo trovato che $h_{00}$ è esattamente il potenziale gravitazionale
+newtoniano, a meno di fattori moltiplicativi costanti, coerentemente con quanto
+previsto all'inizio della discussione del problema.  La componente $g_{00}$ del
+tensore metrico è
 \begin{equation}
   g_{00} = \eta_{00} + h_{00} = - \bigg(1 - \frac{2GM}{rc^{2}} \bigg)
 \end{equation}
-e la quantità $h_{00} = r_{\textup{S}}/r$ è una misura delle deviazioni della
-relatività generale rispetto alle previsioni della gravità newtoniana.
+e possiamo interpretare la quantità $h_{00} = r_{\textup{S}}/r$ come una misura
+delle deviazioni della relatività generale rispetto alle previsioni della fisica
+newtoniana.
 
 \begin{table}
   \centering

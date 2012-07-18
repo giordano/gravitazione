@@ -43,7 +43,7 @@ potenze di $h_{\mu\nu}$ nel seguente modo
 con $R_{\mu\nu}^{(0)} = 0$.  L'equazione di Einstein esatta, in presenza di
 materia, può essere scritta in questo modo
 \begin{equation}
-  \label{eq:einstein-lineare-esatta}
+  \label{eq:einstein-esatta}
   \bigg(R_{\mu\nu}^{(1)} - \frac{1}{2}\eta_{\mu\nu}R^{(1)}\bigg) = -8\pi
   G(T_{\mu\nu} + t_{\mu\nu}),
 \end{equation}
@@ -54,8 +54,8 @@ in cui $R^{(1)} = \eta^{\mu\nu}R_{\mu\nu}^{(1)}$ e $t_{\mu\nu}$ è definito da
   \frac{1}{2}(g_{\mu\nu}R)^{(2)}.
 \end{equation}
 Dunque $t_{\mu\nu}$ contiene solo termini superiori al primo ordine in
-$h_{\mu\nu}$.  La~\eqref{eq:einstein-lineare-esatta} può essere interpretata
-come un'equazione d'onda lineare in $h_{\mu\nu}$ in cui il termine di sorgente
+$h_{\mu\nu}$.  La~\eqref{eq:einstein-esatta} può essere interpretata come
+un'equazione d'onda in $h_{\mu\nu}$ in cui il termine di sorgente
 $\tau_{\mu\nu} = T_{\mu\nu} + t_{\mu\nu}$ dipende esplicitamente dal campo
 gravitazionale $h_{\mu\nu}$ stesso.  Questo ci suggerisce che $h_{\mu\nu}$ è
 generato dal flusso e dalla densità totale dell'energia e del momento e
@@ -273,8 +273,8 @@ sono quattro ulteriori relazioni che legano le componenti del tensore di
 polarizzazione, quindi il numero di componenti indipendenti non può superare
 sei.
 
-Scegliamo l'asse $z$ lungo la direzione di propagazione dell'onda, di modo
-che il vettore d'onda abbia la forma
+Scegliamo l'asse $z$ lungo la direzione di propagazione dell'onda, di modo che
+il vettore d'onda controvariante abbia la forma
 $k^{\mu} = (k^{0}, k^{1}, k^{2}, k^{3}) = (k, 0, 0, k)$.  Ponendo nell'equazione
 precedente $\nu = 1$ abbiamo
 \begin{equation}
@@ -282,8 +282,9 @@ precedente $\nu = 1$ abbiamo
 \end{equation}
 Esplicitiamo il primo membro
 \begin{equation}
-  k_{0} \tensor{e}{^{0}_{1}} + k_{3} \tensor{e}{^{3}_{1}} = 0 \implies
-  \tensor{e}{^{0}_{1}} = -\tensor{e}{^{3}_{1}} \implies e_{01} = -e_{31}.
+  0 = k_{0} \tensor{e}{^{0}_{1}} + k_{3} \tensor{e}{^{3}_{1}} = -k
+  \tensor{e}{^{0}_{1}} + k \tensor{e}{^{3}_{1}} \implies
+  \tensor{e}{^{0}_{1}} = \tensor{e}{^{3}_{1}} \implies e_{01} = -e_{31}.
 \end{equation}
 Analogamente per $\nu = 2$ si trova
 \begin{equation}
@@ -294,13 +295,13 @@ Per $\nu = 0$ risulta
 \begin{equation}
   \begin{split}
     &k_{\mu} \tensor{e}{^{\mu}_{0}} = \frac{1}{2} k_{0}\tensor{e}{^{\mu}_{\mu}}
-    = \frac{1}{2}\eta_{00}k^{0}\tensor{e}{^{\mu}_{\mu}} =
-    -\frac{1}{2}k^{0}\tensor{e}{^{\mu}_{\mu}} \implies \\
+    = -\frac{1}{2}k^{0}\tensor{e}{^{\mu}_{\mu}} \implies \\
     &k^{0} e_{00} + k^{3}e_{30} = -\frac{1}{2}k^{0}(\tensor{e}{^{1}_{1}} +
     \tensor{e}{^{2}_{2}} + \tensor{e}{^{3}_{3}} - e_{00})
   \end{split}
 \end{equation}
-e poiché $\tensor{e}{^{i}_{i}} = \eta^{ij}e_{ij} = \delta^{ij}e_{ij} = e_{ii}$
+e poiché per le componenti diagonali si ha (nel primo membro non si somma su
+$i$) $\tensor{e}{^{i}_{i}} = \eta^{ij}e_{ij} = \delta^{ij}e_{ij} = e_{ii}$
 ricaviamo
 \begin{equation}
   e_{00} + e_{30} = -\frac{1}{2}(e_{11} + e_{22} + e_{33} - e_{00}).
@@ -318,8 +319,8 @@ e inserendo questo risultato nell'equazione trovata per $\nu = 3$ otteniamo
 \begin{equation}
   e_{22} = -e_{11}.
 \end{equation}
-Riepilogando, fino a questo punto abbiamo trovato per un'onda gravitazionale che
-si propaga lungo l'asse $z$ si ha
+Riepilogando, fino a questo punto abbiamo trovato che per un'onda gravitazionale
+la quale si propaga lungo l'asse $z$ si ha
 \begin{subequations}
   \begin{align}
     e_{01} &= -e_{31}, \\
@@ -368,7 +369,7 @@ Così risulta
 avendo posto $\tilde\epsilon_{1} = -\uimm e_{13}/k$,
 $\tilde\epsilon_{2} = -\uimm e_{23}/k$,
 $\tilde\epsilon_{3} = -\uimm e_{33}/(2k)$ e
-$\tilde\epsilon_{0} = -\uimm e_{00}/(2k)$.  Inoltre avevamo visto che
+$\tilde\epsilon_{0} = \uimm e_{00}/(2k)$.  Inoltre avevamo visto che
 $e'_{01} = -e'_{31} = 0$, $e'_{02} = -e'_{32} = 0$ e
 $e'_{03} = -(e'_{33}+e'_{00})/2 = 0$, quindi per un'onda che si propaga lungo
 l'asse $z$ rimangono diversi da zero solo le componenti $e_{22} = -e_{11}$ e
@@ -456,6 +457,7 @@ diventa
 Se le due particelle sono a riposo a una distanza costante $\delta x^{j}(0)$
 prima che l'onda arrivi (cioè con $h_{jk} = 0$), la soluzione di questa
 equazione è
+% Per la risoluzione di questa equazione vedi anche MTW, pagina 951
 \begin{equation}
   \label{eq:spostamento-onda-grav}
   \delta x^{j}(t) \approx \delta x^{k}(0) \bigg(\tensor{\delta}{^{j}_{k}} +
@@ -495,12 +497,13 @@ dalla~\eqref{eq:spostamento-onda-grav} risulta
   x^{2}(0)\bigg(\tensor{\delta}{^{j}_{2}} +
   \frac{1}{2}\tensor{h}{^{j}_{2}}(x^{\mu}(t))\bigg),
 \end{equation}
-quindi le separazioni fra i due corpi lungo $x$ e lungo $y$ cambiano.  Le onde
-gravitazionali sono, pertanto, trasversali anche negli effetti fisici.  Questi
-fatti ci suggeriscono delle possibili tecniche per la rivelazione diretta delle
-onde gravitazionali.  Tuttavia, prima di illustrarle, dobbiamo osservare che il
-rapporto fra la variazione $\var L$ della distanza fra i corpi, indotta dal
-passaggio dell'onda, e la distanza iniziale $L_{0}$ è dell'ordine di
+quindi solo le separazioni fra i due corpi lungo $x$ e lungo $y$ cambiano: le
+onde gravitazionali sono trasversali anche negli effetti fisici, oltre che nella
+loro descrizione matematica.  Questi fatti ci suggeriscono delle possibili
+tecniche per la rivelazione diretta delle onde gravitazionali.  Tuttavia, prima
+di illustrarle, dobbiamo osservare che il rapporto fra la variazione $\var L$
+della distanza fra i corpi, indotta dal passaggio dell'onda, e la distanza
+iniziale $L_{0}$ è dell'ordine di
 \begin{equation}
   \frac{\var L}{L_{0}} \sim h
 \end{equation}
@@ -576,7 +579,7 @@ ha spin $1$.\footnote{Vedi \textcite[471]{shapiro:black-holes}.}
 
 Esaminiamo più in dettaglio il problema.  Sappiamo che nell'approssimazione di
 campo debole $R_{\mu\nu}^{(1)} = \dalamb h_{\mu\nu}/2$, quindi l'equazione di
-Einstein in presenza della materia~\eqref{eq:einstein-lineare-esatta} diventa
+Einstein in presenza della materia~\eqref{eq:einstein-esatta} diventa
 \begin{equation}
   \label{eq:einstein-lineare-materia1}
   \dalamb \bigg(\tensor{h}{^{\mu}_{\nu}} - \frac{1}{2}
