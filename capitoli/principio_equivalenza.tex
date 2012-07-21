@@ -493,9 +493,13 @@ newtoniana.
 Nella tabella~\ref{tab:Schwarzschild} sono riportati i valori delle deviazioni
 $r_{\textup{S}}/r$ dalla gravitazione newtoniana sulla superficie di alcuni
 corpi.  Mentre per la Terra, il Sole e le nane bianche queste correzioni sono
-molto piccole, non è possibile descrivere le vicinanze di corpi come le stelle
-di neutroni o i buchi neri utilizzando la fisica newtoniana ma bisogna tenere
-necessariamente in considerazione la relatività generale.
+generalmente piccole, non è possibile descrivere le vicinanze di corpi come le
+stelle di neutroni o i buchi neri utilizzando la fisica newtoniana ma bisogna
+tenere necessariamente in considerazione la relatività generale.  Tuttavia anche
+per quanto riguarda il Sole e i pianeti del sistema solare sono osservati
+effetti di relatività generale non previsti dalla teoria newtoniana, come
+l'effetto Lense-Thirring, la dilatazione del tempo e il redshift gravitazionali,
+la precessione del perielio e la deflessione della luce.
 
 \section{Campo gravitomagnetico}
 \label{sec:campo-gravitomagnetico}
@@ -781,10 +785,170 @@ definizione il momento angolare totale classico.  Quindi abbiamo anche
 \end{subequations}
 
 
-
-% TODO: scrivere questa sezione.  Lezione del 20/04/2012
-\section{\completare{Red-shift gravitazionale}}
+% TODO: completare mettendo anche una figura che spieghi meglio la situazione ed
+% eventualmente riformulare.  Vedi la figura degli appunti del 20/04/2012.
+\section{\completare{Dilatazione gravitazionale del tempo e red-shift
+    gravitazionale}}
 \label{sec:red-shift-gravitazionale}
+
+Consideriamo due sperimentatori a riposo, rispettivamente, a una distanza
+$r_{1}$ e $r_{2}$ dall'origine di un campo gravitazionale statico.  Lo
+sperimentatore in $r_{1}$ invia una sequenza di segnali identici verso l'altro
+sperimentatore.  Se non sono presenti effetti dipendenti dal percorso, come
+l'effetto Lense-Thirring, tutti i segnali impiegano lo stesso tempo per giungere
+a destinazione, in conseguenza della staticità del campo gravitazionale.  Se i
+segnali inoltre sono inviati dallo sperimentatore in $r_{1}$ con regolarità, un
+osservatore esterno posto a distanza $r \to \infty$ dal sistema vedrà che i
+segnali sono inviati da $r_{1}$ con una separazione temporale $\dd t$ costante
+l'uno dal successivo e vedrà che sono ricevuti con la stessa separazione
+temporale $\dd t$ in $r_{2}$.  Tuttavia per questo osservatore esterno il campo
+gravitazionale è assente e lo spazio-tempo è quello piatto descritto dal tensore
+metrico di Minkowski $\eta_{\mu\nu}$, quindi il tempo proprio che misura è
+$\dd\tau = \sqrt{-\eta_{00}}\dd t = \dd t$.  Invece per gli sperimentatori fermi
+in $r_{1}$ e $r_{2}$ (quindi per entrambi risulta $\dd x^{i} = 0$) i tempi
+propri sono dati da
+\begin{subequations}
+  \begin{align}
+    \dd\tau_{1} &= \sqrt{-g_{00}(r_{1})} \dd t, \\
+    \dd\tau_{2} &= \sqrt{-g_{00}(r_{2})} \dd t.
+  \end{align}
+\end{subequations}
+Dividendo membro a membro queste relazioni abbiamo
+\begin{equation}
+  \frac{\dd \tau_{2}}{\dd \tau_{1}} =
+  \sqrt{\frac{g_{00}(r_{2})}{g_{00}(r_{1})}}.
+\end{equation}
+Supponiamo che il campo gravitazionale a cui sono soggetti i due sperimentatori
+sia debole e a simmetria sferica, abbiamo visto che in questo caso vale
+l'approssimazione $g_{00}(r) = -(1 - r_{\textup{S}}/r) = -(1 - 2GM/r)$, con
+$r_{\textup{S}}$ e $M$ raggio di Schwarzschild e massa del corpo che genera il
+campo gravitazionale, quindi
+\begin{equation}
+  \frac{\dd \tau_{2}}{\dd \tau_{1}} = \sqrt{\frac{1 - 2GM/r_{2}}{1 -
+      2GM/r_{1}}}.
+\end{equation}
+Poiché abbiamo supposto che il campo sia debole risulta
+$r_{1}, r_{2} \gg r_{\textup{S}}$, allora usando l'approssimazione
+$(1+x)^{\alpha} \approx 1 + \alpha x$ valida per $x \to 0$, abbiamo
+\begin{equation}
+  \begin{split}
+    \frac{\dd \tau_{2}}{\dd \tau_{1}} &=
+    \sqrt{\frac{1 - 2GM/r_{2}}{1 - 2GM/r_{1}}} \approx \bigg(1 -
+    \frac{GM}{r_{2}}\bigg) \bigg(1 + \frac{GM}{r_{1}}\bigg) = 1 -
+    \frac{GM}{r_{2}} + \frac{GM}{r_{1}} +
+    \mathcal{O}(1/r^{2}) \\
+    &\approx 1 - \phi_{1} + \phi_{2},
+  \end{split}
+\end{equation}
+in cui $\phi = -GM/r$ è il potenziale gravitazionale newtoniano.  Dunque, se
+$r_{2} > r_{1}$ il rapporto fra la differenza dei tempi misurati nei due punti e
+il tempo misurato dallo sperimentatore in $r_{1}$ è (ripristiniamo la velocità
+della luce nel vuoto $c$)
+\begin{equation}
+  \frac{\var\tau}{\tau} = \frac{\dd\tau_{2} - \dd\tau_{1}}{\dd\tau_{1}} =
+  \frac{\phi_{2} - \phi_{1}}{c^{2}} = \frac{GM}{c^{2}} \bigg(\frac{1}{r_{1}} -
+  \frac{1}{r_{2}}\bigg) > 0,
+\end{equation}
+cioè il tempo misurato in $r_{2}$ è maggiore rispetto al tempo misurato in
+$r_{1}$.  Questo fenomeno prende il nome di
+\index{dilatazione!del tempo!in relatività generale}
+\emph{dilatazione gravitazionale del tempo}.  Questo fenomeno può essere
+descritto in parole povere dicendo che un orologio batte il tempo più lentamente
+in presenza di un campo gravitazionale intenso (negativamente) rispetto a un
+orologio identico in un campo meno intenso.
+
+La verifica sperimentale di questo fenomeno è stata un'importante dimostrazione
+diretta della curvatura dello spazio-tempo.  Gli esperimenti infatti hanno
+confermato che nella vicinanza di un corpo massivo la componente $g_{00}$ del
+tensore metrico vale $-(1-2GM/r)$ e non $-1$, come dovrebbe risultare se lo
+spazio-tempo fosse piatto.  Per il principio di equivalenza il campo
+gravitazionale non potrebbe influenzare il ritmo di un orologio in caduta libera
+se non mediante un cambiamento della geometria dello spazio-tempo.  Per la
+descrizione di alcuni di questi esperimenti
+vedi~\textcite[157-159]{ohanian:gravitazione}.
+
+I sistemi di geolocalizzazione quale il Global Positioning System (GPS) devono
+tener conto della dilatazione relativistica del tempo dal momento che i
+satelliti utilizzati orbitano intorno alla Terra a un'altitudine rispetto al
+suolo di circa $h = \SI{20200}{\kilo\metre}$.  Calcoliamo la differenza fra i
+tempi misurati a terra
+($r_{1} = R_{\oplus} = \text{raggio della Terra} = \SI{6300}{\kilo\metre}$) e su
+un satellite GPS ($r_{2} = R_{\oplus} + h$)
+\begin{equation}
+  \frac{\var \tau}{\tau} = \frac{GM_{\oplus}}{c^{2}} \bigg(\frac{1}{R_{\oplus}}
+  - \frac{1}{R_{\oplus} + h}\bigg) \approx \num{5e-10},
+\end{equation}
+con $M_{\oplus} = \text{massa della Terra} = \SI{5.97e24}{\kilo\gram}$.  Se non
+tenessero conto della dilatazione gravitazionale del tempo, gli orologi sui
+satelliti GPS commetterebbero quindi un errore relativo di \num{5e-10}.  Sebbene
+questo errore possa sembrare molto piccolo, bisogna considerare che il sistema
+GPS fa uso di orologi atomici con sensibilità dell'ordine del nanosecondo e
+anche un piccolo errore nella misurazione dei tempi comporterebbe un grosso
+errore nella misura della posizione del satellite.  Quello della dilatazione del
+tempo è solo uno dei numerosi effetti relativistici di cui bisogna tener conto
+nella progettazione di in un sistema di geolocalizzazione.  Per una descrizione
+relativa al GPS si può vedere l'articolo di Neil Ashby ``Relativity in the
+Global Positioning System'', apparso su \emph{Living Rev. Relativity},
+\textbf{6}, (2003), 1 e disponibile all'URL
+\url{http://relativity.livingreviews.org/Articles/lrr-2003-1}.
+
+Se il periodo di un segnale periodico misurato dallo sperimentatore fermo nel
+punto $r_{1}$ vale $\var \tau_{1} = \sqrt{-g_{00}(r_{1})}\dd t$, la sua
+frequenza sarà data da $\nu_{1} = 1/ \var \tau_{1}$.  Analogamente, lo
+sperimentatore fermo nel punto $r_{2}$ misurerà che il segnale ricevuto ha un
+periodo $\var\tau_{2} = \sqrt{-g_{00}(r_{2})}$ e quindi una frequenza
+$\nu_{2} = 1/\var\tau_{2}$.  Dunque il rapporto fra la frequenza misurata in
+$r_{2}$ e quella in $r_{1}$ è
+\begin{equation}
+  \frac{\nu_{2}}{\nu_{1}} = \frac{\lambda_{1}}{\lambda_{2}} =
+  \sqrt{\frac{g_{00}(r_{1})}{g_{00}(r_{2})}}.
+\end{equation}
+Abbiamo messo in relazione le frequenze misurate per i segnali dai due
+osservatore con le lunghezze delle onde associate ai segnali periodici.  Se il
+campo gravitazionale oltre a essere statico e debole ha anche simmetria sferica,
+usiamo nuovamente l'approssimazione
+$g_{00}(r) = -(1 - r_{\textup{S}}/r) = -(1 - 2GM/(rc^{2}))$, così
+\begin{equation}
+  \begin{split}
+    \frac{\nu_{2}}{\nu_{1}} &= \frac{\lambda_{1}}{\lambda_{2}} =
+    \sqrt{\frac{1 - 2GM/(r_{1}c^{2})}{1 - 2GM/(r_{2}c^{2})}} \approx \bigg(1 -
+    \frac{GM}{r_{1}c^{2}}\bigg) \bigg(1 + \frac{GM}{r_{2}c^{2}}\bigg) \\
+    &= 1 - \frac{GM}{r_{1}c^{2}} + \frac{GM}{r_{2}c^{2}} + \mathcal{O}(1/r^{2})
+    \approx 1 + \frac{\phi_{1} - \phi_{2}}{c^{2}}.
+  \end{split}
+\end{equation}
+Il rapporto fra la differenza delle frequenze misurate e la frequenza di
+emissione del segnale è
+% Nota: tanto per cambiare l'Ohanian sbaglia il segno, dice che Δν/ν = (φ_2 -
+% φ_1)/c^2.
+\begin{equation}
+  \frac{\var \nu}{\nu} = \frac{\nu_{2} - \nu_{1}}{\nu_{1}} \approx
+  \frac{\phi_{1} - \phi_{2}}{c^{2}}.
+\end{equation}
+Se $r_{1} < r_{2}$, $\phi_{1} < \phi_{2}$ quindi $\var \nu < 0$: la frequenza
+misurata da chi riceva il segnale, in un punto con potenziale meno intenso
+(negativamente), è minore rispetto a quella misurata da chi ha inviato il
+segnale, in un punto a potenziale più intenso.  Si ha il cosiddetto
+\index{redshift!gravitazionale}\emph{redshift gravitazionale} o
+\emph{spostamento verso il rosso}, perché nella regione del visibile dello
+spettro elettromagnetico le frequenze minori (o, equivalentemente, lunghezze
+d'onda maggiori) corrispondono al rosso.
+
+Bisogna tener conto di questo fenomeno quando si effettuano misure astronomiche
+spettroscopiche.  Per esempio, per la radiazione proveniente dal Sole si ha
+\begin{equation}
+  \frac{\var \nu}{\nu} = \frac{\phi_{\odot} - \phi_{\oplus}}{c^{2}} \approx
+  \frac{\phi_{\odot}}{c^{2}} = -\frac{GM_{\odot}}{R_{\odot}c^{2}} = \num{-2.12e-6}.
+\end{equation}
+Oltre al redshift gravitazionale, in queste misure entra in gioco anche
+l'effetto Doppler.  Tuttavia nel caso specifico del Sole l'effetto Doppler è
+mitigato sul bordo perché le particelle in questa regione tendono a essere
+perpendicolare alla linea di vista, quindi si ha il minimo dell'effetto Doppler
+relativistico.
+
+Lo spostamento verso il rosso può essere dedotto anche in altri modi, facendo
+uso del principio di equivalenza e anche della conservazione dell'energia.  A
+questo proposito si può vedere~\textcite[160-161]{ohanian:gravitazione}.
 
 % TODO: completare questa sezione.
 \section{\completare{Principio di generale covarianza}}
