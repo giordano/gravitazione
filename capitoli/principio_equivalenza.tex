@@ -665,6 +665,10 @@ dobbiamo sfruttare la seguente equazione valida per un campo gravitazionale
 debole e indipendente dal
 tempo\footnote{Per una dimostrazione di questa relazione
   vedi~\textcite[139]{ohanian:gravitazione}.}
+% Nota: l'Ohanian sbaglia un segno.  Per determinare correttamente l'equazione
+% ho usato l'espressione lineare (primo ordine di h) di R_{\mu\nu} calcolata nel
+% paragrafo sulle onde gravitazionali nel vuoto.  Si trova subito che la
+% componente 0k è quella che ho scritto qui.
 \begin{equation}
   \nabla^{2}h^{0k} - \partial_{l}\partial^{k} h^{0l} = -16\pi GT^{0k},
 \end{equation}
@@ -738,31 +742,41 @@ in cui
 
 Per il campo gravitomagnetico possiamo trovare relazioni analoghe.  Abbiamo
 visto che $\nabla \times \bm{b} = 16 \pi G \bm{S}$ e
-$\bm{b} = - \nabla \times \bm{h}$, allora imponendo una condizione analoga a
+$\bm{b} = \nabla \times \bm{h}$, allora imponendo una condizione analoga a
 quella di Lorenz $\nabla \cdot \bm{h} = 0$ abbiamo
 \begin{equation}
-  -\nabla \times \nabla \times \bm{h} = \nabla^{2} \bm{h} - \nabla (\nabla \cdot
-  \bm{h}) = \nabla^{2} \bm{h} = -16\pi G \bm{S}.
+  \nabla \times \nabla \times \bm{h} = \nabla (\nabla \cdot \bm{h}) - \nabla^{2}
+  \bm{h} = - \nabla^{2} \bm{h} = 16\pi G \bm{S}.
 \end{equation}
 Una soluzione sarà quindi data da
 \begin{equation}
+  % Nota: il segno di h è diverso da quello riportato sull'Ohanian ma è
+  % concorde con l'espressione di h_{\mu\nu} trovata nel paragrafo sulle onde
+  % gravitazionali in presenza di materia, quando abbiamo trovato la soluzione
+  % col potenziale ritardato.  Inoltre quando l'Ohanian fa i calcoli per le
+  % onde gravitazionali ottiene di nuovo h_{\mu\nu} = - \int ···, quindi c'è
+  % sempre una discordanza di segni, tutto questo mi fa sperare che i miei
+  % calcoli siano corretti.  L'articolo arXiv:gr-qc/9912027 ha tutti i segni
+  % concordi ai miei (lui fa il calcolo con il potenziale ritardato, il suo B è
+  % il mio b/2), compreso il segno, alla fine, di b e della velocità angolare di
+  % precessione di Lense-Thirring.
   \bm{h}(\bm{r}) = 4 G \int \frac{\bm{S}(\bm{r}') \dd^{3} \bm{r}'}{\norm{\bm{r}
       - \bm{r}'}}
 \end{equation}
 e per sistemi localizzati definiamo l'analogo gravitazionale del momento di
 dipolo magnetico
 \begin{equation}
-  \bm{m}_{\textup{g}} = \frac{1}{2} \int \bm{r} \times \bm{S} \dd^{3} =
+  \bm{m}_{\textup{g}} = \frac{1}{2} \int \bm{r} \times \bm{S} \dd^{3} \bm{r} =
   \frac{1}{2} \int \bm{r} \times \rho \bm{v} \dd^{3} \bm{r} = \frac{1}{2} \bm{L},
 \end{equation}
 in cui $\bm{L} = \int \bm{r} \times \rho \bm{v} \dd^{3} \bm{r}$ è per
-definizione il momento angolare totale.  Quindi abbiamo anche
+definizione il momento angolare totale classico.  Quindi abbiamo anche
 \begin{subequations}
   \begin{align}
     \bm{h} &= 4G \frac{\bm{m}_{\textup{g}} \times \bm{r}}{\norm{\bm{r}}^{3}} =
-    2G \frac{\bm{L} \times \bm{r}}{\norm{\bm{r}}^{3}}, \\
-    \bm{b} &= -\nabla \times \bm{h} = 2G \frac{\bm{L} - 3\versor{r}(\versor{r}
-      \cdot \bm{L})}{\norm{\bm{r}}^{3}}.
+    2G \frac{\bm{L} \times \bm{r}}{\norm{\bm{r}}^{3}}, \\[1ex]
+    \bm{b} &= \nabla \times \bm{h} = 2G\frac{3\versor{r}(\versor{r} \cdot
+      \bm{L}) - \bm{L}}{\norm{\bm{r}}^{3}}.
   \end{align}
 \end{subequations}
 
