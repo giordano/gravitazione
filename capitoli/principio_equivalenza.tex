@@ -462,9 +462,10 @@ newtoniano, a meno di fattori moltiplicativi costanti, coerentemente con quanto
 previsto all'inizio della discussione del problema.  La componente $g_{00}$ del
 tensore metrico è
 \begin{equation}
-  g_{00} = \eta_{00} + h_{00} = - \bigg(1 - \frac{2GM}{rc^{2}} \bigg)
+  g_{00} = \eta_{00} + h_{00} = - \bigg(1 - \frac{2GM}{rc^{2}} \bigg).
 \end{equation}
-e possiamo interpretare la quantità $h_{00} = r_{\textup{S}}/r$ come una misura
+Poiché abbiamo ottenuto questi risultati nell'ipotesi di campo debole, cioè
+$\abs{h_{\mu\nu}} \ll 1$, la quantità $h_{00} = r_{\textup{S}}/r$ dà una misura
 delle deviazioni della relatività generale rispetto alle previsioni della fisica
 newtoniana.
 
@@ -496,12 +497,276 @@ molto piccole, non è possibile descrivere le vicinanze di corpi come le stelle
 di neutroni o i buchi neri utilizzando la fisica newtoniana ma bisogna tenere
 necessariamente in considerazione la relatività generale.
 
-% TODO: scrivere questa sezione.  Lezione del 19/04/2012
-\section{\completare{Campo gravito-magnetico}}
-\label{sec:campo-gravito-magnetico}
+\section{Campo gravitomagnetico}
+\label{sec:campo-gravitomagnetico}
+
+Nella teoria newtoniana della gravitazione la velocità di una particella in
+orbita attorno a un corpo di massa $M$ a distanza $r$ è data, per il teorema del
+viriale $2K = -U \iff mv^{2} = GMm/r$, da $v = \sqrt{GM/r}$.  Nel paragrafo
+precedente abbiamo studiato l'equazione del moto sotto le ipotesi di campo
+debole ($\abs{h_{\mu\nu}} \sim GM/r \sim v^{2} \ll 1$), statico e velocità non
+relativistiche ($v \ll 1$) trascurando i termini dell'ordine di
+$\abs{h_{\mu\nu}}v^{2} \sim v^{4}$ e $\abs{h_{\mu\nu}}v \sim v^{3}$.  In questo
+paragrafo studieremo l'equazione della geodetica con un livello di
+approssimazione minore: continueremo a trascurare i termini dell'ordine di
+$\abs{h_{\mu\nu}}v^{2}$ ma non quelli dell'ordine di $\abs{h_{\mu\nu}}v$.
+
+Nelle ipotesi illustrate, le componenti $k$ dell'equazione della
+geodetica~\eqref{eq:geodetica} sono date da
+\begin{equation}
+    \begin{split}
+    0 &= \toder[2]{x^{k}}{\tau} + \tensor{\Gamma}{^{k}_{\lambda\mu}}
+    \toder{x^{\lambda}}{\tau} \toder{x^{\mu}}{\tau} \\
+    &= \toder[2]{x^{k}}{\tau} + \tensor{\Gamma}{^{k}_{00}} \bigg(
+    \toder{t}{\tau} \bigg)^{2} + 2\tensor{\Gamma}{^{k}_{0i}}\toder{t}{\tau}
+    \toder{x^{i}}{\tau} + \tensor{\Gamma}{^{k}_{ij}} \toder{x^{i}}{\tau}
+    \toder{x^{j}}{\tau} \\
+    &\approx \toder[2]{x^{\sigma}}{\tau} + \tensor{\Gamma}{^{\sigma}_{00}}\bigg(
+    \toder{t}{\tau} \bigg)^{2} + 2\tensor{\Gamma}{^{k}_{0i}}\toder{t}{\tau}
+    \toder{x^{i}}{\tau}.
+  \end{split}
+\end{equation}
+Poiché consideriamo ancora velocità non relativistiche poniamo
+$\dd \tau \approx \dd t$ e
+$\ltoder{x^{k}}{\tau} \approx \ltoder{x^{k}}{t} = v^{k}$
+\begin{equation}
+  \label{eq:gem1}
+  \toder[2]{x^{k}}{t} + \tensor{\Gamma}{^{k}_{00}} +
+  2\tensor{\Gamma}{^{k}_{0i}}v^{i} = 0.
+\end{equation}
+Ricordando che stiamo trattando campo gravitazionali statici, le componenti
+della connessione affine che ci servono sono
+\begin{subequations}
+  \begin{align}
+    \tensor{\Gamma}{^{k}_{00}} &=
+    \frac{1}{2}\eta^{k\sigma}(\partial_{0}h_{0\sigma} + \partial_{0}h_{0\sigma}
+    - \partial_{\sigma}h_{00}) = - \frac{1}{2}\partial^{k}h_{00}, \\
+    \tensor{\Gamma}{^{k}_{0i}} &= \tensor{\Gamma}{^{k}_{i0}} =
+    \frac{1}{2}\eta^{k\sigma} (\partial_{0}h_{i\sigma} + \partial_{i}h_{0\sigma}
+    - \partial_{\sigma}h_{0i}) = \frac{1}{2}(\partial_{i}\tensor{h}{_{0}^{k}}
+    - \partial^{k}h_{0i}).
+  \end{align}
+\end{subequations}
+Abbassando gli indici liberi nell'equazione~\eqref{eq:gem1} così abbiamo
+\begin{equation}
+  \label{eq:gem2}
+  \toder{v^{k}}{t} = \frac{1}{2}\partial_{k}h_{00} + (\partial_{k}h_{0i}
+  - \partial_{k}h_{0k})v^{i}.
+\end{equation}
+Definiamo la matrice $4 \times 4$ antisimmetrica di componenti $f_{\alpha\beta}$
+date da
+\begin{equation}
+  f_{\alpha\beta} = \frac{1}{2}(h_{0\beta,\alpha} - h_{0\alpha,\beta}) =
+  -f_{\beta\alpha}.
+\end{equation}
+Osserviamo che non si tratta di un vero tensore di rango $2$ perché questa
+quantità si trasforma come le componenti $0\alpha\beta$ di un tensore di rango
+$3$.  Definiamo il vettore tridimensionale $\bm{g}$ di componenti
+\begin{equation}
+  g_{k} = -f_{0k} = \frac{1}{2}h_{00,k} = \frac{1}{2}(\nabla h_{00})_{k} =
+  -(\nabla \phi)_{k},
+\end{equation}
+in cui abbiamo ricordato il risultato $h_{00} = -2\phi$ trovato nel paragrafo
+precedente.  Osserviamo che $\bm{g} = -\nabla \phi$, quindi $\bm{g}$ è proprio
+il potenziale gravitazionale newtoniano.  Con queste posizioni l'equazione della
+geodetica~\eqref{eq:gem2} diventa
+\begin{equation}
+  \label{eq:gem3}
+  \toder{v_{k}}{t} = g_{k} + 2f_{ki}v^{i}.
+\end{equation}
+
+Inoltre definiamo il vettore
+tridimensionale $\bm{b}$ di componenti
+\begin{subequations}
+  \begin{align}
+    b_{1} &= b_{x} = h_{03,2} - h_{02,3} = -2f_{32} = 2f_{23}, \\
+    b_{2} &= b_{y} = h_{01,3} - h_{03,1} = -2f_{13} = 2f_{31}, \\
+    b_{3} &= b_{z} = h_{02,1} - h_{01,2} = -2f_{21} = 2f_{12}.
+  \end{align}
+\end{subequations}
+In maniera più compatta possiamo indicare ciascuna componente del vettore
+$\bm{b}$ con (si somma su $j$ e $k$)
+\begin{equation}
+  b_{i} = \epsilon_{ijk}h_{0k,j} = \epsilon_{ijk}\partial_{j}h_{k},
+\end{equation}
+dove $\epsilon^{ijk}$ è il simbolo di Levi-Civita tridimensionale e abbiamo
+definito il vettore tridimensionale
+$\bm{h} = (h_{1}, h_{2}, h_{3}) = (h_{01}, h_{02}, h_{03})$.  Questo ci permette
+di scrivere $\bm{b}$ come il rotore di $\bm{h}$
+\begin{equation}
+  \bm{b} = \nabla \times \bm{h}.
+\end{equation}
+La matrice $f_{\alpha\beta}$ è allora data da
+\begin{equation}
+  f_{\alpha\beta} =
+  \begin{pmatrix}
+    0     & -g_{x}   & -g_{y}   & -g_{z}   \\
+    g_{x} & 0        & b_{z}/2  & -b_{y}/2 \\
+    g_{y} & -b_{z}/2 & 0        & b_{x}/2  \\
+    g_{z} & b_{y}/2  & -b_{x}/2 & 0
+  \end{pmatrix}.
+\end{equation}
+Questa matrice è molto simile al tensore
+elettromagnetico~\eqref{eq:tensore-elettromagnetico}, con il campo
+gravitazionale newtoniano $\bm{g}$ che svolge il ruolo del campo elettrico
+$\bm{E}$ e $\bm{b}/2$ quello del campo magnetico $\bm{B}$.  Data questa
+similitudine, $\bm{b}$ viene chiamato \emph{campo gravitomagnetico}.  Una sfera
+carica ferma genera solo un campo elettrico, una sfera in rotazione genera anche
+un campo magnetico.  In analogia, una massa in rotazione genera un campo
+gravitomagnetico non nullo.
+
+Il parallelo con il campo elettromagnetico non si ferma qui.  Innanzitutto
+notiamo che
+\begin{equation}
+  \begin{split}
+    \epsilon_{kij}b^{j} &= \epsilon_{kij}\epsilon^{jlm}h_{0m,l} =
+    -\epsilon_{jik}\epsilon^{jlm} h_{0m,l} = (\tensor{\delta}{_{i}^{m}}
+    \tensor{\delta}{_{k}^{l}} - \tensor{\delta}{_{i}^{l}}
+    \tensor{\delta}{_{k}^{m}}) h_{0m,l} = h_{0i,k} - h_{0k,i} \\
+    &= 2f_{ki}.
+  \end{split}
+\end{equation}
+Quindi la componente $k$ del prodotto vettoriale fra il vettore velocità
+$\bm{v}$ e il campo gravitomagnetico $\bm{b}$ è
+\begin{equation}
+  (\bm{v}\times\bm{b})_{k} = \epsilon_{ijk}v^{i}b^{j} = 2f_{ki}v^{i}.
+\end{equation}
+Allora possiamo scrivere l'equazione della geodetica~\eqref{eq:gem3} nella
+seguente forma vettoriale
+\begin{equation}
+  \toder{\bm{v}}{t} = \bm{g} + \bm{v}\times\bm{b}.
+\end{equation}
+Quindi $\bm{g}$ e $\bm{b}$ soddisfano un'equazione analoga a quella della forza
+di Lorentz.  Inoltre usando la definizione di $f_{\alpha\beta}$ si verifica che
+risulta
+\begin{equation}
+  f_{\alpha\beta,\gamma} + f_{\gamma\alpha,\beta} + f_{\beta\gamma,\alpha} = 0,
+\end{equation}
+che è un'equazione analoga all'equazione di Maxwell senza
+sorgenti~\eqref{eq:maxwell-cov22}.  Poiché da questa equazione derivano le
+equazioni di Maxwell $\nabla \cdot \bm{B} = 0$ e
+$\nabla\times\bm{E} = - \lparder{\bm{B}}{t}$, deduciamo immediatamente che per
+$\bm{g}$ e $\bm{b}$ deve inoltre risultare
+\begin{subequations}
+  \begin{align}
+    \nabla \cdot \bm{b} &= 0, \\
+    \nabla\times\bm{g} &= -\frac{1}{2}\parder{\bm{b}}{t}.
+  \end{align}
+\end{subequations}
+Nel limite newtoniano il potenziale gravitazionale $\phi$ soddisfa
+\index{equazione!di Poisson!per il campo gravitazionale}l'equazione di Poisson
+$\nabla^{2} \phi = 4\pi G \rho$, quindi ricordando che $\bm{g} = -\nabla \phi$
+otteniamo l'ulteriore relazione
+\begin{equation}
+  \nabla \cdot \bm{g} = -4\pi G \rho.
+\end{equation}
+Per trovare l'ultima ``equazione di Maxwell'' per il campo gravitomagnetico
+dobbiamo sfruttare la seguente equazione valida per un campo gravitazionale
+debole e indipendente dal
+tempo\footnote{Per una dimostrazione di questa relazione
+  vedi~\textcite[139]{ohanian:gravitazione}.}
+\begin{equation}
+  \nabla^{2}h^{0k} - \partial_{l}\partial^{k} h^{0l} = -16\pi GT^{0k},
+\end{equation}
+in cui $T^{0k} = \rho v^{k}$ è la componente $0k$ del tensore energia-impulso,
+quindi rappresenta la densità di flusso di energia nella direzione $k$.  Questa
+equazione può anche essere scritta come
+\begin{equation}
+  -16\pi GT^{0k} = \partial_{l}(h^{0k,l} - h^{0l,k}) = \partial_{l}f^{lk} =
+  \epsilon^{lkj}\partial_{l}b_{j} = -\epsilon^{klj}\partial_{l}b_{j} = -(\nabla
+  \times \bm{b})^{k},
+\end{equation}
+oppure nella seguente forma vettoriale
+\begin{equation}
+  \nabla \times \bm{b} = 16\pi G \bm{S},
+\end{equation}
+in cui $\bm{S} = (T^{01}, T^{02}, T^{03})$ è l'analogo del
+\index{vettore!di Poynting}vettore di Poynting $\bm{E}\times\bm{B}/4\pi$ per il
+campo gravitomagnetico.
 
 \subsection{\completare{Effetto Lense-Thirring}}
 \label{sec:effetto-lense-thirring}
+
+Il Sole e la Terra hanno un raggio di Schwarzschild molto più piccolo del loro
+raggio fisico, quindi i campi gravitazionali al loro esterno sono deboli,
+inoltre sono in lenta (non relativistica) rotazione, quindi il moto di
+particelle nel campo gravitazionale di questi corpi può essere descritto usando
+il campo gravitomagnetico.  Sono in corso degli esperimenti volti a verificare
+le previsioni della teoria che abbiamo sviluppato nella sezione precedente.  In
+particolare si prova a misura la precessione di un giroscopio in orbita intorno
+al nostro pianeta dovuta al moto di rotazione della Terra.  Questo fenomeno
+prende il nome di \emph{effetto Lense-Thirring}.
+
+Ricordiamo che in elettrodinamica classica dalle equazioni
+\begin{subequations}
+  \begin{align}
+    \nabla\times\bm{B} &= 4\pi \bm{J}, \\
+    \bm{B} &= \nabla\times\bm{A},
+  \end{align}
+\end{subequations}
+insieme alla condizione di Lorenz $\nabla\cdot\bm{A} = 0$ si ottiene
+\begin{equation}
+  \nabla^{2} \bm{A} = -4\pi\bm{J}.
+\end{equation}
+Una soluzione di questa equazione è data da
+\begin{equation}
+  \bm{A}(\bm{r}) = \int \frac{\bm{J}(\bm{r}') \dd^{3} \bm{r}'}{\norm{\bm{r} -
+      \bm{r}'}}.
+\end{equation}
+Se la distribuzione di corrente $\bm{J}$ è localizzata in una regione piccola
+rispetto alle dimensioni dell'intero spazio, cioè
+$\norm{\bm{r}} \ll \norm{\bm{r}'}$, allora possiamo sviluppare il denominatore
+della funzione integranda in serie di potenze
+\begin{equation}
+  \frac{1}{\norm{\bm{r} - \bm{r}'}} = \frac{1}{\norm{\bm{r}}} +
+  \frac{\bm{r}\cdot\bm{r}'}{\norm{\bm{r}}^{3}} + \cdots
+\end{equation}
+e si trova che il primo termine dello sviluppo in multipoli del potenziale
+vettore è
+\begin{equation}
+  \bm{A}(\bm{r}) = \frac{\bm{m} \times \bm{r}}{\norm{\bm{r}}^{3}},
+\end{equation}
+in cui
+\begin{equation}
+  \bm{m} = \frac{1}{2} \int \bm{r} \times \bm{J}(\bm{r}) \dd^{3} \bm{r}
+\end{equation}
+è il momento di dipolo magnetico.  Da qui si ha anche
+\begin{equation}
+  \bm{B} = \nabla \times \bm{A} = \frac{3 \versor{r}(\versor{r} \cdot \bm{m}) -
+    \bm{m}}{\norm{\bm{r}}^{3}}.
+\end{equation}
+
+Per il campo gravitomagnetico possiamo trovare relazioni analoghe.  Abbiamo
+visto che $\nabla \times \bm{b} = 16 \pi G \bm{S}$ e
+$\bm{b} = - \nabla \times \bm{h}$, allora imponendo una condizione analoga a
+quella di Lorenz $\nabla \cdot \bm{h} = 0$ abbiamo
+\begin{equation}
+  -\nabla \times \nabla \times \bm{h} = \nabla^{2} \bm{h} - \nabla (\nabla \cdot
+  \bm{h}) = \nabla^{2} \bm{h} = -16\pi G \bm{S}.
+\end{equation}
+Una soluzione sarà quindi data da
+\begin{equation}
+  \bm{h}(\bm{r}) = 4 G \int \frac{\bm{S}(\bm{r}') \dd^{3} \bm{r}'}{\norm{\bm{r}
+      - \bm{r}'}}
+\end{equation}
+e per sistemi localizzati definiamo l'analogo gravitazionale del momento di
+dipolo magnetico
+\begin{equation}
+  \bm{m}_{\textup{g}} = \frac{1}{2} \int \bm{r} \times \bm{S} \dd^{3} =
+  \frac{1}{2} \int \bm{r} \times \rho \bm{v} \dd^{3} \bm{r} = \frac{1}{2} \bm{L},
+\end{equation}
+in cui $\bm{L} = \int \bm{r} \times \rho \bm{v} \dd^{3} \bm{r}$ è per
+definizione il momento angolare totale.  Quindi abbiamo anche
+\begin{subequations}
+  \begin{align}
+    \bm{h} &= 4G \frac{\bm{m}_{\textup{g}} \times \bm{r}}{\norm{\bm{r}}^{3}} =
+    2G \frac{\bm{L} \times \bm{r}}{\norm{\bm{r}}^{3}}, \\
+    \bm{b} &= -\nabla \times \bm{h} = 2G \frac{\bm{L} - 3\versor{r}(\versor{r}
+      \cdot \bm{L})}{\norm{\bm{r}}^{3}}.
+  \end{align}
+\end{subequations}
+
+
 
 % TODO: scrivere questa sezione.  Lezione del 20/04/2012
 \section{\completare{Red-shift gravitazionale}}
