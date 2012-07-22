@@ -2,6 +2,8 @@
 \chapter{Principio di equivalenza}
 \label{cha:principio-equivalenza}
 
+% TODO: completare questa sezione, è fondamentale!  Ricordarsi di spiegare
+% perché lo spazio-tempo in relatività generale deve essere curvo.
 \completare{Esperimento ideale di Einstein, uguaglianza massa inerziale e
   gravitazionale.}
 
@@ -458,16 +460,17 @@ in cui
 è il \index{raggio!di Schwarzschild}\emph{raggio di Schwarzschild} (o
 \emph{raggio gravitazionale}) del corpo che genera il campo gravitazionale.
 Dunque abbiamo trovato che $h_{00}$ è esattamente il potenziale gravitazionale
-newtoniano, a meno di fattori moltiplicativi costanti, coerentemente con quanto
+newtoniano a meno di fattori moltiplicativi costanti, coerentemente con quanto
 previsto all'inizio della discussione del problema.  La componente $g_{00}$ del
 tensore metrico è
 \begin{equation}
-  g_{00} = \eta_{00} + h_{00} = - \bigg(1 - \frac{2GM}{rc^{2}} \bigg).
+  g_{00} = \eta_{00} + h_{00} = -\bigg(1 + \frac{2\phi}{c^{2}}\bigg) = -
+  \bigg(1 - \frac{2GM}{rc^{2}} \bigg).
 \end{equation}
 Poiché abbiamo ottenuto questi risultati nell'ipotesi di campo debole, cioè
-$\abs{h_{\mu\nu}} \ll 1$, la quantità $h_{00} = r_{\textup{S}}/r$ dà una misura
-delle deviazioni della relatività generale rispetto alle previsioni della fisica
-newtoniana.
+$\abs{h_{\mu\nu}} \ll 1$, la quantità $h_{00} = -2\phi/c^{2} = r_{\textup{S}}/r$
+dà una misura delle deviazioni della relatività generale rispetto alle
+previsioni della fisica newtoniana.
 
 \begin{table}
   \centering
@@ -535,10 +538,10 @@ $\dd \tau \approx \dd t$ e
 $\ltoder{x^{k}}{\tau} \approx \ltoder{x^{k}}{t} = v^{k}$
 \begin{equation}
   \label{eq:gem1}
-  \toder[2]{x^{k}}{t} + \tensor{\Gamma}{^{k}_{00}} +
+  \toder{v^{k}}{t} + \tensor{\Gamma}{^{k}_{00}} +
   2\tensor{\Gamma}{^{k}_{0i}}v^{i} = 0.
 \end{equation}
-Ricordando che stiamo trattando campo gravitazionali statici, le componenti
+Ricordando che stiamo trattando campi gravitazionali statici, le componenti
 della connessione affine che ci servono sono
 \begin{subequations}
   \begin{align}
@@ -554,7 +557,7 @@ della connessione affine che ci servono sono
 Abbassando gli indici liberi nell'equazione~\eqref{eq:gem1} così abbiamo
 \begin{equation}
   \label{eq:gem2}
-  \toder{v^{k}}{t} = \frac{1}{2}\partial_{k}h_{00} + (\partial_{k}h_{0i}
+  \toder{v_{k}}{t} = \frac{1}{2}\partial_{k}h_{00} + (\partial_{k}h_{0i}
   - \partial_{k}h_{0k})v^{i}.
 \end{equation}
 Definiamo la matrice $4 \times 4$ antisimmetrica di componenti $f_{\alpha\beta}$
@@ -611,13 +614,18 @@ La matrice $f_{\alpha\beta}$ è allora data da
   \end{pmatrix}.
 \end{equation}
 Questa matrice è molto simile al tensore
-elettromagnetico~\eqref{eq:tensore-elettromagnetico}, con il campo
-gravitazionale newtoniano $\bm{g}$ che svolge il ruolo del campo elettrico
-$\bm{E}$ e $\bm{b}/2$ quello del campo magnetico $\bm{B}$.  Data questa
-similitudine, $\bm{b}$ viene chiamato \emph{campo gravitomagnetico}.  Una sfera
-carica ferma genera solo un campo elettrico, una sfera in rotazione genera anche
-un campo magnetico.  In analogia, una massa in rotazione genera un campo
-gravitomagnetico non nullo.
+elettromagnetico~\eqref{eq:tensore-elettromagnetico},\footnote{Abbiamo definito
+  i vettori $\bm{g}$ e $\bm{b}$ con i segni opposti rispetto a quelli
+  di~\textcite[138-139]{ohanian:gravitazione} solo al fine di avere gli stessi
+  segni nella matrice $f_{\alpha\beta}$ e nel tensore elettromagnetico.  È una
+  scelta di pura convenienza e non influisce sui risultati fisici
+  successivi.\label{nota-b}} con il campo gravitazionale newtoniano $\bm{g}$ che
+svolge il ruolo del campo elettrico $\bm{E}$ e $\bm{b}/2$ quello del campo
+magnetico $\bm{B}$.  Data questa similitudine, $\bm{b}$ viene chiamato
+\emph{campo gravitomagnetico}.  Una sfera carica ferma genera solo un campo
+elettrico, una sfera in rotazione genera anche un campo magnetico.  In analogia,
+ci aspettiamo che una massa rotante generi un campo gravitomagnetico non nullo.
+Nel prossimo paragrafo scopriremo che questa intuizione è corretta.
 
 Il parallelo con il campo elettromagnetico non si ferma qui.  Innanzitutto
 notiamo che
@@ -633,7 +641,7 @@ notiamo che
 Quindi la componente $k$ del prodotto vettoriale fra il vettore velocità
 $\bm{v}$ e il campo gravitomagnetico $\bm{b}$ è
 \begin{equation}
-  (\bm{v}\times\bm{b})_{k} = \epsilon_{ijk}v^{i}b^{j} = 2f_{ki}v^{i}.
+  (\bm{v}\times\bm{b})_{k} = \epsilon_{kij}v^{i}b^{j} = 2f_{ki}v^{i}.
 \end{equation}
 Allora possiamo scrivere l'equazione della geodetica~\eqref{eq:gem3} nella
 seguente forma vettoriale
@@ -641,14 +649,14 @@ seguente forma vettoriale
   \toder{\bm{v}}{t} = \bm{g} + \bm{v}\times\bm{b}.
 \end{equation}
 Quindi $\bm{g}$ e $\bm{b}$ soddisfano un'equazione analoga a quella della forza
-di Lorentz.  Inoltre usando la definizione di $f_{\alpha\beta}$ si verifica che
-risulta
+di Lorentz~\eqref{eq:forza-lorentz}.  Inoltre usando la definizione di
+$f_{\alpha\beta}$ si verifica che risulta
 \begin{equation}
   f_{\alpha\beta,\gamma} + f_{\gamma\alpha,\beta} + f_{\beta\gamma,\alpha} = 0,
 \end{equation}
 che è un'equazione analoga all'equazione di Maxwell senza
-sorgenti~\eqref{eq:maxwell-cov22}.  Poiché da questa equazione derivano le
-equazioni di Maxwell $\nabla \cdot \bm{B} = 0$ e
+sorgenti~\eqref{eq:maxwell-cov22}.  Poiché questa equazione è equivalente alle
+equazioni $\nabla \cdot \bm{B} = 0$ e
 $\nabla\times\bm{E} = - \lparder{\bm{B}}{t}$, deduciamo immediatamente che per
 $\bm{g}$ e $\bm{b}$ deve inoltre risultare
 \begin{subequations}
@@ -667,8 +675,7 @@ otteniamo l'ulteriore relazione
 Per trovare l'ultima ``equazione di Maxwell'' per il campo gravitomagnetico
 dobbiamo sfruttare la seguente equazione valida per un campo gravitazionale
 debole e indipendente dal
-tempo\footnote{Per una dimostrazione di questa relazione
-  vedi~\textcite[139]{ohanian:gravitazione}.}
+tempo\footnote{Vedi~\textcite[139]{ohanian:gravitazione}.}
 % Nota: l'Ohanian sbaglia un segno.  Per determinare correttamente l'equazione
 % ho usato l'espressione lineare (primo ordine di h) di R_{\mu\nu} calcolata nel
 % paragrafo sulle onde gravitazionali nel vuoto.  Si trova subito che la
@@ -680,7 +687,7 @@ in cui $T^{0k} = \rho v^{k}$ è la componente $0k$ del tensore energia-impulso,
 quindi rappresenta la densità di flusso di energia nella direzione $k$.  Questa
 equazione può anche essere scritta come
 \begin{equation}
-  -16\pi GT^{0k} = \partial_{l}(h^{0k,l} - h^{0l,k}) = \partial_{l}f^{lk} =
+  -16\pi GT^{0k} = \partial_{l}(h^{0k,l} - h^{0l,k}) = 2\partial_{l}f^{lk} =
   \epsilon^{lkj}\partial_{l}b_{j} = -\epsilon^{klj}\partial_{l}b_{j} = -(\nabla
   \times \bm{b})^{k},
 \end{equation}
@@ -688,22 +695,12 @@ oppure nella seguente forma vettoriale
 \begin{equation}
   \nabla \times \bm{b} = 16\pi G \bm{S},
 \end{equation}
-in cui $\bm{S} = (T^{01}, T^{02}, T^{03})$ è l'analogo del
+in cui $\bm{S} = (T^{01}, T^{02}, T^{03}) = \rho \bm{v}$ è l'analogo del
 \index{vettore!di Poynting}vettore di Poynting $\bm{E}\times\bm{B}/4\pi$ per il
 campo gravitomagnetico.
 
-\subsection{\completare{Effetto Lense-Thirring}}
+\subsection{Effetto Lense-Thirring}
 \label{sec:effetto-lense-thirring}
-
-Il Sole e la Terra hanno un raggio di Schwarzschild molto più piccolo del loro
-raggio fisico, quindi i campi gravitazionali al loro esterno sono deboli,
-inoltre sono in lenta (non relativistica) rotazione, quindi il moto di
-particelle nel campo gravitazionale di questi corpi può essere descritto usando
-il campo gravitomagnetico.  Sono in corso degli esperimenti volti a verificare
-le previsioni della teoria che abbiamo sviluppato nella sezione precedente.  In
-particolare si prova a misura la precessione di un giroscopio in orbita intorno
-al nostro pianeta dovuta al moto di rotazione della Terra.  Questo fenomeno
-prende il nome di \emph{effetto Lense-Thirring}.
 
 Ricordiamo che in elettrodinamica classica dalle equazioni
 \begin{subequations}
@@ -743,10 +740,25 @@ in cui
   \bm{B} = \nabla \times \bm{A} = \frac{3 \versor{r}(\versor{r} \cdot \bm{m}) -
     \bm{m}}{\norm{\bm{r}}^{3}}.
 \end{equation}
+In queste approssimazioni, il momento torcente agente su momento di dipolo
+magnetico $\bm{m}'$ immerso nel campo magnetico esterno $\bm{B}$ è
+\begin{equation}
+  \bm{\tau} = \bm{m}' \times \bm{B}.
+\end{equation}
+Inoltre il momento torcente agente su un giroscopio di momento angolare $\bm{S}$
+è
+\begin{equation}
+  \bm{\tau} = \dot{\bm{\Omega}} \times \bm{S},
+\end{equation}
+con $\dot{\bm{\Omega}}$ velocità angolare di precessione.  Se il momento di
+dipolo magnetico è proporzionale al suo momento angolare,
+$\bm{m}' = \alpha \bm{S}$, allora confrontando le due espressioni del momento
+torcente otteniamo che la velocità angolare di precessione è
+$\dot{\bm{\Omega}} = -\alpha \bm{B}$.
 
 Per il campo gravitomagnetico possiamo trovare relazioni analoghe.  Abbiamo
-visto che $\nabla \times \bm{b} = 16 \pi G \bm{S}$ e
-$\bm{b} = \nabla \times \bm{h}$, allora imponendo una condizione analoga a
+visto che $\nabla \times \bm{b} = 16 \pi G \bm{S}$ (qui $\bm{S} = \rho \bm{v}$)
+e $\bm{b} = \nabla \times \bm{h}$, allora imponendo una condizione analoga a
 quella di Lorenz $\nabla \cdot \bm{h} = 0$ abbiamo
 \begin{equation}
   \nabla \times \nabla \times \bm{h} = \nabla (\nabla \cdot \bm{h}) - \nabla^{2}
@@ -783,30 +795,125 @@ definizione il momento angolare totale classico.  Quindi abbiamo anche
       \bm{L}) - \bm{L}}{\norm{\bm{r}}^{3}}.
   \end{align}
 \end{subequations}
+Abbiamo quindi trovato che $\bm{b}$ è legato al momento angolare del corpo che
+genera il campo gravitazionale, coerentemente con la previsione che il campo
+gravitomagnetico è associato a masse in rotazione.  Il momento torcente agente
+su un giroscopio con momento angolare $\bm{S}$ (è un vettore distinto dal
+vettore $\bm{S} = \rho \bm{v}$) e ``momento di dipolo''
+$\bm{m}_{\textup{g}}' = \bm{S}/2$ è
+\begin{equation}
+  \bm{\tau} = \bm{m}_{\textup{g}}' \times \bm{b} = \frac{\bm{S}}{2} \times
+  \bm{b} = \dot{\bm{\Omega}} \times \bm{S},
+\end{equation}
+quindi la velocità angolare di precessione del giroscopio è (ripristiniamo la
+velocità della luce nel
+vuoto)\footnote{Il risultato differisce da quello di
+  \textcite[321]{ciufolini:gravitation} e \textcite[193]{ohanian:gravitazione}
+  per il segno, ma, come osservato nella nota della pagina~\pageref{nota-b}, il
+  vettore $\bm{b}$ è stato da noi definito in senso opposto rispetto a questi
+  testi, quindi il verso del nostro $\dot{\bm{\Omega}}$ è opposto al loro e i
+  risultati fisici sono naturalmente coerenti.}
+\begin{equation}
+  \dot{\bm{\Omega}} = -\frac{\bm{b}}{2} =
+  -\frac{G}{c^{2}}\frac{3\versor{r}(\versor{r} \cdot \bm{L}) -
+    \bm{L}}{\norm{\bm{r}}^{3}}.
+\end{equation}
+Se il campo gravitomagnetico $\bm{b}$ è non nullo si ha quindi una precessione
+di un giroscopio attorno a $\bm{b}$.  Notiamo che $\bm{b}$ è definito a partire
+dalle componenti $h_{0k}$ della perturbazione del tensore metrico.  Il tensore
+metrico associato a un campo gravitazionale generato da un corpo sferico in
+rotazione ha termini non diagonali diversi da zero già nell'approssimazione di
+campo debole (vedi~\textcite[192]{ohanian:gravitazione}).  Dunque in questo caso
+si ha $h_{0k} \neq 0 \implies \bm{b} \neq 0$ e un giroscopio in orbita attorno a
+una massa in rotazione sarà soggetto a una precessione, chiamata
+\index{precessione!di Lense-Thirring}\emph{precessione di Lense-Thirring}.
 
+Il Sole e la Terra hanno un raggio di Schwarzschild molto più piccolo del loro
+raggio fisico, quindi i campi gravitazionali al loro esterno sono deboli,
+inoltre sono in lenta (non relativistica) rotazione, quindi il moto di
+particelle nel campo gravitazionale di questi corpi può essere descritto usando
+il campo gravitomagnetico.  Sono in corso degli esperimenti per verificare
+l'effetto Lense-Thirring intorno alla Terra.
 
-% TODO: completare mettendo anche una figura che spieghi meglio la situazione ed
-% eventualmente riformulare.  Vedi la figura degli appunti del 20/04/2012.
-\section{\completare{Dilatazione gravitazionale del tempo e red-shift
-    gravitazionale}}
+Se un giroscopio si muove lungo un'orbita equatoriale attorno alla Terra, la
+posizione $\bm{r}$ del giroscopio è istante per istante perpendicolare al
+momento angolare $\bm{L}_{\oplus}$ della Terra, quindi la velocità di
+precessione vale
+\begin{equation}
+  \dot{\bm{\Omega}}_{\textup{LT}} = \frac{G}{c^{2}}
+  \frac{\bm{L}_{\oplus}}{\norm{\bm{r}}^{3}}.
+\end{equation}
+La Terra non è perfettamente sferica e presenta di conseguenza un momento di
+quadrupolo non nullo che induce sul giroscopio un'ulteriore precessione.  Nelle
+orbite equatoriali la precessione dovuta al quadrupolo è massima ed è circa
+$100$ più importante rispetto a quella di Lense-Thirring, quindi quest'ultima è
+difficile da misurare praticamente.  La precessione dovuta la momento di
+quadrupolo è invece nulla se il giroscopio si muove in orbite polari.  Per
+orbite polari circolari si trova che
+$\langle \versor{r}(\versor{r} \cdot \bm{L})\rangle = \langle \bm{L}
+\cos^{2}(\omega t)\rangle = \bm{L}/2$,
+quindi la velocità di precessione di Lense-Thirring è data da
+\begin{equation}
+  \dot{\bm{\Omega}}_{\textup{LT}} = -\frac{G}{c^{2}} \frac{3\bm{L}_{\oplus}/2 -
+    \bm{L}_{\oplus}}{\norm{\bm{r}}^{3}} = -\frac{G}{2c^{2}}
+  \frac{\bm{L}_{\oplus}}{\norm{\bm{r}}^{3}}.
+\end{equation}
+Se il giroscopio orbita vicino alla superficie terrestre, possiamo porre
+$\norm{\bm{r}} \approx R_{\oplus}$ e la velocità angolare di precessione
+precedente corrisponde a uno spostamento angolare
+$\alpha_{\textup{LT}} \approx -\SI{0.055}{\arcsecond/anno}$, cioè uno
+spostamento spaziale di
+$\var l_{\textup{LT}} = \alpha_{\textup{LT}} \cdot R_{\oplus} \approx
+-\SI{2}{\metre/anno}$.
+
+\section{Dilatazione gravitazionale del tempo e red-shift}
 \label{sec:red-shift-gravitazionale}
 
-Consideriamo due sperimentatori a riposo, rispettivamente, a una distanza
-$r_{1}$ e $r_{2}$ dall'origine di un campo gravitazionale statico.  Lo
-sperimentatore in $r_{1}$ invia una sequenza di segnali identici verso l'altro
-sperimentatore.  Se non sono presenti effetti dipendenti dal percorso, come
-l'effetto Lense-Thirring, tutti i segnali impiegano lo stesso tempo per giungere
-a destinazione, in conseguenza della staticità del campo gravitazionale.  Se i
-segnali inoltre sono inviati dallo sperimentatore in $r_{1}$ con regolarità, un
-osservatore esterno posto a distanza $r \to \infty$ dal sistema vedrà che i
-segnali sono inviati da $r_{1}$ con una separazione temporale $\dd t$ costante
-l'uno dal successivo e vedrà che sono ricevuti con la stessa separazione
-temporale $\dd t$ in $r_{2}$.  Tuttavia per questo osservatore esterno il campo
-gravitazionale è assente e lo spazio-tempo è quello piatto descritto dal tensore
-metrico di Minkowski $\eta_{\mu\nu}$, quindi il tempo proprio che misura è
-$\dd\tau = \sqrt{-\eta_{00}}\dd t = \dd t$.  Invece per gli sperimentatori fermi
-in $r_{1}$ e $r_{2}$ (quindi per entrambi risulta $\dd x^{i} = 0$) i tempi
-propri sono dati da
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[font=\small]
+    \coordinate (O) at (0,0);
+    \draw (O) circle (1) node[below left] {$M$};
+    \draw (O) -- node[above,sloped] {$R$} ++($({cos(45)},{sin(45)})$);
+    \draw[->] (O) -- ++(8,0) node[below] {$r$};
+    \coordinate (r1) at (3,0);
+    \coordinate (r2) at (7,0);
+    \draw[->] (r1) node[below] {$r_{1}$} -- ++(0,6) node[right] {$t$};
+    \draw[->] (r2) node[below] {$r_{2}$} -- ++(0,6) node[right] {$t$};
+    \foreach \y in {0.5,1.5,2.5,3.5}
+      \draw[-latex,dashed] ($(r1) + (0,\y)$) to[out=45,in=225] ++(4,2);
+    \foreach \y in {0.5,1.5,2.5}
+    {
+      \draw[<->] ($(r1) + (-0.2,\y)$) -- node[above,sloped] {$\dd t$}
+      ++(0,1);
+      \draw[<->] ($(r2)+(0.2,2+\y)$) -- node[below,sloped] {$\dd t$} ++(0,1);
+    }
+  \end{tikzpicture}
+  \caption[Dilatazione gravitazionale dei tempi e redshift]{Due sperimentatori
+    sono fermi, rispettivamente, a distanza $r_{1}$ e $r_{2}$ dall'origine di un
+    campo gravitazionale statico (per esempio generato da una sfera di massa $M$
+    e raggio $R$).  Lo sperimentatore in $r_{1}$ invia una sequenza periodica di
+    segnali identici verso l'altro sperimentatore.  Le linee di universo dei
+    segnali, in coordinate $r$ e $t$, sono rappresentate dalle frecce
+    tratteggiate}
+  \label{fig:redshift}
+\end{figure}
+Con riferimento alla figura~\ref{fig:redshift}, consideriamo uno sperimentatore
+posto nel punto $r_{1}$ che invia una sequenza periodica di segnali allo
+sperimentatore in $r_{2}$ in presenza di un campo gravitazionale statico.
+Poiché i segnali sono periodici, un osservatore esterno posto a distanza
+$r \to \infty$ dal sistema vedrà che i segnali sono inviati da $r_{1}$ con una
+separazione temporale $\dd t$ costante l'uno dal successivo.  Se non sono
+presenti effetti dipendenti dal percorso, come l'effetto Lense-Thirring, tutti i
+segnali impiegano lo stesso tempo per giungere a destinazione, in conseguenza
+della staticità del campo gravitazionale.  Allora l'osservatore esterno vedrà
+che i segnali sono ricevuti con la stessa separazione temporale $\dd t$ in
+$r_{2}$.  Tuttavia per questo osservatore, fermo nel suo sistema di riferimento
+(quindi $\dd x^{i} = 0$), il campo gravitazionale è assente, lo spazio-tempo è
+quello piatto descritto dal tensore metrico di Minkowski $\eta_{\mu\nu}$ e il
+tempo proprio che misura è $\dd\tau = \sqrt{-\eta_{00}}\dd t = \dd t$.  Invece
+per gli sperimentatori fermi in $r_{1}$ e $r_{2}$ i tempi propri sono,
+rispettivamente,
 \begin{subequations}
   \begin{align}
     \dd\tau_{1} &= \sqrt{-g_{00}(r_{1})} \dd t, \\
@@ -819,59 +926,63 @@ Dividendo membro a membro queste relazioni abbiamo
   \sqrt{\frac{g_{00}(r_{2})}{g_{00}(r_{1})}}.
 \end{equation}
 Supponiamo che il campo gravitazionale a cui sono soggetti i due sperimentatori
-sia debole e a simmetria sferica, abbiamo visto che in questo caso vale
-l'approssimazione $g_{00}(r) = -(1 - r_{\textup{S}}/r) = -(1 - 2GM/r)$, con
-$r_{\textup{S}}$ e $M$ raggio di Schwarzschild e massa del corpo che genera il
-campo gravitazionale, quindi
+sia debole, abbiamo visto che in questo caso vale l'approssimazione
+$g_{00}(r) = -(1 + 2\phi(r))$, in cui $\phi(r)$ è il potenziale gravitazionale
+newtoniano nel punto $r$, quindi
 \begin{equation}
-  \frac{\dd \tau_{2}}{\dd \tau_{1}} = \sqrt{\frac{1 - 2GM/r_{2}}{1 -
-      2GM/r_{1}}}.
+  \frac{\dd\tau_{2}}{\dd\tau_{1}} = \sqrt{\frac{1 + 2\phi_{2}}{1 + 2\phi_{1}}}.
 \end{equation}
-Poiché abbiamo supposto che il campo sia debole risulta
-$r_{1}, r_{2} \gg r_{\textup{S}}$, allora usando l'approssimazione
-$(1+x)^{\alpha} \approx 1 + \alpha x$ valida per $x \to 0$, abbiamo
+Poiché abbiamo supposto che il campo sia debole risulta $\phi \ll 1$, allora
+usando l'approssimazione $(1+x)^{\alpha} \approx 1 + \alpha x$ valida per
+$x \to 0$, abbiamo
 \begin{equation}
   \begin{split}
     \frac{\dd \tau_{2}}{\dd \tau_{1}} &=
-    \sqrt{\frac{1 - 2GM/r_{2}}{1 - 2GM/r_{1}}} \approx \bigg(1 -
-    \frac{GM}{r_{2}}\bigg) \bigg(1 + \frac{GM}{r_{1}}\bigg) = 1 -
-    \frac{GM}{r_{2}} + \frac{GM}{r_{1}} +
-    \mathcal{O}(1/r^{2}) \\
-    &\approx 1 - \phi_{1} + \phi_{2},
+    \sqrt{\frac{1 + 2\phi_{2}}{1 + 2\phi_{1}}} \approx (1 + \phi_{2}) (1 -
+    \phi_{1}) = 1 + \phi_{2} - \phi_{1} + \mathcal{O}(\phi^{2}) \\
+    &\approx 1 + \phi_{2} - \phi_{1}.
   \end{split}
 \end{equation}
-in cui $\phi = -GM/r$ è il potenziale gravitazionale newtoniano.  Dunque, se
-$r_{2} > r_{1}$ il rapporto fra la differenza dei tempi misurati nei due punti e
-il tempo misurato dallo sperimentatore in $r_{1}$ è (ripristiniamo la velocità
-della luce nel vuoto $c$)
+Dunque, se $\phi_{2} > \phi_{1}$ il rapporto fra la differenza dei tempi
+misurati nei due punti e il tempo misurato dallo sperimentatore in $r_{1}$ è
+(ripristiniamo la velocità della luce nel vuoto $c$)
 \begin{equation}
   \frac{\var\tau}{\tau} = \frac{\dd\tau_{2} - \dd\tau_{1}}{\dd\tau_{1}} =
-  \frac{\phi_{2} - \phi_{1}}{c^{2}} = \frac{GM}{c^{2}} \bigg(\frac{1}{r_{1}} -
-  \frac{1}{r_{2}}\bigg) > 0,
+  \frac{\phi_{2} - \phi_{1}}{c^{2}} > 0,
 \end{equation}
 cioè il tempo misurato in $r_{2}$ è maggiore rispetto al tempo misurato in
-$r_{1}$.  Questo fenomeno prende il nome di
+$r_{1}$.  Per i sistemi legati le energie sono negative, quindi
+$\phi_{2} > \phi_{1}$ equivale a $\abs{\phi_{1}} > \abs{\phi_{2}}$, cioè il
+punto a potenziale $\phi_{1}$ risente maggiormente del campo gravitazione
+rispetto al punto a potenziale $\phi_{2}$.  Questo fenomeno prende il nome di
 \index{dilatazione!del tempo!in relatività generale}
-\emph{dilatazione gravitazionale del tempo}.  Questo fenomeno può essere
-descritto in parole povere dicendo che un orologio batte il tempo più lentamente
-in presenza di un campo gravitazionale intenso (negativamente) rispetto a un
-orologio identico in un campo meno intenso.
+\emph{dilatazione gravitazionale del tempo} e può essere descritto in parole
+povere dicendo che un orologio batte il tempo più lentamente in presenza di un
+campo gravitazionale intenso (negativamente) rispetto a un orologio identico in
+un campo meno intenso.  Per un campo gravitazionale debole a simmetria sferica
+$\phi(r) = -GM/r$, quindi l'equazione precedente si può scrivere come
+\begin{equation}
+  \frac{\var\tau}{\tau} = \frac{\dd\tau_{2} - \dd\tau_{1}}{\dd\tau_{1}} =
+  \frac{\phi_{2} - \phi_{1}}{c^{2}} = \frac{GM}{c^{2}}\bigg(\frac{1}{r_{1}} -
+  \frac{1}{r_{2}} \bigg) > 0,
+\end{equation}
+se $r_{1} < r_{2} \implies \phi_{1} < \phi_{2}$.
 
 La verifica sperimentale di questo fenomeno è stata un'importante dimostrazione
 diretta della curvatura dello spazio-tempo.  Gli esperimenti infatti hanno
-confermato che nella vicinanza di un corpo massivo la componente $g_{00}$ del
-tensore metrico vale $-(1-2GM/r)$ e non $-1$, come dovrebbe risultare se lo
-spazio-tempo fosse piatto.  Per il principio di equivalenza il campo
-gravitazionale non potrebbe influenzare il ritmo di un orologio in caduta libera
-se non mediante un cambiamento della geometria dello spazio-tempo.  Per la
-descrizione di alcuni di questi esperimenti
+confermato che nella vicinanza di un corpo massivo sferico la componente
+$g_{00}$ del tensore metrico vale $-(1-2GM/r)$ e non $-1$, come dovrebbe
+risultare se lo spazio-tempo fosse piatto.  Per il principio di equivalenza il
+campo gravitazionale non potrebbe influenzare il ritmo di un orologio in caduta
+libera se non mediante un cambiamento della geometria dello spazio-tempo.  Per
+la descrizione di alcuni di questi esperimenti
 vedi~\textcite[157-159]{ohanian:gravitazione}.
 
 I sistemi di geolocalizzazione quale il Global Positioning System (GPS) devono
 tener conto della dilatazione relativistica del tempo dal momento che i
-satelliti utilizzati orbitano intorno alla Terra a un'altitudine rispetto al
-suolo di circa $h = \SI{20200}{\kilo\metre}$.  Calcoliamo la differenza fra i
-tempi misurati a terra
+satelliti utilizzati dal GPS orbitano intorno alla Terra a un'altitudine
+rispetto al suolo di circa $h = \SI{20200}{\kilo\metre}$.  Calcoliamo la
+differenza fra i tempi misurati a terra
 ($r_{1} = R_{\oplus} = \text{raggio della Terra} = \SI{6300}{\kilo\metre}$) e su
 un satellite GPS ($r_{2} = R_{\oplus} + h$)
 \begin{equation}
@@ -892,29 +1003,25 @@ Global Positioning System'', apparso su \emph{Living Rev. Relativity},
 \textbf{6}, (2003), 1 e disponibile all'URL
 \url{http://relativity.livingreviews.org/Articles/lrr-2003-1}.
 
-Se il periodo di un segnale periodico misurato dallo sperimentatore fermo nel
-punto $r_{1}$ vale $\var \tau_{1} = \sqrt{-g_{00}(r_{1})}\dd t$, la sua
-frequenza sarà data da $\nu_{1} = 1/ \var \tau_{1}$.  Analogamente, lo
-sperimentatore fermo nel punto $r_{2}$ misurerà che il segnale ricevuto ha un
-periodo $\var\tau_{2} = \sqrt{-g_{00}(r_{2})}$ e quindi una frequenza
-$\nu_{2} = 1/\var\tau_{2}$.  Dunque il rapporto fra la frequenza misurata in
+Consideriamo nuovamente la situazione rappresentata nella
+figura~\ref{fig:redshift}, con i due sperimentatori posti nei punti $r_{1}$ e
+$r_{2}$.  La frequenza dei segnali periodici misurata dallo sperimentatore in
+$r_{1}$ sarà $\nu_{1} = 1/\dd \tau_{1}$.  Lo sperimentatore fermo nel punto
+$r_{2}$ misurerà che il segnale ricevuto ha una frequenza
+$\nu_{2} = 1/\dd \tau_{2}$.  Dunque il rapporto fra la frequenza misurata in
 $r_{2}$ e quella in $r_{1}$ è
 \begin{equation}
-  \frac{\nu_{2}}{\nu_{1}} = \frac{\lambda_{1}}{\lambda_{2}} =
-  \sqrt{\frac{g_{00}(r_{1})}{g_{00}(r_{2})}}.
+  \frac{\nu_{2}}{\nu_{1}} = \sqrt{\frac{g_{00}(r_{1})}{g_{00}(r_{2})}}.
 \end{equation}
-Abbiamo messo in relazione le frequenze misurate per i segnali dai due
-osservatore con le lunghezze delle onde associate ai segnali periodici.  Se il
-campo gravitazionale oltre a essere statico e debole ha anche simmetria sferica,
-usiamo nuovamente l'approssimazione
-$g_{00}(r) = -(1 - r_{\textup{S}}/r) = -(1 - 2GM/(rc^{2}))$, così
+Usiamo nuovamente l'approssimazione $g_{00}(r) = -(1 + 2\phi(r)/c^{2})$ valida
+per campi deboli e statici, così
 \begin{equation}
   \begin{split}
-    \frac{\nu_{2}}{\nu_{1}} &= \frac{\lambda_{1}}{\lambda_{2}} =
-    \sqrt{\frac{1 - 2GM/(r_{1}c^{2})}{1 - 2GM/(r_{2}c^{2})}} \approx \bigg(1 -
-    \frac{GM}{r_{1}c^{2}}\bigg) \bigg(1 + \frac{GM}{r_{2}c^{2}}\bigg) \\
-    &= 1 - \frac{GM}{r_{1}c^{2}} + \frac{GM}{r_{2}c^{2}} + \mathcal{O}(1/r^{2})
-    \approx 1 + \frac{\phi_{1} - \phi_{2}}{c^{2}}.
+    \frac{\nu_{2}}{\nu_{1}} &= \sqrt{\frac{1 + 2\phi_{1}/c^{2}}{1 +
+        2\phi_{2}/c^{2}}} \approx \bigg(1 + \frac{\phi_{1}}{c^{2}}\bigg) \bigg(1
+    - \frac{\phi_{2}}{c^{2}}\bigg) = 1 + \frac{\phi_{1}}{c^{2}} -
+    \frac{\phi_{2}}{c^{2}} + \mathcal{O}(\phi^{2}/c^{4}) \\
+    &\approx 1 + \frac{\phi_{1} - \phi_{2}}{c^{2}}.
   \end{split}
 \end{equation}
 Il rapporto fra la differenza delle frequenze misurate e la frequenza di
@@ -925,26 +1032,34 @@ emissione del segnale è
   \frac{\var \nu}{\nu} = \frac{\nu_{2} - \nu_{1}}{\nu_{1}} \approx
   \frac{\phi_{1} - \phi_{2}}{c^{2}}.
 \end{equation}
-Se $r_{1} < r_{2}$, $\phi_{1} < \phi_{2}$ quindi $\var \nu < 0$: la frequenza
-misurata da chi riceva il segnale, in un punto con potenziale meno intenso
-(negativamente), è minore rispetto a quella misurata da chi ha inviato il
-segnale, in un punto a potenziale più intenso.  Si ha il cosiddetto
+Se $\phi_{1} < \phi_{2}$ allora $\var \nu < 0$: la frequenza di un segnale
+periodico misurata da chi riceva il segnale, in un punto con potenziale meno
+intenso (negativamente), è minore rispetto a quella misurata da chi ha inviato
+il segnale, in un punto a potenziale più intenso.  Si ha il cosiddetto
 \index{redshift!gravitazionale}\emph{redshift gravitazionale} o
 \emph{spostamento verso il rosso}, perché nella regione del visibile dello
 spettro elettromagnetico le frequenze minori (o, equivalentemente, lunghezze
 d'onda maggiori) corrispondono al rosso.
 
 Bisogna tener conto di questo fenomeno quando si effettuano misure astronomiche
-spettroscopiche.  Per esempio, per la radiazione proveniente dal Sole si ha
+spettroscopiche.  Per esempio, il campo gravitazionale in prossimità del Sole
+(approssimabile con $\phi_{\odot} = -GM_{\odot}/R_{\odot}$) è molto più intenso
+del campo gravitazionale sulla superficie terrestre (approssimabile con
+$\phi_{\oplus} = -GM_{\oplus}/R_{\oplus}$), quindi le righe spettrali del Sole
+osservate sulla superficie terrestre appariranno spostate verso frequenze più
+basse rispetto alle corrispondenti righe misurabili in laboratorio, in cui
+l'emissione e la rilevazione della radiazione avvengono allo stesso potenziale
+gravitazionale.  L'entità dello spostamento delle righe spettrali solari dovuto
+al redshift gravitazionale vale
 \begin{equation}
   \frac{\var \nu}{\nu} = \frac{\phi_{\odot} - \phi_{\oplus}}{c^{2}} \approx
   \frac{\phi_{\odot}}{c^{2}} = -\frac{GM_{\odot}}{R_{\odot}c^{2}} = \num{-2.12e-6}.
 \end{equation}
 Oltre al redshift gravitazionale, in queste misure entra in gioco anche
-l'effetto Doppler.  Tuttavia nel caso specifico del Sole l'effetto Doppler è
-mitigato sul bordo perché le particelle in questa regione tendono a essere
-perpendicolare alla linea di vista, quindi si ha il minimo dell'effetto Doppler
-relativistico.
+l'effetto Doppler poiché le molecole sono in movimento.  Tuttavia nel caso
+specifico del Sole l'effetto Doppler è mitigato sul bordo perché le particelle
+in questa regione tendono a essere perpendicolare alla linea di vista, quindi si
+ha il minimo dell'effetto Doppler relativistico.
 
 Lo spostamento verso il rosso può essere dedotto anche in altri modi, facendo
 uso del principio di equivalenza e anche della conservazione dell'energia.  A
