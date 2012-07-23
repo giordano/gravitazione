@@ -1,11 +1,97 @@
-% TODO: scrivere.  Vedi Weinberg, paragrafo 2.9, pagina 46.  Non l'abbiamo fatto
-% a lezione, però lo spin serve per la precessione di De Sitter e mi sembra che
-% il Weinberg spieghi abbastanza bene la questione.
+% TODO: completare.  Non l'abbiamo fatto a lezione, però lo spin serve per la
+% precessione di De Sitter e mi sembra che il Weinberg spieghi abbastanza bene
+% la questione.
 \chapter{\completare{Spin}}
 \label{cha:spin}
 
+Il momento angolare totale di un corpo è dato dalla somma del
+\emph{momento angolare orbitale}, dovuto al suo moto attorno a un asse fisso, e
+un momento angolare intrinseco, detto \emph{spin}.  Per esempio, la Terra
+possiede un momento angolare orbitale dovuto al moto di rivoluzione del pianeta
+intorno al Sole, e uno spin, dovuto al moto di rotazione della Terra attorno a
+un proprio asse (trattando la Terra come un'unica particella).  Nel sistema di
+riferimento in cui la Terra è a riposo in riferimento al moto di rivoluzione, il
+momento angolare orbitale è nullo ma essa ha comunque lo spin, da qui deriva
+l'aggettivo ``intrinseco''.
 
-%%% Local Variables: 
+Usando il tensore energia-impulso $T^{\alpha\beta}$, introdotto nel
+paragrafo~\ref{sec:tensore-energia-impulso}, possiamo definire in maniera più
+precisa queste quantità nella relatività speciale.
+
+Definiamo il quadritensore
+\begin{equation}
+  M^{\gamma\alpha\beta} = x^{\alpha}T^{\beta\gamma} - x^{\beta}T^{\alpha\gamma}.
+\end{equation}
+Questo tensore è antisimmetrico per lo scambio degli ultimi due indici:
+$M^{\gamma\alpha\beta} = - M^{\gamma\beta\alpha}$.  Il tensore energia-impulso è
+simmetrico e inoltre soddisfa la relazione di conservazione
+$\lparder{T^{\alpha\beta}}{x^{\beta}} = 0$, per questi motivi anche
+$M^{\gamma\alpha\beta}$ si conserva
+\begin{equation}
+  \parder{M^{\gamma\alpha\beta}}{x^{\gamma}} = \parder{x^{\alpha}}{x^{\gamma}}
+  T^{\beta\gamma} - \parder{x^{\beta}}{x^{\gamma}} T^{\alpha\gamma} =
+  T^{\beta\alpha} - T^{\alpha\beta} = 0.
+\end{equation}
+Allora per il teorema di Gauss (vedi l'appendice~\ref{cha:teorema-gauss})
+possiamo definire il seguente quadritensore $J^{\alpha\beta}$ di rango $2$ e
+costante nel tempo
+\begin{equation}
+  J^{\alpha\beta} = \int M^{0\alpha\beta} \dd^{3} \bm{x} = -\int
+  M^{0\beta\alpha} \dd^{3} \bm{x} = -J^{\beta\alpha}.
+\end{equation}
+Questo tensore prende il nome di \index{momento!angolare totale}
+\emph{momento angolare totale}.  Possiamo giustificare questo nome scrivendo
+esplicitamente le componenti spaziali
+\begin{equation}
+  J^{ij} = \int (x^{i}T^{j0} - x^{j}T^{i0})\dd^{3} \bm{x}.
+\end{equation}
+Ricordiamo che abbiamo interpretato le componenti $T^{i0}$ del tensore
+energia-impulso come la densità della componente $i$ della quantità di moto,
+dunque riconosciamo che
+$\bm{L} = (J^{23}, J^{31}, J^{12}) = \bm{r} \times \bm{p}$ è il vettore
+tridimensionale momento angolare.  Per le componenti
+\begin{equation}
+  J^{0i} = tp^{i} - \int x^{i}T^{00} \dd^{3} \bm{x}
+\end{equation}
+non esiste una chiara interpretazione fisica in termini di variabili dinamiche.
+Queste componenti possono peraltro essere annullate ponendo
+$\int x^{i}T^{00} \dd^{3} \bm{x} = 0$ al tempo $t = 0$.
+
+Il tensore momento angolare totale $J^{\alpha\beta}$ si comporta come un normale
+tensore di rango $2$ rispetto alle trasformazioni di Lorentz omogenee
+$x^{\alpha} \to x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}} x^{\beta}$, ma
+per una traslazione $x^{\alpha} \to x'^{\alpha} = x^{\alpha} + a^{\alpha}$
+abbiamo
+\begin{equation}
+  J^{\alpha\beta} \to J'^{\alpha\beta} = J^{\alpha\beta} + a^{\alpha}p^{\beta} -
+  a^{\beta}p^{\alpha}.
+\end{equation}
+Cioè è dovuto al fatto che $J^{\alpha\beta}$ comprende anche il momento angolare
+orbitale, definito in relazione a un asse di rotazione.  Per individuare la
+parte ``intrinseca'' del momento angolare totale $J^{\alpha\beta}$, cioè una
+parte che non cambi per effetto di una traslazione, definiamo il quadrivettore
+di \index{spin}\index{momento!angolare intrinseco|see{spin}}\emph{spin}
+\begin{equation}
+  S_{\alpha} = \frac{1}{2}\epsilon_{\alpha\beta\gamma\delta} J^{\beta\gamma} U^{\delta},
+\end{equation}
+in cui $U^{\alpha}$ è il quadrivettore velocità del sistema.  Grazie a questa
+definizione, il quadrivettore di spin non cambia per effetto di una traslazione.
+È intuitivo capire che per una particella libera il quadrivettore di spin è
+costante
+\begin{equation}
+  \toder{S_{\alpha}}{t} = 0.
+\end{equation}
+Nel sistema di riferimento del centro di massa del sistema
+$U'^{\alpha} = (1, \bm{0})$, quindi
+$S'^{\alpha} = (0, J^{23}, J^{31}, J^{12}) = (0, \bm{L})$, con $\bm{L}$ vettore
+tridimensionale momento angolare totale, visto in precedenza.  Nel sistema di
+riferimento del centro di massa il momento angolare orbitale è nullo, quindi è
+corretta l'identificazione del quadrivettore di spin con il momento angolare
+intrinseco.  Anche quando la velocità del sistema non è nulla (quindi
+$U^{i} \neq 0$), il quadrivettore di spin $S_{\alpha}$ ha solo tre componenti
+indipendenti perché $U^{\alpha}S_{\alpha} = 0$.
+
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../gravitazione"
-%%% End: 
+%%% End:
