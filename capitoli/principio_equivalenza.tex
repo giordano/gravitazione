@@ -391,7 +391,7 @@ La terza condizione può essere formalizzata come
 \begin{equation}
   \toder{x^{i}}{\tau} \ll \toder{t}{\tau},
 \end{equation}
-quindi l'equazione della geodetica si riduce a
+e l'equazione della geodetica si riduce a
 \begin{equation}
   \label{eq:geodetica-approx}
   \begin{split}
@@ -745,20 +745,20 @@ magnetico $\bm{m}'$ immerso nel campo magnetico esterno $\bm{B}$ è
 \begin{equation}
   \bm{\tau} = \bm{m}' \times \bm{B}.
 \end{equation}
-Inoltre il momento torcente agente su un giroscopio di momento angolare $\bm{S}$
-è
+Inoltre il momento torcente agente su un giroscopio con momento angolare
+intrinseco di spin $\bm{s}$ è
 \begin{equation}
-  \bm{\tau} = \dot{\bm{\Omega}} \times \bm{S},
+  \bm{\tau} = \dot{\bm{\Omega}} \times \bm{s},
 \end{equation}
 con $\dot{\bm{\Omega}}$ velocità angolare di precessione.  Se il momento di
 dipolo magnetico è proporzionale al suo momento angolare,
-$\bm{m}' = \alpha \bm{S}$, allora confrontando le due espressioni del momento
+$\bm{m}' = \alpha \bm{s}$, allora confrontando le due espressioni del momento
 torcente otteniamo che la velocità angolare di precessione è
 $\dot{\bm{\Omega}} = -\alpha \bm{B}$.
 
 Per il campo gravitomagnetico possiamo trovare relazioni analoghe.  Abbiamo
-visto che $\nabla \times \bm{b} = 16 \pi G \bm{S}$ (qui $\bm{S} = \rho \bm{v}$)
-e $\bm{b} = \nabla \times \bm{h}$, allora imponendo una condizione analoga a
+visto che $\nabla \times \bm{b} = 16 \pi G \bm{S}$ e
+$\bm{b} = \nabla \times \bm{h}$, allora imponendo una condizione analoga a
 quella di Lorenz $\nabla \cdot \bm{h} = 0$ abbiamo
 \begin{equation}
   \nabla \times \nabla \times \bm{h} = \nabla (\nabla \cdot \bm{h}) - \nabla^{2}
@@ -795,15 +795,14 @@ definizione il momento angolare totale classico.  Quindi abbiamo anche
       \bm{L}) - \bm{L}}{\norm{\bm{r}}^{3}}.
   \end{align}
 \end{subequations}
-Abbiamo quindi trovato che $\bm{b}$ è legato al momento angolare del corpo che
-genera il campo gravitazionale, coerentemente con la previsione che il campo
+Abbiamo trovato che $\bm{b}$ è legato al momento angolare del corpo che genera
+il campo gravitazionale, coerentemente con la previsione che il campo
 gravitomagnetico è associato a masse in rotazione.  Il momento torcente agente
-su un giroscopio con momento angolare $\bm{S}$ (è un vettore distinto dal
-vettore $\bm{S} = \rho \bm{v}$) e ``momento di dipolo''
-$\bm{m}_{\textup{g}}' = \bm{S}/2$ è
+su un giroscopio con momento angolare intrinseco di spin $\bm{s}$ e ``momento di
+dipolo'' $\bm{m}_{\textup{g}}' = \bm{s}/2$ è
 \begin{equation}
-  \bm{\tau} = \bm{m}_{\textup{g}}' \times \bm{b} = \frac{\bm{S}}{2} \times
-  \bm{b} = \dot{\bm{\Omega}} \times \bm{S},
+  \bm{\tau} = \bm{m}_{\textup{g}}' \times \bm{b} = \frac{\bm{s}}{2} \times
+  \bm{b} = \dot{\bm{\Omega}} \times \bm{s},
 \end{equation}
 quindi la velocità angolare di precessione del giroscopio è (ripristiniamo la
 velocità della luce nel
@@ -818,19 +817,20 @@ vuoto)\footnote{Il risultato differisce da quello di
   -\frac{G}{c^{2}}\frac{3\versor{r}(\versor{r} \cdot \bm{L}) -
     \bm{L}}{\norm{\bm{r}}^{3}}.
 \end{equation}
-Se il campo gravitomagnetico $\bm{b}$ è non nullo si ha quindi una precessione
-di un giroscopio attorno a $\bm{b}$.  Notiamo che $\bm{b}$ è definito a partire
-dalle componenti $h_{0k}$ della perturbazione del tensore metrico.  Il tensore
-metrico associato a un campo gravitazionale generato da un corpo sferico in
-rotazione ha termini non diagonali diversi da zero già nell'approssimazione di
-campo debole (vedi~\textcite[192]{ohanian:gravitazione}).  Dunque in questo caso
-si ha $h_{0k} \neq 0 \implies \bm{b} \neq 0$ e un giroscopio in orbita attorno a
-una massa in rotazione sarà soggetto a una precessione, chiamata
-\index{precessione!di Lense-Thirring}\emph{precessione di Lense-Thirring}.
+Se il campo gravitomagnetico $\bm{b}$ è non nullo si ha una precessione di un
+giroscopio attorno a $\bm{b}$.  Notiamo che $\bm{b}$ è definito a partire dalle
+componenti $h_{0k}$ della perturbazione del tensore metrico.  Il tensore metrico
+associato a un campo gravitazionale generato da un corpo sferico in rotazione ha
+termini non diagonali diversi da zero già nell'approssimazione di campo debole
+(vedi~\textcite[192]{ohanian:gravitazione}).  Dunque in questo caso si ha
+$h_{0k} \neq 0 \implies \bm{b} \neq 0$ e lo spin di un giroscopio in orbita
+attorno a una massa in rotazione sarà soggetto a una precessione, chiamata
+\index{precessione!di Lense-Thirring} \emph{precessione di Lense-Thirring},
+attorno al campo gravitomagnetico $\bm{b}$.
 
 Il Sole e la Terra hanno un raggio di Schwarzschild molto più piccolo del loro
 raggio fisico, quindi i campi gravitazionali al loro esterno sono deboli,
-inoltre sono in lenta (non relativistica) rotazione, quindi il moto di
+inoltre sono in lenta (non relativistica) rotazione, allora il moto di
 particelle nel campo gravitazionale di questi corpi può essere descritto usando
 il campo gravitomagnetico.  Sono in corso degli esperimenti per verificare
 l'effetto Lense-Thirring intorno alla Terra.
@@ -846,7 +846,7 @@ precessione vale
 La Terra non è perfettamente sferica e presenta di conseguenza un momento di
 quadrupolo non nullo che induce sul giroscopio un'ulteriore precessione.  Nelle
 orbite equatoriali la precessione dovuta al quadrupolo è massima ed è circa
-$100$ più importante rispetto a quella di Lense-Thirring, quindi quest'ultima è
+$100$ più importante rispetto a quella di Lense-Thirring, quest'ultima è dunque
 difficile da misurare praticamente.  La precessione dovuta la momento di
 quadrupolo è invece nulla se il giroscopio si muove in orbite polari.  Per
 orbite polari circolari si trova che
@@ -960,7 +960,7 @@ rispetto al punto a potenziale $\phi_{2}$.  Questo fenomeno prende il nome di
 povere dicendo che un orologio batte il tempo più lentamente in presenza di un
 campo gravitazionale intenso (negativamente) rispetto a un orologio identico in
 un campo meno intenso.  Per un campo gravitazionale debole a simmetria sferica
-$\phi(r) = -GM/r$, quindi l'equazione precedente si può scrivere come
+$\phi(r) = -GM/r$ e l'equazione precedente si può scrivere come
 \begin{equation}
   \frac{\var\tau}{\tau} = \frac{\dd\tau_{2} - \dd\tau_{1}}{\dd\tau_{1}} =
   \frac{\phi_{2} - \phi_{1}}{c^{2}} = \frac{GM}{c^{2}}\bigg(\frac{1}{r_{1}} -
@@ -991,13 +991,13 @@ un satellite GPS ($r_{2} = R_{\oplus} + h$)
 \end{equation}
 con $M_{\oplus} = \text{massa della Terra} = \SI{5.97e24}{\kilo\gram}$.  Se non
 tenessero conto della dilatazione gravitazionale del tempo, gli orologi sui
-satelliti GPS commetterebbero quindi un errore relativo di \num{5e-10}.  Sebbene
-questo errore possa sembrare molto piccolo, bisogna considerare che il sistema
-GPS fa uso di orologi atomici con sensibilità dell'ordine del nanosecondo e
-anche un piccolo errore nella misurazione dei tempi comporterebbe un grosso
-errore nella misura della posizione del satellite.  Quello della dilatazione del
-tempo è solo uno dei numerosi effetti relativistici di cui bisogna tener conto
-nella progettazione di in un sistema di geolocalizzazione.  Per una descrizione
+satelliti GPS commetterebbero un errore relativo di \num{5e-10}.  Sebbene questo
+errore possa sembrare molto piccolo, bisogna considerare che il sistema GPS fa
+uso di orologi atomici con sensibilità dell'ordine del nanosecondo e anche un
+piccolo errore nella misurazione dei tempi comporterebbe un grosso errore nella
+misura della posizione del satellite.  Quello della dilatazione del tempo è solo
+uno dei numerosi effetti relativistici di cui bisogna tener conto nella
+progettazione di in un sistema di geolocalizzazione.  Per una descrizione
 relativa al GPS si può vedere l'articolo di Neil Ashby ``Relativity in the
 Global Positioning System'', apparso su \emph{Living Rev. Relativity},
 \textbf{6}, (2003), 1 e disponibile all'URL
