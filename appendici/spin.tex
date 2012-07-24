@@ -1,21 +1,20 @@
-% TODO: completare.  Non l'abbiamo fatto a lezione, però lo spin serve per la
-% precessione di De Sitter e mi sembra che il Weinberg spieghi abbastanza bene
-% la questione.
-\chapter{\completare{Spin}}
+% Non l'abbiamo fatto a lezione, però introdurre brevemente lo spin serve per la
+% precessione di De Sitter e mi sembra che Weinberg lo spieghi abbastanza bene.
+\chapter{Spin}
 \label{cha:spin}
 
-Il momento angolare totale di un corpo è dato dalla somma del
+Il momento angolare totale di un sistema è dato dalla somma del
 \emph{momento angolare orbitale}, dovuto al suo moto attorno a un asse fisso, e
-un momento angolare intrinseco, detto \emph{spin}.  Per esempio, la Terra
-possiede un momento angolare orbitale dovuto al moto di rivoluzione del pianeta
-intorno al Sole, e uno spin, dovuto al moto di rotazione della Terra attorno a
-un proprio asse (trattando la Terra come un'unica particella).  Nel sistema di
-riferimento in cui la Terra è a riposo in riferimento al moto di rivoluzione, il
-momento angolare orbitale è nullo ma essa ha comunque lo spin, da qui deriva
-l'aggettivo ``intrinseco''.
-
+un momento angolare intrinseco, detto \emph{spin}.  Naturalmente non tutti i
+sistemi hanno necessariamente sia un momento angolare orbitale sia uno spin.
+Nel sistema di riferimento del centro di massa, il sistema è a riposo e il
+momento angolare orbitale è nullo ma è presente sempre lo stesso spin, da qui
+deriva l'aggettivo ``intrinseco''.  Per esempio, la Terra possiede un momento
+angolare orbitale dovuto al moto di rivoluzione del pianeta intorno al Sole, e
+uno spin, dovuto al moto di rotazione attorno a un proprio asse.  Un altro
+esempio di corpo dotato di spin è un giroscopio che orbita intorno alla Terra.
 Usando il tensore energia-impulso $T^{\alpha\beta}$, introdotto nel
-paragrafo~\ref{sec:tensore-energia-impulso}, possiamo definire in maniera più
+paragrafo~\ref{sec:tensore-energia-impulso}, possiamo definire in maniera
 precisa queste quantità nella relatività speciale.
 
 Definiamo il quadritensore
@@ -49,12 +48,12 @@ Ricordiamo che abbiamo interpretato le componenti $T^{i0}$ del tensore
 energia-impulso come la densità della componente $i$ della quantità di moto,
 dunque riconosciamo che
 $\bm{L} = (J^{23}, J^{31}, J^{12}) = \bm{r} \times \bm{p}$ è il vettore
-tridimensionale momento angolare.  Per le componenti
+tridimensionale momento angolare.  Per le altre componenti non nulle
 \begin{equation}
   J^{0i} = tp^{i} - \int x^{i}T^{00} \dd^{3} \bm{x}
 \end{equation}
-non esiste una chiara interpretazione fisica in termini di variabili dinamiche.
-Queste componenti possono peraltro essere annullate ponendo
+non esiste un'interpretazione fisica in termini di variabili dinamiche.  Queste
+componenti possono peraltro essere annullate ponendo
 $\int x^{i}T^{00} \dd^{3} \bm{x} = 0$ al tempo $t = 0$.
 
 Il tensore momento angolare totale $J^{\alpha\beta}$ si comporta come un normale
@@ -66,7 +65,7 @@ abbiamo
   J^{\alpha\beta} \to J'^{\alpha\beta} = J^{\alpha\beta} + a^{\alpha}p^{\beta} -
   a^{\beta}p^{\alpha}.
 \end{equation}
-Cioè è dovuto al fatto che $J^{\alpha\beta}$ comprende anche il momento angolare
+Ciò è dovuto al fatto che $J^{\alpha\beta}$ comprende anche il momento angolare
 orbitale, definito in relazione a un asse di rotazione.  Per individuare la
 parte ``intrinseca'' del momento angolare totale $J^{\alpha\beta}$, cioè una
 parte che non cambi per effetto di una traslazione, definiamo il quadrivettore
@@ -83,13 +82,26 @@ costante
 \end{equation}
 Nel sistema di riferimento del centro di massa del sistema
 $U'^{\alpha} = (1, \bm{0})$, quindi
-$S'^{\alpha} = (0, J^{23}, J^{31}, J^{12}) = (0, \bm{L})$, con $\bm{L}$ vettore
-tridimensionale momento angolare totale, visto in precedenza.  Nel sistema di
-riferimento del centro di massa il momento angolare orbitale è nullo, quindi è
-corretta l'identificazione del quadrivettore di spin con il momento angolare
-intrinseco.  Anche quando la velocità del sistema non è nulla (quindi
-$U^{i} \neq 0$), il quadrivettore di spin $S_{\alpha}$ ha solo tre componenti
-indipendenti perché $U^{\alpha}S_{\alpha} = 0$.
+\begin{subequations}
+  \begin{align}
+    S'_{0} &= \epsilon_{0\beta\gamma\delta} J^{\alpha\beta} U'^{\gamma} =
+    \epsilon_{0\beta\gamma 0} J^{\alpha\beta} = 0, \\
+    S'_{i} &= \frac{1}{2}\epsilon_{ijk} J^{jk} = \int \epsilon_{ijk} x^{j}T^{0k}
+    \dd^{3} \bm{x},
+  \end{align}
+\end{subequations}
+cioè $S'_{\alpha} = (0, J^{23}, J^{31}, J^{12})$.  Nel sistema di riferimento
+del centro di massa il momento angolare orbitale è nullo, pertanto è corretta
+l'identificazione del quadrivettore di spin con il momento angolare intrinseco.
+Anche quando la velocità del sistema non è nulla, $(U^{i}) \neq \bm{0}$, il
+quadrivettore di spin $S_{\alpha}$ ha solo tre componenti indipendenti perché
+\begin{equation}
+  S_{\alpha}U^{\alpha} = \frac{1}{2}
+  \epsilon_{\alpha\beta\gamma\delta}J^{\beta\gamma}U^{\delta}U^{\alpha} =
+  -\frac{1}{2}
+  \epsilon_{\delta\beta\gamma\alpha}J^{\beta\gamma}U^{\delta}U^{\alpha} = 0.
+\end{equation}
+
 
 %%% Local Variables:
 %%% mode: latex
