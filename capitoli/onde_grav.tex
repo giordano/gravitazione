@@ -468,8 +468,34 @@ equazione è
 Questo risultato ci permette di analizzare l'effetto di un'onda gravitazionale
 che investe un sistema di due corpi inizialmente in quiete.
 
-% TODO: mettere qualche figura per chiarire meglio ed eventualmente rielaborare
-% il testo, se necessario.
+\begin{figure}
+  \centering
+  \subfloat[][Onda longitudinale al sistema\label{fig:onda-grav1}]{
+    \begin{tikzpicture}[font=\small,scale=0.9]
+      \fill[black] (3,2.5) node[label={right:$A$}] (A) {} circle (0.08) ++(0,2)
+      node[label={right:$B$}] (B) {} circle (0.08);
+      \draw[->,decorate,decoration=snake] (3,0.5) -- ++(0,6);% onda gravitaz
+      \draw[<->] ($(A) - (0.5,0)$) -- node[above,sloped] {$\delta x^{j}$}
+      ($(B) - (0.5,0)$);
+      \draw[->] (0,0) -- ++(0,7) node[left] {$z$}; % asse z
+      \draw[->] (0,0) -- ++(6,0) node[below] {$y$}; % asse y
+    \end{tikzpicture}}
+  \qquad
+  \subfloat[][Onda trasversale al sistema\label{fig:onda-grav2}]{
+    \begin{tikzpicture}[font=\small,scale=0.9]
+      \fill[black] (1,3.5) node[label={above:$A$}] (A) {}
+      circle (0.08) ++(4,0) node[label={above:$B$}] (B) {} circle (0.08);
+      \draw[->,decorate,decoration=snake] (3,0.5) -- ++(0,6);% onda gravitaz
+      \draw[<->] ($(A) - (0,0.5)$) -- node[below left] {$\delta x^{j}$}
+      ($(B) - (0,0.5)$);
+      \draw[->] (0,0) -- ++(0,7) node[left] {$z$}; % asse z
+      \draw[->] (0,0) -- ++(6,0) node[below] {$y$}; % asse y
+    \end{tikzpicture}}
+  \caption[Onda gravitazionale incidente su un sistema di due particelle]{Onda
+    gravitazionale (rappresentata da \tikz \draw[->,decorate,decoration=snake]
+    (0,0) -- ++(1,0);) che investe un sistema costituito da due corpi}
+  \label{fig:onda-grav}
+\end{figure}
 Consideriamo un'onda gravitazionale che si propaga lungo la direzione $z$, per
 la quale allora le uniche componenti non nulle di $h_{\mu\nu}$ nella gauge TT
 sono
@@ -480,8 +506,9 @@ sono
   \end{align}
 \end{subequations}
 Supponiamo che i due corpi siano allineati nella direzione $z$ a una posizione
-iniziale reciproca costante $\delta x^{j}(0) = (0,0,L_{0})$, allora
-dalla~\eqref{eq:spostamento-onda-grav} abbiamo che dopo il passaggio dell'onda
+iniziale reciproca costante $\delta x^{j}(0) = (0,0,L_{0})$ come nella
+figura~\ref{fig:onda-grav1}, allora dalla~\eqref{eq:spostamento-onda-grav}
+abbiamo che dopo il passaggio dell'onda
 \begin{equation}
   \delta x^{j}(t) = \delta x^{k}(0)\bigg(\tensor{\delta}{^{j}_{k}} + \frac{1}{2}
   \tensor{h}{^{j}_{k}}\bigg) = \delta x^{3}(0)\bigg(\tensor{\delta}{^{j}_{3}} +
@@ -491,8 +518,8 @@ dalla~\eqref{eq:spostamento-onda-grav} abbiamo che dopo il passaggio dell'onda
 cioè la separazione rimane costante $\delta x^{j}(t) = \delta x^{j}(0)$ lungo
 ogni direzione $j$.  Supponiamo ora che i due corpi siano allineati lungo una
 direzione perpendicolare a $z$, per esempio $y$, con separazione iniziale
-$\delta x^{j}(0) = (0,L_{0},0)$.  Dopo il passaggio dell'onda,
-dalla~\eqref{eq:spostamento-onda-grav} risulta
+$\delta x^{j}(0) = (0,L_{0},0)$, come nella figura~\ref{fig:onda-grav2}.  Dopo
+il passaggio dell'onda, dalla~\eqref{eq:spostamento-onda-grav} risulta
 \begin{equation}
   \delta x^{j}(t) = \delta x^{k}(0) \bigg(\tensor{\delta}{^{j}_{k}} +
   \frac{1}{2}\tensor{h}{^{j}_{k}}(x^{\mu}(t))\bigg) = \delta
