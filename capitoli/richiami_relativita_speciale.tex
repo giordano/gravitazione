@@ -272,11 +272,13 @@ Le trasformazioni con $\tensor{\Lambda}{^{0}_{0}} \geq +1$ sono chiamate
 il boost sia una trasformazione ristretta abbiamo
 \begin{equation}
   \tensor{\Lambda}{^{0}_{0}} = \frac{1}{\sqrt{1-\sum_{i}(v_{i})^{2}}} =
-  \frac{1}{\sqrt{1-v^{2}}} = \gamma(v) \equiv \gamma,
+  \frac{1}{\sqrt{1-v^{2}}} = \gamma_{v},
 \end{equation}
-con $v^{2} = \sum_{i}(v_{i})^{2}$ modulo quadro del vettore $\bm{v}$.
-$\gamma(v)$ è chiamato \index{fattore!di Lorentz}\emph{fattore di Lorentz}
-associato al boost $v$.  Quindi risulta anche
+con $v^{2} = \sum_{i}(v_{i})^{2}$ modulo quadro del vettore $\bm{v}$.  Abbiamo
+introdotto la quantità $\gamma_{v} = 1/\sqrt{1-v^{2}}$ chiamata
+\index{fattore!di Lorentz}\emph{fattore di Lorentz} associato al boost $\bm{v}$.
+Quando non ci sarà pericolo di ambiguità indicheremo il fattore di Lorentz
+associato a un certo boost semplicemente con $\gamma$.  Risulta anche
 \begin{equation}
   \tensor{\Lambda}{^{i}_{0}} = v_{i}\tensor{\Lambda}{^{0}_{0}} = v_{i}\gamma.
 \end{equation}
@@ -866,34 +868,42 @@ Data una particella il cui moto è descritto dalla coordinata controvariante
 $x^{\alpha}$, definiamo la sua \index{quadrivelocità}\emph{quadrivelocità} come
 la derivata di $x^{\alpha}$ rispetto al tempo proprio $\tau$:
 \begin{equation}
-  v^{\alpha} = (v^{0}, v^{i}) =\toder{x^{\alpha}}{\tau}
+  V^{\alpha} = (V^{0}, V^{i}) =\toder{x^{\alpha}}{\tau}
 \end{equation}
 e poiché risulta
 \begin{equation}
   \dd \tau = \sqrt{\dd t^{2} - \dd \bm{x}^{2}} = \dd t \sqrt{1 -
     \bigg(\toder{\bm{x}}{t}\bigg)^{2}} = \dd t\sqrt{1 - v^{2}} = \frac{\dd
-    t}{\gamma(v)}
+    t}{\gamma_{v}}
 \end{equation}
-abbiamo che la quadrivelocità è uguale a
+abbiamo che la quadrivelocità è uguale
+a\footnote{Abbiamo qui indicato con due lettere diverse la velocità classica
+  $\bm{v} = \ltoder{\bm{x}}{t}$ e il quadrivettore velocità
+  $V^{\alpha} = \ltoder{x^{\alpha}}{\tau}$ perché le componenti spaziali $V^{i}$
+  della quadrivelocità differiscono dalle corrispondenti componenti del vettore
+  velocità $v_{i}$ per il fattore lorentziano $\gamma_{v}$.  Da qui in poi sarà
+  compito del lettore riuscire a distinguere fra le componenti del vettore
+  velocità classica e le componenti spaziali del quadrivettore velocità.}
 \begin{equation}
   \begin{split}
-    v^{\alpha} &= \toder{x^{\alpha}}{t}\toder{t}{\tau} = \toder{x^{\alpha}}{t}
-    \gamma(v) = \gamma(v) \bigg(\toder{x^{0}}{t}, \toder{\bm{x}}{t}\bigg) =
-    \gamma(v)(1,\bm{v}) \\
-    &= (\gamma(v), \gamma(v)\bm{v}).
+    V^{\alpha} &= \toder{x^{\alpha}}{t}\toder{t}{\tau} = \toder{x^{\alpha}}{t}
+    \gamma_{v} = \gamma_{v} \bigg(\toder{x^{0}}{t}, \toder{\bm{x}}{t}\bigg) =
+    \gamma_{v}(1,\bm{v}) \\
+    &= (\gamma_{v}, \gamma_{v}\bm{v}).
   \end{split}
 \end{equation}
-Notiamo che per $\norm{v} \ll 1$ il fattore lorentziano vale $1$.  Il
+Notiamo che per $\norm{\bm{v}} \ll 1$ il fattore lorentziano vale $1$ e in
+questo caso $V^{\alpha} \approx (1, \bm{v})$.  Il
 \index{quadrimomento}\emph{quadrimomento} della particella è definito come il
 prodotto fra la massa a riposo $m$ della particella e la quadrivelocità
 \begin{equation}
-  p^{\alpha} = (p^{0},p^{i}) = m v^{\alpha} = m (v^{0}, v^{i}) = (m\gamma(v),
-  m\gamma(v)\bm{v}).
+  p^{\alpha} = (p^{0},p^{i}) = m V^{\alpha} = m (V^{0}, V^{i}) = (m\gamma_{v},
+  m\gamma_{v}\bm{v}).
 \end{equation}
 Ricordando che l'energia totale $E$ di una particella è definita come
-$m\gamma(v)$ troviamo che la prima componente del quadrivettore momento è
+$m\gamma_{v}$ troviamo che la prima componente del quadrivettore momento è
 proprio l'energia totale, mentre le componenti $p^{i}$ sono le componenti del
-momento relativistico $\bm{p} = m\gamma(v)\bm{v}$
+momento relativistico $\bm{p} = m\gamma_{v}\bm{v}$
 \begin{equation}
   p^{\alpha} = (E, \bm{p}).
 \end{equation}
@@ -909,7 +919,7 @@ La prima componente ci dà l'energia $E'$ nel nuovo sistema di riferimento
   \begin{split}
     E' &= p'^{0} = \tensor{\Lambda}{^{0}_{\beta}}p^{\beta} =
     \tensor{\Lambda}{^{0}_{0}}p^{0} + \tensor{\Lambda}{^{0}_{i}}p^{i} \\
-    &= \gamma(V) E + \gamma(V) V_{i}p^{i} = \gamma(V) E + \gamma(V)
+    &= \gamma_{V} E + \gamma_{V} V_{i}p^{i} = \gamma_{V} E + \gamma_{V}
     \bm{V}\cdot\bm{p}.
   \end{split}
 \end{equation}
@@ -919,18 +929,18 @@ momento nel nuovo sistema di riferimento
   \begin{split}
     (\bm{p}')_{i} &= (p')^{i} = \tensor{\Lambda}{^{i}_{\beta}}p^{\beta} =
     \tensor{\Lambda}{^{i}_{0}}p^{0} + \tensor{\Lambda}{^{j}_{j}}p^{j} \\
-    &= \gamma(V) V_{i}E + \bigg( \delta_{ij} +
-    V_{i}V_{j}\frac{\gamma(V)-1}{V^{2}}\bigg)p^{j} \\
-    &= \gamma(V) V_{i}E + p_{i} +
-    V_{i}V_{j}p^{j}\frac{\gamma(V)-1}{V^{2}} \\
-    &= \gamma(V) V_{i}E + p_{i} + V_{i} \bm{V} \cdot \bm{p}
-    \frac{\gamma(V)-1}{V^{2}},
+    &= \gamma_{V} V_{i}E + \bigg( \delta_{ij} +
+    V_{i}V_{j}\frac{\gamma_{V}-1}{V^{2}}\bigg)p^{j} \\
+    &= \gamma_{V} V_{i}E + p_{i} +
+    V_{i}V_{j}p^{j}\frac{\gamma_{V}-1}{V^{2}} \\
+    &= \gamma_{V} V_{i}E + p_{i} + V_{i} \bm{V} \cdot \bm{p}
+    \frac{\gamma_{V}-1}{V^{2}},
   \end{split}
 \end{equation}
 cioè
 \begin{equation}
-  \bm{p}' = \bm{p} + \bigg(\gamma(V) E + \bm{V} \cdot \bm{p}
-  \frac{\gamma(V)-1}{V^{2}}\bigg)\bm{V}.
+  \bm{p}' = \bm{p} + \bigg(\gamma_{V} E + \bm{V} \cdot \bm{p}
+  \frac{\gamma_{V}-1}{V^{2}}\bigg)\bm{V}.
 \end{equation}
 % NOTA: i risultati delle trasformazioni di momento ed energia sono differenti
 % dalle formule [4.103] e [4.104], pagina 132, del Barone.  Weinberg definisce
@@ -977,21 +987,21 @@ Abbiamo
     \begin{split}
       f'^{0} &= \tensor{\Lambda}{^{0}_{\alpha}}f^{\alpha} =
       \tensor{\Lambda}{^{0}_{0}}f^{0} + \tensor{\Lambda}{^{0}_{i}}f^{i} =
-      \gamma(V) V_{i}f^{i} = \gamma(V) \bm{V} \cdot \bm{f} \\
-      &= \gamma(V) \bm{V} \cdot \bm{F}
+      \gamma_{V} V_{i}f^{i} = \gamma_{V} \bm{V} \cdot \bm{f} \\
+      &= \gamma_{V} \bm{V} \cdot \bm{F}
     \end{split} \\
     \begin{split}
       f'^{i} &= \tensor{\Lambda}{^{i}_{\alpha}}f^{\alpha} =
       \tensor{\Lambda}{^{i}_{0}}f^{0} + \tensor{\Lambda}{^{i}_{j}}f^{j}
-      = \bigg( \delta_{ij} + V_{i}V_{j}\frac{\gamma(V) - 1}{V^{2}} \bigg)f^{j}\\
-      &= f^{i} + V_{i}V_{j}f^{j}\frac{\gamma(V) - 1}{V^{2}} = f^{i} + V_{i}
-      \bm{V} \cdot \bm{f} \frac{\gamma(V) - 1}{V^{2}},
+      = \bigg( \delta_{ij} + V_{i}V_{j}\frac{\gamma_{V} - 1}{V^{2}} \bigg)f^{j}\\
+      &= f^{i} + V_{i}V_{j}f^{j}\frac{\gamma_{V} - 1}{V^{2}} = f^{i} + V_{i}
+      \bm{V} \cdot \bm{f} \frac{\gamma_{V} - 1}{V^{2}},
     \end{split}
   \end{align}
 \end{subequations}
 cioè
 \begin{equation}
-  \bm{f}' = \bm{F} + \bm{V}(\bm{V}\cdot\bm{F})\frac{\gamma(V) - 1}{V^{2}}.
+  \bm{f}' = \bm{F} + \bm{V}(\bm{V}\cdot\bm{F})\frac{\gamma_{V} - 1}{V^{2}}.
 \end{equation}
 % Questa formula è diversa dalla [4.126] a pagina 135 del Barone perché lui
 % parte da un sistema di riferimento in cui la particella si muove con velocità
@@ -2143,7 +2153,7 @@ compatta\index{fluido!perfetto}
 \begin{equation}
   T^{\alpha\beta} = \eta^{\alpha\beta}p + (p + \rho)U^{\alpha}U^{\beta},
 \end{equation}
-con $U^{\mu} = (\gamma(u), \gamma(u) \bm{u})$ quadrivelocità associata al
+con $U^{\mu} = (\gamma_{u}, \gamma_{u} \bm{u})$ quadrivelocità associata al
 vettore velocità $\bm{u}$.  Si riottiene l'espressione di
 $\tilde T^{\alpha\beta}$ ponendo
 $\bm{u} = \bm{0} \implies U^{\mu} = (1, \bm{0})$.
