@@ -302,9 +302,9 @@ Per $\nu = 0$ risulta
     \tensor{e}{^{2}_{2}} + \tensor{e}{^{3}_{3}} - e_{00})
   \end{split}
 \end{equation}
-e poiché per le componenti diagonali si ha (nel primo membro non si somma su
-$i$) $\tensor{e}{^{i}_{i}} = \eta^{ij}e_{ij} = \delta^{ij}e_{ij} = e_{ii}$
-ricaviamo
+e poiché per le componenti diagonali si ha (stiamo considerando le singole
+componenti del tensore $e$, non la sua traccia, quindi non si somma su $i$)
+$\tensor{e}{^{i}_{i}} = \eta^{ij}e_{ij} = \delta^{ij}e_{ij} = e_{ii}$ ricaviamo
 \begin{equation}
   e_{00} + e_{30} = -\frac{1}{2}(e_{11} + e_{22} + e_{33} - e_{00}).
 \end{equation}
@@ -431,7 +431,7 @@ e anch'essi massa nulla perché $k^{\mu}k_{\mu} = 0$.
 
 Consideriamo due particelle $A$ e $B$, descritte rispettivamente dalle linee
 d'universo $x^{\mu}_{A} = x^{\mu}(\tau)$ e
-$x^{\mu}_{B} = x^{\mu}_{A}(\tau) + \delta x^{\mu}(\tau)$, cioè il vettore
+$x^{\mu}_{B} = x^{\mu}(\tau) + \delta x^{\mu}(\tau)$, cioè il vettore
 $\delta x^{\mu}(\tau)$ rappresenta la separazione fra $A$ e $B$.  Dall'equazione
 di deviazione geodetica % TODO: mettere riferimento
 sappiamo che
@@ -493,7 +493,7 @@ che investe un sistema di due corpi inizialmente in quiete.
     \end{tikzpicture}}
   \caption[Onda gravitazionale incidente su un sistema di due particelle]{Onda
     gravitazionale (rappresentata da \tikz \draw[->,decorate,decoration=snake]
-    (0,0) -- ++(1,0);) che investe un sistema costituito da due corpi}
+    (0,0) -- ++(1.5,0);) che investe un sistema costituito da due corpi}
   \label{fig:onda-grav}
 \end{figure}
 Consideriamo un'onda gravitazionale che si propaga lungo la direzione $z$, per
@@ -637,15 +637,16 @@ armonica~\eqref{eq:gauge-armonica2} risulta anche
   \label{eq:gauge-armonica-tau}
   \partial_{\mu}\tau^{\mu\nu} = 0,
 \end{equation}
-che sostituisce l'equazione più generale $\tensor{T}{^{\mu\nu}_{;\mu}} = 0$.
+che nell'approssimazione lineare sostituisce l'equazione più generale
+$\tensor{T}{^{\mu\nu}_{;\mu}} = 0$.
 
 Vogliamo determinare il campo gravitazionale a grandi distanze rispetto al
 sistema in esame, in particolare nella \index{zona!delle onde}zona delle onde,
-cioè in una regione a distanza molto maggiore rispetto alla lunghezza delle onde
-irradiate dal sistema.  Dunque possiamo seguire gli stessi metodi utilizzati nel
-paragrafo~\ref{sec:onde-elettromagnetiche-cariche} ottenendo le formule per
-$\psi_{\mu\nu}$ analoghe alle formule dei potenziali elettromagnetici ritardati.
-D'altra parte osserviamo che l'equazione di
+cioè in una regione a distanza $R$ molto maggiore rispetto alla lunghezza
+$\lambda$ delle onde irradiate dal sistema.  Dunque possiamo seguire gli stessi
+metodi utilizzati nel paragrafo~\ref{sec:onde-elettromagnetiche-cariche}
+ottenendo le formule per $\psi_{\mu\nu}$ analoghe alle formule dei potenziali
+elettromagnetici ritardati.  D'altra parte osserviamo che l'equazione di
 Einstein~\eqref{eq:einstein-lineare-materia2} in presenza di masse in moto,
 nella gauge armonica, è formalmente uguale all'equazione di
 Maxwell~\eqref{eq:maxwell-cariche} in presenza di cariche in moto, nella gauge
@@ -729,9 +730,9 @@ riposo.  Sostituiamo nella~\eqref{eq:psi-mu-nu}
   \psi_{ij} = \frac{2G}{c^{4}r} \parder{}{*{2}{t}}\int \rho x_{i} x_{j} \dd V.
 \end{equation}
 Come abbiamo visto nel caso elettromagnetico, nella zona delle onde, cioè per
-$R \gg \lambda \gg a$, le onde possono essere trattate, in piccole regioni dello
-spazio, come piane.  Adottando inoltre la gauge TT, nella quale $\psi_{ij} =
-h_{ij}$, abbiamo
+$R \gg \lambda \gg a$ con $a$ dimensione del sistema, le onde possono essere
+trattate come piane in piccole regioni dello spazio.  Adottando inoltre la gauge
+TT, nella quale $\psi_{ij} = h_{ij}$, abbiamo
 \begin{equation}
   \label{eq:h-ij}
   h_{ij} = \frac{2G}{c^{4}r} \parder{}{*{2}{t}}\int \rho x_{i} x_{j} \dd V =
@@ -813,7 +814,7 @@ e si può stimare la sua derivata temporale terza dividendo $Q_{ij}$ per $T^{3}$
 Poniamo $L_{0} = c^{5}/G = \SI{3.6e59}{\erg\per\second}$, allora
 \begin{equation}
   I = \frac{G}{45c^{5}} \dddot{Q}_{ij} \dddot{Q}^{ij} \approx \frac{G}{45c^{5}}
-  \frac{G^{2}}{c^{10}} \bigg(\frac{M v^{3}}{r}\bigg)^{2} \frac{c^{10}}{G} \sim
+  \frac{G}{c^{10}} \bigg(\frac{M v^{3}}{r}\bigg)^{2} \frac{c^{10}}{G} \sim
   L_{0} \bigg(\frac{r_{\textup{S}}}{r}\bigg)^{2} \bigg(\frac{v}{c}\bigg)^{6}.
 \end{equation}
 I sistemi astrofisici sono generalmente legati gravitazionalmente, allora per il
@@ -859,7 +860,7 @@ con la strumentazione oggi a nostra disposizione.
 \subsection{Sistema binario}
 \label{sec:sistema-binario}
 
-Per un sistema binario di corpi in orbita circolare, con massa ridotta
+Per un sistema binario di corpi in orbita circolare con massa ridotta
 $\mu = m_{1}m_{2}/(m_{1} + m_{2})$, si
 trova\footnote{Vedi \textcite[461]{landau:campi},
   \textcite[986]{misner:gravitation}, \textcite[476]{shapiro:black-holes}.}

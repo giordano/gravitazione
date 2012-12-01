@@ -302,7 +302,7 @@ $\bm{v}$, come
 \begin{equation}
   \Lambda =
   \begin{pmatrix}
-    \gamma & \gamma v_{1} & \gamma v_{2} & \gamma _{3} \\[2.0ex]
+    \gamma & \gamma v_{1} & \gamma v_{2} & \gamma v_{3} \\[2.0ex]
     \gamma v_{1} & 1 + (v_{1})^{2}\dfrac{\gamma-1}{v^{2}} &
     v_{1}v_{2}\dfrac{\gamma-1}{v^{2}} & v_{1} v_{3}\dfrac{\gamma-1}{v^{2}}
     \\[2.0ex]
@@ -310,7 +310,7 @@ $\bm{v}$, come
     (v_{2})^{2}\dfrac{\gamma-1}{v^{2}} & v_{2}v_{3}\dfrac{\gamma-1}{v^{2}}
     \\[2.0ex]
     \gamma v_{3} & v_{3}v_{1}\dfrac{\gamma-1}{v^{2}} &
-    v_{2}v_{3}\dfrac{\gamma-1}{v^{2}} & 1 + (v_{3})^{2}\dfrac{\gamma-1}{v^{2}}
+    v_{3}v_{2}\dfrac{\gamma-1}{v^{2}} & 1 + (v_{3})^{2}\dfrac{\gamma-1}{v^{2}}
   \end{pmatrix}.
 \end{equation}
 
@@ -517,8 +517,9 @@ tipo $\tensor{A}{^{\alpha_{1}\dots\alpha_{k}}}$ e si trasforma come
   \tensor{\Lambda}{^{\alpha_{1}}_{\mu_{1}}} \cdots
   \tensor{\Lambda}{^{\alpha_{k}}_{\mu_{k}}} \tensor{A}{^{\mu_{1}\dots\mu_{k}}},
 \end{equation}
-similmente un quadritensore di rango $k$ completamente covariante è del tipo
-$\tensor{A}{_{\alpha_{1}\dots\alpha_{k}}}$ e si trasforma come
+similmente un quadritensore di rango $k$ completamente covariante è un
+quadritensore del tipo $\tensor{A}{_{\alpha_{1}\dots\alpha_{k}}}$ che si
+trasforma come
 \begin{equation}
   \tensor{A}{_{\alpha_{1}\dots\alpha_{k}}} \to
   \tensor{{A'}}{_{\alpha_{1}\dots\alpha_{k}}} =
@@ -1663,7 +1664,7 @@ carica, infatti ($m_{k} \bm{v}_{k} = \bm{p}_{k}$ poiché $v_{k} \ll c$)
 con $\bm{L}$ momento angolare totale del sistema, e per un sistema non
 relativistico isolato $\dot{\bm{L}} = \bm{0} \implies \dot{\bm{m}} = \bm{0}$.
 
-\section{Equazioni del moto di un campo e tensore energia-impulso}
+\section{Equazioni di Eulero-Lagrange di un campo e tensore energia-impulso}
 \label{sec:tensore-energia-impulso}
 
 In questo paragrafo vogliamo determinare le equazioni del moto di un generico
@@ -2078,11 +2079,11 @@ relativistico, cioè un
 \emph{fluido costituito da un gran numero di particelle (in modo che possa
   essere considerato praticamente come un corpo continuo) che appare isotropo a
   un osservatore comovente}.
-Un sistema di coordinate comoventi con il fluido è sistema nel quale il fluido
-appare punto per punto a riposo.  Un fluido perfetto si può caratterizzare anche
-come un fluido privo di viscosità e in cui non ci sia conduzione di calore.  La
-viscosità è la presenza di forze parallele alle interfacce tra le varie porzioni
-del fluido.
+Un sistema di coordinate comoventi con il fluido è un sistema nel quale il
+fluido appare punto per punto a riposo.  Un fluido perfetto si può
+caratterizzare anche come un fluido privo di viscosità e in cui non ci sia
+conduzione di calore.  La viscosità è la presenza di forze parallele alle
+interfacce tra le varie porzioni del fluido.
 
 Per ricavare il tensore energia-impulso di un fluido perfetto possiamo sfruttare
 l'interpretazione fisica che abbiamo dato per ciascuna delle sue componente.

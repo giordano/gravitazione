@@ -19,7 +19,13 @@ semplicemente, \index{tensore!di Riemann}\emph{tensore di Riemann}
   \tensor{\Gamma}{^{\eta}_{\mu\nu}} \tensor{\Gamma}{^{\lambda}_{\eta\kappa}} -
   \tensor{\Gamma}{^{\eta}_{\mu\kappa}} \tensor{\Gamma}{^{\lambda}_{\eta\nu}}.
 \end{equation}
-Il tensore di Riemann è lineare nelle derivate seconde del tensore metrico.
+Il tensore di Riemann è un tensore nel senso specificato nel
+paragrafo~\ref{sec:tensori}\footnote{Non è immediato riconoscere che
+  $\tensor{R}{^{\lambda}_{\mu\nu\kappa}}$ è effettivamente un tensore dato che è
+  definito a partire dalla connessione affine, la quale non ha natura
+  tensoriale.  Si può trovare una dimostrazione di questa proprietà
+  in~\textcite[131-133]{weinberg:gravitation}.}
+ed è lineare nelle derivate seconde del tensore metrico.
 
 Per analizzare le proprietà algebriche del tensore di Riemann conviene
 considerare la sua forma completamente covariante
@@ -734,14 +740,14 @@ della~\eqref{eq:bar} abbiamo
 \end{equation}
 da cui
 \begin{equation}
-  \ln A(r) = - \ln B(r) + \text{costante} \implies A(r)B(R) = \text{costante}.
+  \ln A(r) = - \ln B(r) + \text{costante} \implies A(r)B(r) = \text{costante}.
 \end{equation}
 Per determinare il valore della costante notiamo che a distanza infinita dal
 campo gravitazionale la metrica deve tendere a quella di Minkowski, che in
 coordinate sferiche si esprime come
 \begin{equation}
-  \dd\tau^{2} = \dd t^{2} -\dd r^{2} - r^{2}\dd\theta^{2} - r^{2}\sin^{2}\theta
-  \dd\phi^{2}.
+  \dd\tau^{2} = \dd t^{2} -\dd r^{2} - r^{2}(\dd\theta^{2} + \sin^{2}\theta
+  \dd\phi^{2}).
 \end{equation}
 Confrontando con la metrica nella forma standard~\eqref{eq:metrica-standard}
 troviamo che deve risultare $A(r), B(R) \xrightarrow{r \to +\infty} 1$ e dalla
@@ -984,10 +990,10 @@ con $u_{0}(\phi)$ soluzione dell'equazione di Binet classica
 \end{equation}
 cioè
 \begin{equation}
-  u_{0} = A + B\cos(\phi + \delta),
+  u_{0} = A + B\cos(\phi + \phi_{0}),
 \end{equation}
-con $B$ e $\delta$ costanti reali di integrazione.  Ruotando opportunamente il
-sistema di riferimento si può fare in modo che $\delta = 0$ cosicché $u_{0}$
+con $B$ e $\phi_{0}$ costanti reali di integrazione.  Ruotando opportunamente il
+sistema di riferimento si può fare in modo che $\phi_{0} = 0$ cosicché $u_{0}$
 diventa
 \begin{equation}
   \label{eq:sol-binet}
@@ -1060,7 +1066,7 @@ coseno del secondo termine vale $1$, cioè quando
     \epsilon} \approx 2\pi n(1 + \epsilon)
 \end{equation}
 con $n$ numero di rivoluzioni compiute dal pianeta intorno al Sole a partire da
-un istante iniziale fissato.  Pertanto il perielio si ha dopo una variazione
+un istante iniziale fissato.  Il perielio successivo si ha dopo una variazione
 della coordinata $\phi$ di
 \begin{equation}
   \var\phi = \phi_{n+1} - \phi_{n} = 2\pi(1 + \epsilon)

@@ -533,7 +533,7 @@ geodetica~\eqref{eq:geodetica} sono date da
     \toder{x^{i}}{\tau}.
   \end{split}
 \end{equation}
-Poiché consideriamo ancora velocità non relativistiche poniamo
+Poiché stiamo ancora considerando velocità non relativistiche poniamo
 $\dd \tau \approx \dd t$ e
 $\ltoder{x^{k}}{\tau} \approx \ltoder{x^{k}}{t} = v^{k}$
 \begin{equation}
@@ -648,9 +648,9 @@ seguente forma vettoriale
 \begin{equation}
   \toder{\bm{v}}{t} = \bm{g} + \bm{v}\times\bm{b}.
 \end{equation}
-Quindi $\bm{g}$ e $\bm{b}$ soddisfano un'equazione analoga a quella della forza
-di Lorentz~\eqref{eq:forza-lorentz}.  Inoltre usando la definizione di
-$f_{\alpha\beta}$ si verifica che risulta
+Quindi $\bm{g}$ e $\bm{b}$ soddisfano un'equazione analoga
+alla~\eqref{eq:forza-lorentz} soddisfatta della forza di Lorentz.  Inoltre
+usando la definizione di $f_{\alpha\beta}$ si verifica che risulta
 \begin{equation}
   f_{\alpha\beta,\gamma} + f_{\gamma\alpha,\beta} + f_{\beta\gamma,\alpha} = 0,
 \end{equation}
@@ -833,7 +833,8 @@ raggio fisico, quindi i campi gravitazionali al loro esterno sono deboli,
 inoltre sono in lenta (non relativistica) rotazione, allora il moto di
 particelle nel campo gravitazionale di questi corpi può essere descritto usando
 il campo gravitomagnetico.  Sono in corso degli esperimenti per verificare
-l'effetto Lense-Thirring intorno alla Terra.
+l'effetto Lense-Thirring intorno alla Terra,
+vedi~\textcite[193-195]{ohanian:gravitazione}.
 
 Se un giroscopio si muove lungo un'orbita equatoriale attorno alla Terra, la
 posizione $\bm{r}$ del giroscopio è istante per istante perpendicolare al
@@ -979,7 +980,7 @@ la descrizione di alcuni di questi esperimenti
 vedi~\textcite[157-159]{ohanian:gravitazione}.
 
 I sistemi di geolocalizzazione quale il Global Positioning System (GPS) devono
-tener conto della dilatazione relativistica del tempo dal momento che i
+tener conto della dilatazione gravitazionale del tempo dal momento che i
 satelliti utilizzati dal GPS orbitano intorno alla Terra a un'altitudine
 rispetto al suolo di circa $h = \SI{20200}{\kilo\metre}$.  Calcoliamo la
 differenza fra i tempi misurati a terra
@@ -995,13 +996,14 @@ satelliti GPS commetterebbero un errore relativo di \num{5e-10}.  Sebbene questo
 errore possa sembrare molto piccolo, bisogna considerare che il sistema GPS fa
 uso di orologi atomici con sensibilità dell'ordine del nanosecondo e anche un
 piccolo errore nella misurazione dei tempi comporterebbe un grosso errore nella
-misura della posizione del satellite.  Quello della dilatazione del tempo è solo
-uno dei numerosi effetti relativistici di cui bisogna tener conto nella
-progettazione di in un sistema di geolocalizzazione.  Per una descrizione
-relativa al GPS si può vedere l'articolo di Neil Ashby ``Relativity in the
-Global Positioning System'', apparso su \emph{Living Rev. Relativity},
-\textbf{6}, (2003), 1 e disponibile all'URL
-\url{http://relativity.livingreviews.org/Articles/lrr-2003-1}.
+misura della posizione del
+satellite.\footnote{Quello della dilatazione del tempo è solo uno dei numerosi
+  effetti relativistici di cui bisogna tener conto nella progettazione di in un
+  sistema di geolocalizzazione.  Chi è interessato, può trovare una descrizione
+  relativa al GPS nell'articolo di Neil Ashby ``Relativity in the Global
+  Positioning System'', apparso su \emph{Living Rev. Relativity}, \textbf{6},
+  (2003), 1 e disponibile all'URL
+  \url{http://relativity.livingreviews.org/Articles/lrr-2003-1}.}
 
 Consideriamo nuovamente la situazione rappresentata nella
 figura~\ref{fig:redshift}, con i due sperimentatori posti nei punti $r_{1}$ e
@@ -1024,8 +1026,8 @@ per campi deboli e statici, così
     &\approx 1 + \frac{\phi_{1} - \phi_{2}}{c^{2}}.
   \end{split}
 \end{equation}
-Il rapporto fra la differenza delle frequenze misurate e la frequenza di
-emissione del segnale è
+Il rapporto fra la differenza delle frequenze misurate e la frequenza del
+segnale emesso è
 % Nota: tanto per cambiare l'Ohanian sbaglia il segno, dice che Δν/ν = (φ_2 -
 % φ_1)/c^2.
 \begin{equation}
@@ -1033,7 +1035,7 @@ emissione del segnale è
   \frac{\phi_{1} - \phi_{2}}{c^{2}}.
 \end{equation}
 Se $\phi_{1} < \phi_{2}$ allora $\var \nu < 0$: la frequenza di un segnale
-periodico misurata da chi riceva il segnale, in un punto con potenziale meno
+periodico misurata da chi riceve il segnale, in un punto con potenziale meno
 intenso (negativamente), è minore rispetto a quella misurata da chi ha inviato
 il segnale, in un punto a potenziale più intenso.  Si ha il cosiddetto
 \index{redshift!gravitazionale}\emph{redshift gravitazionale} o
@@ -1059,11 +1061,11 @@ Oltre al redshift gravitazionale, in queste misure entra in gioco anche
 l'effetto Doppler poiché le molecole sono in movimento.  Tuttavia nel caso
 specifico del Sole l'effetto Doppler è mitigato sul bordo perché le particelle
 in questa regione tendono a essere perpendicolare alla linea di vista, quindi si
-ha il minimo dell'effetto Doppler relativistico.
-
-Lo spostamento verso il rosso può essere dedotto anche in altri modi, facendo
-uso del principio di equivalenza e anche della conservazione dell'energia.  A
-questo proposito si può vedere~\textcite[160-161]{ohanian:gravitazione}.
+ha il minimo dell'effetto Doppler
+relativistico.\footnote{Lo spostamento verso il rosso può essere dedotto anche
+  in altri modi, facendo uso del principio di equivalenza e anche della
+  conservazione dell'energia.  Chi è interessato, può
+  vedere~\textcite[160-161]{ohanian:gravitazione}.}
 
 % TODO: completare questa sezione.
 \section{\completare{Principio di generale covarianza}}
