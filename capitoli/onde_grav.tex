@@ -436,30 +436,83 @@ $\delta x^{\mu}(\tau)$ rappresenta la separazione fra $A$ e $B$.  Dall'equazione
 di deviazione geodetica % TODO: mettere riferimento
 sappiamo che
 \begin{equation}
+  \label{eq:onde-grav-dev-geo}
   \curder[2]{\delta x^{\lambda}} = \tensor{R}{^{\lambda}_{\nu\mu\rho}} \delta
   x^{\mu} \toder{x^{\nu}}{\tau} \toder{x^{\rho}}{\tau}.
 \end{equation}
-Abbiamo poi visto che nell'approssimazione di campo debole le uniche componenti
-non nulle del tensore di Riemann sono
-$R_{j0k0} = R_{0j0k} = -R_{j00k} = -R_{0jk0}$.  Inoltre nella gauge TT tutte le
-componenti $h_{\mu 0} = h_{0\mu}$ sono nulle, quindi
-dalla~\eqref{eq:riemann-approx} abbiamo
+Poniamoci\footnote{Questa trattazione è presa da Valeria Ferrari, Leonardo
+  Gualtieri, ``General Relativity'', pagine 174-176.  \textsc{url}:
+  \url{http://www.roma1.infn.it/teongrav/VALERIA/TEACHING/RELATIVITA_GENERALE/AA2012_13/dispense.pdf}.}
+in un sistema di riferimento localmente inerziale $x^{\alpha'}$ centrato sulla
+geodetica di una delle due particelle, per esempio $A$, in modo che nelle
+vicinanze di $A$ la metrica differisca da quella di Minkowski per termini di
+ordine $\abs{\delta x}^{2}$:
+$\dd \tau^{2} = \eta_{\alpha'\beta'}\dd x^{\alpha'}\dd x^{\beta'} +
+\mathcal{O}(\abs{\delta x}^{2})$.
+In questo sistema di riferimento le coordinate della particella $A$ sono
+$x_{A}^{i'} = 0$, le coordinate di $B$ sono $x^{\mu'}_{B} = \delta x^{\mu'}$ e
+risulta
+\begin{subequations}
+  \begin{align}
+    t_{A} &= \tau, \\
+    \label{eq:foo-geodetica-A}
+    \toder{x^{\mu'}}{\tau}\bigg|_{A} &= (1, \bm{0}), \\
+    g_{\mu'\nu'}|_{A} &= \eta_{\mu'\nu'}, \\
+    g_{\mu'\nu',\alpha'}|_{A} &= 0 \implies
+    \tensor{\Gamma}{^{\alpha'}_{\mu'\nu'}}|_{A} = 0.
+  \end{align}
+\end{subequations}
+Assumiamo che in questo sistema di riferimento sia valida la gauge
+TT.\footnote{Se così non fosse, sappiamo che è sufficiente effettuare
+  un'opportuna trasformazione infinitesima delle coordinate per fare in modo che
+  $h_{\mu'\nu'}$ sia trasverso e a traccia nulla.}
+Per semplicità di notazione, da qui in poi omettiamo l'apice primo dalle
+coordinate.  Dall'equazione~\eqref{eq:foo-geodetica-A} abbiamo che solo le
+equazioni di deviazione geodetica~\eqref{eq:onde-grav-dev-geo} con
+$\nu, \rho = 0$ sono rilevanti e quindi la deviazione geodetica per le
+coordinate spaziali è
+\begin{equation}
+  \toder[2]{\delta x^{j}}{t} = \tensor{R}{^{j}_{0k0}} \delta x^{k}.
+\end{equation}
+Nella gauge TT tutte le componenti $h_{\mu 0} = h_{0\mu}$ sono nulle, allora
+nell'approssimazione di campo debole le componenti
+$R_{j0k0} = R_{0j0k} = -R_{j00k} = -R_{0jk0}$ del tensore di Riemann sono,
+dall'equazione~\eqref{eq:riemann-approx},
 \begin{equation}
   R_{j0k0}^{(1)} = R_{0j0k}^{(1)} = \frac{1}{2}(\partial_{k}\partial_{j}h_{00}
   - \partial_{k}\partial_{0}h_{j0} - \partial_{0}\partial_{j}h_{0k}
-  + \partial_{0}\partial_{0}h_{jk}) = \frac{1}{2}\ddot{h}^{\textup{TT}}_{jk,00}.
+  + \partial_{0}\partial_{0}h_{jk}) = \frac{1}{2}h^{\textup{TT}}_{jk,00}
 \end{equation}
-Se i corpi si muovono con velocità piccole, molto minori di quella della luce
-nel vuoto, allora $\dd\tau \approx\dd t$ e l'equazione di deviazione geodetica
-diventa
+e l'equazione di deviazione geodetica diventa
 \begin{equation}
-  \toder[2]{\delta x^{j}}{t} = \frac{1}{2} \parder{}{*{2}{t}}
-  \tensor{h}{^{j}_{k}}\delta x^{k}.
+  \label{eq:onde-grav-dev-geo2}
+  \toder[2]{\delta x^{j}}{t} =
+  \frac{1}{2} \parder{\tensor{h}{^{j}_{k}}}{*{2}{t}} \delta x^{k}.
 \end{equation}
-Se le due particelle sono a riposo a una distanza costante $\delta x^{j}(0)$
-prima che l'onda arrivi (cioè con $h_{jk} = 0$), la soluzione di questa
-equazione è
+Supponiamo che le due particelle sono a riposo a una distanza costante
+$\delta x^{j}(0)$ prima che l'onda arrivi (cioè con $h_{jk} = 0$).  Poiché
+stiamo considerando campi deboli, $h_{\mu\nu}$ è una piccola perturbazione e la
+posizione relativa fra le particelle cambierà di una quantità infinitesima al
+passaggio dell'onda, cioè
+\begin{equation}
+  \delta x^{j}(t) = \delta x_{0}^{j} + \delta x_{1}^{j}(t),
+\end{equation}
+in cui $\delta x_{1}^{j}(t)$ è una perturbazione infinitesima rispetto alla
+posizione iniziale $\delta x_{0}^{j}$.  Sostituendo questa espressione
+nell'equazione~\eqref{eq:onde-grav-dev-geo2} e ricordando che $\delta x_{0}^{j}$
+è costante, troviamo che al primo ordine in $h$ l'equazione di deviazione
+geodetica si semplifica in
+\begin{equation}
+  \toder[2]{\delta x_{1}^{j}}{t} =
+  \frac{1}{2}\parder{\tensor{h}{^{j}_{k}}}{*{2}{t}} \delta x_{0}^{k}.
+\end{equation}
+La soluzione di questa equazione è
 % Per la risoluzione di questa equazione vedi anche MTW, pagina 951
+\begin{equation}
+  \delta x_{1}^{j}(t) = \delta x^{j}(t) - \delta x_{0}^{j} \approx \frac{1}{2}
+  \tensor{h}{^{j}_{k}}(x^{\mu}(t)) \delta x_{0}^{k}
+\end{equation}
+che può anche essere scritta come
 \begin{equation}
   \label{eq:spostamento-onda-grav}
   \delta x^{j}(t) \approx \delta x^{k}(0) \bigg(\tensor{\delta}{^{j}_{k}} +
