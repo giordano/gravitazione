@@ -1109,9 +1109,6 @@ gravitazionale, come quello generato dal Sole, deviando la propria traiettoria.
 Questo fenomeno è comprensibile ricordando che tutti i corpi si muovono lungo
 geodetiche in uno spazio-tempo curvo.
 
-% TODO: non ho mai classificato gli intervalli nei tipi `luce', `spazio' o
-% `tempo', quindi o lo faccio da qualche parte o riformulo la frase seguente.
-% Dovrei anche spiegare cos'è la linea d'universo.
 In relatività speciale, per due eventi separati da un intervallo di tipo luce la
 distanza vale $\dd\tau^{2} = 0$ e assumiamo che lo stesso valga anche in
 relatività generale.  Assumiamo inoltre che l'equazione della
@@ -1188,13 +1185,13 @@ $r = 1/u_{0}$ della coordinata radiale soddisfi la relazione
 \begin{equation}
   r \cos\phi = \frac{1}{A} = \text{costante}.
 \end{equation}
-Il prodotto $r\cos\phi$ è la coordinata cartesiana $x$, quindi questa è
-l'equazione di una retta parallela all'asse $y$.  Potevamo attenderci questo
-risultato: in prima approssimazione il raggio di luce non viene deviato dal
-campo gravitazionale del Sole.  Inoltre la distanza $r_{0}$ di minimo
-avvicinamento al corpo si ha per $\cos\phi = 1$, cioè
-$r_{0} = 1/A \implies u_{0} = (\cos\phi)/r_{0}$.  Uguagliando i termini di
-ordine uno in $\epsilon$ troviamo
+Il prodotto $r\cos\phi$ è la coordinata cartesiana $x$ (vedi
+figura~\ref{fig:deflessione-fotone}), quindi questa è l'equazione di una retta
+parallela all'asse $y$.  Potevamo attenderci questo risultato: in prima
+approssimazione il raggio di luce non viene deviato dal campo gravitazionale del
+Sole.  Inoltre la distanza $r_{0}$ di minimo avvicinamento al corpo si ha per
+$\cos\phi = 1$, cioè $r_{0} = 1/A \implies u_{0} = (\cos\phi)/r_{0}$.
+Uguagliando i termini di ordine uno in $\epsilon$ troviamo
 \begin{equation}
   \label{eq:deflessione3}
   v'' + v = u_{0}^{2} = \frac{\cos^{2}\phi}{r_{0}^{2}} = \frac{1 +
@@ -1227,16 +1224,60 @@ In definitiva
   u(\phi) = u_{0}(\phi) + \epsilon v(\phi) = \frac{\cos\phi}{r_{0}} +
   \frac{2\epsilon}{3r_{0}^{2}} - \frac{\epsilon\cos^{2}\phi}{3r_{0}^{2}}.
 \end{equation}
-% TODO: fare una figura altrimenti si capisce piuttosto poco e riformulare il
-% testo seguente in modo da adattarsi alla figura.
+
+\begin{SCfigure}[1.3]
+  \centering
+  \begin{tikzpicture}[scale=0.9]
+    \draw[fill=white!95!black] (0,0) circle (0.5); % corpo sferico
+    \node at (-0.6,0.6) {$M$};
+    \draw[-latex,thin] (0,-5) -- (0,5) node[left] {$y$}; % asse y
+    \draw[-latex,thin] (0,0) -- (5,0) node[below] {$x$}; % asse x
+    % asintoti
+    \draw[dashed] (3,-5) node[below] {$O$} node[shape=coordinate] (a) {} --
+      (4,0) -- (3,5) node (b) {} node[above] {$S$}
+      node[shape=coordinate,pos=0.75] (c) {};
+    % traiettoria "vera"
+    \draw[bend right=10,thick] ($(a) - (0.1,0)$) to
+      node[shape=coordinate,pos=0.65] (e) {} ($(b) - (0.1,0)$);
+    % raggio vettore
+    \draw[dotted] (0,0) -- node[above] {$r$} (e) node[shape=coordinate,pos=0.4]
+      (f) {};
+    \path let \p1 = (f) in node[shape=coordinate] (g) at ($(\x1,0)+(0.2,0)$) {};
+    \draw[bend right] (g) to node[right] {$\phi$} (f);
+    % direzione dell'immagine vista dall'osservatore
+    \draw[dotted] (4,0) -- (5,5) node[above] {$S'$}
+      node[shape=coordinate,pos=0.75] (d) {};
+    \draw[loosely dotted,thin] (4,-5) -- (4,5); % parametro di impatto
+    % angolo di deflessione
+    \draw[bend left] (c) to node[fill=white,above] {$\Delta = 2\delta$} (d);
+    \draw[latex-latex] (0,-4) -- node[fill=white] {$r_{0}$}(4,-4);
+  \end{tikzpicture}
+  \caption[Deflessione di un fotone nel campo gravitazionale di un corpo
+  sferico]{Deflessione di un fotone nel campo gravitazionale di un corpo
+    sferico.  La linea continua spessa indica la traiettoria del fotone:
+    proviene dalla sorgente $S$ e giunge all'osservatore $O$ dopo essere stato
+    deviato dal corpo sferico di massa $M$.  All'osservatore sembrerà che il
+    fotone proviene dalla posizione $S'$.  L'angolo $\Delta$ rappresenta la
+    deviazione angolare del fotone fra la direzione originaria $S$ e quella
+    apparente $S'$.  $r$ è, istante per istante, la distanza fra la posizione
+    del fotone e il centro della sorgente del campo gravitazionale, $\phi_{0}$ è
+    l'angolo che $r$ forma con l'asse $x$.  $r_{0}$ è la distanza di minimo
+    avvicinamento rispetto al corpo sferico, alla quale avviene la deflessione
+    del fotone.  Le linee tratteggiate rappresentano gli asintoti della
+    traiettoria}
+  \label{fig:deflessione-fotone}
+\end{SCfigure}
 La traiettoria del fotone è, dunque, una retta (data dal termine
 $(\cos\phi)/r_{0}$) disturbata da una piccola perturbazione dell'ordine di
-$\epsilon$.  L'effetto di questa perturbazione è il seguente: il fotone si
-avvicina al Sole in linea retta, quando l'influenza del campo gravitazionale
-della stella non è più trascurabile il fotone viene leggermente deflesso, quindi
-si allontana nuovamente in linea retta.  Calcoliamo la deflessione del fotone.
-Le direzioni asintotiche seguite dal fotone si ottengono calcolando il limite
-$r \to \infty$ o, il che è equivalente, $u \to 0$ nella~\eqref{eq:deflessione4}
+$\epsilon$.  Con riferimento alla figura~\ref{fig:deflessione-fotone}, l'effetto
+di questa perturbazione è il seguente: il fotone si avvicina al Sole in linea
+retta proveniente dalla sorgente $S$, quando l'influenza del campo
+gravitazionale della stella non è più trascurabile il fotone viene leggermente
+deflesso, quindi si allontana nuovamente in linea retta e giunge all'osservatore
+$O$.  Calcoliamo la deflessione del fotone.  Le direzioni asintotiche seguite
+dal fotone (linee tratteggiate nella figura~\ref{fig:deflessione-fotone})
+corrispondono ai valori di $\phi$ che rendono $r$ infinito, quindi si possono
+ottenere calcolando il limite $u \to 0$ nella~\eqref{eq:deflessione4}
 \begin{equation}
   0 = \frac{\cos\phi}{r_{0}} + \frac{2\epsilon}{3r_{0}^{2}} -
   \frac{\epsilon\cos^{2}\phi}{3r_{0}^{2}} \implies \cos^{2}\phi -
@@ -1267,17 +1308,19 @@ dell'angolo con l'angolo stesso e quindi
 \begin{equation}
   \delta = \frac{r_{\textup{S}}}{r_{0}}.
 \end{equation}
-La deflessione $\var$ è il doppio di questo angolo, dunque, ripristinando il
-valore della velocità della luce,
+Abbiamo trovato che gli asintoti della traiettoria del fotone formano un angolo
+$\delta$ rispetto alla retta di equazione $x = r_{0}$.  La deflessione totale
+$\Delta$ è il doppio di questo angolo, dunque, ripristinando il valore della
+velocità della luce,
 \begin{equation}
-  \var = 2\delta = \frac{2r_{\textup{S}}}{r_{0}} = \frac{4GM}{c^{2}r_{0}}.
+  \Delta = 2\delta = \frac{2r_{\textup{S}}}{r_{0}} = \frac{4GM}{c^{2}r_{0}}.
 \end{equation}
 
 Per quanto riguarda la deviazione dei raggi di luce da parte del campo
 gravitazionale del Sole, supponendo che la distanza di minimo avvicinamento sia
 proprio pari al raggio solare $R_{\odot}$, l'angolo di deflessione vale
 \begin{equation}
-  \var_{\odot} = \frac{4GM_{\odot}}{c^{2}R_{\odot}} = \ang{;;1.75}.
+  \Delta_{\odot} = \frac{4GM_{\odot}}{c^{2}R_{\odot}} = \ang{;;1.75}.
 \end{equation}
 Questa previsione teorica è stata confermata in numerosi esperimenti via via più
 accurati, il primo dei quali fu realizzato da Eddington durante l'eclissi totale
@@ -1296,9 +1339,43 @@ tempo necessario affinché il segnale vada verso il pianeta e torni sulla Terra.
 Tuttavia l'esecuzione di esperimenti su questo fenomeno presentano delle
 difficoltà di tipo pratico, delle quali non ci occuperemo.
 
-% TODO: mettere anche qui una figura e rielaborare il testo altrimenti non si
-% capisce niente.  Dopo aver fatto la figura, parlare in generale di distanza di
-% minimo avvicinamento piuttosto che di raggio solare.
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    % Sole.  Il raggio è stato calcolato per tentativi in maniera tale che si
+    % intersecasse con la congiungente Terra - Mercurio
+    \draw[fill=white!95!black,name path=S] (0,0) circle (1.784) node[above
+      left=35] {Sole};
+    % Mercurio
+    \draw[fill=white!70!black] (1,3) circle (0.5) node[above right=10]
+      {Mercurio} node[shape=coordinate] (merc) {};
+    % Terra
+    \draw[fill=white!70!black] (3,-4) circle (0.5) node[below right=10] {Terra}
+      node[shape=coordinate] (terra) {};
+    % congiungente Terra - Mercurio
+    \draw[dashed,name path=MT] (merc) -- (terra);
+    % determino il punto di intersezione fra il Sole e la congiungente Terra -
+    % Mercurio
+    \path[name intersections={of=S and MT,by={A}}];
+    \draw[dashed] (0,0) -- (A);
+    \draw[dashed] (merc) -- (0,0) -- (terra);
+    \draw[decoration=brace,decorate] (merc) -- node[above, sloped]
+      {$\sqrt{r_{2}^{2} - R_{\odot}^{2}}$} (A);
+    \draw[decoration=brace,decorate] (A) -- node[above, sloped]
+      {$\sqrt{r_{1}^{2} - R_{\odot}^{2}}$} (terra);
+    \draw[decoration=brace,decorate] (0,0) -- node[above,sloped] {$r_{2}$}
+      (merc);
+    \draw[decoration={brace,mirror},decorate] (0,0) -- node[below,sloped]
+      {$r_{1}$}  (terra);
+    \draw[decoration=brace,decorate] (0,0) -- node[above,sloped] {$R_{\odot}$}
+      (A);
+  \end{tikzpicture}
+  \caption[Schema di un esperimento per la misurazione del ritardo dei segnali
+  radar]{Schema di un esperimento per la misurazione del ritardo dei segnali
+    radar.  Terra e Mercurio sono in congiunzione superiore.  Le distanze
+    riportate sono quelle che si avrebbero se lo spazio-tempo fosse piatto}
+  \label{fig:ritardo-radar}
+\end{figure}
 Senza entrare nei dettagli dei conti forniamo i risultati delle previsioni
 teoriche della relatività
 generale.\footnote{Questo problema è trattato da
@@ -1307,7 +1384,8 @@ generale.\footnote{Questo problema è trattato da
 In un spazio-tempo piatto, il tempo $\tau(r,R_{\odot})$ necessario per un fotone
 per giungere tangente sulla superficie del Sole da un punto a distanza $r$ dal
 centro della stella è dato semplicemente dal rapporto fra la distanza euclidea
-fra questi due punti e la velocità dei fotoni nel vuoto
+fra questi due punti (vedi figura~\ref{fig:ritardo-radar}) e la velocità dei
+fotoni nel vuoto
 \begin{equation}
   \tau(r, R_{\odot}) = \frac{\sqrt{r^{2} - R_{\odot}^{2}}}{c}.
 \end{equation}

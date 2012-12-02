@@ -12,7 +12,7 @@
 \usepackage{tensor} % per rappresentare i tensori
 \usepackage[font=small,format=hang,labelfont=bf,textformat=period]{caption}
 % per tabelle e figure
-\usepackage{booktabs,longtable,graphicx,subfig}
+\usepackage{booktabs,longtable,graphicx,sidecap,subfig}
 \usepackage{tikz,tikz-3dplot}
 % `mathtools' serve per definire la norma e il valore assoluto
 \usepackage{mathtools}
@@ -73,7 +73,8 @@
 \newtheorem*{teorema}{Teorema}
 
 % librerie ti TikZ
-\usetikzlibrary{calc,decorations.pathmorphing}
+\usetikzlibrary{calc,decorations.pathmorphing,decorations.pathreplacing,
+  intersections}
 %%%%% Fine impostazioni
 
 %%%%% Comandi personalizzati
