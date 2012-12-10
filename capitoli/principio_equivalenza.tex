@@ -228,7 +228,7 @@ $S$ fra due eventi $A$ e $B$ nello spazio-tempo
 Conviene parametrizzare la linea d'universo $x^{\mu}$ della particella con un
 arbitrario parametro $p$, cioè $x^{\mu} = x^{\mu}(p)$, quindi
 \begin{equation}
-  S = \int_{A}^{B} \dd\tau = \int_{A}^{\beta} \toder{\tau}{p}\dd p =
+  S = \int_{A}^{B} \dd\tau = \int_{A}^{B} \toder{\tau}{p}\dd p =
   \int_{A}^{B} \bigg( -g_{\mu\nu}\toder{x^{\mu}}{p}\toder{x^{\nu}}{p}
   \bigg)^{1/2} \dd p.
 \end{equation}
@@ -244,7 +244,7 @@ La variazione della distanza fra i due eventi è
   \begin{split}
     \delta S &= \int_{A}^{B} \frac{1}{2}\bigg( -g_{\mu\nu} \toder{x^{\mu}}{p}
     \toder{x^{\nu}}{p} \bigg)^{-1/2} \bigg( -\parder{g_{\mu\nu}}{x^{\lambda}}
-    \delta x^{\lambda} \toder{x^{m}}{p} \toder{x^{n}}{p} \\
+    \delta x^{\lambda} \toder{x^{\mu}}{p} \toder{x^{\nu}}{p} \\
     &- g_{\mu\nu} \toder{\delta x^{\mu}}{p} \toder{x^{\nu}}{p} - g_{\mu\nu}
     \toder{x^{\mu}}{p} \toder{\delta x^{\nu}}{p} \bigg) \dd p \\
     &= \int_{A}^{B} \frac{1}{2}\bigg( -g_{\mu\nu} \toder{x^{\mu}}{p}
@@ -308,11 +308,11 @@ quindi
 \end{equation}
 e poiché
 $(\partial_{\lambda} g_{\mu\nu} - \partial_{\mu}g_{\lambda\nu}
-- \partial_{\nu}g_{\lambda\mu})/2 = g_{\rho\lambda}
+- \partial_{\nu}g_{\lambda\mu})/2 = -g_{\rho\lambda}
 \tensor{\Gamma}{^{\rho}_{\nu\mu}}$ abbiamo
 \begin{equation}
   g_{\rho\lambda} \tensor{\Gamma}{^{\rho}_{\nu\mu}} \toder{x^{\mu}}{\tau}
-  \toder{x^{\nu}}{\tau} - g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} = 0.
+  \toder{x^{\nu}}{\tau} + g_{\lambda\nu}\toder[2]{x^{\nu}}{\tau} = 0.
 \end{equation}
 Moltiplicando infine ambo i membri per $g^{\lambda\sigma}$ e ricordando che
 $g_{\alpha\beta}g^{\alpha\gamma} = \tensor{\delta}{^{\gamma}_{\beta}}$ giungiamo

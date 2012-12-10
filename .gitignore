@@ -15,6 +15,7 @@
 *.pdf
 *.pgf-plot.*
 *.snm
+*.synctex.gz
 *.run.xml
 *.toc
 *~
