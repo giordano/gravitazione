@@ -1,4 +1,4 @@
-\documentclass[a4paper,twoside,openright,fleqn,11pt]{book}
+\documentclass[a4paper,oneside,fleqn,12pt]{book}
 \usepackage[T1]{fontenc}
 \usepackage[light,slantedGreeks]{kpfonts}
 \usepackage[utf8]{inputenc}
@@ -32,17 +32,17 @@
 %% testatine.
 \pagestyle{fancy}
 \fancyhf{} % svuota tutti i campi delle testatine e dei piedi
-\setlength{\headheight}{14pt}
+\setlength{\headheight}{15pt}
 % Nella testatina (`head') a destra (`R') nelle pagine pari (`E') mettiamo il
 % nome del capitolo (`\leftmark'), non tutto maiuscolo (`\nouppercase'). Sulla
 % sinistra (`L') delle pagine dispari (`O') mettiamo il nome del paragrafo
 % (`\rightmark').
-\fancyhead[RE]{\slshape\footnotesize\nouppercase{\leftmark}}
+%\fancyhead[RE]{\slshape\footnotesize\nouppercase{\leftmark}}
 \fancyhead[LO]{\slshape\footnotesize\nouppercase{\rightmark}}
 % All'esterno di ogni pagina (cioè a sinistra (`L') nelle pagine pari (`E') e a
 % destra (`R') nelle pagine dispari (`O')), nella testatina (`head') mettiamo il
 % numero della pagina (`\thepage').
-\fancyhead[LE,RO]{\thepage}
+\fancyhead[RO]{\thepage}
 
 % impostazioni per il pacchetto `hyperref'. Per l'elenco di tutte le opzioni del
 % documento consulta il manuale: `texdoc hyperref'
@@ -191,7 +191,7 @@
 \makeindex{}
 
 % titolo provvisorio per il frontespizio provvisorio
-\title{Gravitazione e cosmologia}
+\title{Gravitazione e cosmologia \\ {\small Versione di Matteo}}
 \author{}
 \date{}
 \begin{document}
