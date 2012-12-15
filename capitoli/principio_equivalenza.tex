@@ -116,11 +116,14 @@ dovremmo scrivere $g_{\mu\nu}(x)$ ma per brevità ometteremo di specificare la
 dipendenza dal punto.  Osserviamo che $g_{\mu\nu}$ è simmetrico rispetto allo
 scambio degli indici in quanto il tensore metrico di Minkowski
 $\eta_{\alpha\beta}$ è simmetrico, infatti
+% NOTA: l'equazione seguente non è sbagliata: nel terzo membro si sfrutta la
+% simmetria di \eta_{\mu\nu} e la commutatività del prodotto di due numeri,
+% nello specifico delle due derivate parziali che sono state scambiate.
 \begin{equation}
   g_{\nu\mu} =
   \eta_{\alpha\beta} \parder{\xi^{\alpha}}{x^{\nu}}\parder{\xi^{\beta}}{x^{\mu}}
   =
-  \eta_{\beta\alpha} \parder{\xi^{\beta}}{x^{\mu}} \parder{\xi^{\alpha}}{x^{\nu}}
+  \eta_{\beta\alpha} \parder{\xi^{\beta}}{x^{\mu}}\parder{\xi^{\alpha}}{x^{\nu}}
   = g_{\mu\nu}.
 \end{equation}
 
