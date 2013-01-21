@@ -1574,7 +1574,7 @@ $\bm{E}$, $\bm{B}$ e $\versor{n}$ costituiscono una terna di vettori ortogonali
 e $\bm{E}$ e $\bm{B}$ hanno lo stesso modulo) e
 \begin{subequations}
   \begin{align}
-    % Nota: il Landau dice (nota 2) di pagina 228) che l'equazione seguente non
+    % Nota: il Landau dice (nota 2 di pagina 228) che l'equazione seguente non
     % è corretta e bisogna invece usare E = (1/c) (\dot{\bm{A}} \times
     % \versor{n}) \times \versor{n}.  Spiegazione della (43.7) di pagina 151:
     % nel calcolo di \bm{H} usa la formula di derivazione composta per \bm{A},
@@ -1826,6 +1826,58 @@ Equivalentemente, $T^{ij}$ può essere interpretata come la componente $j$ della
 forza per unità di area su una superficie perpendicolare all'asse $i$.  La parte
 ``spaziale'' del tensore energia impulso, $T^{ij}$, è chiamata anche
 \emph{tensore degli sforzi} (è un tensore tridimensionale di rango $2$).
+
+%%% Rappresentazione matriciale del tensore energia impulso simile a
+%%% <https://it.wikipedia.org/wiki/File:StressEnergyTensor_it.svg>.  TODO:
+%%% decidere se inserire questa figura, in caso affermativo completarla e
+%%% integrarla nel testo
+% \begin{tikzpicture}
+%   \matrix [matrix of math nodes,left delimiter=(,right delimiter=)] (T)
+%   {
+%     T_{00} & T_{01} & T_{02} & T_{03} \\
+%     T_{10} & T_{11} & T_{12} & T_{13} \\
+%     T_{20} & T_{21} & T_{22} & T_{23} \\
+%     T_{30} & T_{31} & T_{32} & T_{33} \\
+%   };
+
+%   \draw[color=cyan,fill=purple,opacity=0.4]
+%   ($(T-2-2.north west)!.4!(T-2-2.center)$) --
+%   ($(T-4-2.south west)!.4!(T-4-2.center)$) --
+%   ($(T-4-4.south east)!.4!(T-4-4.center)$) --
+%   ($(T-2-4.north east)!.4!(T-2-4.center)$) -- cycle;
+
+%   \draw[fill,color=green,opacity=0.4]
+%   ($(T-2-2.north west)!.4!(T-2-2.center)$) --
+%   ($(T-2-2.south west)!.4!(T-2-2.center)$) --
+%   ($(T-4-4.south west)!.4!(T-4-4.center)$) --
+%   ($(T-4-4.south east)!.4!(T-4-4.center)$) --
+%   ($(T-4-4.north east)!.4!(T-4-4.center)$) --
+%   ($(T-2-2.north east)!.4!(T-2-2.center)$) -- cycle;
+
+%   \draw[color=cyan,fill=gray,opacity=0.4]
+%   ($(T-1-1.north west)!.4!(T-1-1.center)$) --
+%   ($(T-1-1.south west)!.4!(T-1-1.center)$) --
+%   ($(T-1-1.south east)!.4!(T-1-1.center)$) --
+%   ($(T-1-1.north east)!.4!(T-1-1.center)$) -- cycle;
+
+%   \draw[color=cyan,fill=gray,opacity=0.4]
+%   ($(T-2-1.north west)!.4!(T-2-1.center)$) --
+%   ($(T-4-1.south west)!.4!(T-4-1.center)$) --
+%   ($(T-4-1.south east)!.4!(T-4-1.center)$) --
+%   ($(T-2-1.north east)!.4!(T-2-1.center)$) -- cycle;
+
+%   \draw[color=cyan,fill=gray,opacity=0.4]
+%   ($(T-1-1.north west)!.4!(T-1-1.center)$) --
+%   ($(T-1-1.south west)!.4!(T-1-1.center)$) --
+%   ($(T-1-1.south east)!.4!(T-1-1.center)$) --
+%   ($(T-1-1.north east)!.4!(T-1-1.center)$) -- cycle;
+
+%   \draw[color=cyan,fill=gray,opacity=0.4]
+%   ($(T-1-2.north west)!.4!(T-1-2.center)$) --
+%   ($(T-1-2.south west)!.4!(T-1-2.center)$) --
+%   ($(T-1-4.south east)!.4!(T-1-4.center)$) --
+%   ($(T-1-4.north east)!.4!(T-1-4.center)$) -- cycle;
+% \end{tikzpicture}
 
 Le \index{equazioni!di Maxwell}equazioni di Maxwell che descrivono il campo
 elettromagnetico possono essere ricavate applicando il formalismo qui
