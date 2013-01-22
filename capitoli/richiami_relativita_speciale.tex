@@ -1831,52 +1831,56 @@ forza per unità di area su una superficie perpendicolare all'asse $i$.  La part
 %%% <https://it.wikipedia.org/wiki/File:StressEnergyTensor_it.svg>.  TODO:
 %%% decidere se inserire questa figura, in caso affermativo completarla e
 %%% integrarla nel testo
-% \begin{tikzpicture}
-%   \matrix [matrix of math nodes,left delimiter=(,right delimiter=)] (T)
-%   {
-%     T_{00} & T_{01} & T_{02} & T_{03} \\
-%     T_{10} & T_{11} & T_{12} & T_{13} \\
-%     T_{20} & T_{21} & T_{22} & T_{23} \\
-%     T_{30} & T_{31} & T_{32} & T_{33} \\
-%   };
+% \newcommand{\tikzmark}[2]{
+%   \tikz[baseline=-\the\dimexpr\fontdimen22\textfont2\relax,remember picture,overlay]\node (#1) {#2};
+% }
+% \begin{equation}
+%   \begin{pmatrix}
+%     \tikzmark{00}{$T_{00}$} & \tikzmark{01}{$T_{01}$} & T_{02} & \tikzmark{03}{$T_{03}$} \\
+%     \tikzmark{10}{$T_{10}$} & \tikzmark{11}{$T_{11}$} & T_{12} & \tikzmark{13}{$T_{13}$} \\
+%     T_{20}                  & T_{21}                  & T_{22} & T_{23}                  \\
+%     \tikzmark{30}{$T_{30}$} & \tikzmark{31}{$T_{31}$} & T_{32} & \tikzmark{33}{$T_{33}$} \\
+%   \end{pmatrix} 
+% \end{equation}
 
-%   \draw[color=cyan,fill=purple,opacity=0.4]
-%   ($(T-2-2.north west)!.4!(T-2-2.center)$) --
-%   ($(T-4-2.south west)!.4!(T-4-2.center)$) --
-%   ($(T-4-4.south east)!.4!(T-4-4.center)$) --
-%   ($(T-2-4.north east)!.4!(T-2-4.center)$) -- cycle;
+% \begin{tikzpicture}[remember picture,overlay]
 
-%   \draw[fill,color=green,opacity=0.4]
-%   ($(T-2-2.north west)!.4!(T-2-2.center)$) --
-%   ($(T-2-2.south west)!.4!(T-2-2.center)$) --
-%   ($(T-4-4.south west)!.4!(T-4-4.center)$) --
-%   ($(T-4-4.south east)!.4!(T-4-4.center)$) --
-%   ($(T-4-4.north east)!.4!(T-4-4.center)$) --
-%   ($(T-2-2.north east)!.4!(T-2-2.center)$) -- cycle;
+%   % evidenzio tensore degli sforzi e flusso di impulso
+%   \draw[color=cyan,fill=purple,opacity=0.3]
+%   ($(11.north west)!.4!(11.center)$) --
+%   ($(31.south west)!.4!(31.center)$) --
+%   ($(33.south east)!.4!(33.center)$) --
+%   ($(13.north east)!.4!(13.center)$) -- cycle;
 
-%   \draw[color=cyan,fill=gray,opacity=0.4]
-%   ($(T-1-1.north west)!.4!(T-1-1.center)$) --
-%   ($(T-1-1.south west)!.4!(T-1-1.center)$) --
-%   ($(T-1-1.south east)!.4!(T-1-1.center)$) --
-%   ($(T-1-1.north east)!.4!(T-1-1.center)$) -- cycle;
+%   % evidenzio pressione
+%   \draw[fill,color=green,opacity=0.3]
+%   ($(11.north west)!.4!(11.center)$) --
+%   ($(11.north west)!.4!(11.center) - (0,9pt)$) --
+%   ($(33.south east)!.4!(33.center) - (9pt,0)$) --
+%   ($(33.south east)!.4!(33.center)$) --
+%   ($(33.south east)!.4!(33.center) + (0,8pt)$) --
+%   ($(11.north west)!.4!(11.center) + (8pt,0)$) -- cycle;
 
-%   \draw[color=cyan,fill=gray,opacity=0.4]
-%   ($(T-2-1.north west)!.4!(T-2-1.center)$) --
-%   ($(T-4-1.south west)!.4!(T-4-1.center)$) --
-%   ($(T-4-1.south east)!.4!(T-4-1.center)$) --
-%   ($(T-2-1.north east)!.4!(T-2-1.center)$) -- cycle;
+%   % evidenzio densità di energia
+%   \draw[color=cyan,fill=gray,opacity=0.3]
+%   ($(00.north west)!.4!(00.center)$) --
+%   ($(00.south west)!.4!(00.center)$) --
+%   ($(00.south east)!.4!(00.center)$) --
+%   ($(00.north east)!.4!(00.center)$) -- cycle;
 
-%   \draw[color=cyan,fill=gray,opacity=0.4]
-%   ($(T-1-1.north west)!.4!(T-1-1.center)$) --
-%   ($(T-1-1.south west)!.4!(T-1-1.center)$) --
-%   ($(T-1-1.south east)!.4!(T-1-1.center)$) --
-%   ($(T-1-1.north east)!.4!(T-1-1.center)$) -- cycle;
+%   % evidenzio densità di impulso
+%   \draw[color=cyan,fill=gray,opacity=0.3]
+%   ($(10.north west)!.4!(10.center)$) --
+%   ($(30.south west)!.4!(30.center)$) --
+%   ($(30.south east)!.4!(30.center)$) --
+%   ($(10.north east)!.4!(10.center)$) -- cycle;
 
-%   \draw[color=cyan,fill=gray,opacity=0.4]
-%   ($(T-1-2.north west)!.4!(T-1-2.center)$) --
-%   ($(T-1-2.south west)!.4!(T-1-2.center)$) --
-%   ($(T-1-4.south east)!.4!(T-1-4.center)$) --
-%   ($(T-1-4.north east)!.4!(T-1-4.center)$) -- cycle;
+%   % evidenzio flusso di energia
+%   \draw[color=cyan,fill=gray,opacity=0.3]
+%   ($(01.north west)!.4!(01.center)$) --
+%   ($(01.south west)!.4!(01.center)$) --
+%   ($(03.south east)!.4!(03.center)$) --
+%   ($(03.north east)!.4!(03.center)$) -- cycle;
 % \end{tikzpicture}
 
 Le \index{equazioni!di Maxwell}equazioni di Maxwell che descrivono il campo
