@@ -74,7 +74,32 @@
 
 % librerie ti TikZ
 \usetikzlibrary{calc,decorations.pathmorphing,decorations.pathreplacing,
-  intersections}
+  intersections,matrix,backgrounds}
+
+% Stili per TikZ per rendere una matrix simile a una classica pmatrix di LaTeX.
+% Vedi http://tex.stackexchange.com/a/26909
+\tikzset{
+  ams/.style={
+    baseline=-.7ex,
+    every left delimiter/.style={xshift=2pt},
+    every right delimiter/.style={xshift=-2pt},
+    every node/.style={inner sep=0pt},
+  },
+  ams matrix/.style={
+    inner sep=1pt,
+    column sep=1.5ex,
+    row sep=2\arraycolsep,
+    matrix of math nodes,
+  },
+  pmatrix/.style={
+    ams,
+    every matrix/.style={
+      ams matrix,
+      left delimiter={(},
+      right delimiter={)},
+    }
+  }
+}
 %%%%% Fine impostazioni
 
 %%%%% Comandi personalizzati

@@ -1786,7 +1786,7 @@ quindi l'equazione precedente si può scrivere, per un sistema chiuso, come
 \end{equation}
 Per il corollario del teorema di Gauss possiamo allora definire il quadrivettore
 \begin{equation}
-  P^{\alpha} = \int T^{0\alpha}\dd V,
+  P^{\alpha} = \int T^{\alpha 0}\dd V,
 \end{equation}
 in cui l'integrale è esteso a tutto lo spazio, e $P^{\alpha}$ è costante
 rispetto al tempo.
@@ -1809,79 +1809,107 @@ Dunque
 \end{equation}
 rappresenta l'opposto dell'energia del sistema.  Invece
 \begin{equation}
-  T^{0i} = -\parder{q}{x^{i}} \parder{\Lambda}{q_{,i}}
+  T^{i0} = -\parder{q}{x^{i}} \parder{\Lambda}{q_{,i}}
 \end{equation}
 è l'opposto della densità di momento, pertanto
 \begin{equation}
-  P^{i} = \int T^{0i}\dd V
+  P^{i} = \int T^{i0}\dd V
 \end{equation}
 è l'opposto della componente $i$ della quantità di moto.  Abbiamo così fatto
 vedere che il quadrivettore $P^{\alpha}$ qui definito è proprio il
 quadrimomento, a meno del segno, e l'equazione~\eqref{eq:div-tens-en-imp}
 rappresenta la legge di conservazione del quadrimomento per un sistema chiuso.
-Inoltre $T^{i0}$ è la densità di flusso di energia nella direzione $x^{i}$ (o,
-equivalentemente, la densità della componente $i$ del momento), $T^{ij}$ è la
-densità di flusso della componente $j$ del momento nella direzione $i$.
-Equivalentemente, $T^{ij}$ può essere interpretata come la componente $j$ della
-forza per unità di area su una superficie perpendicolare all'asse $i$.  La parte
+Inoltre $T^{i0}$ è la densità della componente $i$ del momento.  Si possono dare
+interpretazioni fisiche anche delle altre componenti del tensore
+energia-impulso.\footnote{Vedi~\textcite[417-418]{barone:relativita},
+  \textcite[137-138]{misner:gravitation}.}
+$T^{0i}$ è la densità di flusso di energia nella direzione $x^{i}$, $T^{ij}$ è
+la densità di flusso della componente $j$ del momento nella direzione $i$.
+Equivalentemente, $T^{ij}$ può essere interpretata come la componente $i$ della
+forza per unità di area su una superficie perpendicolare all'asse $j$.  La parte
 ``spaziale'' del tensore energia impulso, $T^{ij}$, è chiamata anche
-\emph{tensore degli sforzi} (è un tensore tridimensionale di rango $2$).
+\emph{tensore degli
+  sforzi},\footnote{Ricordiamo
+  che in meccanica classica si definisce il tensore degli sforzi $T$ come quel
+  tensore tridimensionale di rango $2$ tale che la forza $\dd \bm{F}$ agente su
+  un elemento di superficie $\dd\bm{A}$ è esprimibile come
+  $\dd\bm{F} = T\dd\bm{A}$.} % Vedi Goldstein, Poole & Safko, capitolo 13
+le componenti $T^{ij}$, con $i \neq j$ costituiscono gli sforzi di taglio, le
+componenti diagonali $T^{ii}$ (senza somma su $i$) sono i cosiddetti sforzi
+normali, cioè la pressione agente nella direzione $i$.  Riassumiamo in forma
+matriciale il tensore energia impulso
+%%% Figura ispirata a questa:
+%%% https://it.wikipedia.org/wiki/File:StressEnergyTensor_it.svg
+\begin{equation}
+  \begin{tikzpicture}[pmatrix]
+    \matrix (t)
+    {
+      T_{00} & T_{01} & T_{02} & T_{03} \\
+      T_{10} & T_{11} & T_{12} & T_{13} \\
+      T_{20} & T_{21} & T_{22} & T_{23} \\
+      T_{30} & T_{31} & T_{32} & T_{33} \\
+    } ;
 
-%%% Rappresentazione matriciale del tensore energia impulso simile a
-%%% <https://it.wikipedia.org/wiki/File:StressEnergyTensor_it.svg>.  TODO:
-%%% decidere se inserire questa figura, in caso affermativo completarla e
-%%% integrarla nel testo
-% \newcommand{\tikzmark}[2]{
-%   \tikz[baseline=-\the\dimexpr\fontdimen22\textfont2\relax,remember picture,overlay]\node (#1) {#2};
-% }
-% \begin{equation}
-%   \begin{pmatrix}
-%     \tikzmark{00}{$T_{00}$} & \tikzmark{01}{$T_{01}$} & T_{02} & \tikzmark{03}{$T_{03}$} \\
-%     \tikzmark{10}{$T_{10}$} & \tikzmark{11}{$T_{11}$} & T_{12} & \tikzmark{13}{$T_{13}$} \\
-%     T_{20}                  & T_{21}                  & T_{22} & T_{23}                  \\
-%     \tikzmark{30}{$T_{30}$} & \tikzmark{31}{$T_{31}$} & T_{32} & \tikzmark{33}{$T_{33}$} \\
-%   \end{pmatrix} 
-% \end{equation}
+    \begin{scope}[on background layer]
+      % evidenzio tensore degli sforzi e flusso di impulso
+      \draw[color=cyan,fill=purple,opacity=0.3]
+      (t-2-2.north west) --
+      (t-4-2.south west) --
+      (t-4-4.south east) --
+      (t-2-4.north east) -- cycle;
 
-% \begin{tikzpicture}[remember picture,overlay]
+      % evidenzio pressione
+      \draw[fill,color=green,opacity=0.3]
+      (t-2-2.north west) --
+      (t-2-2.south west) --
+      (t-4-4.south west) --
+      (t-4-4.south east) --
+      (t-4-4.north east) --
+      (t-2-2.north east) -- cycle;
 
-%   % evidenzio tensore degli sforzi e flusso di impulso
-%   \draw[color=cyan,fill=purple,opacity=0.3]
-%   ($(11.north west)!.4!(11.center)$) --
-%   ($(31.south west)!.4!(31.center)$) --
-%   ($(33.south east)!.4!(33.center)$) --
-%   ($(13.north east)!.4!(13.center)$) -- cycle;
+      % evidenzio densità di energia
+      \draw[color=cyan,fill=gray,opacity=0.3]
+      (t-1-1.north west) --
+      (t-1-1.south west) --
+      (t-1-1.south east) --
+      (t-1-1.north east) -- cycle;
 
-%   % evidenzio pressione
-%   \draw[fill,color=green,opacity=0.3]
-%   ($(11.north west)!.4!(11.center)$) --
-%   ($(11.north west)!.4!(11.center) - (0,9pt)$) --
-%   ($(33.south east)!.4!(33.center) - (9pt,0)$) --
-%   ($(33.south east)!.4!(33.center)$) --
-%   ($(33.south east)!.4!(33.center) + (0,8pt)$) --
-%   ($(11.north west)!.4!(11.center) + (8pt,0)$) -- cycle;
+      % evidenzio densità di impulso
+      \draw[color=cyan,fill=gray,opacity=0.3]
+      (t-2-1.north west) --
+      (t-4-1.south west) --
+      (t-4-1.south east) --
+      (t-2-1.north east) -- cycle;
 
-%   % evidenzio densità di energia
-%   \draw[color=cyan,fill=gray,opacity=0.3]
-%   ($(00.north west)!.4!(00.center)$) --
-%   ($(00.south west)!.4!(00.center)$) --
-%   ($(00.south east)!.4!(00.center)$) --
-%   ($(00.north east)!.4!(00.center)$) -- cycle;
+      % evidenzio flusso di energia
+      \draw[color=cyan,fill=gray,opacity=0.3]
+      (t-1-2.north west) --
+      (t-1-2.south west) --
+      (t-1-4.south east) --
+      (t-1-4.north east) -- cycle;
+    \end{scope}
 
-%   % evidenzio densità di impulso
-%   \draw[color=cyan,fill=gray,opacity=0.3]
-%   ($(10.north west)!.4!(10.center)$) --
-%   ($(30.south west)!.4!(30.center)$) --
-%   ($(30.south east)!.4!(30.center)$) --
-%   ($(10.north east)!.4!(10.center)$) -- cycle;
+    \begin{scope}[font=\small]
+      \draw[color=cyan] (t-1-3.north) -- ++(0,20pt)
+      node[align=center,fill=white] {flusso di \\ energia};
 
-%   % evidenzio flusso di energia
-%   \draw[color=cyan,fill=gray,opacity=0.3]
-%   ($(01.north west)!.4!(01.center)$) --
-%   ($(01.south west)!.4!(01.center)$) --
-%   ($(03.south east)!.4!(03.center)$) --
-%   ($(03.north east)!.4!(03.center)$) -- cycle;
-% \end{tikzpicture}
+      \draw[color=cyan] (t-1-1.north) -- ++(0,20pt)
+      node[align=center,fill=white] {densità di \\ energia};
+
+      \draw[color=cyan] (t-4-1.south) -- ++(0,-25pt)
+      node[align=center,fill=white] {densità di \\ quantità \\ di moto};
+
+      \draw[color=green] (t-4-4.east) -- ++(20pt,0)
+      node[align=center,fill=white,label={right:sforzi normali (pressione)}] {};
+
+      \draw[color=purple] ($(t-2-4.east) - (.5pt,0)$) -- ++(20pt,0)
+      node[align=center,fill=white,label={right:sforzi di taglio}] {};
+
+      \draw[color=cyan] (t-4-3.south) -- ++(0,-25pt)
+      node[align=center,fill=white] {flusso di \\ quantità \\ di moto};
+    \end{scope}
+  \end{tikzpicture}
+\end{equation}
 
 Le \index{equazioni!di Maxwell}equazioni di Maxwell che descrivono il campo
 elettromagnetico possono essere ricavate applicando il formalismo qui
@@ -1939,7 +1967,7 @@ $A_{\mu}$ del quadrimomento come campi
 \end{equation}
 Si
 dimostra\footnote{Vedi \textcite[419]{barone:relativita},
-  \textcite[111]{landau:campi}.}
+  \textcite[111]{landau:campi}, \textcite[141-421]{misner:gravitation}.}
 che, per ragioni puramente fisiche, il tensore energia-impulso deve sempre
 essere simmetrico, ma il tensore $T_{\textup{em}}^{\alpha\beta}$ così ottenuto
 non lo è.  Mediante un'opportuna procedura di
