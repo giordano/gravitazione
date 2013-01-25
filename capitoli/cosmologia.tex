@@ -398,6 +398,7 @@ e con la sostituzione $\rho_c=3H_0^2/(8\pi G)$
 \end{equation}
 ed infine
 \begin{equation}
+  \label{ddRcc}
   \frac {\ddot{R}} {R} = H_0^2
   \left[
     \Omega_{\Lambda} -\frac {\Omega_m (1+z)^3} {2 }  - \Omega_r (1+z)^4
@@ -428,8 +429,8 @@ Eliminando $\ddot R$ con l'uso dell'eq. (\ref{ecc1})
 \end{equation}
 da cui segue:
 \begin{equation}
- H(z)=H_0 \left[\Omega_{\Lambda}+\Omega_{k}(1+z)^2+\Omega_m (1+z)^3+\Omega_r (1+z)^4\right]^{1/2}
- \label{hzcc}
+  H(z)=H_0 \left[\Omega_{\Lambda}+\Omega_{k}(1+z)^2+\Omega_m (1+z)^3+\Omega_r (1+z)^4\right]^{1/2}
+  \label{hzcc}
 \end{equation}
 con
 \begin{equation}
@@ -447,25 +448,26 @@ Inoltre per il parametro di decelerazione si ha:
 {\bf Osservazione}: la dipendenza $H=H(t)$ influenza la relazione
 distanza-redshift.  Dalla definizione $z=R_0/R(t) -1$, segue
 \begin{equation}
-  dz = -\frac {R_0}{R(t)} H(t) dt
+  \dd z = -\frac {R_0}{R(t)} H(t) \dd t
 \end{equation}
 Per segnali luminosi ($d \tau=0$)
 \begin{equation}
-  \int_t^{t_0} \frac {dt}{R(t)}= \int_0^{r} \frac {dr}{\sqrt1-kr^2} = r + O(r^3)
+  \int_t^{t_0} \frac {\dd t}{R(t)}= \int_0^{r} \frac {\dd r}{\sqrt1-kr^2} = r +
+  \mathcal{O}(r^3)
 \end{equation}
 Dalle precedenti segue:
 \begin{equation}
-  r= \int_0^z \frac{dz}{R_0 ~ H(t)}
+  r= \int_0^z \frac{\dd z}{R_0 ~ H(t)}
 \end{equation}
 per cui la distanza di luminosit\'a $d_L= r R_0 (1+z)$ diventa
 \begin{equation}
-  d_L = (1+z) \int_0^z \frac{dz}{H(z)}
+  d_L = (1+z) \int_0^z \frac{\dd z}{H(z)}.
 \end{equation}
 In conclusione lo studio del diagramma $m-z$ per oggetti molto lontani coinvolge
 i 4 parametri: $\Omega_{\Lambda}$, $\Omega_{k}$, $\Omega_{m}$, $\Omega_{r}$.  La
 vecchia relazione era
 \begin{equation}
-  d_L = \frac {1}{H_0} \left[ z+ \frac{1}{2}(1-q_0)z^2\right]
+  d_L = \frac {1}{H_0} \left[ z+ \frac{1}{2}(1-q_0)z^2\right].
 \end{equation}
 
 {\bf Osservazione:} L'introduzione della costante cosmologica nelle equazioni di
@@ -487,7 +489,7 @@ si ha quindi
 Pertanto $\rho_{X}=\text{costante}$ implica $w=-1$.  Questo dimostra appunto che
 da $\rho_{\Lambda}=\text{costante}$ si ha $p_{\Lambda}=-\rho_{\Lambda}$.
 Notiamo ancora che il rapporto
-$\rho_{X}/\rho_m \propto R^{-3w} \propto (1+z)^{3w}$. Quindi per il caso $w<0$,
+$\rho_{X}/\rho_m \propto R^{-3w} \propto (1+z)^{3w}$.  Quindi per il caso $w<0$,
 si ha che per $t \to 0$ ($z \to \infty$), $\rho_{X}/\rho_m \to 0$, cioè
 l'importanza della componente X diminuisce indietro nel tempo.  Allora la
 cosmologia di Friedmann non è modificata per $z>>1$ dall'introduzione della
@@ -524,7 +526,7 @@ Nel caso $k=0$,
   q_0= \frac {1+3w \Omega_{X}}{2}
 \end{equation}
 vedremo che $\Omega_{X}=0.7$ ed $\Omega_{m}=0.3$, pertanto
-$q_0=0.5+w \propto - \ddot{R_0}$ quindi se $w<0.5$ Universo accelera.
+$q_0=0.5+w \propto - \ddot{R}_0$ quindi se $w<0.5$ Universo accelera.
 
 Tornando indietro alla relazione $d_L(z)$ osserviamo che nel caso $\Omega_{k}=0$
 ed $\Omega_{\Lambda}=0$
@@ -544,12 +546,12 @@ L'introduzione della costante cosmologica pu\'o essere interpretata in due modi:
 caso (a) equivale a cambiare la lagrangiana della materia (descritta da
 coordinate generalizzate $\phi$) in accordo a:
 \begin{equation}
-  L_{matter} \to \prime L_{matter} = L_{matter} - \Lambda/(8 \pi G)
+  L_{\textup{matter}} \to L'_{\textup{matter}} = L_{\textup{matter}} - \frac{\Lambda}{8 \pi G}.
 \end{equation}
 In questo caso l'azione diventa
 \begin{equation}
   S_{tot}=S_{g}+S_{m}= \frac {1}{16 \pi G}
-  \int R \sqrt{-g} d^4x + \int \left( L_{m}- \frac {\Lambda}{8 \pi G} \right) \sqrt{-g} d^4 x
+  \int R \sqrt{-g} \dd^4x + \int \left( L_{m}- \frac {\Lambda}{8 \pi G} \right) \sqrt{-g} \dd^4 x
 \end{equation}
 Osserva che le equazioni del moto per la materia (descritta dal campo $\phi$),
 ottenute da $\delta S/\delta \phi=0$, rimangono inalterate poiché
@@ -560,7 +562,7 @@ accoppia alla totale energia del sistema ne è influenzata.  Il caso (b)
 corrisponde a riscrivere l'azione totale come:
 \begin{equation}
   S_{tot}= \frac {1}{16 \pi G}
-  \int (R-2\Lambda)  \sqrt{-g} d^4x + \int  L_{m} \sqrt{-g} d^4 x
+  \int (R-2\Lambda)  \sqrt{-g} \dd^4x + \int  L_{m} \sqrt{-g} \dd^4 x
 \end{equation}
 Allora la gravità descritta da due costanti $G$ e $\Lambda$; in questo caso lo
 spazio-tempo è curvo anche in assenza di materia (eq. di Einstein nel vuoto non
