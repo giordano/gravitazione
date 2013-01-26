@@ -1349,7 +1349,7 @@ funzione scalare con d'Alambertiano nullo.  Allora anche $\chi$ ha come
 soluzione la sovrapposizione di onde piane, scalari, del
 tipo\footnote{Si noti che \textcite[258]{weinberg:gravitation} pone
   $\chi = \Re \{\uimm \epsilon\e^{\uimm k^{\lambda}x_{\lambda}}\}$, con
-  $\epsilon = -\uimm \tilde\chi$.}
+  $\epsilon = -\uimm \tilde{\chi}$.}
 \begin{equation}
   \chi = \Re \{\tilde{\chi} \e^{\uimm k^{\lambda}x_{\lambda}}\}
 \end{equation}
@@ -1360,18 +1360,19 @@ la trasformazione di gauge del quadripotenziale è
 \begin{equation}
   A_{\alpha} \to A'_{\alpha} = A_{\alpha} + \partial_{\alpha}\chi = e_{\alpha}
   \e^{\uimm k^{\lambda}x_{\lambda}} + \uimm k_{\alpha}  \tilde{\chi}\e^{\uimm
-    k^{\lambda}x_{\lambda}} = (e_{\alpha} + \uimm k_{\alpha} \tilde\chi)\e^{\uimm
-    k^{\lambda}x_{\lambda}} = e'_{\alpha}\e^{\uimm k^{\lambda}x_{\lambda}}.
+    k^{\lambda}x_{\lambda}} = (e_{\alpha} + \uimm k_{\alpha}
+  \tilde{\chi})\e^{\uimm k^{\lambda}x_{\lambda}} = e'_{\alpha}\e^{\uimm
+    k^{\lambda}x_{\lambda}}.
 \end{equation}
 Dopo aver eseguito questa trasformazione di gauge, la libertà sul valore di
-$\tilde\chi$ ci permette di annullare un'altra componente di $e'_{\alpha}$,
-infatti scegliendo $\tilde\chi = \uimm e_{0}/k$ abbiamo
+$\tilde{\chi}$ ci permette di annullare un'altra componente di $e'_{\alpha}$,
+infatti scegliendo $\tilde{\chi} = \uimm e_{0}/k$ abbiamo
 \begin{subequations}
   \begin{align}
-    e'_{0} &= e_{0} + \uimm k_{0} \tilde\chi = 0, \\
+    e'_{0} &= e_{0} + \uimm k_{0} \tilde{\chi} = 0, \\
     e'_{3} &= -e'_{0} = 0, \\
-    e'_{1} &= e_{1} + \uimm k_{1} \tilde\chi = e_{1}, \\
-    e'_{2} &= e_{2} + \uimm k_{2} \tilde\chi = e_{2}.
+    e'_{1} &= e_{1} + \uimm k_{1} \tilde{\chi} = e_{1}, \\
+    e'_{2} &= e_{2} + \uimm k_{2} \tilde{\chi} = e_{2}.
   \end{align}
 \end{subequations}
 Dunque la condizione di ortogonalità fra $k_{\alpha}$ e $e_{\alpha}$, derivante
@@ -2172,22 +2173,22 @@ interfacce tra le varie porzioni del fluido.
 Per ricavare il tensore energia-impulso di un fluido perfetto possiamo sfruttare
 l'interpretazione fisica che abbiamo dato per ciascuna delle sue componente.
 Iniziamo col considerare il fluido in un sistema comovente indichiamo con
-$\tilde T^{\alpha\beta}$ il tensore energia-impulso in questo sistema.  Poiché
+$\tilde{T}^{\alpha\beta}$ il tensore energia-impulso in questo sistema.  Poiché
 non c'è conduzione di calore, il flusso di energia è quello associato alle
 particelle, che nel sistema comovente è nullo, dunque
-$\tilde T^{0i} = \tilde T^{i0} = 0$.  Ricordiamo che $\tilde T^{ij}$ è la
-componente $j$ della forza per unità di area su una superficie perpendicolare
-all'asse $i$, quindi l'assenza di viscosità in un fluido perfetto comporta che
-il tensore degli sforzi $\tilde T^{ij}$ è diagonale.  Il fatto che questo sia
+$\tilde{T}^{0i} = \tilde{T}^{i0} = 0$.  Ricordiamo che $\tilde{T}^{ij}$ è la
+componente $i$ della forza per unità di area su una superficie perpendicolare
+all'asse $j$, quindi l'assenza di viscosità in un fluido perfetto comporta che
+il tensore degli sforzi $\tilde{T}^{ij}$ è diagonale.  Il fatto che questo sia
 vero per ogni sistema comovente, senza alcuna direzione privilegiata, implica in
-particolare che $\tilde T^{ij}$ è proporzionale alla matrice identità
+particolare che $\tilde{T}^{ij}$ è proporzionale alla matrice identità
 $\delta^{ij}$ e il fattore di proporzionalità sarà dunque la pressione $p$ del
-fluido: $\tilde T^{ij} = p \delta^{ij}$.  Infine, $\tilde T^{00}$ è la densità
+fluido: $\tilde{T}^{ij} = p \delta^{ij}$.  Infine, $\tilde{T}^{00}$ è la densità
 di energia, uguale alla densità di massa $\rho$ avendo posto la velocità della
 luce nel vuoto $c = 1$.  In definitiva, il tensore energia-impulso di un fluido
 perfetto in un sistema comovente è
 \begin{equation}
-  \tilde T^{\alpha\beta} =
+  \tilde{T}^{\alpha\beta} =
   \begin{pmatrix}
     \rho & 0 & 0 & 0 \\
     0    & p & 0 & 0 \\
@@ -2208,7 +2209,7 @@ T^{\mu\nu}$
     \begin{split}
       T^{00} &= \tensor{\Lambda}{^{0}_{\mu}} \tensor{\Lambda}{^{0}_{\nu}} \tilde
       T^{\mu\nu} = \tensor{\Lambda}{^{0}_{i}} \tensor{\Lambda}{^{0}_{j}} \tilde
-      T^{ij} + (\tensor{\Lambda}{^{0}_{0}})^{2} \tilde T^{00} = \gamma^{2} u_{i}
+      T^{ij} + (\tensor{\Lambda}{^{0}_{0}})^{2} \tilde{T}^{00} = \gamma^{2} u_{i}
       u_{j} p \delta^{ij} + \gamma^{2} \rho \\
       &= \frac{\rho +pu^{2}}{1-u^{2}},
     \end{split} \\
@@ -2219,9 +2220,9 @@ T^{\mu\nu}$
       T^{00} \\
       &= \bigg(\tensor{\delta}{^{i}_{k}} + u^{i}u_{k}\frac{\gamma -
         1}{u^{2}}\bigg) u_{l} \gamma p \delta^{kl} + u^{i} \gamma^{2} \rho \\
-      &= \bigg(\tensor{\delta}{^{i}_{k}} + u^{i}u_{k}\frac{\gamma - 1}{u^{2}}\bigg)
-      u^{k} \gamma p + u^{i} \gamma^{2} \rho = (u^{i} + u^{i}(\gamma - 1))
-      \gamma p + u^{i} \gamma^{2} \rho \\
+      &= \bigg(\tensor{\delta}{^{i}_{k}} + u^{i}u_{k}\frac{\gamma -
+        1}{u^{2}}\bigg) u^{k} \gamma p + u^{i} \gamma^{2} \rho = (u^{i} +
+      u^{i}(\gamma - 1)) \gamma p + u^{i} \gamma^{2} \rho \\
       &= u^{i}\gamma^{2} p + u^{i} \gamma^{2} \rho = \frac{p + \rho}{1 -
         u^{2}}u^{i},
     \end{split} \\
@@ -2251,12 +2252,12 @@ compatta\index{fluido!perfetto}
 \end{equation}
 con $U^{\mu} = (\gamma_{u}, \gamma_{u} \bm{u})$ quadrivelocità associata al
 vettore velocità $\bm{u}$.  Si riottiene l'espressione di
-$\tilde T^{\alpha\beta}$ ponendo
+$\tilde{T}^{\alpha\beta}$ ponendo
 $\bm{u} = \bm{0} \implies U^{\mu} = (1, \bm{0})$.
 
 Nel caso in cui le particelle del fluido si muovono con velocità molto più
 piccole di quella della luce nel vuoto (ma la velocità macroscopica $\bm{u}$ del
-fluido è arbitraria), il tensore energia-impulso $\tilde T^{\alpha\beta}$ assume
+fluido è arbitraria), il tensore energia-impulso $\tilde{T}^{\alpha\beta}$ assume
 un'espressione più semplice.  Innanzitutto nella densità di energia $\rho$
 possiamo trascurare tutti i termini piccoli rispetto alla densità di energia di
 riposo $\rho_{0}$, con $\rho_{0}$ somma delle masse a riposo delle particelle
@@ -2265,14 +2266,14 @@ anche la pressione data dall'energia del moto microscopico delle molecole è
 trascurabile rispetto alla densità di energia a riposo $\rho$, quindi possiamo
 scrivere
 \begin{equation}
-  \tilde T^{\alpha\beta} = \rho_{0} U^{\alpha} U^{\beta}.
+  \tilde{T}^{\alpha\beta} = \rho_{0} U^{\alpha} U^{\beta}.
 \end{equation}
 Se anche il moto macroscopico è lento il fattore lorentziano vale $1$, quindi
 $U^{\mu}= (1, \bm{u})$ e abbiamo\index{fluido!perfetto}
 \begin{subequations}
   \begin{align}
-    \tilde T^{00} &= \rho_{0}, \\
-    \tilde T^{ij} &= \rho_{0} U^{i} U^{j}.
+    \tilde{T}^{00} &= \rho_{0}, \\
+    \tilde{T}^{ij} &= \rho_{0} U^{i} U^{j}.
   \end{align}
 \end{subequations}
 
