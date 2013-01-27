@@ -306,8 +306,10 @@ e abbiamo dunque mostrato che ha quadridivergenza covariante nulla
 \section{Equazioni di Einstein}
 \label{sec:equazioni-einstein}
 
-\emph{Nota: in questo paragrafo indicheremo esplicitamente la velocità della
-  luce nel vuoto $c$.}
+\emph{Nota: in questo paragrafo, dove non diversamente specificato, indicheremo
+  esplicitamente la velocità della luce nel vuoto $c$ e adotteremo la
+  convenzione dei segni $(-++)$ seguita
+  da~\textcites{barone:relativita,landau:campi}.}
 
 Vogliamo ora determinare le equazioni del campo gravitazionale $g_{\mu\nu}$ a
 partire dal principio variazionale di Hamilton.  Assumiamo che l'azione $S$ sia
@@ -379,28 +381,24 @@ l'\index{identità!di Palatini}% TODO: vedere di dimostrarla
   differenza fra due connessioni affini, la quale è un tensore come visto nel
   paragrafo~\ref{sec:connessione-affine}.}
 \begin{equation}
-  \delta R_{\mu\nu} = (\delta \tensor{\Gamma}{^{\lambda}_{\mu\lambda}})_{;\nu} -
-  (\delta \tensor{\Gamma}{^{\lambda}_{\mu\nu}})_{;\lambda}.
+  \delta R_{\mu\nu} = (\delta \tensor{\Gamma}{^{\lambda}_{\mu\nu}})_{;\lambda} -
+  (\delta \tensor{\Gamma}{^{\lambda}_{\mu\lambda}})_{;\nu}.
 \end{equation}
-Allora si può riscrivere l'integrale in esame come
-\begin{equation}
-  \int g^{\mu\nu} \delta R_{\mu\nu} \sqrt{g} \dd^{4} x = \int (g^{\mu\nu} \delta
-  \tensor{\Gamma}{^{\lambda}_{\mu\lambda;\nu}} - g^{\mu\nu} \delta
-  \tensor{\Gamma}{^{\lambda}_{\mu\nu;\lambda}}) \sqrt{g} \dd^{4} x
-\end{equation}
-e per il teorema di Gauss in forma covariante~\eqref{eq:gauss-covariante}
-ricaviamo
+Allora, ricordando che $g^{\mu\nu}$ commuta con la derivazione covariante, si
+può riscrivere l'integrale in esame come
 \begin{equation}
   \begin{split}
-    \int g^{\mu\nu} \delta R_{\mu\nu} \sqrt{g} \dd^{4} x &= \int (\delta
-    \tensor{\Gamma}{^{\lambda\nu}_{\lambda;\nu}} - \delta
-    \tensor{\Gamma}{^{\lambda\nu}_{\nu;\lambda}}) \sqrt{g} \dd^{4} x \\
-    &= \int \delta \tensor{\Gamma}{^{\lambda\nu}_{\lambda}} \sqrt{g} \dd
-    \Sigma_{\nu} - \int \delta \tensor{\Gamma}{^{\lambda\nu}_{\lambda}} \sqrt{g}
-    \dd \Sigma_{\lambda} = 0
+    \int g^{\mu\nu} \delta R_{\mu\nu} \sqrt{g} \dd^{4} x &= \int ((g^{\mu\nu}
+    \delta \tensor{\Gamma}{^{\lambda}_{\mu\nu}})_{;\lambda} - (g^{\mu\nu} \delta
+    \tensor{\Gamma}{^{\lambda}_{\mu\lambda}})_{;\nu}) \sqrt{g} \dd^{4} x \\
+    &= \int g^{\mu\nu} \delta \tensor{\Gamma}{^{\lambda}_{\mu\nu}} \sqrt{g} \dd
+    \Sigma_{\lambda} - \int g^{\mu\nu}
+    \delta\tensor{\Gamma}{^{\lambda}_{\mu\lambda}} \sqrt{g}\dd\Sigma_{\nu} = 0
   \end{split}
 \end{equation}
-poiché gli integrali sulle ipersuperfici vanno calcolati sul bordo
+in cui abbiamo applicato il teorema di Gauss in forma
+covariante~\eqref{eq:gauss-covariante}.  Gli ultimi due integrali sulle
+ipersuperfici sono entrambi nulli poiché vanno calcolati sul bordo
 dell'ipervolume costante su cui si calcola la variazione dell'azione e sul bordo
 sono nulle le variazioni di $g_{\mu\nu}$ e quindi anche della connessione
 affine, la quale dipende dal tensore metrico.  Dunque abbiamo trovato che la
@@ -435,12 +433,9 @@ paragrafo~\ref{sec:tensore-energia-impulso}
 Nell'ultimo passaggio abbiamo sfruttato il fatto che l'integrale del secondo
 termine si trasforma, per il teorema di Gauss, in un integrale sul bordo del
 volume di integrazione sul quale le variazioni $\delta g^{\mu\nu}$ sono nulle.
-Introduciamo il tensore $T_{\mu\nu}$ definito
-da\footnote{Si noti che \textcites{barone:relativita,landau:campi} definisco
-  questo tensore con il segno opposto a causa della diversa convenzione sui
-  segni.  Vedi pagina~\pageref{eq:convenzione-segni}.}
+Introduciamo il tensore $T_{\mu\nu}$ definito da
 \begin{equation}
-  -\frac{1}{2} \sqrt{g} T_{\mu\nu} = \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
+  \frac{1}{2} \sqrt{g} T_{\mu\nu} = \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
   - \parder{}{x^{\lambda}}
   \bigg( \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
 \end{equation}
@@ -448,20 +443,20 @@ da\footnote{Si noti che \textcites{barone:relativita,landau:campi} definisco
 % energia-impulso (e mettere \index{tensore!energia-impulso})
 così la variazione dell'azione della materia diventa
 \begin{equation}
-  \delta S_{\textup{m}} = -\frac{1}{2c} \int T_{\mu\nu} \delta g^{\mu\nu}
+  \delta S_{\textup{m}} = \frac{1}{2c} \int T_{\mu\nu} \delta g^{\mu\nu}
   \sqrt{g} \dd^{4} x
 \end{equation}
-e la condizione di stazionarietà dell'azione totale del sistema campo
-gravitazionale + particelle interagenti è
+e la condizione di stazionarietà dell'azione totale del sistema costituito dal
+campo gravitazionale e dalle particelle interagenti è
 \begin{equation}
   \delta S = \delta(S_{\textup{g}} + S_{\textup{m}}) = -\int \bigg(
-  \frac{c^{3}}{16\pi G} \bigg( R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R \bigg) +
+  \frac{c^{3}}{16\pi G} \bigg( R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R \bigg) -
   \frac{1}{2c} T_{\mu\nu} \bigg) \sqrt{g} \delta g^{\mu\nu} \dd^{4} x = 0.
 \end{equation}
 Data l'arbitrarietà delle variazioni $\delta g^{\mu\nu}$ ricaviamo
 \begin{equation}
   \label{eq:einstein}
-  G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = -\frac{8\pi G}{c^{4}}
+  G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = \frac{8\pi G}{c^{4}}
   T_{\mu\nu}
 \end{equation}
 che sono le \emph{equazioni del campo gravitazionale} in presenza di sorgenti,
@@ -473,8 +468,11 @@ Osserviamo che dalla~\eqref{eq:divergenza-tens-einstein} deriva che anche il
 tensore energia-impulso della materia ha quadridivergenza covariante nulla
 $\tensor{T}{^{\mu\nu}_{;\mu}} = 0$.
 
-Moltiplicando gli ultimi due membri per $g^{\mu\nu}$, in modo da contrarre gli
-indici $\mu$ e $\nu$, otteniamo
+Riprendiamo la convenzione dei segni $(+--)$ di~\textcite{weinberg:gravitation},
+nella quale compare un segno meno nell'ultimo membro dell'equazione di Einstein,
+come spiegato a pagina~\pageref{eq:convenzione-segni}.  Moltiplicando gli ultimi
+due membri per $g^{\mu\nu}$, in modo da contrarre gli indici $\mu$ e $\nu$,
+otteniamo
 \begin{equation}
   R - \frac{1}{2}4R = -R = -\frac{8\pi G}{c^{4}}\tensor{T}{^{\lambda}_{\lambda}}
 \end{equation}
