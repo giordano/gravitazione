@@ -1788,7 +1788,7 @@ quindi l'equazione precedente si può scrivere, per un sistema chiuso, come
 \end{equation}
 Per il corollario del teorema di Gauss possiamo allora definire il quadrivettore
 \begin{equation}
-  P^{\alpha} = \int T^{\alpha 0}\dd V,
+  P^{\alpha} = \int T^{0\alpha}\dd V,
 \end{equation}
 in cui l'integrale è esteso a tutto lo spazio, e $P^{\alpha}$ è costante
 rispetto al tempo.
@@ -1810,11 +1810,11 @@ Dunque
 \end{equation}
 rappresenta l'energia del sistema.  Invece
 \begin{equation}
-  T^{i0} = \parder{q}{x_{0}} \parder{\Lambda}{q_{,i}}
+  T^{0i} = \parder{q}{x_{i}} \parder{\Lambda}{q_{,0}}
 \end{equation}
 è la densità di momento, pertanto
 \begin{equation}
-  P^{i} = \int T^{i0}\dd V
+  P^{i} = \int T^{0i}\dd V
 \end{equation}
 è la componente $i$ della quantità di moto.  Abbiamo così fatto vedere che il
 quadrivettore $P^{\alpha}$ qui definito è proprio il quadrimomento e
@@ -1823,7 +1823,7 @@ quadrimomento per un sistema chiuso.  Si possono dare interpretazioni fisiche
 anche delle altre componenti del tensore
 energia-impulso.\footnote{Vedi~\textcite[417-418]{barone:relativita},
   \textcite[137-138]{misner:gravitation}.}
-$T^{0i}$ è la densità di flusso di energia nella direzione $x^{i}$, $T^{ij}$ è
+$T^{i0}$ è la densità di flusso di energia nella direzione $x^{i}$, $T^{ij}$ è
 la densità di flusso della componente $j$ del momento nella direzione $i$.
 Equivalentemente, $T^{ij}$ può essere interpretata come la componente $i$ della
 forza per unità di area su una superficie perpendicolare all'asse $j$.  La parte
@@ -1851,7 +1851,7 @@ matriciale il tensore energia impulso
     } ;
 
     \begin{scope}[on background layer]
-      % evidenzio tensore degli sforzi e flusso di impulso
+      % evidenzio tensore degli sforzi e densità di flusso di momento
       \draw[color=cyan,fill=purple,opacity=0.3]
       (t-2-2.north west) --
       (t-4-2.south west) --
@@ -1874,14 +1874,14 @@ matriciale il tensore energia impulso
       (t-1-1.south east) --
       (t-1-1.north east) -- cycle;
 
-      % evidenzio densità di impulso
+      % evidenzio densità di flusso di energia
       \draw[color=cyan,fill=gray,opacity=0.3]
       (t-2-1.north west) --
       (t-4-1.south west) --
       (t-4-1.south east) --
       (t-2-1.north east) -- cycle;
 
-      % evidenzio flusso di energia
+      % evidenzio densità di momento
       \draw[color=cyan,fill=gray,opacity=0.3]
       (t-1-2.north west) --
       (t-1-2.south west) --
@@ -1890,14 +1890,14 @@ matriciale il tensore energia impulso
     \end{scope}
 
     \begin{scope}[font=\small]
-      \draw[color=cyan] (t-1-3.north) -- ++(0,20pt)
-      node[align=center,fill=white] {flusso di \\ energia};
+      \draw[color=cyan] ($(t-1-3.north) + (5pt,0)$) -- ++(0,20pt)
+      node[align=center,fill=white] {densità di \\ momento};
 
       \draw[color=cyan] (t-1-1.north) -- ++(0,20pt)
       node[align=center,fill=white] {densità di \\ energia};
 
       \draw[color=cyan] (t-4-1.south) -- ++(0,-25pt)
-      node[align=center,fill=white] {densità di \\ quantità \\ di moto};
+      node[align=center,fill=white] {densità di \\ flusso di \\ energia};
 
       \draw[color=green] (t-4-4.east) -- ++(20pt,0)
       node[align=center,fill=white,label={right:sforzi normali (pressione)}] {};
@@ -1905,8 +1905,8 @@ matriciale il tensore energia impulso
       \draw[color=purple] ($(t-2-4.east) - (.5pt,0)$) -- ++(20pt,0)
       node[align=center,fill=white,label={right:sforzi di taglio}] {};
 
-      \draw[color=cyan] (t-4-3.south) -- ++(0,-25pt)
-      node[align=center,fill=white] {flusso di \\ quantità \\ di moto};
+      \draw[color=cyan] ($(t-4-3.south) + (5pt,0)$) -- ++(0,-25pt)
+      node[align=center,fill=white] {densità di \\ flusso di \\ momento};
     \end{scope}
   \end{tikzpicture}
 \end{equation}
