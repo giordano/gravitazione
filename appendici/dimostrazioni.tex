@@ -226,6 +226,74 @@ Sommando membro a membro queste tre relazioni si ottiene l'identità di Bianchi
   R_{\lambda\mu\eta\nu;\kappa} = 0.
 \end{equation}
 
+\section{Dimostrazione dell'identità di Palatini}
+\label{sec:dimostr-palatini}
+
+% vedi Weinberg, pagina 290
+Se si fa variare la metrica $g_{\mu\nu} \to g_{\mu\nu} + \delta g_{\mu\nu}$, con
+$\delta g_{\mu\nu}$ piccolo, la variazione del tensore di
+Ricci~\eqref{eq:tens-ricci} al primo ordine in $\delta g_{\mu\nu}$ è data da
+\begin{equation}
+  \delta R_{\mu\nu}
+  = \parder{\delta\tensor{\Gamma}{^{\lambda}_{\mu\lambda}}}{x^{\nu}}
+  - \parder{\delta\tensor{\Gamma}{^{\lambda}_{\mu\nu}}}{x^{\lambda}} +
+  \delta\tensor{\Gamma}{^{\eta}_{\mu\lambda}}
+  \tensor{\Gamma}{^{\lambda}_{\eta\nu}} +
+  \delta\tensor{\Gamma}{^{\lambda}_{\eta\nu}}
+  \tensor{\Gamma}{^{\eta}_{\mu\lambda}} -
+  \delta\tensor{\Gamma}{^{\eta}_{\mu\nu}}
+  \tensor{\Gamma}{^{\lambda}_{\eta\lambda}} -
+  \delta\tensor{\Gamma}{^{\lambda}_{\eta\lambda}}
+  \tensor{\Gamma}{^{\eta}_{\mu\nu}},
+\end{equation}
+in cui $\delta\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ è la variazione della
+connessione affine
+\begin{equation}
+  \delta\tensor{\Gamma}{^{\lambda}_{\mu\nu}} = -g^{\lambda\rho}\delta
+  g_{\rho\sigma} \tensor{\Gamma}{^{\sigma}_{\mu\nu}} +
+  \frac{1}{2}g^{\lambda\rho} \bigg(\parder{\delta g_{\rho\mu}}{x^{n}}
+  + \parder{\delta g_{\rho\nu}}{x^{\mu}} - \parder{\delta
+    g_{\mu\nu}}{x^{\rho}}\bigg).
+\end{equation}
+Le quantità $\delta \tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ sono dei tensori,
+essendo differenze fra due connessioni affini, quindi possiamo calcolare le loro
+derivate covarianti (l'operazione di derivazione covarianti è calcolata usando
+la connessione affine imperturbata $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$).  In
+particolare risulta
+\begin{subequations}
+  \begin{align}
+    (\delta \tensor{\Gamma}{^{\lambda}_{\mu\lambda}})_{;\nu} &= (\delta
+    \tensor{\Gamma}{^{\lambda}_{\mu\lambda}})_{,\nu} +
+    \delta\tensor{\Gamma}{^{\eta}_{\mu\lambda}}
+    \tensor{\Gamma}{^{\lambda}_{\eta\nu}} -
+    \delta\tensor{\Gamma}{^{\lambda}_{\eta\lambda}}
+    \tensor{\Gamma}{^{\eta}_{\mu\nu}} -
+    \delta\tensor{\Gamma}{^{\lambda}_{\mu\eta}}
+    \tensor{\Gamma}{}^{\eta}_{\nu\lambda},  \\
+    (\delta \tensor{\Gamma}{^{\lambda}_{\mu\nu}})_{;\lambda} &= (\delta
+    \tensor{\Gamma}{^{\lambda}_{\mu\nu}})_{,\lambda} +
+    \delta\tensor{\Gamma}{^{\eta}_{\mu\nu}}
+    \tensor{\Gamma}{^{\lambda}_{\eta\lambda}} -
+    \delta\tensor{\Gamma}{^{\lambda}_{\eta\nu}}
+    \tensor{\Gamma}{^{\eta}_{\mu\lambda}} -
+    \delta\tensor{\Gamma}{^{\lambda}_{\mu\eta}}
+    \tensor{\Gamma}{}^{\eta}_{\nu\lambda}.
+  \end{align}
+\end{subequations}
+È immediato verificare che la variazione del tensore di Ricci
+$\delta R_{\mu\nu}$ è data dalla differenza di queste due quantità
+\begin{equation}
+  \delta R_{\mu\nu} = (\delta \tensor{\Gamma}{^{\lambda}_{\mu\lambda}})_{;\nu}
+  - (\delta \tensor{\Gamma}{^{\lambda}_{\mu\nu}})_{;\lambda}.
+\end{equation}
+Questa è l'\index{identità!di Palatini}\emph{identità di Palatini}.  È stata
+ottenuta con la solita convenzione dei segni $(+--)$
+di~\textcite{weinberg:gravitation}.  Se si invece adotta la convenzione $(+--)$,
+come \textcites{barone:relativita,landau:campi}, si ottiene
+\begin{equation}
+  \delta R_{\mu\nu} = (\delta \tensor{\Gamma}{^{\lambda}_{\mu\nu}})_{;\lambda} -
+  (\delta \tensor{\Gamma}{^{\lambda}_{\mu\lambda}})_{;\nu}.
+\end{equation}
 
 %%% Local Variables:
 %%% mode: latex
