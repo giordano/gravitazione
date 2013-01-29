@@ -26,13 +26,13 @@ campo elettrico.  Analogamente, la forza che risente un corpo dotato di carica
 gravitazionale $m_{\textup{G}}^{}$ immerso in un campo gravitazionale $\bm{g}$ è
 data da
 \begin{equation}
-  \bm{F} = m_{\textup{g}} \bm{g}.
+  \bm{F} = m_{\textup{G}} \bm{g}.
 \end{equation}
 Nel caso particolare in cui il campo $\bm{g}$ sia generato da un corpo di massa
 $M$ si ha la ben nota \index{legge di gravitazione universale di Newton}legge di
 gravitazione universale di Newton
 \begin{equation}
-  \bm{F} = -\frac{GMm_{\textup{g}}}{r^{2}}\versor{r}.
+  \bm{F} = -\frac{GMm_{\textup{G}}}{r^{2}}\versor{r}.
 \end{equation}
 La carica gravitazionale, o \emph{massa gravitazionale}, di un corpo quantifica
 l'intensità dell'interazione del corpo con il campo gravitazionale esterno e,
@@ -912,19 +912,22 @@ otteniamo l'ulteriore relazione
 \end{equation}
 Per trovare l'ultima ``equazione di Maxwell'' per il campo gravitomagnetico
 dobbiamo sfruttare la seguente equazione valida per un campo gravitazionale
-debole e indipendente dal
-tempo\footnote{Vedi~\textcite[139]{ohanian:gravitazione}.}
-% Nota: l'Ohanian sbaglia un segno.  Per determinare correttamente l'equazione
-% ho usato l'espressione lineare (primo ordine di h) di R_{\mu\nu} calcolata nel
-% paragrafo sulle onde gravitazionali nel vuoto.  Si trova subito che la
-% componente 0k è quella che ho scritto qui.
+debole e indipendente dal tempo
+% Nota: il segno del laplaciano nell'equazione [3.121] dell'Ohanian-Ruffini (a
+% pagina 139 nell'edizione italiana) è diverso per la diversa scelta dei segni
+% della metrica che comporta un segno opposto nel dalambertiano.
 \begin{equation}
-  \nabla^{2}h^{0k} - \partial_{l}\partial^{k} h^{0l} = -16\pi GT^{0k},
+  \nabla^{2}h^{0k} - \partial_{l}\partial^{k} h^{0l} = \partial_{l}\partial^{l}
+  h^{0k} - \partial_{l}\partial^{k} h^{0l} = -16\pi GT^{0k},
 \end{equation}
 in cui $T^{0k} = \rho v^{k}$ è la componente $0k$ del tensore energia-impulso,
 quindi rappresenta la densità di flusso di energia nella direzione $k$.  Questa
-equazione deriva dall'approssimazione di campo debole delle equazioni di
-Einstein che vedremo nei prossimi capitoli e può anche essere scritta come
+equazione deriva dall'approssimazione lineare delle equazioni di
+Einstein\footnote{Anticipiamo che l'equazione precedente può essere ricavata
+  inserendo nelle componenti $0k$ dell'equazione di
+  Einstein~\eqref{eq:einstein-lineare-esatta} l'approssimazione lineare del
+  tensore di Ricci~\eqref{eq:ricci-lineare}, con l'ipotesi di campo statico,
+  cioè le cui derivate temporali sono nulle.}  e può anche essere scritta come
 \begin{equation}
   -16\pi GT^{0k} = \partial_{l}(h^{0k,l} - h^{0l,k}) = 2\partial_{l}f^{lk} =
   \epsilon^{lkj}\partial_{l}b_{j} = -\epsilon^{klj}\partial_{l}b_{j} = -(\nabla

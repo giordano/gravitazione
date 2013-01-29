@@ -11,16 +11,30 @@ emettere radiazione analogamente a quanto succede per il campo elettromagnetico,
 come abbiamo visto nei paragrafi~\ref{sec:onde-elettromagnetiche-vuoto} e
 \ref{sec:onde-elettromagnetiche-cariche}.
 
-Sebbene questo risultato sarà ottenuto nell'approssimazione di campo debole, è
-un fatto del tutto generale, ma la trattazione non approssimata presenta
-notevoli difficoltà matematiche legate alla non linearità delle equazioni di
-Einstein.
+L'esistenza delle onde gravitazionali è facile da intuire in base al seguente
+ragionamento.  Una variazione della distribuzione delle masse, come per esempio
+il moto di una pulsar rotante, produce una variazione del campo gravitazionale
+che però non può propagarsi istantaneamente in tutto l'Universo, perché
+violerebbe il principio di causalità e sarebbe comunque vietato dalla relatività
+ristretta, ma si diffonderà alla velocità della luce, l'unica invariante per
+trasformazioni di Lorentz.  La variazione del campo gravitazionale giungerà in
+ogni punto dell'Universo con un ritardo pari al tempo necessario a un segnale
+luminoso per andare dalla sorgente della variazione fino al punto considerato.
+Questa propagazione della perturbazione del campo gravitazionale, e quindi dello
+spazio-tempo, è l'onda gravitazionale.
 
 \section{Pseudotensore energia-impulso del campo gravitazionale}
 \label{sec:energ-impulso-grav}
 
-Ricordiamo che nell'approssimazione di campo
-debole il tensore metrico covariante è dato da
+In questo capitolo il nostro scopo è quello di studiare le onde gravitazionali
+nell'approssimazione di campo debole, per fare ciò dobbiamo linearizzare le
+equazioni di Einstein.  Bisogna tener presente che le onde gravitazionali sono
+un fatto del tutto generale, ma la trattazione non approssimata presenta
+notevoli difficoltà matematiche legate alla non linearità delle equazioni di
+Einstein.
+
+Ricordiamo che nell'approssimazione di campo debole il tensore metrico
+covariante è dato da
 \begin{equation}
   g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu},
 \end{equation}
@@ -28,7 +42,7 @@ con $\abs{h_{\mu\nu}} \ll 1$, mentre il tensore metrico controvariante è
 \begin{equation}
   g^{\mu\nu} = \eta^{\mu\nu} - h^{\mu\nu},
 \end{equation}
-con $h^{\mu\nu} = \eta^{\mu\lambda}\eta^{\mu\sigma} h_{\lambda\sigma}$.
+con $h^{\mu\nu} = \eta^{\mu\lambda}\eta^{\nu\sigma} h_{\lambda\sigma}$.
 L'innalzamento e l'abbassamento degli indici di $h_{\mu\nu}$ si esegue con il
 tensore metrico non perturbato $\eta_{\mu\nu}$.  Per linearizzare le equazioni
 di Einsetin dobbiamo sviluppare $G_{\mu\nu}$ in serie di potenze di $h_{\mu\nu}$
@@ -89,6 +103,7 @@ abbiamo che la connessione affine approssimata al primo ordine in $h_{\mu\nu}$ �
 e quindi il tensore di Ricci, trascurando i termini superiori al primo ordine in
 $h_{\mu\nu}$, è dato da
 \begin{equation}
+  \label{eq:ricci-lineare}
   \begin{split}
     R_{\mu\nu}^{(1)} &= \partial_{\nu}
     \tensor{\Gamma}{^{\lambda}_{\mu\lambda}^{(1)}}
@@ -658,7 +673,9 @@ sarà quello di quadrupolo, del tipo
 \end{equation}
 Il fattore numerico $45$, invece di $180$ del caso elettromagnetico, è legato al
 fatto che il campo gravitazionale ha spin $2$, mentre il campo elettromagnetico
-ha spin $1$.\footnote{Vedi \textcite[471]{shapiro:black-holes}.}
+ha spin
+$1$.\footnote{Vedi \textcite[974]{misner:gravitation};
+  \textcite[471]{shapiro:black-holes}.}
 
 Esaminiamo più in dettaglio il problema.  Sappiamo che nell'approssimazione di
 campo debole $R_{\mu\nu}^{(1)} = \dalamb h_{\mu\nu}/2$, quindi l'equazione di
@@ -833,9 +850,12 @@ risultato\footnote{Vedi~\textcite[460-461]{landau:campi}.}
 \begin{equation}
   I = \frac{G}{45c^{5}} \langle \dddot{Q}_{ij} \dddot{Q}^{ij}\rangle.
 \end{equation}
-Osserviamo che l'energia emessa dal sistema è proporzionale $G/c^{5}$, che è un
-fattore estremamente piccolo, quindi l'efficienza di emissione di radiazione da
-parte di masse in movimento è, generalmente, molto bassa.
+Si può avere emissioni di radiazione solo da parte di distribuzioni di massa in
+movimento con momento di quadrupolo di massa dipendente dal tempo e in
+particolare con $\dddot{Q}_{ij} \neq 0$.  Osserviamo che l'energia emessa dal
+sistema è proporzionale $G/c^{5}$, che è un fattore estremamente piccolo, quindi
+l'efficienza di emissione di radiazione da parte di masse in movimento è,
+generalmente, molto bassa.
 
 \section{Sorgenti di onde gravitazionali}
 \label{sec:sorgenti-onde-grav}
