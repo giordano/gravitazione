@@ -1,10 +1,12 @@
 \documentclass[a4paper,twoside,openright,fleqn,11pt]{book}
 \usepackage[T1]{fontenc}
-\usepackage[light,slantedGreeks]{kpfonts}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 
 %%%%% Pacchetti caricati
+% pacchetti matematici dell'American Mathematical Society
+\usepackage{amsmath,amssymb,amsthm} \allowdisplaybreaks{}
+\usepackage{lmodern}
 \usepackage{layaureo}
 \usepackage[autostyle=true]{csquotes}
 \usepackage[style=authoryear,hyperref,abbreviate=false,backend=bibtex]{biblatex}
@@ -16,8 +18,6 @@
 \usepackage{tikz,tikz-3dplot}
 % `mathtools' serve per definire la norma e il valore assoluto
 \usepackage{mathtools}
-% pacchetti matematici dell'American Mathematical Society
-\usepackage{amsthm}
 % `bm' serve per scrivere i vettori in corsivo con il comando
 % `\bm{vettore}'. Deve sostituire il comando `\mathbf{vettore}' perché questo
 % restituisce erroneamente lettere in tondo, non in corsivo e non funziona con
@@ -25,7 +25,9 @@
 \usepackage{bm}
 \usepackage[long,nodayofweek]{datetime}
 \usepackage{makeidx}
-\usepackage{siunitx}
+\usepackage[squaren]{SIunits}
+\let\si\unit
+\usepackage{sistyle}
 \usepackage{hyperref}
 %%%%% Fine pacchetti
 
@@ -52,16 +54,8 @@
   pdfauthor={Mosè Giordano},
   breaklinks=true,% permette di spezzare i link su più righe
   bookmarksnumbered,% inserisce i numeri delle sezioni nei segnalibri
-  hidelinks % link neri e senza bordi colorati, adatto per la stampa
-}
-
-\sisetup{per-mode=symbol,
-  inter-unit-product=\ensuremath{{}\cdot{}},
-  exponent-product=\cdot,
-  output-product=\cdot,
-  separate-uncertainty=true,
-  math-micro=\muup,
-  text-micro=\ensuremath{\muup},
+  colorlinks,% link colorati, non riquadrati
+  urlcolor=black,linkcolor=black,citecolor=black,% tutti i colori neri
 }
 
 % Posiziona le didascalie sopra le tabelle
@@ -110,9 +104,8 @@
 \renewcommand{\epsilon}{\varepsilon}
 
 % Comando per indicare la variazione di una quantità.  Deve produrre una delta
-% maiuscola diritta, visto che carico il pacchetto `kpfonts' con l'opzione
-% `slantedGreeks' uso la macro `\Deltaup'.
-\newcommand{\var}{\Deltaup}
+% maiuscola diritta.
+\newcommand{\var}{\Delta}
 
 % comando per evidenziare le sezioni da completare o espandere.  NOTA: è un
 % comando provvisorio, serve solo durante la scrittura del testo, ricordarsi di
@@ -145,7 +138,7 @@
 % Derivata parziale \parder[ordine]{funzione}{variabile}
 % Per la definizione del comando `parder' (per inserire le derivate parziali)
 % vedi
-% http://www.guitex.org/home/index.php?option=com_kunena&func=view&catid=5&id=42178&Itemid=60#42199
+% http://www.guitex.org/home/it/forum/5-tex-e-latex/42178-comando-derivate#42199
 \makeatletter
 \newcommand{\parder}[2]{\begingroup
   \@tempswafalse\toks@={}\count@=\z@
@@ -184,18 +177,6 @@
 % il puntino litiga con `\hat')
 \newcommand*{\versor}[1]{\hat{\bm{#1}}}
 
-% Ambiente per scrivere sistemi di equazioni.
-% Vedi `L'arte di scrivere con LaTeX' di Pantieri.
-% Esempio d'uso (in ambiente matematico):
-%	\begin{sistema}
-%         x+y+z=0 \\
-%         2x-y=1 \\
-%         y-4z=-3
-%       \end{sistema}
-\newenvironment{sistema}%
-{\left\lbrace\begin{array}{@{}l@{}}}%
-    {\end{array}\right.}
-
 %% Campi notevoli
 \let\numberset\mathbb
 \newcommand{\N}{\numberset{N}}	% Naturali \N
@@ -204,14 +185,12 @@
 \newcommand{\C}{\numberset{C}}	% Complessi \C
 \newcommand{\M}{\numberset{M}}	% spazio-tempo di Minkowski
 
-% unità di misura aggiuntive (non-SI)
-\DeclareSIUnit\dyne{dyn} % dyne
-\DeclareSIUnit\erg{erg} % erg
-\DeclareSIUnit\tonne{t} % tonnellata ("tonne" in inglese)
-\DeclareSIUnit\parsec{pc} % parsec
-\DeclareSIUnit\lightyear{ly} % anno luce
-\DeclareSIUnit\radian{rad} % radiante
-\DeclareSIUnit\solarmass{\ensuremath{M_{\odot}}} % massa solare
+% % unità di misura aggiuntive (non-SI)
+\newcommand\dyne{dyn} % dyne
+\newcommand\erg{erg} % erg
+\newcommand\parsec{pc} % parsec
+\newcommand\lightyear{ly} % anno luce
+\newcommand\solarmass{\ensuremath{M_{\odot}}} % massa solare
 %%%%% Fine comandi personalizzati
 
 \makeindex{}
@@ -281,9 +260,3 @@ Curato da \\[0.5\baselineskip]
 \printindex{}
 
 \end{document}
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% fill-column: 80
-%%% End:
