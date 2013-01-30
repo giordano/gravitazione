@@ -5,6 +5,7 @@
 \usepackage[italian]{babel}
 
 %%%%% Pacchetti caricati
+\usepackage{microtype}
 \usepackage{layaureo}
 \usepackage[autostyle=true]{csquotes}
 \usepackage[style=authoryear,hyperref,abbreviate=false,backend=bibtex]{biblatex}
@@ -183,18 +184,6 @@
 % j: \versor{\jmath} (solo `i' e `j' richiedono `\imath' e `\jmath', altrimenti
 % il puntino litiga con `\hat')
 \newcommand*{\versor}[1]{\hat{\bm{#1}}}
-
-% Ambiente per scrivere sistemi di equazioni.
-% Vedi `L'arte di scrivere con LaTeX' di Pantieri.
-% Esempio d'uso (in ambiente matematico):
-%	\begin{sistema}
-%         x+y+z=0 \\
-%         2x-y=1 \\
-%         y-4z=-3
-%       \end{sistema}
-\newenvironment{sistema}%
-{\left\lbrace\begin{array}{@{}l@{}}}%
-    {\end{array}\right.}
 
 %% Campi notevoli
 \let\numberset\mathbb
