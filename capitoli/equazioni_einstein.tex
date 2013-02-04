@@ -587,8 +587,12 @@ per il campo gravitazionale
 
 Vogliamo determinare la metrica per un campo gravitazionale a simmetria sferica
 e statico, cioè tale che $\dd\tau^{2} = -g_{\mu\nu}\dd x^{\mu}\dd x^{\nu}$ non
-dipenda dalla coordinata temporale $x^{0}$ e dipenda dalle coordinate spaziali
-solo attraverso delle quantità invarianti per rotazioni, cioè
+dipenda dalla coordinata temporale $x^{0}$ e sia simmetrico rispetto
+all'operazione di inversione
+temporale.\footnote{Un campo solo indipendente dalla coordinata temporale si
+  dice \emph{stazionario}, la condizione di staticità è quindi più forte.}
+Queste condizioni impongono che il campo gravitazionale dipenda dalle coordinate
+spaziali solo attraverso delle quantità invarianti per rotazioni, cioè
 $\bm{x} \cdot \dd\bm{x}$, $\bm{x} \cdot \bm{x}$, $\dd\bm{x} \cdot \dd\bm{x}$.
 La forma più generale per una metrica con queste proprietà è
 \begin{equation}
@@ -716,8 +720,9 @@ Osserviamo che risulta
 \end{equation}
 
 Concludiamo dicendo che si può
-dimostrare\footnote{Vedi~\textcite[390-393]{landau:campi},
-  \textcite[843-844]{misner:gravitation},
+dimostrare\footnote{Vedi~\textcite[390-393]{landau:campi};
+  \textcite[843-844]{misner:gravitation};
+  \textcite[337-340]{ohanian:gravitazione};
   \textcite[335-337]{weinberg:gravitation}.}
 il \index{teorema!di Birkhoff}\emph{teorema di Birkhoff} il quale afferma che
 \emph{un campo gravitazionale a simmetria sferica in assenza di materia deve
@@ -791,11 +796,39 @@ un'altra per $r = 0$.  Nel caso specifico del Sole, e di numerosi altri corpi,
 la prima singolarità non costituisce un problema poiché la metrica vale
 all'esterno del corpo e il raggio di questa stella è molto più grande del suo
 raggio di Schwarzschild.  Si
-dimostra\footnote{Vedi~\textcite[511]{barone:relativita},
-  \textcite[403-404]{landau:campi}, \textcite[207-208]{weinberg:gravitation}.}
+dimostra\footnote{Vedi~\textcite[511]{barone:relativita};
+  \textcite[403-404]{landau:campi}; \textcite[374-378]{ohanian:gravitazione};
+  \textcite[207-208]{weinberg:gravitation}.}
 inoltre che la singolarità per $r = r_{\textup{S}}$ è eliminabile adottando un
 opportuno sistema di coordinate, quindi non è, in realtà, una singolarità
 fisica.
+
+Le coordinate $t$, $r$, $\theta$ e $\phi$ utilizzate nella metrica
+standard~\eqref{eq:metrica-standard}, e quindi anche nella metrica di
+Schwarzschild, non sono banalmente le usuali coordinate sferiche di uno
+spazio-tempo piatto.  Mentre si può far vedere che le coordinate angolari
+$\theta$ e $\phi$ coincidono con quelle
+sferiche,\footnote{Vedi~\textcite[333]{ohanian:gravitazione}.} lo stesso non
+vale per le coordinate $t$ e $r$.  Lungo un meridiano, l'elemento di lunghezza è
+dato da $\dd l = r\dd\theta$ e, come in uno spazio piatto, la lunghezza di una
+circonferenza di ``raggio'' $r$ vale
+\begin{equation}
+  \int_{0}^{l} \dd l' = \int_{0}^{2\pi}r\dd\theta = 2\pi r.
+\end{equation}
+Ma $r$ non è anche la distanza radiale perché, invece, l'intervallo spaziale è
+dato da $\sqrt{A(r)}\dd r$, in particolare nella metrica di Schwarzschild
+$\dd r/\sqrt{1-r_{\textup{S}}^{}/r}$.  Possiamo dunque interpretare la
+coordinata $r$ come la lunghezza della circonferenza divisa $2\pi$.  Il fatto
+che il rapporto fra la lunghezza della circonferenza e la distanza dal suo
+centro è diverso da $2\pi$ evidenzia che lo spazio considerato non è piatto.
+Per interpretare la coordinata $t$, vediamo quando l'intervallo di tempo proprio
+$\dd\tau$ è uguale all'intervallo della coordinata temporale $\dd t$, cioè per
+quale osservatore risulta che $\sqrt{g_{00}}$ sia uguale a 1
+\begin{equation}
+  1 = \sqrt{g_{00}} = \sqrt{1 - \frac{r_{\textup{S}}}{r}} \implies r \to \infty.
+\end{equation}
+Quindi la coordinata temporale $t$ può essere interpretata come la coordinata
+temporale di un osservatore all'infinito, $r \to \infty$.
 
 \section{Verifiche sperimentali della relatività generale}
 \label{sec:verififiche-relativita}
@@ -1382,7 +1415,7 @@ difficoltà di tipo pratico, delle quali non ci occuperemo.
 Senza entrare nei dettagli dei conti forniamo i risultati delle previsioni
 teoriche della relatività
 generale.\footnote{Questo problema è trattato da
-  \textcite[1103-1109]{misner:gravitation},
+  \textcite[1103-1109]{misner:gravitation};
   \textcite[201-207]{weinberg:gravitation}.}
 In un spazio-tempo piatto, il tempo $\tau(r,R_{\odot})$ necessario per un fotone
 per giungere tangente sulla superficie del Sole da un punto a distanza $r$ dal
