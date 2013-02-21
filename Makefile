@@ -19,7 +19,12 @@ DISTCLEAN_FILE		= *.pdf
 pdf: $(PRINCIPALE_PDF)
 
 $(PRINCIPALE_PDF): $(TUTTI_TEX)
-	latexmk -pdf $(PRINCIPALE_TEX)
+	pdflatex $(PRINCIPALE_TEX)
+	bibtex $(PRINCIPALE)
+	makeindex $(PRINCIPALE)
+	pdflatex $(PRINCIPALE_TEX)
+	pdflatex $(PRINCIPALE_TEX)
+	pdflatex $(PRINCIPALE_TEX)
 
 # Per fare pulizia dei file temporanei generati:
 clean:
@@ -35,7 +40,7 @@ dist: $(TUTTI_TEX) $(BIBLIOGRAFIA) distclean
 	git gc # comprimo il repository di git per ridurre al minimo la tarball
 	cd .. && tar -cJvpsf $(CARTELLA).tar.xz --exclude=$(CARTELLA)/auto $(CARTELLA)/
 
-# Crea un archivio compresso (.tar.xz) contenente tutte le immagini e senza il
+# Crea un archivio compresso (.tar.gz) contenente tutte le immagini e senza il
 # repo git
-full-dist: $(PRINCIPALE_PDF) clean
-	cd .. && tar -cJvpsf $(CARTELLA).tar.xz --exclude=$(CARTELLA)/auto --exclude-vcs $(CARTELLA)/
+full-dist: $(PRINCIPALE_PDF)
+	cd .. && tar -czvpsf $(CARTELLA).tar.gz --exclude=$(CARTELLA)/auto --exclude-vcs $(CARTELLA)/
