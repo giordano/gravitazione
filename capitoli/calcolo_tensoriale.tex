@@ -367,11 +367,11 @@ La connessione affine non è un tensore, ma la
 \index{connessione!affine!differenza fra due connessioni affini}differenza fra
 due connessioni affini è un tensore.  Infatti, siano
 $\tensor{\Gamma}{^{\lambda}_{\mu\nu}}$ e
-$\tensor{\tilde\Gamma}{^{\lambda}_{\mu\nu}}$ due distinte connessioni affini,
+$\tensor{\tilde{\Gamma}}{^{\lambda}_{\mu\nu}}$ due distinte connessioni affini,
 allora per un cambiamento di coordinate $x^{\mu} \to x'^{\mu}$ la loro
 differenza
 $\tensor{T}{^{\lambda}_{\mu\nu}} = \tensor{\Gamma}{^{\lambda}_{\mu\nu}} -
-\tensor{\tilde\Gamma}{^{\lambda}_{\mu\nu}}$
+\tensor{\tilde{\Gamma}}{^{\lambda}_{\mu\nu}}$
 si trasforma come un tensore di tipo $(1,2)$
 \begin{equation}
   \begin{split}
@@ -380,12 +380,12 @@ si trasforma come un tensore di tipo $(1,2)$
     \parder{x^{\sigma}}{x'^{\nu}} \tensor{\Gamma}{^{\rho}_{\tau\sigma}}
     + \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu},x'^{\nu}} \\
     &- \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
-    \parder{x^{\sigma}}{x'^{\nu}} \tensor{\tilde\Gamma}{^{\rho}_{\tau\sigma}}
+    \parder{x^{\sigma}}{x'^{\nu}} \tensor{\tilde{\Gamma}}{^{\rho}_{\tau\sigma}}
     - \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu},x'^{\nu}} \\
     &= \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
     \parder{x^{\sigma}}{x'^{\nu}} \tensor{\Gamma}{^{\rho}_{\tau\sigma}}
     - \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
-    \parder{x^{\sigma}}{x'^{\nu}} \tensor{\tilde\Gamma}{^{\rho}_{\tau\sigma}} \\
+    \parder{x^{\sigma}}{x'^{\nu}}\tensor{\tilde{\Gamma}}{^{\rho}_{\tau\sigma}}\\
     &= \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
     \parder{x^{\sigma}}{x'^{\nu}} \tensor{T}{^{\rho}_{\tau\sigma}}.
   \end{split}
@@ -445,7 +445,7 @@ quantità $\tensor{\Gamma}{^{\mu}_{\nu\kappa}} V^{\kappa}$
     V^{\sigma}.
   \end{split}
 \end{equation}
-Anche in questo caso, se nell'ultimo membro ci fosse solo il primo termine
+Anche in questo caso, se nell'ultimo membro ci fosse solo il primo termine,
 $\tensor{\Gamma}{^{\mu}_{\lambda\kappa}} V^{\kappa}$ si trasformerebbe come un
 tensore misto di rango $2$, tuttavia il termine addizionale è opposto al termine
 addizionale che compare nella trasformazione di
@@ -639,7 +639,7 @@ scrivere
     g}{x^{\lambda}} = \parder{\ln \sqrt{g}}{x^{\lambda}} =
   \frac{1}{\sqrt{g}} \parder{\sqrt{g}}{x^{\lambda}}
 \end{equation}
-e quindi
+e quindi la divergenza covariante è
 \begin{equation}
   \tensor{V}{^{\mu}_{;\mu}} = \parder{V^{\mu}}{x^{\mu}} +
   \tensor{\Gamma}{^{\mu}_{\mu\lambda}} V^{\lambda} = \parder{V^{\mu}}{x^{\mu}} +
@@ -766,8 +766,9 @@ $x^{\lambda}(\tau)$ di $V^{\mu}$ come
   \toder{V^{\mu}}{\tau} + \tensor{\Gamma}{^{\mu}_{\rho\lambda}} V^{\rho}
   \toder{x^{\lambda}}{\tau}.
 \end{equation}
-La derivata lungo una curva è un vettore in quanto è il prodotto fra il tensore
-$\tensor{V}{^{\mu}_{;\lambda}}$ e il vettore $\ltoder{x^{\lambda}}{\tau}$.
+La derivata lungo una curva è un vettore in quanto è la contrazione fra il
+tensore $\tensor{V}{^{\mu}_{;\lambda}}$ e la quadrivelocità
+$\ltoder{x^{\lambda}}{\tau} = u^{\lambda}$.
 
 Poiché $\delta V^{\mu} = 0$ in un sistema inerziale, in un tale sistema si deve
 anche annullare la \index{connessione!affine}connessione affine.  Questo fa

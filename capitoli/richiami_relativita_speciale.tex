@@ -1349,7 +1349,7 @@ funzione scalare con d'Alambertiano nullo.  Allora anche $\chi$ ha come
 soluzione la sovrapposizione di onde piane, scalari, del
 tipo\footnote{Si noti che \textcite[258]{weinberg:gravitation} pone
   $\chi = \Re \{\uimm \epsilon\e^{\uimm k^{\lambda}x_{\lambda}}\}$, con
-  $\epsilon = -\uimm \tilde\chi$.}
+  $\epsilon = -\uimm \tilde{\chi}$.}
 \begin{equation}
   \chi = \Re \{\tilde{\chi} \e^{\uimm k^{\lambda}x_{\lambda}}\}
 \end{equation}
@@ -1360,18 +1360,19 @@ la trasformazione di gauge del quadripotenziale è
 \begin{equation}
   A_{\alpha} \to A'_{\alpha} = A_{\alpha} + \partial_{\alpha}\chi = e_{\alpha}
   \e^{\uimm k^{\lambda}x_{\lambda}} + \uimm k_{\alpha}  \tilde{\chi}\e^{\uimm
-    k^{\lambda}x_{\lambda}} = (e_{\alpha} + \uimm k_{\alpha} \tilde\chi)\e^{\uimm
-    k^{\lambda}x_{\lambda}} = e'_{\alpha}\e^{\uimm k^{\lambda}x_{\lambda}}.
+    k^{\lambda}x_{\lambda}} = (e_{\alpha} + \uimm k_{\alpha}
+  \tilde{\chi})\e^{\uimm k^{\lambda}x_{\lambda}} = e'_{\alpha}\e^{\uimm
+    k^{\lambda}x_{\lambda}}.
 \end{equation}
 Dopo aver eseguito questa trasformazione di gauge, la libertà sul valore di
-$\tilde\chi$ ci permette di annullare un'altra componente di $e'_{\alpha}$,
-infatti scegliendo $\tilde\chi = \uimm e_{0}/k$ abbiamo
+$\tilde{\chi}$ ci permette di annullare un'altra componente di $e'_{\alpha}$,
+infatti scegliendo $\tilde{\chi} = \uimm e_{0}/k$ abbiamo
 \begin{subequations}
   \begin{align}
-    e'_{0} &= e_{0} + \uimm k_{0} \tilde\chi = 0, \\
+    e'_{0} &= e_{0} + \uimm k_{0} \tilde{\chi} = 0, \\
     e'_{3} &= -e'_{0} = 0, \\
-    e'_{1} &= e_{1} + \uimm k_{1} \tilde\chi = e_{1}, \\
-    e'_{2} &= e_{2} + \uimm k_{2} \tilde\chi = e_{2}.
+    e'_{1} &= e_{1} + \uimm k_{1} \tilde{\chi} = e_{1}, \\
+    e'_{2} &= e_{2} + \uimm k_{2} \tilde{\chi} = e_{2}.
   \end{align}
 \end{subequations}
 Dunque la condizione di ortogonalità fra $k_{\alpha}$ e $e_{\alpha}$, derivante
@@ -1574,7 +1575,7 @@ $\bm{E}$, $\bm{B}$ e $\versor{n}$ costituiscono una terna di vettori ortogonali
 e $\bm{E}$ e $\bm{B}$ hanno lo stesso modulo) e
 \begin{subequations}
   \begin{align}
-    % Nota: il Landau dice (nota 2) di pagina 228) che l'equazione seguente non
+    % Nota: il Landau dice (nota 2 di pagina 228) che l'equazione seguente non
     % è corretta e bisogna invece usare E = (1/c) (\dot{\bm{A}} \times
     % \versor{n}) \times \versor{n}.  Spiegazione della (43.7) di pagina 151:
     % nel calcolo di \bm{H} usa la formula di derivazione composta per \bm{A},
@@ -1667,6 +1668,10 @@ relativistico isolato $\dot{\bm{L}} = \bm{0} \implies \dot{\bm{m}} = \bm{0}$.
 \section{Equazioni di Eulero-Lagrange di un campo e tensore energia-impulso}
 \label{sec:tensore-energia-impulso}
 
+\emph{Nota: in questo paragrafo, dove non diversamente specificato, adotteremo
+  la convenzione dei segni $(-++)$ seguita
+  da~\textcites{barone:relativita,landau:campi}.}
+
 In questo paragrafo vogliamo determinare le equazioni del moto di un generico
 campo $q(x)$ e poi le applicheremo al caso particolare del campo
 elettromagnetico.
@@ -1679,7 +1684,7 @@ La dinamica di un campo $q(x)$ è descritta da un'azione
 in cui $\Lambda = \Lambda(q, \lparder{q}{x^{\alpha}}, x^{\alpha})$ è una
 funzione del campo $q$, delle sue derivate $\lparder{q}{x^{\alpha}}$ ed
 eventualmente delle coordinate $x^{\alpha}$.  Poiché l'integrale
-$\int \Lambda\dd^{3} \bm{x}$ è la lagrangiana del sistema $\Lambda$ è chiamata
+$\int \Lambda\dd^{3} \bm{x}$ è la lagrangiana del sistema, $\Lambda$ è chiamata
 \index{densità!di lagrangiana}\emph{densità di lagrangiana}.  Supporremo che $q$
 e le sue derivate si annullino all'infinito.
 
@@ -1768,16 +1773,13 @@ da cui
   \tensor{\eta}{^{\beta}_{\alpha}}\Lambda \bigg) =
   -\parder{\Lambda}{x^{\alpha}}.
 \end{equation}
-Se il sistema è chiuso il termine $\lparder{\Lambda}{x^{\alpha}}$ è nullo.
-Definiamo il \index{tensore!energia-impulso}\emph{tensore energia-impulso}
-$\tensor{T}{^{\beta}_{\alpha}}$ come\footnote{Si noti che
-  \textcites{barone:relativita,landau:campi} definisco il tensore
-  energia-impulso con il segno opposto a causa della diversa convenzione sui
-  segni.  Vedi pagina~\pageref{eq:convenzione-segni}.}
+Se il sistema è chiuso, $\lparder{\Lambda}{x^{\alpha}}$ è nullo.  Definiamo il
+\index{tensore!energia-impulso}\emph{tensore energia-impulso}
+$\tensor{T}{^{\beta}_{\alpha}}$ come
 \begin{equation}
   \label{eq:tensore-energia-impulso}
-  \tensor{T}{^{\beta}_{\alpha}} = \tensor{\eta}{^{\beta}_{\alpha}}\Lambda -
-  q_{,\alpha}\parder{\Lambda}{q_{,\beta}}
+  \tensor{T}{^{\beta}_{\alpha}} = q_{,\alpha}\parder{\Lambda}{q_{,\beta}} -
+  \tensor{\eta}{^{\beta}_{\alpha}}\Lambda,
 \end{equation}
 quindi l'equazione precedente si può scrivere, per un sistema chiuso, come
 \begin{equation}
@@ -1793,40 +1795,123 @@ rispetto al tempo.
 
 Osserviamo che
 \begin{equation}
-  T^{00} = \Lambda - \parder{q}{x^{0}} \parder{\Lambda}{q_{,0}} =  \Lambda -
-  \dot{q} \parder{\Lambda}{\dot{q}}
+  T^{00} = \parder{q}{x^{0}} \parder{\Lambda}{q_{,0}} - \Lambda =
+  \dot{q} \parder{\Lambda}{\dot{q}} - \Lambda
 \end{equation}
-è l'opposto della densità di energia associata alla densità di lagrangiana
-$\Lambda$, infatti in meccanica l'energia $E$ di un sistema con lagrangiana $L$
-è data da
+è la densità di energia associata alla densità di lagrangiana $\Lambda$, infatti
+in meccanica l'energia $E$ di un sistema con lagrangiana $L$ è data da
 \begin{equation}
   E = \dot{q}\parder{L}{\dot{q}} - L.
 \end{equation}
 Dunque
 \begin{equation}
-  P^{0} = \int T^{00}\dd V = \int \bigg(\Lambda -
-  \dot{q}\parder{\Lambda}{\dot{q}}\bigg) \dd V
+  P^{0} = \int T^{00}\dd V = \int \bigg(\dot{q}\parder{\Lambda}{\dot{q}} -
+  \Lambda\bigg) \dd V
 \end{equation}
-rappresenta l'opposto dell'energia del sistema.  Invece
+rappresenta l'energia del sistema.  Invece
 \begin{equation}
-  T^{0i} = -\parder{q}{x^{i}} \parder{\Lambda}{q_{,i}}
+  T^{0i} = \parder{q}{x_{i}} \parder{\Lambda}{q_{,0}}
 \end{equation}
-è l'opposto della densità di momento, pertanto
+è la densità di momento, pertanto
 \begin{equation}
   P^{i} = \int T^{0i}\dd V
 \end{equation}
-è l'opposto della componente $i$ della quantità di moto.  Abbiamo così fatto
-vedere che il quadrivettore $P^{\alpha}$ qui definito è proprio il
-quadrimomento, a meno del segno, e l'equazione~\eqref{eq:div-tens-en-imp}
-rappresenta la legge di conservazione del quadrimomento per un sistema chiuso.
-Inoltre $T^{i0}$ è la densità di flusso di energia nella direzione $x^{i}$ (o,
-equivalentemente, la densità della componente $i$ del momento), $T^{ij}$ è la
-densità di flusso della componente $j$ del momento nella direzione $i$.
-Equivalentemente, $T^{ij}$ può essere interpretata come la componente $j$ della
-forza per unità di area su una superficie perpendicolare all'asse $i$.  La parte
+è la componente $i$ della quantità di moto.  Abbiamo così fatto vedere che il
+quadrivettore $P^{\alpha}$ qui definito è proprio il quadrimomento e
+l'equazione~\eqref{eq:div-tens-en-imp} rappresenta la legge di conservazione del
+quadrimomento per un sistema chiuso.  Si possono dare interpretazioni fisiche
+anche delle altre componenti del tensore
+energia-impulso.\footnote{Vedi~\textcite[417-418]{barone:relativita};
+  \textcite[137-138]{misner:gravitation}.}
+$T^{i0}$ è la densità di flusso di energia nella direzione $x^{i}$, $T^{ij}$ è
+la densità di flusso della componente $j$ del momento nella direzione $i$.
+Equivalentemente, $T^{ij}$ può essere interpretata come la componente $i$ della
+forza per unità di area su una superficie perpendicolare all'asse $j$.  La parte
 ``spaziale'' del tensore energia impulso, $T^{ij}$, è chiamata anche
-\emph{tensore degli sforzi} (è un tensore tridimensionale di rango $2$).
+\emph{tensore degli
+  sforzi},\footnote{Ricordiamo
+  che in meccanica classica si definisce il tensore degli sforzi $T$ come quel
+  tensore tridimensionale di rango $2$ tale che la forza $\dd \bm{F}$ agente su
+  un elemento di superficie $\dd\bm{A}$ è esprimibile come
+  $\dd\bm{F} = T\dd\bm{A}$.} % Vedi Goldstein, Poole & Safko, capitolo 13
+le componenti $T^{ij}$, con $i \neq j$ costituiscono gli sforzi di taglio, le
+componenti diagonali $T^{ii}$ (senza somma su $i$) sono i cosiddetti sforzi
+normali, cioè la pressione agente nella direzione $i$.  Riassumiamo in forma
+matriciale il tensore energia impulso
+%%% Figura ispirata a questa:
+%%% https://it.wikipedia.org/wiki/File:StressEnergyTensor_it.svg
+\begin{equation}
+  \begin{tikzpicture}[pmatrix]
+    \matrix (t)
+    {
+      T_{00} & T_{01} & T_{02} & T_{03} \\
+      T_{10} & T_{11} & T_{12} & T_{13} \\
+      T_{20} & T_{21} & T_{22} & T_{23} \\
+      T_{30} & T_{31} & T_{32} & T_{33} \\
+    } ;
 
+    \begin{scope}[on background layer]
+      % evidenzio tensore degli sforzi e densità di flusso di momento
+      \draw[color=cyan,fill=purple,opacity=0.3]
+      (t-2-2.north west) --
+      (t-4-2.south west) --
+      (t-4-4.south east) --
+      (t-2-4.north east) -- cycle;
+
+      % evidenzio pressione
+      \draw[fill,color=green,opacity=0.3]
+      (t-2-2.north west) --
+      (t-2-2.south west) --
+      (t-4-4.south west) --
+      (t-4-4.south east) --
+      (t-4-4.north east) --
+      (t-2-2.north east) -- cycle;
+
+      % evidenzio densità di energia
+      \draw[color=cyan,fill=gray,opacity=0.3]
+      (t-1-1.north west) --
+      (t-1-1.south west) --
+      (t-1-1.south east) --
+      (t-1-1.north east) -- cycle;
+
+      % evidenzio densità di flusso di energia
+      \draw[color=cyan,fill=gray,opacity=0.3]
+      (t-2-1.north west) --
+      (t-4-1.south west) --
+      (t-4-1.south east) --
+      (t-2-1.north east) -- cycle;
+
+      % evidenzio densità di momento
+      \draw[color=cyan,fill=gray,opacity=0.3]
+      (t-1-2.north west) --
+      (t-1-2.south west) --
+      (t-1-4.south east) --
+      (t-1-4.north east) -- cycle;
+    \end{scope}
+
+    \begin{scope}[font=\small]
+      \draw[color=cyan] ($(t-1-3.north) + (5pt,0)$) -- ++(0,20pt)
+      node[align=center,fill=white] {densità di \\ momento};
+
+      \draw[color=cyan] (t-1-1.north) -- ++(0,20pt)
+      node[align=center,fill=white] {densità di \\ energia};
+
+      \draw[color=cyan] (t-4-1.south) -- ++(0,-25pt)
+      node[align=center,fill=white] {densità di \\ flusso di \\ energia};
+
+      \draw[color=green] (t-4-4.east) -- ++(20pt,0)
+      node[align=center,fill=white,label={right:sforzi normali (pressione)}] {};
+
+      \draw[color=purple] ($(t-2-4.east) - (.5pt,0)$) -- ++(20pt,0)
+      node[align=center,fill=white,label={right:sforzi di taglio}] {};
+
+      \draw[color=cyan] ($(t-4-3.south) + (5pt,0)$) -- ++(0,-25pt)
+      node[align=center,fill=white] {densità di \\ flusso di \\ momento};
+    \end{scope}
+  \end{tikzpicture}
+\end{equation}
+
+Riprendiamo la convenzione dei segni $(+--)$ di~\textcite{weinberg:gravitation}.
 Le \index{equazioni!di Maxwell}equazioni di Maxwell che descrivono il campo
 elettromagnetico possono essere ricavate applicando il formalismo qui
 introdotto.  \index{azione!del campo elettromagnetico}L'azione $S$ di un sistema
@@ -1876,19 +1961,17 @@ usando $\Lambda_{\textup{c}}$ come densità di lagrangiana e le componenti
 $A_{\mu}$ del quadrimomento come campi
 \begin{equation}
   T_{\textup{em}}^{\alpha\beta}
-  = \eta^{\alpha\beta}\Lambda_{\textup{c}}
-  - \parder{A_{\mu}}{x_{\beta}} \parder{\Lambda_{\textup{c}}}{A_{\mu,\alpha}} =
-  F^{\alpha\gamma}\partial^{\beta}A_{\gamma} -
+  = F^{\alpha\gamma}\partial^{\beta}A_{\gamma} -
   \frac{1}{4}\eta^{\alpha\beta}F_{\gamma\delta}F^{\gamma\delta}.
 \end{equation}
 Si
-dimostra\footnote{Vedi \textcite[419]{barone:relativita},
-  \textcite[111]{landau:campi}.}
+dimostra\footnote{Vedi \textcite[419]{barone:relativita};
+  \textcite[111]{landau:campi}; \textcite[141-421]{misner:gravitation}.}
 che, per ragioni puramente fisiche, il tensore energia-impulso deve sempre
 essere simmetrico, ma il tensore $T_{\textup{em}}^{\alpha\beta}$ così ottenuto
 non lo è.  Mediante un'opportuna procedura di
 simmetrizzazione\footnote{Questo metodo è dovuto a Belinfante e Rosenfeld.
-  Vedi~\textcite[437]{barone:relativita}, \textcite[114]{landau:campi}.}
+  Vedi~\textcite[437]{barone:relativita}; \textcite[114]{landau:campi}.}
 si può giungere alla seguente forma simmetrica
 \begin{equation}
   T_{\textup{em}}^{\alpha\beta} = \tensor{F}{^{\alpha}_{\gamma}}F^{\beta\gamma}
@@ -2088,22 +2171,22 @@ interfacce tra le varie porzioni del fluido.
 Per ricavare il tensore energia-impulso di un fluido perfetto possiamo sfruttare
 l'interpretazione fisica che abbiamo dato per ciascuna delle sue componente.
 Iniziamo col considerare il fluido in un sistema comovente indichiamo con
-$\tilde T^{\alpha\beta}$ il tensore energia-impulso in questo sistema.  Poiché
+$\tilde{T}^{\alpha\beta}$ il tensore energia-impulso in questo sistema.  Poiché
 non c'è conduzione di calore, il flusso di energia è quello associato alle
 particelle, che nel sistema comovente è nullo, dunque
-$\tilde T^{0i} = \tilde T^{i0} = 0$.  Ricordiamo che $\tilde T^{ij}$ è la
-componente $j$ della forza per unità di area su una superficie perpendicolare
-all'asse $i$, quindi l'assenza di viscosità in un fluido perfetto comporta che
-il tensore degli sforzi $\tilde T^{ij}$ è diagonale.  Il fatto che questo sia
+$\tilde{T}^{0i} = \tilde{T}^{i0} = 0$.  Ricordiamo che $\tilde{T}^{ij}$ è la
+componente $i$ della forza per unità di area su una superficie perpendicolare
+all'asse $j$, quindi l'assenza di viscosità in un fluido perfetto comporta che
+il tensore degli sforzi $\tilde{T}^{ij}$ è diagonale.  Il fatto che questo sia
 vero per ogni sistema comovente, senza alcuna direzione privilegiata, implica in
-particolare che $\tilde T^{ij}$ è proporzionale alla matrice identità
+particolare che $\tilde{T}^{ij}$ è proporzionale alla matrice identità
 $\delta^{ij}$ e il fattore di proporzionalità sarà dunque la pressione $p$ del
-fluido: $\tilde T^{ij} = p \delta^{ij}$.  Infine, $\tilde T^{00}$ è la densità
+fluido: $\tilde{T}^{ij} = p \delta^{ij}$.  Infine, $\tilde{T}^{00}$ è la densità
 di energia, uguale alla densità di massa $\rho$ avendo posto la velocità della
 luce nel vuoto $c = 1$.  In definitiva, il tensore energia-impulso di un fluido
 perfetto in un sistema comovente è
 \begin{equation}
-  \tilde T^{\alpha\beta} =
+  \tilde{T}^{\alpha\beta} =
   \begin{pmatrix}
     \rho & 0 & 0 & 0 \\
     0    & p & 0 & 0 \\
@@ -2124,7 +2207,7 @@ T^{\mu\nu}$
     \begin{split}
       T^{00} &= \tensor{\Lambda}{^{0}_{\mu}} \tensor{\Lambda}{^{0}_{\nu}} \tilde
       T^{\mu\nu} = \tensor{\Lambda}{^{0}_{i}} \tensor{\Lambda}{^{0}_{j}} \tilde
-      T^{ij} + (\tensor{\Lambda}{^{0}_{0}})^{2} \tilde T^{00} = \gamma^{2} u_{i}
+      T^{ij} + (\tensor{\Lambda}{^{0}_{0}})^{2} \tilde{T}^{00} = \gamma^{2} u_{i}
       u_{j} p \delta^{ij} + \gamma^{2} \rho \\
       &= \frac{\rho +pu^{2}}{1-u^{2}},
     \end{split} \\
@@ -2135,9 +2218,9 @@ T^{\mu\nu}$
       T^{00} \\
       &= \bigg(\tensor{\delta}{^{i}_{k}} + u^{i}u_{k}\frac{\gamma -
         1}{u^{2}}\bigg) u_{l} \gamma p \delta^{kl} + u^{i} \gamma^{2} \rho \\
-      &= \bigg(\tensor{\delta}{^{i}_{k}} + u^{i}u_{k}\frac{\gamma - 1}{u^{2}}\bigg)
-      u^{k} \gamma p + u^{i} \gamma^{2} \rho = (u^{i} + u^{i}(\gamma - 1))
-      \gamma p + u^{i} \gamma^{2} \rho \\
+      &= \bigg(\tensor{\delta}{^{i}_{k}} + u^{i}u_{k}\frac{\gamma -
+        1}{u^{2}}\bigg) u^{k} \gamma p + u^{i} \gamma^{2} \rho = (u^{i} +
+      u^{i}(\gamma - 1)) \gamma p + u^{i} \gamma^{2} \rho \\
       &= u^{i}\gamma^{2} p + u^{i} \gamma^{2} \rho = \frac{p + \rho}{1 -
         u^{2}}u^{i},
     \end{split} \\
@@ -2167,12 +2250,12 @@ compatta\index{fluido!perfetto}
 \end{equation}
 con $U^{\mu} = (\gamma_{u}, \gamma_{u} \bm{u})$ quadrivelocità associata al
 vettore velocità $\bm{u}$.  Si riottiene l'espressione di
-$\tilde T^{\alpha\beta}$ ponendo
+$\tilde{T}^{\alpha\beta}$ ponendo
 $\bm{u} = \bm{0} \implies U^{\mu} = (1, \bm{0})$.
 
 Nel caso in cui le particelle del fluido si muovono con velocità molto più
 piccole di quella della luce nel vuoto (ma la velocità macroscopica $\bm{u}$ del
-fluido è arbitraria), il tensore energia-impulso $\tilde T^{\alpha\beta}$ assume
+fluido è arbitraria), il tensore energia-impulso $\tilde{T}^{\alpha\beta}$ assume
 un'espressione più semplice.  Innanzitutto nella densità di energia $\rho$
 possiamo trascurare tutti i termini piccoli rispetto alla densità di energia di
 riposo $\rho_{0}$, con $\rho_{0}$ somma delle masse a riposo delle particelle
@@ -2181,14 +2264,14 @@ anche la pressione data dall'energia del moto microscopico delle molecole è
 trascurabile rispetto alla densità di energia a riposo $\rho$, quindi possiamo
 scrivere
 \begin{equation}
-  \tilde T^{\alpha\beta} = \rho_{0} U^{\alpha} U^{\beta}.
+  \tilde{T}^{\alpha\beta} = \rho_{0} U^{\alpha} U^{\beta}.
 \end{equation}
 Se anche il moto macroscopico è lento il fattore lorentziano vale $1$, quindi
 $U^{\mu}= (1, \bm{u})$ e abbiamo\index{fluido!perfetto}
 \begin{subequations}
   \begin{align}
-    \tilde T^{00} &= \rho_{0}, \\
-    \tilde T^{ij} &= \rho_{0} U^{i} U^{j}.
+    \tilde{T}^{00} &= \rho_{0}, \\
+    \tilde{T}^{ij} &= \rho_{0} U^{i} U^{j}.
   \end{align}
 \end{subequations}
 

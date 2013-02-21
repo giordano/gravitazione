@@ -179,11 +179,11 @@ $\eta_{\alpha\beta}$ e in tutto lo spazio si ha
   \eta_{\alpha\beta} =
   g_{\mu\nu} \parder{x^{\mu}}{\xi^{\alpha}} \parder{x^{\nu}}{\xi^{\beta}}.
 \end{equation}
-Per il \index{principio!di equivalenza}principio di equivalenza, in ogni punto
-$X$ dello spazio è possibile individuare un sistema di coordinate localmente
-inerziali $\xi_{X}$ che soddisfano la relazione precedente in un intorno
-infinitesimo di $X$.  Noi invece vogliamo scoprire se esista un sistema di
-coordinate $\xi^{\alpha}$ che soddisfi la relazione in tutto lo spazio.
+Per il \index{principio!di equivalenza!forte}principio di equivalenza, in ogni
+punto $X$ dello spazio è possibile individuare un sistema di coordinate
+localmente inerziali $\xi_{X}$ che soddisfano la relazione precedente in un
+intorno infinitesimo di $X$.  Noi invece vogliamo scoprire se esista un sistema
+di coordinate $\xi^{\alpha}$ che soddisfi la relazione in tutto lo spazio.
 
 Lo strumento a cui siamo interessati è il tensore di Riemann, infatti è
 possibile dimostrare\footnote{Vedi~\textcite[138]{weinberg:gravitation}.} il
@@ -306,8 +306,10 @@ e abbiamo dunque mostrato che ha quadridivergenza covariante nulla
 \section{Equazioni di Einstein}
 \label{sec:equazioni-einstein}
 
-\emph{Nota: in questo paragrafo indicheremo esplicitamente la velocità della
-  luce nel vuoto $c$.}
+\emph{Nota: in questo paragrafo, dove non diversamente specificato, indicheremo
+  esplicitamente la velocità della luce nel vuoto $c$ e adotteremo la
+  convenzione dei segni $(-++)$ seguita
+  da~\textcites{barone:relativita,landau:campi}.}
 
 Vogliamo ora determinare le equazioni del campo gravitazionale $g_{\mu\nu}$ a
 partire dal principio variazionale di Hamilton.  Assumiamo che l'azione $S$ sia
@@ -372,35 +374,31 @@ nella~\eqref{eq:var-HE} otteniamo
 Mostriamo che il secondo integrale è nullo.  Innanzitutto la
 \index{tensore!di Ricci!variazione del}variazione del tensore di Ricci può
 essere espressa in termini di variazioni della connessione affine mediante
-l'\index{identità!di Palatini}% TODO: vedere di dimostrarla
-\emph{identità di
+l'\index{identità!di Palatini}\emph{identità di
   Palatini}\footnote{Si
   noti che la variazione della connessione affine è un tensore poiché è la
   differenza fra due connessioni affini, la quale è un tensore come visto nel
   paragrafo~\ref{sec:connessione-affine}.}
+(vedi l'appendice~\ref{sec:dimostr-palatini})
 \begin{equation}
-  \delta R_{\mu\nu} = (\delta \tensor{\Gamma}{^{\lambda}_{\mu\lambda}})_{;\nu} -
-  (\delta \tensor{\Gamma}{^{\lambda}_{\mu\nu}})_{;\lambda}.
+  \delta R_{\mu\nu} = (\delta \tensor{\Gamma}{^{\lambda}_{\mu\nu}})_{;\lambda} -
+  (\delta \tensor{\Gamma}{^{\lambda}_{\mu\lambda}})_{;\nu}.
 \end{equation}
-Allora si può riscrivere l'integrale in esame come
-\begin{equation}
-  \int g^{\mu\nu} \delta R_{\mu\nu} \sqrt{g} \dd^{4} x = \int (g^{\mu\nu} \delta
-  \tensor{\Gamma}{^{\lambda}_{\mu\lambda;\nu}} - g^{\mu\nu} \delta
-  \tensor{\Gamma}{^{\lambda}_{\mu\nu;\lambda}}) \sqrt{g} \dd^{4} x
-\end{equation}
-e per il teorema di Gauss in forma covariante~\eqref{eq:gauss-covariante}
-ricaviamo
+Allora, ricordando che $g^{\mu\nu}$ commuta con la derivazione covariante, si
+può riscrivere l'integrale in esame come
 \begin{equation}
   \begin{split}
-    \int g^{\mu\nu} \delta R_{\mu\nu} \sqrt{g} \dd^{4} x &= \int (\delta
-    \tensor{\Gamma}{^{\lambda\nu}_{\lambda;\nu}} - \delta
-    \tensor{\Gamma}{^{\lambda\nu}_{\nu;\lambda}}) \sqrt{g} \dd^{4} x \\
-    &= \int \delta \tensor{\Gamma}{^{\lambda\nu}_{\lambda}} \sqrt{g} \dd
-    \Sigma_{\nu} - \int \delta \tensor{\Gamma}{^{\lambda\nu}_{\lambda}} \sqrt{g}
-    \dd \Sigma_{\lambda} = 0
+    \int g^{\mu\nu} \delta R_{\mu\nu} \sqrt{g} \dd^{4} x &= \int ((g^{\mu\nu}
+    \delta \tensor{\Gamma}{^{\lambda}_{\mu\nu}})_{;\lambda} - (g^{\mu\nu} \delta
+    \tensor{\Gamma}{^{\lambda}_{\mu\lambda}})_{;\nu}) \sqrt{g} \dd^{4} x \\
+    &= \int g^{\mu\nu} \delta \tensor{\Gamma}{^{\lambda}_{\mu\nu}} \sqrt{g} \dd
+    \Sigma_{\lambda} - \int g^{\mu\nu}
+    \delta\tensor{\Gamma}{^{\lambda}_{\mu\lambda}} \sqrt{g}\dd\Sigma_{\nu} = 0
   \end{split}
 \end{equation}
-poiché gli integrali sulle ipersuperfici vanno calcolati sul bordo
+in cui abbiamo applicato il teorema di Gauss in forma
+covariante~\eqref{eq:gauss-covariante}.  Gli ultimi due integrali sulle
+ipersuperfici sono entrambi nulli poiché vanno calcolati sul bordo
 dell'ipervolume costante su cui si calcola la variazione dell'azione e sul bordo
 sono nulle le variazioni di $g_{\mu\nu}$ e quindi anche della connessione
 affine, la quale dipende dal tensore metrico.  Dunque abbiamo trovato che la
@@ -435,12 +433,9 @@ paragrafo~\ref{sec:tensore-energia-impulso}
 Nell'ultimo passaggio abbiamo sfruttato il fatto che l'integrale del secondo
 termine si trasforma, per il teorema di Gauss, in un integrale sul bordo del
 volume di integrazione sul quale le variazioni $\delta g^{\mu\nu}$ sono nulle.
-Introduciamo il tensore $T_{\mu\nu}$ definito
-da\footnote{Si noti che \textcites{barone:relativita,landau:campi} definisco
-  questo tensore con il segno opposto a causa della diversa convenzione sui
-  segni.  Vedi pagina~\pageref{eq:convenzione-segni}.}
+Introduciamo il tensore $T_{\mu\nu}$ definito da
 \begin{equation}
-  -\frac{1}{2} \sqrt{g} T_{\mu\nu} = \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
+  \frac{1}{2} \sqrt{g} T_{\mu\nu} = \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
   - \parder{}{x^{\lambda}}
   \bigg( \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
 \end{equation}
@@ -448,30 +443,36 @@ da\footnote{Si noti che \textcites{barone:relativita,landau:campi} definisco
 % energia-impulso (e mettere \index{tensore!energia-impulso})
 così la variazione dell'azione della materia diventa
 \begin{equation}
-  \delta S_{\textup{m}} = -\frac{1}{2c} \int T_{\mu\nu} \delta g^{\mu\nu}
+  \delta S_{\textup{m}} = \frac{1}{2c} \int T_{\mu\nu} \delta g^{\mu\nu}
   \sqrt{g} \dd^{4} x
 \end{equation}
-e la condizione di stazionarietà dell'azione totale del sistema campo
-gravitazionale + particelle interagenti è
+e la condizione di stazionarietà dell'azione totale del sistema costituito dal
+campo gravitazionale e dalle particelle interagenti è
 \begin{equation}
   \delta S = \delta(S_{\textup{g}} + S_{\textup{m}}) = -\int \bigg(
-  \frac{c^{3}}{16\pi G} \bigg( R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R \bigg) +
+  \frac{c^{3}}{16\pi G} \bigg( R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R \bigg) -
   \frac{1}{2c} T_{\mu\nu} \bigg) \sqrt{g} \delta g^{\mu\nu} \dd^{4} x = 0.
 \end{equation}
 Data l'arbitrarietà delle variazioni $\delta g^{\mu\nu}$ ricaviamo
 \begin{equation}
   \label{eq:einstein}
-  G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = -\frac{8\pi G}{c^{4}}
+  G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = \frac{8\pi G}{c^{4}}
   T_{\mu\nu}
 \end{equation}
 che sono le \emph{equazioni del campo gravitazionale} in presenza di sorgenti,
-chiamate anche \index{equazioni!di Einstein}\emph{equazioni di Einstein}.
+chiamate anche \index{equazioni!di Einstein}\emph{equazioni di Einstein}.  Per
+commentare queste equazioni si suol dire che la materia dice allo spazio-tempo
+come curvarsi (informazione contenuta nel tensore di Ricci) e allo stesso tempo
+lo spazio-tempo curvo dice alla materia come muoversi (tensore energia-impulso).
 Osserviamo che dalla~\eqref{eq:divergenza-tens-einstein} deriva che anche il
 tensore energia-impulso della materia ha quadridivergenza covariante nulla
 $\tensor{T}{^{\mu\nu}_{;\mu}} = 0$.
 
-Moltiplicando gli ultimi due membri per $g^{\mu\nu}$, in modo da contrarre gli
-indici $\mu$ e $\nu$, otteniamo
+Riprendiamo la convenzione dei segni $(+--)$ di~\textcite{weinberg:gravitation},
+nella quale compare un segno meno nell'ultimo membro dell'equazione di Einstein,
+come spiegato a pagina~\pageref{eq:convenzione-segni}.  Moltiplicando gli ultimi
+due membri per $g^{\mu\nu}$, in modo da contrarre gli indici $\mu$ e $\nu$,
+otteniamo
 \begin{equation}
   R - \frac{1}{2}4R = -R = -\frac{8\pi G}{c^{4}}\tensor{T}{^{\lambda}_{\lambda}}
 \end{equation}
@@ -586,8 +587,12 @@ per il campo gravitazionale
 
 Vogliamo determinare la metrica per un campo gravitazionale a simmetria sferica
 e statico, cioè tale che $\dd\tau^{2} = -g_{\mu\nu}\dd x^{\mu}\dd x^{\nu}$ non
-dipenda dalla coordinata temporale $x^{0}$ e dipenda dalle coordinate spaziali
-solo attraverso delle quantità invarianti per rotazioni, cioè
+dipenda dalla coordinata temporale $x^{0}$ e sia simmetrico rispetto
+all'operazione di inversione
+temporale.\footnote{Un campo solo indipendente dalla coordinata temporale si
+  dice \emph{stazionario}, la condizione di staticità è quindi più forte.}
+Queste condizioni impongono che il campo gravitazionale dipenda dalle coordinate
+spaziali solo attraverso delle quantità invarianti per rotazioni, cioè
 $\bm{x} \cdot \dd\bm{x}$, $\bm{x} \cdot \bm{x}$, $\dd\bm{x} \cdot \dd\bm{x}$.
 La forma più generale per una metrica con queste proprietà è
 \begin{equation}
@@ -715,8 +720,9 @@ Osserviamo che risulta
 \end{equation}
 
 Concludiamo dicendo che si può
-dimostrare\footnote{Vedi~\textcite[390-393]{landau:campi},
-  \textcite[843-844]{misner:gravitation},
+dimostrare\footnote{Vedi~\textcite[390-393]{landau:campi};
+  \textcite[843-844]{misner:gravitation};
+  \textcite[337-340]{ohanian:gravitazione};
   \textcite[335-337]{weinberg:gravitation}.}
 il \index{teorema!di Birkhoff}\emph{teorema di Birkhoff} il quale afferma che
 \emph{un campo gravitazionale a simmetria sferica in assenza di materia deve
@@ -728,9 +734,10 @@ sua particolare simmetria.
 \label{sec:metrica-schwarzschild}
 
 La soluzione di Schwarzschild delle equazioni di Einstein descrive il campo
-gravitazionale all'esterno di un corpo sferico non rotante e in assenza di
-materia, cioè con tensore energia-impulso nullo.  Applicheremo i risultati che
-otterremo al campo gravitazionale generato dal Sole.
+gravitazionale all'esterno di un corpo sferico non rotante, elettricamente
+neutro e in assenza di materia, cioè con tensore energia-impulso nullo.
+Applicheremo i risultati che otterremo al campo gravitazionale generato dal
+Sole.
 
 Abbiamo visto che in assenza di materia le equazioni di Einstein comportano che
 $R_{\mu\nu} = 0$.  Di conseguenza, ponendo uguale a $0$ il secondo membro
@@ -789,11 +796,39 @@ un'altra per $r = 0$.  Nel caso specifico del Sole, e di numerosi altri corpi,
 la prima singolarità non costituisce un problema poiché la metrica vale
 all'esterno del corpo e il raggio di questa stella è molto più grande del suo
 raggio di Schwarzschild.  Si
-dimostra\footnote{Vedi~\textcite[511]{barone:relativita},
-  \textcite[403-404]{landau:campi}, \textcite[207-208]{weinberg:gravitation}.}
+dimostra\footnote{Vedi~\textcite[511]{barone:relativita};
+  \textcite[403-404]{landau:campi}; \textcite[374-378]{ohanian:gravitazione};
+  \textcite[207-208]{weinberg:gravitation}.}
 inoltre che la singolarità per $r = r_{\textup{S}}$ è eliminabile adottando un
 opportuno sistema di coordinate, quindi non è, in realtà, una singolarità
 fisica.
+
+Le coordinate $t$, $r$, $\theta$ e $\phi$ utilizzate nella metrica
+standard~\eqref{eq:metrica-standard}, e quindi anche nella metrica di
+Schwarzschild, non sono banalmente le usuali coordinate sferiche di uno
+spazio-tempo piatto.  Mentre si può far vedere che le coordinate angolari
+$\theta$ e $\phi$ coincidono con quelle
+sferiche,\footnote{Vedi~\textcite[333]{ohanian:gravitazione}.} lo stesso non
+vale per le coordinate $t$ e $r$.  Lungo un meridiano, l'elemento di lunghezza è
+dato da $\dd l = r\dd\theta$ e, come in uno spazio piatto, la lunghezza di una
+circonferenza di ``raggio'' $r$ vale
+\begin{equation}
+  \int_{0}^{l} \dd l' = \int_{0}^{2\pi}r\dd\theta = 2\pi r.
+\end{equation}
+Ma $r$ non è anche la distanza radiale perché, invece, l'intervallo spaziale è
+dato da $\sqrt{A(r)}\dd r$, in particolare nella metrica di Schwarzschild
+$\dd r/\sqrt{1-r_{\textup{S}}^{}/r}$.  Possiamo dunque interpretare la
+coordinata $r$ come la lunghezza della circonferenza divisa $2\pi$.  Il fatto
+che il rapporto fra la lunghezza della circonferenza e la distanza dal suo
+centro è diverso da $2\pi$ evidenzia che lo spazio considerato non è piatto.
+Per interpretare la coordinata $t$, vediamo quando l'intervallo di tempo proprio
+$\dd\tau$ è uguale all'intervallo della coordinata temporale $\dd t$, cioè per
+quale osservatore risulta che $\sqrt{g_{00}}$ sia uguale a 1
+\begin{equation}
+  1 = \sqrt{g_{00}} = \sqrt{1 - \frac{r_{\textup{S}}}{r}} \implies r \to \infty.
+\end{equation}
+Quindi la coordinata temporale $t$ può essere interpretata come la coordinata
+temporale di un osservatore all'infinito, $r \to \infty$.
 
 \section{Verifiche sperimentali della relatività generale}
 \label{sec:verififiche-relativita}
@@ -808,10 +843,11 @@ validità della teoria della relatività generale.
 
 \begin{figure}
   \centering
-  \includegraphics{figure/precessione_perielio}
-  % figura presa da
-  % http://commons.wikimedia.org/wiki/File:Perihelion_precession.svg
-  \caption{Precessione del perielio di un pianeta}
+  \includegraphics{figure/Perihelion_precession}
+  \caption[Precessione del perielio di un pianeta]{Precessione del perielio di
+    un pianeta.
+    {\footnotesize (Crediti: Mpfiz
+      \url{https://commons.wikimedia.org/wiki/File:Perihelion_precession.svg})}}
   \label{fig:precessione-perielio}
 \end{figure}
 La prima legge di Keplero afferma che l'orbita descritta dai pianeti è
@@ -1104,20 +1140,20 @@ gravitazionale del Sole.
 
 Secondo la teoria newtoniana, solo i corpi dotati di massa sono soggetti
 all'attrazione gravitazionale.  In questo paragrafo vedremo che un fotone (così
-come qualsiasi corpo privo di massa) risente della presenza di un campo
-gravitazionale, come quello generato dal Sole, deviando la propria traiettoria.
-Questo fenomeno è comprensibile ricordando che tutti i corpi si muovono lungo
-geodetiche in uno spazio-tempo curvo.
+come qualsiasi corpo privo di massa a riposo ma dotato di energia) risente della
+presenza di un campo gravitazionale, come quello generato dal Sole, deviando la
+propria traiettoria.  Questo fenomeno è comprensibile ricordando che tutti i
+corpi si muovono lungo geodetiche in uno spazio-tempo curvo.
 
 In relatività speciale, per due eventi separati da un intervallo di tipo luce la
 distanza vale $\dd\tau^{2} = 0$ e assumiamo che lo stesso valga anche in
 relatività generale.  Assumiamo inoltre che l'equazione della
 geodetica~\eqref{eq:geodetica} sia valida anche per le particelle prive di massa
-come i fotoni.  Tuttavia dobbiamo fare attenzione al fatto che, proprio in virtù
-del fatto che $\dd\tau^{2} = 0$, non possiamo parametrizzare la linea d'universo
-di un fotone, o di una qualsiasi particella con massa nulla, usando il tempo
-proprio $\tau$.  Piuttosto dobbiamo utilizzare un differente parametro $q$ tale
-che l'equazione della geodetica
+a riposo ma dotate di energia, come i fotoni.  Tuttavia dobbiamo fare attenzione
+al fatto che, proprio in virtù del fatto che $\dd\tau^{2} = 0$, non possiamo
+parametrizzare la linea d'universo di un fotone, o di una qualsiasi particella
+con massa nulla, usando il tempo proprio $\tau$.  Piuttosto dobbiamo utilizzare
+un differente parametro $q$ tale che l'equazione della geodetica
 \begin{equation}
   \toder[2]{x^{\mu}}{q} + \tensor{\Gamma}{^{\mu}_{\lambda\nu}}
   \toder{x^{\lambda}}{q} \toder{x^{\nu}}{q} = 0
@@ -1379,7 +1415,7 @@ difficoltà di tipo pratico, delle quali non ci occuperemo.
 Senza entrare nei dettagli dei conti forniamo i risultati delle previsioni
 teoriche della relatività
 generale.\footnote{Questo problema è trattato da
-  \textcite[1103-1109]{misner:gravitation},
+  \textcite[1103-1109]{misner:gravitation};
   \textcite[201-207]{weinberg:gravitation}.}
 In un spazio-tempo piatto, il tempo $\tau(r,R_{\odot})$ necessario per un fotone
 per giungere tangente sulla superficie del Sole da un punto a distanza $r$ dal

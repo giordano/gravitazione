@@ -6,21 +6,36 @@ Einstein nel vuoto in un campo gravitazionale a simmetria sferica.  In questo
 capitolo ci occuperemo della risoluzione delle equazioni di Einstein
 nell'approssimazione di campo debole, quindi ci serviremo di alcuni risultati
 trovati nei paragrafi~\ref{sec:limite-newtoniano} e
-\ref{sec:limite-newtoniano-einstein}.  Troveremo che il campo gravitazionale può
-emettere radiazione analogamente a quanto succede per il campo elettromagnetico,
-come abbiamo visto nei paragrafi~\ref{sec:onde-elettromagnetiche-vuoto} e
-\ref{sec:onde-elettromagnetiche-cariche}.
+\ref{sec:limite-newtoniano-einstein}.  Troveremo che come particelle cariche
+accelerate emettono radiazione elettromagnetica (vedi
+paragrafi~\ref{sec:onde-elettromagnetiche-vuoto} e
+\ref{sec:onde-elettromagnetiche-cariche}) così masse accelerate possono emettere
+radiazione gravitazionale.
 
-Sebbene questo risultato sarà ottenuto nell'approssimazione di campo debole, è
-un fatto del tutto generale, ma la trattazione non approssimata presenta
-notevoli difficoltà matematiche legate alla non linearità delle equazioni di
-Einstein.
+L'esistenza delle onde gravitazionali è facile da intuire in base al seguente
+ragionamento.  Una variazione della distribuzione delle masse, come per esempio
+il moto di una pulsar rotante, produce una variazione del campo gravitazionale
+che però non può propagarsi istantaneamente in tutto l'Universo, perché
+violerebbe il principio di causalità e sarebbe comunque vietato dalla relatività
+ristretta, ma si diffonderà alla velocità della luce, l'unica invariante per
+trasformazioni di Lorentz.  La variazione del campo gravitazionale giungerà in
+ogni punto dell'Universo con un ritardo pari al tempo necessario a un segnale
+luminoso per andare dalla sorgente della variazione fino al punto considerato.
+Questa propagazione della perturbazione del campo gravitazionale, e quindi dello
+spazio-tempo, è l'onda gravitazionale.
 
 \section{Pseudotensore energia-impulso del campo gravitazionale}
 \label{sec:energ-impulso-grav}
 
-Ricordiamo che nell'approssimazione di campo
-debole il tensore metrico covariante è dato da
+In questo capitolo il nostro scopo è quello di studiare le onde gravitazionali
+nell'approssimazione di campo debole, per fare ciò dobbiamo linearizzare le
+equazioni di Einstein.  Bisogna tener presente che le onde gravitazionali sono
+un fatto del tutto generale, ma la trattazione non approssimata presenta
+notevoli difficoltà matematiche legate alla non linearità delle equazioni di
+Einstein.
+
+Ricordiamo che nell'approssimazione di campo debole il tensore metrico
+covariante è dato da
 \begin{equation}
   g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu},
 \end{equation}
@@ -28,7 +43,7 @@ con $\abs{h_{\mu\nu}} \ll 1$, mentre il tensore metrico controvariante è
 \begin{equation}
   g^{\mu\nu} = \eta^{\mu\nu} - h^{\mu\nu},
 \end{equation}
-con $h^{\mu\nu} = \eta^{\mu\lambda}\eta^{\mu\sigma} h^{\lambda\sigma}$.
+con $h^{\mu\nu} = \eta^{\mu\lambda}\eta^{\nu\sigma} h_{\lambda\sigma}$.
 L'innalzamento e l'abbassamento degli indici di $h_{\mu\nu}$ si esegue con il
 tensore metrico non perturbato $\eta_{\mu\nu}$.  Per linearizzare le equazioni
 di Einsetin dobbiamo sviluppare $G_{\mu\nu}$ in serie di potenze di $h_{\mu\nu}$
@@ -89,6 +104,7 @@ abbiamo che la connessione affine approssimata al primo ordine in $h_{\mu\nu}$ �
 e quindi il tensore di Ricci, trascurando i termini superiori al primo ordine in
 $h_{\mu\nu}$, è dato da
 \begin{equation}
+  \label{eq:ricci-lineare}
   \begin{split}
     R_{\mu\nu}^{(1)} &= \partial_{\nu}
     \tensor{\Gamma}{^{\lambda}_{\mu\lambda}^{(1)}}
@@ -191,7 +207,7 @@ $\epsilon$ o dell'ordine di $h\epsilon$ abbiamo
   \begin{split}
     g'^{\mu\nu} &=
     g^{\lambda\rho} \parder{x'^{\mu}}{x^{\lambda}} \parder{x'^{\nu}}{x^{\rho}} =
-    (\eta^{\lambda\rho} + h^{\lambda\rho}) (\tensor{\delta}{^{\mu}_{\lambda}}
+    (\eta^{\lambda\rho} - h^{\lambda\rho}) (\tensor{\delta}{^{\mu}_{\lambda}}
     + \partial_{\lambda}\epsilon^{\mu}) (\tensor{\delta}{^{\nu}_{\rho}}
     + \partial_{\rho} \epsilon^{\nu}) \\
     &= (\eta^{\mu\rho} - h^{\mu\rho} +
@@ -339,7 +355,8 @@ abbiamo visto che deve valere $\dalamb \epsilon^{\mu} = 0$.  Poiché anche
 $\epsilon^{\mu}$ soddisfa l'equazione delle onde, la sua soluzione sarà data
 dalla sovrapposizione lineare di onde del tipo
 \begin{equation}
-  \epsilon^{\mu} = \Re\{\tilde\epsilon^{\mu}\e^{\uimm k^{\lambda}x_{\lambda}}\}.
+  \epsilon^{\mu} = \Re\{\tilde{\epsilon}^{\mu}\e^{\uimm
+    k^{\lambda}x_{\lambda}}\}.
 \end{equation}
 La perturbazione della metrica in questo nuovo sistema è
 \begin{equation}
@@ -347,31 +364,31 @@ La perturbazione della metrica in questo nuovo sistema è
   h_{\mu\nu} - \partial_{\nu}\epsilon_{\mu} - \partial_{\mu}\epsilon_{\nu}
 \end{equation}
 e poiché
-$\partial_{\nu}\epsilon_{\mu} = \uimm k_{\nu}\tilde\epsilon_{\mu}
+$\partial_{\nu}\epsilon_{\mu} = \uimm k_{\nu}\tilde{\epsilon}_{\mu}
 \e^{\uimm k^{\lambda}x_{\lambda}}$ si ha
 \begin{equation}
-  e'_{\mu\nu} = e_{\mu\nu} - \uimm k_{\nu}\tilde\epsilon_{\mu} - \uimm
-  k_{\mu}\tilde\epsilon_{\nu}.
+  e'_{\mu\nu} = e_{\mu\nu} - \uimm k_{\nu}\tilde{\epsilon}_{\mu} - \uimm
+  k_{\mu}\tilde{\epsilon}_{\nu}.
 \end{equation}
 Così risulta
 \begin{subequations}
   \begin{align}
-    e'_{11} &= e_{11} - \uimm k_{1} \tilde\epsilon_{1} - \uimm
-    k_{1}\tilde\epsilon_{1} = e_{11}, \\
-    e'_{12} &= e_{12} - \uimm k_{2}\tilde\epsilon_{1} - \uimm
-    k_{1}\tilde\epsilon_{2} = e_{12}, \\
-    e'_{13} &= e_{13} - \uimm k_{3}\tilde\epsilon_{1} - \uimm
-    k_{1}\tilde\epsilon_{3} = e_{13} - \uimm k\tilde\epsilon_{1} = 0, \\
-    e'_{23} &= e_{23} - \uimm k_{3}\tilde\epsilon_{2} - \uimm
-    k_{2}\tilde\epsilon_{3} = e_{23} - \uimm k\tilde\epsilon_{2} = 0, \\
-    e'_{33} &= e_{33} - 2\uimm k_{3}\tilde\epsilon_{3} = 0, \\
-    e'_{00} &= e_{00} - 2\uimm k_{0}\tilde\epsilon_{0} = 0,
+    e'_{11} &= e_{11} - \uimm k_{1} \tilde{\epsilon}_{1} - \uimm
+    k_{1}\tilde{\epsilon}_{1} = e_{11}, \\
+    e'_{12} &= e_{12} - \uimm k_{2}\tilde{\epsilon}_{1} - \uimm
+    k_{1}\tilde{\epsilon}_{2} = e_{12}, \\
+    e'_{13} &= e_{13} - \uimm k_{3}\tilde{\epsilon}_{1} - \uimm
+    k_{1}\tilde{\epsilon}_{3} = e_{13} - \uimm k\tilde{\epsilon}_{1} = 0, \\
+    e'_{23} &= e_{23} - \uimm k_{3}\tilde{\epsilon}_{2} - \uimm
+    k_{2}\tilde{\epsilon}_{3} = e_{23} - \uimm k\tilde{\epsilon}_{2} = 0, \\
+    e'_{33} &= e_{33} - 2\uimm k_{3}\tilde{\epsilon}_{3} = 0, \\
+    e'_{00} &= e_{00} - 2\uimm k_{0}\tilde{\epsilon}_{0} = 0,
   \end{align}
 \end{subequations}
-avendo posto $\tilde\epsilon_{1} = -\uimm e_{13}/k$,
-$\tilde\epsilon_{2} = -\uimm e_{23}/k$,
-$\tilde\epsilon_{3} = -\uimm e_{33}/(2k)$ e
-$\tilde\epsilon_{0} = \uimm e_{00}/(2k)$.  Inoltre avevamo visto che
+avendo posto $\tilde{\epsilon}_{1} = -\uimm e_{13}/k$,
+$\tilde{\epsilon}_{2} = -\uimm e_{23}/k$,
+$\tilde{\epsilon}_{3} = -\uimm e_{33}/(2k)$ e
+$\tilde{\epsilon}_{0} = \uimm e_{00}/(2k)$.  Inoltre avevamo visto che
 $e'_{01} = -e'_{31} = 0$, $e'_{02} = -e'_{32} = 0$ e
 $e'_{03} = -(e'_{33}+e'_{00})/2 = 0$, quindi per un'onda che si propaga lungo
 l'asse $z$ rimangono diversi da zero solo le componenti $e_{22} = -e_{11}$ e
@@ -423,7 +440,7 @@ nulla in quanto il modulo quadro $k^{\mu}k_{\mu}$ del vettore d'onda è nullo,
 come visto nel paragrafo~\ref{sec:onde-elettromagnetiche-vuoto}.  Gli ipotetici
 quanti del campo gravitazionale, i \index{gravitone}\emph{gravitoni}, sono
 descritti dal campo tensoriale $h_{\mu\nu}$, quindi sono particelle con spin $2$
-e anch'essi massa nulla perché $k^{\mu}k_{\mu} = 0$.
+e anch'essi hanno massa nulla perché $k^{\mu}k_{\mu} = 0$.
 
 % TODO: completare, vedi appunti del 25/05/2012
 \section{\completare{Tecniche di rivelazione delle onde gravitazionali}}
@@ -648,8 +665,8 @@ presente un momento torcente esterno diverso da zero, risulta
   \end{align}
 \end{subequations}
 con $\bm{P}$ quantità di moto totale del sistema e $\bm{\tau}$ momento torcente
-totale.  Dunque per un sistema di masse in moto con velocità $v \ll c$ che
-emettono onde gravitazionali i due termini di dipoli, i principali nello
+totale.  Dunque per un sistema isolato di masse in moto con velocità $v \ll c$
+che emettono onde gravitazionali i due termini di dipoli, i principali nello
 sviluppo in multipoli dell'energia emessa, sono nulli e il termine dominante
 sarà quello di quadrupolo, del tipo
 \begin{equation}
@@ -657,7 +674,9 @@ sarà quello di quadrupolo, del tipo
 \end{equation}
 Il fattore numerico $45$, invece di $180$ del caso elettromagnetico, è legato al
 fatto che il campo gravitazionale ha spin $2$, mentre il campo elettromagnetico
-ha spin $1$.\footnote{Vedi \textcite[471]{shapiro:black-holes}.}
+ha spin
+$1$.\footnote{Vedi \textcite[974]{misner:gravitation};
+  \textcite[471]{shapiro:black-holes}.}
 
 Esaminiamo più in dettaglio il problema.  Sappiamo che nell'approssimazione di
 campo debole $R_{\mu\nu}^{(1)} = \dalamb h_{\mu\nu}/2$, quindi l'equazione di
@@ -824,7 +843,7 @@ Inserendo la~\eqref{eq:h-ij} in questa formula abbiamo
     \frac{1}{4}(\dddot{Q}_{22} - \dddot{Q}_{33})^{2}\bigg).
   \end{align}
 \end{subequations}
-Per ottenere l'energia totale $I$ emessa, nell'unità di tempo, dal sistema
+Per ottenere l'energia totale $I$ emessa dal sistema nell'unità di tempo,
 bisogna moltiplicare la media di $ct^{01}$ su tutti gli stati di polarizzazione
 per $r^{2}\dd\Omega$ e integrare su tutto l'angolo solido.  Sviluppando i
 calcoli si ottiene il seguente
@@ -832,9 +851,18 @@ risultato\footnote{Vedi~\textcite[460-461]{landau:campi}.}
 \begin{equation}
   I = \frac{G}{45c^{5}} \langle \dddot{Q}_{ij} \dddot{Q}^{ij}\rangle.
 \end{equation}
-Osserviamo che l'energia emessa dal sistema è proporzionale $G/c^{5}$, che è un
-fattore estremamente piccolo, quindi l'efficienza di emissione di radiazione da
-parte di masse in movimento è, generalmente, molto bassa.
+Si può avere emissioni di radiazione solo da parte di distribuzioni di massa in
+movimento con momento di quadrupolo di massa dipendente dal tempo e in
+particolare con $\dddot{Q}_{ij} \neq 0$.  Le masse che costituiscono il sistema
+sono singolarmente in moto accelerato, ma il centro di massa del sistema ha
+accelerazione nulla, se il sistema è isolato.  Un esempio di questo tipo è un
+sistema binario di pulsar: ciascuna stella è in moto di rivoluzione attorno al
+comune centro di massa ed emette onde gravitazionali, ma il centro di massa, non
+essendo soggetto a forze o momenti torcenti esterni, si muove con velocità
+costante.  Osserviamo che l'energia emessa dal sistema è proporzionale
+$G/c^{5}$, che è un fattore estremamente piccolo, quindi l'efficienza di
+emissione di radiazione da parte di masse in movimento è, generalmente, molto
+bassa.
 
 \section{Sorgenti di onde gravitazionali}
 \label{sec:sorgenti-onde-grav}
@@ -1018,4 +1046,5 @@ sferica continua a emettere radiazione elettromagnetica.
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../gravitazione"
+%%% fill-column: 80
 %%% End:

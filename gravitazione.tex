@@ -5,9 +5,10 @@
 \usepackage[italian]{babel}
 
 %%%%% Pacchetti caricati
+\usepackage{microtype}
 \usepackage{layaureo}
 \usepackage[autostyle=true]{csquotes}
-\usepackage[style=numeric,hyperref,abbreviate=false,backend=biber]{biblatex}
+\usepackage[style=authoryear,hyperref,abbreviate=false,backend=bibtex]{biblatex}
 \usepackage{fancyhdr,emptypage}
 \usepackage{tensor} % per rappresentare i tensori
 \usepackage[font=small,format=hang,labelfont=bf,textformat=period]{caption}
@@ -23,6 +24,7 @@
 % restituisce erroneamente lettere in tondo, non in corsivo e non funziona con
 % le lettere greche.
 \usepackage{bm}
+\usepackage[long,nodayofweek]{datetime}
 \usepackage{makeidx}
 \usepackage{siunitx}
 \usepackage{hyperref}
@@ -74,7 +76,32 @@
 
 % librerie ti TikZ
 \usetikzlibrary{calc,decorations.pathmorphing,decorations.pathreplacing,
-  intersections}
+  intersections,matrix,backgrounds}
+
+% Stili per TikZ per rendere una matrix simile a una classica pmatrix di LaTeX.
+% Vedi http://tex.stackexchange.com/a/26909
+\tikzset{
+  ams/.style={
+    baseline=-.7ex,
+    every left delimiter/.style={xshift=2pt},
+    every right delimiter/.style={xshift=-2pt},
+    every node/.style={inner sep=0pt},
+  },
+  ams matrix/.style={
+    inner sep=1pt,
+    column sep=1.5ex,
+    row sep=2\arraycolsep,
+    matrix of math nodes,
+  },
+  pmatrix/.style={
+    ams,
+    every matrix/.style={
+      ams matrix,
+      left delimiter={(},
+      right delimiter={)},
+    }
+  }
+}
 %%%%% Fine impostazioni
 
 %%%%% Comandi personalizzati
@@ -91,7 +118,7 @@
 % comando per evidenziare le sezioni da completare o espandere.  NOTA: è un
 % comando provvisorio, serve solo durante la scrittura del testo, ricordarsi di
 % eliminarlo quando non serve più.
-\newcommand{\completare}[1]{\textcolor{red}{#1}}
+\newcommand{\completare}[1]{\textcolor{red}{#1 (COMPLETARE)}}
 
 % Operatori
 \newcommand*{\dd}{\mathop{}\!\mathrm{d}} % Operatore differenziale \dd
@@ -158,18 +185,6 @@
 % il puntino litiga con `\hat')
 \newcommand*{\versor}[1]{\hat{\bm{#1}}}
 
-% Ambiente per scrivere sistemi di equazioni.
-% Vedi `L'arte di scrivere con LaTeX' di Pantieri.
-% Esempio d'uso (in ambiente matematico):
-%	\begin{sistema}
-%         x+y+z=0 \\
-%         2x-y=1 \\
-%         y-4z=-3
-%       \end{sistema}
-\newenvironment{sistema}%
-{\left\lbrace\begin{array}{@{}l@{}}}%
-    {\end{array}\right.}
-
 %% Campi notevoli
 \let\numberset\mathbb
 \newcommand{\N}{\numberset{N}}	% Naturali \N
@@ -190,13 +205,41 @@
 
 \makeindex{}
 
-% titolo provvisorio per il frontespizio provvisorio
-\title{Gravitazione e cosmologia \\ {\small Versione di Matteo}}
-\author{}
-\date{}
 \begin{document}
 \frontmatter{}
-\maketitle
+
+%% copertina, rielaborazione dell'esempio `\titleGP' di pagina 34 del file di
+%% documentazione `titlepages.pdf'
+\thispagestyle{empty}
+\begingroup
+\scshape
+\newdateformat{mydate}{\THEDAY{}~\monthname[\THEMONTH{}]~\THEYEAR{}}
+\centering
+\vspace*{\baselineskip}
+\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+\rule{\textwidth}{0.4pt}\\[0.2\baselineskip]
+{\Huge Gravitazione\\ e \\[0.3\baselineskip]
+  Cosmologia} \\
+(versione di Matteo Leo)\\[0.2\baselineskip]
+\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+\rule{\textwidth}{1.6pt}\\[\baselineskip]
+{\large Appunti del corso tenuto dal professor Gabriele Ingrosso} \\
+Lecce, a. a. 2011-2012\par
+\vspace*{2\baselineskip}
+Curato da \\[0.5\baselineskip]
+{\Large Prof. Gabriele Ingrosso \\
+  Mosè Giordano\par}
+{\itshape Università del Salento\par}
+\vfill
+\includegraphics[width=2cm]{figure/logo_unisalento}\\
+\mydate\today\par
+\endgroup
+%% Fine copertina
+
+\newpage
+Si fa presente che il lavoro è \emph{in progress} per cui sono gradite
+segnalazioni di errori ed in generale di commenti che migliorino il testo.
+
 
 \cleardoublepage{}
 \tableofcontents{} % indice generale

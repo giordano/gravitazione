@@ -1,8 +1,597 @@
 \chapter{\completare{Cosmologia}}
 \label{cha:cosmologia}
 
+\section{Equazioni di Friedmann}
+
+\begin{itemize}
+\item La geometria dello spazio tempo sia descritta dall metrica R-W:
+  \begin{subequations}
+    \begin{align}
+      \label{rw1}
+      g_{tt} &= -1, \\
+      g_{it} &= 0, \\
+      g_{ij} &= R^2(t) ~ \tilde{g}_{ij}(x^i)
+    \end{align}
+  \end{subequations}
+  dove $t$ è il tempo cosmico, $x^{i} = (r,\theta,\phi)$ sono coordinate
+  coomoving e $\tilde{g}_{ij}(x^i)$ è la metrica dello spazio 3-D omogeneo ed
+  isotropo
+  \begin{subequations}
+    \begin{align}
+      \label{rw2}
+      \tilde{g}_{rr} &= (1-kr^2)^{-1}, \\
+      \tilde{g}_{\theta \theta} & = r^2, \\
+      \tilde{g}_{\phi \phi} &= r^2 \sin^2 \phi, \\
+      \tilde{g}_{ij} &= 0 \qquad \text{per $i \ne j$}.
+    \end{align}
+  \end{subequations}
+\item Universo è omogeneo ed isotropo: $\implies$ tensore energia impulso per
+  l'Universo ha la forma (fluido perfetto)
+  \begin{equation}
+    T_{\mu\nu} = p g_{\mu\nu} + (p+\rho) U_{\mu} U_{\nu}
+    \label{fp}
+  \end{equation}
+  con pressione $p(t)$ e densità di energia $\rho(t)$ funzioni del tempo e
+  quadrivelocità dei costituenti (oggi le galassie) dell'Universo
+  $U^{\mu}=(1,\bm{0})$.
+\item La dinamica dell'Universo determinata dalle equazioni di Einstein
+  \begin{subequations}
+    \begin{align}
+      \label{EE}
+      R_{\mu\nu} &= -8 \pi G S_{\mu \nu}, \\
+      S_{\mu \nu} &= T_{\mu \nu} - (1/2) g_{\mu \nu}
+      \tensor{T}{^{\lambda}_{\lambda}}
+    \end{align}
+  \end{subequations}
+\end{itemize}
+Il tensore di Ricci diventa (il punto indica derivazione rispetto al tempo):
+\begin{subequations}
+  \begin{align}
+    R_{tt} &= \frac{ 3 \ddot{R}}{R} \\
+    R_{ti} &= 0 \\
+    R_{ij} &= -(R\ddot{R}+2\dot{R}^2+2k) \tilde{g}_{ij}.
+  \end{align}
+\end{subequations}
+Osserva:
+\begin{subequations}
+  \begin{align}
+    \tensor{T}{^{\lambda}}{_{\lambda}} &= g^{\lambda\nu} T_{\lambda\nu} = p
+    \tensor{\delta}{^{\lambda}}_{{\lambda}} + (p+\rho) (-1) = 3p - \rho \\
+    S_{\mu \nu} &= (1/2) (\rho-p) g_{\mu\nu}+(p+\rho)U_{\mu} U_{\nu}
+  \end{align}
+\end{subequations}
+In particolare
+\begin{subequations}
+  \begin{align}
+    S_{tt} &= (1/2) (\rho-p)(-1)+(p+\rho)(+1) = (1/2)(\rho+3p) \\
+    \label{sij}
+    S_{ij} &= (1/2)(\rho-p) g_{ij}= (1/2)(\rho-p) R^2(t) \tilde{g}_{ij}
+  \end{align}
+\end{subequations}
+
+Dalle equazioni di Einstein per la componente $tt$:
+\begin{equation}
+  \frac{3 \ddot{R}}{R} = - 4\pi G (\rho+3p)
+  \label{e1}
+\end{equation}
+e per la componente $ij$:
+\begin{equation}
+  \label{e2}
+  \frac{\ddot{R}}{R} +\frac{2\dot{R}^2}{R^2}+\frac{2k}{R^2}= 4 \pi G (\rho-p)
+\end{equation}
+In aggiunta, si ha l'equazione di conservazione
+$\tensor{T}{^{\mu \nu}}{_{;\mu}} = 0$, e per $\nu =0$
+\begin{equation}
+  \dot{p} R^3 = \toder{}{t}[R^3(\rho+p)]
+  \label{moto1}
+\end{equation}
+o, equivalentemente, (poiché $\ltoder{}{t} = \dot{R} \ltoder{}{R}$)
+\begin{equation}
+  \toder{(\rho R^3)}{R} = -3pR^2
+  \label{moto2}
+\end{equation}
+{\bf Osserva} che dalle ultime 2 equazioni segue
+\begin{subequations}
+  \begin{gather}
+    \text{se $p=0$ (era materia)} \implies \rho \propto R^{-3} \\
+    \text{se $p=\rho/3$ (era radiazione)} \implies \rho \propto R^{-4} .
+  \end{gather}
+\end{subequations}
+Il set di Le equazioni \eqref{e1}, \eqref{e2} e \eqref{moto1} non sono
+indipendenti.  Eliminando $\ddot{R}$ si ottine un'equazione differenziale del
+primo ordine
+\begin{equation}
+  \dot{R}^2 +k = \frac{8 \pi G}{3} \rho R^2
+  \label{fri}
+\end{equation}
+Le equazioni \eqref{fri} e \eqref{moto1} insieme all'equazione di stato
+\begin{equation}
+  p=p(\rho)
+  \label{stato}
+\end{equation}
+permettono di determinare le 3 funzioni incognite $R(t)$, $p(t)$ e $\rho(t)$.
+Si otterranno 3 differenti soluzioni a seconda del valore di $k=-1,0,+1$.  I
+modelli cosmologici basati sulla metrica R-W, sulle equazioni di Einstein sono
+noti come modelli di Friedmann.
+
+{\bf Osservazione}: senza conoscere esplicitamente l'equazione di stato è
+possibile ricavare importanti informazioni sull'età $t_0$ dell'Universo e
+sull'andamento del fattore di scala cosmico $R(t)$.  Infatti:
+\begin{itemize}
+\item $R(t)$ definito positivo
+\item l'eq. \eqref{e1} mostra che $ \ddot{R} \propto - (\rho+3p) <0$ ad ogni
+  $t$.  Quindi $R(t)$ ha concavità rivolta verso il basso per ogni tempo cosmico
+  poiché per materia e radiazione $\rho(t)>0$ e $p(t)>0$
+\item all'istante attuale l'Universo è in espansione $\dot{R}(t_0) >0$ ed
+  inoltre $p_0=0$ (era materia).
+\end{itemize}
+Allora per $t>t_0$ ($t<t_0$), il termine a destra nell'eq. \ref{fri} va a zero
+(cresce) almeno come $1/R(t)$.
+
+Da queste considerazioni segue:
+\begin{itemize}
+\item età dell'Universo
+  \begin{equation}
+    t_0 < H_0^{-1}  = \frac {R(t_0)}{\dot{R}(t_0)} =  \num{13e9}
+    \left(\frac{\SI[per-mode=reciprocal]{75}{\kilo\metre\per\second\per\mega\parsec}}{H_0}\right)
+    \si{yr}.
+  \end{equation}
+\end{itemize}
+L'uguaglianza si avrebbe nel caso $\ddot{R} =0$ (per cui $R(t)=t \dot{R}$).
+Comportamento di $R(t)$ per $t>t_0$:
+\begin{itemize}
+\item se $k=-1$, per $t \to \infty$, $\dot{R} \to 1$, e quindi $R(t) \propto t$;
+\item se $k=0$, per $t \to \infty$, $\dot{R} \propto R^{-1/2}$, e quindi
+  $R(t) \propto t^{2/3}$;
+\item se $k=-1$, $\dot{R}$ decresce dal valore attuale (positivo), ed esiste un
+  istante $\tilde{t}$ a cui si annulla; quindi pet $t>\tilde{t}$ ${R}$ decresce
+  con il tempo fino ad un nuova singolarità poiché $\ddot {R} <0$ sempre.
+\end{itemize}
+
+\section{Densità e pressione dell'Universo presente}
+
+All'istante attuale densità e pressione sono date dalle equazioni
+\begin{subequations}
+  \begin{align}
+    \rho_0  &= \frac{3}{8 \pi G} \left(\frac{k}{R_0^2} + H_0^2 \right)
+    \label{rho0} \\
+    p_0 &= -\frac{1}{8 \pi G} \left[\frac {k}{R_0^2}+H_0^2(1-2q_0)\right]
+    \label{p0}
+  \end{align}
+\end{subequations}
+Posto
+\begin{equation}
+  \rho_c = \frac{3 H_0^2}{8 \pi G} = \num{1.1e29}
+  \left(
+    \frac{H_0}{\SI[per-mode=reciprocal]{75}{\kilo\metre \per \second \per
+        \mega\parsec}}
+  \right)^2
+  \si{\gram\per\centi\metre\cubed}
+  \label{rhoc}
+\end{equation}
+l'equazione \eqref{rho0} diventa
+\begin{equation}
+  \rho_0-\rho_c =  \frac{3 k}{8 \pi G R_0^2}
+  \label{temp1}
+\end{equation}
+pertanto l'Universo ha curvatura spaziale positiva o negativa a seconda che
+$\rho_0 > \rho_c$ oppure $\rho_0 < \rho_c$.  Possiamo inoltre mettere in
+relazione la densità $\rho_0$ con il parametro $q_0$.  Infatti per l'Universo
+presente (dominato dalla materia) $p_0=0$, dall'eq. \eqref{p0} si ha
+$k/R_0^2 = H_0^2 (2q_0-1)$, e sostituendo nella eq. \eqref{temp1}
+\begin{equation}
+  \frac {\rho_0} {\rho_c}=2 q_0
+  \label{rho0surhoc}
+\end{equation}
+pertanto
+\begin{itemize}
+\item se $q_0 > 1/2 \implies \rho_0>\rho_c$ e $k=+1$
+\item se $q_0 < 1/2 \implies \rho_0<\rho_c$ e $k=-1$.
+\end{itemize}
+
+\section{Era dominata dalla materia}
+
+All'istante attuale $\rho_m(t_0) = \SI{e-34}{\gram\per\centi\metre\cubed}$,
+$\rho_r(t_0)= \SI{e-34}{\gram\per\centi\metre\cubed}$; inoltre ad ogni istante
+$\rho_m \propto R^{-3}$ e $\rho_r \propto R^{-4}$. Allora ($1+z=R_0/R$)
+\begin{equation}
+  \frac {\rho_m(t)} {\rho_r(t)} = 10^{3} \frac {R(t)} {R_0}= 10^3 \frac{1}{1+z}
+\end{equation}
+da cui risulta che l'Universo è dominato dalla materia ($\rho_m(t) > \rho_r(t)$)
+dall'istante attuale ($z=0$) indietro nel tempo fino a red-shift $z = 1000$ (le
+galassie più distanti e i QSOs osservati hanno $z<3$).  Nelle equazioni di
+Friedmann porremo $p(t)=0$ ed assumeremo $\rho = \rho_0 [R_0/R(t)]^{3}$.
+Riprendiamo in esame l'equazione \eqref{fri} in cui è conveniente esprimere
+$\rho_0$ e $k/R^2$ in termini di $q_0$ ed $H_0$.  Dall'eq. \eqref{p0} segue
+\begin{equation}
+  \frac{k}{R_0^2}=(2q_0-1) H_0^2
+\end{equation}
+sostituendo questa espressione nell'eq. \eqref{rho0} si ha
+\begin{equation}
+  \frac{8\pi G}{3} \rho_0 = 2q_0 H_0^2
+\end{equation}
+Con le posizioni preceenti l'eq. \eqref{fri} di Friedmann diventa:
+\begin{equation}
+  \dot { R } ^2 + (2 q_0-1) H_0^2 R_0^2 = \frac{8\pi G}{3} \rho_0 \frac{R_0^3}{R}
+\end{equation}
+o equivalentemente
+\begin{equation}
+  \left(\frac{\dot R}{R_0}\right)^2 = H_0^2 \left(1-2q_0+2 q_0
+    \frac{R_0}{R}\right)
+\end{equation}
+Posto $x=R(t)/R_0$, l'eq. precedente diventa
+\begin{equation}
+  \frac{dx}{dt}= H_0 \left(1-2q_0+ \frac {2q_0}{x}\right)^{1/2}
+\end{equation}
+la cui soluzione formale è
+\begin{equation}
+  t= H_0^{-1} \int_0^{R/R_0} dx \left(1-2q_0+\frac{2q_0}{x}\right)^{-1/2}
+  \label{efa}
+\end{equation}
+Si osservi che abbiamo definito come $t=0$ l'inizio dell'era della materia.  In
+effetti l'era della materia ininiza a $t \simeq \SI{e5}{yr}$.  L'età
+dell'Universo è ottenuta dalla relazione precedente integrando sino ad $x=1$
+\begin{equation}
+  t_0= H_0^{-1} \int_0^{1} dx \left(1-2q_0+\frac{2q_0}{x}\right)^{-1/2}
+\end{equation}
+e quindi risulta sempre $t_0< H_0^{-1}$.  L'eq. \eqref{efa} può essere risolta
+analiticamente nei tre casi $k=+1,0,-1$.
+
+\subsubsection{Caso A $q_0 > 1/2$, $k=+1$, $\rho_0> \rho_c$}
+
+Definiamo l'angolo $\theta$ dalla relazione:
+\begin{equation}
+  1-\cos \theta = \frac{2q_0-1 }{q_0} x
+  \label{posizioneiniziale}
+\end{equation}
+da cui segue
+\begin{equation}
+  \dd x = \frac {q_0}{2q_0-1} \sin \theta \dd \theta =  \frac{- q_0}{2q_0-1} \dd \cos \theta
+\end{equation}
+L'integrale in eq. (\ref{efa}) diventa:
+\begin{equation}
+  \begin{split}
+    t H_0 &= \int _1^{\cos \theta} \left[1-2q_0+2q_0 \left(\frac{2q_0-1}{q_0}
+      \right) \left(\frac{1}{1-\cos \theta} \right) \right]^{-1/2} \dd\cos\theta
+    \left(\frac{-q_0}{2q_0-1} \right) \\
+    &=\frac{-q_0}{2q_0-1} \int _1^{\cos \theta} \left[
+      \frac{1-\cos \theta - 2q_0 + 2q_0 \cos \theta + 4q_0 -2} {1-\cos\theta}
+    \right]^{-1/2} \dd\cos\theta \\
+    &=\frac {-q_0}{2q_0-1} \int _1^{\cos \theta} \left[ \frac {1-\cos \theta}
+      {\cos \theta (2q_0-1) + (2q_0-1)} \right]^{1/2} \dd\cos\theta \\
+    &=\frac {-q_0}{(2q_0-1)^{3/2}} \int_1^{\cos \theta} \sqrt \frac
+    {1-\cos \theta} {1+\cos \theta} \dd \cos \theta
+  \end{split}
+\end{equation}
+Nota che
+\begin{equation}
+  \int \sqrt \frac {1-y}{1+y} \dd y = \sqrt {1-y} + \arcsin y
+\end{equation}
+allora abbiamo
+\begin{equation}
+  t H_0 = \frac {-q_0}{(2q_0-1)^{3/2}}
+  \left[ \sqrt {1-\cos\theta^2} + \arcsin \cos \theta - \arcsin 1 \right]
+\end{equation}
+Nota che $\cos \theta = \sin (\pi/2-\theta)$ ed inoltre
+$\arcsin \sin \theta = \theta$. Allora
+\begin{equation}
+  t H_0= \frac {-q_0}{(2q_0-1)^{3/2}} \left[ \sin \theta + {\pi}/{2} - \theta -
+    {\pi}/{2}\right]
+\end{equation}
+da cui
+\begin{equation}
+  t = \frac {-q_0}{H_0(2q_0-1)^{3/2}} ( \theta - \sin \theta )
+  \label{sema}
+\end{equation}
+Questa relazione insieme alla posizione iniziale in eq. \eqref{posizioneiniziale}
+(con $x=R(t)/R_0$)
+\begin{equation}
+  R(t)= \frac {R_0 q_0} {2q_0-1} (1-\cos \theta)
+\end{equation}
+mostra che $R(t)$ è una cicloide: $R(t)$ aumenta dal valore zero a $\theta=0$
+($t=0$) fino al valore massimo $R_{max}= {2 q_0 R_0 }/({2q_0-1})$ a
+$t_{max}= \pi q_0/(2q_0-1)^{3/2}$ e dopo ritorna a zero per $\theta =2 \pi$ e
+$t=2t_{max}$.  L'istante attuale è ottenuto ponendo $R(t)=R_0$ ($x=1$)
+\begin{subequations}
+  \begin{align}
+    \cos\theta_0 &= \frac {1} {q_0} -1 \\
+    t_0 &= \frac {q_0}{H_0 (2q_0-1)^{3/2}} \left(\arccos(\frac {1}{q_0}-1) -
+      \frac {1}{q_0}(2q_0-1)^{1/2} \right)
+  \end{align}
+\end{subequations}
+Nota che
+$\sin \theta_0= \sqrt{1-\cos^2\theta_0}= \sqrt{1-(q_0^{-1}-1)^2}=
+{\sqrt{2q_0-1}}/{q_0}$
+Se poniamo $q_0=1$ ($\cos \theta_0=0$), allora
+$t_0 = H_0^{-1} (\pi /2-1) = \SI{7.5e5}{yr}$, $t_{max} = \SI{40e9}{yr}$,
+l'intero ciclo si compierebbe in \SI{80e9}{yr}.  Qui abbiamo usato i valori
+$H_0^{-1} = \SI{13e9}{yr}$,
+$H_0 = \SI{75}{\kilo\metre \per \second \per \mega\parsec}$.
+
+\subsubsection{Caso B: $q_0 = 1/2$, $k=0$, $\rho_0=  \rho_c$}
+
+Questo è il caso Einstein-de Sitter.  L'eq. \eqref{efa} diventa
+\begin{equation}
+  t = H_0^{-1} \int_0^{R/R_0} \sqrt x dx = H_0^{-1} \frac{2} {3} x^{3/2}
+\end{equation}
+da cui segue
+\begin{equation}
+  \frac{R(t)}{R_0} = \left( \frac {3H_0 t}{2} \right)^{2/3}
+\end{equation}
+Allora $R(t)$ aumenta senza limiti; l'istante attuale $t_0=2H_0^{-1}/3$ risulta
+pari a $t_0= \SI{9e9}{yr}$
+($H_0= \SI{75}{\kilo\metre \per \second \per \mega\parsec}$.)
+
+\subsubsection{Caso C: $0< q_0 < 1/2$, $k=-1$, $\rho_0 <  \rho_c$ }
+
+Con la posizione $\theta = i \phi$ si ottengono risultati analoghi al caso A.
+In particolare:
+\begin{gather}
+  t H_0= \frac {q_0}{(-2q_0+1)^{3/2}} \left( \sinh \phi \ - \phi \right)
+  \label{topen} \\
+  \cosh \phi -1 = \frac {1-2q_0}{q_0} \frac {R(t)}{R_0}
+  \label{cosht}
+\end{gather}
+Per $t \to \infty$ si ha
+$R(t)/R_0 \simeq {q_0}/{(1-2q_0)} {\exp{\phi}} \simeq \sqrt{1-2q_0} H_0 t$, da
+cui si vede che $R(t) $ cresce senza limiti come $t$ stesso.  L'istante attuale
+è definito ponendo $R(t_0)= R_0$ nell'eq. \eqref{cosht}.  Si ha
+$\cosh \phi_0= q_0^{-1}-1$, e sostituendo nella eq. \eqref{topen}
+($ \sinh^2 \phi - \cosh^2 \phi =1$) si ha:
+\begin{equation}
+  \begin{split}
+    t_0 &= \frac {q_0}{H_0 (1-2q_0)^{3/2}}
+    \left[- \cosh^{-1} (q_0^{-1}-1) + \sqrt{1+(q_0^{-1}-1)} \right] \\
+    &= H_0^{-1} \left[ (1-2q_0)^{-1} - q_0 (1-2q_0)^{-3/2} \cosh^{-1}
+      (q_0^{-1}-1) \right]
+  \end{split}
+\end{equation}
+Ad esempio se prendiamo $q_0 = 0.014$ ($\rho_0=\rho^*_{~Gal}$) si ha
+$t_0 \simeq 0.96~ H_0^{-1} \simeq \SI{13e9}{yr}$.  Nota che dallo studio delle
+abbondanze degli isotopi degli elementi radioattivi segue che l'età della Terra
+$\simeq \SI{4.5e9}{yr}$, e l'età della Galassia $\simeq \SI{7e9}{yr}$.  Comunque
+gli oggetti più vecchi nell'Universo sono gli ammassi globulari la cui età
+risulta $\simeq \SI{14e9}{yr}$.
+
+\section{Universo di Friedmann con Costante Cosmologica}
+
+Osserviamo che dall'eq. \eqref{moto1} con $p=-\rho$ segue
+$\rho(t)=\text{costante}$, cioè si ha un Universo stazionario.  Prima della
+scoperta dell'espansione cosmologica (Hubble 1929), Einstein modifica le
+equazioni di campo introducendo un termine costante
+\begin{equation}
+  R_{\mu \nu} - \frac{1}{2} g_{\mu \nu} R - \Lambda g_{\mu \nu} =
+  - 8 \pi G T_{\mu \nu}
+  \label{EECC1}
+\end{equation}
+Possiamo scrivere l'eq. \eqref{EECC1} in un'altra forma.  Moltiplicando per
+$g^{\mu \nu}$ segue: $R - (1/2) 4 R - 4\Lambda = -8 \pi G T^{\mu}_{mu}$, cioè
+$R=8 \pi G \tensor{T}{^{\mu}}{_{mu}} -4 \Lambda$.  Sostituendo e portando a
+destra il termine $\Lambda g_{\mu \nu}$
+\begin{equation}
+  R_{\mu \nu} = - 8 \pi G
+  \left(
+    T_{\mu \nu} - \frac {1}{2} g_{\mu \nu} T + \rho_{\Lambda}
+  \right)
+  \label{EECC2}
+\end{equation}
+con
+\begin{equation}
+  \rho_{\Lambda} = \frac {\Lambda c^2} {8 \pi G}
+\end{equation}
+Ho quindi un termine di sorgente $S_{\mu \nu}$ che nel caso $\mu=\nu=0$ diventa:
+\begin{equation}
+  S_{00} = \frac {1}{2} (\rho+3p) - \rho_{\Lambda}
+\end{equation}
+Uguagliando tale termine alla componente $tt$ del tensore di Ricci
+($R_{tt}= 3 \ddot{R}/R$), in sostituzione dell'eq. \eqref{e1}, si ha ora:
+\begin{equation}
+  \frac{3 \ddot{R}}{R} = - 8\pi G \left[ \frac{1}{2}  (\rho+3p) - \rho_{\Lambda}
+  \right]
+  \label{ecc1}
+\end{equation}
+e con la sostituzione $\rho_c=3H_0^2/(8\pi G)$
+\begin{equation}
+  \frac {\ddot{R}} {R} = - \frac {H_0^2} {\rho_c}
+  \left[
+    \frac {1}{2}  (\rho+3p) - \rho_{\Lambda}
+  \right]
+\end{equation}
+ed infine
+\begin{equation}
+  \label{ddRcc}
+  \frac {\ddot{R}} {R} = H_0^2
+  \left[
+    \Omega_{\Lambda} -\frac {\Omega_m (1+z)^3} {2 }  - \Omega_r (1+z)^4
+  \right]
+\end{equation}
+con
+\begin{subequations}
+  \begin{align}
+    \Omega_{\Lambda} & = \frac{\rho_{\Lambda}}{\rho_c}, \\
+    \Omega_m         & = \frac{\rho_m(0)}{\rho_c}, \\
+    \Omega_r         & = \frac{\rho_r(0)}{\rho_c}
+  \end{align}
+\end{subequations}
+In maniera analoga il termine $S_{ij}$ diventa
+\begin{equation}
+  S_{ij}= \left[ \frac {1}{2}(\rho-p)  + \rho_{\Lambda} \right] R^2(t) \tilde{g}_{ij}
+  \label{sijcc}
+\end{equation}
+Eq. \eqref{e2}  è ora sostituita da
+\begin{equation}
+  \frac {\ddot{R}}{R}+\frac{2\dot{R}^2}{R^2}+\frac{2k}{R^2}=
+  8 \pi G \left[ \frac{1}{2}(\rho-p) +\rho_{\Lambda} \right]
+\end{equation}
+Eliminando $\ddot R$ con l'uso dell'eq. (\ref{ecc1})
+\begin{equation}
+  \frac  {\dot{R}^2} {R^2} +\frac {k}{R^2} = \frac {8 \pi G}{3} (\rho+\rho_{\Lambda})
+\end{equation}
+da cui segue:
+\begin{equation}
+  H(z)=H_0 \left[\Omega_{\Lambda}+\Omega_{k}(1+z)^2+\Omega_m (1+z)^3+\Omega_r (1+z)^4\right]^{1/2}
+  \label{hzcc}
+\end{equation}
+con
+\begin{equation}
+  \Omega_k = \frac {k}{R_0^2 H_0^2}
+\end{equation}
+Osserva che se $k=0$ allora (per $t=t_0$ , $z=0$)
+\begin{equation}
+  \Omega_{\Lambda} + \Omega_m  + \Omega_r = 1
+\end{equation}
+Inoltre per il parametro di decelerazione si ha:
+\begin{equation}
+  q_0= -\frac {\ddot R_0 R_0}{\dot R_0^2} = \frac{\Omega_m}{2} + \Omega_r -\Omega_{\Lambda}
+  \label{q0cc}
+\end{equation}
+{\bf Osservazione}: la dipendenza $H=H(t)$ influenza la relazione
+distanza-redshift.  Dalla definizione $z=R_0/R(t) -1$, segue
+\begin{equation}
+  \dd z = -\frac {R_0}{R(t)} H(t) \dd t
+\end{equation}
+Per segnali luminosi ($d \tau=0$)
+\begin{equation}
+  \int_t^{t_0} \frac {\dd t}{R(t)}= \int_0^{r} \frac {\dd r}{\sqrt1-kr^2} = r +
+  \mathcal{O}(r^3)
+\end{equation}
+Dalle precedenti segue:
+\begin{equation}
+  r= \int_0^z \frac{\dd z}{R_0 ~ H(t)}
+\end{equation}
+per cui la distanza di luminosit\'a $d_L= r R_0 (1+z)$ diventa
+\begin{equation}
+  d_L = (1+z) \int_0^z \frac{\dd z}{H(z)}.
+\end{equation}
+In conclusione lo studio del diagramma $m-z$ per oggetti molto lontani coinvolge
+i 4 parametri: $\Omega_{\Lambda}$, $\Omega_{k}$, $\Omega_{m}$, $\Omega_{r}$.  La
+vecchia relazione era
+\begin{equation}
+  d_L = \frac {1}{H_0} \left[ z+ \frac{1}{2}(1-q_0)z^2\right].
+\end{equation}
+
+{\bf Osservazione:} L'introduzione della costante cosmologica nelle equazioni di
+Einstein equivale all'introduzione tra i costituenti dell'Universo di un fluido
+con densità $\rho_{\Lambda}$ e pressione $p_{\Lambda}=-\rho_{\Lambda}$.
+Indichiamo con X una generica componente dell'Universo con equazione di stato
+\begin{equation}
+  p_X = w \rho_X
+\end{equation}
+Ora, poiché per ogni componente disaccoppiata dalla radiazione vale l'equazione
+di conservazione:
+\begin{equation}
+  \toder{(\rho_X R^3)}{R} = -3 p_X R^2
+\end{equation}
+si ha quindi
+\begin{equation}
+  \rho_X \propto \frac {1}{R^{-3(1+w)}}
+\end{equation}
+Pertanto $\rho_{X}=\text{costante}$ implica $w=-1$.  Questo dimostra appunto che
+da $\rho_{\Lambda}=\text{costante}$ si ha $p_{\Lambda}=-\rho_{\Lambda}$.
+Notiamo ancora che il rapporto
+$\rho_{X}/\rho_m \propto R^{-3w} \propto (1+z)^{3w}$.  Quindi per il caso $w<0$,
+si ha che per $t \to 0$ ($z \to \infty$), $\rho_{X}/\rho_m \to 0$, cioè
+l'importanza della componente X diminuisce indietro nel tempo.  Allora la
+cosmologia di Friedmann non è modificata per $z>>1$ dall'introduzione della
+costante cosmologicanel caso $w<0$.
+
+Allora invece di introdurre nelle equazioni di Einstein la costante cosmologica
+(modificare la geometria) potrei aggiungere nel termine di sorgente una
+componente dark che chiamiamo dark energy.  In generale si assume che la dark
+energy abbia equazione di stato $p_X=w\rho_X$ con $w<0$, il caso $w=-1$ include
+la costante cosmologica. La relazione in eq. \eqref{hzcc} risulterà così
+modificata:
+\begin{equation}
+  H(z)=H_0 \left[ \Omega_{X} (1+z)^{3(1+w)} + \Omega_{k} (1+z)^2+ \Omega_m (1+z)^3 + \Omega_r (1+z)^4 \right]^{1/2}
+  \label{hzccX}
+\end{equation}
+e per l'istante attuale
+\begin{equation}
+  1= \left[ \Omega_{X} + \Omega_{k} + \Omega_m  + \Omega_r \right]
+ \end{equation}
+Inoltre l'eq. (\ref{ddRcc}) diventa
+\begin{equation}
+  \frac {\ddot{R}} {R} = \frac{H_0^2}{2}
+  \left[ \Omega_{X} (1+3w) (1+z)^{3(1+w)}
+    +\frac {\Omega_m (1+z)^3} {2 }  +
+    \Omega_r (1+z)^4 \right]
+  \label {ddRw}
+\end{equation}
+da cui segue per il parametro di decelerazione
+\begin{equation}
+  q_0= \frac{\Omega_X}{2} (1+3w) +  \frac{\Omega_m}{2} + \Omega_r - \Omega_{k}
+\end{equation}
+Nel caso $k=0$,
+\begin{equation}
+  q_0= \frac {1+3w \Omega_{X}}{2}
+\end{equation}
+vedremo che $\Omega_{X}=0.7$ ed $\Omega_{m}=0.3$, pertanto
+$q_0=0.5+w \propto - \ddot{R}_0$ quindi se $w<0.5$ Universo accelera.
+
+Tornando indietro alla relazione $d_L(z)$ osserviamo che nel caso $\Omega_{k}=0$
+ed $\Omega_{\Lambda}=0$
+\begin{equation}
+d_L =
+\end{equation}
+mentre se prendo $\Omega_{k}=0$ ed  $\Omega_{m}=0$
+\begin{equation}
+d_L = (1+z) \int_0^z \frac{dz}{H_0 (1+z)^{3(1+w)/2}}
+\end{equation}
+e per $w=-1$ segue $d_L=H_0^{-1} z (1+z)$. Quindi a parità di $z$ oggetti
+appaiono più o meno distanti a seconda del valore dei parametri cosmologici
+$\Omega$.  Vedi figura da cui si ottiene (assumendo $k=0$ $\Omega_{m}=0.32$ ed
+$\Omega_{\Lambda}=0.68$)
+
+L'introduzione della costante cosmologica pu\'o essere interpretata in due modi:
+caso (a) equivale a cambiare la lagrangiana della materia (descritta da
+coordinate generalizzate $\phi$) in accordo a:
+\begin{equation}
+  L_{\textup{matter}} \to L'_{\textup{matter}} = L_{\textup{matter}} - \frac{\Lambda}{8 \pi G}.
+\end{equation}
+In questo caso l'azione diventa
+\begin{equation}
+  S_{tot}=S_{g}+S_{m}= \frac {1}{16 \pi G}
+  \int R \sqrt{-g} \dd^4x + \int \left( L_{m}- \frac {\Lambda}{8 \pi G} \right) \sqrt{-g} \dd^4 x
+\end{equation}
+Osserva che le equazioni del moto per la materia (descritta dal campo $\phi$),
+ottenute da $\delta S/\delta \phi=0$, rimangono inalterate poiché
+$\Lambda=\text{costante}$.  In questo caso l'introduzione del termine con
+$\Lambda$ introduce uno shift nello zero point dell'energia della materia.
+Questo shift non influenza la dinamica della materia, mentre la gravità che
+accoppia alla totale energia del sistema ne è influenzata.  Il caso (b)
+corrisponde a riscrivere l'azione totale come:
+\begin{equation}
+  S_{tot}= \frac {1}{16 \pi G}
+  \int (R-2\Lambda)  \sqrt{-g} \dd^4x + \int  L_{m} \sqrt{-g} \dd^4 x
+\end{equation}
+Allora la gravità descritta da due costanti $G$ e $\Lambda$; in questo caso lo
+spazio-tempo è curvo anche in assenza di materia (eq. di Einstein nel vuoto non
+ammettono la soluzione flat space.)
+
+L'equazione di stato $\rho=-p$ ha un'altra importante implicazione in relatività
+generale.  La parte spaziale $\bm{g}$ dell'accelerazione geogtiche (che misura
+la relativa accelerazione di due geodetiche vicine) soddisfa la seguente
+equazione:
+\begin{equation}
+  \nabla \cdot \bm{g} = - 4 \pi G (\rho+3p)
+\end{equation}
+allora la sorgente dell'accelerazione geodetica è $\rho+3p$; allora se
+$\rho+3p<0$ la gravità è repulsiva.  Questo appunto accade se
+$\rho \simeq \rho_{\Lambda}$ poiché
+$\rho_{\Lambda}+p_{\Lambda}= -2 \rho{\Lambda}$.  Ovviamente la transizione dalla
+gravità attrattiva a quella repulsiva accade quando $\rho_m$ diventa minore di
+$\rho_{\Lambda}$
+
+Quanto vale $\Lambda$?  La velocità della luce $c$ e l'istante attuale $t_0$
+definiscono una lunghezza caratteristica
+$l_0 = c t_0 \simeq c/H_0 \simeq \SI{3000}{\mega\parsec}$.  Quindi
+$l_0 \simeq \SI{10e28}{\centi\metre}$.  La costante cosmologica deve soddisfare
+la condizione
+$\Lambda < \SI[per-mode=reciprocal]{e-45}{\per\centi\metre\squared}$ in modo
+tale che $1/\Lambda > l_0^2$.
 
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../gravitazione"
+%%% fill-column: 80
 %%% End:
