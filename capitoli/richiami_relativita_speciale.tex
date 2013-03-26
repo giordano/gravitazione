@@ -2,10 +2,6 @@
 \chapter{Richiami di relatività speciale}
 \label{cha:relativita-speciale}
 
-In questo capitolo richiameremo alcuni concetti di relatività speciale necessari
-per lo sviluppo della teoria della relatività generale.  Alcune nozioni, come
-quelle di lunghezza e tempo propri e linea di universo, sono considerate già
-note da precedenti corsi di relatività.
 
 \section{Trasformazioni di Lorentz}
 \label{sec:trasformazioni-lorentz}
@@ -15,59 +11,23 @@ La relatività speciale, o ristretta, si basa su due postulati:
 \item\emph{tutte le leggi fisiche assumono la stessa forma in qualsiasi sistema
     di riferimento inerziale (\index{principio!di relatività}principio di
     relatività)};
-\item \emph{la velocità della luce nel vuoto ha lo stesso valore in tutti i
-    sistemi di riferimento inerziali (costanza della velocità della luce)}.
+\item \emph{la velocità della luce è indipendente dal moto della sorgente}.
 \end{enumerate}
 
 L'ambiente in cui si svolgono i fenomeni fisici descritti dalla relatività
 speciale è uno spazio quadrimensionale piatto, composto da una coordinata
 temporale e tre spaziali, chiamato \index{spazio!di Minkowski}
 \emph{spazio di Minkowski} e che indicheremo con il simbolo $\M$.  Un elemento
-dello spazio di Minkowski è chiamato \index{evento}\emph{evento}.  Lo spazio di
-Minkowski si distingue dal corrispondente spazio euclideo quadrimensionale
-$\R^{4}$ e anche dallo spazio ordinario tridimensionale $\R^{3}$ in quanto
-utilizza una metrica differente da quelle usualmente adottate in $\R^{3}$ ed
-$\R^{4}$.
-
-Nello spazio ordinario $\R^{3}$ si definisce la metrica, ovvero la distanza fra
-due punti infinitesimamente vicini di coordinate cartesiane
-$\bm{x} = (x,y,z) \equiv (x_{1},x_{2},x_{3})$ e
-$\bm{x} + \dd \bm{x} = (x+\dd x,y+\dd y,z+\dd z) \equiv (x_{1}+\dd
-x_{1},x_{2}+\dd x_{2},x_{3}+\dd x_{3})$ come
-\begin{equation}
-  \dd\bm{x}^{2} = (\dd x_{1})^{2} + (\dd x_{2})^{2} + (\dd x_{3})^{2} =
-  \sum_{i=1}^{3} \sum_{j=1}^{3} \delta_{ij} \dd x_{i} \dd x_{j},
-\end{equation}
-dove $\delta_{ij}$ è il tensore metrico dato da
-\begin{equation}
-  \delta_{ij} = \diag (+1,+1,+1) =
-  \begin{pmatrix}
-    +1 & 0  & 0  \\
-    0  & +1 & 0  \\
-    0  & 0  & +1
-  \end{pmatrix}.
-\end{equation}
-Allo stesso modo, nello spazio $\R^{4}$ si utilizza il tensore metrico
-rappresentato da $\diag (+1,+1,+1,+1)$.  Una generica trasformazione lineare
-omogenea delle coordinate cartesiane $(x,y,z) \equiv (x_{1},x_{2},x_{3})$ che
-lasci invariate la metrica, cioè che soddisfi la condizione
-$\dd\bm{x}^{2} = \dd\bm{x}'^{2}$, può essere scritta come
-\begin{equation}
-  x'_{i} = \sum_{j=1}^{3} R_{ij}x_{j}, \qquad i,j = 1,2,3,
-\end{equation}
-con $R_{ij}$ costanti reali, e la matrice di componenti $R_{ij}$ è una matrice
-di rotazione.
+dello spazio di Minkowski è chiamato \index{evento}\emph{evento}.  
 
 Nello spaziotempo di Minkowski definiamo le
 \index{coordinata!controvariante}\emph{coordinate controvarianti} di un evento
-che avviene al tempo $t$ nel punto $\bm{x}$ dello spazio tridimensionale con
-coordinate cartesiane $(x,y,z) \equiv (x^{1}, x^{2}, x^{3})$ come
+che avviene al tempo $t$ nel punto $\bm{x}$ dello spazio tridimensionale come
 \begin{equation}
   \label{eq:coord-controvariante}
-  x^{\alpha} = (x^{0},x^{i}) = (t, \bm{x}),
+  x^{\alpha} = (x^{0},x^{i}) = (t, \bm{x});
 \end{equation}
-con $\alpha$ che varia fra $0$, $1$, $2$ e $3$ e $i$ fra $1$, $2$ e $3$.  La
-\index{metrica!nello spazio di Minkowski}\emph{metrica} è data da
+la \index{metrica!nello spazio di Minkowski}\emph{metrica} è data da
 \begin{equation}
   \dd \tau^{2} = \dd t^{2} - \dd \bm{x}^{2} = -\tensor{\eta}{_{\alpha\beta}}\dd
   x^{\alpha} \dd x^{\beta},
@@ -92,25 +52,26 @@ in cui $\tensor{\eta}{_{\alpha\beta}}$ è il
     0  & 0  & 0  & +1
   \end{pmatrix}.
 \end{equation}
-Se si scelgono coordinate spaziali non cartesiane, come per esempio le
-coordinate sferiche o cilindriche, il tensore metrico assume una forma
-differente.  Se non diversamente specificato useremo sempre coordinate spaziali
-cartesiane.  Questo tensore definisce una metrica pseudo euclidea con segnatura
+Questo tensore definisce una metrica pseudo euclidea con segnatura
 $(-+++)$,\footnote{Nelle presenti note abbiamo adottato questa segnatura, ma non
   è l'unica possibile nello spazio di Minkowski.  Un'altra segnatura largamente
-  usata è $(+---)$.}
-invece in $\R^{4}$ abbiamo visto che si utilizza la segnatura $(++++)$.  Una
-\index{trasformazione!di Lorentz}\emph{trasformazione di Lorentz} non omogenea è
+  usata è $(+---)$.}.  
+  
+Una \index{trasformazione!di Lorentz}\emph{trasformazione di Lorentz} è
 una trasformazione lineare nello spazio di Minkowski da un sistema di
-riferimento inerziale di coordinate $x^{\alpha}$ a un altro sistema di
-riferimento inerziale di coordinate
+riferimento inerziale $x^{\alpha}$ a un altro sistema di
+riferimento inerziale $x'^{\alpha}$ 
 \begin{equation}
   \label{eq:trasformazione-lineare}
   x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta} + a^{\alpha},
 \end{equation}
-con $\tensor{\Lambda}{^{\alpha}_{\beta}}$ e $a^{\alpha}$ costanti, che mantenga
-invariata la distanza fra due eventi, cioè la metrica
-$\dd\tau^{2} = -\eta_{\alpha\beta}\dd x^{\alpha}\dd x^{\beta}$ in $\M$.
+($\tensor{\Lambda}{^{\alpha}_{\beta}}$ dipendenti dalla velocità relativa dei
+due sistemi di coordinate, $a^{\alpha}$ costanti), che mantenga invariata la
+distanza fra due eventi $\dd\tau = \dd\tau'$
+\footnote{La dimostrazione di questa proprietà è immediata nel caso di eventi
+  connessi da segnali luminosi (in questo caso è $\dd tau=0$); per il caso
+  generale vedi~\textcite[34-37]{barone:relativita}.}.
+
 Richiediamo che la trasformazione $x^{\alpha} \to x'^{\alpha}$ sia lineare per
 rispettare la condizione di omogeneità dello spazio (la lunghezza di una sbarra
 non deve dipendere dalla posizione degli estremi), del tempo (la lunghezza della
@@ -118,12 +79,8 @@ sbarra non deve dipendere dall'istante di tempo in cui la misuriamo) e di
 isotropia dello spazio (la lunghezza della sbarra non deve dipendere neanche
 dalla direzione in cui la guardiamo).  In questo modo un moto rettilineo
 uniforme in un sistema di riferimento inerziale è ancora un moto rettilineo
-uniforme anche nell'altro sistema di riferimento inerziale.  L'importanza delle
-trasformazioni di Lorentz risiede nel fatto che una trasformazione fra due
-sistemi di riferimento che sia coerente con i postulati della relatività
-ristretta deve essere tale da lasciare invariata la
-metrica.\footnote{Per una dimostrazione di questa proprietà
-  vedi~\textcite[34-37]{barone:relativita}.}
+uniforme anche nell'altro sistema di riferimento inerziale.  
+
 I differenziali delle coordinate nel nuovo sistema si ricavano
 dalla~\eqref{eq:trasformazione-lineare}
 \begin{equation}
@@ -160,7 +117,7 @@ Ciascuna trasformazione di Lorentz è rappresentabile con una specifica
 \emph{matrice di Lorentz} $\Lambda$, di dimensione $4 \times 4$, i cui elementi
 sono le $\tensor{\Lambda}{^{\alpha}_{\beta}}$
 \begin{equation}
-  \Lambda =
+  \tensor{\Lambda}{^{\alpha}_{\beta}} =
   \begin{pmatrix}
     \tensor{\Lambda}{^{0}_{0}} & \tensor{\Lambda}{^{0}_{1}} &
     \tensor{\Lambda}{^{0}_{2}} & \tensor{\Lambda}{^{0}_{3}} \\
@@ -210,11 +167,12 @@ Le trasformazioni di Lorentz con $\det\Lambda = +1$ sono chiamate
     paralleli, in moto l'uno rispetto all'altro}
   \label{fig:trasformazioni-lorentz}
 \end{figure}
+
 Vediamo come si trasformano le coordinate $x^{\alpha}$ di un evento in un
 sistema di riferimento per effetto di una \emph{trasformazione di velocità}, o
 \index{boost}\emph{boost}, vale a dire una trasformazione tra due sistemi di
 riferimento inerziali con gli assi cartesiani corrispondenti paralleli e in moto
-l'uno rispetto all'altro con velocità costante $\bm{v}$.  Vogliamo quindi
+l'uno rispetto all'altro con velocità $\bm{v}$.  Vogliamo quindi
 determinare la forma esplicita della matrice di Lorentz per il caso particolare
 di un boost.  Consideriamo una particella a riposo in un sistema di riferimento
 $\mathcal{S}$ che si muove con velocità $\bm{v} = (v_{1},v_{2},v_{3})$ rispetto
@@ -314,53 +272,116 @@ $\bm{v}$, come
   \end{pmatrix}.
 \end{equation}
 
-Le rotazioni spaziali senza inversioni degli assi e i boost sono trasformazioni
-di Lorentz proprie e ortocrone (ristrette), un'inversione temporale
-\begin{subequations}
-  \begin{align}
-    x^{0} &\to x'^{0} = -x^{0}, \\
-    x^{i} &\to x'^{i} = x^{i}
-  \end{align}
-\end{subequations}
-è una trasformazione di Lorentz impropria e anticrona, un'inversione spaziale
-\begin{subequations}
-  \begin{align}
-    x^{0} &\to x'^{0} = x^{0}, \\
-    x^{i} &\to x'^{i} = - x^{i}
-  \end{align}
-\end{subequations}
-o una rotazione con inversione sono trasformazioni di Lorentz improprie e
-ortocrone, infine un'inversione spazio-temporale, prodotto delle due inversioni
-spaziale e temporale,
-\begin{subequations}
-  \begin{align}
-    x^{0} &\to x'^{0} = - x^{0}, \\
-    x^{i} &\to x'^{i} = - x^{i}
-  \end{align}
-\end{subequations}
-è una trasformazione di Lorentz propria e anticrona.  Infine osserviamo che la
-composizione di due trasformazioni di Lorentz è ancora una trasformazione di
-Lorentz.
+Osserviamo ora che le trasformazioni di Lorentz formano un gruppo poichè
+1) esiste la trasformazione identica: 
+$\tensor{\Lambda}{^{\alpha}_{\beta}} =   \tensor{\delta}{^{\alpha}_{\beta}}$
+2) la composizione di due trasformazioni di Lorentz è ancora una trasformazione di
+Lorentz: 
+$\tensor{\Lambda}{^{\alpha}_{1 \beta}} \tensor{\Lambda}{^{\beta}_{2 \gamma}} =
+\tensor{\Lambda}{^{\alpha}_{\gamma}}$; 
+2) esiste la trasformazione inversa definita dalla relazione
+\begin{equation}
+  \tensor{\Lambda}{_{\alpha}^{\beta}} = \tensor{\eta}{_{\alpha\gamma}}
+  \tensor{\eta}{^{\beta\delta}} \tensor{\Lambda}{^{\gamma}_{\delta}}.
+\end{equation}
+La matrice $\tensor{\eta}{^{\alpha\beta}}$ è il
+\index{tensore!metrico di Minkowski}\emph{tensore metrico controvariante di
+  Minkowski}
+ed è numericamente uguale a $\tensor{\eta}{_{\alpha\beta}}$, vale a dire
+\begin{equation}
+  \tensor{\eta}{^{\alpha\beta}} = \tensor{\eta}{_{\alpha\beta}}.
+\end{equation}
+Osserviamo che
+\begin{equation}
+  \label{eq:delta-kronecker}
+  \eta^{\alpha\gamma} \eta_{\beta\gamma} = 
+  \tensor{\delta}{^{\alpha}_{\beta}} = 
+  \begin{cases}
+    1 & \text{se } \alpha = \beta, \\
+    0 & \text{se } \alpha \neq \beta,
+  \end{cases}
+\end{equation}
+in cui $\tensor{\delta}{^{\alpha}_{\beta}}$
+è la \index{delta!di Kronecker quadrimensionale}\emph{delta di Kronecker
+  quadrimensionale}. Usando la relazione fondamentale delle trasformazioni di
+Lorentz~\eqref{eq:rel-fond-tensore-metrico} abbiamo
+\begin{equation}
+  \tensor{\Lambda}{_{\alpha}^{\gamma}} \tensor{\Lambda}{^{\alpha}_{\beta}} =
+  \tensor{\eta}{_{\alpha\delta}} \tensor{\eta}{^{\gamma\epsilon}}
+  \tensor{\Lambda}{^{\delta}_{\epsilon}} \tensor{\Lambda}{^{\alpha}_{\beta}} =
+  \tensor{\eta}{_{\epsilon\beta}} \tensor{\eta}{^{\gamma\epsilon}} =
+  \tensor{\delta}{^{\gamma}_{\beta}}.
+\end{equation}
+Dunque $\tensor{\Lambda}{_{\alpha}^{\beta}}$ è la matrice inversa di
+$\tensor{\Lambda}{^{\alpha}_{\beta}}$.
 
+Infatti, se moltiplichiamo ambo i membri della 
+\eqref{eq:trasformazione-lineare} per $\tensor{\Lambda}{_{\alpha}^{\gamma}}$ 
+risulta che
+\begin{equation}
+  x'^{\alpha} \tensor{\Lambda}{_{\alpha}^{\gamma}} =
+  \tensor{\Lambda}{^{\alpha}_{\beta}} \tensor{\Lambda}{_{\alpha}^{\gamma}}
+  x^{\beta} + \tensor{\Lambda}{_{\alpha}^{\gamma}} a^{\alpha} =
+  \tensor{\delta}{^{\gamma}_{\beta}} x^{\beta} + a'^{\gamma} = x^{\gamma}
+  +a'^{\gamma}
+\end{equation}
+da cui ricaviamo la trasformazione, rinominando gli indici,
+\begin{equation}
+  \label{eq:trasformazione-inversa}
+  x'^{\alpha} \to x^{\alpha} = \tensor{\Lambda}{_{\beta}^{\alpha}}x'^{\beta} -
+  a'^{\alpha}.
+\end{equation}
+Osserviamo inoltre che risulta
+\begin{equation}
+  \tensor{\Lambda}{_{\beta}^{\alpha}} = \parder{x^{\alpha}}{x'^{\beta}}.
+\end{equation}
+ 
 Le trasformazioni di Lorentz comportano alcune conseguenze, come la contrazione
 delle lunghezze, la dilatazione degli intervalli temporali e l'effetto Doppler.
 Questi argomenti possono essere rivisti
 in~\textcite[29-31]{weinberg:gravitation}.
 
-% % Se decidi di scrivere queste sezioni vedi la lezione del 29/03/2012 e
-% % ricordati di definire il tempo proprio nel paragrafo sulla dilatazione degli
-% % intervalli temporali.
-% \section{Conseguenze delle trasformazioni di Lorentz}
-% \label{sec:conseguenze-lorentz}
+\section{Conseguenze delle trasformazioni di Lorentz: dilatazione del tempo}
+\label{sec:conseguenze-lorentz}
 
-% \subsection{Contrazione delle lunghezze}
-% \label{sec:contrazione-lunghezze}
+Si consideri un osservatore $O$ che osservi due eventi $A$ e $B$ accadere nello
+stesso posto ($dx^i=0$), separati dalla coordinata temporale $\Delta t$.
+L'intervallo di tempo proprio tra i due eventi è $\dd\tau=\Delta t$.  Un secondo
+osservatore $O'$ in moto con velocità $\bm{v}$, vedrà i due eventi accadere in
+posizioni diverse $\dd x'^{i}\ne 0$, separati dalla coordinata temporale
+$\dd t'$.  L'intervallo di tempo proprio tra i due eventi è ora
+$\dd\tau = \dd t' (1-v^2)^{1/2}=\dd t'/\gamma$; quindi
+$\dd t'= \gamma \Delta t$, il che implica l'aumento del tempo che intercorre tra
+i due eventi misurato da O'.  Questo è un effetto reale che può essere
+verificato osservando arrivare a terra particelle instabili (con vita media
+estremamente piccola, $\Delta t = 2.6 10^{-8}$ sec per un pai zero) prodotte al
+top dell'atmosfera (a circa 10 km di altezza) attraverso interazioni adroniche
+tra raggi cosmici di alta energia e gli atomi che compongono l'atmosfera.  I
+pioni viaggiano a velocità relativistiche e quindi rispetto a noi vivono un
+tempo molto maggiore della loro vita media a riposo e questo permette loro di
+percorre senza decadere la distanza che li separa da terra (osserva che lo
+spazio percorso in circa $3 10^{-8}$ sec a velocità $c$ sarebbe circa 1 m).
 
-% \subsection{Dilatazione degli intervalli temporali}
-% \label{sec:dilatazione-tempo}
+\subsection{Effetto Doppler}
+\label{sec:effetto-doppler}
+Se il nostro orologio in movimento è una sorgente di luce di frequenza
+$\nu=1/\Delta$ ($\Delta t$ può essere considerato come la distanza temporale tra
+l'emissione di due successive creste di un'onda e.m. piana, misurato
+dall'osservatore solidale con la sorgente).  Questo intervallo di tempo apparirà
+essere pari a $\dd t'= \gamma \dd t$ ad un osservatore $O'$ che vede la sorgente
+muoversi con velocità $\bm{v}$.  Comunque, durante questo intervallo di tempo la
+distanza della sorgente $S$ dall'osservatore $O'$ sarà aumentata (se $v_r>0$) o
+diminuita (se $v_r<0$) della quantità $v_r \dd t'$, dove $v_r$ è la componente
+della velocità della sorgente lungo la linea di vista da $O'$ ad $S$.  Quindi il
+periodo $\dd t_0$ tra la ricezione delle due successive creste d'onda da parte
+di $O'$ sarà $\dd t_0 = \dd t'+ v_r \dd t' = (1+v_r)/\sqrt{1-v^2}$: in termini
+delle frequenze (osservata $\nu_0$ ed emessa $\nu$) si ha:
+$\nu_0/\nu=\sqrt{1-v^2}/(1+v_r)$. Quindi red shift se $S$ si allontana, blu
+shift se la sorgente si avvicina.  Se la velocità della sorgente è lungo la
+linea di vista si ha $v_r=v$ e la formula Doppler diventa:
+$\nu_0/\nu= \sqrt{(1-v)/(1+v)}$, e per velocità $v<<1$ si ottiene
+$\Delta \nu / \nu = (\nu_e - \nu_o)/\nu_e = v/c = z$.
 
-% \subsection{Effetto Doppler}
-% \label{sec:effetto-doppler}
 
 \section{Calcolo tensoriale nello spazio di Minkowski}
 \label{sec:calcolo-tensoriale-minkowski}
@@ -391,61 +412,6 @@ $U_{\alpha} = (U_{0}, U_{1}, U_{2}, U_{3})$ è un insieme di quattro quantità
 che, sotto una trasformazione di Lorentz ristretta, si trasformano come
 \begin{equation}
   U_{\alpha} \to U'_{\alpha} = \tensor{\Lambda}{_{\alpha}^{\beta}}U_{\beta}
-\end{equation}
-dove
-\begin{equation}
-  \tensor{\Lambda}{_{\alpha}^{\beta}} = \tensor{\eta}{_{\alpha\gamma}}
-  \tensor{\eta}{^{\beta\delta}} \tensor{\Lambda}{^{\gamma}_{\delta}}.
-\end{equation}
-La matrice $\tensor{\eta}{^{\alpha\beta}}$ è il
-\index{tensore!metrico di Minkowski}\emph{tensore metrico controvariante di
-  Minkowski}
-ed è numericamente uguale a $\tensor{\eta}{_{\alpha\beta}}$, vale a dire
-\begin{equation}
-  \tensor{\eta}{^{\alpha\beta}} = \tensor{\eta}{_{\alpha\beta}}.
-\end{equation}
-Osserviamo che
-\begin{equation}
-  \label{eq:delta-kronecker}
-  \eta^{\alpha\gamma} \eta_{\beta\gamma} = \tensor{\eta}{^{\alpha}_{\beta}} =
-  \tensor{\delta}{^{\alpha}_{\beta}} = \tensor{\delta}{_{\alpha}^{\beta}} =
-  \begin{cases}
-    1 & \text{se } \alpha = \beta, \\
-    0 & \text{se } \alpha \neq \beta,
-  \end{cases}
-\end{equation}
-in cui $\tensor{\delta}{^{\alpha}_{\beta}} = \tensor{\delta}{_{\alpha}^{\beta}}$
-è la \index{delta!di Kronecker quadrimensionale}\emph{delta di Kronecker
-  quadrimensionale}. Usando la relazione fondamentale delle trasformazioni di
-Lorentz~\eqref{eq:rel-fond-tensore-metrico} abbiamo
-\begin{equation}
-  \tensor{\Lambda}{_{\alpha}^{\gamma}} \tensor{\Lambda}{^{\alpha}_{\beta}} =
-  \tensor{\eta}{_{\alpha\delta}} \tensor{\eta}{^{\gamma\epsilon}}
-  \tensor{\Lambda}{^{\delta}_{\epsilon}} \tensor{\Lambda}{^{\alpha}_{\beta}} =
-  \tensor{\eta}{_{\epsilon\beta}} \tensor{\eta}{^{\gamma\epsilon}} =
-  \tensor{\delta}{^{\gamma}_{\beta}}.
-\end{equation}
-Dunque $\tensor{\Lambda}{_{\alpha}^{\beta}}$ è la matrice inversa di
-$\tensor{\Lambda}{^{\alpha}_{\beta}}$.
-
-Vogliamo ora determinare la trasformazione inversa $x'^{\alpha} \to x^{\alpha}$.
-Dalla trasformazione~\eqref{eq:trasformazione-lineare} risulta che
-\begin{equation}
-  x'^{\alpha} \tensor{\Lambda}{_{\alpha}^{\gamma}} =
-  \tensor{\Lambda}{^{\alpha}_{\beta}} \tensor{\Lambda}{_{\alpha}^{\gamma}}
-  x^{\beta} + \tensor{\Lambda}{_{\alpha}^{\gamma}} a^{\alpha} =
-  \tensor{\delta}{^{\gamma}_{\beta}} x^{\beta} + a'^{\gamma} = x^{\gamma}
-  +a'^{\gamma}
-\end{equation}
-da cui ricaviamo la trasformazione, rinominando gli indici,
-\begin{equation}
-  \label{eq:trasformazione-inversa}
-  x'^{\alpha} \to x^{\alpha} = \tensor{\Lambda}{_{\beta}^{\alpha}}x'^{\beta} -
-  a'^{\alpha}.
-\end{equation}
-Osserviamo inoltre che risulta
-\begin{equation}
-  \tensor{\Lambda}{_{\beta}^{\alpha}} = \parder{x^{\alpha}}{x'^{\beta}}.
 \end{equation}
 
 Possiamo passare da un quadrivettore controvariante
