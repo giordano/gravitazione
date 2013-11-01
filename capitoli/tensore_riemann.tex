@@ -1,0 +1,701 @@
+\cleardoublepage
+\chapter{Tensore di Riemann}
+\label{cha:tensore-riemann}
+
+\section{Tensore di Riemann}
+\label{sec:tensore-riemann}
+
+\subsection{Definizione e proprietà algebriche}
+\label{sec:definizione-proprietà-riemann}
+
+Si può far vedere\footnote{Vedi~\textcite[133-135]{weinberg:gravitation}.} che
+l'unico tensore ottenibile dal tensore metrico e dalle sue derivate prime e
+seconde e che sia lineare nelle derivate seconde della metrica
+è il \emph{tensore di curvatura di Riemann-Christoffel} o,
+semplicemente, \index{tensore!di Riemann}\emph{tensore di Riemann}
+\begin{equation}
+  \tensor{R}{^{\lambda}_{\mu\nu\kappa}}
+  = \parder{\tensor{\Gamma}{^{\lambda}_{\mu\nu}}}{x^{\kappa}}
+  - \parder{\tensor{\Gamma}{^{\lambda}_{\mu\kappa}}}{x^{\nu}} +
+  \tensor{\Gamma}{^{\eta}_{\mu\nu}} \tensor{\Gamma}{^{\lambda}_{\eta\kappa}} -
+  \tensor{\Gamma}{^{\eta}_{\mu\kappa}} \tensor{\Gamma}{^{\lambda}_{\eta\nu}}.
+\end{equation}
+Il tensore di Riemann è un tensore nel senso specificato nel
+paragrafo~\ref{sec:tensori}.\footnote{Non è immediato riconoscere che
+  $\tensor{R}{^{\lambda}_{\mu\nu\kappa}}$ è effettivamente un tensore dato che è
+  definito a partire dalla connessione affine, la quale non ha natura
+  tensoriale.  Si può trovare una dimostrazione di questa proprietà
+  in~\textcite[131-133]{weinberg:gravitation}.}
+
+Per analizzare le proprietà algebriche del tensore di Riemann conviene
+considerare la sua forma completamente covariante (vedi W. pag.141)
+\begin{equation}
+  \label{eq:riemann-covariante}
+  \begin{split}
+    R_{\lambda\mu\nu\kappa} = g_{\lambda\sigma}  \tensor{R}{^{\sigma}_{\mu\nu\kappa}}
+     & =\frac{1}{2} \bigg( \parder{g_{\lambda\nu}}{x^{\kappa}, x^{\mu}}
+    - \parder{g_{\mu\nu}}{x^{\kappa}, x^{\lambda}}
+    - \parder{g_{\lambda\kappa}}{x^{\nu}, x^{\mu}}
+    + \parder{g_{\mu\kappa}}{x^{\nu}, x^{\lambda}} \bigg) \\
+     &\quad{} + g_{\eta\sigma} (\tensor{\Gamma}{^{\eta}_{\nu\lambda}}
+    \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} -
+    \tensor{\Gamma}{^{\eta}_{\kappa\lambda}}
+    \tensor{\Gamma}{^{\sigma}_{\mu\nu}}).
+  \end{split}
+\end{equation}
+Questa relazione ci tornerà utile quando considereremo il limite newtoniano
+delle equazioni di Einstein.  Da questa espressione si vede che
+\begin{enumerate}
+\item \label{item:antisimmetria-riemann} il tensore di Riemann è antisimmetrico
+  rispetto allo scambio fra primo e secondo indice e allo scambio fra terzo e
+  quarto indice
+  \begin{equation}
+    R_{\lambda\mu\nu\kappa} = -R_{\mu\lambda\nu\kappa} =
+    -R_{\lambda\mu\kappa\nu} = R_{\mu\lambda\kappa\nu};
+  \end{equation}
+\item \label{item:simmetria-riemann} il tensore di Riemann
+  $R_{\lambda\mu\nu\kappa}$ è simmetrico rispetto allo scambio fra la prima
+  coppia indici $(\lambda \mu)$ con la seconda coppia $(\nu \kappa)$
+  \begin{equation}
+    R_{\lambda\mu\nu\kappa} = R_{\nu\kappa\lambda\mu}
+  \end{equation}
+\item \label{item:ciclicita-riemann} è valida la seguente relazione di ciclicità
+  (si noti che il primo indice è tenuto fisso, si fanno ruotare gli altri tre)
+  \begin{equation}
+    \label{eq:ciclicita-riemann}
+    R_{\lambda\mu\nu\kappa} + R_{\lambda\kappa\mu\nu} + R_{\lambda\nu\kappa\mu}
+    = 0.
+  \end{equation}
+\end{enumerate}
+
+A causa delle proprietà appena elencate, delle $4^{4} = 256$ componenti del
+tensore di Riemann solo $20$ sono indipendenti.  Per far vedere ciò consideriamo
+il caso generale di uno spazio $n$-dimensionale.  Il tensore di Riemann può
+essere immaginato come una matrice quadrata simmetrica (per la proprietà di
+simmetria~\ref{item:simmetria-riemann}) di ordine $d$ del tipo
+$R_{(\lambda\mu)(\nu\kappa)}$, con indici $(\lambda\mu)$ e $(\nu\kappa)$.  Il
+valore dell'ordine $d$ di questa matrice è dato dal numero di valori
+indipendenti che assumono i due indici che, per la proprietà di
+antisimmetria~\ref{item:antisimmetria-riemann}, sono uguali al numero di
+elementi indipendenti di una matrice $n \times n$ antisimmetrica, cioè
+$d = n(n-1)/2$.  Dunque gli elementi indipendenti di
+$R_{(\lambda\mu)(\nu\kappa)}$ si riducono
+\begin{equation}
+  \frac{1}{2} d (d + 1) = \frac{1}{2}\bigg( \frac{1}{2}n(n-1) \bigg) \bigg(
+  \frac{1}{2}n(n-1) +1 \bigg) = \frac{1}{8}n(n-1)(n^{2} - n +2).
+\end{equation}
+% TODO: provare a capire per bene il perché dell'affermazione successiva e a
+% spiegarlo in maniera semplice.  Per esempio vedi
+% http://www.maths.tcd.ie/~houghton/TEACHING/442/notes/22Oct2002.pdf
+% http://sergeysk.wordpress.com/2011/01/21/number-of-independent-components-of-the-riemann-curvature-tensor/
+% http://ned.ipac.caltech.edu/level5/March01/Carroll3/Carroll3.html (è il
+% capitolo 3 del Carrol)
+Infine, la relazione di ciclicità~\eqref{eq:ciclicita-riemann} corrisponde a
+$\binom{n}{4}$ equazioni differenti, allora abbiamo altrettanti ulteriori
+vincoli, così che gli elementi indipendenti del tensore di Riemann
+$n$-dimensionale sono
+\begin{equation}
+  C_{n} = \frac{1}{8}n(n-1)(n^{2} - n +2) - \binom{n}{4} =
+  \frac{1}{12}n^{2}(n^{2} - 1).
+\end{equation}
+Ponendo $n=4$ abbiamo che nello spazio-tempo quadrimensionale gli elementi
+indipendenti del tensore di Riemann sono $C_{4} = 20$, come avevamo
+preannunciato.
+
+La contrazione fra primo e terzo indice del tensore di Riemann dà il
+\index{tensore!di Ricci}\emph{tensore di Ricci}
+\begin{equation}
+  \label{eq:tens-ricci}
+  R_{\mu\kappa} = g^{\lambda\nu} R_{\lambda\mu\nu\kappa} =
+  \tensor{R}{^{\nu}_{\mu\nu\kappa}}
+  = \parder{\tensor{\Gamma}{^{\nu}_{\mu\nu}}}{x^{\kappa}}
+  - \parder{\tensor{\Gamma}{^{\nu}_{\mu\kappa}}}{x^{\nu}} +
+  \tensor{\Gamma}{^{\eta}_{\mu\nu}} \tensor{\Gamma}{^{\nu}_{\eta\kappa}} -
+  \tensor{\Gamma}{^{\eta}_{\mu\kappa}} \tensor{\Gamma}{^{\nu}_{\eta\nu}}.
+\end{equation}
+Il tensore di Ricci è simmetrico per la proprietà~\ref{item:simmetria-riemann}
+di simmetria del tensore di Riemann, infatti
+\begin{equation}
+  \label{eq:simmetria-riemann}
+  R_{\mu\kappa} = g^{\lambda\nu} R_{\lambda\mu\nu\kappa} = g^{\lambda\nu}
+  R_{\nu\kappa\lambda\mu} = g^{\nu\lambda} R_{\nu\kappa\lambda\mu} =
+  R_{\kappa\mu}.
+\end{equation}
+Dunque delle $4^{2} = 16$ componenti del tensore $R_{\mu \kappa}$
+solo $10$ sono indipendenti.
+Inoltre il tensore di Ricci è essenzialmente l'unico tensore non nullo che si
+può ottenere dalla contrazione del tensore di Riemann.  Contraendo primo e
+secondo indice, per la proprietà~\ref{item:antisimmetria-riemann} di
+antisimmetria del tensore di Riemann si ha
+\begin{equation}
+  \tensor{R}{^{\mu}_{\mu\nu\kappa}} = g^{\lambda\mu}
+  R_{\lambda\mu\nu\kappa} = -g^{\lambda\mu} R_{\mu\lambda\nu\kappa} =
+  -g^{\mu\lambda}R_{\mu\lambda\nu\kappa} =
+  -g^{\lambda\mu}R_{\lambda\mu\nu\kappa} = 0.
+\end{equation}
+Analogamente, contraendo terzo e quarto indice si ottiene
+\begin{equation}
+  \tensor{R}{_{\lambda\mu}^{\kappa}_{\kappa}} = g^{\nu\kappa}
+  R_{\lambda\mu\nu\kappa} = 0.
+\end{equation}
+Contraendo secondo e quarto indice del tensore di Riemann si ottiene di nuovo il
+tensore di Ricci, invece contraendo primo e quarto indice oppure secondo terzo
+si ottiene ancora il tensore di Ricci così come da noi definito ma con il segno
+opposto.  Infatti, moltiplicando tutti i membri
+della~\eqref{eq:simmetria-riemann} per $g^{\lambda\nu}$ troviamo
+\begin{equation}
+  \tensor{R}{^{\nu}_{\mu\nu\kappa}} = -\tensor{R}{_{\mu}^{\nu}_{\nu\kappa}} =
+  -\tensor{R}{^{\nu}_{\mu\kappa\nu}} = \tensor{R}{_{\mu}^{\nu}_{\kappa\nu}}.
+\end{equation}
+
+L'ulteriore contrazione del tensore di Ricci dà la
+\index{curvatura scalare}\emph{curvatura scalare}
+\begin{equation}
+  R = g^{\mu\nu}R_{\mu\nu} = \tensor{R}{^{\mu}_{\mu}}.
+\end{equation}
+
+\subsection{Tensore di Riemann e curvatura dello spazio}
+\label{sec:riemann-curvatura}
+
+È ben noto che nello spazio-tempo piatto è possibile introdurre una metrica
+$g_{\mu \nu}(x)$ non costante.  Questo è il caso, per esempio, delle coordinate
+$(t,r,\theta, \phi)$ nello spazio-tempo di Minkoowski.  Siamo allora interessati
+a cercare uno strumento che ci permetta di discriminare fra uno spazio-tempo
+intrinsecamente curvo, con metrica $g_{\mu \nu} \ne \eta_{\mu \nu}$ perché
+permeato da un reale campo gravitazionale, e uno spazio-tempo piatto, cioè lo
+spazio di Minkowski, in cui si fa uso di coordinate curvilinee.
+
+Se siamo nella seconda situazione, vedremo che è possibile effettuare una
+trasformazione $x^{\alpha} \to \xi^{\alpha}(x)$ per cui in tutto lo spazio-tempo
+si abbia la metrica di Minkoowski. Si ha quindi
+\begin{equation}
+  \label{4.15}
+  \eta_{\alpha\beta} =
+  g_{\mu\nu} \parder{x^{\mu}}{\xi^{\alpha}} \parder{x^{\nu}}{\xi^{\beta}}.
+\end{equation}
+
+Osserviamo che per il \index{principio!di equivalenza!forte}principio di
+equivalenza, assicura che in ogni punto dello spazio-tempo è sempre possibile
+individuare un sistema di coordinate in cui localmente sia soddisfatta la
+relazione~\eqref{4.15}; qui invece cerchiamo una condizione che ci permetta di
+soddisfare la relazione precedente in tutto lo spazio-tempo.
+
+Lo strumento che cerchiamo è il tensore di Riemann, poiché infatti è possibile
+dimostrare\footnote{Vedi~\textcite[138]{weinberg:gravitation}.} il seguente
+\begin{teorema}
+  Condizioni necessarie e sufficienti affinché sia possibile effettuare una
+  trasformazione di coordinate $x^{\mu} \to \xi^{\alpha}$
+  tale che in tutto lo spazio sia
+  \begin{equation}
+    \label{eq:tensore-spazio-piatto}
+    \eta_{\alpha\beta} =
+    g_{\mu\nu} \parder{x^{\mu}}{\xi^{\alpha}} \parder{x^{\nu}}{\xi^{\beta}}
+  \end{equation}
+  sono
+  \begin{enumerate}
+  \item il \index{tensore!di Riemann}tensore di Riemann si annulla in tutto lo
+    spazio
+    \begin{equation}
+      \tensor{R}{^{\lambda}_{\mu\nu\kappa}} = 0;
+    \end{equation}
+  \item in qualche punto $X$ la matrice $g_{\mu\nu}(X)$ ha tre autovalori
+    positivi e uno negativo.
+  \end{enumerate}
+\end{teorema}
+
+Il fatto che sia valida la relazione~\eqref{eq:tensore-spazio-piatto} significa
+che la metrica è quella usuale dello spazio di Minkowski $\dd \tau^{2} = \dd
+t^{2} - \dd\bm{x}^{2}$.  L'annullarsi del tensore di Riemann invece significa
+che la curvatura dello spazio è nulla ed il teorema precedente dichiara
+l'equivalenza fra queste due condizioni.
+
+In questo modo anche se fossimo in presenza di una metrica $g_{\mu \nu}(x)$, il
+valore del tensore di Riemann ci permette di decidere se siamo in presenza di un
+reale campo gravitazionale (per cui lo spazio è intrinsecamente curvo) o se tale
+campo è assennte e $g_{\mu \nu} \ne \eta_{\mu \nu}$ perché usiamo coordinate
+curvilinee nello spazio tempo piatto.
+
+\subsection{Commutazione delle derivate covarianti}
+\label{sec:commutazione-derivate-covarianti}
+
+Nel calcolo differenziale ordinario, l'ordine di derivazione non ha importanza.
+Vediamo cosa succede nel caso di derivazione covariante.  Calcoliamo quindi
+$V_{\mu;\nu;\kappa} - V_{\mu;\kappa;\nu}$.  Per questo ricordiamo che la
+derivata covariante $V_{\mu;\nu} = V_{\mu,\nu} -
+\tensor{\Gamma}{^{\lambda}_{\mu\nu}} V_{\lambda}$ di un vettore covariante
+$V_{\mu}$ è un tensore $T_{\mu\nu}$ di rango $2$ completamente covariante e la
+sua ulteriore derivata covariante è
+\begin{equation}
+  \begin{split}
+    V_{\mu;\nu;\kappa} &= T_{\mu\nu;\kappa} = T_{\mu\nu,k} -
+    \tensor{\Gamma}{^{\sigma}_{\kappa\nu}} T_{\mu\sigma} -
+    \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} T_{\sigma\nu} \\
+    &= V_{\mu,\nu,\kappa} -
+    \tensor{\Gamma}{^{\lambda}_{\mu\nu,\kappa}}V_{\lambda} -
+    \tensor{\Gamma}{^{\lambda}_{\mu\nu}} V_{\lambda,\kappa} -
+    \tensor{\Gamma}{^{\sigma}_{\kappa\nu}} (V_{\mu,\sigma} -
+    \tensor{\Gamma}{^{\lambda}_{\mu\sigma}} V_{\lambda}) -
+    \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} (V_{\sigma,\nu} -
+    \tensor{\Gamma}{^{\lambda}_{\sigma\nu}} V_{\lambda}).
+  \end{split}
+\end{equation}
+Dopo aver determinato $V_{\mu;\nu;\kappa}$ è sufficiente invertire $\nu$ e
+$\kappa$ per trovare $V_{\mu;\kappa;\nu}$
+\begin{equation}
+  V_{\mu;\kappa;\nu} = V_{\mu,\kappa,\nu} -
+    \tensor{\Gamma}{^{\lambda}_{\mu\kappa,\nu}}V_{\lambda} -
+    \tensor{\Gamma}{^{\lambda}_{\mu\kappa}} V_{\lambda,\nu} -
+    \tensor{\Gamma}{^{\sigma}_{\nu\kappa}} (V_{\mu,\sigma} -
+    \tensor{\Gamma}{^{\lambda}_{\mu\sigma}} V_{\lambda}) -
+    \tensor{\Gamma}{^{\sigma}_{\mu\nu}} (V_{\sigma,\kappa} -
+    \tensor{\Gamma}{^{\lambda}_{\sigma\kappa}} V_{\lambda}).
+\end{equation}
+Nel valutare la differenza $V_{\mu;\nu;\kappa} - V_{\mu;\kappa;\nu}$ tutti i
+termini simmetrici per lo scambio $\nu \leftrightarrow \kappa$ si annullano,
+vale a dire i termini contenenti le derivate prime e seconde di $V_{\mu}$
+(osserva che $\lambda$ e $\sigma$ sono entrambi indici muti), quindi rimane
+\begin{equation}
+  V_{\mu;\nu;\kappa} - V_{\mu;\kappa;\nu} =
+  (-\tensor{\Gamma}{^{\lambda}_{\mu\nu,\kappa}} +
+  \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} \tensor{\Gamma}{^{\lambda}_{\sigma\nu}}
+  + \tensor{\Gamma}{_{\mu\kappa,\nu}} - \tensor{\Gamma}{^{\sigma}_{\mu\nu}}
+  \tensor{\Gamma}{^{\lambda}_{\sigma\kappa}}) V_{\lambda} =
+  -\tensor{R}{^{\lambda}_{\mu\nu\kappa}} V_{\lambda}.
+\end{equation}
+ Abbiamo quindi:
+\begin{equation}
+  V_{\mu;\nu;\kappa} - V_{\mu;\kappa;\nu} = -V_{\lambda}
+  \tensor{R}{^{\lambda}_{\mu\nu\kappa}}.
+  \label{218}
+\end{equation}
+Si trovano analoghe relazioni per i vettori controvarianti o, più in generale,
+per i tensori
+\begin{subequations}
+  \begin{gather}
+    \tensor{V}{^{\mu}_{;\nu;\kappa}} - \tensor{V}{^{\mu}_{;\kappa;\nu}} =
+    V^{\sigma} \tensor{R}{^{\lambda}_{\sigma\nu\kappa}}, \\
+    \tensor{T}{^{\lambda}_{\mu;\nu;\kappa}} -
+    \tensor{T}{^{\lambda}_{\mu;\kappa;\nu}} = \tensor{T}{^{\sigma}_{\mu}}
+    \tensor{R}{^{\lambda}_{\sigma\nu\kappa}} - \tensor{T}{^{\lambda}_{\sigma}}
+    \tensor{R}{^{\sigma}_{\mu\nu\kappa}}.
+  \end{gather}
+\end{subequations}
+
+Nello spazio di Minkowski le derivate covarianti coincidono con le derivate
+ordinarie e le derivate seconde miste commutano
+\begin{equation}
+  V_{\mu,\nu,\kappa} = \parder{V_{\mu}}{x^{\nu}, x^{\kappa}}
+  = \parder{V_{\mu}}{x^{\kappa}, x^{\nu}} = V_{\mu,\kappa,\nu}
+\end{equation}
+e questo è possibile solo se il tensore di Riemann è identicamente nullo in
+tutto lo spazio.  L'equazione~\eqref{218} può considerarsi una ulteriore
+definizione del tensore di Riemann.
+
+\subsection{Il trasporto parallelo su una curva chiusa}
+\label{sec:trasporto-parallelo-linea-chiusa}
+
+Per trasportare un vettore parallelamente a se stesso basta mantenere invariato
+l'angolo che esso forma con la geodetica locale lungo cui è trasportato.  Il
+trasporto su un percorso chiuso non riporta, in generale, il vettore su se
+stesso; per rendersene conto basta pensare al caso di un percorso costruito
+sulla superficie di una sfera con tre archi che delimitano un ottante.  Uno
+spazio in cui sia possibile definire univocamente un vettore per trasporto
+parallelo su una curva chiusa si dice piatto, altrimenti si dice curvo.  Dalla
+definizione di trasporto parallelo si ha
+\begin{equation}
+  \cdd B_{\beta} = B_{\beta;\mu} \dd x^{\mu}=0.
+  \label{4.1}
+\end{equation}
+Il vettore $B_{\beta}$ torna su se stesso dopo il trasporto parallelo su una
+linea chiusa se
+\begin{equation}
+  \int \delta B_{\beta}=0
+\end{equation}
+cioè se
+\begin{equation}
+  \int \tensor{\Gamma}{^{\alpha}_{\beta \mu}} B_{\alpha} \dd x^{\mu} =0.
+\end{equation}
+Dalla relazione precedente e per il teorema di Stokes, si ha
+\begin{equation}
+  \left[\tensor{\Gamma}{^{\alpha}_{\beta \nu}} B_{\alpha} \right]_{,\mu} =
+  \left[\tensor{\Gamma}{^{\alpha}_{\beta \mu}} B_{\alpha} \right]_{,\nu}.
+\end{equation}
+Sviluppando questa uguaglianza si ha
+\begin{equation}
+  \tensor{\Gamma}{^{\alpha}_{\beta \nu ,\mu}} B_{\alpha} +
+  \tensor{\Gamma}{^{\alpha}_{\beta \nu}} B_{\alpha ,\mu} =
+  \tensor{\Gamma}{^{\alpha}_{\beta \mu, \nu}} B_{\alpha} +
+  \tensor{\Gamma}{^{\alpha}_{\beta \mu}} B_{\alpha , \nu},
+\end{equation}
+da cui
+\begin{equation}
+  \label{4.5}
+  B_{\alpha} \left[ \tensor{\Gamma}{^{\alpha}_{\beta \nu , \mu}}
+    -\tensor{\Gamma}{^{\alpha}_{\beta \mu ,\nu}} \right] +
+  \tensor{\Gamma}{^{\sigma}_{\beta \nu}} B_{\sigma,\mu} -
+  \tensor{\Gamma}{^{\sigma}_{\beta \mu}} B_{\sigma,\nu} = 0.
+\end{equation}
+Ora dall'equazione~\eqref{4.1} e dalla definizione di derivata covariante segue
+\begin{equation}
+  B_{\sigma;\nu} = B_{\sigma,\nu}-\tensor{\Gamma}{^{\alpha}_{\sigma \nu}}
+  B_{\alpha} = 0,
+\end{equation}
+ciò implica che $B_{\sigma,\nu}= \tensor{\Gamma}{^{\alpha}_{\sigma \nu}}
+B_{\alpha}$ e che $B_{\sigma,\mu}= \tensor{\Gamma}{^{\alpha}_{\sigma \mu}}
+B_{\alpha}$.  Tenendo conto di queste relazioni, l'equazione~\eqref{4.5} diventa
+\begin{equation}
+  B_{\alpha}
+  \left[ \tensor{\Gamma}{^{\alpha}_{\beta \nu ,\mu}} -
+    \tensor{\Gamma}{^{\alpha}_{\beta \mu ,\nu}} \right] +
+  \tensor{\Gamma}{^{\sigma}_{\beta \nu}} \tensor{\Gamma}{^{\alpha}_{\sigma \mu}}
+  B_{\alpha} - \tensor{\Gamma}{^{\sigma}_{\beta \mu}}
+  \tensor{\Gamma}{^{\alpha}_{\sigma \nu}} B_{\alpha} =0
+\end{equation}
+da cui
+\begin{equation}
+  B_{\alpha} \left[
+    \tensor{\Gamma}{^{\alpha}_{\beta \nu, \mu}} -
+    \tensor{\Gamma}{^{\alpha}_{\beta \mu, \nu}} +
+    \tensor{\Gamma}{^{\sigma}_{\beta \nu}} \tensor{\Gamma}{^{\alpha}_{\sigma
+        \mu}} - \tensor{\Gamma}{^{\sigma}_{\beta \mu}}
+    \tensor{\Gamma}{^{\alpha}_{\sigma \nu}} \right] =0
+ \end{equation}
+e allora in termini del tensore di Riemann
+\begin{equation}
+  B_{\alpha} \tensor{R}{^{\alpha}_{\beta \mu \nu}} = 0.
+\end{equation}
+
+Abbiamo quindi provato che imporre la condizione~\eqref{4.3} è equivalente a
+richiedere che sia valida la condizione~\eqref{4.8}.  Possiamo quindi asserire
+che condizione necessaria e sufficiente affinché uno spazio sia piatto (nel
+senso della defizione data sopra di trasporto parallelo) è che il tensore di
+Riemann sia nullo.
+
+Si ottiene lo stesso risultato operando con vettori controvarianti invece che
+covarianti. In questo caso dalla relazione
+\begin{equation}
+  \cdd A^{\alpha} = \tensor{A}{^{\alpha}_{;\mu}} \dd x^{\mu} =0
+\end{equation}
+e procedendo nella stessa maniera si ricava:
+\begin{equation}
+  A^{\alpha} \tensor{R}{^{\alpha}_{\beta \mu \nu}} =0.
+\end{equation}
+
+\subsection{Il trasporto parallelo su un percorso infinitesimo}
+\label{sec:trasporto-parallelo-percorso-infinitesimo}
+
+Calcoliamo la variazione delle componenti di un vettore trasportato
+parallelamente lungo un percorso chiuso infinitesimo.  Consideriamo due
+differenti percorsi:
+\begin{equation}
+  P(x) \to P_1(x^{\mu} + d_1 x^{\mu}) \to Q(x^{\mu} + d_1 x^{\mu} + d_2 x^{\mu})
+\end{equation}
+che porta da $P(x)$ a $P_1(x^{\mu} + d_1 x^{\mu})$ e infine a $Q(x^{\mu} + d_1
+x^{\mu} + d_2 x^{\mu})$ (lungo il percorso infinitesimo $\delta \gamma_1$, vedi
+figura), e alternativamente
+\begin{equation}
+  P(x)\to  P_2(x^{\mu} + d_2 x^{\mu})\to Q(x^{\mu} + d_2 x^{\mu} + d_1 x^{\mu})
+\end{equation}
+che porta da $P(x)$ a $P_2(x^{\mu} + d_2 x^{\mu})$ e infine a $Q(x^{\mu} + d_2
+x^{\mu} + d_1 x^{\mu})$ lungo $\delta \gamma2$.
+
+Il 4-vettore $A_{\alpha}$ in $P_1$ vale
+\begin{equation}
+  A_{\alpha}(P_1) = A_{\alpha}(P)+ \delta A_{\alpha}(P) = A_{\alpha}(P) +
+  \tensor{\Gamma}{^{\beta}_{\alpha \mu}}(P) A_{\beta}(P) d_1 x^{\mu}
+\end{equation}
+mentre il vettore $A_{\alpha}$ in $Q$ , dopo il percorso $PP_1Q$ è dato da
+\begin{equation}
+  A_{\alpha}(Q)_{[PP_1Q]} = A_{\alpha}(P_1)+ \delta A_{\alpha}(P_1) =
+  A_{\alpha}(P_1) + \tensor{\Gamma}{^{\beta}_{\alpha \mu}}(P_1) A_{\beta}(P_1)
+  d_2 x^{\mu}
+\end{equation}
+Pertanto il vettore $A_{\alpha}$ in $Q$ dopo il percorso $PP_1Q$ diventa
+\begin{equation}
+  \begin{split}
+    A_{\alpha}(Q)_{[PP_1Q]} &= A_{\alpha}(P) +
+    \tensor{\Gamma}{^{\beta}_{\alpha\mu}}(P) A_{\beta}(P) d_1 x^{\mu} \\
+    &\quad{} + \tensor{\Gamma}{^{\beta}_{\alpha\nu}}(P_1) [ A_{\beta}(P) +
+    \tensor{\Gamma}{^{\rho}_{\beta \mu}}(P) A_{\rho}(P) d_1 x^{\mu}] d_2
+    x^{\nu}.
+    \label{4.10}
+  \end{split}
+\end{equation}
+Sviluppando la connessione affine nell'intorno di $P$ segue
+\begin{equation}
+  \tensor{\Gamma}{^{\beta}_{\alpha \nu}}(P_1) \simeq
+  \tensor{\Gamma}{^{\beta}_{\alpha \nu}}(P) + \tensor{\Gamma}{^{\beta}_{\alpha
+      \nu, \mu}}(P)  d_1 x^{\mu}
+\end{equation}
+e trascurando i termini del terzo ordine, l'equazione~\eqref{4.10} diventa
+\begin{equation}
+\begin{split}
+  A_{\alpha}(Q)_{[PP_1Q]} &= A_{\alpha} + \Gamma^{\beta}_{\alpha \mu} A_{\beta}
+  d_1 x^{\mu} + \Gamma^{\beta}_{\alpha \nu} A_{\beta} d_2 x^{\nu} \\
+  &\quad{} + \Gamma^{\beta}_{\alpha \nu , \mu} A_{\beta} d_1 x^{\mu} d_2 x^{\nu}
+  + \Gamma^{\beta}_{\alpha \nu} \Gamma^{\rho}_{\beta \mu} A_{\rho} d_1 x^{\mu}
+  d_2 x^{\nu}.
+\end{split}
+\end{equation}
+Raggruppando i termini e tenendo conto degli indici muti si ha
+\begin{equation}
+  A_{\alpha}(Q)_{[PP_1Q]} = A_{\alpha} + \tensor{\Gamma}{^{\beta}_{\alpha \mu}}
+  A_{\beta} ( d_1 x^{\mu}+d_2 x^{\mu} ) + [ \tensor{\Gamma}{^{\beta}_{\alpha
+      \nu, \mu}} + \tensor{\Gamma}{^{\sigma}_{\alpha \nu}}
+  \tensor{\Gamma}{^{\beta}_{\sigma \mu}}] A_{\beta} d_1 x^{\mu} d_2 x^{\nu}.
+  \label{4.12}
+\end{equation}
+Similmente il vettore $A_{\alpha}$ in $Q$ dopo il percorso $PP_2Q$ è dato da
+\begin{equation}
+  A_{\alpha}(Q)_{[PP_2Q]} = A_{\alpha} + \tensor{\Gamma}{^{\beta}_{\alpha \mu}}
+  A_{\beta} (d_1 x^{\mu}+d_2 x^{\mu}) + [ \tensor{\Gamma}{^{\beta}_{\alpha \mu,
+      \nu}} + \tensor{\Gamma}{^{\sigma}_{\alpha \mu}}
+  \tensor{\Gamma}{^{\beta}_{\sigma \nu}}] A_{\beta} d_1 x^{\mu} d_2 x^{\nu}.
+  \label{4.13}
+\end{equation}
+Pertanto la differenza $\delta A_{\alpha}$ per trasporto parallelo del vettore
+$A_{\alpha}$ lungo il percorso chiuso $P P_1 Q P_2 P$ è dato dalla differenza
+tra l'equazione~\eqref{4.12} e l'equazione~\eqref{4.13}, cioè
+\begin{equation}
+  \delta A_{\alpha} = - \tensor{R}{^{\beta}_{\alpha \mu \nu}} A_{\beta} d_1
+  x^{\mu} d_2 x^{\nu}.
+\end{equation}
+La relazione precedente dimostra che $\tensor{R}{^{\beta}_{\alpha \mu \nu}}$ è
+un tensore poiché moltiplicandolo per tre vettori si ottiene ancora un vettore.
+
+\subsection{Identità di Bianchi}
+\label{sec:identita-bianchi}
+
+Si dimostra (vedi l'appendice~\ref{sec:dimostr-identita-bianchi}) la seguente
+relazione
+\begin{equation}
+  \label{eq:bianchi}
+  R_{\lambda\mu\nu\kappa;\eta} +
+  R_{\lambda\mu\eta\nu;\kappa} + R_{\lambda\mu\kappa\eta;\nu} = 0
+\end{equation}
+chiamata \index{identità!di Bianchi}\emph{identità di Bianchi}.  Contraiamo gli
+indici $\lambda$ e $\nu$ (moltiplicando ambo i membri per $g^{\lambda\nu}$)
+\begin{equation}
+  \begin{split}
+    \tensor{R}{^{\nu}_{\mu\nu\kappa;\eta}} +
+      \tensor{R}{^{\nu}_{\mu\kappa\eta;\nu}} +
+    \tensor{R}{^{\nu}_{\mu\eta\nu;\kappa}} &= R_{\mu\kappa;\eta} +
+    \tensor{R}{^{\nu}_{\mu\kappa\eta;\nu}} - R_{\mu\eta;\kappa} \\
+    &= R_{\mu\kappa;\eta} - \tensor{R}{^{\nu}_{\mu\eta\kappa;\nu}} -
+    R_{\mu\eta;\kappa} = 0.
+  \end{split}
+\end{equation}
+Contraendo ulteriormente gli indici $\mu$ e $\kappa$
+(moltiplicando per $g^{\mu\kappa}$) otteniamo
+\begin{equation}
+  R_{;\eta} - \tensor{R}{^{\nu}_{\eta;\nu}} -
+  \tensor{R}{^{\kappa}_{\eta;\kappa}} = R_{;\eta} - 2
+  \tensor{R}{^{\mu}_{\eta;\mu}} = 0,
+\end{equation}
+poiché $\kappa$ e $\nu$ sono entrambi indici muti che abbiamo rinominato $\mu$.
+Questa relazione può anche essere scritta come
+\begin{equation}
+  \bigg( \tensor{R}{^{\mu}_{\eta}} - \frac{1}{2} \tensor{\delta}{^{\mu}_{\eta}}
+  R \bigg)_{;\mu} = 0
+\end{equation}
+e moltiplicando ancora per $g^{\eta\nu}$
+\begin{equation}
+  \bigg( R^{\mu\nu} - \frac{1}{2} g^{\mu\nu} R\bigg)_{;\mu} = 0.
+\end{equation}
+La quantità all'interno delle parentesi è il
+\index{tensore!di Einstein}\emph{tensore di Einstein}
+\begin{equation}
+  G^{\mu\nu} = R^{\mu\nu} - \frac{1}{2} g^{\mu\nu}R
+\end{equation}
+e abbiamo dunque mostrato che $G^{\mu \nu}$ ha quadridivergenza covariante nulla
+\begin{equation}
+  \label{eq:divergenza-tens-einstein}
+  \tensor{G}{^{\mu\nu}_{;\mu}} = \bigg( R^{\mu\nu} - \frac{1}{2} g^{\mu\nu}
+  R\bigg)_{;\mu} = 0.
+\end{equation}
+
+\subsection{Equazione della deviazione geodetica}
+\label{sec:deviazione-geodetica}
+
+Vogliamo dimostrare che il tensore di Riemann descrive le forze mareali,
+equivalentemente che esso descrive l'accelerazione relativa di due particelle in
+caduta libera.
+
+Consideriamo due geodetiche a distanza infinitesima: la prima $x^{\mu}(\tau)$
+sia associata a una particella di prova $A$, la seconda $x^{\mu}(\tau)
++s^{\mu}(\tau)$ a una particella $B$.  Quindi $s^{\mu}$ è detto \emph{vettore di
+  connessione} tra le due geodetiche (vedi figura).
+
+Per le due geodetiche avremo
+\begin{subequations}
+  \begin{gather}
+    \toder[2]{x^{\mu}}{\tau} + \tensor{\Gamma}{^{\mu}_{\alpha \beta}}(x)
+    \toder{x^{\alpha}}{\tau} \toder{x^{\beta}}{\tau} = 0,
+    \label{116} \\
+    \toder[2]{(x^{\mu}+ s^{\mu})}{\tau} + \tensor{\Gamma}{^{\mu}_{\alpha
+        \beta}}(x+s) \left(\toder{x^{\alpha}}{\tau} + \toder{s^{\alpha}}{\tau}
+    \right) \left( \toder{x^{\beta}}{\tau} + \toder{s^{\beta}}{\tau} \right) =
+    0.
+    \label{117}
+  \end{gather}
+\end{subequations}
+Nell'equazione precedente usiamo l'approssimazione
+\begin{equation}
+  \tensor{\Gamma}{^{\mu}_{\alpha \beta}}(x+s) \simeq
+  \tensor{\Gamma}{^{\mu}_{\alpha \beta}}(x) + \tensor{\Gamma}{^{\mu}_{\alpha
+      \beta ,\sigma}} s^{\sigma}
+\end{equation}
+Considerando solo i termini al primo ordine in $s^{\mu}$, valutiamo la
+differenza tra le equazioni~\eqref{116} e \eqref{117}.  Otteniamo
+\begin{equation}
+  \toder[2]{s^{\mu}}{\tau} =
+  -\tensor{\Gamma}{^{\mu}_{\alpha \beta, \sigma}} s^{\sigma}
+  \toder{x^{\alpha}}{\tau} \toder{x^{\beta}}{\tau}
+  -2\tensor{\Gamma}{^{\mu}_{\alpha \beta}} \toder{s^{\alpha}}{\tau}
+  \toder{x^{\beta}}{\tau}.
+  \label{119}
+\end{equation}
+
+Valutiamo ora la derivata seconda del vettore connessione $s^{\mu}$.  Abbiamo
+visto che la derivata prima di un vettore $s^{\mu}$ lungo una geodetica è
+\begin{equation}
+  \covder{s^{\mu}}{\tau} = \tensor{s}{^{\mu}_{; \beta}}\toder{x^{\beta}}{\tau} =
+  \toder{s^{\mu}}{\tau} + \tensor{\Gamma}{^{\mu}_{\alpha \beta}} s^{\alpha}
+  \toder{x^{\beta}}{\tau}.
+\end{equation}
+Pertanto
+\begin{equation}
+  \begin{split}
+    \covder[2]{s^{\mu}}{\tau} = \covder{}{\tau} \left( \covder{s^{\mu}}{\tau}
+    \right) &= \toder{}{\tau} \left( \covder{s^{\mu}}{\tau} \right) +
+    \tensor{\Gamma}{^{\mu}_{\alpha \beta}} \toder{s^{\alpha}}{\tau}
+    \toder{x^{\beta}}{\tau} + \toder{}{\tau} \left( \toder{s^{\mu}}{\tau} +
+      \tensor{\Gamma}{^{\mu}_{\alpha \beta}} s^{\alpha}
+      \toder{x^{\beta}}{\tau}\right) \\
+    &\quad{} + \tensor{\Gamma}{^{\mu}_{\alpha \beta}} \left(
+      \toder{s^{\alpha}}{\tau} + \tensor{\Gamma}{^{\alpha}_{k \lambda}} s^{k}
+      \toder{x^{\lambda}}{\tau} \right) \toder{x^{\beta}}{\tau}.
+  \end{split}
+\end{equation}
+Sviluppando si ha
+\begin{equation}
+  \begin{split}
+    \covder[2]{s^{\mu}}{\tau} = & \toder[2]{s^{\mu}}{\tau} +
+    \tensor{\Gamma}{^{\mu}_{\alpha \beta , \nu}}
+    \toder{x^{\nu}}{\tau} s^{\alpha} \toder{x^{\beta}}{\tau} + 2
+    \tensor{\Gamma}{^{\mu}_{\alpha \beta}} \toder{s^{\alpha}}{\tau}
+    \toder{x^{\beta}}{\tau} \\
+    & - \tensor{\Gamma}{^{\mu}_{\alpha \beta}} s^{\alpha}
+    \tensor{\Gamma}{^{\beta}_{k \lambda}} \toder{x^{k}}{\tau}
+    \toder{x^{\lambda}}{\tau} + \tensor{\Gamma}{^{\mu}_{\alpha \beta}}
+    \tensor{\Gamma}{^{\alpha}_{k \lambda}} s^{k} \toder{x^{\lambda}}{\tau}
+    \toder{x^{\beta}}{\tau}.
+  \end{split}
+  \label{115}
+\end{equation}
+Il penultimo termine si ottiene calcolando $\ltoder[2]{x^{\beta}}{\tau}= -
+\tensor{\Gamma}{^{\beta}_{k \lambda}}
+(\ltoder{x^{k}}{\tau})(\ltoder{x^{\lambda}}{\tau})$.
+
+La derivata seconda $\lcovder[2]{s^{\mu}}{\tau}$ può essere ora calcolata
+sostituendo l'espressione~\eqref{119} nell'equazione precedente.  Si ha
+\begin{equation}
+  \begin{split}
+    \covder[2]{s^{\mu}}{\tau} &= -\tensor{\Gamma}{^{\mu}_{\alpha \beta,\sigma}}
+    s^{\sigma} \toder{x^{\alpha}}{\tau} \toder{x^{\beta }}{\tau} -
+    2\tensor{\Gamma}{^{\mu}_{\alpha \beta}} \toder{s^{\alpha}}{\tau}
+    \toder{x^{\beta}}{\tau} + \tensor{\Gamma}{^{\mu}_{\alpha \beta , \nu}}
+    \toder{x^{\nu}}{\tau} s^{\alpha} \toder{x^{\beta}}{\tau} \\
+    &\quad{} + 2\tensor{\Gamma}{^{\mu}_{\alpha \beta}} \toder{s^{\alpha}}{\tau}
+    \toder{dx^{\beta}}{d \tau} - \tensor{\Gamma}{^{\mu}_{\alpha \beta}}
+    s^{\alpha} \tensor{\Gamma}{^{\beta}_{k \lambda}} \toder{x^{k}}{\tau}
+    \toder{x^{\lambda}}{\tau} + \tensor{\Gamma}{^{\mu}_{\alpha \beta}}
+    \tensor{\Gamma}{^{\alpha}_{k \lambda}} s^{k} \toder{x^{\lambda}}{\tau}
+    \toder{x^{\beta}}{\tau}.
+  \end{split}
+\end{equation}
+Nella precedente secondo e quarto termine si semplificano; inoltre operando
+sugli indici muti si possono mettere in evidenza tra i restanti quattro termini
+il prodotto $s^{\sigma} (\ltoder{x^{\alpha}}{\tau})
+(\ltoder{x^{\beta}}{\tau})$. Allora abbiamo
+\begin{equation}
+  \covder[2]{s^{\mu}}{\tau} = \tensor{R}{^{\mu}_{\alpha \sigma \beta}}
+  s^{\sigma} \toder{x^{\alpha}}{\tau} \toder{x^{\beta}}{\tau}.
+\end{equation}
+L'equazione precedente è nota come \emph{deviazione geodetica}.
+
+Per campi deboli e statici e per velocità piccole ($V^{\alpha} \simeq
+(1,0,0,0)$), trascurando il termine lineare e quadratico in $v$, l'equazione
+precedente diventa
+\begin{equation}
+  \toder[2]{s^{k}}{t} \simeq -\tensor{R}{^k_{0l0}} s^l.
+\end{equation}
+Inoltre
+\begin{subequations}
+  \begin{align}
+    \tensor{\Gamma}{^{\alpha}_{\beta\mu}} &\simeq\frac{1}{2}\eta^{\alpha \sigma}
+                                            (h_{\sigma \beta, \mu}+h_{\mu
+                                            \sigma, \beta} - h_{\beta \mu
+                                            \sigma}), \\
+    \tensor{R}{^{\alpha}_{\beta\mu\nu}} &\simeq\frac{1}{2}\eta^{\alpha \sigma}
+                                          (h_{\mu \sigma , \beta , \nu} -
+                                          h_{\beta \mu , \sigma , \nu} -
+                                          h_{\nu \sigma, \beta , \mu} +
+                                          h_{\beta \nu , \sigma , \mu}),
+  \end{align}
+\end{subequations}
+con $h_{00} \simeq -2 \phi_{new}$ e $h_{ij} = \delta_{ij}$.  Quindi i soli
+elementi non nulli del tensore di Riemann sono
+\begin{equation}
+  \tensor{R}{^{k}_{0l0}} \simeq - \frac{1}{2} \eta^{k m} h_{00,m,l}
+  \simeq - \frac{1}{2} \delta^{km}
+  \parder{}{x^m,x^l} h_{00} = \simeq \delta^{ml}
+  \parder{}{x^m,x^l}\phi_{\textup{new}}.
+\end{equation}
+
+Esiste un'analogia tra tensore di Riemann $R$ e forze mareali, nel senso che:
+\begin{itemize}
+\item in geometria non-euclidea il tensore di curvatura controlla le dimensioni
+  della superficie gaussiana approssimabile con un piano tangente e geometria
+  locale euclidea;
+\item le forze mareali definiscono le dimensioni della regione entro cui un
+  campo gravitazionale può essere eliminato con l'introduzione di un sistema di
+  riferimento in caduta libera.
+\end{itemize}
+Per mostrare questa analogia, consideriamo un satellite in orbita attorno alla
+terra e al suo interno due masse di prova $A$ e $B$, disposte nella direzione
+radiale, a distanza $ \pm l/2$ dal centro di massa $O$ del satellite.
+
+L'accelerazione centripeta nel punto $O$ (a distanza $r$ dal centro della Terra)
+è $a(O) = GM/r^2$; mentre le accelerazioni in $A$ e $B$ sono: $a(A) =
+GM/(r-l/2)^2$ e $a(B) = GM/(r+l/2)^2$.
+
+Quindi l'accelerazione residua di $B$ rispetto ad $A$ è:
+\begin{equation}
+  a_{\textup{residua}} = \frac{GM}{(r+l/2)^2} - \frac{GM}{(r-l/2)^2} \simeq
+  \frac{-2lGM}{r^3} \equiv - \underbrace{\frac{2GM}{c^2 r^3}}_{\textup{cm}^{-2}}
+  lc^2.
+\end{equation}
+Il termine evidenziato ha dimensioni cm$^{-2}$ e può essere identificato con il
+tensore di Riemann $R$.  È evidente che possiamo trascurare gli effetti mareali
+($a_{\textup{residua}} \ll 1 $) se $ R l c^2 \ll 1 $.
+
+In prossimità della Terra il campo gravitazionale è debole e stazionario.
+Allora $R_{0000}=0$ ed $R_{i0j0} \simeq \frac{1}{2} \frac{\partial ^2
+  h_{00}}{\partial x^i \partial x^j}$.  Utilizzando l'equazione della deviazione
+geodetica possiamo calcolare l'accelerazione della particella $B$ come vista
+dalla particella $A$ (accelerazione residua).  Assumendo inoltre che le velocità
+siano piccole ($\dd\tau \simeq \dd t$) abbiamo
+\begin{equation}
+  \toder[2]{}{t} \delta r \simeq \tensor{R}{^r_{0r0}} \delta r \simeq
+  \frac{1}{2} \toder[2]{}{r} (-2 \phi_{\textup{new}}) \delta r \simeq
+  \frac{-2GM}{r^3} \delta r.
+\end{equation}
+Questo risultato conferma l'identificazione del tensore di Riemann con le forze
+mareali.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../gravitazione"
+%%% fill-column: 80
+%%% End:

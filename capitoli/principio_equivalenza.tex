@@ -753,8 +753,8 @@ debole ($\abs{h_{\mu\nu}} \sim GM/r \sim v^{2} \ll 1$), statico e velocità non
 relativistiche ($v \ll 1$) trascurando i termini dell'ordine di
 $\abs{h_{\mu\nu}}v^{2} \sim v^{4}$ e $\abs{h_{\mu\nu}}v \sim v^{3}$.  In questo
 paragrafo studieremo l'equazione della geodetica con un livello di
-approssimazione minore: continueremo a trascurare i termini dell'ordine di
-$\abs{h_{\mu\nu}}v^{2}$ ma non quelli dell'ordine di $\abs{h_{\mu\nu}}v$.
+approssimazione maggiore includendo quindi il termine dell'ordine di
+$\abs{h_{\mu\nu}}v \sim v^{3}$.
 
 Nelle ipotesi illustrate, le componenti $k$ dell'equazione della
 geodetica~\eqref{eq:geodetica} sono date da
@@ -812,9 +812,12 @@ $3$.  Definiamo il vettore tridimensionale $\bm{g}$ di componenti
   -(\nabla \phi)_{k},
 \end{equation}
 in cui abbiamo ricordato il risultato $h_{00} = -2\phi$ trovato nel paragrafo
-precedente.  Osserviamo che $\bm{g} = -\nabla \phi$, quindi $\bm{g}$ è proprio
-il campo gravitazionale newtoniano.  Con queste posizioni l'equazione della
-geodetica~\eqref{eq:gem2} diventa
+precedente.  Osserviamo che
+\begin{equation}
+  \bm{g} = -\nabla \phi,
+\end{equation}
+quindi $\bm{g}$ è proprio il campo gravitazionale newtoniano.  Con queste
+posizioni l'equazione della geodetica~\eqref{eq:gem2} diventa
 \begin{equation}
   \label{eq:gem3}
   \toder{v_{k}}{t} = g_{k} + 2f_{ki}v^{i}.
@@ -938,8 +941,8 @@ oppure nella seguente forma vettoriale
   \nabla \times \bm{b} = 16\pi G \bm{S},
 \end{equation}
 in cui $\bm{S} = (T^{01}, T^{02}, T^{03}) = \rho \bm{v}$ è l'analogo del
-\index{vettore!di Poynting}vettore di Poynting $\bm{E}\times\bm{B}/4\pi$ per il
-campo gravitomagnetico.
+\index{vettore!di Poynting}vettore di Poynting $(\bm{E}\times\bm{B})/4\pi$ per
+il campo gravitomagnetico.
 
 \subsection{Effetto Lense-Thirring}
 \label{sec:effetto-lense-thirring}
@@ -982,21 +985,6 @@ in cui
   \bm{B} = \nabla \times \bm{A} = \frac{3 \versor{r}(\versor{r} \cdot \bm{m}) -
     \bm{m}}{\norm{\bm{r}}^{3}}.
 \end{equation}
-In queste approssimazioni, il momento torcente agente su momento di dipolo
-magnetico $\bm{m}'$ immerso nel campo magnetico esterno $\bm{B}$ è
-\begin{equation}
-  \bm{\tau} = \bm{m}' \times \bm{B}.
-\end{equation}
-Inoltre il momento torcente agente su un giroscopio con momento angolare
-intrinseco di spin $\bm{s}$ è
-\begin{equation}
-  \bm{\tau} = \dot{\bm{\Omega}} \times \bm{s},
-\end{equation}
-con $\dot{\bm{\Omega}}$ velocità angolare di precessione.  Se il momento di
-dipolo magnetico è proporzionale al suo momento angolare,
-$\bm{m}' = \alpha \bm{s}$, allora confrontando le due espressioni del momento
-torcente otteniamo che la velocità angolare di precessione è
-$\dot{\bm{\Omega}} = -\alpha \bm{B}$.
 
 Per il campo gravitomagnetico possiamo trovare relazioni analoghe.  Abbiamo
 visto che $\nabla \times \bm{b} = 16 \pi G \bm{S}$ e
@@ -1039,15 +1027,26 @@ definizione il momento angolare totale classico.  Quindi abbiamo anche
 \end{subequations}
 Abbiamo trovato che $\bm{b}$ è legato al momento angolare del corpo che genera
 il campo gravitazionale, coerentemente con la previsione che il campo
-gravitomagnetico è associato a masse in rotazione.  Il momento torcente agente
-su un giroscopio con momento angolare intrinseco di spin $\bm{s}$ e ``momento di
-dipolo'' $\bm{m}_{\textup{g}}' = \bm{s}/2$ è
+gravitomagnetico è associato a masse in rotazione.
+
+Usando ancora l'analogia con il campo magnetico e dipolo magnetico,
+il momento torcente agente su di un giroscopio con momento angolare di spin
+$\bm{S}$ immerso nel campo gravitomagnetico $\bm{b}$ è
 \begin{equation}
-  \bm{\tau} = \bm{m}_{\textup{g}}' \times \bm{b} = \frac{\bm{s}}{2} \times
-  \bm{b} = \dot{\bm{\Omega}} \times \bm{s},
+  \bm{\tau} = \bm{S} \times \bm{b}/2.
 \end{equation}
-quindi la velocità angolare di precessione del giroscopio è (ripristiniamo la
-velocità della luce nel
+D'altra parte poiché
+\begin{equation}
+  \bm{\tau} = \frac{ d\bm{S}} {dt},
+\end{equation}
+si trova
+\begin{equation}
+  \frac{d\bm{S}} {dt} = - \bm{b}/2 \times \bm{S} = \dot{\bm{\Omega}} \times
+  \bm{S},
+\end{equation}
+con $\dot{\bm{\Omega}}$ velocità angolare di precessione dello spin $\bm{S}$
+attorno alla direzione del vettore $\bm{\Omega}$.  Quindi la velocità angolare
+di precessione del giroscopio è (ripristiniamo la velocità della luce nel
 vuoto)\footnote{Il risultato differisce da quello di
   \textcite[193]{ohanian:gravitazione} per il segno, ma, come osservato nella
   nota della pagina~\pageref{nota-b}, il vettore $\bm{b}$ è stato da noi
@@ -1101,12 +1100,37 @@ quindi la velocità di precessione di Lense-Thirring è data da
   \frac{\bm{L}_{\oplus}}{\norm{\bm{r}}^{3}}.
 \end{equation}
 Se il giroscopio orbita vicino alla superficie terrestre, possiamo porre
-$\norm{\bm{r}} \approx R_{\oplus}$ e la velocità angolare di precessione
-precedente corrisponde a uno spostamento angolare
-$\alpha_{\textup{LT}} \approx -\SI{0.055}{\arcsecond/anno}$, cioè uno
-spostamento spaziale di
-$\var l_{\textup{LT}} = \alpha_{\textup{LT}} \cdot R_{\oplus} \approx
--\SI{2}{\metre/anno}$.
+$\norm{\bm{r}} \approx R_{\oplus}$.  Poiché inoltre $\bm{L}_{\oplus} = 5.86
+\times 10^{40}$ g cm$^2$ s$^{-1}$, la velocità angolare di precessione
+precedente corrisponde a uno spostamento angolare in un anno
+$\alpha_{\textup{LT}} = \dot{\bm{\Omega}}_{\textup{LT}} \times 1 yr \approx
+-\SI{0.055}{\arcsecond}$.
+
+L'esperimento GP-B (Gravity Probe B) a bordo di un satellite lanciato nel 2004
+(Everit et al.) è stato progettato per misurare due fondamentali predizioni
+della RG: la deviazione geodetica (di cui parleremo dopo) e l'effetto
+Lense-Tirring.  L'esperimento usa 3 giroscopi raffreddati alla temperatura
+dell'elio liquido, in orbita attorno alla Terra.  La direzione dei giroscopi è
+determinata guardando alla stella IM Pegasi.  Comunque la misura della
+deviazione geodetica circa 6.6 arcsec/anno (nella stessa direzione della
+rotazione del satellite) è OK, mentre a causa della difficoltà di calibrazione
+la misura dell'angolo di Lense-Thirring (nella direzione est di rotazione
+terrestre, per un satellite in orbita polare) non è riuscita.
+
+I. Ciufolini ha proposto di usare un satellite (passivo dotato di
+retro-reflettori per determinare la posizione attraverso segnali laser trasmessi
+da una serie di stazioni a terra) in orbita attorno alla terra al posto di un
+giroscopio: è il momento angolare orbitale $\bm L$ del satellite (sostituisce lo
+spin del giroscopio dell'esperimento GP-B) che precede con velocità
+$\dot{\bm{\Omega}}_{\textup{LT}}$.  Con l'uso di 2 satelliti su orbite non
+polari (influenzate quindi fortemente dalla non-sfericità della terra) e
+formanti angoli opposti rispetto all'orbita polare è possibile eliminare gli
+effetti dovuti alla non sfericità terrestre sulla posizione dei nodi
+(intersezioni della traiettoria del satellite con il piano dell'orbita
+terrestre).  L'angolo di Lense-Tirring corrisponde ad un avanzamento della
+posizione dei nodi $\var l_{\textup{LT}} = \alpha_{\textup{LT}} \cdot R_{\oplus}
+\approx -\SI{2}{\metre/anno}$.  L'analisi dei dati conferma l'effetto
+Lense-Tirring con una precisione del 10\%.
 
 \section{Dilatazione gravitazionale del tempo e red-shift}
 \label{sec:red-shift-gravitazionale}
@@ -1308,30 +1332,8 @@ relativistico.\footnote{Lo spostamento verso il rosso può essere dedotto anche
   conservazione dell'energia.  Chi è interessato, può
   vedere~\textcite[160-161]{ohanian:gravitazione}.}
 
-% TODO: completare questa sezione.
-\section{\completare{Principio di generale covarianza}}
-\label{sec:generale-covarianza}
-
-Dal \index{principio!di equivalenza!forte}principio di equivalenza si può
-dedurre un altro principio, il \index{principio!di generale covarianza}
-\emph{principio di generale covarianza} che afferma che
-\emph{un'equazione fisica è valida in qualsiasi campo gravitazionale se
-  \begin{itemize}
-  \item l'equazione è valida in assenza di gravità, quindi soddisfa le leggi
-    della relatività speciale;
-  \item l'equazione è \emph{generalmente covariante}, cioè è invariante in forma
-    per trasformazioni arbitrarie delle coordinate $x^{\mu} \to x'^{\mu}$.
-  \end{itemize}
-}
-Questo principio è applicabile solo in regioni di spazio-tempo sufficientemente
-piccole, in particolare molto più piccole delle distanze alle quali agisce il
-campo gravitazionale considerato, poiché solo in queste regioni il principio di
-equivalenza, dal quale deriva il principio di generale covarianza, assicura la
-possibilità di individuare un sistema localmente inerziale.
-
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../gravitazione"
 %%% fill-column: 80
-%%% TeX-PDF-mode: t
 %%% End:

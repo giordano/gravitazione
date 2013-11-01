@@ -24,7 +24,6 @@
 % restituisce erroneamente lettere in tondo, non in corsivo e non funziona con
 % le lettere greche.
 \usepackage{bm}
-\usepackage[long,nodayofweek]{datetime}
 \usepackage{makeidx}
 \usepackage{siunitx}
 \usepackage{hyperref}
@@ -174,6 +173,8 @@
 % cambiando una lettera.
 % Derivata totale: \ltoder[ordine]{funzione}{variabile}
 \newcommand*{\ltoder}[3][]{\mathrm{d}^{#1}#2 / \mathrm{d} {#3}^{#1}}
+% Derivata covariante: \lcovder[ordine]{funzione}{variabile}
+\newcommand*{\lcovder}[3][]{\mathrm{D}^{#1}#2 / \mathrm{D} {#3}^{#1}}
 % Derivata parziale: \lparder[ordine]{funzione}{variabile}
 \newcommand*{\lparder}[3][]{\partial^{#1} #2 / \partial {#3}^{#1}}
 % NOTA: `\parder' e `\lparder' non sono completamente interscambiabili, il primo
@@ -213,7 +214,6 @@
 \thispagestyle{empty}
 \begingroup
 \scshape
-\newdateformat{mydate}{\THEDAY{}~\monthname[\THEMONTH{}]~\THEYEAR{}}
 \centering
 \vspace*{\baselineskip}
 \rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
@@ -222,51 +222,58 @@
   Cosmologia}\\[0.2\baselineskip]
 \rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
 \rule{\textwidth}{1.6pt}\\[\baselineskip]
-{\large Appunti del corso tenuto dal professor Gabriele Ingrosso} \\
-Lecce, a. a. 2011-2012\par
 \vspace*{2\baselineskip}
-Curato da \\[0.5\baselineskip]
-{\Large Prof. Gabriele Ingrosso \\
-  Mosè Giordano\par}
-{\itshape Università del Salento\par}
+{\Large
+  Mosè Giordano e  Gabriele Ingrosso} \\
+{\it Dipartimento di Matematica e Fisica \\
+ Università del Salento, Lecce}
+
 \vfill
 \includegraphics[width=2cm]{figure/logo_unisalento}\\
-\mydate\today\par
+\today\par
 \endgroup
 %% Fine copertina
 
 \newpage
-Si fa presente che il lavoro è \emph{in progress} per cui sono gradite
-segnalazioni di errori ed in generale di commenti che migliorino il testo.
+{\large
+ Appunti del corso di Gravitazione e Cosmologia, Laurea Magistrale in Fisica,
+ tenuto dal Prof. Gabriele Ingrosso nell'anno accademico 2011-2012.
 
+
+ Il lavoro è \emph{in progress} per cui sono gradite segnalazioni di errori ed
+ in generale commenti che migliorino il testo.}
 
 \cleardoublepage{}
 \tableofcontents{} % indice generale
 \cleardoublepage{}
 \listoffigures{} % elenco delle figure
 
-\input{capitoli/notazione}
+%\input{capitoli/notazione}
 
 \cleardoublepage{}
 \mainmatter{}
 \input{capitoli/richiami_relativita_speciale}
 \input{capitoli/principio_equivalenza}
 \input{capitoli/calcolo_tensoriale}
+\input{capitoli/tensore_riemann}
 \input{capitoli/equazioni_einstein}
+\input{capitoli/soluzione_sch}
+\input{capitoli/test_classici}
 \input{capitoli/onde_grav}
-\input{capitoli/cosmologia}
+%\input{capitoli/cosmografia}
+%\input{capitoli/cosmologia}
 
 \appendix{}
-\input{appendici/gauss}
-\input{appendici/spin}
-\input{appendici/dimostrazioni}
+%\input{appendici/gauss}
+%\input{appendici/spin}
+%\input{appendici/dimostrazioni}
 
 \backmatter{}
 
 \cleardoublepage{}
 \phantomsection
 \addcontentsline{toc}{chapter}{\refname}
-\nocite{*}
+\nocite{adler:relativity}
 \printbibliography
 
 \cleardoublepage{}
@@ -280,5 +287,4 @@ segnalazioni di errori ed in generale di commenti che migliorino il testo.
 %%% mode: latex
 %%% TeX-master: t
 %%% fill-column: 80
-%%% TeX-PDF-mode: t
 %%% End:

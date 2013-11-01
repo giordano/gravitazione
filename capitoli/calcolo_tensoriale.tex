@@ -776,23 +776,119 @@ vedere di nuovo che $\tensor{\Gamma}{^{\mu}_{\rho\lambda}}$ non può essere un
 tensore: un tensore nullo in un sistema di coordinate è nullo in ogni altro
 sistema di coordinate.
 
-% TODO: scrivere questa sezione.  Lezione del 27/04/2012
-\subsubsection{\completare{Esempio}}
+\subsubsection{{Esempio guida}}
 \label{sec:esempio}
 
-% TODO: scrivere questa sezione.  Lezione del 27/04/2012.  Vedi anche
-% Ohanian-Ruffini, pagina 351.  Ricordati di sottolineare la differenza fra
-% Lense-Thirring e De Sitter: De Sitter è dovuto alla sola presenza di una
-% massa, Lense-Thirring è causato dalla rotazione della massa.
-\subsection{\completare{Effetto De Sitter}}
-\label{sec:effetto-de-sitter}
+La connessione affine compare anche in uno spazio piatto se la metrica è
+differente da $\delta_{ij}$.  Consideriamo un spazio bidimensionale e 2 sistemi
+di coordinate: le coordinate cartesiane $\xi^i=(x,y)$, per le quali la distanza
+è data da $\dd l^2 \equiv \dd x^2+\dd y^2 = \delta_{ij} \dd\xi^i \dd\xi^j$ (con
+$i,j=1,2$) e un secondo sistema di coordinate curvilinee $x^i=(r,\theta)$, per
+il quale la distanza è $\dd l^2 \equiv (\dd r^2+r^2 \dd\theta^2)= g_{ij} \dd x^i
+\dd x^j$.  Le equazioni di trasformazione tra i due sistemi di coordinate sono
+\begin{subequations}
+  \begin{align}
+    r &= \sqrt{x^2+y^2}, \\
+    \theta &= \arctan(y/x),
+  \end{align}
+\end{subequations}
+e le trasformazioni inverse
+\begin{subequations}
+  \begin{align}
+    x &= r \sin\theta, \\
+    y &= r \sin\theta.
+  \end{align}
+\end{subequations}
+È facile verificare che
+\begin{equation}
+  g_{ij} = \delta_{lm} \parder{\xi^l}{x^i} \parder{\xi^m}{x^j}.
+\end{equation}
+Supponiamo ora di avere un vettore $A^k$ di componenti $(A^x,A^y)$ nel sistema
+$\xi^i$.  Le componenti dello stesso vettore nel sistema di coordinate $x^i$
+sono
+\begin{subequations}
+  \begin{align}
+    A^r &\equiv \parder{r}{x} A^x + \parder{r}{y} A^y = \cos\theta A^x +
+          \sin\theta A^y, \\
+    A^{\theta} &\equiv \parder{\theta}{x} A^x + \parder{\theta}{y} A^y =
+                 -\frac{\sin\theta}{r} A^x + \frac{\cos\theta}{r} A^y.
+  \end{align}
+\end{subequations}
+Le relazioni inverse sono
+\begin{subequations}
+  \begin{align}
+    A^x &\equiv \parder{x}{r} A^r + \parder{x}{\theta} A^{\theta} = \cos\theta
+          A^r - r \sin\theta A^{\theta}, \\
+    A^y &\equiv \parder{y}{r} A^r + \parder{y}{\theta} A^{\theta} = \sin\theta
+          A^r + r \cos\theta A^{\theta}.
+    \label{trasinv}
+  \end{align}
+\end{subequations}
+Consideriamo ora il differenziale del vettore $A^i$ nel sistema $x^i$:
+\begin{subequations}
+  \begin{align}
+    \dd A^r &= \cos \theta d A^x + \sin \theta dA^y + A^x \dd(\cos \theta) + A^y
+              \dd(\sin \theta), \\
+    \dd A^{\theta} &= -\frac{\sin\theta}{r} \dd A^x + \frac{\cos\theta}{r}
+                     \dd A^y + A^x \dd\left(-\frac{\sin \theta}{r}\right) + A^y
+                     \dd\left(\frac{\cos \theta}{r}\right).
+  \end{align}
+\end{subequations}
+Ora è evidente che $(\dd A^r,\dd A^{\theta})$ non costituiscono le componenti di
+un vettore a causa della presenza del terzo e quarto termine nelle equazioni
+precedenti.  Poniamo ora
+\begin{subequations}
+  \begin{align}
+    \delta A^r        &= A^x \dd(\cos \theta) + A^y \dd(\sin \theta),  \\
+    \delta A^{\theta} &= A^x \dd\left(-\frac{\sin\theta}{r}\right) + A^y
+                        \dd\left(\frac{\cos\theta}{r}\right),
+  \end{align}
+\end{subequations}
+o, equivalentemente,
+\begin{subequations}
+  \begin{align}
+    \delta A^r        &= -A^x \sin\theta \dd\theta + A^y \cos\theta \dd\theta \\
+    \delta A^{\theta} &= -A^x \frac{-\cos\theta}{r} d\theta + A^x,
+                        \frac{\sin\theta}{r^2} \dd r -A^y \frac{-\sin\theta}{r}
+                        \dd\theta - A^y \frac{\cos\theta}{r^2} \dd r.
+  \end{align}
+\end{subequations}
+Usiamo le equazioni~\eqref{trasinv} per eliminare $A^x$ ed $A^y$ e otteniamo
+\begin{subequations}
+  \begin{align}
+    \delta A^r        &= r A^{\theta} \dd\theta = -\tensor{\Gamma}{^{r}_{il}}
+                        A^i \dd x^l, \\
+    \delta A^{\theta} &= -\frac{1}{r} A^r \dd\theta -\frac{1}{r} A^{\theta}
+                        \dd r = -\tensor{\Gamma}{^{\theta}_{il}} A^i \dd x^l,
+  \end{align}
+\end{subequations}
+dove abbiamo indicato $A^i=(A^r,A^{\theta})$ e $\dd x^i= (\dd r, \dd\theta)$.
+Nelle precedenti abbiamo introdotto la connessione affine che abbiamo definito
+essere:
+\begin{equation}
+  \tensor{\Gamma}{^{i}_{lm}} = \parder{x^i}{\xi^n} \parder{\xi^n}{x^l,x^m}.
+\end{equation}
+Dalla definizione precedente si trova che gli unici termini $\ne 0$ sono
+\begin{subequations}
+  \begin{align}
+    \tensor{\Gamma}{^{1}_{22}} &= -r, \\
+    \tensor{\Gamma}{^{2}_{12}} &= \tensor{\Gamma}{^{2}_{21}} = \frac {1}{r}.
+  \end{align}
+\end{subequations}
+È allora evidente che il differenziale covariante $\cdd A^i$ definito attraverso
+la differenza tra il differenziale ordinario e la variazione della componente
+per trasporto parallelo si trasforma come un vettore
+\begin{equation}
+  \cdd A^i \equiv \dd A^i - \delta A^i = \dd A^i + \tensor{\Gamma}{^i_{lm}} A_l
+  \dd x^l.
+\end{equation}
 
-\section{Applicazioni del principio di generale covarianza}
+\section{Principio di generale covarianza}
 \label{sec:applicazioni-generale-covarianza}
 
 Grazie al formalismo introdotto in questo capitolo possiamo adottare l'algoritmo
 che ci apprestiamo a esporre per determinare quale sia l'effetto della gravità
-sui sistemi fisici: si scrive l'equazione che descrive il sistema, in assenza di
+sui sistemi fisici: si scrivono le equazioni che descrivono il sistema, in assenza di
 gravità, con il formalismo della relatività speciale e
 \begin{itemize}
 \item si sostituisce il \index{tensore!metrico}tensore metrico $g_{\mu\nu}$ al
@@ -810,27 +906,161 @@ generale covarianza, sarà valida anche in presenza di campi gravitazionali.  È
 possibile fare ciò a patto che si lavori su scale sufficientemente piccole
 rispetto al raggio d'azione del campo gravitazionale.
 
-Questo algoritmo ci permette, per esempio, di ricavare in maniera rapida
-l'equazione del moto di una particella soggetta solo a un campo gravitazionale.
-In assenza di gravità la particella è libera, quindi la sua equazione del moto è
+Questo algoritmo ci permette, per esempio, di ricavare in maniera immediata
+l'equazione del moto di una particella soggetta solo a forze gravitazionali.  In
+assenza di gravità la particella è libera, quindi la sua equazione del moto è
 \begin{equation}
-  \toder{u^{\mu}}{\tau} = 0,
+  \toder{V^{\alpha}}{\tau} = 0,
 \end{equation}
-in cui $u^{\mu}$ è la \index{quadrivelocità}quadrivelocità della particella.  In
+in cui $V^{\alpha}$ è la \index{quadrivelocità}quadrivelocità della particella.  In
 presenza del campo gravitazionale, secondo le prescrizioni precedenti,
 l'equazione del moto si scrive come
 \begin{equation}
-  0 = \curder{u^{\mu}} = \toder{u^{\mu}}{\tau} +
-  \tensor{\Gamma}{^{\mu}_{\lambda\nu}} u^{\lambda} \toder{x^{\nu}}{\tau} =
-  \toder{u^{\mu}}{\tau} + \tensor{\Gamma}{^{\mu}_{\lambda\nu}} u^{\lambda}
-  u^{\nu},
+  0 = \curder{V^{\mu}} = \toder{V^{\mu}}{\tau} +
+  \tensor{\Gamma}{^{\mu}_{\lambda\nu}} U^{\lambda} \toder{x^{\nu}}{\tau} = 0
 \end{equation}
 che è l'\index{equazione!della geodetica}equazione della
-geodetica~\eqref{eq:geodetica2}.
+geodetica~\eqref{eq:geodetica2}.  Qui la 4-velocità è $V^{\mu} =
+(\lparder{x^{\mu}}{\xi^{\alpha}}) \xi^{\alpha}$.
+
+\subsection{Deviazione geodetica: effetto De Sitter}
+\label{sec:effetto-de-sitter}
+
+In assenza di momenti esterni, l'equazione del moto dello spin $S^{\mu}$ di un
+giroscopio in relatività speciale è
+\begin{equation}
+  \toder{S^{\mu}}{\tau} = 0.
+\end{equation}
+Per il principio di generale covarianza, l'equazione del moto per lo spin del
+giroscopio in presenza di un campo gravitazionale esterno è
+\begin{equation}
+  \toder{S^{\mu}}{\tau} + \tensor{\Gamma}{^{\mu}_{\alpha\beta}} S^{\alpha}
+  \toder{x^{\beta}}{\tau}= 0.
+  \label{eqspin}
+\end{equation}
+Da questa equazione possiamo calcolare come cambia la direzione dello spin del
+giroscopio in caduta libera nel campo gravitazionale esterno.
+
+Si consideri il giroscopio a bordo di un satellite in orbita attorno alla Terra.
+Per convenienza l'orbita sia nel piano $xy$ e si valuti
+l'equazione~\eqref{eqspin} nel punto $x=r_0$, $y=0$, $z=0$ (vedi Figura).
+
+Nell'approssimazione di campo debole e statico la metrica dello spazio tempo a
+distanza $r$ da un corpo di massa $M$ è
+\begin{equation}
+  \dd\tau^2 = \left(1-\frac{2 G M}{c^2r}\right) \dd t^2 - \left(1+\frac{2 G
+      M}{c^2r}\right) \dd r^2 - r^2 \dd \theta^2 - r^2 \sin^2 \theta \dd \phi^2.
+  \label{metricadebole}
+\end{equation}
+Questa è la metrica di Schwarzschild (vedi dopo) per un campo debole, $2GM/(c^2
+r) = r_{g}/r\ll 1$.  Nel nostro caso è $M=M_{\oplus}$ (massa Terra) ed $r= r_0
+\simeq R_{\oplus}$.
+
+Valutiamo ora le componenti della connessione affine.  Si ha:
+\begin{equation}
+  \tensor{\Gamma}{^{0}_{01}} =
+  \frac{1}{2} \eta^{00} (\partial_1 h_{00} + \partial_0 h_{10}- \partial_0
+  h_{01} ) =
+  -  \frac{1}{2} \partial_1 h_{00} =   \frac {G} {c^2 M_{\oplus} r_0^2}.
+\end{equation}
+Qui abbiamo usato la relazione $h_{00}=-2 \phi_{\textup{new}} = + 2GM/(c^2 r)$.
+In maniera analoga, usando la relazione $h_{11}=2GM/(c^2 r)$) si trova (vedi
+anche le equazioni [148] in~\textcite[353]{ohanian:gravitazione})
+\begin{subequations}
+  \begin{align}
+    \tensor{\Gamma}{^{1}_{00}} &= \tensor{\Gamma}{^{1}_{22}} =
+    \tensor{\Gamma}{^{1}_{33}} = \frac{G}{c^2 M_{\oplus} r_0^2}, \\
+    \tensor{\Gamma}{^{1}_{11}} &= \tensor{\Gamma}{^{2}_{12}} =
+    \tensor{\Gamma}{^{2}_{21}} = \tensor{\Gamma}{^{3}_{13}} =
+    \tensor{\Gamma}{^{3}_{31}} = -\frac{G}{c^2 M_{\oplus} r_0^2}.
+  \end{align}
+\end{subequations}
+
+Per valutare le componenti dell'equazione~\eqref{spin} abbiamo bisogno della
+4-velocità $\ltoder{x^{\beta}}{\tau} \simeq (1,0,v,0)$ (assumiamo $v\ll 1$) e
+della componente $S^0$ dello spin.  Per determinare questa, notiamo che nel
+sistema di riferimento di quiete del giroscopio $S'^{\alpha}=(0,S,0,0)$,
+$\ltoder{x'^{\beta}}{\tau} = (1,0,0,0)$ e $g'_{\alpha \beta} = \eta_{\alpha
+  \beta}$, così che $g'_{\alpha \beta} S'^{\alpha} \ltoder{x'^{\beta}}{\tau}
+=0$.  Di conseguenza anche nelle coordinate $x^{\mu}$ deve essere $g_{\mu \nu}
+S^{\mu} dx^{\nu}/d\tau =0$, da cui
+\begin{equation}
+  S^0 = - \frac{1}{g_{00}} \left( S_x g_{11} \toder{x}{\tau} + S_y g_{22}
+    \toder{y}{\tau} + S_z g_{33} \toder{z}{\tau}\right) \simeq S_y v.
+\end{equation}
+
+Valutiamo ora l'equazione~\eqref{spin} nel punto di coordinate $x=r_0$, $y=0$,
+$z=0$
+\begin{subequations}
+  \begin{align}
+    \toder{S_1}{\tau} &\equiv \toder{S_x}{\tau} =
+                        -\tensor{\Gamma}{^1_{\alpha \beta}} S^{\alpha}
+                        \toder{x^{\beta}}{\tau} \simeq
+                        -\tensor{\Gamma}{^1_{00}} S^0  -
+                        \tensor{\Gamma}{^1_{22}} S^2 \toder{x^2}{\tau} \simeq
+                        -2 \frac{GM}{c^2 r_0^2} S_y v, \\
+    \toder{S_2}{\tau} &\equiv \toder{S_y}{\tau} \simeq \frac{GM}{c^2 r_0^2} S_x
+                        v, \\
+    \toder{S_3}{\tau} &\equiv \toder{S_z}{\tau} = 0.
+  \end{align}
+\end{subequations}
+
+Queste equazioni sono valide nel punto di coordinate $x=r_0$, $y=0$, $z=0$.
+Possiamo comunque riscriverle in una forma valida in un generico punto
+dell'orbita osservando che esse possono essere poste in una singola equazione
+vettoriale:
+ \begin{equation}
+   \label{eqsecolare}
+   \toder{\bm{S}}{\tau} = -2 \bm{v} \cdot \bm{S} \nabla \phi + \bm{v}\bm{S}
+   \cdot \nabla\phi.
+\end{equation}
+
+Poiché la velocità $\bm{v}$ e l'accelerazione gravitazionale $-\nabla \phi$
+variano con la posizione lungo l'orbita, l'andamento di $\bm S$ risulta
+complicato; ma se consideriamo solo effetti di lungo termine, possiamo calcolare
+la media dell'equazione~\eqref{eqsecolare} lungo una intera orbita.  A questo
+scopo scriviamo $\bm{v}$ e $\nabla\phi$ in funzione del tempo:
+\begin{subequations}
+  \begin{align}
+    \bm{v} &= -\versor{x} v \sin(\omega t) + \versor{y} v \cos(\omega t), \\
+    \nabla\phi &= -\versor{x} \frac{GM}{c^2 r_0^2} \cos(\omega t) + \versor{y}
+                 \frac{GM}{c^2 r_0^2} \sin(\omega t).
+  \end{align}
+\end{subequations}
+
+Sostituendo nell'equazione~\eqref{eqsecolare} e mediando in un periodo ($T=2
+\pi/ \omega$) si ottiene
+\begin{equation}
+  \begin{split}
+    \langle\toder{\bm{S}}{\tau}\rangle &= \frac{GM}{c^2 r_0^2} v \langle
+    [\versor{x} (-2 S_y \cos^2 \omega t - S_y \sin^2\omega t) +
+    \versor{y} ( +2 S_x \sin^2 \omega t + S_x \cos^2 \omega t) ]\rangle \\
+    %<\frac{d \bm S}{d\tau}>
+    &= \frac{3}{2} \frac{GM}{c^2 r_0^2} v (-\versor{x} S_y + \versor{y} S_x)
+  \end{split}
+\end{equation}
+risultato che può essere riscritto in forma compatta come
+\begin{equation}
+  \langle\toder{\bm{S}}{\tau}\rangle = \frac{3}{2} \frac{GM}{c^2 r_0^3} (\bm{r}
+  \times \bm{v}) \times \bm{S} = \bm{\Omega}_{\textup{De Sitter}} \times
+  \bm{S}.
+\end{equation}
+Dall'ultima equazione vediamo che in media $\bm{S}$ precede attorno all'asse
+dell'orbita con una velocità angolare
+\begin{equation}
+  \bm{\Omega}_{\textup{De Sitter}} = \frac{3}{2} \frac{GM}{c^2 r_0^3} (\bm{r}
+  \times \bm{v}).
+\end{equation}
+Questa è la \emph{precessione geodetica} o \emph{di De Sitter}.  Per un
+giroscopio a 650 km sopra la Terra ($M=M_{\oplus}$, $r_0=R_{\oplus}+650$ km) con
+lo spin nel piano dell'orbita la precessione geodetica risulta essere $\delta
+\theta_{\textup{De Sitter}}= {\Omega_{\textup{De Sitter}}} \times 1$ anno $=
+6.6$arcsec/anno.  (vedi la figura 7.7 di~\textcite[355]{ohanian:gravitazione}).
+Si osservi che $\delta\theta_{\textup{De Sitter}}$ è un fattore 100 più grande
+di $\delta\theta_{\textup{Lense-Thirring}} \simeq 0.042$ arcsec/anno.
 
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../gravitazione"
 %%% fill-column: 80
-%%% TeX-PDF-mode: t
 %%% End:
