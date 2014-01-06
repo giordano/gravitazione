@@ -1,12 +1,15 @@
 ##### Variabili
 SHELL			= /bin/sh
 CARTELLA		= $(shell basename $$(pwd))
-PRINCIPALE		= gravitazione
-PRINCIPALE_TEX		= $(PRINCIPALE).tex
-PRINCIPALE_PDF		= $(PRINCIPALE).pdf
+GRAV			= gravitazione
+GRAV_TEX		= $(GRAV).tex
+GRAV_PDF		= $(GRAV).pdf
+COSMO			= cosmo
+COSMO_TEX		= $(COSMO).tex
+COSMO_PDF		= $(COSMO).pdf
 BIBLIOGRAFIA		= bibliografia.bib
 CAPITOLI_TEX		= $(wildcard capitoli/*.tex) $(wildcard appendici/*.tex)
-TUTTI_TEX		= $(PRINCIPALE_TEX) $(CAPITOLI_TEX) $(INIZIO_FINE_TEX) \
+TUTTI_TEX		= $(GRAV_TEX) $(CAPITOLI_TEX) $(INIZIO_FINE_TEX) \
 	$(BIBLIOGRAFIA)
 CLEAN_FILE		= *.aux *.bbl *.bcf *.blg *-blx.bib *.fdb_latexmk *.fls \
 	*.idx *.ilg *.ind *.lof *.log *.nav *.out *.pgf-plot.* *.run.xml *.snm \
@@ -14,17 +17,25 @@ CLEAN_FILE		= *.aux *.bbl *.bcf *.blg *-blx.bib *.fdb_latexmk *.fls \
 DISTCLEAN_FILE		= *.pdf
 ##### Regole
 
-.PHONY: pdf clean distclean dist full-dist
+.PHONY: all clean distclean dist full-dist
 
-pdf: $(PRINCIPALE_PDF)
+all: $(COSMO_PDF) $(GRAV_PDF)
 
-$(PRINCIPALE_PDF): $(TUTTI_TEX)
-	pdflatex $(PRINCIPALE_TEX)
-	bibtex $(PRINCIPALE)
-	makeindex $(PRINCIPALE)
-	pdflatex $(PRINCIPALE_TEX)
-	pdflatex $(PRINCIPALE_TEX)
-	pdflatex $(PRINCIPALE_TEX)
+$(COSMO_PDF): $(COSMO_TEX)
+	pdflatex $(COSMO_TEX)
+	bibtex $(COSMO)
+	makeindex $(COSMO)
+	pdflatex $(COSMO_TEX)
+	pdflatex $(COSMO_TEX)
+	pdflatex $(COSMO_TEX)
+
+$(GRAV_PDF): $(TUTTI_TEX)
+	pdflatex $(GRAV_TEX)
+	bibtex $(GRAV)
+	makeindex $(GRAV)
+	pdflatex $(GRAV_TEX)
+	pdflatex $(GRAV_TEX)
+	pdflatex $(GRAV_TEX)
 
 # Per fare pulizia dei file temporanei generati:
 clean:
@@ -42,5 +53,5 @@ dist: $(TUTTI_TEX) $(BIBLIOGRAFIA) distclean
 
 # Crea un archivio compresso (.tar.gz) contenente tutte le immagini e senza il
 # repo git
-full-dist: $(PRINCIPALE_PDF)
+full-dist: all
 	cd .. && tar -czvpsf $(CARTELLA).tar.gz --exclude=$(CARTELLA)/auto --exclude-vcs $(CARTELLA)/
