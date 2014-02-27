@@ -54,4 +54,4 @@ dist: $(TUTTI_TEX) $(BIBLIOGRAFIA) distclean
 # Crea un archivio compresso (.tar.gz) contenente tutte le immagini e senza il
 # repo git
 full-dist: all
-	cd .. && tar -czvpsf $(CARTELLA).tar.gz --exclude=$(CARTELLA)/auto --exclude-vcs $(CARTELLA)/
+	cd .. && tar -czvpf $(CARTELLA).tar.gz --exclude=$(CARTELLA)/auto --exclude-vcs $(CARTELLA)/
