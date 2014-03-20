@@ -4,11 +4,11 @@
 In questo capitolo ci occuperemo della risoluzione delle equazioni di Einstein
 nel caso di un campo gravitazionale debole, rilasciando l'ipotesi di simmetria
 sferica e/o indipendenza dal tempo della metrica.  Trascurando nel calcolo del
-tensore di Ricci i termini dell' ordine $O(h^2)$, otterremo equazioni di
-Einstein linearizzate analoghe all'equazione per le onde elettromagnetiche.  Dal
-punto di vista fisico, il processo di linearizzazione corrisponde a trascurare
-l'energia trasportata dalle onde gravitazionali che si propagano liberamente
-senza auto influenzarsi.
+tensore di Ricci i termini dell'ordine $\mathcal{O}(h^2)$, otterremo equazioni
+di Einstein linearizzate analoghe all'equazione per le onde elettromagnetiche.
+Dal punto di vista fisico, il processo di linearizzazione corrisponde a
+trascurare l'energia trasportata dalle onde gravitazionali che si propagano
+liberamente senza auto influenzarsi.
 
 Troveremo che masse accelerate possono emettere onde gravitazionali così come
 particelle cariche accelerate possono emettere onde elettromagnetiche (vedi
@@ -31,12 +31,14 @@ spazio-tempo, è l'onda gravitazionale.
 
 Nell'approssimazione di campo debole il tensore metrico covariante è dato da
 \begin{equation}
-  g_{\mu \nu}(t, \bm{x}) = \eta_{\mu \nu} + h_{\mu \nu}(t, \bm{x}) + O(h^2)
+  g_{\mu \nu}(t, \bm{x}) = \eta_{\mu \nu} + h_{\mu \nu}(t, \bm{x}) +
+  \mathcal{O}(h^2)
   \label{metrica_contro}
 \end{equation}
 con $\abs{h_{\mu\nu}} \ll 1$, mentre il tensore metrico controvariante è
 \begin{equation}
-  g^{\mu\nu}(t, \bm{x}) = \eta^{\mu\nu} - h^{\mu\nu}(t, \bm{x}) + O(h^2)
+  g^{\mu\nu}(t, \bm{x}) = \eta^{\mu\nu} - h^{\mu\nu}(t, \bm{x}) +
+  \mathcal{O}(h^2)
 \end{equation}
 poiché si ha $g^{\mu\nu} g_{\mu\lambda} = \delta^{\nu}_{\lambda}$.
 
@@ -457,7 +459,7 @@ deviazione geodetica sappiamo che
 \end{equation}
 Poniamoci\footnote{Questa trattazione è presa da Valeria Ferrari, Leonardo
   Gualtieri, ``General Relativity'', pagine 174-176.  \textsc{url}:
-  \url{http://www.roma1.infn.it/teongrav/VALERIA/TEACHING/RELATIVITA_GENERALE/AA2012_13/dispense.pdf}.}
+  \url{http://www.roma1.infn.it/teongrav/VALERIA/TEACHING/RELATIVITA_GENERALE/AA2013_14/dispense.pdf}.}
 in un sistema di riferimento localmente inerziale $x^{\alpha'}$ centrato sulla
 geodetica di una delle due particelle, per esempio $A$, in modo che nelle
 vicinanze di $A$ la metrica differisca da quella di Minkowski per termini di
@@ -476,7 +478,7 @@ coordinate di $B$ sono $x^{\mu'}_{B} = \delta x^{\mu'}$ e risulta
   \end{align}
 \end{subequations}
 Assumiamo che in questo sistema di riferimento sia valida la gauge
-TT.\footnote{Se così non fosse, sappiamo che è sufficiente effettuare
+TT.\footnote{Se così non fosse, sappiamo che sarebbe sufficiente effettuare
   un'opportuna trasformazione infinitesima delle coordinate per fare in modo che
   $h_{\mu'\nu'}$ sia trasverso e a traccia nulla.}  Per semplicità di notazione,
 da qui in poi omettiamo l'apice primo dalle coordinate.
@@ -620,20 +622,21 @@ Sono stati sviluppate tre tecniche per la rivelazione delle onde gravitazionali:
   a partire dagli anni '70, nonostante oggi abbia raggiunto la fase di maturità,
   non ha comunque dato luogo ad osservazioni completamente positive.
 
-  Un cilindro di alluminio ha una frequenza fondamentale di oscillazione $\nu_0
-  \simeq 1500$ Hz che è la frequenza attesa per onde gravitazionali emesse
-  durante la fase di collasso gravitazionale di una stella massiva (se $M > 3-8
-  M_{\odot}$ in una stella di neutroni; se $M > 8 M_{odot}$ in buco nero).
-  Poiché il collasso avviene in un tempo $\Delta t \equiv 1/\nu_0 \simeq
-  10^{-3}$ secondi, il cilindro si comparta come un oscillatore forzato alla
-  frequenza propria (con guadagno $Q$ massimo).
+  Un cilindro di alluminio ha una frequenza fondamentale di oscillazione
+  $\nu_0 \simeq 1500$ Hz che è la frequenza attesa per onde gravitazionali
+  emesse durante la fase di collasso gravitazionale di una stella massiva (se
+  $M > 3-8 M_{\odot}$ in una stella di neutroni; se $M > 8 M_{\odot}$ in buco
+  nero).  Poiché il collasso avviene in un tempo
+  $\Delta t \equiv 1/\nu_0 \simeq 10^{-3}$ secondi, il cilindro si comparta come
+  un oscillatore forzato alla frequenza propria (con guadagno $Q$ massimo).
 
   Si noti che il collasso gravitazionale è accompagnato da emissione di neutrini
   prodotti attraverso reazioni adroniche della materia condensata (densità
-  dell'ordine di $10^{15}$ g cm$^{-3}$) e successivi decadimenti di leptoni in
-  neutrini.  In questo caso si dovrebbe rivelare a terra un flusso di neutrini
-  in coincidenza con l'arrivo dell'onda gravitazionale se i neutrini hanno massa
-  nulla, o in ritardo, se i neutrini hanno massa non nulla.
+  dell'ordine di \SI{e15}{\gram \per \centi \metre \cubed}) e successivi
+  decadimenti di leptoni in neutrini.  In questo caso si dovrebbe rivelare a
+  terra un flusso di neutrini in coincidenza con l'arrivo dell'onda
+  gravitazionale se i neutrini hanno massa nulla, o in ritardo, se i neutrini
+  hanno massa non nulla.
 \item \emph{Rivelatori del tipo interferometro alla Michelson-Morley}.  Un
   segnale laser è inviato verso lo specchio semi-riflettente dove è splittato in
   due cammini ottici disposti a 90 gradi, quindi i due raggi sono riflessi
@@ -1066,7 +1069,7 @@ e a causa della conservazione del momento angolare $L \simeq M \omega R^2$,
 ruoterà con velocità angolare $\omega \sim
 \SI[per-mode=reciprocal]{e4}{\per\second}$ (si parla in questi casi di pulsar a
 milli-secondi).  La potenza emessa dalla NS in rotazione sotto forma di onde
-gravitazionali\footnote{Vedi \textcite[488]{shapiro:black-holes}
+gravitazionali\footnote{Vedi \textcite[488]{shapiro:black-holes};
   \textcite[272]{weinberg:gravitation}.} è
 \begin{equation}
   I_{\textup{og}} = \frac{32}{5} \frac{G}{c^{5}} \mathcal{I}^{2} \omega^{6}

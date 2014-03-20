@@ -379,7 +379,7 @@ si trasforma come un tensore di tipo $(1,2)$
     &= \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
     \parder{x^{\sigma}}{x'^{\nu}} \tensor{\Gamma}{^{\rho}_{\tau\sigma}}
     + \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu},x'^{\nu}} \\
-    &- \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
+    &\quad{} - \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
     \parder{x^{\sigma}}{x'^{\nu}} \tensor{\tilde{\Gamma}}{^{\rho}_{\tau\sigma}}
     - \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\rho}}{x'^{\mu},x'^{\nu}} \\
     &= \parder{x'^{\lambda}}{x^{\rho}} \parder{x^{\tau}}{x'^{\mu}}
@@ -976,7 +976,7 @@ anche le equazioni [148] in~\textcite[353]{ohanian:gravitazione})
   \end{align}
 \end{subequations}
 
-Per valutare le componenti dell'equazione~\eqref{spin} abbiamo bisogno della
+Per valutare le componenti dell'equazione~\eqref{eqspin} abbiamo bisogno della
 4-velocità $\ltoder{x^{\beta}}{\tau} \simeq (1,0,v,0)$ (assumiamo $v\ll 1$) e
 della componente $S^0$ dello spin.  Per determinare questa, notiamo che nel
 sistema di riferimento di quiete del giroscopio $S'^{\alpha}=(0,S,0,0)$,
@@ -989,7 +989,7 @@ S^{\mu} dx^{\nu}/d\tau =0$, da cui
     \toder{y}{\tau} + S_z g_{33} \toder{z}{\tau}\right) \simeq S_y v.
 \end{equation}
 
-Valutiamo ora l'equazione~\eqref{spin} nel punto di coordinate $x=r_0$, $y=0$,
+Valutiamo ora l'equazione~\eqref{eqspin} nel punto di coordinate $x=r_0$, $y=0$,
 $z=0$
 \begin{subequations}
   \begin{align}
@@ -1032,8 +1032,8 @@ Sostituendo nell'equazione~\eqref{eqsecolare} e mediando in un periodo ($T=2
 \pi/ \omega$) si ottiene
 \begin{equation}
   \begin{split}
-    \langle\toder{\bm{S}}{\tau}\rangle &= \frac{GM}{c^2 r_0^2} v \langle
-    [\versor{x} (-2 S_y \cos^2 \omega t - S_y \sin^2\omega t) +
+    \left\langle\toder{\bm{S}}{\tau}\right\rangle &= \frac{GM}{c^2 r_0^2} v
+    \langle [\versor{x} (-2 S_y \cos^2 \omega t - S_y \sin^2\omega t) +
     \versor{y} ( +2 S_x \sin^2 \omega t + S_x \cos^2 \omega t) ]\rangle \\
     %<\frac{d \bm S}{d\tau}>
     &= \frac{3}{2} \frac{GM}{c^2 r_0^2} v (-\versor{x} S_y + \versor{y} S_x)
@@ -1041,9 +1041,9 @@ Sostituendo nell'equazione~\eqref{eqsecolare} e mediando in un periodo ($T=2
 \end{equation}
 risultato che può essere riscritto in forma compatta come
 \begin{equation}
-  \langle\toder{\bm{S}}{\tau}\rangle = \frac{3}{2} \frac{GM}{c^2 r_0^3} (\bm{r}
-  \times \bm{v}) \times \bm{S} = \bm{\Omega}_{\textup{De Sitter}} \times
-  \bm{S}.
+  \left\langle\toder{\bm{S}}{\tau}\right\rangle = \frac{3}{2}
+  \frac{GM}{c^2 r_0^3} (\bm{r} \times \bm{v}) \times \bm{S} =
+  \bm{\Omega}_{\textup{De Sitter}} \times \bm{S}.
 \end{equation}
 Dall'ultima equazione vediamo che in media $\bm{S}$ precede attorno all'asse
 dell'orbita con una velocità angolare

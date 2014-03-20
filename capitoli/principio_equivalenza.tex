@@ -421,7 +421,7 @@ $\partial_{\nu}g_{\mu\lambda}$ si giunge all'equazione
     \tensor{\Gamma}{^{\rho}_{\lambda\nu}}g_{\rho\mu} +
     \tensor{\Gamma}{^{\rho}_{\mu\lambda}}g_{\rho\nu} +
     \tensor{\Gamma}{^{\rho}_{\mu\nu}}g_{\rho\lambda} \\
-    &- \tensor{\Gamma}{^{\rho}_{\nu\mu}}g_{\rho\lambda} -
+    &\quad{} - \tensor{\Gamma}{^{\rho}_{\nu\mu}}g_{\rho\lambda} -
     \tensor{\Gamma}{^{\rho}_{\nu\lambda}}g_{\rho\mu} \\
     &= 2g_{\rho\nu} \tensor{\Gamma}{^{\rho}_{\lambda\mu}},
   \end{split}
@@ -484,8 +484,8 @@ La variazione della distanza fra i due eventi è
     \delta S &= \int_{A}^{B} \frac{1}{2}\bigg( -g_{\mu\nu} \toder{x^{\mu}}{p}
     \toder{x^{\nu}}{p} \bigg)^{-1/2} \bigg( -\parder{g_{\mu\nu}}{x^{\lambda}}
     \delta x^{\lambda} \toder{x^{\mu}}{p} \toder{x^{\nu}}{p} \\
-    &- g_{\mu\nu} \toder{\delta x^{\mu}}{p} \toder{x^{\nu}}{p} - g_{\mu\nu}
-    \toder{x^{\mu}}{p} \toder{\delta x^{\nu}}{p} \bigg) \dd p \\
+    &\quad{} - g_{\mu\nu} \toder{\delta x^{\mu}}{p} \toder{x^{\nu}}{p} -
+    g_{\mu\nu} \toder{x^{\mu}}{p} \toder{\delta x^{\nu}}{p} \bigg) \dd p \\
     &= \int_{A}^{B} \frac{1}{2}\bigg( -g_{\mu\nu} \toder{x^{\mu}}{p}
     \toder{x^{\nu}}{p} \bigg)^{-1/2} \bigg( -\parder{g_{\mu\nu}}{x^{\lambda}}
     \delta x^{\lambda} \toder{x^{\mu}}{p} \toder{x^{\nu}}{p} -
@@ -1037,11 +1037,11 @@ $\bm{S}$ immerso nel campo gravitomagnetico $\bm{b}$ è
 \end{equation}
 D'altra parte poiché
 \begin{equation}
-  \bm{\tau} = \frac{ d\bm{S}} {dt},
+  \bm{\tau} = \toder{\bm{S}}{t},
 \end{equation}
 si trova
 \begin{equation}
-  \frac{d\bm{S}} {dt} = - \bm{b}/2 \times \bm{S} = \dot{\bm{\Omega}} \times
+  \toder{\bm{S}}{t} = - \bm{b}/2 \times \bm{S} = \dot{\bm{\Omega}} \times
   \bm{S},
 \end{equation}
 con $\dot{\bm{\Omega}}$ velocità angolare di precessione dello spin $\bm{S}$
@@ -1100,16 +1100,17 @@ quindi la velocità di precessione di Lense-Thirring è data da
   \frac{\bm{L}_{\oplus}}{\norm{\bm{r}}^{3}}.
 \end{equation}
 Se il giroscopio orbita vicino alla superficie terrestre, possiamo porre
-$\norm{\bm{r}} \approx R_{\oplus}$.  Poiché inoltre $\bm{L}_{\oplus} = 5.86
-\times 10^{40}$ g cm$^2$ s$^{-1}$, la velocità angolare di precessione
-precedente corrisponde a uno spostamento angolare in un anno
-$\alpha_{\textup{LT}} = \dot{\bm{\Omega}}_{\textup{LT}} \times 1 yr \approx
+$\norm{\bm{r}} \approx R_{\oplus}$.  Poiché inoltre
+$\bm{L}_{\oplus} = \SI{5.86e40}{\gram \centi\metre\squared \per\second}$, la
+velocità angolare di precessione precedente corrisponde a uno spostamento
+angolare in un anno
+$\alpha_{\textup{LT}} = \dot{\bm{\Omega}}_{\textup{LT}} \cdot \SI{1}{yr} \approx
 -\SI{0.055}{\arcsecond}$.
 
 L'esperimento GP-B (Gravity Probe B) a bordo di un satellite lanciato nel 2004
 (Everit et al.) è stato progettato per misurare due fondamentali predizioni
 della RG: la deviazione geodetica (di cui parleremo dopo) e l'effetto
-Lense-Tirring.  L'esperimento usa 3 giroscopi raffreddati alla temperatura
+Lense-Thirring.  L'esperimento usa 3 giroscopi raffreddati alla temperatura
 dell'elio liquido, in orbita attorno alla Terra.  La direzione dei giroscopi è
 determinata guardando alla stella IM Pegasi.  Comunque la misura della
 deviazione geodetica circa 6.6 arcsec/anno (nella stessa direzione della
@@ -1120,17 +1121,19 @@ terrestre, per un satellite in orbita polare) non è riuscita.
 I. Ciufolini ha proposto di usare un satellite (passivo dotato di
 retro-reflettori per determinare la posizione attraverso segnali laser trasmessi
 da una serie di stazioni a terra) in orbita attorno alla terra al posto di un
-giroscopio: è il momento angolare orbitale $\bm L$ del satellite (sostituisce lo
-spin del giroscopio dell'esperimento GP-B) che precede con velocità
+giroscopio: è il momento angolare orbitale $\bm{L}$ del satellite (sostituisce
+lo spin del giroscopio dell'esperimento GP-B) che precede con velocità
 $\dot{\bm{\Omega}}_{\textup{LT}}$.  Con l'uso di 2 satelliti su orbite non
 polari (influenzate quindi fortemente dalla non-sfericità della terra) e
 formanti angoli opposti rispetto all'orbita polare è possibile eliminare gli
 effetti dovuti alla non sfericità terrestre sulla posizione dei nodi
 (intersezioni della traiettoria del satellite con il piano dell'orbita
-terrestre).  L'angolo di Lense-Tirring corrisponde ad un avanzamento della
-posizione dei nodi $\var l_{\textup{LT}} = \alpha_{\textup{LT}} \cdot R_{\oplus}
-\approx -\SI{2}{\metre/anno}$.  L'analisi dei dati conferma l'effetto
-Lense-Tirring con una precisione del 10\%.
+terrestre).  L'angolo di Lense-Thirring corrisponde ad un avanzamento della
+posizione dei nodi
+$\var l_{\textup{LT}} = \alpha_{\textup{LT}} \cdot R_{\oplus} \approx
+-\SI{2}{\metre/anno}$.
+L'analisi dei dati conferma l'effetto Lense-Thirring con una precisione del
+10\%.
 
 \section{Dilatazione gravitazionale del tempo e red-shift}
 \label{sec:red-shift-gravitazionale}

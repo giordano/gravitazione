@@ -24,7 +24,7 @@ componente $00$ del tensore energia-impulso: $\rho = T_{00}$.  Con l'ulteriore
 identificazione (per campi deboli e statici) $h_{00} = - 2 \phi$, possiamo
 riscrivere l'equazione di Poisson nella forma
 \begin{equation}
-  \nabla^2 h_{00} = - 8 \pi G T_{00}
+  \nabla^2 h_{00} = - 8 \pi G T_{00}.
 \end{equation}
 È naturale a questo punto ipotizzare per l'equazione cercate la forma
 \begin{equation}
@@ -55,7 +55,7 @@ relazione diventa $(C_2 + C_1/2) R_{; \nu} =0$, la quale senza perdere di
 generalità implica infine la relazione tra i coefficienti $C_2 = -C_1/2$.
 Abbiamo allora
 \begin{equation}
-  G_{\mu \nu} = C_1 \left( R_{\mu \nu} \frac{1}{2} g_{\mu \nu} R \right).
+  G_{\mu \nu} = C_1 \left(R_{\mu \nu} - \frac{1}{2} g_{\mu \nu} R \right).
 \end{equation}
 Dalla condizione e) fissiamo $C_1=1$.  Per un sistema non relativistico risulta
 $T_{00} \simeq \rho \gg T_{ij} \simeq \rho v^i v^j$. Allora è naturale porre
@@ -335,7 +335,7 @@ $h_{\mu\nu}$, abbiamo
     - \parder{h_{\mu\nu}}{x^{\kappa},
       x^{\lambda}}- \parder{h_{\lambda\kappa}}{x^{\nu}, x^{\mu}}
     + \parder{h_{\mu\kappa}}{x^{\nu}, x^{\lambda}} \bigg) \\
-    &+ \eta_{\eta\sigma}
+    &\quad{} + \eta_{\eta\sigma}
     (\underbrace{\tensor{\Gamma}{^{\eta}_{\nu\lambda}}
       \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} -
       \tensor{\Gamma}{^{\eta}_{\kappa\lambda}}

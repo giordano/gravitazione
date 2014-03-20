@@ -146,53 +146,6 @@ Applicando lo stesso ragionamento a $g^{\mu\nu}$ troviamo
   \bigg) \parder{g}{g^{\mu\nu}} = - \frac{1}{g} \parder{g}{g^{\mu\nu}}.
 \end{equation}
 
-\section{Dimostrazione della
-  relazione~\texorpdfstring{\eqref{eq:derivate-miste-vettore}}{(4.17)}}
-\label{sec:dimostr-derivate-miste-vettore}
-
-Per calcolare $V_{\mu;\nu;\kappa} - V_{\mu;\kappa;\nu}$ ricordiamo che la
-derivata covariante
-$V_{\mu;\nu} = V_{\mu,\nu} - \tensor{\Gamma}{^{\lambda}_{\mu\nu}} V_{\lambda}$
-di un vettore covariante $V_{\mu}$ è un tensore $T_{\mu\nu}$ di rango $2$
-completamente covariante e la sua derivata covariante è
-\begin{equation}
-  \begin{split}
-    V_{\mu;\nu;\kappa} &= T_{\mu\nu;\kappa} = T_{\mu\nu,k} -
-    \tensor{\Gamma}{^{\sigma}_{\kappa\nu}} T_{\mu\sigma} -
-    \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} T_{\sigma\nu} \\
-    &= V_{\mu,\nu,\kappa} -
-    \tensor{\Gamma}{^{\lambda}_{\mu\nu,\kappa}}V_{\lambda} -
-    \tensor{\Gamma}{^{\lambda}_{\mu\nu}} V_{\lambda,\kappa} -
-    \tensor{\Gamma}{^{\sigma}_{\kappa\nu}} (V_{\mu,\sigma} -
-    \tensor{\Gamma}{^{\lambda}_{\mu\sigma}} V_{\lambda}) -
-    \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} (V_{\sigma,\nu} -
-    \tensor{\Gamma}{^{\lambda}_{\sigma\nu}} V_{\lambda}).
-  \end{split}
-\end{equation}
-Dopo aver determinato $V_{\mu;\nu;\kappa}$ è sufficiente invertire $\nu$ e
-$\kappa$ per trovare $V_{\mu;\kappa;\nu}$
-\begin{equation}
-  V_{\mu;\kappa;\nu} = V_{\mu,\kappa,\nu} -
-    \tensor{\Gamma}{^{\lambda}_{\mu\kappa,\nu}}V_{\lambda} -
-    \tensor{\Gamma}{^{\lambda}_{\mu\kappa}} V_{\lambda,\nu} -
-    \tensor{\Gamma}{^{\sigma}_{\nu\kappa}} (V_{\mu,\sigma} -
-    \tensor{\Gamma}{^{\lambda}_{\mu\sigma}} V_{\lambda}) -
-    \tensor{\Gamma}{^{\sigma}_{\mu\nu}} (V_{\sigma,\kappa} -
-    \tensor{\Gamma}{^{\lambda}_{\sigma\kappa}} V_{\lambda}).
-\end{equation}
-Nel valutare la differenza $V_{\mu;\nu;\kappa} - V_{\mu;\kappa;\nu}$ tutti i
-termini simmetrici per lo scambio $\nu \leftrightarrow \kappa$ si annullano,
-vale a dire i termini contenenti le derivate prime e seconde di $V_{\mu}$
-(osserva che $\lambda$ e $\sigma$ sono entrambi indici muti), quindi rimane
-\begin{equation}
-  V_{\mu;\nu;\kappa} - V_{\mu;\kappa;\nu} =
-  (-\tensor{\Gamma}{^{\lambda}_{\mu\nu,\kappa}} +
-  \tensor{\Gamma}{^{\sigma}_{\mu\kappa}} \tensor{\Gamma}{^{\lambda}_{\sigma\nu}}
-  + \tensor{\Gamma}{_{\mu\kappa,\nu}} - \tensor{\Gamma}{^{\sigma}_{\mu\nu}}
-  \tensor{\Gamma}{^{\lambda}_{\sigma\kappa}}) V_{\lambda} =
-  -\tensor{R}{^{\lambda}_{\mu\nu\kappa}} V_{\lambda}.
-\end{equation}
-
 \section{Dimostrazione dell'identità di Bianchi}
 \label{sec:dimostr-identita-bianchi}
 

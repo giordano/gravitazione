@@ -69,7 +69,7 @@ riferimento inerziale $x'^{\alpha}$
 due sistemi di coordinate, $a^{\alpha}$ costanti), che mantenga invariata la
 distanza fra due eventi $\dd\tau = \dd\tau'$
 \footnote{La dimostrazione di questa proprietà è immediata nel caso di eventi
-  connessi da segnali luminosi (in questo caso è $\dd tau=0$); per il caso
+  connessi da segnali luminosi (in questo caso è $\dd\tau=0$); per il caso
   generale vedi~\textcite[34-37]{barone:relativita}.}.
 
 Richiediamo che la trasformazione $x^{\alpha} \to x'^{\alpha}$ sia lineare per
@@ -345,29 +345,29 @@ in~\textcite[29-31]{weinberg:gravitation}.
 \label{sec:conseguenze-lorentz}
 
 Si consideri un osservatore $O$ che osservi due eventi $A$ e $B$ accadere nello
-stesso posto ($dx^i=0$), separati dalla coordinata temporale $\Delta t$.
-L'intervallo di tempo proprio tra i due eventi è $\dd\tau=\Delta t$.  Un secondo
+stesso posto ($\dd x^i=0$), separati dalla coordinata temporale $\var t$.
+L'intervallo di tempo proprio tra i due eventi è $\dd\tau=\var t$.  Un secondo
 osservatore $O'$ in moto con velocità $\bm{v}$, vedrà i due eventi accadere in
 posizioni diverse $\dd x'^{i}\ne 0$, separati dalla coordinata temporale
 $\dd t'$.  L'intervallo di tempo proprio tra i due eventi è ora
-$\dd\tau = \dd t' (1-v^2)^{1/2}=\dd t'/\gamma$; quindi
-$\dd t'= \gamma \Delta t$, il che implica l'aumento del tempo che intercorre tra
-i due eventi misurato da O'.  Questo è un effetto reale che può essere
-verificato osservando arrivare a terra particelle instabili (con vita media
-estremamente piccola, $\Delta t = 2.6 10^{-8}$ sec per un pai zero) prodotte al
-top dell'atmosfera (a circa 10 km di altezza) attraverso interazioni adroniche
-tra raggi cosmici di alta energia e gli atomi che compongono l'atmosfera.  I
-pioni viaggiano a velocità relativistiche e quindi rispetto a noi vivono un
-tempo molto maggiore della loro vita media a riposo e questo permette loro di
-percorre senza decadere la distanza che li separa da terra (osserva che lo
-spazio percorso in circa $3 10^{-8}$ sec a velocità $c$ sarebbe circa 1 m).
+$\dd\tau = \dd t' (1-v^2)^{1/2}=\dd t'/\gamma$; quindi $\dd t'= \gamma \var t$,
+il che implica l'aumento del tempo che intercorre tra i due eventi misurato da
+$O'$.  Questo è un effetto reale che può essere verificato osservando arrivare a
+terra particelle instabili (con vita media estremamente piccola,
+$\var t = \SI{2.6e-8}{\second}$ per un $\pi^{0}$) prodotte al top dell'atmosfera
+(a circa 10 km di altezza) attraverso interazioni adroniche tra raggi cosmici di
+alta energia e gli atomi che compongono l'atmosfera.  I pioni viaggiano a
+velocità relativistiche e quindi rispetto a noi vivono un tempo molto maggiore
+della loro vita media a riposo e questo permette loro di percorre senza decadere
+la distanza che li separa da terra (osserva che lo spazio percorso in circa
+\SI{3e-8}{\second} a velocità $c$ sarebbe circa \SI{1}{\metre}).
 
 \subsection{Effetto Doppler}
 \label{sec:effetto-doppler}
 Se il nostro orologio in movimento è una sorgente di luce di frequenza
-$\nu=1/\Delta$ ($\Delta t$ può essere considerato come la distanza temporale tra
-l'emissione di due successive creste di un'onda e.m. piana, misurato
-dall'osservatore solidale con la sorgente).  Questo intervallo di tempo apparirà
+$\nu=1/\var t$.  $\var t$ può essere considerato come la distanza temporale tra
+l'emissione di due successive creste di un'onda elettromagnetica piana, misurata
+dall'osservatore solidale con la sorgente.  Questo intervallo di tempo apparirà
 essere pari a $\dd t'= \gamma \dd t$ ad un osservatore $O'$ che vede la sorgente
 muoversi con velocità $\bm{v}$.  Comunque, durante questo intervallo di tempo la
 distanza della sorgente $S$ dall'osservatore $O'$ sarà aumentata (se $v_r>0$) o
@@ -379,7 +379,7 @@ delle frequenze (osservata $\nu_0$ ed emessa $\nu$) si ha:
 $\nu_0/\nu=\sqrt{1-v^2}/(1+v_r)$. Quindi red shift se $S$ si allontana, blu
 shift se la sorgente si avvicina.  Se la velocità della sorgente è lungo la
 linea di vista si ha $v_r=v$ e la formula Doppler diventa:
-$\nu_0/\nu= \sqrt{(1-v)/(1+v)}$, e per velocità $v<<1$ si ottiene
+$\nu_0/\nu= \sqrt{(1-v)/(1+v)}$, e per velocità $v\ll 1$ si ottiene
 $\Delta \nu / \nu = (\nu_e - \nu_o)/\nu_e = v/c = z$.
 
 
@@ -906,7 +906,7 @@ momento nel nuovo sistema di riferimento
 \begin{equation}
   \begin{split}
     (\bm{p}')_{i} &= (p')^{i} = \tensor{\Lambda}{^{i}_{\beta}}p^{\beta} =
-    \tensor{\Lambda}{^{i}_{0}}p^{0} + \tensor{\Lambda}{^{j}_{j}}p^{j} \\
+    \tensor{\Lambda}{^{i}_{0}}p^{0} + \tensor{\Lambda}{^{i}_{j}}p^{j} \\
     &= \gamma_{V} V_{i}E + \bigg( \delta_{ij} +
     V_{i}V_{j}\frac{\gamma_{V}-1}{V^{2}}\bigg)p^{j} \\
     &= \gamma_{V} V_{i}E + p_{i} +
