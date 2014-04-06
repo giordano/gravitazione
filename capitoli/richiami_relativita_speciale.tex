@@ -762,10 +762,10 @@ In maniera analoga si può dimostrare che $\tensor{\eta}{^{\alpha\beta}}$ è
 effettivamente un quadritensore controvariante di rango $2$ e che rimane
 immutato sotto una trasformazione di Lorentz.
 
-\subsubsection{Tensore di Levi-Civita}
-\label{sec:tensore-levi-civita}
+\subsubsection{Simbolo di Levi-Civita}
+\label{sec:simbolo-levi-civita}
 
-Il \index{tensore!di Levi-Civita}\emph{tensore di Levi-Civita}
+Il \index{simbolo!di Levi-Civita}\emph{simbolo di Levi-Civita}
 $\epsilon^{\alpha\beta\gamma\delta}$ è un quadritensore definito da
 \begin{equation}
   \epsilon^{\alpha\beta\gamma\delta} =
@@ -778,7 +778,8 @@ $\epsilon^{\alpha\beta\gamma\delta}$ è un quadritensore definito da
   \end{cases}
 \end{equation}
 Si può far vedere che il tensore così definito non varia cambiando sistema di
-riferimento inerziale.
+riferimento inerziale e che è \emph{completamente antisimmetrico}, cioè cambia
+di segno per ogni permutazione di due indici.
 
 Poiché sussiste la relazione
 \begin{equation}
@@ -787,7 +788,20 @@ Poiché sussiste la relazione
   \tensor{\Lambda}{^{\gamma}_{\rho}} \tensor{\Lambda}{^{\delta}_{\sigma}}
   \epsilon^{\mu\nu\rho\sigma}
 \end{equation}
-il tensore di Levi-Civita è uno pseudotesore di rango $4$ e peso $1$.
+il simbolo di Levi-Civita è uno pseudotesore di rango $4$ e peso $1$.
+
+Riportiamo inoltre qui per convenienza, senza dimostrazione, alcune utili
+identità soddisfatte dal simbolo di Levi-Civita
+\begin{subequations}
+  \begin{align}
+    \epsilon^{\mu\nu\rho\sigma}\epsilon_{\mu\nu\rho\sigma} &= -24, \\
+    \epsilon^{\mu\nu\rho\sigma}\epsilon_{\lambda\tau\rho\sigma} &=
+    -2(\tensor{\delta}{^{\mu}_{\lambda}} \tensor{\delta}{^{\nu}_{\tau}} -
+    \tensor{\delta}{^{\mu}_{\tau}} \tensor{\delta}{^{\nu}_{\lambda}}), \\
+    \epsilon^{\mu\nu\rho\sigma}\epsilon_{\lambda\nu\rho\sigma} &= -6
+    \tensor{\delta}{^{\mu}_{\lambda}}.
+  \end{align}
+\end{subequations}
 
 \subsubsection{Tensore nullo}
 \label{sec:tensore-nullo}
