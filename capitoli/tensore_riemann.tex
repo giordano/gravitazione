@@ -274,7 +274,7 @@ per i tensori
 \begin{subequations}
   \begin{gather}
     \tensor{V}{^{\mu}_{;\nu;\kappa}} - \tensor{V}{^{\mu}_{;\kappa;\nu}} =
-    V^{\sigma} \tensor{R}{^{\lambda}_{\sigma\nu\kappa}}, \\
+    V^{\sigma} \tensor{R}{^{\mu}_{\sigma\nu\kappa}}, \\
     \tensor{T}{^{\lambda}_{\mu;\nu;\kappa}} -
     \tensor{T}{^{\lambda}_{\mu;\kappa;\nu}} = \tensor{T}{^{\sigma}_{\mu}}
     \tensor{R}{^{\lambda}_{\sigma\nu\kappa}} - \tensor{T}{^{\lambda}_{\sigma}}
@@ -310,11 +310,13 @@ definizione di trasporto parallelo si ha
 Il vettore $B_{\beta}$ torna su se stesso dopo il trasporto parallelo su una
 linea chiusa se
 \begin{equation}
-  \int \delta B_{\beta}=0
+  \label{4.24}
+  \int_{\textup{curva chiusa}} \delta B_{\beta}=0
 \end{equation}
 cioè se
 \begin{equation}
-  \int \tensor{\Gamma}{^{\alpha}_{\beta \mu}} B_{\alpha} \dd x^{\mu} =0.
+  \int_{\textup{curva chiusa}} \tensor{\Gamma}{^{\alpha}_{\beta \mu}} B_{\alpha}
+  \dd x^{\mu} =0.
 \end{equation}
 Dalla relazione precedente e per il teorema di Stokes, si ha
 \begin{equation}
@@ -363,11 +365,12 @@ da cui
  \end{equation}
 e allora in termini del tensore di Riemann
 \begin{equation}
+  \label{4.32}
   B_{\alpha} \tensor{R}{^{\alpha}_{\beta \mu \nu}} = 0.
 \end{equation}
 
-Abbiamo quindi provato che imporre la condizione~\eqref{4.3} è equivalente a
-richiedere che sia valida la condizione~\eqref{4.8}.  Possiamo quindi asserire
+Abbiamo quindi provato che imporre la condizione~\eqref{4.24} è equivalente a
+richiedere che sia valida la condizione~\eqref{4.32}.  Possiamo quindi asserire
 che condizione necessaria e sufficiente affinché uno spazio sia piatto (nel
 senso della defizione data sopra di trasporto parallelo) è che il tensore di
 Riemann sia nullo.
@@ -379,15 +382,16 @@ covarianti. In questo caso dalla relazione
 \end{equation}
 e procedendo nella stessa maniera si ricava:
 \begin{equation}
-  A^{\alpha} \tensor{R}{^{\alpha}_{\beta \mu \nu}} =0.
+  A^{\alpha} \tensor{R}{_{\alpha \beta \mu \nu}} = 0.
 \end{equation}
 
 \subsection{Il trasporto parallelo su un percorso infinitesimo}
 \label{sec:trasporto-parallelo-percorso-infinitesimo}
 
 Calcoliamo la variazione delle componenti di un vettore trasportato
-parallelamente lungo un percorso chiuso infinitesimo.  Consideriamo due
-differenti percorsi:
+parallelamente lungo un percorso chiuso infinitesimo.\footnote{Per approfondire
+  questo argomento vedi anche~\textcite[266]{ohanian:gravitazione}.}
+Consideriamo due differenti percorsi:
 \begin{equation}
   P(x) \to P_1(x^{\mu} + d_1 x^{\mu}) \to Q(x^{\mu} + d_1 x^{\mu} + d_2 x^{\mu})
 \end{equation}
@@ -398,7 +402,7 @@ figura), e alternativamente
   P(x)\to  P_2(x^{\mu} + d_2 x^{\mu})\to Q(x^{\mu} + d_2 x^{\mu} + d_1 x^{\mu})
 \end{equation}
 che porta da $P(x)$ a $P_2(x^{\mu} + d_2 x^{\mu})$ e infine a $Q(x^{\mu} + d_2
-x^{\mu} + d_1 x^{\mu})$ lungo $\delta \gamma2$.
+x^{\mu} + d_1 x^{\mu})$ lungo $\delta \gamma_{2}$.
 
 Il 4-vettore $A_{\alpha}$ in $P_1$ vale
 \begin{equation}
@@ -544,7 +548,7 @@ Nell'equazione precedente usiamo l'approssimazione
 \begin{equation}
   \tensor{\Gamma}{^{\mu}_{\alpha \beta}}(x+s) \simeq
   \tensor{\Gamma}{^{\mu}_{\alpha \beta}}(x) + \tensor{\Gamma}{^{\mu}_{\alpha
-      \beta ,\sigma}} s^{\sigma}
+      \beta ,\sigma}}(x) s^{\sigma}
 \end{equation}
 Considerando solo i termini al primo ordine in $s^{\mu}$, valutiamo la
 differenza tra le equazioni~\eqref{116} e \eqref{117}.  Otteniamo

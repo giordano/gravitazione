@@ -1653,34 +1653,35 @@ relativistico isolato $\dot{\bm{L}} = \bm{0} \implies \dot{\bm{m}} = \bm{0}$.
 \section{Equazioni di Eulero-Lagrange di un campo e tensore energia-impulso}
 \label{sec:tensore-energia-impulso}
 
-\emph{Nota: in questo paragrafo, dove non diversamente specificato, adotteremo
-  la convenzione dei segni $(-++)$ seguita
-  da~\textcites{barone:relativita,landau:campi}.}
+% \emph{Nota: in questo paragrafo, dove non diversamente specificato, adotteremo
+%   la convenzione dei segni $(-++)$ seguita
+%   da~\textcites{barone:relativita,landau:campi}.}
 
-In questo paragrafo vogliamo determinare le equazioni del moto di un generico
-campo $q(x)$ e poi le applicheremo al caso particolare del campo
-elettromagnetico.
+Vogliamo determinare le equazioni del moto di un generico sistema usando il
+formalismo lagrangiano. Come applicazione del metodo considereremo il caso del
+campo elettromagnetico.
 
-La dinamica di un campo $q(x)$ è descritta da un'azione
+Consideriamo un sistema isolato il cui integrale d'azione abbia la forma
 \begin{equation}
   \label{eq:azione-campo}
-  S = \int\limits_{\Omega} \Lambda\dd^{4} x = \iint \Lambda \dd t\dd^{3} \bm{x},
+  S = \int\limits_{\Omega} \Lambda (q, \lparder{q}{x^{\alpha}}) \dd^{4} x
+  = \iint \Lambda (q, \lparder{q}{x^{\alpha}}) \dd t\dd^{3} \bm{x},
 \end{equation}
-in cui $\Lambda = \Lambda(q, \lparder{q}{x^{\alpha}}, x^{\alpha})$ è una
-funzione del campo $q$, delle sue derivate $\lparder{q}{x^{\alpha}}$ ed
-eventualmente delle coordinate $x^{\alpha}$.  Poiché l'integrale
-$\int \Lambda\dd^{3} \bm{x}$ è la lagrangiana del sistema, $\Lambda$ è chiamata
-\index{densità!di lagrangiana}\emph{densità di lagrangiana}.  Supporremo che $q$
-e le sue derivate si annullino all'infinito.
+in cui $\Lambda = \Lambda(q, \lparder{q}{x^{\alpha}})$ è una funzione della
+coordinata generalizzata $q$, delle sue derivate $\lparder{q}{x^{\alpha}}$ e non
+dipende espressamente dalle coordinate $x^{\alpha}$ in quanto il sistema è
+isolato.  Poiché l'integrale $\int \Lambda\dd^{3} \bm{x}$ è la lagrangiana del
+sistema, $\Lambda$ è chiamata \index{densità!di lagrangiana}\emph{densità di
+  lagrangiana}.  Supporremo che $q$ e le sue derivate si annullino all'infinito.
 
-Secondo il principio variazionale di Hamilton, le equazioni del moto del campo
-si ottengono ricercando la configurazione del campo che rende stazionaria
-l'azione~\eqref{eq:azione-campo}.  Consideriamo allora una variazione
-$q \to q + \delta q$ del campo, con la condizione che $\delta q$ si annulli sul
-bordo $\partial\Omega$ del volume quadrimensionale $\Omega$ su cui viene
+Secondo il principio variazionale di Hamilton, le equazioni del moto del sistema
+si ottengono ricercando la configurazione che rende stazionaria
+l'azione~\eqref{eq:azione-campo}.  Consideriamo allora una variazione $q \to q +
+\delta q$ della coordinata generalizzata, con la condizione che $\delta q$ si
+annulli sul bordo $\partial\Omega$ del volume quadrimensionale su cui viene
 calcolato l'integrale d'azione.  Le coordinate $x^{\alpha}$ non vengono variate.
-Dobbiamo imporre che l'azione sia stazionaria rispetto alla variazione del
-campo, cioè $\delta S = 0$.  Per brevità adottiamo la notazione
+Dobbiamo imporre che l'azione sia stazionaria rispetto alla variazione $\delta
+q$, cioè che sia $\delta S = 0$.  Per brevità adottiamo la notazione
 $q_{,\alpha} = \lparder{q}{x^{\alpha}}$.  In questo modo abbiamo
 \begin{equation}
   \begin{split}
@@ -1699,8 +1700,7 @@ l'appendice~\ref{cha:teorema-gauss}) il secondo termine nell'integrale diventa
   \int\limits_{\partial\Omega} \parder{\Lambda}{q_{,\alpha}}\delta q \dd^{3}
   \bm{x} = 0
 \end{equation}
-perché le variazioni $\delta q$ del campo devono essere nulle sul bordo
-$\partial\Omega$.  Allora
+perché le variazioni $\delta q = 0$ sul bordo $\partial\Omega$.  Allora
 \begin{equation}
   0 = \delta S = \int \delta q\bigg( \parder{\Lambda}{q} - \parder{}{x^{\alpha}}
   \bigg( \parder{\Lambda}{q_{,\alpha}} \bigg)\bigg)\dd^{4} x.
@@ -1722,8 +1722,7 @@ esplicitamente dalle coordinate $x^{\alpha}$, analogamente al caso meccanico in
 cui la lagrangiana è indipendente dal tempo per un sistema isolato.  Per un
 sistema chiuso possiamo determinare una formula analoga alla legge di
 conservazione dell'energia in meccanica.  Sfruttando le equazioni di
-Eulero-Lagrange~\eqref{eq:eulero-lagrange-campi} e cambiando leggermente la
-notazione abbiamo
+Eulero-Lagrange~\eqref{eq:eulero-lagrange-campi} abbiamo
 \begin{equation}
   \begin{split}
     \toder{\Lambda}{x^{\alpha}} &= \parder{\Lambda}{q}\toder{q}{x^{\alpha}}
@@ -1936,9 +1935,10 @@ e applicare le equazioni di Eulero-Lagrange~\eqref{eq:eulero-lagrange-campi} a
   \Lambda = \Lambda_{\textup{pc}} + \Lambda_{\textup{c}} = -J^{\alpha}A_{\alpha}
   -\frac{1}{4} F^{\alpha\beta}F_{\alpha\beta}.
 \end{equation}
-Le componenti $A_{\alpha}(x)$ del quadripotenziale svolgono il ruolo del campo
-$q(x)$.  Per ottenere le \index{equazioni!di Maxwell}equazioni di Maxwell in
-assenza di sorgenti si considera solo $\Lambda = \Lambda_{\textup{c}}$.
+Le componenti $A_{\alpha}(x)$ del quadripotenziale svolgono il ruolo della
+coordinata generalizzata $q(x)$.  Per ottenere le \index{equazioni!di
+  Maxwell}equazioni di Maxwell in assenza di sorgenti si considera solo $\Lambda
+= \Lambda_{\textup{c}}$.
 
 Il tensore energia-impulso $T_{\textup{em}}^{\alpha\beta}$ del campo
 elettromagnetico si ottiene dalla definizione~\eqref{eq:tensore-energia-impulso}

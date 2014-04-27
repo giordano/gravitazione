@@ -5,28 +5,29 @@
 \section{Campo gravitazionale statico e a simmetria sferica}
 \label{sec:campo-statico-sferico}
 
-Vogliamo determinare la metrica per un campo gravitazionale a simmetria sferica
-e statico, cioè tale che $\dd\tau^{2} = -g_{\mu\nu}\dd x^{\mu}\dd x^{\nu}$ non
-dipenda dalla coordinata temporale $x^{0}$ e sia simmetrico rispetto
-all'operazione di inversione temporale.\footnote{Un campo solo indipendente
-  dalla coordinata temporale si dice \emph{stazionario}, la condizione di
-  staticità è quindi più forte.}  Queste condizioni impongono che il campo
-gravitazionale dipenda dalle coordinate spaziali solo attraverso delle quantità
-invarianti per rotazioni, cioè $\bm{x} \cdot \dd\bm{x}$, $\bm{x} \cdot \bm{x}$,
-$\dd\bm{x} \cdot \dd\bm{x}$.  La forma più generale per una metrica con queste
-proprietà è
+Vogliamo determinare la forma più generale della metrica che descrive un campo
+gravitazionale a simmetria sferica e statico.  In questo caso $\dd\tau^{2} =
+-g_{\mu\nu}\dd x^{\mu}\dd x^{\nu}$ non deve dipendere dalla coordinata temporale
+$x^{0}$ e deve risultare simmetrico rispetto all'operazione di inversione
+temporale.\footnote{Un campo solo indipendente dalla coordinata temporale si
+  dice \emph{stazionario}, la condizione di staticità è quindi più forte.}
+Queste condizioni impongono che il campo gravitazionale dipenda dalle coordinate
+spaziali solo attraverso gli invarianti per rotazione che possono essere
+costruiti a partire da $\bm{x}$ e $\dd\bm{x}$, cioè $\bm{x} \cdot \dd\bm{x}$,
+$\bm{x} \cdot \bm{x}$, $\dd\bm{x} \cdot \dd\bm{x}$.  La forma più generale della
+metrica con queste proprietà è
 \begin{equation}
   \dd\tau^{2} = F(r) \dd t^{2} - 2E(r) \bm{x} \cdot \dd\bm{x} \dd t -
   D(r)(\bm{x} \cdot \dd\bm{x})^{2} - C(r)\dd\bm{x}^{2},
 \end{equation}
-in cui $F$, $E$, $D$ e $C$ sono funzioni della distanza dall'origine del campo
-gravitazionale $r = \norm{\bm{x}}$.  Data la simmetria del sistema che vogliamo
-analizzare conviene passare in coordinate sferiche
+in cui $F(r)$, $E(r)$, $D(r)$ e $C(r)$ sono funzioni della distanza dall'origine
+$r = \norm{\bm{x}}$.  Data la simmetria del sistema che vogliamo analizzare
+conviene passare in coordinate sferiche
 \begin{subequations}
   \begin{align}
-    x^{1} &= r \sin\theta \cos\phi, \\
-    x^{2} &= r \sin\theta \sin\phi, \\
-    x^{3} &= r \cos\theta
+    x^{1} &= x = r \sin\theta \cos\phi, \\
+    x^{2} &= y = r \sin\theta \sin\phi, \\
+    x^{3} &= z = r \cos\theta
   \end{align}
 \end{subequations}
 così che la metrica diventa
@@ -148,18 +149,18 @@ dimostrare\footnote{Vedi~\textcite[390-393]{landau:campi};
   \textcite[337-340]{ohanian:gravitazione};
   \textcite[335-337]{weinberg:gravitation}.}  il \index{teorema!di
   Birkhoff}\emph{teorema di Birkhoff} il quale afferma che \emph{un campo
-  gravitazionale a simmetria sferica in assenza di materia deve essere statico},
-quindi l'ipotesi di staticità del campo è superflua in quanto conseguenza della
-sua particolare simmetria.
+  gravitazionale a simmetria sferica in assenza di materia deve essere
+  necessariamente statico}.  Quindi l'ipotesi di staticità del campo è superflua
+in quanto conseguenza della sua particolare simmetria.
 
 \subsection{Soluzione di Schwarzschild}
 \label{sec:metrica-schwarzschild}
 
 La soluzione di Schwarzschild delle equazioni di Einstein descrive il campo
-gravitazionale all'esterno di un corpo sferico non rotante, elettricamente
-neutro e in assenza di materia, cioè con tensore energia-impulso nullo.
-Applicheremo i risultati che otterremo al campo gravitazionale generato dal
-Sole.
+gravitazionale all'esterno di un corpo sferico non rotante di massa $M$,
+elettricamente neutro e in assenza di materia, cioè con tensore energia-impulso
+$T_{\mu\nu} = 0$.  Applicheremo i risultati che otterremo al campo
+gravitazionale generato dal Sole.
 
 Abbiamo visto che in assenza di materia le equazioni di Einstein sono 
 $R_{\mu\nu} = 0$.  Di conseguenza, ponendo uguale a $0$ il secondo membro
@@ -174,18 +175,15 @@ da cui
 \end{equation}
 Per determinare il valore della costante notiamo che a distanza infinita dalla
 sorgente, la metrica deve tendere a quella di Minkowski, che in coordinate
-sferiche si esprime come
+sferiche si esprime come $\dd\tau^{2} = \dd t^{2} -\dd r^{2} -
+r^{2}(\dd\theta^{2} + \sin^{2}\theta \dd\phi^{2})$. Confrontando con la metrica
+nella forma standard~\eqref{eq:metrica-standard} troviamo che deve risultare
+$A(r) B(r) \xrightarrow{r \to +\infty} 1$ e pertanto la costante
+nell'equazione~\eqref{468} deve essere pari a 1.  Quindi troviamo
 \begin{equation}
-  \dd\tau^{2} = \dd t^{2} -\dd r^{2} - r^{2}(\dd\theta^{2} + \sin^{2}\theta
-  \dd\phi^{2}).
+  A(r) = \frac{1}{B(r)}.
 \end{equation}
-Confrontando con la metrica nella forma standard~\eqref{eq:metrica-standard}
-troviamo che deve risultare $A(r) B(r) \xrightarrow{r \to +\infty} 1$ e pertanto
-la costante nell'equazione~\eqref{468} deve essere pari a 1.  Quindi troviamo
-$A(r) = 1/B(r)$.
-
-Sostituendo questo risultato nelle componenti~\eqref{eq:ricci-sferico} del
-tensore di Ricci abbiamo
+Sostituendo questo risultato nelle equazioni~\eqref{eq:ricci-sferico} abbiamo
 \begin{subequations}
   \begin{align}
     R_{\theta\theta} &= -1 + rB'(r) + B(r), \\
@@ -196,26 +194,24 @@ tensore di Ricci abbiamo
 Imponendo che anche la componente $R_{\theta\theta}$ si annulli, da cui deriva
 inoltre che anche $R_{rr}$ e $R_{\phi\phi}$ sono nulle, si ricava
 \begin{equation}
-  \toder{}{r}(rB(r)) = 1 \implies rB(r) = r + \text{costante} \implies B(r) = 1
+  \toder{}{r}[rB(r)] = 1 \implies rB(r) = r + \text{costante} \implies B(r) = 1
   + \frac{\text{costante}}{r}.
 \end{equation}
 Per determinare il valore di questa nuova costante richiediamo che a grandi
 distanze dal corpo che genera il campo (regione in cui il campo diventa debole)
 sia valida l'approssimazione vista nel paragrafo~\ref{sec:limite-newtoniano}
-\begin{equation}
-  g_{00} = -1 + \frac{r_{\textup{S}}}{r},
-\end{equation}
-con $r_{\textup{S}}$ raggio di Schwarzschild del corpo.  Osservando allora che
-$g_{00} = g_{tt} = -B(r)$ abbiamo che la costante che vogliamo determinare vale
-proprio $r_{\textup{S}}$ e in definitiva la
+$-B(r) \equiv g_{00} =  -1 + r_{\textup{S}}/r$, con $r_{\textup{S}}=2GM/c^2$ 
+raggio di Schwarzschild del corpo di massa $M$.  Si ha quindi 
+$\text{costante} = r_{\textup{S}}$. Abbiamo in definitiva la
 \index{metrica!di Schwarzschild}\emph{metrica di Schwarzschild}, per campi a
-simmetria sferica e indipendenti dal tempo, è data da
+simmetria sferica e indipendenti dal tempo data da
 \begin{equation}
   \label{eq:metrica-schwarzschild}
   \dd\tau^{2} = \bigg(1 - \frac{r_{\textup{S}}}{r} \bigg) \dd t^{2} - \bigg(1 -
   \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dd r^{2} - r^{2}\dd\theta^{2} -
   r^{2}\sin^{2}\theta \dd\phi^{2}.
 \end{equation}
+
 Osserviamo che questa metrica ha una singolarità per $r = r_{\textup{S}}$ e
 un'altra per $r = 0$.  Nel caso specifico del Sole, e di numerosi altri corpi,
 la prima singolarità non costituisce un problema poiché la metrica vale
@@ -225,13 +221,12 @@ dimostra\footnote{Vedi~\textcite[511]{barone:relativita};
   \textcite[403-404]{landau:campi}; \textcite[374-378]{ohanian:gravitazione};
   \textcite[207-208]{weinberg:gravitation}.}  inoltre che la singolarità per $r
 = r_{\textup{S}}$ è eliminabile adottando un opportuno sistema di coordinate,
-quindi non è, in realtà, una singolarità fisica.
+quindi essa non è, in realtà, una singolarità fisica.
 
-Le coordinate $t$, $r$, $\theta$ e $\phi$ utilizzate nella metrica
-standard~\eqref{eq:metrica-standard}, e quindi anche nella metrica di
-Schwarzschild, non sono banalmente le usuali coordinate sferiche di uno
-spazio-tempo piatto.  Mentre si può far vedere che le coordinate angolari
-$\theta$ e $\phi$ coincidono con quelle
+Le coordinate $t$, $r$, $\theta$ e $\phi$ utilizzate nella metrica di
+Schwarzschild~\eqref{eq:metrica-schwarzschild} non sono banalmente le usuali
+coordinate sferiche di uno spazio-tempo piatto.  Mentre si può far vedere che le
+coordinate angolari $\theta$ e $\phi$ coincidono con quelle
 sferiche,\footnote{Vedi~\textcite[333]{ohanian:gravitazione}.} lo stesso non
 vale per le coordinate $t$ e $r$.  Lungo un meridiano, l'elemento di lunghezza è
 dato da $\dd l = r\dd\theta$ e, come in uno spazio piatto, la lunghezza di una
@@ -239,10 +234,10 @@ circonferenza di ``raggio'' $r$ vale
 \begin{equation}
   \int_{0}^{l} \dd l' = \int_{0}^{2\pi}r\dd\theta = 2\pi r.
 \end{equation}
-Ma $r$ non è anche la distanza radiale perché, invece, l'intervallo spaziale è
-dato da $\sqrt{A(r)}\dd r$, in particolare nella metrica di Schwarzschild
-$\dd r/\sqrt{1-r_{\textup{S}}^{}/r}$.  Possiamo dunque interpretare la
-coordinata $r$ come la lunghezza della circonferenza divisa $2\pi$.  Il fatto
+Ma $r$ non è anche la distanza radiale perché, invece, l'intervallo spaziale,
+che è ottenuto dalla metrica ponendo $\dd t = \dd\theta = \dd\phi = 0$, è dato
+da $\dd l = \dd r/\sqrt{1-r_{\textup{S}}^{}/r}$.  Possiamo dunque interpretare
+la coordinata $r$ come la lunghezza della circonferenza divisa $2\pi$.  Il fatto
 che il rapporto fra la lunghezza della circonferenza e la distanza dal suo
 centro è diverso da $2\pi$ evidenzia che lo spazio considerato non è piatto.
 Per interpretare la coordinata $t$, vediamo quando l'intervallo di tempo proprio
@@ -252,7 +247,10 @@ quale osservatore risulta che $\sqrt{g_{00}}$ sia uguale a 1
   1 = \sqrt{g_{00}} = \sqrt{1 - \frac{r_{\textup{S}}}{r}} \implies r \to \infty.
 \end{equation}
 Quindi la coordinata temporale $t$ può essere interpretata come la coordinata
-temporale di un osservatore all'infinito, $r \to \infty$.
+temporale di un osservatore all'infinito, $r \to \infty$.  L'intervallo di tempo
+trascorso tra due eventi che accadono nello stesso posto (quindi con $\dd r =
+\dd\theta = \dd\phi = 0$) è invece ottenuto integrando $\dd\tau = \dd t
+\sqrt{1-r_ {\textup{S}}}$.
 
 %%% Local Variables:
 %%% mode: latex

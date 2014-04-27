@@ -943,7 +943,8 @@ giroscopio in caduta libera nel campo gravitazionale esterno.
 
 Si consideri il giroscopio a bordo di un satellite in orbita attorno alla Terra.
 Per convenienza l'orbita sia nel piano $xy$ e si valuti
-l'equazione~\eqref{eqspin} nel punto $x=r_0$, $y=0$, $z=0$ (vedi Figura).
+l'equazione~\eqref{eqspin} nel punto $x=r_0$, $y=0$, $z=0$ (vedi Fig. 7.6 a
+pag. 352, Ohanian-Ruffini).
 
 Nell'approssimazione di campo debole e statico la metrica dello spazio tempo a
 distanza $r$ da un corpo di massa $M$ è
@@ -953,26 +954,25 @@ distanza $r$ da un corpo di massa $M$ è
   \label{metricadebole}
 \end{equation}
 Questa è la metrica di Schwarzschild (vedi dopo) per un campo debole, $2GM/(c^2
-r) = r_{g}/r\ll 1$.  Nel nostro caso è $M=M_{\oplus}$ (massa Terra) ed $r= r_0
-\simeq R_{\oplus}$.
+r) = r_{g}/r\ll 1$.  Nel nostro caso sarà $M=M_{\oplus}$ (massa Terra) ed $r=
+r_0 \simeq R_{\oplus}$.
 
 Valutiamo ora le componenti della connessione affine.  Si ha:
 \begin{equation}
   \tensor{\Gamma}{^{0}_{01}} =
   \frac{1}{2} \eta^{00} (\partial_1 h_{00} + \partial_0 h_{10}- \partial_0
   h_{01} ) =
-  -  \frac{1}{2} \partial_1 h_{00} =   \frac {G} {c^2 M_{\oplus} r_0^2}.
+  -  \frac{1}{2} \partial_1 h_{00} =   \frac {G M_{\oplus}} {c^2  r_0^2}.
 \end{equation}
 Qui abbiamo usato la relazione $h_{00}=-2 \phi_{\textup{new}} = + 2GM/(c^2 r)$.
-In maniera analoga, usando la relazione $h_{11}=2GM/(c^2 r)$) si trova (vedi
-anche le equazioni [148] in~\textcite[353]{ohanian:gravitazione})
+In maniera analoga, usando la relazione $h_{11}=2GM/(c^2 r)$) si trova
 \begin{subequations}
   \begin{align}
     \tensor{\Gamma}{^{1}_{00}} &= \tensor{\Gamma}{^{1}_{22}} =
-    \tensor{\Gamma}{^{1}_{33}} = \frac{G}{c^2 M_{\oplus} r_0^2}, \\
+    \tensor{\Gamma}{^{1}_{33}} = \frac{G M_{\oplus}}{c^2 r_0^2}, \\
     \tensor{\Gamma}{^{1}_{11}} &= \tensor{\Gamma}{^{2}_{12}} =
     \tensor{\Gamma}{^{2}_{21}} = \tensor{\Gamma}{^{3}_{13}} =
-    \tensor{\Gamma}{^{3}_{31}} = -\frac{G}{c^2 M_{\oplus} r_0^2}.
+    \tensor{\Gamma}{^{3}_{31}} = -\frac{G M_{\oplus}}{c^2 r_0^2}.
   \end{align}
 \end{subequations}
 
@@ -988,9 +988,8 @@ S^{\mu} dx^{\nu}/d\tau =0$, da cui
   S^0 = - \frac{1}{g_{00}} \left( S_x g_{11} \toder{x}{\tau} + S_y g_{22}
     \toder{y}{\tau} + S_z g_{33} \toder{z}{\tau}\right) \simeq S_y v.
 \end{equation}
-
-Valutiamo ora l'equazione~\eqref{eqspin} nel punto di coordinate $x=r_0$, $y=0$,
-$z=0$
+Nel punto di coordinate $x=r_0$, $y=0$, $z=0$, l'equazione~\eqref{eqspin}
+diventa
 \begin{subequations}
   \begin{align}
     \toder{S_1}{\tau} &\equiv \toder{S_x}{\tau} =
@@ -1005,29 +1004,27 @@ $z=0$
   \end{align}
 \end{subequations}
 
-Queste equazioni sono valide nel punto di coordinate $x=r_0$, $y=0$, $z=0$.
-Possiamo comunque riscriverle in una forma valida in un generico punto
-dell'orbita osservando che esse possono essere poste in una singola equazione
-vettoriale:
- \begin{equation}
-   \label{eqsecolare}
-   \toder{\bm{S}}{\tau} = -2 \bm{v} \cdot \bm{S} \nabla \phi + \bm{v}\bm{S}
-   \cdot \nabla\phi.
+Queste relazioni ricavate per il punto di coordinate $x=r_0$, $y=0$, $z=0$,
+possono essere poste nella forma di un'equazione vettoriale, che risulterà
+valida in un generico punto dell'orbita.  Si ha
+\begin{equation}
+  \label{eqsecolare}
+  \toder{\bm{S}}{\tau} = -2 \bm{v} \cdot \bm{S} \nabla \phi_{\textup{new}} +
+  \bm{v}\bm{S} \cdot \nabla\phi_{\textup{new}}.
 \end{equation}
-
-Poiché la velocità $\bm{v}$ e l'accelerazione gravitazionale $-\nabla \phi$
-variano con la posizione lungo l'orbita, l'andamento di $\bm S$ risulta
-complicato; ma se consideriamo solo effetti di lungo termine, possiamo calcolare
-la media dell'equazione~\eqref{eqsecolare} lungo una intera orbita.  A questo
-scopo scriviamo $\bm{v}$ e $\nabla\phi$ in funzione del tempo:
+Poiché la velocità $\bm{v}$ del giroscopio e l'accelerazione gravitazionale
+$-\nabla \phi_{\textup{new}}$ variano con la posizione lungo l'orbita circolare,
+l'andamento di $\bm S$ risulta complicato; ma se consideriamo solo effetti di
+lungo termine, possiamo calcolare la media dell'equazione~\eqref{eqsecolare}
+lungo un'intera orbita.  A questo scopo scriviamo $\bm{v}$ e
+$\nabla\phi_{\textup{new}}$ in funzione del tempo:
 \begin{subequations}
   \begin{align}
     \bm{v} &= -\versor{x} v \sin(\omega t) + \versor{y} v \cos(\omega t), \\
-    \nabla\phi &= -\versor{x} \frac{GM}{c^2 r_0^2} \cos(\omega t) + \versor{y}
-                 \frac{GM}{c^2 r_0^2} \sin(\omega t).
+    \nabla\phi_{\textup{new}} &= -\versor{x} \frac{GM}{c^2 r_0^2} \cos(\omega t)
+                                + \versor{y}\frac{GM}{c^2 r_0^2} \sin(\omega t).
   \end{align}
 \end{subequations}
-
 Sostituendo nell'equazione~\eqref{eqsecolare} e mediando in un periodo ($T=2
 \pi/ \omega$) si ottiene
 \begin{equation}
@@ -1043,21 +1040,26 @@ risultato che può essere riscritto in forma compatta come
 \begin{equation}
   \left\langle\toder{\bm{S}}{\tau}\right\rangle = \frac{3}{2}
   \frac{GM}{c^2 r_0^3} (\bm{r} \times \bm{v}) \times \bm{S} =
-  \bm{\Omega}_{\textup{De Sitter}} \times \bm{S}.
+  \dot{\bm{\Omega}}_{\textup{De Sitter}} \times \bm{S}.
 \end{equation}
 Dall'ultima equazione vediamo che in media $\bm{S}$ precede attorno all'asse
-dell'orbita con una velocità angolare
+dell'orbita ($\bm{L} \propto \bm{r} \times \bm{v}$) con una velocità angolare
 \begin{equation}
-  \bm{\Omega}_{\textup{De Sitter}} = \frac{3}{2} \frac{GM}{c^2 r_0^3} (\bm{r}
-  \times \bm{v}).
+  \dot{\bm{\Omega}}_{\textup{De Sitter}} = \frac{3}{2} \frac{GM}{c^2 r_0^3}
+  (\bm{r} \times \bm{v}).
 \end{equation}
+
 Questa è la \emph{precessione geodetica} o \emph{di De Sitter}.  Per un
-giroscopio a 650 km sopra la Terra ($M=M_{\oplus}$, $r_0=R_{\oplus}+650$ km) con
-lo spin nel piano dell'orbita la precessione geodetica risulta essere $\delta
-\theta_{\textup{De Sitter}}= {\Omega_{\textup{De Sitter}}} \times 1$ anno $=
-6.6$arcsec/anno.  (vedi la figura 7.7 di~\textcite[355]{ohanian:gravitazione}).
-Si osservi che $\delta\theta_{\textup{De Sitter}}$ è un fattore 100 più grande
-di $\delta\theta_{\textup{Lense-Thirring}} \simeq 0.042$ arcsec/anno.
+giroscopio a 650 km sopra la Terra ($M=M_{\oplus} = \SI{5.977e27}{\gram}$,
+$r_0=R_{\oplus}+\SI{650}{\kilo\metre}$, $R_{\oplus}=\SI{6378.17}{\kilo\metre}$)
+con lo spin nel piano dell'orbita la precessione geodetica risulta essere
+$\delta \Omega_{\textup{De Sitter}} = {\dot{\Omega}_{\textup{De Sitter}}} \times
+1$ anno $= 6.6$arcsec/anno.  (vedi la figura 7.7
+di~\textcite[355]{ohanian:gravitazione}).  Si osservi che per un orbita polare,
+$\delta \Omega_{\textup{De Sitter}}$ è ortogonale a $\delta
+\Omega_{\textup{Lense-Thirring}}$ e che inoltre $\delta \Omega_{\textup{De
+    Sitter}}$ è un fattore 100 più grande di $\delta
+\Omega_{\textup{Lense-Thirring}} \simeq 0.042$ arcsec/anno.
 
 %%% Local Variables:
 %%% mode: latex

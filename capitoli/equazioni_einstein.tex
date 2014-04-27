@@ -6,42 +6,40 @@
 \section{Derivazione delle Equazioni di Einstein}
 
 È possibile derivare le equazioni di Einstein per il campo gravitazionale usando
-criteri del tutto generali.  Infatti equazioni di campo accettabili devono
-essere (vedi~\textcite[151]{weinberg:gravitation}):
+considerazioni del tutto generali.  Le equazioni cercate devono essere
+(vedi~\textcite[151]{weinberg:gravitation}):
 \begin{enumerate}
 \item in forma tensoriale;
 \item fornire per campi deboli e statici la soluzione Newtoniana;
-\item contenere termini (con $N=2$) quadratici nella derivata prima e lineari
-  nella derivata seconda della metrica.  Tale richiesta nasce dal fatto che si
-  vuole che le equazioni cercate siano invarianti in scala.
+\item contenere termini quadratici nella derivata prima e/o lineari
+  nella derivata seconda della metrica (invarianza in scala).
 \end{enumerate}
 L'equazione di campo newtoniana è l'equazione di Poisson
 \begin{equation}
   \nabla^2 \phi = 4 \pi G \rho,
 \end{equation}
-dove $\rho$ è la densità di massa che naturalmete possiamo identificare con la
-componente $00$ del tensore energia-impulso: $\rho = T_{00}$.  Con l'ulteriore
-identificazione (per campi deboli e statici) $h_{00} = - 2 \phi$, possiamo
-riscrivere l'equazione di Poisson nella forma
+dove $\rho$ è la densità di massa che per sistemi non relativistici possiamo
+identificare con $T_{00}$.  Con l'ulteriore identificazione (nel caso di campi
+deboli e statici) $h_{00} = - 2 \phi$, l'equazione di Poisson diventa
 \begin{equation}
   \nabla^2 h_{00} = - 8 \pi G T_{00}.
 \end{equation}
-È naturale a questo punto ipotizzare per l'equazione cercate la forma
+È naturale ipotizzare per l'equazione di campo ricercata la forma
 \begin{equation}
   G_{\mu \nu} = - 8 \pi G T_{\mu \nu}
 \end{equation}
-dove il termine $G_{\mu \nu}$ deve
+dove $G_{\mu \nu}$ deve
 \begin{itemize}
 \item[a)] essere un tensore;
 \item[b)] soddisfare la 3;
 \item[c)] essere simmetrico così come $T_{\mu \nu}$;
 \item[d)] avere 4-divergenza nulla poiché il tensore energia impulso soddisfa la
   condizione di conservazione $\tensor{T}{^{\mu \nu}_{; \mu}} =0$;
-\item[e)] per un campo statico e debole prodotto da materia non relativistica
-  $G_{00} \simeq \nabla^2 g_{00}$.
+\item[e)] nel caso di un campo statico e debole $G_{00} \simeq \nabla^2 g_{00}$.
 \end{itemize}
 Dalle condizioni a) + b) segue che necessariamente
 \begin{equation}
+  \label{5.4}
   G_{\mu \nu} = C_1 R_{\mu \nu} + C_2 R g_{\mu \nu}
 \end{equation}
 dove $R_{\mu \nu}$ è il tensore di Ricci ed $R$ la curvatura scalare dello
@@ -49,41 +47,57 @@ spazio-tempo.
 
 La condizione c) è immediatamente soddisfatta per la simmetria del tensore di
 Ricci; la condizione d) implica la relazione $C_1 \tensor{R}{^{\mu \nu}_{;\mu}}
-+ C_2 R_{;\mu} g^{\mu \nu} = 0$.  Utilizzando l'identità di Bianchi contratta
-($\tensor{R}{^{\mu \nu}_{; \mu}} = (1/2) g^{\mu \nu} R_{; \mu}$), l'ultima
-relazione diventa $(C_2 + C_1/2) R_{; \nu} =0$, la quale senza perdere di
-generalità implica infine la relazione tra i coefficienti $C_2 = -C_1/2$.
-Abbiamo allora
++ C_2 R_{;\mu} g^{\mu \nu} = 0$.  Utilizzando l'identità di Bianchi contratta,
+$\tensor{R}{^{\mu \nu}_{; \mu}} = (1/2) g^{\mu \nu} R_{; \mu}$, la
+relazione~\eqref{5.4} diventa $(C_2 + C_1/2) R_{; \nu} =0$, che, senza perdere
+di generalità ($R_{; \nu} \ne 0$), implica la relazione $C_2 = -C_1/2$.  Abbiamo
+allora
 \begin{equation}
   G_{\mu \nu} = C_1 \left(R_{\mu \nu} - \frac{1}{2} g_{\mu \nu} R \right).
 \end{equation}
-Dalla condizione e) fissiamo $C_1=1$.  Per un sistema non relativistico risulta
-$T_{00} \simeq \rho \gg T_{ij} \simeq \rho v^i v^j$. Allora è naturale porre
-$G_{00} \gg G_{ij} \simeq 0$.  Questo implica $G_{ij} = C_1 (R_{ij} -(1/2) R)
-\simeq 0$.  Quindi $R_{ij} \simeq (1/2) R$.  Moltiplicando la precedente per
-$\eta_{ij}=\delta_{ij}$ abbiamo $R^j_j \simeq (3/2) R$.  Allora la curvatura $R
-\simeq \eta^{\mu \nu} R_{\mu \nu} \simeq R^j_j - R_{00} \simeq (3/2)R-R_{00}$,
-da cui deduciamo la relazione $R \simeq 2 R_{00}$.
+Usando la condizione e) troviamo $C_1=1$.  Infatti, per un sistema non
+relativistico $T_{00} \simeq \rho \gg T_{ij} \simeq \rho v^i v^j$.  Analogamente
+sarà $G_{00} \gg G_{ij} \simeq 0$, il che implica $C_1 (R_{ij} -(1/2) R) \simeq
+0$ e quindi $R_{ij} \simeq (1/2) R$.  Moltiplicando la precedente per
+$\eta_{ij}$ (per campi deboli la contrazione di indici avviene moltiplicando per
+la metrica non perturbata $\eta_{\mu \nu}$) troviamo $\tensor{R}{^{j}_{j}}
+\simeq (3/2) R$.  Allora per la curvatura $R \simeq \eta^{\mu \nu} R_{\mu \nu}
+\simeq \tensor{R}{^{j}_{j}} - R_{00}$, abbiamo $R \simeq (3/2)R-R_{00}$, da cui deduciamo la
+relazione $R \simeq 2 R_{00}$.
 
 Abbiamo quindi $G_{00} = C_1 (R_{00}-(1/2) g_{00} R) \simeq C_1 (R_{00}-(1/2)
-eta_{00} R) \simeq 2 C_1 R_{00}$ Ora $R_{00} = \tensor{R}{^{l}_{0l0}} = (1/2)
-\nabla^2 g_{00}$ e quindi in conclusione $C_1=1$.  Pertanto le equazioni cercate
-sono
+\eta_{00} R) \simeq 2 C_1 R_{00}$.  Ora $R_{00} = \tensor{R}{^{l}_{0l0}} = (1/2)
+\nabla^2 g_{00}$ e quindi in $G_{00} \simeq C_1 \nabla^2 g_{00}$, da cui in
+conclusione $C_1=1$.  Pertanto le equazioni cercate sono
 \begin{equation}
+  \label{5.6}
   G_{\mu \nu} = R_{\mu \nu} - \frac{1}{2} g_{\mu \nu} R = -8 \pi G T_{\mu\nu}.
 \end{equation}
-Un'espressione alternativa delle equazioni di Einstein può essere ottenuta
-contraendo nella precedente gli indici (moltiplicando per $g^{\mu \nu}$).  Si ha
-$R-(1/2) 4 R = -8 \pi G \tensor{T}{^{\lambda}_{\lambda}}$ da cui segue $R= 8 \pi
-G = -8 \pi G \tensor{T}{^{\lambda}_{\lambda}}$, e sostituendo:
+
+Una diversa forma delle equazioni di Einstein è ottenuta contraendo nella
+precedente gli indici (moltiplicando per $g^{\mu \nu}$).  Si ha $R-(1/2) 4 R =
+-8 \pi G \tensor{T}{^{\lambda}_{\lambda}}$ da cui segue $R = 8 \pi G
+\tensor{T}{^{\lambda}_{\lambda}}$, e sostituendo nell'equazione~\eqref{5.6}:
 \begin{equation}
   R_{\mu \nu}= -8 \pi G \left( T_{\mu \nu} - \frac{1}{2} g_{\mu \nu}
-    \tensor{T}{^{\lambda}_{\lambda}} \right),
+    \tensor{T}{^{\lambda}_{\lambda}} \right).
 \end{equation}
-Nel vuoto le equazioni di Einstein sono
+
+Per commentare queste equazioni si suol dire che la materia dice allo
+spazio-tempo come curvarsi (informazione contenuta nel tensore di Ricci) e allo
+stesso tempo lo spazio-tempo curvo dice alla materia come muoversi (tensore
+energia-impulso).  Osserviamo che dalla~\eqref{eq:divergenza-tens-einstein}
+deriva che anche il tensore energia-impulso della materia ha quadridivergenza
+covariante nulla $\tensor{T}{^{\mu\nu}_{;\mu}} = 0$.
+
+Nel vuoto le equazioni di Einstein assumono la forma
 \begin{equation}
   R_{\mu \nu}=0.
 \end{equation}
+Si noti che questa equazione non significa che uno spazio-tempo vuoto è anche
+piatto; per avere quest'ultima condizione deve verificarsi la condizione più
+forte $\tensor{R}{^{\lambda}_{\mu\nu\kappa}} = 0$ (il tensore di Riemann ha 20
+componenti indipendenti, il tendore di Ricci ne ha 10).
 
 \section{Derivazione formale delle Equazioni di Einstein}
 \label{sec:equazioni-einstein}
@@ -93,15 +107,18 @@ Nel vuoto le equazioni di Einstein sono
   convenzione dei segni $(-++)$ seguita
   da~\textcites{barone:relativita,landau:campi}.}
 
-Vogliamo ora determinare le equazioni del campo gravitazionale $g_{\mu\nu}$ a
-partire dal principio variazionale di Hamilton.  Assumiamo che l'azione $S$ sia
-somma di una componente $S_{\textup{g}}$ che descrive solo il campo
-gravitazionale e una componente $S_{\textup{m}}$ relativa alla materia che
-interagisce con il campo.  L'azione deve essere uno scalare, in modo che risulti
-invariante per trasformazioni arbitrarie delle coordinate, e dipenderà dal
-tensore metrico, dalle sue derivate prime, dalle coordinate generalizzate $q$ e
-dalle velocità generalizzate $\lparder{q}{x^{\lambda}}$, $S = S(g_{\mu\nu},
-\lparder{g_{\mu\nu}}{x^{\lambda}}; q, \lparder{q}{x^{\lambda}})$.
+Vogliamo determinare le equazioni del campo gravitazionale a partire dal
+principio variazionale di Hamilton.  Assumiamo che l'azione $S$ sia somma di una
+componente che descrive solo il campo gravitazionale $S_{\textup{g}}
+(g_{\mu\nu}, \lparder{g_{\mu\nu}}{x^{\lambda}})$, dipendente dal tensore metrico
+e dalle sue derivate prime, e una componente relativa alla materia che genera e
+interagisce con il campo $S_{\textup{m}} (g_{\mu\nu},
+\lparder{g_{\mu\nu}}{x^{\lambda}}; q, \lparder{q}{x^{\lambda}})$, dipendente
+dalla metrica, dalle sue derivate prime, oltre che dalle coordinate e velocità
+generalizzate della materia.  L'azione deve essere uno scalare, in modo che
+risulti invariante per trasformazioni arbitrarie delle coordinate.  Inoltre
+nella derivazione dlle equazioni di campo si assume assegnato il moto della
+materia ($\delta q=0$).
 
 Hilbert propose questa espressione per l'azione del campo
 gravitazionale\footnote{Il fattore davanti all'integrale è stato scelto in
@@ -113,23 +130,23 @@ gravitazionale\footnote{Il fattore davanti all'integrale è stato scelto in
 chiamata \index{azione!di Hilbert-Einstein} \emph{azione di Hilbert-Einstein}.
 $G = \SI{6.673 84(80)e-11}{\cubic\metre\per\kilo\metre\per\second\squared}$ è la
 \index{costante!di gravitazione universale}
-\emph{costante di gravitazione universale}.  L'azione della materia ha invece
-espressione\footnote{In uno spazio-tempo piatto $g = 1$, quindi
-  $S_{\textup{m}} = (1/c)\int \Lambda \dd^{4} x = \iint \Lambda \dd t\dd^{3}
-  \bm{x}$, come nella~\eqref{eq:azione-campo}.}
+\emph{costante di gravitazione universale}.
+
+L'azione della materia ha invece l'espressione
 \begin{equation}
   S_{\textup{m}} = \frac{1}{c} \int \Lambda \sqrt{g} \dd^{4} x,
 \end{equation}
-in cui $\Lambda = \Lambda(g^{\mu\nu}, \partial_{\lambda}g^{\mu\nu})$ è la densità
-di lagrangiana associata al sistema che interagisce con il campo
-gravitazionale.  L'interazione fra il campo e la materia è inclusa in
-$S_{\textup{m}}$.
+in cui $\Lambda = \Lambda(g^{\mu\nu}, \partial_{\lambda}g^{\mu\nu};
+q, \partial_{q} g_{\mu \nu})$ è la densità di lagrangiana associata al sistema
+che interagisce con il campo gravitazionale.  L'interazione fra il campo e la
+materia è inclusa in $S_{\textup{m}}$.
 
-Per determinare le equazioni del campo gravitazionale dobbiamo richiedere che
-l'azione sia stazionaria rispetto alle variazioni, a volume fissato,
-$\delta g_{\mu\nu}$ del campo che devono soddisfare inoltre la condizione che si
-annullino sul bordo dell'ipervolume di integrazione.  Dunque dobbiamo imporre
-$\delta S = \delta(S_{\textup{g}} + S_{\textup{m}}) = 0$.  Calcoliamo il
+Per determinare le equazioni del campo (fissato il moto delle sorgenti) dobbiamo
+richiedere che l'azione sia stazionaria rispetto alle variazioni, a volume
+fissato $\Omega$ (tutto lo spazio ordinario tra due istanti di tempo), $\delta
+g_{\mu\nu}$ della metrica, con la condizione che dette variazioni si annullino
+sul bordo $\delta\Omega$ dell'ipervolume di integrazione.  Dunque dobbiamo
+imporre $\delta S = \delta(S_{\textup{g}} + S_{\textup{m}}) = 0$.  Calcoliamo il
 contributo di $\delta S_{\textup{g}}$
 \begin{equation}
   \label{eq:var-HE}
@@ -157,8 +174,7 @@ nella~\eqref{eq:var-HE} otteniamo
 Mostriamo che il secondo integrale è nullo.  Innanzitutto la
 \index{tensore!di Ricci!variazione del}variazione del tensore di Ricci può
 essere espressa in termini di variazioni della connessione affine mediante
-l'\index{identità!di Palatini}\emph{identità di
-  Palatini}\footnote{Si
+l'\index{identità!di Palatini}\emph{identità di Palatini}\footnote{Si
   noti che la variazione della connessione affine è un tensore poiché è la
   differenza fra due connessioni affini, la quale è un tensore come visto nel
   paragrafo~\ref{sec:connessione-affine}.}
@@ -167,8 +183,8 @@ l'\index{identità!di Palatini}\emph{identità di
   \delta R_{\mu\nu} = (\delta \tensor{\Gamma}{^{\lambda}_{\mu\nu}})_{;\lambda} -
   (\delta \tensor{\Gamma}{^{\lambda}_{\mu\lambda}})_{;\nu}.
 \end{equation}
-Allora, ricordando che $g^{\mu\nu}$ commuta con la derivazione covariante, si
-può riscrivere l'integrale in esame come
+Poiché $g^{\mu\nu}$ commuta con la derivazione covariante, si può riscrivere
+l'integrale in esame come
 \begin{equation}
   \begin{split}
     \int g^{\mu\nu} \delta R_{\mu\nu} \sqrt{g} \dd^{4} x &= \int [ ( g^{\mu\nu}
@@ -182,9 +198,10 @@ può riscrivere l'integrale in esame come
 in cui abbiamo applicato il teorema di Gauss in forma
 covariante~\eqref{eq:gauss-covariante}.  Gli ultimi due integrali sulle
 ipersuperfici sono entrambi nulli poiché vanno calcolati sul bordo
-dell'ipervolume costante su cui si calcola la variazione dell'azione e sul bordo
-sono nulle le variazioni di $g_{\mu\nu}$ e quindi anche della connessione
-affine, la quale dipende dal tensore metrico.  Dunque abbiamo trovato che la
+$\delta\Omega$ dell'ipervolume su cui si calcola la variazione dell'azione e sul
+bordo le variazioni di $g_{\mu\nu} = 0$ e quindi anche $\delta
+\tensor{\Gamma}{^{\lambda}_{\mu\nu}} = 0$ e $\delta
+\tensor{\Gamma}{^{\lambda}_{\mu\lambda}} = 0$.  Dunque abbiamo trovato che la
 variazione dell'azione di Hilbert-Einstein è
 \begin{equation}
   \delta S_{\textup{g}} = -\frac{c^{3}}{16\pi G} \int \bigg( R_{\mu\nu} -
@@ -218,7 +235,8 @@ termine si trasforma, per il teorema di Gauss, in un integrale sul bordo del
 volume di integrazione sul quale le variazioni $\delta g^{\mu\nu}$ sono nulle.
 Introduciamo il tensore $T_{\mu\nu}$ definito da
 \begin{equation}
- - \frac{1}{2} \sqrt{g} T_{\mu\nu} = \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
+  \label{5.18}
+  - \frac{1}{2} \sqrt{g} T_{\mu\nu} = \parder{(\sqrt{g}\Lambda)}{g^{\mu\nu}}
   - \parder{}{x^{\lambda}}
   \bigg( \parder{(\sqrt{g}\Lambda)}{\tensor{g}{^{\mu\nu}_{,\lambda}}} \bigg)
 \end{equation}
@@ -226,55 +244,45 @@ Introduciamo il tensore $T_{\mu\nu}$ definito da
 % energia-impulso (e mettere \index{tensore!energia-impulso})
 così la variazione dell'azione della materia diventa
 \begin{equation}
+  \label{5.19}
   \delta S_{\textup{m}} = - \frac{1}{2c} \int T_{\mu\nu} \delta g^{\mu\nu}
   \sqrt{g} \dd^{4} x
 \end{equation}
 e la condizione di stazionarietà dell'azione totale del sistema costituito dal
-campo gravitazionale e dalle particelle interagenti è
+campo gravitazionale e delle sorgenti è
 \begin{equation}
-  \delta S = \delta(S_{\textup{g}} + S_{\textup{m}}) = -\int \bigg(
+  \delta S = \delta(S_{\textup{g}} + S_{\textup{m}}) = -\int \bigg[
   \frac{c^{3}}{16\pi G} \bigg( R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R \bigg) -
-  \frac{1}{2c} T_{\mu\nu} \bigg) \sqrt{g} \delta g^{\mu\nu} \dd^{4} x = 0.
+  \frac{1}{2c} T_{\mu\nu} \bigg] \sqrt{g} \delta g^{\mu\nu} \dd^{4} x = 0,
 \end{equation}
-Data l'arbitrarietà delle variazioni $\delta g^{\mu\nu}$ ricaviamo
+e per l'arbitrarietà delle variazioni $\delta g^{\mu\nu}$ ricaviamo
 \begin{equation}
   \label{eq:einstein}
   G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R = \frac{8\pi G}{c^{4}}
   T_{\mu\nu}
 \end{equation}
-che sono le \emph{equazioni del campo gravitazionale} in presenza di sorgenti,
-chiamate anche \index{equazioni!di Einstein}\emph{equazioni di Einstein}.
+che sono le \emph{equazioni del campo gravitazionale} in presenza di sorgenti.
+Queste equazioni sono dette \index{equazioni!di Einstein}\emph{equazioni di
+  Einstein}.
 
-Per commentare queste equazioni si suol dire che la materia dice allo
-spazio-tempo come curvarsi (informazione contenuta nel tensore di Ricci) e allo
-stesso tempo lo spazio-tempo curvo dice alla materia come muoversi (tensore
-energia-impulso).  Osserviamo che dalla~\eqref{eq:divergenza-tens-einstein}
-deriva che anche il tensore energia-impulso della materia ha quadridivergenza
-covariante nulla $\tensor{T}{^{\mu\nu}_{;\mu}} = 0$.
-
-Riprendiamo la convenzione dei segni $(+--)$ di~\textcite{weinberg:gravitation},
-nella quale compare un segno meno nell'ultimo membro dell'equazione di Einstein,
-come spiegato a pagina~\pageref{eq:convenzione-segni}.  Moltiplicando gli ultimi
-due membri per $g^{\mu\nu}$, in modo da contrarre gli indici $\mu$ e $\nu$,
+Si noti che se riprendiamo la convenzione dei segni $(+--)$
+di~\textcite{weinberg:gravitation}, compare un segno meno nel membro di destra
+dell'equazione di Einstein, come spiegato a
+pagina~\pageref{eq:convenzione-segni}.  Contraendo poi gli indici $\mu$ e $\nu$
 otteniamo
 \begin{equation}
-  R - \frac{1}{2}4R = -R = -\frac{8\pi G}{c^{4}}\tensor{T}{^{\lambda}_{\lambda}}
+  R = \frac{8\pi G}{c^{4}}\tensor{T}{^{\lambda}_{\lambda}},
 \end{equation}
-e sostituendo nella~\eqref{eq:einstein} otteniamo un'espressione alternativa per
-le \index{equazioni!di Einstein}equazioni di Einstein
+e sostituendo nella~\eqref{eq:einstein} otteniamo una diversa espressione per le
+\index{equazioni!di Einstein} equazioni di Einstein
 \begin{equation}
   R_{\mu\nu} = -\frac{8\pi G}{c^{4}} \bigg( T_{\mu\nu} -
   \frac{1}{2}g_{\mu\nu}\tensor{T}{^{\lambda}_{\lambda}} \bigg).
 \end{equation}
-Da qui possiamo osservare che nel vuoto, cioè in assenza di materia, il tensore
-energia-impulso è nullo quindi le \index{equazioni!di Einstein}equazioni di
-Einstein si riducono a
+Nel vuoto, cioè in assenza di materia $T_{\mu \nu} =0$, si ha
 \begin{equation}
   R_{\mu\nu} = 0.
 \end{equation}
-Si noti che questa equazione non significa che uno spazio-tempo vuoto è anche
-piatto, per avere quest'ultima condizione deve verificarsi la condizione più
-forte $\tensor{R}{^{\lambda}_{\mu\nu\kappa}} = 0$.
 
 \subsection{Limite newtoniano delle equazioni di Einstein}
 \label{sec:limite-newtoniano-einstein}
@@ -369,7 +377,244 @@ per il campo gravitazionale
 \section{Isometrie delo spazio-tempo; vettori di Killing}
 \label{sec:vettori di Killing}
 
-Vedi~\textcite[300-306]{ohanian:gravitazione}.
+\emph{Per approfondire questo argomento puoi
+  vedere~\textcites[300-306]{ohanian:gravitazione}[176]{weinberg:gravitation}.}
+
+Se il tensore metrico $g_{\mu \nu}$ di una data geometria spazio-temporale è
+invariante rispetto ad una trasformazione delle coordinate
+$x'^{\mu}=x'^{\mu}(x)$, si dice che questa trasformazione è una isometria dello
+spazio-tempo.  Questo significa che $g'_{\mu \nu}(x')$ dipende da $x'^{\mu}$
+nello stesso modo in cui $g_{\mu \nu}(x)$ dipende da $x^{\mu}$, cioè\footnote{Ad
+  esempio, traslazioni, rotazioni e trasformazioni di Lorentz sono isometrie
+  dello spazio-tempo piatto, nel senso che la metrica $\eta_{\mu \nu}$ non
+  cambia relativamente a ognuna di queste trasformazioni.}
+\begin{subequations}
+  \label{W13.1.1}
+  \begin{align}
+    g'_{\mu \nu} (x') &= g_{\mu \nu}(x') \\
+    g'_{\mu \nu} (x) &= g_{\mu \nu}(x).
+  \end{align}
+\end{subequations}
+Queste condizioni sono differenti dalla condizione per un campo scalare, per il
+quale $\phi'(x')=\phi(x)$.  La condizione per avere una isometria per il campo
+scalare è che $\phi'(x') = \phi(x')$.
+
+Vediamo ora quali condizioni devono essere soddisfatte perché una generica
+trasformazione di coordinate $x'^{\mu} = x'^{\mu}(x)$ sia una isometria.
+Sappiamo che a un assegnato punto dello spazio-tempo di coordinate $x^{\mu}$ la
+metrica si trasforma come un tensore
+\begin{equation}
+  g_{\mu \nu} (x) = \parder{x'^{\rho}}{x^{\mu}} \parder{x'^{\sigma}}{x^{\nu}}
+  g'_{\rho \sigma}(x').
+\end{equation}
+Se assumiamo valide le condizioni~\eqref{W13.1.1}, possiamo sostituire $g'_{\rho
+  \sigma}(x')$ con $g_{\rho \sigma}(x')$ e ottenere la relazione fondamentale
+per l'invarianza in forma della metrica
+\begin{equation}
+  \label{W13.1.2}
+  g_{\mu \nu} (x) = \parder{x'^{\rho}}{x^{\mu}} \parder{x'^{\sigma}}{x^{\nu}}
+  g_{\rho \sigma}(x')
+\end{equation}
+In generale, l'equazione~\eqref{W13.1.2} introduce una complicata restrizione
+alle funzioni $x'^{\mu}(x)$, che può essere semplificata considerando
+trasformazioni di coordinate infinitesime:
+\begin{equation}
+  x'^{\mu} = x^{\mu} + \epsilon \xi^{\mu}, \qquad \text{con} \quad
+  \abs{\epsilon} \ll 1.
+\end{equation}
+Per una trasformazione infinitesima si ha
+\begin{equation}
+  \parder{x'{^\rho}}{x^{\mu}} = \delta^{\rho}_{\mu} + \epsilon
+  \parder{\xi^{\rho}}{x^{\mu}}
+\end{equation}
+così che, al primo ordine in $\epsilon$ l'equazione~\eqref{W13.1.2} diventa
+\begin{equation}
+  g_{\mu \nu} (x) = \biggl(\tensor{\delta}{^{\rho}_{\mu}} +
+  \epsilon \parder{\xi^{\rho}}{x^{\mu}}\biggr)
+  \biggl(\tensor{\delta}{^{\sigma}_{\nu}} +
+  \epsilon \parder{\xi^{\sigma}}{x^{\nu}}\biggr) g_{\rho \sigma}(x')
+\end{equation}
+da cui segue
+\begin{equation}
+  g_{\mu \nu} (x) = g_{\mu \nu}(x')
+  + \epsilon \parder{\xi^{\rho}}{x^{\mu}} g_{\rho \nu}(x') +
+  \epsilon \parder{\xi^{\sigma}}{x^{\nu}} g_{\mu \sigma}(x').
+\end{equation}
+Possiamo ora espandere $g_{\mu \nu}(x'=x+\epsilon \xi)$ in serie di Taylor
+attorno a $x$,
+\begin{equation}
+  g_{\mu \nu} (x') \simeq
+  g_{\mu \nu} (x) + \epsilon \xi^{\rho} \frac {\partial g_{\mu \nu}(x)}{\partial x^{\rho}}
+\label{13.36}
+\end{equation}
+In questo modo, trascurando i termini dell'ordine di $\epsilon^2$, si ottiene
+\begin{equation}
+  0 = \xi^{\rho} g_{\mu \nu ,\rho} + \tensor{\xi}{^{\rho}_{,\mu}} g_{\rho \nu} +
+  \tensor{\xi}{^{\sigma}_{,\nu}} g_{\mu \sigma}
+\end{equation}
+Questa equazione può essere riscritta in termini delle componenti covarianti del
+vettore $\xi_{\nu} = g_{\rho \nu} \xi^{\rho}$ e $\xi_{\mu} = g_{\mu \sigma}
+\xi^{\sigma}$.  Si ottiene:
+\begin{equation}
+  0 = \xi^{\rho} g_{\mu \nu ,\rho}
+  +   \xi_{\nu,\mu} + \xi_{\mu,\nu}
+  - \xi^{\rho} g_{\rho \nu,\mu} - \xi^{\sigma} g_{\mu \sigma,\nu}
+\end{equation}
+anche uguale a (utilizzando la definizione di $\tensor{\Gamma}{^{\rho}_{\mu
+    \nu}}$)
+\begin{equation}
+  0 =   \xi_{\nu,\mu} + \xi_{\mu,\nu}
+  + \xi^{\rho} (g_{\mu \nu,\rho}
+  -             g_{\rho \nu,\mu} - g_{\mu \rho,\nu})
+  =   \xi_{\nu,\mu} + \xi_{\mu,\nu} -2 \xi_{\rho} \tensor{\Gamma}{^{\rho}_{\mu
+      \nu}}
+\end{equation}
+e infine
+\begin{equation}
+  \label{W13.1.5}
+  \xi_{\mu;\nu}+\xi_{\nu;\mu} =0.
+\end{equation}
+Questa equazione differenziale è detta \emph{equazione di Killing}.  Essa è
+stata ottenuta per trasformazioni infinitesime, ma si può dimostrare che una
+trasformazione finita può essere ottenuta (integrando) a partire da
+trasformazioni infinitesime.
+
+Si osservi anche che dall'equazione~\eqref{13.36} si ha in generale che per una
+trasformazione infinitesima (vedi~\textcite[355]{landau:campi})
+\begin{equation}
+  \delta g_{\mu \nu}(x) \equiv g'_{\ \mu \nu}(x) - g_{\mu \nu}(x) =
+  -\xi_{\mu;\nu}-\xi_{\nu;\mu}
+\label{L94.3}
+\end{equation}
+Questa relazione permette di scrivere la variazione dell'azione della materia
+$\delta S_{\textup{m}}$ in una forma differente, da cui si deduce che il tensore
+$T_{\mu \nu}$ definito nell'equazione~\eqref{5.18} soddisfa l'equazione
+\begin{equation}
+  \tensor{T}{^{\mu}_{\nu ; \mu}} = 0.
+\end{equation}
+Confrontando questa equazione con la legge di conservazione
+$\lparder{\tensor{T}{^{\mu}_{\nu}}}{x^{\mu}}=0$ ottenuta in relatività speciale,
+vediamo appunto che $T_{\mu \nu}$ è il tensore energia-impulso.
+
+Cominciamo a osservare che $\delta g^{\mu \nu}(x) = \xi^{\mu;\nu}+\xi^{\nu;\mu}$
+poiché $\delta g^{\mu \nu}(x) \delta g_{\rho \nu} =
+\tensor{\delta}{^{\mu}_{\rho}}$.  Ora possiamo riscrivere $\delta
+S_{\textup{m}}$ nel seguente modo:
+\begin{equation}
+  \delta S_{\textup{m}} = \frac{1}{2c}\int T_{\mu \nu} (\xi^{\mu ;\nu} +
+  \xi^{\nu;\mu}) \sqrt{g} d^4x = \frac{1}{c} \int T_{\mu \nu}  \xi^{\mu;\nu}
+  \sqrt{g} \dd^4x
+\end{equation}
+Trasformiamo ora questa espressione nel seguente modo:
+\begin{equation}
+  \delta S_{\textup{m}} = \frac{1}{c} \int (\tensor{T}{^{\mu}_{\nu}}  \xi^{\nu})_{;\mu}
+  \sqrt{g} \dd^4x - \frac{1}{c} \int \tensor{T}{^{\mu}_{\nu; \mu}} \xi^{\nu}
+  \sqrt{g} \dd^4x.
+\end{equation}
+Il primo integrale è nullo perché attraverso il teorema di Gauss può essere
+trasformato in un integrale al bordo $\delta \Omega$ su cui le variazioni
+$\delta g_{\mu \nu}=0$ e quindi anche $\xi^{\nu}=0$.  Si trova dunque che
+annullando $\delta S_{\textup{m}}$:
+\begin{equation}
+  \delta S_{\textup{m}} = - \frac{1}{c} \int \tensor{T}{^{\mu}_{\nu; \mu}}
+  \xi^{\nu} \sqrt{g} \dd^4x
+\end{equation}
+e quindi poiché le variazioni $\xi^{\nu}$ della metrica sono arbitrarie,
+$\tensor{T}{^{\mu}_{\nu:\mu}}=0$.
+
+È ben noto che secondo il teorema di Noether a ogni simmetria di un sistema
+fisico corrisponde una legge di conservazione.  Ad esempio, nello spazio-tempo
+piatto la simmetria per traslazioni spaziali implica la conservazione
+dell'impulso, la simmetria per traslazioni temporali implica la conservazione
+dell'energia e quella per rotazioni la conservazione del momento angolare.
+Nello spazio-tempo curvo possiamo formulare le leggi di conservazione a partire
+dai vettori di Killing.
+
+Ad esempio, dimostriamo che se $\xi_{\mu}$ è un vettore di Killing per la
+metrica, allora se una particella si muove lungo una geogetica, il prodotto
+scalare del vettore di Killing per il 4-impulso della particella $P^{\mu}= m
+\ltoder{x^{\mu}}{\tau}$ è costante.  Infatti
+\begin{equation}
+  \label{ORp305,186}
+  \toder{}{\tau} (\xi_{\mu} P^{\mu}) = \xi_{\mu} \toder{P^{\mu}}{\tau} + P^{\mu}
+  \toder{\xi_{\mu}}{\tau}.
+\end{equation}
+Usiamo l'equazione della geodetica
+\begin{equation}
+  \toder{P^{\mu}}{\tau} = -\tensor{\Gamma}{^{\mu}_{\alpha \nu}} P^{\alpha}
+  \toder{x^{\nu}}{\tau}
+\end{equation}
+e la definizione di derivata covariante
+\begin{equation}
+  \toder{\xi_{\mu}}{\tau} = \parder{\xi_{\mu}}{x^{\nu}} \toder{x^{\nu}}{\tau} =
+  (\xi_{\mu;\nu} + \tensor{\Gamma}{^{\alpha}_{\mu \nu}} \xi_{\alpha})
+  \toder{x^{\nu}}{\tau}.
+\end{equation}
+Sostituiamo ora queste due espressioni nell'equazione~\eqref{ORp305,186}.  I due
+termini con la connessione affine si elidono e rimane
+\begin{equation}
+  \label{ORp305,187}
+  \toder{}{\tau} (\xi_{\mu} P^{\mu}) = \xi_{\mu;\nu} P^{\mu}
+  \toder{x^{\nu}}{\tau} = \frac{1}{2m} (\xi_{\mu;\nu} + \xi_{\nu;\mu}) P^{\mu}
+  P^{\nu}
+\end{equation}
+da cui se $\xi_{\mu}$ soddisfa l'equazione~\eqref{W13.1.5} di Killing,
+$\xi_{\mu} P^{\mu}$ si conserva lungo la geodetica.
+
+Il metodo usuale per la costruzione dei vettori di Killing della metrica è
+quello di cercare quali sono le coordinate dello spazio-tempo dalle quali la
+metrica risulta indipendente.  Ad esempio, se $g_{\mu \nu}$ non dipende dal
+tempo un vettore di Killing associato a questa metrica è $\xi^{\mu} = (1,0,0,0)$
+e come conseguenza dalla condizione $\xi^{\mu} P_{\mu}= \text{cost}$ segue che
+l'energia della particella è costante nel tempo (se la particella si muove sulla
+geodetica):
+\begin{equation}
+  \xi^{0} g_{00} p^0 = - \biggl(1 - \frac{r}{r_{\rm S}}\biggr) \toder{t}{\tau} =
+  -E = \text{cost}.
+\end{equation}
+
+In modo analogo, se la metrica non dipende dalla coordinata $\phi$, (la metrica
+è quindi invariante per rotazioni attorno all'asse $z$) il corrispondente
+vettore di Killing è $\xi^{\mu}=(0,0,0,1)$, da cui segue la legge di
+conservazione del momento angolare. In particolare poiché per il moto lungo una
+geodetica il moto avviene in un piano $\theta=\text{cost}$ (e quindi senza
+perdere in generalità $\sin \theta=1$) dalla condizione $\xi^{\mu} P_{\mu}=
+\text{cost}$ si ha
+\begin{equation}
+  \xi^{3} g_{33} p^3 = - r^2 \toder{\phi }{\tau} = - \frac{L}{m} = \text{cost}.
+\end{equation}
+
+Un modo equivalente per derivare la conservazione dell'energia e del momento
+angolare di una particella in moto lungo una geodetica è quello di scrivere
+esplicitamente la lagrangiana della particella
+\begin{equation}
+  \mathcal{L} = \frac{1}{2} g_{\mu \nu} \dot{x}^{\mu} \dot{x}^{\nu}.
+\end{equation}
+Per derivare l'espressione precedente uso il principio di generale covarianza:
+scrivo la lagrangiana di una particella libera in relatività speciale e
+sostituisco la metrica $g_{\mu \nu}$ a $\eta_{\mu \nu}$.  Ad esempio, per la
+metrica di Schwarzschild
+\begin{equation}
+  2\mathcal{L} = \biggl(1-\frac{2m}{r}\biggr)\dot{t}^2 -
+  \biggl(1-\frac{2m}{r}\biggr)^{-1}\dot{r}^2 - r^2 (\dot{\theta}^2 +
+  \sin^2\theta\dot{\phi}^2)
+\end{equation}
+dove il punto denota la derivata rispetto a $\tau$ ed $m = GM/c^{2}$.  Poiché le
+variabili $t$ e $\phi$ sono cicliche (la metrica non dipende da queste
+variabili), si ha che i corrispondenti momenti coniugati sono costanti del
+moto. In particolare
+\begin{subequations}
+  \begin{align}
+    -\parder{\mathcal{L}}{\dot{\phi}} &= r^2 \dot{\phi} = L = \text{cost}, \\
+    \parder{\mathcal{L}}{\dot{t}} &= \biggl(1-\frac{2m}{r}\biggr) \dot{t} = E =
+                                    \text{cost}.
+  \end{align}
+\end{subequations}
+
+\section{Pseudo tensore energia-impulso del campo gravitazionale}
+\label{sec:pseudo-tensore-energia-impulso-campo-grav}
+
+Vedi~\textcite[367-374]{landau:campi}.
 
 %%% Local Variables:
 %%% mode: latex

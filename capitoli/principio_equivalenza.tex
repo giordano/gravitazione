@@ -940,7 +940,7 @@ Einstein\footnote{Anticipiamo che l'equazione precedente può essere ricavata
 \end{equation}
 oppure nella seguente forma vettoriale
 \begin{equation}
-  \nabla \times \bm{b} = 16\pi G \bm{S},
+  \nabla \times \bm{b} = - 16\pi G \bm{S},
 \end{equation}
 in cui $\bm{S} = (T^{01}, T^{02}, T^{03}) = \rho \bm{v}$ è l'analogo del
 \index{vettore!di Poynting}vettore di Poynting $(\bm{E}\times\bm{B})/4\pi$ per
@@ -989,12 +989,12 @@ in cui
 \end{equation}
 
 Per il campo gravitomagnetico possiamo trovare relazioni analoghe.  Abbiamo
-visto che $\nabla \times \bm{b} = 16 \pi G \bm{S}$ e
+visto che $\nabla \times \bm{b} = - 16 \pi G \bm{S}$ e
 $\bm{b} = \nabla \times \bm{h}$, allora imponendo una condizione analoga a
 quella di Lorenz $\nabla \cdot \bm{h} = 0$ abbiamo
 \begin{equation}
   \nabla \times \nabla \times \bm{h} = \nabla (\nabla \cdot \bm{h}) - \nabla^{2}
-  \bm{h} = - \nabla^{2} \bm{h} = 16\pi G \bm{S}.
+  \bm{h} = - \nabla^{2} \bm{h} = - 16\pi G \bm{S}.
 \end{equation}
 Una soluzione sarà quindi data da
 \begin{equation}
@@ -1008,7 +1008,7 @@ Una soluzione sarà quindi data da
   % concordi ai miei (lui fa il calcolo con il potenziale ritardato, il suo B è
   % il mio b/2), compreso il segno, alla fine, di b e della velocità angolare di
   % precessione di Lense-Thirring.
-  \bm{h}(\bm{r}) = 4 G \int \frac{\bm{S}(\bm{r}') \dd^{3} \bm{r}'}{\norm{\bm{r}
+  \bm{h}(\bm{r}) = - 4 G \int \frac{\bm{S}(\bm{r}') \dd^{3} \bm{r}'}{\norm{\bm{r}
       - \bm{r}'}}
 \end{equation}
 e per sistemi localizzati definiamo l'analogo gravitazionale del momento di
@@ -1021,9 +1021,9 @@ in cui $\bm{L} = \int \bm{r} \times \rho \bm{v} \dd^{3} \bm{r}$ è per
 definizione il momento angolare totale classico.  Quindi abbiamo anche
 \begin{subequations}
   \begin{align}
-    \bm{h} &= 4G \frac{\bm{m}_{\textup{g}} \times \bm{r}}{\norm{\bm{r}}^{3}} =
-    2G \frac{\bm{L} \times \bm{r}}{\norm{\bm{r}}^{3}}, \\[1ex]
-    \bm{b} &= \nabla \times \bm{h} = 2G\frac{3\versor{r}(\versor{r} \cdot
+    \bm{h} &= - 4G \frac{\bm{m}_{\textup{g}} \times \bm{r}}{\norm{\bm{r}}^{3}} =
+    - 2G \frac{\bm{L} \times \bm{r}}{\norm{\bm{r}}^{3}}, \\[1ex]
+    \bm{b} &= - \nabla \times \bm{h} = - 2G\frac{3\versor{r}(\versor{r} \cdot
       \bm{L}) - \bm{L}}{\norm{\bm{r}}^{3}}.
   \end{align}
 \end{subequations}
@@ -1047,7 +1047,7 @@ si trova
   \bm{S},
 \end{equation}
 con $\dot{\bm{\Omega}}$ velocità angolare di precessione dello spin $\bm{S}$
-attorno alla direzione del vettore $\bm{\Omega}$.  Quindi la velocità angolare
+attorno alla direzione del vettore $\bm{b}$.  Quindi la velocità angolare
 di precessione del giroscopio è (ripristiniamo la velocità della luce nel
 vuoto)\footnote{Il risultato differisce da quello di
   \textcite[193]{ohanian:gravitazione} per il segno, ma, come osservato nella
@@ -1056,7 +1056,7 @@ vuoto)\footnote{Il risultato differisce da quello di
   $\dot{\bm{\Omega}}$ è opposto al loro e i risultati fisici sono coerenti.}
 \begin{equation}
   \dot{\bm{\Omega}} = -\frac{\bm{b}}{2} =
-  -\frac{G}{c^{2}}\frac{3\versor{r}(\versor{r} \cdot \bm{L}) -
+  + \frac{G}{c^{2}}\frac{3\versor{r}(\versor{r} \cdot \bm{L}) -
     \bm{L}}{\norm{\bm{r}}^{3}}.
 \end{equation}
 Se il campo gravitomagnetico $\bm{b}$ è non nullo si ha una precessione di un
@@ -1083,31 +1083,33 @@ posizione $\bm{r}$ del giroscopio è istante per istante perpendicolare al
 momento angolare $\bm{L}_{\oplus}$ della Terra, quindi la velocità di
 precessione vale
 \begin{equation}
-  \dot{\bm{\Omega}}_{\textup{LT}} = \frac{G}{c^{2}}
+  \dot{\bm{\Omega}}_{\textup{LT}} = - \frac{G}{c^{2}}
   \frac{\bm{L}_{\oplus}}{\norm{\bm{r}}^{3}}.
 \end{equation}
-La Terra non è perfettamente sferica e presenta di conseguenza un momento di
-quadrupolo non nullo che induce sul giroscopio un'ulteriore precessione.  Nelle
+il che significa che il giroscopio precede in direzione retrograda, cioè opposta
+alla direzione di rotazione terrestre.
+
+La Terra però non è perfettamente sferica e presenta un momento di quadrupolo di
+massa non nullo che induce sul giroscopio una precessione prograda.  Nelle
 orbite equatoriali la precessione dovuta al quadrupolo è massima ed è circa
-$100$ più importante rispetto a quella di Lense-Thirring, quest'ultima è dunque
-difficile da misurare praticamente.  La precessione dovuta la momento di
-quadrupolo è invece nulla se il giroscopio si muove in orbite polari.  Per
-orbite polari circolari si trova che
-$\langle \versor{r}(\versor{r} \cdot \bm{L})\rangle = \langle \bm{L}
-\cos^{2}(\omega t)\rangle = \bm{L}/2$,
-quindi la velocità di precessione di Lense-Thirring è data da
+$100$ più grande rispetto a quella di Lense-Thirring, quest'ultima è dunque
+difficile da misurare praticamente.  La precessione dovuta al momento di
+quadrupolo è invece nulla se il giroscopio si muove in orbite polari.
+
+Per orbite polari circolari si trova che $\langle \versor{r}(\versor{r} \cdot
+\bm{L})\rangle = \langle \bm{L} \cos^{2}(\omega t)\rangle = \bm{L}/2$, quindi la
+velocità di precessione di Lense-Thirring è data da
 \begin{equation}
-  \dot{\bm{\Omega}}_{\textup{LT}} = -\frac{G}{c^{2}} \frac{3\bm{L}_{\oplus}/2 -
-    \bm{L}_{\oplus}}{\norm{\bm{r}}^{3}} = -\frac{G}{2c^{2}}
+  \dot{\bm{\Omega}}_{\textup{LT}} = \frac{G}{c^{2}} \frac{3\bm{L}_{\oplus}/2 -
+    \bm{L}_{\oplus}}{\norm{\bm{r}}^{3}} = \frac{G}{2c^{2}}
   \frac{\bm{L}_{\oplus}}{\norm{\bm{r}}^{3}}.
 \end{equation}
 Se il giroscopio orbita vicino alla superficie terrestre, possiamo porre
-$\norm{\bm{r}} \approx R_{\oplus}$.  Poiché inoltre
-$\bm{L}_{\oplus} = \SI{5.86e40}{\gram \centi\metre\squared \per\second}$, la
-velocità angolare di precessione precedente corrisponde a uno spostamento
-angolare in un anno
+$\norm{\bm{r}} \approx R_{\oplus}$.  Poiché inoltre $\bm{L}_{\oplus} =
+\SI{5.86e40}{\gram \centi\metre\squared \per\second}$, la velocità angolare di
+precessione precedente corrisponde a uno spostamento angolare in un anno
 $\alpha_{\textup{LT}} = \dot{\bm{\Omega}}_{\textup{LT}} \cdot \SI{1}{yr} \approx
--\SI{0.055}{\arcsecond}$.
+\SI{0.055}{\arcsecond}$.
 
 L'esperimento GP-B (Gravity Probe B) a bordo di un satellite lanciato nel 2004
 (Everit et al.) è stato progettato per misurare due fondamentali predizioni
@@ -1117,25 +1119,24 @@ dell'elio liquido, in orbita attorno alla Terra.  La direzione dei giroscopi è
 determinata guardando alla stella IM Pegasi.  Comunque la misura della
 deviazione geodetica circa 6.6 arcsec/anno (nella stessa direzione della
 rotazione del satellite) è OK, mentre a causa della difficoltà di calibrazione
-la misura dell'angolo di Lense-Thirring (nella direzione est di rotazione
-terrestre, per un satellite in orbita polare) non è riuscita.
+la misura dell'angolo di Lense-Thirring (circa 0,06 arcsec/anno, nella direzione
+della rotazione terrestre) non è riuscita.
 
-I. Ciufolini ha proposto di usare un satellite (passivo dotato di
-retro-reflettori per determinare la posizione attraverso segnali laser trasmessi
-da una serie di stazioni a terra) in orbita attorno alla terra al posto di un
-giroscopio: è il momento angolare orbitale $\bm{L}$ del satellite (sostituisce
-lo spin del giroscopio dell'esperimento GP-B) che precede con velocità
-$\dot{\bm{\Omega}}_{\textup{LT}}$.  Con l'uso di 2 satelliti su orbite non
-polari (influenzate quindi fortemente dalla non-sfericità della terra) e
-formanti angoli opposti rispetto all'orbita polare è possibile eliminare gli
-effetti dovuti alla non sfericità terrestre sulla posizione dei nodi
-(intersezioni della traiettoria del satellite con il piano dell'orbita
-terrestre).  L'angolo di Lense-Thirring corrisponde ad un avanzamento della
-posizione dei nodi
-$\var l_{\textup{LT}} = \alpha_{\textup{LT}} \cdot R_{\oplus} \approx
--\SI{2}{\metre/anno}$.
-L'analisi dei dati conferma l'effetto Lense-Thirring con una precisione del
-10\%.
+I. Ciufolini ha proposto di usare un satellite (passivo, dotato di
+retro-reflettori usati per tracciare la posizione del satellite attraverso
+segnali laser trasmessi da una serie di stazioni a terra) in orbita attorno alla
+Terra, piuttosto che un giroscopio a bordo di un satellite: in questo caso è il
+momento angolare orbitale $\bm{L}$ del satellite che precede con velocità
+angolare $\dot{\bm{\Omega}}_{\textup{LT}}$.  Inoltre, utilizzando 2 satelliti su
+orbite non polari (influenzate quindi fortemente dalla non-sfericità della
+terra) ma formanti angoli opposti rispetto all'orbita polare, è possibile
+eliminare gli effetti dovuti alla non sfericità terrestre determinando la
+posizione dei nodi (intersezioni della traiettoria del satellite con il piano
+dell'orbita terrestre).  L'angolo di Lense-Thirring corrisponde ad un
+avanzamento della posizione dei nodi $\var l_{\textup{LT}} =
+\alpha_{\textup{LT}} \cdot R_{\oplus} \approx -\SI{2}{\metre/anno}$.  L'analisi
+dei dati conferma l'effetto Lense-Thirring con una precisione di circa il 10\%
+(Ciufolini et al. Nature 2009).
 
 \section{Dilatazione gravitazionale del tempo e red-shift}
 \label{sec:red-shift-gravitazionale}
@@ -1170,20 +1171,25 @@ L'analisi dei dati conferma l'effetto Lense-Thirring con una precisione del
   \label{fig:redshift}
 \end{figure}
 Con riferimento alla figura~\ref{fig:redshift}, consideriamo uno sperimentatore
-posto nel punto $r_{1}$ che invia una sequenza periodica di segnali allo
-sperimentatore in $r_{2}$ in presenza di un campo gravitazionale statico.
-Poiché i segnali sono periodici, un osservatore esterno posto a distanza
-$r \to \infty$ dal sistema vedrà che i segnali sono inviati da $r_{1}$ con una
-separazione temporale $\dd t$ costante l'uno dal successivo.  Se non sono
-presenti effetti dipendenti dal percorso, come l'effetto Lense-Thirring, tutti i
-segnali impiegano lo stesso tempo per giungere a destinazione, in conseguenza
-della staticità del campo gravitazionale.  Allora l'osservatore esterno vedrà
-che i segnali sono ricevuti con la stessa separazione temporale $\dd t$ in
-$r_{2}$.  Tuttavia per questo osservatore, fermo nel suo sistema di riferimento
-(quindi $\dd x^{i} = 0$), il campo gravitazionale è assente, lo spazio-tempo è
-quello piatto descritto dal tensore metrico di Minkowski $\eta_{\mu\nu}$ e il
-tempo proprio che misura è $\dd\tau = \sqrt{-\eta_{00}}\dd t = \dd t$.  Invece
-per gli sperimentatori fermi in $r_{1}$ e $r_{2}$ i tempi propri sono,
+posto nel punto $r_{1}$, in prossimità della superficie solare, che invia una
+sequenza periodica di segnali a uno sperimentatore posto in $r_{2}$, sulla
+Terra, in presenza di un campo gravitazionale statico.
+
+Poiché i segnali sono periodici, un osservatore esterno posto a distanza $r \to
+\infty$ dal sistema, vedrà che i segnali sono inviati da $r_{1}$ con una
+separazione temporale $\dd t$ costante, che tutti i segnali impiegheranno lo
+stesso tempo per giungere a destinazione e che l'osservatore in $r_2$ riceverà i
+segnali con la stessa separazione temporale $\dd t$.
+
+Ora, per eventi che accadono nella stessa posizione ($\dd x^i=0$), il legame tra
+coordinata temporale $t$ e tempo proprio $\tau$ (il tempo che sarebbe letto su
+di un orologio locale) è
+\begin{equation}
+  \dd \tau = \dd t \sqrt{g_{00}}.
+\end{equation}
+Allora per l'osservatore all'infinito, per il quale il campo gravitazionale è
+assente, la coordinata temporale misura il tempo proprio, $\dd\tau = \dd t$.
+Invece per gli sperimentatori in $r_{1}$ e $r_{2}$ i tempi propri sono,
 rispettivamente,
 \begin{subequations}
   \begin{align}
@@ -1196,58 +1202,54 @@ Dividendo membro a membro queste relazioni abbiamo
   \frac{\dd \tau_{2}}{\dd \tau_{1}} =
   \sqrt{\frac{g_{00}(r_{2})}{g_{00}(r_{1})}}.
 \end{equation}
-Supponiamo che il campo gravitazionale a cui sono soggetti i due sperimentatori
-sia debole, abbiamo visto che in questo caso vale l'approssimazione
-$g_{00}(r) = -(1 + 2\phi(r))$, in cui $\phi(r)$ è il potenziale gravitazionale
-newtoniano nel punto $r$, quindi
+Supponiamo che il campo gravitazionale sia generato da una massa $M$ e che esso
+sia debole ($M$ sia un oggetto non collassato, quindi di raggio $ R \gg
+r_{\textup{S}} = 2GM/c^2$).  In questo caso vale l'approssimazione $g_{00}(r) =
+-(1 + 2\phi(r))$, con $\phi(r)=-GM/r$, potenziale gravitazionale newtoniano nel
+punto $r$.  Quindi
 \begin{equation}
   \frac{\dd\tau_{2}}{\dd\tau_{1}} = \sqrt{\frac{1 + 2\phi_{2}}{1 + 2\phi_{1}}}.
 \end{equation}
-Poiché abbiamo supposto che il campo sia debole risulta $\phi \ll 1$, allora
-usando l'approssimazione $(1+x)^{\alpha} \approx 1 + \alpha x$ valida per
-$x \to 0$, abbiamo
+da cui segue ($(1+x)^{\alpha} \approx 1 + \alpha x$, per $x \to 0$)
 \begin{equation}
-  \begin{split}
-    \frac{\dd \tau_{2}}{\dd \tau_{1}} &=
-    \sqrt{\frac{1 + 2\phi_{2}}{1 + 2\phi_{1}}} \approx (1 + \phi_{2}) (1 -
-    \phi_{1}) = 1 + \phi_{2} - \phi_{1} + \mathcal{O}(\phi^{2}) \\
-    &\approx 1 + \phi_{2} - \phi_{1}.
-  \end{split}
+  \frac{\dd \tau_{2}}{\dd \tau_{1}} =
+  \sqrt{\frac{1 + 2\phi_{2}}{1 + 2\phi_{1}}} \approx (1 + \phi_{2}) (1 -
+  \phi_{1}) = 1 + \phi_{2} - \phi_{1} + \mathcal{O}(\phi^{2}) 
 \end{equation}
-Dunque, se $\phi_{2} > \phi_{1}$ il rapporto fra la differenza dei tempi
-misurati nei due punti e il tempo misurato dallo sperimentatore in $r_{1}$ è
-(ripristiniamo la velocità della luce nel vuoto $c$)
+Dunque (ripristiniamo la velocità della luce nel vuoto $c$)
 \begin{equation}
   \frac{\var\tau}{\tau} = \frac{\dd\tau_{2} - \dd\tau_{1}}{\dd\tau_{1}} =
-  \frac{\phi_{2} - \phi_{1}}{c^{2}} > 0,
+  \frac{\phi_{2} - \phi_{1}}{c^{2}},
 \end{equation}
-cioè il tempo misurato in $r_{2}$ è maggiore rispetto al tempo misurato in
-$r_{1}$.  Per i sistemi legati le energie sono negative, quindi
-$\phi_{2} > \phi_{1}$ equivale a $\abs{\phi_{1}} > \abs{\phi_{2}}$, cioè il
-punto a potenziale $\phi_{1}$ risente maggiormente del campo gravitazione
-rispetto al punto a potenziale $\phi_{2}$.  Questo fenomeno prende il nome di
-\index{dilatazione!del tempo!in relatività generale}
-\emph{dilatazione gravitazionale del tempo} e può essere descritto in parole
-povere dicendo che un orologio batte il tempo più lentamente in presenza di un
-campo gravitazionale intenso (negativamente) rispetto a un orologio identico in
-un campo meno intenso.  Per un campo gravitazionale debole a simmetria sferica
-$\phi(r) = -GM/r$ e l'equazione precedente si può scrivere come
+e se prendiamo $r_1 \simeq R_\odot$ (emettitore sulla superficie solare, dove
+$\phi_1 = - GM{\odot}/(c^2 R_{\odot}) \simeq -2.12 \cdot 10^{-6}$) ed $r_2$
+sulla superficie terrestre dove $\phi_2 = -GM_{\oplus}/(c^2 R_{\oplus}) \simeq -
+10^{-9}$, avremo
 \begin{equation}
-  \frac{\var\tau}{\tau} = \frac{\dd\tau_{2} - \dd\tau_{1}}{\dd\tau_{1}} =
-  \frac{\phi_{2} - \phi_{1}}{c^{2}} = \frac{GM}{c^{2}}\bigg(\frac{1}{r_{1}} -
-  \frac{1}{r_{2}} \bigg) > 0,
+  \frac{\var\tau}{\tau} = \frac{\dd\tau_{2} - \dd\tau_{1}}{\dd\tau_{1}} \simeq 
+  - \frac{\phi_{1}}{c^{2}} \simeq 2.12 \cdot 10^{-6} > 0,
 \end{equation}
-se $r_{1} < r_{2} \implies \phi_{1} < \phi_{2}$.
+cioè, pur considerando eventi separati da una stessa coordinata temporale,
+l'intervallo di tempo $\dd\tau_2$ trascorso in $r_{2}$ è maggiore del tempo
+trascorso in $r_{1}$ (e misurato in $r_2$).  Si ha quindi un fenomeno di
+\index{dilatazione!del tempo!in relatività generale} \emph{dilatazione
+  gravitazionale del tempo} che può essere descritto dicendo che un orologio
+batte il tempo più lentamente in presenza di un campo gravitazionale intenso
+rispetto a un orologio identico in un campo meno intenso.
 
-La verifica sperimentale di questo fenomeno è stata un'importante dimostrazione
-diretta della curvatura dello spazio-tempo.  Gli esperimenti infatti hanno
-confermato che nella vicinanza di un corpo massivo sferico la componente
-$g_{00}$ del tensore metrico vale $-(1-2GM/r)$ e non $-1$, come dovrebbe
-risultare se lo spazio-tempo fosse piatto.  Per il principio di equivalenza il
-campo gravitazionale non potrebbe influenzare il ritmo di un orologio in caduta
-libera se non mediante un cambiamento della geometria dello spazio-tempo.  Per
-la descrizione di alcuni di questi esperimenti
-vedi~\textcite[157-159]{ohanian:gravitazione}.
+La verifica sperimentale del fenomeno è realizzata attraverso misure
+spettroscopiche della luce solare e dal confronto con la posizione di analoghe
+righe emesse da atomi localizzati a terra.  Se la frequenza di una riga $\nu$ è
+identificata con $1/\dd\tau$ (quindi $\dd\tau$ è la distanza temporale tra due
+massimi successivi di un'onda e.m.), dalla relazione precedente avremo
+\begin{equation}
+  \frac{\nu_2 - \nu_1} {\nu_2}  \equiv \frac{\nu_{\textup{oss}} -
+    \nu_{\textup{em}}}{\nu_{\textup{oss}}} \simeq - 2.12 \cdot 10^{-6},
+\end{equation}
+per cui, con riferimento a una particolare riga, la frequenza $\nu_1$
+effettivamente emessa sul Sole (e identificata con la frequenza di uno stesso
+atomo che avvenga a Terra) è maggiore della frequenza della stessa transizione
+quando osservata da Terra.
 
 I sistemi di geolocalizzazione quale il Global Positioning System (GPS) devono
 tener conto della dilatazione gravitazionale del tempo dal momento che i
