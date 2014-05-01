@@ -424,7 +424,7 @@ trasformazioni di coordinate infinitesime:
 \end{equation}
 Per una trasformazione infinitesima si ha
 \begin{equation}
-  \parder{x'{^\rho}}{x^{\mu}} = \delta^{\rho}_{\mu} + \epsilon
+  \parder{x'{^\rho}}{x^{\mu}} = \tensor{\delta}{^{\rho}_{\mu}} + \epsilon
   \parder{\xi^{\rho}}{x^{\mu}}
 \end{equation}
 così che, al primo ordine in $\epsilon$ l'equazione~\eqref{W13.1.2} diventa
@@ -450,7 +450,7 @@ attorno a $x$,
 In questo modo, trascurando i termini dell'ordine di $\epsilon^2$, si ottiene
 \begin{equation}
   0 = \xi^{\rho} g_{\mu \nu ,\rho} + \tensor{\xi}{^{\rho}_{,\mu}} g_{\rho \nu} +
-  \tensor{\xi}{^{\sigma}_{,\nu}} g_{\mu \sigma}
+  \tensor{\xi}{^{\sigma}_{,\nu}} g_{\mu \sigma}.
 \end{equation}
 Questa equazione può essere riscritta in termini delle componenti covarianti del
 vettore $\xi_{\nu} = g_{\rho \nu} \xi^{\rho}$ e $\xi_{\mu} = g_{\mu \sigma}
@@ -520,7 +520,7 @@ annullando $\delta S_{\textup{m}}$:
   \xi^{\nu} \sqrt{g} \dd^4x
 \end{equation}
 e quindi poiché le variazioni $\xi^{\nu}$ della metrica sono arbitrarie,
-$\tensor{T}{^{\mu}_{\nu:\mu}}=0$.
+$\tensor{T}{^{\mu}_{\nu;\mu}}=0$.
 
 È ben noto che secondo il teorema di Noether a ogni simmetria di un sistema
 fisico corrisponde una legge di conservazione.  Ad esempio, nello spazio-tempo
