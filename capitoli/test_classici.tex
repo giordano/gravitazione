@@ -47,31 +47,22 @@ l'intervallo di tempo proprio di Schwarzschild~\eqref{eq:metrica-schwarzschild}
 per $\dd\tau^{2}$
 \begin{equation}
   \label{eq:mercurio-r}
-  \bigg(\toder{\tau}{\tau}\bigg)^{2} = 1 = \bigg(1 -
+   1 = \bigg(1 -
   \frac{r_{\textup{S}}}{r}\bigg)\dot{t}^{2} - \bigg(1 -
   \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dot{r}^{2} - r^{2}(\dot{\theta}^{2} +
   \sin^{2}\theta \dot{\phi}^{2}).
 \end{equation}
 Il punto sopra le variabili indica la derivazione rispetto al tempo proprio
-$\tau$.  Per determinare le altre equazioni dobbiamo risolvere il problema
-variazionale
+$\tau$.  Per determinare le altre equazioni consideriamo l'equazione della
+geodetica
 \begin{equation}
-  \delta \int \dd \tau = 0
+  \toder[2]{x^{\mu}}{\tau}+\tensor{\Gamma}{^{\mu}_{\nu\rho}}
+  \toder{x^{\nu}}{\tau} \toder{x^{\rho}}{\tau} = 0
 \end{equation}
-in cui $\dd\tau$ è la metrica di Schwarzschild.  Questo problema può essere
-risolto più facilmente considerando la seguente formulazione equivalente
-\begin{equation}
-  \begin{split}
-    \delta\int \dd\tau &= \delta \int \bigg(\toder{\tau}{\tau}\bigg)^{2} \dd
-    \tau \\
-    &= \delta \int \bigg(\bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)\dot{t}^{2} -
-    \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dot{r}^{2} -
-    r^{2}(\dot{\theta}^{2} + \sin^{2}\theta \dot{\phi}^{2}) \bigg) \dd \tau = 0.
-  \end{split}
-\end{equation}
-Da qui, considerando la funzione integranda come una lagrangiana, si ottengono
-tre equazioni di Eulero-Lagrange per le coordinate, rispettivamente, $\theta$,
-$\phi$ e $t$
+in cui gli elementi della connessione affine sono calcolati a partire dalla
+metrica di Schwarzshild.  Ponendo in questa equazione $\mu=2$, $\mu=3$ e
+$\mu=0$, si ottengono tre equazioni per le coordinate $\theta$, $\phi$ e $t$,
+rispettivamente
 \begin{subequations}
   \begin{gather}
     \toder{}{\tau}(r^{2}\dot{\theta}) = r^{2}\sin\theta\cos\theta
@@ -82,18 +73,28 @@ $\phi$ e $t$
     = 0. \label{eq:mercurio-t}
   \end{gather}
 \end{subequations}
-Non abbiamo scritto l'equazione di Eulero-Lagrange per la coordinata $r$ poiché
-utilizzeremo la~\eqref{eq:mercurio-r}.
 
-Allo stesso risultato si giunge considerando l'equazione della geodetica
+Non abbiamo scritto l'equazione di Eulero-Lagrange per la coordinata $r$ ($\mu
+=1$) poiché utilizzeremo la~\eqref{eq:mercurio-r}.
+
+Si osservi che le equazioni precedenti possono essere ottenute risolvendo il
+problema variazionale per la Lagrangiana $\mathcal{L} = (1/2) g_{\mu \nu}
+\dot{x}^{\mu} \dot{x}^{\nu}$, che per la metrica di Schwarzshild è
 \begin{equation}
-  \toder[2]{x^{\mu}}{\tau}+\tensor{\Gamma}{^{\mu}_{\nu\rho}}
-  \toder{x^{\nu}}{\tau} \toder{x^{_\rho}}{\tau} = 0
+  2 \mathcal{L} = \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)\dot{t}^{2} -
+  \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dot{r}^{2} -
+  r^{2}(\dot{\theta}^{2} + \sin^{2}\theta \dot{\phi}^{2}).
+\label{straumann321}
 \end{equation}
-in cui gli elementi della connessione affine sono calcolati a partire dalla
-metrica di Schwarzshild. In particolare le tre equazioni precedenti sono
-ottenute ponendo nella equazione della geodetica $\mu=2$, $\mu=3$ e $\mu=0$,
-rispettivamente.
+Ovviamente lungo la geodetica $2 \mathcal{L} = 1$.  Per il principio di minima
+azione
+\begin{equation}
+  \delta \int \bigg[ \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)\dot{t}^{2} -
+  \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dot{r}^{2} -
+  r^{2}(\dot{\theta}^{2} + \sin^{2}\theta \dot{\phi}^{2}) \bigg] \dd \tau = 0,
+\end{equation}
+da cui si ottengono le tre equazioni precedenti per le coordinate $\theta$,
+$\phi$ e $t$.
 
 Notiamo che associando all'equazione differenziale~\eqref{eq:mercurio-mu} le
 condizioni iniziali $\theta = \pi/2$ e $\dot{\theta} = 0$, la funzione costante
@@ -101,6 +102,7 @@ $\theta(\tau) = \pi/2$ costituisce l'unica soluzione di questo problema di
 Cauchy.  Ciò significa che con un'opportuna scelta delle coordinate il moto del
 pianeta si svolge in un piano, così come succede anche in meccanica classica.
 Sostituendo $\theta = \pi/2$ nella~\eqref{eq:mercurio-phi} abbiamo
+(conservazione del momento angolare)
 \begin{equation}
   \label{eq:mercurio-phi2}
   \toder{}{\tau}(r^{2}\dot{\phi}) = 0 \implies r^{2}\dot{\phi} = h =
@@ -108,6 +110,7 @@ Sostituendo $\theta = \pi/2$ nella~\eqref{eq:mercurio-phi} abbiamo
 \end{equation}
 cioè il pianeta si muove con velocità areolare costante, come nel problema di
 Keplero classico.  Invece dalla~\eqref{eq:mercurio-t} otteniamo
+(conservazione del'energia)
 \begin{equation}
   \label{eq:mercurio-t2}
   \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)\dot{t} = l = \text{costante}.
@@ -118,6 +121,17 @@ Sostituendo tutti questi risultati nella~\eqref{eq:mercurio-r} troviamo
   1 = \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)^{-1}l^{2} - \bigg(1 -
   \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dot{r}^{2} - \frac{h^{2}}{r^{2}}.
 \end{equation}
+
+Prima di procedere, osserviamo che dall'equazione~\eqref{straumann321} si vede
+che le variabili $\phi$ e $t$ sono cicliche, per cui il momento angolare e
+l'energia (per unità di massa) si conservano:
+\begin{subequations}
+  \begin{align}
+    \parder{\mathcal{L}}{\dot{\phi}} &= r^2 \dot{\phi} = \text{cost} = L, \\
+    \parder{\mathcal{L}}{\dot{t}} &= \biggl(1 - \frac{r_{\textup{S}}}{r}\biggr)
+    \dot{t} = \text{cost} = E.
+  \end{align}
+\end{subequations}
 
 Per determinare l'equazione dell'orbita conviene porre
 $r = r(\phi)$, quindi indicando con l'apice la derivazione rispetto a
@@ -165,8 +179,7 @@ la~\eqref{eq:mercurio-u'}.  Abbiamo
 \end{equation}
 Una soluzione di questa equazione è $u' = 0$, cioè $u(\phi) = 1/r(\phi) =
 \text{costante}$.  Tuttavia questa situazione non ci interessa poiché descrive
-un moto circolare, essendo la distanza dal centro del campo costante, quindi non
-c'è un perielio e non è possibile osservare la sua precessione.  L'altra
+un moto circolare. In questo caso non c'è un perielio. L'altra
 possibile soluzione è
 \begin{equation}
   \label{eq:binet-relativ}
@@ -342,19 +355,21 @@ In relatività speciale, per due eventi separati da un intervallo di tipo luce l
 distanza vale $\dd\tau^{2} = 0$ e assumiamo che lo stesso valga anche in
 relatività generale.  Assumiamo inoltre che l'equazione della
 geodetica~\eqref{eq:geodetica} sia valida anche per le particelle prive di massa
-a riposo ma dotate di energia, come i fotoni.  Tuttavia dobbiamo fare attenzione
-al fatto che, proprio in virtù del fatto che $\dd\tau^{2} = 0$, non possiamo
-parametrizzare la linea d'universo di un fotone, o di una qualsiasi particella
-con massa nulla, usando il tempo proprio $\tau$.  Piuttosto dobbiamo utilizzare
-un differente parametro $q$ tale che l'equazione della geodetica
+a riposo.  Tuttavia dobbiamo fare attenzione al fatto che, proprio in virtù del
+fatto che $\dd\tau^{2} = 0$, non possiamo parametrizzare la linea d'universo di
+un fotone, o di una qualsiasi particella con massa nulla, usando il tempo
+proprio $\tau$.  Piuttosto dobbiamo utilizzare un differente parametro $q$ tale
+che l'equazione della geodetica
 \begin{equation}
   \toder[2]{x^{\mu}}{q} + \tensor{\Gamma}{^{\mu}_{\lambda\nu}}
   \toder{x^{\lambda}}{q} \toder{x^{\nu}}{q} = 0
 \end{equation}
-abbia senso.  A partire da questa equazione si possono ricavare nuovamente,
-sempre con l'assunzione $\theta = \pi/2$, le relazioni~\eqref{eq:mercurio-phi2}
-e \eqref{eq:mercurio-t2}.  La~\eqref{eq:mercurio-r2} va modificata in questo
-modo tenendo conto del fatto che $\dd\tau^{2} = 0$
+abbia senso (non è necessario precisare il senso fisico di questo parametro che
+non comparirà nelle equazioni finali).  A partire da questa equazione si possono
+ricavare nuovamente, sempre con l'assunzione $\theta = \pi/2$, le
+relazioni~\eqref{eq:mercurio-phi2} e \eqref{eq:mercurio-t2}.
+La~\eqref{eq:mercurio-r2} va modificata in questo modo tenendo conto del fatto
+che $\dd\tau^{2} = 0$
 \begin{equation}
   0 = \bigg(1 - \frac{r_{\textup{S}}}{r}\bigg)^{-1}l^{2} - \bigg(1 -
   \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dot{r}^{2} - \frac{h^{2}}{r^{2}}.
@@ -606,26 +621,23 @@ difficoltà di tipo pratico, delle quali non ci occuperemo.
   \label{fig:ritardo-radar}
 \end{figure}
 Senza entrare nei dettagli dei conti forniamo i risultati delle previsioni
-teoriche della relatività
-generale.\footnote{Questo problema è trattato da
+teoriche della relatività generale.\footnote{Questo problema è trattato da
   \textcite[1103-1109]{misner:gravitation};
-  \textcite[201-207]{weinberg:gravitation}.}
-
-In un spazio-tempo piatto, il tempo $\tau(r,R_{\odot})$ necessario per un fotone
-per giungere tangente sulla superficie del Sole da un punto a distanza $r$ dal
-centro della stella è dato semplicemente dal rapporto fra la distanza euclidea
-fra questi due punti (vedi figura~\ref{fig:ritardo-radar}) e la velocità dei
-fotoni nel vuoto
+  \textcite[201-207]{weinberg:gravitation}.}  In un spazio-tempo piatto, il
+tempo $t(r,R_{\odot})$ necessario per un fotone per giungere tangente sulla
+superficie del Sole da un punto a distanza $r$ dal centro della stella è dato
+semplicemente dal rapporto fra la distanza euclidea fra questi due punti (vedi
+figura~\ref{fig:ritardo-radar}) e la velocità ($c=1$) dei fotoni nel vuoto
 \begin{equation}
   \tau(r, R_{\odot}) = \frac{\sqrt{r^{2} - R_{\odot}^{2}}}{c}.
 \end{equation}
-La correzione relativistica per $\tau(r, R_{\odot})$, che tiene conto della
+La correzione relativistica per $t(r, R_{\odot})$, che tiene conto della
 curvatura dello spazio tempo prodotta dal campo gravitazionale del Sole, è
 \begin{equation}
   \begin{split}
-    t(r,R_{\odot}) &\approx \tau(r,R_{\odot}) + \var t(r,R_{\odot}) \\
-    &= \frac{\sqrt{r^{2} - R_{\odot}^{2}}}{c} + \frac{2GM_{\odot}}{c^{3}} \ln
-    \frac{r + \sqrt{r^{2} - R_{\odot}^{2}}}{R_{\odot}} +
+    t(r,R_{\odot}) &\approx t(r,R_{\odot}) + \var t(r,R_{\odot}) \\
+    &= \frac{\sqrt{r^{2} - R_{\odot}^{2}}}{c} + \frac{2GM_{\odot}}{c^{3}}
+    \ln \left[ \frac{r + \sqrt{r^{2} - R_{\odot}^{2}}}{R_{\odot}} \right] +
     \frac{GM_{\odot}}{c^{3}} \sqrt{\frac{r - R_{\odot}}{r + R_{\odot}}}.
   \end{split}
 \end{equation}
@@ -635,17 +647,15 @@ superiore è
 \begin{equation}
   \begin{split}
     t_{\textup{tot}} &= 2(t(r_{1},R_{\odot}) + t(r_{2},R_{\odot})) \\
-    &= 2(\tau(r_{1},R_{\odot}) + \var t(r_{1},R_{\odot}) +
-    \tau(r_{2},R_{\odot}) + \var t(r_{2},R_{\odot})).
+    &= 2(t(r_{1},R_{\odot}) + \var t(r_{1},R_{\odot}) +
+    t(r_{2},R_{\odot}) + \var t(r_{2},R_{\odot})).
   \end{split}
 \end{equation}
-Considerando il sistema Terra-Mercurio, il ritardo
-$\var t = 2(\var t(r_{1},R_{\odot}) + \var t(r_{2},R_{\odot}))$ rispetto alla
-previsione $2(\tau(r_{1},R_{\odot}) + \tau(r_{2},R_{\odot}))$ in uno
-spazio-tempo piatto vale \SI{240}{\micro\second}
-(corrispondente ad una distanza di \SI{72}{\kilo\metre})
-su un tempo di volo totale $t_{\textup{tot}}$ di
-\SI{20}{\minute}.
+Considerando il sistema Terra-Mercurio, il ritardo $\var t = 2[\var
+t(r_{1},R_{\odot}) + \var t(r_{2},R_{\odot}) ]$ rispetto alla previsione
+$2[t(r_{1},R_{\odot}) + t(r_{2},R_{\odot})]$ in uno spazio-tempo piatto vale
+\SI{240}{\micro\second} (corrispondente ad una distanza di \SI{72}{\kilo\metre})
+su un tempo di volo totale $t_{\textup{tot}}$ di \SI{20}{\minute}.
 
 %%% Local Variables:
 %%% mode: latex

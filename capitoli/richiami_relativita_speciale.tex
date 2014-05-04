@@ -18,7 +18,7 @@ L'ambiente in cui si svolgono i fenomeni fisici descritti dalla relatività
 speciale è uno spazio quadrimensionale piatto, composto da una coordinata
 temporale e tre spaziali, chiamato \index{spazio!di Minkowski}
 \emph{spazio di Minkowski} e che indicheremo con il simbolo $\M$.  Un elemento
-dello spazio di Minkowski è chiamato \index{evento}\emph{evento}.  
+dello spazio di Minkowski è chiamato \index{evento}\emph{evento}.
 
 Nello spaziotempo di Minkowski definiamo le
 \index{coordinata!controvariante}\emph{coordinate controvarianti} di un evento
@@ -55,12 +55,12 @@ in cui $\tensor{\eta}{_{\alpha\beta}}$ è il
 Questo tensore definisce una metrica pseudo euclidea con segnatura
 $(-+++)$,\footnote{Nelle presenti note abbiamo adottato questa segnatura, ma non
   è l'unica possibile nello spazio di Minkowski.  Un'altra segnatura largamente
-  usata è $(+---)$.}.  
-  
+  usata è $(+---)$.}.
+
 Una \index{trasformazione!di Lorentz}\emph{trasformazione di Lorentz} è
 una trasformazione lineare nello spazio di Minkowski da un sistema di
 riferimento inerziale $x^{\alpha}$ a un altro sistema di
-riferimento inerziale $x'^{\alpha}$ 
+riferimento inerziale $x'^{\alpha}$
 \begin{equation}
   \label{eq:trasformazione-lineare}
   x'^{\alpha} = \tensor{\Lambda}{^{\alpha}_{\beta}}x^{\beta} + a^{\alpha},
@@ -79,7 +79,7 @@ sbarra non deve dipendere dall'istante di tempo in cui la misuriamo) e di
 isotropia dello spazio (la lunghezza della sbarra non deve dipendere neanche
 dalla direzione in cui la guardiamo).  In questo modo un moto rettilineo
 uniforme in un sistema di riferimento inerziale è ancora un moto rettilineo
-uniforme anche nell'altro sistema di riferimento inerziale.  
+uniforme anche nell'altro sistema di riferimento inerziale.
 
 I differenziali delle coordinate nel nuovo sistema si ricavano
 dalla~\eqref{eq:trasformazione-lineare}
@@ -273,12 +273,12 @@ $\bm{v}$, come
 \end{equation}
 
 Osserviamo ora che le trasformazioni di Lorentz formano un gruppo poichè
-1) esiste la trasformazione identica: 
+1) esiste la trasformazione identica:
 $\tensor{\Lambda}{^{\alpha}_{\beta}} =   \tensor{\delta}{^{\alpha}_{\beta}}$
 2) la composizione di due trasformazioni di Lorentz è ancora una trasformazione di
-Lorentz: 
+Lorentz:
 $\tensor{\Lambda}{^{\alpha}_{1 \beta}} \tensor{\Lambda}{^{\beta}_{2 \gamma}} =
-\tensor{\Lambda}{^{\alpha}_{\gamma}}$; 
+\tensor{\Lambda}{^{\alpha}_{\gamma}}$;
 2) esiste la trasformazione inversa definita dalla relazione
 \begin{equation}
   \tensor{\Lambda}{_{\alpha}^{\beta}} = \tensor{\eta}{_{\alpha\gamma}}
@@ -294,8 +294,8 @@ ed è numericamente uguale a $\tensor{\eta}{_{\alpha\beta}}$, vale a dire
 Osserviamo che
 \begin{equation}
   \label{eq:delta-kronecker}
-  \eta^{\alpha\gamma} \eta_{\beta\gamma} = 
-  \tensor{\delta}{^{\alpha}_{\beta}} = 
+  \eta^{\alpha\gamma} \eta_{\beta\gamma} =
+  \tensor{\delta}{^{\alpha}_{\beta}} =
   \begin{cases}
     1 & \text{se } \alpha = \beta, \\
     0 & \text{se } \alpha \neq \beta,
@@ -315,8 +315,8 @@ Lorentz~\eqref{eq:rel-fond-tensore-metrico} abbiamo
 Dunque $\tensor{\Lambda}{_{\alpha}^{\beta}}$ è la matrice inversa di
 $\tensor{\Lambda}{^{\alpha}_{\beta}}$.
 
-Infatti, se moltiplichiamo ambo i membri della 
-\eqref{eq:trasformazione-lineare} per $\tensor{\Lambda}{_{\alpha}^{\gamma}}$ 
+Infatti, se moltiplichiamo ambo i membri della
+\eqref{eq:trasformazione-lineare} per $\tensor{\Lambda}{_{\alpha}^{\gamma}}$
 risulta che
 \begin{equation}
   x'^{\alpha} \tensor{\Lambda}{_{\alpha}^{\gamma}} =
@@ -335,7 +335,7 @@ Osserviamo inoltre che risulta
 \begin{equation}
   \tensor{\Lambda}{_{\beta}^{\alpha}} = \parder{x^{\alpha}}{x'^{\beta}}.
 \end{equation}
- 
+
 Le trasformazioni di Lorentz comportano alcune conseguenze, come la contrazione
 delle lunghezze, la dilatazione degli intervalli temporali e l'effetto Doppler.
 Questi argomenti possono essere rivisti
@@ -1672,7 +1672,7 @@ coordinata generalizzata $q$, delle sue derivate $\lparder{q}{x^{\alpha}}$ e non
 dipende espressamente dalle coordinate $x^{\alpha}$ in quanto il sistema è
 isolato.  Poiché l'integrale $\int \Lambda\dd^{3} \bm{x}$ è la lagrangiana del
 sistema, $\Lambda$ è chiamata \index{densità!di lagrangiana}\emph{densità di
-  lagrangiana}.  Supporremo che $q$ e le sue derivate si annullino all'infinito.
+  lagrangiana}.
 
 Secondo il principio variazionale di Hamilton, le equazioni del moto del sistema
 si ottengono ricercando la configurazione che rende stazionaria
@@ -1725,65 +1725,53 @@ conservazione dell'energia in meccanica.  Sfruttando le equazioni di
 Eulero-Lagrange~\eqref{eq:eulero-lagrange-campi} abbiamo
 \begin{equation}
   \begin{split}
-    \toder{\Lambda}{x^{\alpha}} &= \parder{\Lambda}{q}\toder{q}{x^{\alpha}}
-    + \parder{\Lambda}{q_{,\beta}}\toder{q_{,\beta}}{x^{\alpha}}
-    + \parder{\Lambda}{x^{\alpha}} =
-    \toder{}{x^{\beta}}\bigg( \parder{\Lambda}{q_{,\beta}} \bigg)q_{,\alpha}
-    + \parder{\Lambda}{q_{,\beta}}\toder{q_{,\beta}}{x^{\alpha}}
-    + \parder{\Lambda}{x^{\alpha}} \\
-    &= \toder{}{x^{\beta}}\bigg( \parder{\Lambda}{q_{,\beta}} \bigg) q_{,\alpha}
-    + \parder{\Lambda}{q_{,\beta}} \toder{q_{,\alpha}}{x^{\beta}}
-    + \parder{\Lambda}{x^{\alpha}} \\
-    &= \toder{}{x^{\beta}}\bigg(q_{,\alpha} \parder{\Lambda}{q_{,\beta}}\bigg)
-    + \parder{\Lambda}{x^{\alpha}}.
+      \parder{\Lambda}{x^{\alpha}} &
+    = \parder{\Lambda}{q} \parder{q}{x^{\alpha}}
+    + \parder{\Lambda}{q_{,\beta}} \parder{q_{,\beta}}{x^{\alpha}}
+    = \parder{}{x^{\beta}}\bigg(  \parder{\Lambda}{q_{,\beta}} \bigg)q_{,\alpha}
+    +   \parder{\Lambda}{q_{,\beta}}\parder{q_{,\beta}}{x^{\alpha}} \\
+    & = \parder{}{x^{\beta}} \bigg(\parder{\Lambda}{q_{,\beta}}\bigg)q_{,\alpha}
+    +   \parder{\Lambda}{q_{,\beta}} \toder{q_{,\alpha}}{x^{\beta}} \\
+    &=  \parder{}{x^{\beta}}\bigg(q_{,\alpha}\parder{\Lambda}{q_{,\beta}}\bigg).
   \end{split}
 \end{equation}
 Poiché sussiste inoltre la relazione
 \begin{equation}
-  \toder{\Lambda}{x^{\alpha}} =
-  \tensor{\delta}{^{\beta}_{\alpha}} \toder{\Lambda}{x^{\beta}} =
-  \tensor{\eta}{^{\beta}_{\alpha}} \toder{\Lambda}{x^{\beta}},
+  \parder{\Lambda}{x^{\alpha}} =
+  \tensor{\delta}{^{\beta}_{\alpha}} \parder{\Lambda}{x^{\beta}} \ ,
 \end{equation}
-in cui abbiamo ricordato la definizione~\eqref{eq:delta-kronecker}
-della\index{delta!di Kronecker quadrimensionale} delta di Kronecker, risulta
+risulta
 \begin{equation}
-  \tensor{\eta}{^{\beta}_{\alpha}} \toder{\Lambda}{x^{\beta}}
-  = \toder{}{x^{\beta}} \bigg( q_{,\alpha} \parder{\Lambda}{q_{,\beta}} \bigg) +
-  \parder{\Lambda}{x^{\alpha}},
+  \parder{}{x^{\beta}} \bigg( q_{,\alpha}\toder{\Lambda}{q_{,\beta}} -
+  \tensor{\delta}{^{\beta}_{\alpha}}\Lambda \bigg) = 0 \ .
 \end{equation}
-da cui
-\begin{equation}
-  \toder{}{x^{\beta}} \bigg( q_{,\alpha}\toder{\Lambda}{q_{,\beta}} -
-  \tensor{\eta}{^{\beta}_{\alpha}}\Lambda \bigg) =
-  -\parder{\Lambda}{x^{\alpha}}.
-\end{equation}
-Se il sistema è chiuso, $\lparder{\Lambda}{x^{\alpha}}$ è nullo.  Definiamo il
+Qui noi abbiamo calcolato la derivata totale della densità di lagrangiana
+rispetto alla coordinata $x^{\alpha}$ assumendo che la lagrangiana non dipenda
+espressamente dalla stessa (questo è vero per un sistema isolato).  Definiamo il
 \index{tensore!energia-impulso}\emph{tensore energia-impulso}
-$\tensor{T}{^{\beta}_{\alpha}}$ come
+$\tensor{T}{^{\beta}_{\alpha}}$ del sistema come
 \begin{equation}
   \label{eq:tensore-energia-impulso}
   \tensor{T}{^{\beta}_{\alpha}} = q_{,\alpha}\parder{\Lambda}{q_{,\beta}} -
-  \tensor{\eta}{^{\beta}_{\alpha}}\Lambda,
+  \tensor{\eta}{^{\beta}_{\alpha}}\Lambda \ ,
 \end{equation}
-quindi l'equazione precedente si può scrivere, per un sistema chiuso, come
+e quindi l'equazione precedente si può scrivere, per un sistema chiuso, come
 \begin{equation}
   \label{eq:div-tens-en-imp}
   \partial_{\beta} \tensor{T}{^{\beta}_{\alpha}} = 0.
 \end{equation}
-Per il corollario del teorema di Gauss possiamo allora definire il quadrivettore
+L'applicazione del teorema di Gauss implica che il quadrivettore
 \begin{equation}
-  P^{\alpha} = \int T^{0\alpha}\dd V,
+  P^{\alpha} = \int T^{0\alpha}\dd V \ ,
 \end{equation}
-in cui l'integrale è esteso a tutto lo spazio, e $P^{\alpha}$ è costante
-rispetto al tempo.
-
+(in cui l'integrale è esteso a tutto lo spazio) non dipende dal tempo.
 Osserviamo che
 \begin{equation}
   T^{00} = \parder{q}{x^{0}} \parder{\Lambda}{q_{,0}} - \Lambda =
   \dot{q} \parder{\Lambda}{\dot{q}} - \Lambda
 \end{equation}
-è la densità di energia associata alla densità di lagrangiana $\Lambda$, infatti
-in meccanica l'energia $E$ di un sistema con lagrangiana $L$ è data da
+è la densità di energia del sistema descritto da $\Lambda$.  Infatti in
+meccanica l'energia $E$ di un sistema con lagrangiana $L$ è data da
 \begin{equation}
   E = \dot{q}\parder{L}{\dot{q}} - L.
 \end{equation}
@@ -1796,28 +1784,27 @@ rappresenta l'energia del sistema.  Invece
 \begin{equation}
   T^{0i} = \parder{q}{x_{i}} \parder{\Lambda}{q_{,0}}
 \end{equation}
-è la densità di momento, pertanto
+è la densità di impulso, equivalentemente la densità del flusso di energia
+(vedi~\textcite[112-113]{landau:campi}, per un approfondimento).  Pertanto
 \begin{equation}
   P^{i} = \int T^{0i}\dd V
 \end{equation}
-è la componente $i$ della quantità di moto.  Abbiamo così fatto vedere che il
-quadrivettore $P^{\alpha}$ qui definito è proprio il quadrimomento e
-l'equazione~\eqref{eq:div-tens-en-imp} rappresenta la legge di conservazione del
-quadrimomento per un sistema chiuso.  Si possono dare interpretazioni fisiche
-anche delle altre componenti del tensore
+è la componente $i$ dell'impulso totale del sistema.
+L'equazione~\eqref{eq:div-tens-en-imp} rappresenta quindi la legge di
+conservazione del quadrimomento di un sistema chiuso.  Si possono dare
+interpretazioni fisiche anche delle altre componenti del tensore
 energia-impulso.\footnote{Vedi~\textcite[417-418]{barone:relativita};
-  \textcite[137-138]{misner:gravitation}.}
-$T^{i0}$ è la densità di flusso di energia nella direzione $x^{i}$, $T^{ij}$ è
-la densità di flusso della componente $j$ del momento nella direzione $i$.
-Equivalentemente, $T^{ij}$ può essere interpretata come la componente $i$ della
-forza per unità di area su una superficie perpendicolare all'asse $j$.  La parte
-``spaziale'' del tensore energia impulso, $T^{ij}$, è chiamata anche
-\emph{tensore degli
-  sforzi},\footnote{Ricordiamo
-  che in meccanica classica si definisce il tensore degli sforzi $T$ come quel
-  tensore tridimensionale di rango $2$ tale che la forza $\dd \bm{F}$ agente su
-  un elemento di superficie $\dd\bm{A}$ è esprimibile come
-  $\dd\bm{F} = T\dd\bm{A}$.} % Vedi Goldstein, Poole & Safko, capitolo 13
+  \textcite[137-138]{misner:gravitation}.}  $T^{i0}$ è la densità di flusso di
+energia nella direzione $x^{i}$, $T^{ij}$ è la densità di flusso della
+componente $j$ del momento nella direzione $i$.  Equivalentemente, $T^{ij}$ può
+essere interpretata come la componente $i$ della forza per unità di area su una
+superficie perpendicolare all'asse $j$.  La parte ``spaziale'' del tensore
+energia impulso, $T^{ij}$, è chiamata anche \emph{tensore degli
+  sforzi},\footnote{Ricordiamo che in meccanica classica si definisce il tensore
+  degli sforzi $T$ come quel tensore tridimensionale di rango $2$ tale che la
+  forza $\dd \bm{F}$ agente su un elemento di superficie $\dd\bm{A}$ è
+  esprimibile come $\dd\bm{F} =
+  T\dd\bm{A}$.} % Vedi Goldstein, Poole & Safko, capitolo 13
 le componenti $T^{ij}$, con $i \neq j$ costituiscono gli sforzi di taglio, le
 componenti diagonali $T^{ii}$ (senza somma su $i$) sono i cosiddetti sforzi
 normali, cioè la pressione agente nella direzione $i$.  Riassumiamo in forma

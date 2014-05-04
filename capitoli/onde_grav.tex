@@ -3,15 +3,15 @@
 
 In questo capitolo ci occuperemo della risoluzione delle equazioni di Einstein
 nel caso di un campo gravitazionale debole, rilasciando l'ipotesi di simmetria
-sferica e/o indipendenza dal tempo della metrica.  Trascurando nel calcolo del
+sferica e indipendenza dal tempo della metrica.  Trascurando nel calcolo del
 tensore di Ricci i termini dell'ordine $\mathcal{O}(h^2)$, otterremo equazioni
-di Einstein linearizzate analoghe all'equazione per le onde elettromagnetiche.
+di Einstein linearizzate, analoghe alle equazioni per le onde elettromagnetiche.
 Dal punto di vista fisico, il processo di linearizzazione corrisponde a
 trascurare l'energia trasportata dalle onde gravitazionali che si propagano
 liberamente senza auto influenzarsi.
 
 Troveremo che masse accelerate possono emettere onde gravitazionali così come
-particelle cariche accelerate possono emettere onde elettromagnetiche (vedi
+cariche accelerate possono emettere onde elettromagnetiche (vedi
 paragrafi~\ref{sec:onde-elettromagnetiche-vuoto} e
 \ref{sec:onde-elettromagnetiche-cariche}).
 
@@ -27,7 +27,7 @@ perturbazione del campo gravitazionale, e quindi della geometria dello
 spazio-tempo, è l'onda gravitazionale.
 
 \section{Approssimazione di campo debole}
-\label{sec:approx-campodebole]}
+\label{sec:approx-campodebole}
 
 Nell'approssimazione di campo debole il tensore metrico covariante è dato da
 \begin{equation}
@@ -42,45 +42,57 @@ con $\abs{h_{\mu\nu}} \ll 1$, mentre il tensore metrico controvariante è
 \end{equation}
 poiché si ha $g^{\mu\nu} g_{\mu\lambda} = \delta^{\nu}_{\lambda}$.
 
-Da questo punto in poi, l'innalzamento e l'abbassamento degli indici dei tensori
-si esegue con il tensore metrico non perturbato $\eta_{\mu\nu}$.  Per
-linearizzare le equazioni di Einstein dobbiamo sviluppare quindi $R_{\mu\nu}$ in
-serie di potenze di $h_{\mu\nu}$ e considerare solo i termini del primo ordine.
+Da questo punto in poi, l'innalzamento (abbassamento) degli indici dei tensori
+si esegue con il tensore metrico non perturbato $\eta_{\mu\nu}$
+($\eta^{\mu\nu}$).  Per linearizzare le equazioni di Einstein dobbiamo
+sviluppare quindi $R_{\mu\nu}$ in serie di potenze di $h_{\mu\nu}$ e considerare
+solo i termini del primo ordine.
 
-Innanzitutto osserviamo che possiamo sviluppare il tensore di Ricci in serie di
-potenze di $h_{\mu\nu}$ nel seguente modo
+Preliminarmente sviluppiamo il tensore di Ricci in serie di potenze di
+$h_{\mu\nu}$ nel seguente modo
 \begin{equation}
-  R_{\mu\nu} = R_{\mu\nu}^{(1)} + R_{\mu\nu}^{(2)} + \mathcal{O}(h^{3}).
+  R_{\mu\nu} = R_{\mu\nu}^{(1)} + R_{\mu\nu}^{(2)} + \mathcal{O}(h^{3}),
 \end{equation}
-L'equazione di Einstein esatta, in presenza di materia può essere allora scritta
+in cui $R_{\mu\nu}^{(1)}$ ($R_{\mu\nu}^{(2)}$) è la parte del tensore di Ricci
+lineare (quadratica) in $h_{\mu \nu}$.  L'equazione di Einstein esatta, in
+presenza di materia può essere allora scritta
 \begin{equation}
   \label{eq:einstein-lineare-esatta}
   \bigg(R_{\mu\nu}^{(1)} - \frac{1}{2}\eta_{\mu\nu}R^{(1)}\bigg) = -8\pi
   G(T_{\mu\nu} + t_{\mu\nu})
 \end{equation}
-in cui $R^{(1)} = \eta^{\mu\nu}R_{\mu\nu}^{(1)}$ e il tensore $t_{\mu\nu}$ è
-definito da
+in cui $R^{(1)} = \eta^{\mu\nu}R_{\mu\nu}^{(1)}$ e $t_{\mu\nu}$ è definito
+dall'identità
 \begin{equation}
   8\pi G t_{\mu\nu} = \left[ R_{\mu\nu} - \frac{1}{2}\eta_{\mu\nu} R \right]
   - \left[R_{\mu\nu}^{(1)} - \frac{1}{2}\eta_{\mu\nu}R^{(1)} \right] \approx
-  R_{\mu\nu}^{(2)} - \frac{1}{2} \eta_{\mu\nu} R^{(2)}.
+  R_{\mu\nu}^{(2)} - \frac{1}{2} \eta_{\mu\nu} R^{(2)} + \mathcal{O}(h^3).
 \end{equation}
 Dunque $t_{\mu\nu}$ contiene solo termini superiori al primo ordine in
 $h_{\mu\nu}$.  La~\eqref{eq:einstein-lineare-esatta} può essere interpretata
-come un'equazione d'onda lineare in $h_{\mu\nu}$ in cui il termine di sorgente
-$\tau_{\mu\nu} = T_{\mu\nu} + t_{\mu\nu}$ dipende esplicitamente dal campo
-gravitazionale $h_{\mu\nu}$ stesso.  Questo suggerisce che $h_{\mu\nu}$ è
-generato dal tensore $\tau_{\mu\nu}$, flusso e densità totale di energia e
-momento, in cui $T_{\mu\nu}$ è il contributo della sola materia e $t_{\mu\nu}$
-(che è del secondo ordine in $h_{\mu\nu}$) è associato al campo
-gravitazionale.\footnote{In realtà si dimostra che $t_{\mu\nu}$ si comporta come
-  uno pseudotensore.  Vedi~\textcite[367-374]{landau:campi}.  Ulteriori prove a
-  sostegno di questa interpretazione sono riportate
-  in~\textcite[165-171]{weinberg:gravitation}.}
+come un'equazione d'onda lineare in $h_{\mu\nu}$, in cui il termine di sorgente
+$\tau_{\mu\nu} = T_{\mu\nu} + t_{\mu\nu}$ dipende da $h_{\mu\nu}$: il campo
+$h_{\mu\nu}$ è generato dal termine di sorgente $\tau_{\mu\nu}$, che è il flusso
+e la densità totale di energia e momento; $T_{\mu\nu}$ è il contributo della
+materia e $t_{\mu\nu}$ il contributo del campo gravitazionale.\footnote{Si
+  dimostra che $t_{\mu\nu}$ si comporta come uno pseudotensore.
+  Vedi~\textcite[367-374]{landau:campi}.  Ulteriori prove a sostegno di questa
+  interpretazione sono riportate in~\textcite[165-171]{weinberg:gravitation}.}
+Nel seguito, nell'equazione~\eqref{eq:einstein-lineare-esatta} il termine
+$t_{\mu \nu}$ sarà trascurato.  Si otterranno così equazioni d'onda linearizzate
+per il campo gravitazionale il quale, in analogia al caso elettromagnetico, si
+propaga liberamente senza auto-influenzarsi.
 
-Trascurare nelle equazioni di Einstein i termini superiori al primo ordine di
-infinitesimo significa pertanto trascurare i contributi dell'energia del campo
-gravitazionale stesso.
+Per il seguito è importante citare la
+formula\footnote{Vedi~\textcite[449]{landau:campi}.}
+\begin{equation}
+  \label{landau107,11}
+  t_{\mu\nu} = \frac{c^{4}}{32\pi G} \partial_{\mu}
+  \tensor{h}{^{\lambda}_{\rho}} \partial_{\nu} \tensor{h}{^{\rho}_{\lambda}} \ ,
+\end{equation}
+la cui componente $t^{0i}$ (moltiplicata per la velocità $c$) è la densità del
+flusso di energia (erg/sec/cm$^2$) di un'onda gravitazionale piana che si
+propaga nella direzione $x^{i}$.
 
 \section{Onde gravitazionali nel vuoto}
 \label{sec:onde-grav-vuoto}
@@ -135,10 +147,9 @@ in cui $h = \tensor{h}{^{\lambda}_{\lambda}} = \eta^{\mu\lambda} h_{\mu\lambda}$
 A questo punto vogliamo manipolare l'espressione precedente in modo che le
 equazioni di Einstein assumano una forma più semplice, analoga alle equazioni di
 Maxwell nel vuoto $\dalamb A_{\beta} = 0$.  Come nel caso elettromagnetico (in
-cui per il potenziale si sceglie la gauge di Lorenz $\partial^{\alpha}/\partial
-A_{\alpha}=0$, è possibile fare ciò scegliendo una gauge (un sistema di
-coordinate) opportuna.  In particolare conviene scegliere la
-\index{gauge!armonica}\emph{gauge armonica} per cui si ha
+cui per il potenziale si sceglie la gauge di Lorenz $\partial^{\alpha}
+A_{\alpha}=0$, è possibile fare ciò scegliendo un opportuno sistema di
+coordinate per il quale si abbia \index{gauge!armonica}\emph{gauge armonica}
 \begin{equation}
   \label{eq:gauge-armonica}
   \partial_{\mu} \tensor{h}{^{\mu}_{\nu}} =
@@ -166,7 +177,6 @@ Quindi, nel vuoto  le equazioni di Einstein linearizzate sono
   \label{eq:einstein-lineare}
   \dalamb h_{\mu\nu} = 0.
 \end{equation}
-
 Osserviamo che la condizione di gauge armonica si può anche porre nella forma
 $\eta^{\mu\nu}\tensor{\Gamma}{^{\lambda}_{\mu\nu}} = 0$ in quanto
 \begin{equation}
@@ -184,11 +194,10 @@ che equivale alla~\eqref{eq:gauge-armonica}.
 
 \textbf{Digressione}: mostriamo ora che è sempre possibile scegliere un sistema
 di coordinate in cui sia valida la condizione armonica (in analogia al caso
-elettromagnetico in cui se fosse $\partial^{\alpha}/ \partial A_{\alpha} \ne 0$,
-la trasformazione $A_{\alpha} \to A'_{\alpha} = A_{\alpha} + \partial \Lambda(x)
-/ \partial x^{\alpha}$ rende $\partial^{\beta}/ \partial A'_{\beta} = 0$ qualora
-la funzione $\Lambda(x)$ fosse la soluzione dell'equazione $ \dalamb \Lambda
-=0$).
+elettromagnetico in cui se fosse $\partial^{\alpha}A_{\alpha} \ne 0$, la
+trasformazione $A_{\alpha} \to A'_{\alpha} = A_{\alpha} + \partial \Lambda(x)
+/ \partial x^{\alpha}$ rende $\partial^{\alpha}A'_{\alpha} = 0$ se la funzione
+$\Lambda(x)$ è soluzione dell'equazione $\dalamb \Lambda =0$).
 
 Sia $x^{\mu}$ un sistema di coordinate in cui la~\eqref{eq:gauge-armonica} non è
 valida.  Allora effettuiamo una trasformazione infinitesima
@@ -324,10 +333,10 @@ Per $\nu = 0$ risulta
     &k_{\mu} \tensor{e}{^{\mu}_{0}} = \frac{1}{2} k_{0}\tensor{e}{^{\mu}_{\mu}}
     = -\frac{1}{2}k^{0}\tensor{e}{^{\mu}_{\mu}} \implies \\
     &k^{0} e_{00} + k^{3}e_{30} = -\frac{1}{2}k^{0}(\tensor{e}{^{1}_{1}} +
-    \tensor{e}{^{2}_{2}} + \tensor{e}{^{3}_{3}} - e^0_0)
+    \tensor{e}{^{2}_{2}} + \tensor{e}{^{3}_{3}} + \tensor{e}{^0_0})
   \end{split}
 \end{equation}
-da cui si ottiene ($e^0_0 = - e_{00}$)
+da cui si ottiene (con $\tensor{e}{^0_0} = - e_{00}$)
 \begin{equation}
   e_{00} + e_{30} = -\frac{1}{2}(e_{11} + e_{22} + e_{33} - e_{00}).
 \end{equation}
@@ -460,27 +469,27 @@ deviazione geodetica sappiamo che
 Poniamoci\footnote{Questa trattazione è presa da Valeria Ferrari, Leonardo
   Gualtieri, ``General Relativity'', pagine 174-176.  \textsc{url}:
   \url{http://www.roma1.infn.it/teongrav/VALERIA/TEACHING/RELATIVITA_GENERALE/AA2013_14/dispense.pdf}.}
-in un sistema di riferimento localmente inerziale $x^{\alpha'}$ centrato sulla
+in un sistema di riferimento localmente inerziale $x'^{\alpha}$ centrato sulla
 geodetica di una delle due particelle, per esempio $A$, in modo che nelle
 vicinanze di $A$ la metrica differisca da quella di Minkowski per termini di
-ordine $\abs{\delta x}^{2}$: $\dd \tau^{2} = \eta_{\alpha'\beta'}\dd
-x^{\alpha'}\dd x^{\beta'} + \mathcal{O}(\abs{\delta x}^{2})$.  In questo sistema
-di riferimento le coordinate della particella $A$ sono $x_{A}^{i'} = 0$, le
-coordinate di $B$ sono $x^{\mu'}_{B} = \delta x^{\mu'}$ e risulta
+ordine $\abs{\delta x}^{2}$: $\dd \tau^{2} = \eta'_{\alpha \beta}\dd
+x'^{\alpha}\dd x'^{\beta} + \mathcal{O}(\abs{\delta x}^{2})$.  In questo sistema
+di riferimento le coordinate della particella $A$ sono ${x'_{A}}^{i} = 0$, le
+coordinate di $B$ sono ${x'_{B}}^{\mu} = \delta x'^{\mu}$ e risulta
 \begin{subequations}
   \begin{align}
     t_{A} &= \tau, \\
     \label{eq:foo-geodetica-A}
-    \toder{x^{\mu'}}{\tau}\bigg|_{A} &= (1, \bm{0}), \\
-    g_{\mu'\nu'}|_{A} &= \eta_{\mu'\nu'}, \\
-    g_{\mu'\nu',\alpha'}|_{A} &= 0 \implies
-    \tensor{\Gamma}{^{\alpha'}_{\mu'\nu'}}|_{A} = 0.
+    \toder{x^{' \mu}}{\tau}\bigg|_{A} &= (1, \bm{0}) \\
+    g'_{\mu \nu}|_{A} &= \eta'_{\mu\nu} \\
+    g'_{\mu\nu,\alpha}|_{A} &= 0 \implies
+    \tensor{{\Gamma'}}{^{\alpha}_{\mu\nu}}|_{A} = 0.
   \end{align}
 \end{subequations}
 Assumiamo che in questo sistema di riferimento sia valida la gauge
 TT.\footnote{Se così non fosse, sappiamo che sarebbe sufficiente effettuare
   un'opportuna trasformazione infinitesima delle coordinate per fare in modo che
-  $h_{\mu'\nu'}$ sia trasverso e a traccia nulla.}  Per semplicità di notazione,
+  $h'_{\mu\nu}$ sia trasverso e a traccia nulla.}  Per semplicità di notazione,
 da qui in poi omettiamo l'apice primo dalle coordinate.
 Dall'equazione~\eqref{eq:foo-geodetica-A} abbiamo che solo le equazioni di
 deviazione geodetica~\eqref{eq:onde-grav-dev-geo} con $\nu, \rho = 0$ sono
@@ -503,7 +512,7 @@ e l'equazione di deviazione geodetica diventa
   \toder[2]{\delta x^{j}}{t} =
   \frac{1}{2} \parder{\tensor{h}{^{j}_{k}}}{*{2}{t}} \delta x^{k}.
 \end{equation}
-Supponiamo che le due particelle sono a riposo a una distanza costante
+Supponiamo che le due particelle siano a riposo a una distanza costante
 $\delta x^{j}(0)$ prima che l'onda arrivi (cioè con $h_{jk} = 0$).  Poiché
 stiamo considerando campi deboli, $h_{\mu\nu}$ è una piccola perturbazione e la
 posizione relativa fra le particelle cambierà di una quantità infinitesima al
@@ -606,9 +615,10 @@ iniziale $L_{0}$ è
 \end{equation}
 che è generalmente una grandezza molto piccola ($\sim 10^{-20}$).  Quindi due
 particelle di prova, inizialmente a distanza di un metro, si spostano di circa
-$10^{-20}$ m, distanza minore delle dimensioni di un nucleo $\simeq 1$ fermi.
-Allora, la precisione richiesta negli esperimenti che si propongono di mettere
-in evidenza le onde gravitazionali è molto elevata.
+\SI{e-20}{\metre}, distanza minore delle dimensioni di un nucleo $\simeq
+\SI{1}{fermi} = \SI{e-15}{\metre}$.  Allora, la precisione richiesta negli
+esperimenti che si propongono di mettere in evidenza le onde gravitazionali è
+molto elevata.
 
 Sono stati sviluppate tre tecniche per la rivelazione delle onde gravitazionali:
 \begin{enumerate}
@@ -625,7 +635,7 @@ Sono stati sviluppate tre tecniche per la rivelazione delle onde gravitazionali:
   Un cilindro di alluminio ha una frequenza fondamentale di oscillazione
   $\nu_0 \simeq 1500$ Hz che è la frequenza attesa per onde gravitazionali
   emesse durante la fase di collasso gravitazionale di una stella massiva (se
-  $M > 3-8 M_{\odot}$ in una stella di neutroni; se $M > 8 M_{\odot}$ in buco
+  $M \simeq 3-8 M_{\odot}$ in una stella di neutroni; se $M > 8 M_{\odot}$ in buco
   nero).  Poiché il collasso avviene in un tempo
   $\Delta t \equiv 1/\nu_0 \simeq 10^{-3}$ secondi, il cilindro si comparta come
   un oscillatore forzato alla frequenza propria (con guadagno $Q$ massimo).
@@ -653,18 +663,19 @@ Sono stati sviluppate tre tecniche per la rivelazione delle onde gravitazionali:
   gravitazionale, $\var l \simeq L h$.
 
   La frequenza caratteristica delle onde gravitazionali in questo caso sarebbe
-  dell'ordine di ?? che corrisponde (attraverso la relazione $\nu \to 1/T$) al
-  periodo orbitale $T$ di sistemi binari di stelle di neutroni e/o buchi neri
-  nella fase di coalescenza.  Si ritiene che i centri delle galassie contengano
-  buchi neri super-massivi e allora è naturale guardare in direzione dei centri
-  delle galassie e AGN.
+  dell'ordine di $10^{-3}$ Hz che corrisponde (attraverso la relazione $\nu \to
+  1/T$) sia al periodo orbitale $T \simeq $ di qualche ora di sistemi binari
+  (stretti) di stelle di neutroni e/o buchi neri nella fase di coalescenza, sia
+  al tempo caratteristico $P$ di rotazione di pulsar a millisecondi. Si ritiene
+  che i centri delle galassie contengano buchi neri super-massivi e allora è
+  naturale guardare in direzione dei centri delle galassie e AGN.
 \item \emph{Satelliti nel sistema solare}.  Sono esperimenti previsti per gli
   anni 2020.  Nel caso di LISA si pensa di posizionare 3 satelliti in punti
   lagrangiani del sistema solare in cui $\bm{g} \simeq \bm{0}$, a distanza
   reciproca $\simeq 1$ AU (150 milioni di km).  La posizione dei satelliti
   sarebbe determinata attraverso segnali radar e la variazione di distanza
-  indotta da un'onda gravitazionale sarebbe così rivelata.  La frequenza
-  caratteristica è nel range di frequenza ??--
+  indotta da un'onda gravitazionale sarebbe così rivelata.
+
 \end{enumerate}
 
 \section{Generazione di Onde gravitazionali}
@@ -686,12 +697,12 @@ sono dati dalla formula~\eqref{eq:potenza-onde-em}
     \dddot{Q}_{ij,\textup{em}}\dddot{Q}^{ij,\textup{em}}}_{\text{quadrupolo di
       carica}} + \cdots
 \end{equation}
-con $\bm{d}_{\textup{em}} = \sum_{k} q_{k} \bm{r}_{k}$ momento di dipolo di
-carica, $\bm{m}_{\textup{em}} = \sum_{k} q_{k} \bm{r}_{k} \times
-\bm{v}_{k}/(2c)$ momento di dipolo magnetico e $Q_{ij,\textup{em}} = \sum_{k}
-q_{k}(3x_{i}x_{j} -\delta_{ij}r_{k}^{2})$ momento di quadrupolo di carica.  Per
-passare al caso gravitazionale possiamo effettuare la sostituzione
-$\text{carica} \to \text{massa}$, vale a dire $q_{k} \to m_{k}$.  In questo modo
+con $\bm{d}_{\textup{em}} = \sum_{k} q_{k} \bm{r}_{k}$ dipolo elettrico,
+$\bm{m}_{\textup{em}} = \sum_{k} q_{k} \bm{r}_{k} \times \bm{v}_{k}/(2c)$ dipolo
+magnetico e $Q_{ij,\textup{em}} = \sum_{k} q_{k}(3x_{i}x_{j}
+-\delta_{ij}r_{k}^{2})$ quadrupolo di carica.  Per passare al caso
+gravitazionale possiamo effettuare la sostituzione $\text{carica} \to
+\text{massa}$, vale a dire $q_{k} \to m_{k}$.  In questo modo
 \begin{subequations}
   \begin{align}
     \bm{d}_{\textup{g}} &= \sum_{k} m_{k} \bm{r}_{k} = M \bm{R}_{\textup{cm}},\\
@@ -713,8 +724,8 @@ un momento torcente esterno diverso da zero, risulta
   \end{align}
 \end{subequations}
 con $\bm{P}$ quantità di moto totale del sistema e $\bm{\tau}$ momento torcente
-totale.  Dunque per un sistema isolato di masse in moto che emettono onde
-gravitazionali i due termini di dipolo sono nulli e il termine dominante sarà
+totale.  Dunque per un sistema isolato di masse, in moto accelerato, i due
+termini di dipolo "elettrico e magnetico" sono nulli e il termine dominante sarà
 quello di quadrupolo
 \begin{equation}
   I_{\textup{og}} = \frac{1}{45c^{5}}\dddot{Q}_{ij}\dddot{Q}^{ij}.
@@ -866,17 +877,12 @@ in cui
 \emph{momento di quadrupolo delle masse} e il punto indica la derivazione
 rispetto al tempo.
 
-Si può dimostrare\footnote{Vedi~\textcite[449]{landau:campi}.} che
-\begin{equation}
-  t_{\mu\nu} = \frac{c^{4}}{32\pi G} \partial_{\mu}
-  \tensor{h}{^{\lambda}_{\rho}} \partial_{\nu} \tensor{h}{^{\rho}_{\lambda}}
-\end{equation}
-Inoltre per un'onda piana che si propaga in una direzione $x^{i}$, il flusso di
-energia è diretto lungo lo stesso asse $x^{i}$ ed è determinato da $ct^{0i}$.
-
-In particolare, supponendo che l'onda gravitazionale si propaghi lungo $x^{1}$,
-le uniche componenti non nulle di $h_{\mu\nu}$ nella gauge TT sono
-$h_{22} = -h_{33}$ e $h_{23} = h_{32}$ e il flusso di energia è dato da
+Per un'onda piana che si propaga in una direzione $x$, il flusso di energia è
+diretto lungo lo stesso asse ed è ottenuto dalla relazione
+nell'equazione~\eqref{landau107,11}.  In particolare, poiché le uniche
+componenti non nulle di $h_{\mu\nu}$ nella gauge TT sono $h_{22} = -h_{33}$ e
+$h_{23} = h_{32}$ (avendo supposto che l'onda gravitazionale si propaghi lungo
+$x^{1}$), si ha
 \begin{equation}
   ct^{01} = \frac{c^{3}}{16\pi G}\bigg((\dot{h}_{23})^{2} +
   \frac{1}{4}(\dot{h}_{22} - \dot{h}_{33})^{2}\bigg).
@@ -904,8 +910,8 @@ risultato\footnote{Vedi~\textcite[460-461]{landau:campi}.}
   I = \frac{G}{45c^{5}} \langle \dddot{Q}_{ij} \dddot{Q}^{ij}\rangle.
 \end{equation}
 
-Quindi si può avere emissioni di radiazione gravitazionale solo da parte di
-distribuzioni di massa in movimento con momento di quadrupolo di massa
+Quindi si può avere emissione di radiazione gravitazionale solo da parte di
+distribuzioni di massa in movimento che abbiano momento di quadrupolo di massa
 dipendente dal tempo.  Le masse che costituiscono il sistema sono singolarmente
 in moto accelerato, anche se il centro di massa del sistema ha accelerazione
 nulla.  Un esempio di questo tipo è un sistema binario: ciascuna stella è in
@@ -923,8 +929,8 @@ parte di masse in movimento è, generalmente, molto bassa.
 \label{sec:potenza-emessa}
 
 Innanzitutto determiniamo l'ordine di grandezza della luminosità (energia
-irradiata nell'unità di tempo) da un sistema isolato che emette onde
-gravitazionali.
+irradiata nell'unità di tempo in tutto l'angolo solido)
+da un sistema isolato che emette onde gravitazionali.
 
 Consideriamo un sistema, costituito da $N$ corpi di uguale massa, con massa
 totale $M$ e dimensioni $\simeq a$.  Possiamo stimare il tempo $T \simeq a/v$
@@ -944,19 +950,19 @@ Introduciamo la luminosità di scala $L_{0} = c^{5}/G = 3.6 \times 10^{59}$ erg
 s$^{-1}$, allora
 \begin{equation}
   I = \frac{G}{45c^{5}} \dddot{Q}_{ij} \dddot{Q}^{ij} \approx
-  L_{0} \bigg(\frac{r_{\textup{S}}}{a}\bigg)^{2} \bigg(\frac{v}{c}\bigg)^{6}.
+  L_{0} \bigg(\frac{r_{\textup{S}}}{a}\bigg)^{2} \bigg(\frac{v}{c}\bigg)^{6},
 \end{equation}
-
-Possiamo eliminare $v$ usando il teorema del viriale $2K + U = 0$, cioè $v^{2}
-\simeq GM/a$, da cui segue
+da cui si vede che dobbiamo avere sistemi di dimensioni $a \simeq
+r_{\textup{S}}$ e velocità elevate.  Possiamo eliminare $v$ usando il teorema
+del viriale $2K + U = 0$, cioè $v^{2} \simeq GM/a$, da cui segue
 \begin{equation}
   \frac{v^{2}}{c^{2}} \approx \frac{GM}{ac^{2}} \sim   \frac{r_{\textup{S}}}{a}.
 \end{equation}
 In definitiva
 \begin{equation}
-  I \sim L_{0} \bigg(\frac{r_{\textup{S}}}{a}\bigg)^{5},
+  I \sim L_{0} \bigg(\frac{r_{\textup{S}}}{a}\bigg)^{5}.
 \end{equation}
-quindi per poter avere un'emissione efficiente di onde gravitazionali bisogna
+Quindi per poter avere un'emissione efficiente di onde gravitazionali bisogna
 avere oggetti collassati, cioè corpi per i quali $a \simeq r_{\textup{S}}$.
 
 \subsection{Sorgenti di laboratorio}
@@ -1081,12 +1087,13 @@ rotazionale alla formazione della pulsar è
   E = \frac{1}{2} \mathcal{I} \omega^{2} \sim \SI{e53}{\erg}.
 \end{equation}
 Pertanto, se la luminosità $I_{\textup{og}}$ rimanesse costante nel tempo (in
-particolare se $e=\text{cost}$), l'energia rotazionale iniziale dovrebbe
-esaurirsi in un tempo $\var t = E/I$ dell'ordine di 1 anno (dopo un anno la
-stella dovrebbe smettere di ruotare).  In realtà noi oggi osserviamo pulsar
-molto vecchie (la Crab è esplosa nel 1054).  Quindi siamo costretti a ipotizzare
-che la NS dopo il collasso circolarizzi velocemente ($e \to 0$) con la
-conseguente soppressione della potenza emessa in onde gravitazionali.
+particolare se l'eccentricità $e$ rimanesse costante), l'energia rotazionale
+iniziale dovrebbe esaurirsi in un tempo $\var t = E/I$ dell'ordine di 1 anno,
+cio\'e dopo un anno la stella dovrebbe smettere di ruotare.  In realtà noi oggi
+osserviamo pulsar molto vecchie (la Crab è esplosa nel 1054).  Quindi siamo
+costretti a ipotizzare che la NS dopo il collasso circolarizzi velocemente ($e
+\to 0$) con la conseguente soppressione della potenza emessa in onde
+gravitazionali.
 
 Comunque, la NS continua a emettere radiazione elettromagnetica se è dotata di
 un momento di dipolo magnetico $\bm{m}$ non allineato con l'asse di rotazione
