@@ -280,7 +280,8 @@ Dall'equazione d'onda, il 4-vettore numero d'onda $k^{\lambda} \equiv (\omega,
 paragrafo~\ref{sec:onde-elettromagnetiche-vuoto}) soddisfa la condizione
 \begin{equation}
   0 = \dalamb h_{\mu\nu} = \uimm k^{\lambda} \uimm k_{\lambda} e_{\mu\nu}
-  \e^{\uimm k^{\lambda}x_{\lambda}} \implies k^{\lambda}k_{\lambda} = 0 \rightarrow \lambda \nu=1
+  \e^{\uimm k^{\lambda}x_{\lambda}} \implies k^{\lambda}k_{\lambda} = 0
+  \rightarrow \lambda \nu=1
 \end{equation}
 cioè le onde gravitazionali si muovono, come quelle elettromagnetiche, alla
 velocità della luce nel vuoto, con frequenza $\nu$ uguale all'inverso della
@@ -370,7 +371,7 @@ armonica, $\epsilon^{\mu}$ deve soddisfare l'equazione $\dalamb \epsilon^{\mu} =
 0$, che è ancora un'equazione d'onda.  La sua soluzione sarà data dalla
 sovrapposizione di onde piane monocromatiche
 \begin{equation}
-  \epsilon^{\mu} = \Re\{\tilde{\epsilon}^{\mu}\e^{\uimm
+  \epsilon^{\mu} = \Re\{\uimm\tilde{\epsilon}^{\mu}\e^{\uimm
     k^{\lambda}x_{\lambda}}\}.
 \end{equation}
 Per l'equazione~\eqref{tras_infit_metrica}, la perturbazione della metrica in
@@ -379,32 +380,32 @@ questo nuovo sistema è
   h'_{\mu\nu} = \Re\{e'_{\mu\nu} \e^{\uimm k^{\lambda}x_{\lambda}}\} =
   h_{\mu\nu} - \partial_{\nu}\epsilon_{\mu} - \partial_{\mu}\epsilon_{\nu}
 \end{equation}
-e poiché $\partial_{\nu}\epsilon_{\mu} = \uimm k_{\nu}\tilde{\epsilon}_{\mu}
+e poiché $\partial_{\nu}\epsilon_{\mu} = - k_{\nu}\tilde{\epsilon}_{\mu}
 \e^{\uimm k^{\lambda}x_{\lambda}}$, si ha
 \begin{equation}
-  e'_{\mu\nu} = e_{\mu\nu} - \uimm k_{\nu}\tilde{\epsilon}_{\mu} - \uimm
+  e'_{\mu\nu} = e_{\mu\nu} + k_{\nu}\tilde{\epsilon}_{\mu} +
   k_{\mu}\tilde{\epsilon}_{\nu}.
 \end{equation}
 Così risulta
 \begin{subequations}
   \begin{align}
-    e'_{11} &= e_{11} - \uimm k_{1} \tilde{\epsilon}_{1} - \uimm
-    k_{1}\tilde{\epsilon}_{1} = e_{11}, \\
-    e'_{12} &= e_{12} - \uimm k_{2}\tilde{\epsilon}_{1} - \uimm
-    k_{1}\tilde{\epsilon}_{2} = e_{12}, \\
-    e'_{13} &= e_{13} - \uimm k_{3}\tilde{\epsilon}_{1} - \uimm
-    k_{1}\tilde{\epsilon}_{3} = e_{13} - \uimm k\tilde{\epsilon}_{1}  \\
-    e'_{23} &= e_{23} - \uimm k_{3}\tilde{\epsilon}_{2} - \uimm
-    k_{2}\tilde{\epsilon}_{3} = e_{23} - \uimm k\tilde{\epsilon}_{2}  \\
-    e'_{33} &= e_{33} - 2\uimm k_{3}\tilde{\epsilon}_{3} = \\
-    e'_{00} &= e_{00} - 2\uimm k_{0}\tilde{\epsilon}_{0} =
+    e'_{11} &= e_{11} + k_{1} \tilde{\epsilon}_{1} + k_{1}\tilde{\epsilon}_{1} =
+              e_{11}, \\
+    e'_{12} &= e_{12} + k_{2}\tilde{\epsilon}_{1} + k_{1}\tilde{\epsilon}_{2} =
+              e_{12}, \\
+    e'_{13} &= e_{13} + k_{3}\tilde{\epsilon}_{1} + k_{1}\tilde{\epsilon}_{3} =
+              e_{13} + k\tilde{\epsilon}_{1}  \\
+    e'_{23} &= e_{23} + k_{3}\tilde{\epsilon}_{2} + k_{2}\tilde{\epsilon}_{3} =
+              e_{23} + k\tilde{\epsilon}_{2} \\
+    e'_{33} &= e_{33} + 2 k_{3}\tilde{\epsilon}_{3} \\
+    e'_{00} &= e_{00} - 2 k_{0}\tilde{\epsilon}_{0}.
   \end{align}
 \end{subequations}
 Allora, se scegliamo le quattro costanti
-$\tilde{\epsilon}_{1} = -\uimm e_{13}/k$,
-$\tilde{\epsilon}_{2} = -\uimm e_{23}/k$,
-$\tilde{\epsilon}_{3} = -\uimm e_{33}/(2k)$,
-$\tilde{\epsilon}_{0} = \uimm e_{00}/(2k)$
+$\tilde{\epsilon}_{1} = - e_{13}/k$,
+$\tilde{\epsilon}_{2} = - e_{23}/k$,
+$\tilde{\epsilon}_{3} = - e_{33}/(2k)$,
+$\tilde{\epsilon}_{0} = e_{00}/(2k)$
 potremo annullare 4 componenti del tensore di polarizzazione, e cioè
 $e'_{13} =  e'_{23} = e'_{33} = e'_{00} = 0$.
 Inoltre, per le condizioni~\eqref{8.31} avremo anche
@@ -623,12 +624,12 @@ molto elevata.
 Sono stati sviluppate tre tecniche per la rivelazione delle onde gravitazionali:
 \begin{enumerate}
 \item \emph{Antenne gravitazionali risonanti (alla Weber)}.  Sono costituite da
-  un cilindro (in alluminio, di circa 3 m, sospeso opportunamente, per tagliare
-  le oscillazioni indotte dall'ambiente, e raffreddato all temperatura dell'elio
-  liquido, per ridure il rumore browniano dell'antenna.  Il cilindro investito
-  dall'onda gravitazionale, incomincia a oscillare.  Attraverso un trasduttore,
-  le variazioni di lunghezza sono trasformate in micro-correnti che
-  opportunamente amplificate, sono alla fine rivelate.  Tale tecnica sviluppata
+  un cilindro (in alluminio, di circa 3 m, sospeso opportunamente (per tagliare
+  le oscillazioni indotte dall'ambiente) e raffreddato all temperatura dell'elio
+  liquido (per ridure il rumore browniano dell'antenna).  Il cilindro investito
+  dall'onda gravitazionale incomincia a oscillare.  Attraverso un trasduttore
+  (piezoelettrico) le variazioni di lunghezza sono trasformate in micro-correnti che
+  opportunamente amplificate sono alla fine rivelate.  Tale tecnica sviluppata
   a partire dagli anni '70, nonostante oggi abbia raggiunto la fase di maturità,
   non ha comunque dato luogo ad osservazioni completamente positive.
 
@@ -647,6 +648,7 @@ Sono stati sviluppate tre tecniche per la rivelazione delle onde gravitazionali:
   terra un flusso di neutrini in coincidenza con l'arrivo dell'onda
   gravitazionale se i neutrini hanno massa nulla, o in ritardo, se i neutrini
   hanno massa non nulla.
+
 \item \emph{Rivelatori del tipo interferometro alla Michelson-Morley}.  Un
   segnale laser è inviato verso lo specchio semi-riflettente dove è splittato in
   due cammini ottici disposti a 90 gradi, quindi i due raggi sono riflessi
@@ -657,8 +659,8 @@ Sono stati sviluppate tre tecniche per la rivelazione delle onde gravitazionali:
 
   La tecnica è nella fase matura, i dati sono ora analizzati, ma non ci sono
   risultati positivi.  La possibilità di riflessioni multiple dei fasci laser
-  lungo i cammini ottici --- comunque limitata dall'assorbimento, stabilità di
-  sospensione e allineamento degli specchi --- permette di aumentare il cammino
+  lungo i cammini ottici (comunque limitata dall'assorbimento, stabilità di
+  sospensione e allineamento degli specchi) permette di aumentare il cammino
   ottico $L$ e quindi la variazione di distanza indotta dall'onda
   gravitazionale, $\var l \simeq L h$.
 
