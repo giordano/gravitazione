@@ -117,7 +117,7 @@ massa sferica statica ed elettricamente neutra, è data da
 \index{metrica!di Schwarzschild}
 \begin{equation}
   \label{eq:metrica-schwarzschild-bh}
-  \dd s^{2} = \bigg(1 - \frac{r_{\textup{S}}}{r} \bigg) \dd t^{2} - \bigg(1 -
+  \dd\tau^{2} = \bigg(1 - \frac{r_{\textup{S}}}{r} \bigg) \dd t^{2} - \bigg(1 -
   \frac{r_{\textup{S}}}{r}\bigg)^{-1}\dd r^{2} - r^{2}\dd\theta^{2} -
   r^{2}\sin^{2}\theta \dd\phi^{2}.
 \end{equation}
@@ -147,11 +147,11 @@ il tensore metrico di Schwarzschild può essere scritto come
 \subsection{Metrica di Kerr}
 \label{sec:metrica-kerr}
 
-La metrica di Kerr, per un buco nero sferico, elettricamente neutro e ruotante,
-è data da\index{metrica!di Kerr}
+La metrica di Kerr, per un buco nero elettricamente neutro e ruotante, è data
+da\index{metrica!di Kerr}
 \begin{equation}
   \label{eq:metrica-kerr}
-  \dd s^{2} = \dd t^{2} - \Sigma\Delta^{-1} \dd r^{2} - \Sigma\dd\theta^{2} -
+  \dd\tau^{2} = \dd t^{2} - \Sigma\Delta^{-1} \dd r^{2} - \Sigma\dd\theta^{2} -
   (r^{2} + a^{2})\sin^{2}\theta\dd\phi^{2} - \Sigma^{-1}r_{\textup{S}}r(\dd t -
   a\sin^{2}\theta\dd\phi)^{2},
 \end{equation}
@@ -187,7 +187,7 @@ moto rotazionale costante attorno all'asse \(z\) comporta la comparsa nella
 metrica di un termine proporzionale a \(\dd\phi\dd t\).  Consideriamo uno
 spazio-tempo piatto, adottando coordinate tali da rendere la metrica diagonale:
 \begin{equation}
-  \dd s^{2} = \dd t^{2} - \dd r^{2} - r^{2}\dd\theta^{2} -
+  \dd\tau^{2} = \dd t^{2} - \dd r^{2} - r^{2}\dd\theta^{2} -
   r^{2}\sin^{2}\theta\dd \phi^{2}.
 \end{equation}
 Una rotazione attorno all'asse \(z\) con velocità angolare costante \(\omega\)
@@ -197,7 +197,7 @@ equivale a una trasformazione delle coordinate
 \end{equation}
 e la metrica acquista un termine non diagonale proporzionale a \(\dd\phi\dd t\)
 \begin{equation}
-  \dd s^{2} = \dd t^{2} - \dd r^{2} - r^{2}\dd\theta^{2} -
+  \dd\tau^{2} = \dd t^{2} - \dd r^{2} - r^{2}\dd\theta^{2} -
   r^{2}\sin^{2}\theta(\dd \phi - \omega\dd t)^{2}.
 \end{equation}
 Le coordinate di Boyer-Lindquist sono quindi molto comode per riconoscere il
@@ -209,7 +209,7 @@ nell'intervallo spazio-temporale~\eqref{eq:metrica-kerr} l'inversione temporale
 
 Nel limite di campo gravitazionale debole \(M\to 0\) la metrica diventa
 \begin{equation}
-  \dd s^{2} = \dd t^{2} - \frac{r^{2} + a^{2}\cos^{2}\theta}{r^{2} + a^{2}}\dd
+  \dd\tau^{2} = \dd t^{2} - \frac{r^{2} + a^{2}\cos^{2}\theta}{r^{2} + a^{2}}\dd
   r^{2} - (r^{2} + a^{2}\cos^{2}\theta)\dd\theta^{2} - (r^{2} +
   a^{2})\sin^{2}\theta\dd\phi^{2}.
 \end{equation}
@@ -235,7 +235,7 @@ sferico, elettricamente carico e non rotante ed è data da\index{metrica!di
 \begin{equation}
   \label{eq:metrica-reissner}
   \begin{split}
-    \dd s^{2} &= \biggl(1 - \frac{r_{\textup{S}}}{r} +
+    \dd\tau^{2} &= \biggl(1 - \frac{r_{\textup{S}}}{r} +
     \frac{Q^{2}}{r^{2}}\biggr)\dd t^{2} - \biggl(1 - \frac{r_{\textup{S}}}{r} +
     \frac{Q^{2}}{r^{2}}\biggr)^{-1}\dd r^{2} - r^{2}\dd\theta^{2} -
     r^{2}\sin^{2}\theta\dd\phi^{2} \\
@@ -302,11 +302,11 @@ buco nero.
 \subsection{Metrica di Kerr-Newman}
 \label{sec:metrica-kerr-newman}
 
-La metrica di Kerr-Newman, che descrive l'esterno di un buco nero sferico,
-rotante ed elettricamente carico, è data da\index{metrica!di Kerr-Newman}
+La metrica di Kerr-Newman, che descrive l'esterno di un buco nero rotante ed
+elettricamente carico, è data da\index{metrica!di Kerr-Newman}
 \begin{equation}
   \label{eq:metrica-kerr-newman}
-  \dd s^{2} = \Delta\Sigma^{-1}(\dd t - a\sin^{2}\theta\dd\phi)^{2} -
+  \dd\tau^{2} = \Delta\Sigma^{-1}(\dd t - a\sin^{2}\theta\dd\phi)^{2} -
   \Delta^{-1}\Sigma\dd r^{2} - \Sigma\dd\theta^{2} -
   \Sigma^{-1}\sin^{2}\theta\bigl(a\dd t - (r^{2} + a^{2})\dd\phi^{2}\bigr)^{2},
 \end{equation}
@@ -466,7 +466,7 @@ Schwarzschild.  Le trasformazioni inverse per ricavare le coordinate \(t\) e
 Nelle coordinate di Kruskal-Szekeres, l'intervallo spazio-temporale con la
 metrica di Schwarzschild si scrive come
 \begin{equation}
-  \dd s^{2} = \frac{4r_{\textup{S}}^{3}}{r}\e^{-r/r_{\textup{S}}}(\dd v^{2} -
+  \dd\tau^{2} = \frac{4r_{\textup{S}}^{3}}{r}\e^{-r/r_{\textup{S}}}(\dd v^{2} -
   \dd u^{2}) - r^{2}\dd\theta^{2} - r^{2}\sin^{2}\theta\dd\phi^{2},
 \end{equation}
 in cui \(r\) è da intendersi come una funzione delle coordinate \(v\) e \(u\)
@@ -495,7 +495,7 @@ da~\parencites{1924Natur.113..192E}{1958PhRv..110..965F}
 Con questa trasformazione, l'intervallo spazio-temporale della geometria di
 Schwarzschild diventa
 \begin{equation}
-  \dd s^{2} = \biggl(1 - \frac{r_{\textup{S}}}{r}\biggr)\dd\tilde{v}^{2} -
+  \dd\tau^{2} = \biggl(1 - \frac{r_{\textup{S}}}{r}\biggr)\dd\tilde{v}^{2} -
   2\dd\tilde{v}\dd r - r^{2}\dd\theta^{2} - r^{2}\sin^{2}\theta\dd\phi^{2}.
 \end{equation}
 Nella parte spaziale della metrica non c'è più la pseudosingolarità in \(r =
@@ -527,10 +527,12 @@ redshift infinito \(g_{00}\) è positivo quindi la coordinata \(t\) è di tipo
 ``spazio'' e il fatto che la metrica sia indipendente da \(t\) non significa che
 sia realmente indipendente dal tempo.
 
-Dal calcolo della curvatura scalare
+Dal calcolo dell'invariante quadratico di curvatura\footnote{Questa quantità è
+  la \emph{norma di Hilbert-Schmidt} del tensore di Riemann.}
 \(R^{\alpha\beta\gamma\delta}R_{\alpha\beta\gamma\delta}\) si scopre che l'unica
-singolarità fisica, in cui la curvatura diverge, è presente in \(\Sigma = r^{2}
-+ a^{2}\cos^{2}\theta = 0\), cioè
+singolarità fisica, in cui l'invariante diverge, è presente in
+(vedi~\textcite{2007arXiv0706.0622V}) \(\Sigma = r^{2} + a^{2}\cos^{2}\theta =
+0\), cioè
 \begin{subequations}
   \label{eq:singolarita-kerr}
   \begin{align}
@@ -574,7 +576,7 @@ nero di Schwarzschild.
 
 La velocità di un segnale luminoso che si propaga radialmente (quindi
 \(\dd\theta = \dd\phi = 0\)) si ottiene calcolando \(\ltoder{r}{t}\) dopo aver
-posto \(\dd s^{2} = 0\) nell'espressione~\eqref{eq:metrica-schwarzschild-bh}
+posto \(\dd\tau^{2} = 0\) nell'espressione~\eqref{eq:metrica-schwarzschild-bh}
 dell'intervallo spazio-temporale della metrica di Schwarzschild
 \begin{equation}
   \toder{r}{t} = \pm \biggl(1 - \frac{r_{\textup{S}}}{r}\biggr).
@@ -634,7 +636,7 @@ orizzonte degli eventi dello spazio-tempo.
 \end{figure}
 La posizione degli orizzonti degli eventi è individuata dalla condizione
 \(\ltoder{r}{t} = 0\), per valori arbitrari di \(\dd\theta\) e \(\dd\phi\).
-Ponendo l'intervallo spazio-temporale \(\dd s^{2}\) di
+Ponendo l'intervallo spazio-temporale \(\dd\tau^{2}\) di
 Kerr~\eqref{eq:metrica-kerr} uguale a \(0\) e risolvendo per
 \((\ltoder{r}{t})^{2}\) si ottiene un'espressione un po' complicata, in cui però
 si può prendere \(\Delta\) come fattore moltiplicativo globale.  Pertanto la
