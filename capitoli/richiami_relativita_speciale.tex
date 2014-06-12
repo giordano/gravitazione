@@ -500,13 +500,13 @@ invarianti sotto le trasformazioni di Lorentz.
 Uno \index{pseudotensore}\emph{pseudotensore} (o
 \index{densità!tensoriale|see{pseudotensore}}\emph{densità tensoriale})
 $\tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}$ (con
-$p+q=k$) di rango $k$ e peso $w$ è un insieme di $4^{k}$ quantità che per
+$p+q=k$) di rango $k$ e peso $w \ne 0$ è un insieme di $4^{k}$ quantità che per
 effetto di una generica trasformazione di Lorentz ortocrona $\Lambda$, ma non
 necessariamente propria, si trasformano come
 \begin{equation}
   \tensor*{A}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}} \to
   \tensor*{{A'}}{^{\alpha_{1}\dots\alpha_{p}}_{\beta_{1}\dots\beta_{q}}}
-  = (\det \Lambda)^{w} \tensor{\Lambda}{^{\alpha_{1}}_{\mu_{i}}} \cdots
+  = (\det \Lambda)^{w} \tensor{\Lambda}{^{\alpha_{1}}_{\mu_{1}}} \cdots
   \tensor{\Lambda}{^{\alpha_{p}}_{\mu_{p}}}
   \tensor{\Lambda}{_{\beta_{1}}^{\nu_{1}}} \cdots
   \tensor{\Lambda}{_{\beta_{q}}^{\nu_{q}}}
@@ -1653,9 +1653,10 @@ relativistico isolato $\dot{\bm{L}} = \bm{0} \implies \dot{\bm{m}} = \bm{0}$.
 \section{Equazioni di Eulero-Lagrange di un campo e tensore energia-impulso}
 \label{sec:tensore-energia-impulso}
 
-% \emph{Nota: in questo paragrafo, dove non diversamente specificato, adotteremo
-%   la convenzione dei segni $(-++)$ seguita
-%   da~\textcites{barone:relativita,landau:campi}.}
+\emph{Nota: in questo paragrafo, dove non diversamente specificato, adotteremo
+  la convenzione dei segni $(-++)$ seguita
+  da~\textcites{barone:relativita,landau:campi} (vedi
+  pagina~\pageref{eq:convenzione-segni}).}
 
 Vogliamo determinare le equazioni del moto di un generico sistema usando il
 formalismo lagrangiano. Come applicazione del metodo considereremo il caso del
@@ -1742,7 +1743,7 @@ Poiché sussiste inoltre la relazione
 \end{equation}
 risulta
 \begin{equation}
-  \parder{}{x^{\beta}} \bigg( q_{,\alpha}\toder{\Lambda}{q_{,\beta}} -
+  \parder{}{x^{\beta}} \bigg( q_{,\alpha}\parder{\Lambda}{q_{,\beta}} -
   \tensor{\delta}{^{\beta}_{\alpha}}\Lambda \bigg) = 0 \ .
 \end{equation}
 Qui noi abbiamo calcolato la derivata totale della densità di lagrangiana
@@ -1760,9 +1761,18 @@ e quindi l'equazione precedente si può scrivere, per un sistema chiuso, come
   \label{eq:div-tens-en-imp}
   \partial_{\beta} \tensor{T}{^{\beta}_{\alpha}} = 0.
 \end{equation}
-L'applicazione del teorema di Gauss implica che il quadrivettore
+
+\subsection{Componenti del tensore energia-impulso}
+\label{sec:componenti-tensore-ei}
+
+\emph{In questo paragrafo ripristiniamo la velocità della luce nel vuoto $c$.}
+
+L'applicazione del teorema di Gauss all'equazione~\eqref{eq:div-tens-en-imp}
+implica che il quadrivettore\footnote{Il fattore numerico $1/c$ è stato scelto
+  per fare in modo che $P^{\alpha}$ risulterà essere il quadrimomento.}
 \begin{equation}
-  P^{\alpha} = \int T^{0\alpha}\dd V \ ,
+  \label{eq:momento}
+  P^{\alpha} = \frac{1}{c} \int T^{0\alpha}\dd V
 \end{equation}
 (in cui l'integrale è esteso a tutto lo spazio) non dipende dal tempo.
 Osserviamo che
@@ -1777,29 +1787,67 @@ meccanica l'energia $E$ di un sistema con lagrangiana $L$ è data da
 \end{equation}
 Dunque
 \begin{equation}
-  P^{0} = \int T^{00}\dd V = \int \bigg(\dot{q}\parder{\Lambda}{\dot{q}} -
-  \Lambda\bigg) \dd V
+  P^{0} = \frac{1}{c} \int T^{00}\dd V = \int
+  \bigg(\dot{q}\parder{\Lambda}{\dot{q}} - \Lambda\bigg) \dd V
 \end{equation}
-rappresenta l'energia del sistema.  Invece
+rappresenta l'energia del sistema divisa per $c$, vale a dire la componente $0$
+del quadrimomento.  Invece
 \begin{equation}
-  T^{0i} = \parder{q}{x_{i}} \parder{\Lambda}{q_{,0}}
+  \frac{1}{c} T^{0i} = \parder{q}{x_{i}} \parder{\Lambda}{q_{,0}}
 \end{equation}
-è la densità di impulso, equivalentemente la densità del flusso di energia
-(vedi~\textcite[112-113]{landau:campi}, per un approfondimento).  Pertanto
+è la densità della componente $i$ del momento tridimensionale,
+% equivalentemente la densità del flusso di energia
+% (vedi~\textcite[112-113]{landau:campi}, per un approfondimento).
+pertanto
 \begin{equation}
-  P^{i} = \int T^{0i}\dd V
+  P^{i} = \frac{1}{c} \int T^{0i}\dd V
 \end{equation}
-è la componente $i$ dell'impulso totale del sistema.
-L'equazione~\eqref{eq:div-tens-en-imp} rappresenta quindi la legge di
-conservazione del quadrimomento di un sistema chiuso.  Si possono dare
-interpretazioni fisiche anche delle altre componenti del tensore
-energia-impulso.\footnote{Vedi~\textcite[417-418]{barone:relativita};
-  \textcite[137-138]{misner:gravitation}.}  $T^{i0}$ è la densità di flusso di
-energia nella direzione $x^{i}$, $T^{ij}$ è la densità di flusso della
-componente $j$ del momento nella direzione $i$.  Equivalentemente, $T^{ij}$ può
-essere interpretata come la componente $i$ della forza per unità di area su una
-superficie perpendicolare all'asse $j$.  La parte ``spaziale'' del tensore
-energia impulso, $T^{ij}$, è chiamata anche \emph{tensore degli
+è la componente $i$ del momento totale tridimensionale del sistema e il
+quadrivettore $P^{\alpha}$ definito nell'equazione~\eqref{eq:momento} è proprio
+il quadrimomento.  L'equazione~\eqref{eq:div-tens-en-imp} rappresenta quindi la
+legge di conservazione del quadrimomento di un sistema chiuso.
+
+Possiamo dare un'interpretazione fisica anche alle altre componenti del tensore
+energia-impulso.\footnote{Vedi anche~\textcite[417-418]{barone:relativita};
+  \textcite[112-113]{landau:campi}; \textcite[137-138]{misner:gravitation}.}
+Scriviamo l'equazione di conservazione $\partial_{\beta} T^{\beta\alpha} = 0$
+separando le derivate spaziali da quelle temporali
+\begin{subequations}
+  \begin{align}
+    \frac{1}{c}\parder{T^{00}}{t} + \parder{T^{i0}}{x^{i}} &= 0, \\
+    \label{eq:div-tens-en-imp-spaziale}
+    \frac{1}{c}\parder{T^{0j}}{t} + \parder{T^{ij}}{x^{i}} &= 0.
+  \end{align}
+\end{subequations}
+Integrando la prima di queste equazioni in un volume $V$ dello spazio abbiamo
+\begin{equation}
+  \frac{1}{c} \parder{}{t} \int T^{00} \dd V + \int \parder{T^{i0}}{x^{i}} = 0.
+\end{equation}
+Applichiamo il teorema di Gauss tridimensionale al secondo integrale
+\begin{equation}
+  \parder{}{t} \int T^{00} \dd V = -\int\limits_{\partial V} cT^{i0} \dd f_{i}
+  \,,
+\end{equation}
+in cui l'integrale al secondo membro è esteso al bordo del volume $V$.  Il primo
+membro dell'equazione rappresenta la velocità di variazione dell'energia
+contenuta nel volume $V$, quindi la funzione integranda $cT^{i0}$ del membro di
+destra è la densità del flusso di energia che attraversa l'unità di superficie
+nell'unità di tempo nella direzione $x^{i}$.
+
+Allo stesso modo, partendo dall'equazione~\eqref{eq:div-tens-en-imp-spaziale}
+giungiamo a
+\begin{equation}
+  \parder{}{t}\int \frac{1}{c} T^{0j} \dd V = -\int\limits_{\partial V} T^{ij}
+  \dd f_{i}.
+\end{equation}
+Nel primo membro è presente la velocità di variazione della componente $j$ del
+momento del sistema nel volume $V$, dunque $\int_{\partial V} T^{ij} \dd f_{i}$
+è la quantità di momento uscente nell'unità di tempo da questo volume e il
+tensore tridimensionale $T^{ij}$ rappresenta la densità del flusso della
+componente $j$ del momento nella direzione $x^{i}$.  Equivalentemente, $T^{ij}$
+può essere interpretata come la componente $i$ della forza per unità di area su
+una superficie perpendicolare all'asse $j$.  La parte ``spaziale'' del tensore
+energia-impulso, $T^{ij}$, è chiamata anche \emph{tensore degli
   sforzi},\footnote{Ricordiamo che in meccanica classica si definisce il tensore
   degli sforzi $T$ come quel tensore tridimensionale di rango $2$ tale che la
   forza $\dd \bm{F}$ agente su un elemento di superficie $\dd\bm{A}$ è
@@ -1807,8 +1855,19 @@ energia impulso, $T^{ij}$, è chiamata anche \emph{tensore degli
   T\dd\bm{A}$.} % Vedi Goldstein, Poole & Safko, capitolo 13
 le componenti $T^{ij}$, con $i \neq j$ costituiscono gli sforzi di taglio, le
 componenti diagonali $T^{ii}$ (senza somma su $i$) sono i cosiddetti sforzi
-normali, cioè la pressione agente nella direzione $i$.  Riassumiamo in forma
-matriciale il tensore energia impulso
+normali, cioè la pressione agente nella direzione $i$.
+
+Ricapitoliamo schematicamente le componenti del tensore energia-impulso:
+\begin{itemize}
+\item $T^{00} =$ densità di energia;
+\item $T^{0i}/c =$ densità della componente $j$ del momento;
+\item $cT^{i0} =$ densità del flusso di energia che attraversa l'unità di
+  superficie nell'unità di tempo nella direzione $x^{i}$;
+\item $T^{ij} =$ densità del flusso della componente $j$ del momento nella
+  direzione $x^{i}$, oppure componente $i$ della forza per unità di area su una
+  superficie perpendicolare all'asse $j$.
+\end{itemize}
+Possiamo anche rappresentare in forma matriciale il tensore energia-impulso
 %%% Figura ispirata a questa:
 %%% https://it.wikipedia.org/wiki/File:StressEnergyTensor_it.svg
 \begin{equation}
@@ -1881,6 +1940,9 @@ matriciale il tensore energia impulso
     \end{scope}
   \end{tikzpicture}
 \end{equation}
+
+\subsection{Tensero energia-impulso del campo elettromagnetico}
+\label{sec:tens-energ-impulso-em}
 
 Riprendiamo la convenzione dei segni $(+--)$ di~\textcite{weinberg:gravitation}.
 Le \index{equazioni!di Maxwell}equazioni di Maxwell che descrivono il campo
