@@ -1781,9 +1781,9 @@ Osserviamo che
   \dot{q} \parder{\Lambda}{\dot{q}} - \Lambda
 \end{equation}
 è la densità di energia del sistema descritto da $\Lambda$.  Infatti in
-meccanica l'energia $E$ di un sistema con lagrangiana $L$ è data da
+meccanica l'energia $E$ di un sistema con lagrangiana $\mathcal{L}$ è data da
 \begin{equation}
-  E = \dot{q}\parder{L}{\dot{q}} - L.
+  E = \dot{q}\parder{\mathcal{L}}{\dot{q}} - \mathcal{L}.
 \end{equation}
 Dunque
 \begin{equation}
@@ -1791,14 +1791,41 @@ Dunque
   \bigg(\dot{q}\parder{\Lambda}{\dot{q}} - \Lambda\bigg) \dd V
 \end{equation}
 rappresenta l'energia del sistema divisa per $c$, vale a dire la componente $0$
-del quadrimomento.  Invece
+del quadrimomento.  Vogliamo ora dimostrare che le componenti spaziali del
+quadrivettore $P^{\alpha}$ rappresentano il momento tridimensionale del sistema.
+A tale scopo, ricordiamo che dalle equazioni di Hamilton risulta, indicando con
+$\Pi^{i}$ la densità di momento,
+\begin{equation}
+  \label{eq:hamilton-momento}
+  \parder{\Lambda}{x_{i}} = \parder{\Pi^{i}}{t} = c\partial^{0}\Pi^{i}.
+\end{equation}
+D'altra parte, la derivata temporale di $T^{0i}$ è
+\begin{equation}
+  \partial^{0}T^{0i} = \partial^{0}
+  \biggl(\partial^{i}q \parder{\Lambda}{\dot{q}}\biggr) =
+  (\partial^{0} \partial^{i}q) \parder{\Lambda}{\dot{q}} +
+  \partial^{i}q \partial^{0}\parder{\Lambda}{\dot{q}}.
+\end{equation}
+Il secondo termine all'ultimo membro è nullo perché in un sistema isolato
+$\partial^{0}\Lambda = 0$, invece nel primo termine calcoliamo
+\begin{equation}
+  \parder{\Lambda}{\dot{q}} =
+  \biggl(\parder{\dot{q}}{x_{i}}\biggr)^{-1} \parder{\Lambda}{x_{i}} =
+  (\partial^{i}\partial^{0}q)^{-1} \parder{\Lambda}{x_{i}}.
+\end{equation}
+Dunque abbiamo
+\begin{equation}
+  \partial^{0}T^{0i} =
+  (\partial^{0}\partial^{i}q)(\partial^{i}\partial^{0}q)^{-1} \parder{\Lambda}{x_{i}}
+  = \parder{\Lambda}{x_{i}}.
+\end{equation}
+Confrontando questa equazione con l'equazione~\eqref{eq:hamilton-momento}
+troviamo che
 \begin{equation}
   \frac{1}{c} T^{0i} = \parder{q}{x_{i}} \parder{\Lambda}{q_{,0}}
 \end{equation}
-è la densità della componente $i$ del momento tridimensionale,
-% equivalentemente la densità del flusso di energia
-% (vedi~\textcite[112-113]{landau:campi}, per un approfondimento).
-pertanto
+è la densità della componente $i$ del momento tridimensionale, a meno di una
+costante rispetto al tempo additiva, pertanto
 \begin{equation}
   P^{i} = \frac{1}{c} \int T^{0i}\dd V
 \end{equation}
@@ -1859,13 +1886,16 @@ normali, cioè la pressione agente nella direzione $i$.
 
 Ricapitoliamo schematicamente le componenti del tensore energia-impulso:
 \begin{itemize}
-\item $T^{00} =$ densità di energia;
-\item $T^{0i}/c =$ densità della componente $j$ del momento;
+\item $T^{00} =$ densità di energia (unità: \si{\erg\per\centi\metre\cubed});
+\item $T^{0i}/c =$ densità della componente $j$ del momento (unità:
+  \si{\gram(\centi\metre\per\second)\per\centi\metre\cubed});
 \item $cT^{i0} =$ densità del flusso di energia che attraversa l'unità di
-  superficie nell'unità di tempo nella direzione $x^{i}$;
+  superficie nell'unità di tempo nella direzione $x^{i}$ (unità:
+  \si{\erg\per\centi\metre\squared\per\second});
 \item $T^{ij} =$ densità del flusso della componente $j$ del momento nella
   direzione $x^{i}$, oppure componente $i$ della forza per unità di area su una
-  superficie perpendicolare all'asse $j$.
+  superficie perpendicolare all'asse $j$ (unità:
+  \si{\dyne\per\centi\metre\squared}).
 \end{itemize}
 Possiamo anche rappresentare in forma matriciale il tensore energia-impulso
 %%% Figura ispirata a questa:
