@@ -1797,7 +1797,7 @@ A tale scopo, ricordiamo che dalle equazioni di Hamilton risulta, indicando con
 $\Pi^{i}$ la densità di momento,
 \begin{equation}
   \label{eq:hamilton-momento}
-  \parder{\Lambda}{x_{i}} = \parder{\Pi^{i}}{t} = c\partial^{0}\Pi^{i}.
+  \partial^{i}\Lambda = \parder{\Pi^{i}}{t} = c\partial^{0}\Pi^{i}.
 \end{equation}
 D'altra parte, la derivata temporale di $T^{0i}$ è
 \begin{equation}
@@ -1811,18 +1811,18 @@ $\partial^{0}\Lambda = 0$, invece nel primo termine calcoliamo
 \begin{equation}
   \parder{\Lambda}{\dot{q}} =
   \biggl(\parder{\dot{q}}{x_{i}}\biggr)^{-1} \parder{\Lambda}{x_{i}} =
-  (\partial^{i}\partial^{0}q)^{-1} \parder{\Lambda}{x_{i}}.
+  (\partial^{i}\partial^{0}q)^{-1} \partial^{i}\Lambda.
 \end{equation}
 Dunque abbiamo
 \begin{equation}
   \partial^{0}T^{0i} =
-  (\partial^{0}\partial^{i}q)(\partial^{i}\partial^{0}q)^{-1} \parder{\Lambda}{x_{i}}
-  = \parder{\Lambda}{x_{i}}.
+  (\partial^{0}\partial^{i}q)(\partial^{i}\partial^{0}q)^{-1}
+  \partial^{i}\Lambda = \partial^{i}\Lambda.
 \end{equation}
 Confrontando questa equazione con l'equazione~\eqref{eq:hamilton-momento}
 troviamo che
 \begin{equation}
-  \frac{1}{c} T^{0i} = \parder{q}{x_{i}} \parder{\Lambda}{q_{,0}}
+  \frac{1}{c} T^{0i} = \partial^{i}q \parder{\Lambda}{\dot{q}}
 \end{equation}
 è la densità della componente $i$ del momento tridimensionale, a meno di una
 costante rispetto al tempo additiva, pertanto

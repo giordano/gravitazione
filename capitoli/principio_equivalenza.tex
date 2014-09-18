@@ -149,24 +149,23 @@ conseguenza del principio di equivalenza Einstein ha suggerito il seguente
 \emph{Gedankenexperiment} (esperimento mentale).  Consideriamo un osservatore
 che svolge degli esperimenti all'interno di un ascensore ideale, vale a dire una
 cabina chiusa che occupa una regione finita dello spazio-tempo.  Se l'ascensore
-è in caduta libera in un campo gravitazionale esterno statico e
+è in caduta libera in un campo gravitazionale esterno stazionario e
 omogeneo,\footnote{Vedi la figura 11.1(a) di~\textcite[466]{barone:relativita}.}
 l'osservatore vedrà che ogni corpo all'interno della cabina, compreso se stesso,
 è sottoposto alla stessa accelerazione ed egli non sarà in grado di rilevare,
 mediante esperimenti, la presenza di un campo gravitazionale.  Questa situazione
 è pertanto sperimentalmente indistinguibile da quella in cui la cabina si trova
-lontano da qualsiasi campo
-gravitazionale,\footnote{Vedi la figura 11.1(b)
-  di~\textcite[466]{barone:relativita}.}
-proprio a causa del principio di equivalenza debole.
+lontano da qualsiasi campo gravitazionale,\footnote{Vedi la figura 11.1(b)
+  di~\textcite[466]{barone:relativita}.}  proprio a causa del principio di
+equivalenza debole.
 
 Nell'esperimento mentale di Einstein la forza di gravità è compensata da una
 forza inerziale, in una regione limitata dello spazio-tempo.  Facciamo un altro
 esempio.  Consideriamo un corpo di massa inerziale $m_{\textup{I}}$ e massa
 gravitazionale $m_{\textup{G}}$ in moto non relativistico soggetto alle forze
 $\sum_{k} \bm{F}_{k}$ e al campo gravitazionale esterno $\bm{g}$ omogeneo e
-statico.  In accordo con la meccanica newtoniana la sua equazione del moto, in
-un dato sistema di riferimento inerziale, è
+stazionario.  In accordo con la meccanica newtoniana la sua equazione del moto,
+in un dato sistema di riferimento inerziale, è
 \begin{equation}
   \label{eq:princ-equiv-moto}
   m_{\textup{I}}\toder[2]{\bm{x}}{t} = m_{\textup{G}}\bm{g}+\sum_{k} \bm{F}_{k}
@@ -195,19 +194,17 @@ Nel caso particolare $\sum_{k} \bm{F}_{k} = 0$, il corpo rimane a riposo
 \begin{equation}
   m\toder[2]{\bm{x}'}{t} = \bm{0}.
 \end{equation}
-Ricapitolando, la forza di gravità $F_{\textup{G}} = m_{\textup{G}}^{}\bm{g}$
-è stata compensata dalla forza inerziale
-$F_{\textup{I}}^{}=-m_{\textup{I}}^{}\bm{g}$.
-Tutto ciò non sarebbe possibile senza l'uguaglianza
-$m_{\textup{I}}^{}=m_{\textup{G}}^{}$.
-C'è un importante punto da notare.  Se il campo gravitazionale non fosse
-omogeneo e statico, cioè se nell'equazione~\eqref{eq:princ-equiv-moto} il campo
-$\bm{g}$ dipendesse dalle coordinate spazio-temporali $t$ e $\bm{x}$, non
-sarebbe possibile eliminarlo con una trasformazione di coordinate.  Abbiamo così
-trovato che è possibile cancellare l'effetto della forza gravitazionale con una
-forza inerziale solo \emph{localmente}, cioè in regioni spazio-temporali
-limitate tali che possano essere trascurate le variazioni del campo
-gravitazionale.
+Ricapitolando, la forza di gravità $F_{\textup{G}} = m_{\textup{G}}^{}\bm{g}$ è
+stata compensata dalla forza inerziale
+$F_{\textup{I}}^{}=-m_{\textup{I}}^{}\bm{g}$.  Tutto ciò non sarebbe possibile
+senza l'uguaglianza $m_{\textup{I}}^{}=m_{\textup{G}}^{}$.  C'è un importante
+punto da notare.  Se il campo gravitazionale non fosse omogeneo e stazionario,
+cioè se nell'equazione~\eqref{eq:princ-equiv-moto} il campo $\bm{g}$ dipendesse
+dalle coordinate spazio-temporali $t$ e $\bm{x}$, non sarebbe possibile
+eliminarlo con una trasformazione di coordinate.  Abbiamo così trovato che è
+possibile cancellare l'effetto della forza gravitazionale con una forza
+inerziale solo \emph{localmente}, cioè in regioni spazio-temporali limitate tali
+che possano essere trascurate le variazioni del campo gravitazionale.
 
 \begin{figure}
   \centering
@@ -579,7 +576,10 @@ newtoniano, vale a dire nelle condizioni
 \begin{itemize}
 \item il campo gravitazionale è debole, cioè può essere considerato come una
   perturbazione dello spazio-tempo piatto;
-\item il campo gravitazionale inoltre è stazionario;
+\item il campo gravitazionale inoltre è stazionario;\footnote{Un campo si dice
+    \emph{stazionario} quando è indipendente dalla coordinata temporale e
+    \emph{statico} se è inoltre simmetrico rispetto all'operazione di inversione
+    temporale.}
 \item la velocità della particella è molto più piccola di quella della luce.
 \end{itemize}
 La prima condizione può essere formalizzata dicendo che il
@@ -751,8 +751,8 @@ Nella teoria newtoniana della gravitazione la velocità di una particella in
 orbita attorno a un corpo di massa $M$ a distanza $r$ è data, per il teorema del
 viriale $2K = -U \iff mv^{2} = GMm/r$, da $v = \sqrt{GM/r}$.  Nel paragrafo
 precedente abbiamo studiato l'equazione del moto sotto le ipotesi di campo
-debole ($\abs{h_{\mu\nu}} \sim GM/r \sim v^{2} \ll 1$), statico e velocità non
-relativistiche ($v \ll 1$) trascurando i termini dell'ordine di
+debole ($\abs{h_{\mu\nu}} \sim GM/r \sim v^{2} \ll 1$), stazionario e velocità
+non relativistiche ($v \ll 1$) trascurando i termini dell'ordine di
 $\abs{h_{\mu\nu}}v^{2} \sim v^{4}$ e $\abs{h_{\mu\nu}}v \sim v^{3}$.  In questo
 paragrafo studieremo l'equazione della geodetica con un livello di
 approssimazione maggiore includendo quindi il termine dell'ordine di
@@ -781,7 +781,7 @@ $\ltoder{x^{k}}{\tau} \approx \ltoder{x^{k}}{t} = v^{k}$
   \toder{v^{k}}{t} + \tensor{\Gamma}{^{k}_{00}} +
   2\tensor{\Gamma}{^{k}_{0i}}v^{i} = 0.
 \end{equation}
-Ricordando che stiamo trattando campi gravitazionali statici, le componenti
+Ricordando che stiamo trattando campi gravitazionali stazionari, le componenti
 della connessione affine che ci servono sono
 \begin{subequations}
   \begin{align}
@@ -931,7 +931,7 @@ equazione deriva dall'approssimazione lineare delle equazioni di
 Einstein\footnote{Anticipiamo che l'equazione precedente può essere ricavata
   inserendo nelle componenti $0k$ dell'equazione di
   Einstein~\eqref{eq:einstein-lineare-esatta} l'approssimazione lineare del
-  tensore di Ricci~\eqref{eq:ricci-lineare}, con l'ipotesi di campo statico,
+  tensore di Ricci~\eqref{eq:ricci-lineare}, con l'ipotesi di campo stazionario,
   cioè le cui derivate temporali sono nulle.}  e può anche essere scritta come
 \begin{equation}
   -16\pi GT^{0k} = \partial_{l}(h^{0k,l} - h^{0l,k}) = 2\partial_{l}f^{lk} =
@@ -1163,17 +1163,17 @@ dei dati conferma l'effetto Lense-Thirring con una precisione di circa il 10\%
   \end{tikzpicture}
   \caption[Dilatazione gravitazionale dei tempi e redshift]{Due sperimentatori
     sono fermi, rispettivamente, a distanza $r_{1}$ e $r_{2}$ dall'origine di un
-    campo gravitazionale statico (per esempio generato da una sfera di massa $M$
-    e raggio $R$).  Lo sperimentatore in $r_{1}$ invia una sequenza periodica di
-    segnali identici verso l'altro sperimentatore.  Le linee di universo dei
-    segnali, in coordinate $r$ e $t$, sono rappresentate dalle frecce
-    tratteggiate}
+    campo gravitazionale stazionario (per esempio generato da una sfera di massa
+    $M$ e raggio $R$).  Lo sperimentatore in $r_{1}$ invia una sequenza
+    periodica di segnali identici verso l'altro sperimentatore.  Le linee di
+    universo dei segnali, in coordinate $r$ e $t$, sono rappresentate dalle
+    frecce tratteggiate}
   \label{fig:redshift}
 \end{figure}
 Con riferimento alla figura~\ref{fig:redshift}, consideriamo uno sperimentatore
 posto nel punto $r_{1}$, in prossimità della superficie solare, che invia una
 sequenza periodica di segnali a uno sperimentatore posto in $r_{2}$, sulla
-Terra, in presenza di un campo gravitazionale statico.
+Terra, in presenza di un campo gravitazionale stazionario.
 
 Poiché i segnali sono periodici, un osservatore esterno posto a distanza $r \to
 \infty$ dal sistema, vedrà che i segnali sono inviati da $r_{1}$ con una
