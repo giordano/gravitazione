@@ -916,27 +916,27 @@ otteniamo l'ulteriore relazione
   \nabla \cdot \bm{g} = -4\pi G \rho.
 \end{equation}
 Per trovare l'ultima ``equazione di Maxwell'' per il campo gravitomagnetico
-dobbiamo sfruttare la seguente equazione valida per un campo gravitazionale
-debole e indipendente dal tempo
-% Nota: il segno del laplaciano nell'equazione [3.121] dell'Ohanian-Ruffini (a
-% pagina 139 nell'edizione italiana) è diverso per la diversa scelta dei segni
-% della metrica che comporta un segno opposto nel dalambertiano.
+dobbiamo utilizzare il limite newtoniano (per campi deboli e indipendenti dal
+tempo) delle equazioni di Einstein (vedi la sezione~\ref{sec:onde-grav-vuoto})
 \begin{equation}
-  \nabla^{2}h^{0k} - \partial_{l}\partial^{k} h^{0l} = \partial_{l}\partial^{l}
-  h^{0k} - \partial_{l}\partial^{k} h^{0l} = -16\pi GT^{0k},
+R_{\mu \nu}^{\ \ (1)} = -8 \pi G \ 
+\left( 
+T_{\mu \nu} - \frac{1}{2} \eta_{\mu \nu} T^{\lambda}_{\ \lambda}
+\right)
 \end{equation}
-in cui $T^{0k} = \rho v^{k}$ è la componente $0k$ del tensore energia-impulso,
-quindi rappresenta la densità di flusso di energia nella direzione $k$.  Questa
-equazione deriva dall'approssimazione lineare delle equazioni di
-Einstein\footnote{Anticipiamo che l'equazione precedente può essere ricavata
-  inserendo nelle componenti $0k$ dell'equazione di
-  Einstein~\eqref{eq:einstein-lineare-esatta} l'approssimazione lineare del
-  tensore di Ricci~\eqref{eq:ricci-lineare}, con l'ipotesi di campo stazionario,
-  cioè le cui derivate temporali sono nulle.}  e può anche essere scritta come
+da cui, per la componente $0,k$, si ha:
 \begin{equation}
-  -16\pi GT^{0k} = \partial_{l}(h^{0k,l} - h^{0l,k}) = 2\partial_{l}f^{lk} =
-  \epsilon^{lkj}\partial_{l}b_{j} = -\epsilon^{klj}\partial_{l}b_{j} = -(\nabla
-  \times \bm{b})^{k},
+  \nabla^{2}h_{0k} - \partial^{l}\partial_{k} h_{0l} = \partial^{l}\partial_{l}
+  h_{0k} - \partial^{l}\partial_{k} h_{0l} = -16\pi GT_{0k},
+\end{equation}
+in cui $T_{0k}$ è la componente $0k$ del tensore energia-impulso $T^{\mu \nu}$.
+Osserva che $T_{0k} = - T^{0k} = - \rho v^k$ e quindi $T_{0k}$ rappresenta la
+densità del flusso di energia (cambiata di segno) nella direzione $k$.  L'ultima
+equazione può anche essere scritta come
+\begin{equation}
+  -16\pi GT_{0k} = \partial^{l}(h_{0k,l} - h_{0l,k}) = 2 \partial^{l} f_{lk} =
+  \epsilon_{lkj} \partial^{l}b^{j} = -\epsilon_{klj} \partial^{l}b^{j} = -(\nabla
+  \times \bm{b})_{k},
 \end{equation}
 oppure nella seguente forma vettoriale
 \begin{equation}
@@ -998,16 +998,6 @@ quella di Lorenz $\nabla \cdot \bm{h} = 0$ abbiamo
 \end{equation}
 Una soluzione sarà quindi data da
 \begin{equation}
-  % Nota: il segno di h è diverso da quello riportato sull'Ohanian ma è
-  % concorde con l'espressione di h_{\mu\nu} trovata nel paragrafo sulle onde
-  % gravitazionali in presenza di materia, quando abbiamo trovato la soluzione
-  % col potenziale ritardato.  Inoltre quando l'Ohanian fa i calcoli per le
-  % onde gravitazionali ottiene di nuovo h_{\mu\nu} = - \int ···, quindi c'è
-  % sempre una discordanza di segni, tutto questo mi fa sperare che i miei
-  % calcoli siano corretti.  L'articolo arXiv:gr-qc/9912027 ha tutti i segni
-  % concordi ai miei (lui fa il calcolo con il potenziale ritardato, il suo B è
-  % il mio b/2), compreso il segno, alla fine, di b e della velocità angolare di
-  % precessione di Lense-Thirring.
   \bm{h}(\bm{r}) = - 4 G \int \frac{\bm{S}(\bm{r}') \dd^{3} \bm{r}'}{\norm{\bm{r}
       - \bm{r}'}}
 \end{equation}
@@ -1031,9 +1021,14 @@ Abbiamo trovato che $\bm{b}$ è legato al momento angolare del corpo che genera
 il campo gravitazionale, coerentemente con la previsione che il campo
 gravitomagnetico è associato a masse in rotazione.
 
-Usando ancora l'analogia con il campo magnetico e dipolo magnetico,
-il momento torcente agente su di un giroscopio con momento angolare di spin
-$\bm{S}$ immerso nel campo gravitomagnetico $\bm{b}$ è
+È ben noto che su di un dipolo magnetico $\bm{m}$ immerso in un campo magnetico
+esterno agisce un momento torcente
+\begin{equation}
+  \bm{\tau} = \bm{m} \times \bm{B}
+\end{equation}
+Usando ancora l'analogia tra campo magnetico e campo gravitomagnetico
+su di un giroscopio con momento angolare di spin
+$\bm{S}$ immerso nel campo gravitomagnetico $\bm{b}$ agisce un momento 
 \begin{equation}
   \bm{\tau} = \bm{S} \times \bm{b}/2.
 \end{equation}
@@ -1046,37 +1041,16 @@ si trova
   \toder{\bm{S}}{t} = - \bm{b}/2 \times \bm{S} = \dot{\bm{\Omega}} \times
   \bm{S},
 \end{equation}
-con $\dot{\bm{\Omega}}$ velocità angolare di precessione dello spin $\bm{S}$
-attorno alla direzione del vettore $\bm{b}$.  Quindi la velocità angolare
-di precessione del giroscopio è (ripristiniamo la velocità della luce nel
-vuoto)\footnote{Il risultato differisce da quello di
-  \textcite[193]{ohanian:gravitazione} per il segno, ma, come osservato nella
-  nota della pagina~\pageref{nota-b}, il vettore $\bm{b}$ è stato da noi
-  definito in senso opposto rispetto a quel testo, quindi il verso del nostro
-  $\dot{\bm{\Omega}}$ è opposto al loro e i risultati fisici sono coerenti.}
+e questa equazione implica che lo spin del giroscopio precede con velocità
+angolare $\dot{\bm{\Omega}}$ attorno alla direzione del vettore $\bm{b}$
+(\emph{precessione di Lense-Thirring})
+vedi~\textcite[193-195]{ohanian:gravitazione}.  Ripristiniamo la velocità della
+luce nel vuoto, si ha
 \begin{equation}
   \dot{\bm{\Omega}} = -\frac{\bm{b}}{2} =
   + \frac{G}{c^{2}}\frac{3\versor{r}(\versor{r} \cdot \bm{L}) -
     \bm{L}}{\norm{\bm{r}}^{3}}.
 \end{equation}
-Se il campo gravitomagnetico $\bm{b}$ è non nullo si ha una precessione di un
-giroscopio attorno a $\bm{b}$.  Notiamo che $\bm{b}$ è definito a partire dalle
-componenti $h_{0k}$ della perturbazione del tensore metrico.  Il tensore metrico
-associato a un campo gravitazionale generato da un corpo sferico in rotazione ha
-termini non diagonali diversi da zero già nell'approssimazione di campo debole
-(vedi~\textcite[192]{ohanian:gravitazione}).  Dunque in questo caso si ha
-$h_{0k} \neq 0 \implies \bm{b} \neq 0$ e lo spin di un giroscopio in orbita
-attorno a una massa in rotazione sarà soggetto a una precessione, chiamata
-\index{precessione!di Lense-Thirring} \emph{precessione di Lense-Thirring},
-attorno al campo gravitomagnetico $\bm{b}$.
-
-Il Sole e la Terra hanno un raggio di Schwarzschild molto più piccolo del loro
-raggio fisico, quindi i campi gravitazionali al loro esterno sono deboli,
-inoltre sono in lenta (non relativistica) rotazione, allora il moto di
-particelle nel campo gravitazionale di questi corpi può essere descritto usando
-il campo gravitomagnetico.  Sono in corso degli esperimenti per verificare
-l'effetto Lense-Thirring intorno alla Terra,
-vedi~\textcite[193-195]{ohanian:gravitazione}.
 
 Se un giroscopio si muove lungo un'orbita equatoriale attorno alla Terra, la
 posizione $\bm{r}$ del giroscopio è istante per istante perpendicolare al
