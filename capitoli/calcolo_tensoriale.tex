@@ -795,7 +795,7 @@ il quale la distanza è $\dd l^2 \equiv (\dd r^2+r^2 \dd\theta^2)= g_{ij} \dd x^
 e le trasformazioni inverse
 \begin{subequations}
   \begin{align}
-    x &= r \sin\theta, \\
+    x &= r \cos\theta, \\
     y &= r \sin\theta.
   \end{align}
 \end{subequations}
@@ -921,10 +921,13 @@ l'equazione del moto si scrive come
 \end{equation}
 che è l'\index{equazione!della geodetica}equazione della
 geodetica~\eqref{eq:geodetica2}.  Qui la 4-velocità è $V^{\mu} =
-(\lparder{x^{\mu}}{\xi^{\alpha}}) \xi^{\alpha}$.
+(\lparder{x^{\mu}}{\xi^{\alpha}}) V^{\alpha}$.
 
 \subsection{Deviazione geodetica: effetto De Sitter}
 \label{sec:effetto-de-sitter}
+
+\emph{Per questo argomento fai riferimento a
+  \textcites[352-355]{ohanian:gravitazione}[233]{weinberg:gravitation}.}
 
 In assenza di momenti esterni, l'equazione del moto dello spin $S^{\mu}$ di un
 giroscopio in relatività speciale è
@@ -977,26 +980,31 @@ In maniera analoga, usando la relazione $h_{11}=2GM/(c^2 r)$) si trova
 \end{subequations}
 
 Per valutare le componenti dell'equazione~\eqref{eqspin} abbiamo bisogno della
-4-velocità $\ltoder{x^{\beta}}{\tau} \simeq (1,0,v,0)$ (assumiamo $v\ll 1$) e
-della componente $S^0$ dello spin.  Per determinare questa, notiamo che nel
-sistema di riferimento di quiete del giroscopio $S'^{\alpha}=(0,S,0,0)$,
-$\ltoder{x'^{\beta}}{\tau} = (1,0,0,0)$ e $g'_{\alpha \beta} = \eta_{\alpha
-  \beta}$, così che $g'_{\alpha \beta} S'^{\alpha} \ltoder{x'^{\beta}}{\tau}
-=0$.  Di conseguenza anche nelle coordinate $x^{\mu}$ deve essere $g_{\mu \nu}
-S^{\mu} \ltoder{x^{\nu}}{\tau}=0$, da cui
+4-velocità $\ltoder{x^{\beta}}{\tau} \simeq (1,0,v,0)$ (assumiamo $v\ll 1$, il
+che implica $\dd\tau \simeq \dd t$) e della componente $S^0$ dello spin.  Per
+determinare questa, notiamo che nel sistema di riferimento di quiete del
+giroscopio $S'^{\alpha}=(0,S,0,0)$, $\ltoder{x'^{\beta}}{\tau} = (1,0,0,0)$ e
+$g'_{\alpha \beta} = \eta_{\alpha \beta}$, così che $g'_{\alpha \beta}
+S'^{\alpha} \ltoder{x'^{\beta}}{\tau} =0$.  Di conseguenza anche nelle
+coordinate $x^{\mu}$ deve essere
+\begin{equation}
+  g_{\mu \nu} S^{\mu} \toder{x^{\nu}}{\tau}=0\,,
+\end{equation}
+da cui
 \begin{equation}
   S^0 = - \frac{1}{g_{00}} \left( S_x g_{11} \toder{x}{\tau} + S_y g_{22}
     \toder{y}{\tau} + S_z g_{33} \toder{z}{\tau}\right) \simeq S_y v.
 \end{equation}
-Nel punto di coordinate $x=r_0$, $y=0$, $z=0$, l'equazione~\eqref{eqspin}
-diventa
+Confronta l'ultima relazione con la relazione (9.6.2)
+in~\textcite{weinberg:gravitation}: $S^0 = v^i S_i$.  Nel punto di coordinate
+$x=r_0$, $y=0$, $z=0$, l'equazione~\eqref{eqspin} diventa
 \begin{subequations}
   \begin{align}
     \toder{S_1}{\tau} &\equiv \toder{S_x}{\tau} =
                         -\tensor{\Gamma}{^1_{\alpha \beta}} S^{\alpha}
                         \toder{x^{\beta}}{\tau} \simeq
                         -\tensor{\Gamma}{^1_{00}} S^0  -
-                        \tensor{\Gamma}{^1_{22}} S^2 \toder{x^2}{\tau} \simeq
+                        \tensor{\Gamma}{^1_{22}} S^2 \toder{x^2}{t} \simeq
                         -2 \frac{GM}{c^2 r_0^2} S_y v, \\
     \toder{S_2}{\tau} &\equiv \toder{S_y}{\tau} \simeq \frac{GM}{c^2 r_0^2} S_x
                         v, \\
@@ -1009,7 +1017,7 @@ possono essere poste nella forma di un'equazione vettoriale, che risulterà
 valida in un generico punto dell'orbita.  Si ha
 \begin{equation}
   \label{eqsecolare}
-  \toder{\bm{S}}{\tau} = -2 \bm{v} \cdot \bm{S} \nabla \phi_{\textup{new}} +
+  \toder{\bm{S}}{t} = -2 \bm{v} \cdot \bm{S} \nabla \phi_{\textup{new}} +
   \bm{v}\bm{S} \cdot \nabla\phi_{\textup{new}}.
 \end{equation}
 Poiché la velocità $\bm{v}$ del giroscopio e l'accelerazione gravitazionale
@@ -1021,15 +1029,15 @@ $\nabla\phi_{\textup{new}}$ in funzione del tempo:
 \begin{subequations}
   \begin{align}
     \bm{v} &= -\versor{x} v \sin(\omega t) + \versor{y} v \cos(\omega t), \\
-    \nabla\phi_{\textup{new}} &= -\versor{x} \frac{GM}{c^2 r_0^2} \cos(\omega t)
-                                + \versor{y}\frac{GM}{c^2 r_0^2} \sin(\omega t).
+    \nabla\phi_{\textup{new}} &= -\versor{x} \frac{GM}{r_0^2} \cos(\omega t)
+                                + \versor{y}\frac{GM}{r_0^2} \sin(\omega t).
   \end{align}
 \end{subequations}
 Sostituendo nell'equazione~\eqref{eqsecolare} e mediando in un periodo ($T=2
 \pi/ \omega$) si ottiene
 \begin{equation}
   \begin{split}
-    \left\langle\toder{\bm{S}}{\tau}\right\rangle &= \frac{GM}{c^2 r_0^2} v
+    \left\langle\toder{\bm{S}}{t}\right\rangle &= \frac{GM}{c^2 r_0^2} v
     \langle [\versor{x} (-2 S_y \cos^2 \omega t - S_y \sin^2\omega t) +
     \versor{y} ( +2 S_x \sin^2 \omega t + S_x \cos^2 \omega t) ]\rangle \\
     %<\frac{d \bm S}{d\tau}>
@@ -1038,7 +1046,7 @@ Sostituendo nell'equazione~\eqref{eqsecolare} e mediando in un periodo ($T=2
 \end{equation}
 risultato che può essere riscritto in forma compatta come
 \begin{equation}
-  \left\langle\toder{\bm{S}}{\tau}\right\rangle = \frac{3}{2}
+  \left\langle\toder{\bm{S}}{t}\right\rangle = \frac{3}{2}
   \frac{GM}{c^2 r_0^3} (\bm{r} \times \bm{v}) \times \bm{S} =
   \dot{\bm{\Omega}}_{\textup{De Sitter}} \times \bm{S}.
 \end{equation}
@@ -1054,7 +1062,7 @@ giroscopio a 650 km sopra la Terra ($M=M_{\oplus} = \SI{5.977e27}{\gram}$,
 $r_0=R_{\oplus}+\SI{650}{\kilo\metre}$, $R_{\oplus}=\SI{6378.17}{\kilo\metre}$)
 con lo spin nel piano dell'orbita la precessione geodetica risulta essere
 $\delta \Omega_{\textup{De Sitter}} = {\dot{\Omega}_{\textup{De Sitter}}} \times
-1$ anno $= 6.6$arcsec/anno.  (vedi la figura 7.7
+1$ anno $= 6.6$ arcsec/anno.  (vedi la figura 7.7
 di~\textcite[355]{ohanian:gravitazione}).  Si osservi che per un orbita polare,
 $\delta \Omega_{\textup{De Sitter}}$ è ortogonale a $\delta
 \Omega_{\textup{Lense-Thirring}}$ e che inoltre $\delta \Omega_{\textup{De
