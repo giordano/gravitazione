@@ -421,52 +421,62 @@ direzioni spaziali attraverso misure locali.  Questo accade se e solo la
 d'Universo delle galassie sono lungo l'asse temporale.  Le galassie hanno quindi
 coordinate spaziali fisse (comoventi) su $^{(3)}S$ e ciò nonostante (come
 vedremo), all'aumentare di $t$, esse si allontanano l'una dall'altra a causa
-dell'espansione di $^{(3)}S$: al crescere di $t$ la distanza tra le singole
+dell'espansione: al crescere di $t$ la distanza tra le singole
 galassie aumenta dello stesso fattore $R(t)$, mentre i rapporti di distanza
 rimangono costanti.
 
-Si dimostra che l'isotropia di $^{(3)}S$ richiede che le componenti miste della
-metrica siano nulle, cioè $g_{0i}=0$. Questa condizione implica:
+In Cosmologia è conveniente introdurre le coordinate dello spazio-tempo in modo
+che $g_{00}=-1$ e $g_{0i}=0$ (in particolare la seconda condizione permette di
+sincronizzare gli orologi su di un percorso finito - vedi discussione
+su~\textcite{landau:campi}).  Questo sistema è detto \emph{sincrono} e
+l'espressione generale della metrica dello spazio-tempo assume la forma
+\begin{equation}
+  \dd\tau^2 \equiv \dd t^2 - \dd l^2 = \dd t^2 - ^{(3)}g_{ij}(t,\bm{x}) \dd x^i
+  \dd x^j
+\end{equation}
 \begin{itemize}
-\item che le 3-superfici spaziali sono ortogonali all'asse temporale, cioè se
-  prendiamo un vettore orientato nel tempo $V^{\mu}=(1,0,0,0)$ ed uno orientato
-  nello spazio
-  $U^{\mu}=(0,U_x,U_y,U_z)$, si ha $V^{\mu} U_{\mu} = g_{0i} V^0 U^i =0$;
-\item che le linee del tempo ($x^{\mu}(\tau)$ con $x^i=\text{cost}$) sono
-  geodetiche dello spazio-tempo. Infatti poichè $g_{0i}=0$ si ha che
-  $\tensor{\Gamma}{^{\mu}_{00}}=0$. Con questo risultato (e per la condizione
-  $dx^i=0$ per le linee del tempo), l'eq. della geodetica
+\item La condizione $g_{00}=-1$ implica che per eventi che accadono nello stesso
+  posto ($dx^i=0$) la differenza della coordinata temporale $dt$ misura il tempo
+  proprio $d \tau$ trascorso tra i due eventi (il tempo segnato da un orologio
+  che sia nello stesso posto).
+\item La condizione $g_{0i}=0$ implica invece che le linee del tempo
+  ($x^{\mu}(\tau)$ con $x^i=\text{cost}$) sono geodetiche dello spazio-tempo.
+  Infatti poichè $g_{0i}=0$ si ha che $\tensor{\Gamma}{^{\mu}_{00}}=0$.  Con
+  questo risultato (e per la condizione $dx^i=0$ per le linee del tempo),
+  l'eq. della geodetica
   \begin{equation}
-    \frac{d^2 x^{\mu}} {d\tau^2} + \tensor{\Gamma}{^{\mu}_{00}} \frac{dx^0}{d
-      \tau} \frac{dx^0}{d \tau} =0
+    \toder[2]{x^{\mu}} {\tau} + \tensor{\Gamma}{^{\mu}_{00}} \toder{x^0}{\tau}
+    \toder{x^0}{\tau} = 0
   \end{equation}
   si riduce a
   \begin{equation}
-    \frac{d^2 x^{\mu}} {d\tau^2} =0
+    \toder[2]{x^{\mu}} {\tau} = 0
   \end{equation}
-  da cui $x^{\mu}=\text{cost}$ è soluzione.  Questo significa che le linee
-  d'Universo delle Galassie e degli osservatori fondamentali (ai quali
-  l'Universo appare omogeneo ed isotriopo) sono dirette lungo l'asse del tempo.
+  da cui $x^{\mu}=\text{cost}$ è soluzione.
+\item La stessa condizione $g_{01} =0$ implica inoltre che le linee del tempo
+  sono ortogonali alle 3-superfici spaziali.  Cioè, se prendiamo un vettore
+  orientato nel tempo $T^{\mu}=(1,0,0,0)$ ed uno orientato nello spazio
+  $S^{\mu}=(0,S_x,S_y,S_z)$, si ha $T^{\mu} S_{\mu} = g_{0i} T^0 S^i =0$.
+
+  Precedentemente abbiamo osservato che a causa dell'isotropia dell'Universo
+  (rispetto ad osservatori fondamentali che coincidono con le galassie) la
+  componente spaziale della 4-velocità delle Galassie deve essere nulla, quindi
+  $V^{\mu}_G = \ltoder{x^{\mu}_G}{\tau} = (1,0,0,0)$.
+\item Dalle considerazioni precedenti, segue allora che le coordinate delle
+  Galassie e degli osservatori fondamentali sono fisse (labels) e che le loro
+  linee d'universo sono dirette lungo l'asse del tempo risultando ortogonali
+  alle 3-superfici spaziali.  Si osserva quindi che la condizione $g_{0i}=0$ è
+  una condizione richiesta dall'isotropia di $^{(3)}S$.
 \end{itemize}
 
-È conveniente ora introdurre le coordinate nello spazio-tempo in modo tale che
-la componente $g_{00}=-1$.  Così, per eventi che accadono nello stesso posto
-($dx^i=0$) la differenza della coordinata temporale $dt$ dà la misura del tempo
-proprio $d \tau$ trascorso tra i due eventi (il tempo segnato da un orologio che
-sia nello stesso posto).  Questo sistema è detto \emph{sincrono} e la 4-velocità
-della galassie è $V^{\mu}_G = (1,0,0,0)$.  Con le due condizioni $g_{00}=-1$ e
-$g_{0i}=0$, l'espressione generale della metrica assume la forma
+Ora in Cosmologia, la parte spaziale della metrica $\dd
+l^2=^{(3)}g_{ij}(t,\bm{x}) \dd x^i \dd x^j$ deve necessariamente avere la forma
 \begin{equation}
-  d \tau^2 \equiv dt^2 -dl^2 = dt^2 - ^{(3)}g_{ij}(t,\bm x)  dx^i dx^j
-\end{equation}
-Ora in Cosmologia, la parte spaziale della metrica $^{(3)}g_{ij}(t,\bm x)$ deve
-necessariamente avere la forma
-\begin{equation}
-  ^{(3)}g_{ij}(t,\bm v) = R^2(t) ^{3}\eta_{ij}(\bm x)
+  ^{(3)}g_{ij}(t,\bm{v}) = R^2(t) ^{3}\eta_{ij}(\bm{x})
   \label{metrica_eta}
 \end{equation}
 dove $^{(3)}\eta_{ij}(\bm x)$ è la metrica spaziale su una qualunque delle
-3-superfici a simmetria massima. Infatti, il rapporto delle distanze tra due
+3-superfici $^{(3)}S$. Infatti, il rapporto delle distanze tra due
 galassie A e B
 a tempi differenti non può:
 \begin{itemize}
@@ -478,19 +488,19 @@ a tempi differenti non può:
 L'unica dipendenza possibile del rapporto di distanze è da una funzione del
 tempo che indichiamo con $R(t)$.  Si ha allora
 \begin{equation}
-  \frac{dl(t)} {dl(t_I)} = R(t) \implies  dl^2(t) = R^2(t)  ^{(3)}\eta_{ij}(\bm
-  x) dx^i dx^j.
+  \toder{l(t)}{l(t_I)} = R(t) \implies \dd l^2(t) =
+  R^2(t)^{(3)}\eta_{ij}(\bm{x}) \dd x^i \dd x^j.
 \end{equation}
 
 L'isotropia attorno ad ogni punto di $^{(3)}S$ impone ulteriormente che il
-termine $^{(3)}\eta_{ij} dx^i dx^j$ abbia la forma introdotta nella eq. seguente
+termine $^{(3)}\eta_{ij}(\bm{x}) \dd x^i \dd x^j$ abbia la forma
 \begin{equation}
-  dl^2 = R^2(t) F(r) (dr^2 +r^2 d\Omega^2) \qquad\text{con}\qquad
-  d\Omega^2 = d \theta^2 + \sin^2 \theta d\phi^2.
+  ^{(3)}\eta_{ij}(\bm{x}) \dd x^i \dd x^j = F(r) (\dd r^2 +r^2 \dd\Omega^2)
+  \qquad\text{con}\qquad \dd\Omega^2 = \dd\theta^2 + \sin^2 \theta \dd\phi^2.
 \end{equation}
-Pertanto la forma completa della metrica è
+Pertanto la forma completa della metrica dello spazio tempo in Cosmologia è
 \begin{equation}
-  d \tau^2 = dt^2 -  R^2(t) F(r) (dr^2 +r^2 d\Omega^2)
+  \dd \tau^2 = \dd t^2 -  R^2(t) F(r) \left(\dd r^2 +r^2 \dd\Omega^2 \right)
   \label{forma_F(r)}
 \end{equation}
 
@@ -607,7 +617,7 @@ abbiamo ora
        x^{\tau}} - \frac{\partial g_{\tau \nu} } {\partial x^{\mu}} -
      \frac{\partial g_{\mu  \tau}} {\partial x^{\nu}} \right]\\
    & = \frac{\partial \xi_{\nu}} {\partial x^{\mu}} + \frac{\partial \xi_{\mu}}
-   {\partial x^{\nu}} - 2 \xi^{\rho} \tensor{\Gamma}{^{\rho}_{\mu \nu}}
+   {\partial x^{\nu}} - 2 \xi_{\rho} \tensor{\Gamma}{^{\rho}_{\mu \nu}}
 \end{split}
 \end{equation}
 o in maniera compatta
@@ -618,11 +628,10 @@ Consideriamo ora le componenti $rr$, $\theta \theta $ e $r \theta $ dell'eq. di
 Killing nella forma \eqref{eq_killing_2}.  Osserviamo preliminarmente che
 \begin{subequations}
   \begin{align}
-    g_{\mu \nu} &= 0 \qquad\text{per}\qquad \mu \ne \nu, \\
-    \frac{\partial g_{\mu \nu}}{\partial \theta} &= \frac{\partial g_{\mu \nu}}
-                                                   {\partial \phi} = 0, \\
-    g_{r r} &= R^2(t) F(r), \\
-    g_{\theta \theta} &= R^2(t) r^2.
+    g_{\mu \nu} & = 0 \qquad\text{per}\qquad \mu \ne \nu, \\
+     \parder{g_{\mu \nu}}{\phi}                  & = 0,   \\
+                                         g_{r r} & = R^2(t) F(r), \\
+    g_{\theta \theta}                            & = R^2(t) r^2.
   \end{align}
 \end{subequations}
 Per la componente $rr$ si ha:
@@ -691,7 +700,7 @@ Dall'uguaglianza
 \begin{equation}
   \frac{1}{C} \frac{d^2 C(\theta,\phi)}{d \theta^2} = D
 \end{equation}
-segue che necessariamente $D=1$
+segue che necessariamente $D=-1$
 \begin{equation}
   \begin{split}
     C(\theta,\phi) \propto \cos \theta & \implies
@@ -703,13 +712,13 @@ segue che necessariamente $D=1$
 \end{equation}
 L'eq. differenziale per $F(r)$ può essere posta nella forma
 \begin{equation}
-  \frac{1}{\sqrt{ r F(r)}} \frac{d}{dr} \left( \frac{1}{r \sqrt{F(r)}}\right)= -
+  \frac{1}{r\sqrt{F(r)}}\toder{}{r} \left(\frac{1}{r \sqrt{F(r)}}\right)= -
   \frac{1}{r^3}
 \end{equation}
 o, equivalentemente,
 \begin{equation}
-  \frac{1}{2} d \left( \frac{1}{r \sqrt{F(r)}} \right)^2 =
-  \frac{1}{2} d \left(\frac{1}{r^2}\right)
+  \frac{1}{2} \dd \left( \frac{1}{r \sqrt{F(r)}} \right)^2 =
+  \frac{1}{2} \dd \left(\frac{1}{r^2}\right)
 \end{equation}
 che si integra facilmente
 \begin{equation}
@@ -755,7 +764,8 @@ dl^2 = R^2(d\theta^2 + \sin^2 \theta d\phi^2).
 In maniera analoga per la 3-sfera nello spazio euclideo 4-dimensionale si ha
 \begin{subequations}
   \begin{gather}
-    dl^2 = dx^2+dy^2+dz^2+dw^2 x^2+y^2+z^2+w^2=R^2
+    \dd l^2 = \dd x^2 + \dd y^2 + \dd z^2 + \dd w^2 \\
+    x^2+y^2+z^2+w^2=R^2
   \end{gather}
 \end{subequations}
 da cui
@@ -804,15 +814,15 @@ Le 2-superfici a $\chi$ fissato sono 2-sfere, su cui variano $\theta$ e $\phi$,
 di raggio $R \sin \chi$.  Su queste 2-sfere la distanza è $dl^2 = R^2 \sin^2
 \chi (d \theta^2+\sin^2 \theta d\phi^2)$, quindi
 \begin{equation}
-  \sqrt{^2\eta } = R^2 \sin\chi \sin \theta \implies
-  ^2V= \int_0^{\pi} \int_0^{2 \pi} R^2 \sin\chi \sin \theta d \phi d \theta =
+  \sqrt{^{(2)}\eta } = R^2 \sin\chi \sin \theta \implies
+  ^{(2)}V= \int_0^{\pi} \int_0^{2 \pi} R^2 \sin\chi \sin \theta d \phi d \theta =
   4\pi R^2 \sin \chi
 \end{equation}
 L'intero volume della 3-sfera è
 \begin{equation}
-  \sqrt{^3\eta } = R^3 \sin^2 \chi \sin \theta \implies
-  ^3V = \int_0^{\pi} \int_0^{\pi} \int_0^{2 \pi}  R^2 \sin^2 \chi \sin \theta d
-  \phi d \theta =  2 \pi^2 R^3
+  \sqrt{^{(3)}\eta } = R^3 \sin^2 \chi \sin \theta \implies
+  ^{(3)}V = \int_0^{\pi} \int_0^{\pi} \int_0^{2 \pi}  R^2 \sin^2 \chi \sin \theta d
+  \phi d \theta d \chi =  2 \pi^2 R^3
 \end{equation}
 
 \subsubsection{Caso $k=+0$}
@@ -876,7 +886,7 @@ si ha infine
   dl^2 = R^2 \left[ \frac{dr^2} {1-kr^2} + r^2 (d \theta^2+\sin^2 \theta
     d\phi^2) \right].
 \end{equation}
-L'intero volume $^3V= 4 \pi R^2 \sinh^2 \chi$ è infinito.
+L'intero volume $^{(3)}V= 4 \pi R^2 \sinh^2 \chi$ è infinito.
 
 \section{Tensore energia-impulso dell'Universo}
 
@@ -1038,7 +1048,7 @@ dove $f(r_1)$ è data da
     \arcsinh r_{1} & \text{se } k = -1.
   \end{cases}
 \end{equation}
-Per piccoli valori di $r_1$, cioè per distanza $D_P \ll R$ si ha
+Per piccoli valori di $r_1\ll 1$ si ha
 \begin{subequations}
   \begin{align}
     \arcsin r_1 &= r_1 +\frac{r_1^3}{6}  \simeq r_1 \\
@@ -1093,8 +1103,7 @@ e integrando (osserva che $dr<0$)
   \int_{t_1}^{t_0} \frac{dt}{R(t)} = \int_0^{r_1} \frac{dr}{\sqrt{1-kr^2}}
   \equiv f(r_1)
 \end{equation}
-Si stabilisce quindi una corrispondenza implicita tra $r_1$, $t_1$, $r_0$,
-$t_0$.
+Si stabilisce quindi una corrispondenza implicita tra $r_1$, $t_1$, $t_0$.
 
 Consideriamo ora una sola lunghezza d'onda: la prima cresta d'onda parte al
 tempo $t_1$ e arriva al tempo $t_0$ dato da
@@ -1170,7 +1179,8 @@ che è la forma in cui si pone l'effetto Doppler.  Si ha anche:
 e dunque ancora la legge di Hubble.  Notiamo infine che la legge di Hubble
 stabilisce una corrispondenza tra $z$ e $D$
 \begin{equation}
-  D = \frac{c}{H_0} z \simeq 4000~{\rm Mpc}~z \frac{75~{\rm km/s~Mpc}}{H_0}
+  D = \frac{c}{H_0} z = z ~ 4000 ~ {\rm Mpc}  ~
+ \left( \frac { 75 ~{\rm km/(s ~ Mpc) }} {H_0} \right)
 \end{equation}
 
 \section{Relazione tra red-shift e distanza di luminosità}
@@ -1212,8 +1222,8 @@ Ora, però, dobbiamo tenere conto dell'espansione dell'Universo per cui:
   \end{equation}
 \end{itemize}
 
-Vogliamo ora ricavare una relazione $d_L=d_L(z)$ tra red-shift e distanza di
-luminosità, che sia indipendente da un particolare modello cosmologico. Tale
+{\bf Vogliamo ora ricavare una relazione $d_L=d_L(z)$ tra red-shift e distanza di
+luminosità, che sia indipendente da un particolare modello cosmologico}. Tale
 relazione, come vedremo, introdurrà due parametri che risultano rilevanti in
 Cosmologia. Pertanto un programma osservativo con misure (fotometriche) di
 distanza e (spettroscopiche) di red-shift di una stessa classe di oggetti
@@ -1224,7 +1234,7 @@ Consideriamo una classe di indicatori di distanza di stessa luminosità assoluta
 $L$. Partiamo dalla relazione \eqref{dis_lum} operando espansioni al 2$^0$
 ordine in $z$, $(t_1-t_0)$, $r_1$.  Sia $\Delta t= t_1-t_0 <0$; si ha
 \begin{equation}
-  R(t_1) \simeq R(t_0) \left( 1+H_0 \Delta t -\frac{1}{2} H^2_0 \Delta
+  R(t_1) \simeq R(t_0) \left( 1+H_0 \Delta t -\frac{1}{2} H^2_0 q_0 \Delta
     t^2+\cdots \right)
 \end{equation}
 Qui $H_0$ è la costante di Hubble e $q_0$ è il parametro di decelerazione
@@ -1267,8 +1277,8 @@ Il primo termine è $ \simeq r_1 + O(r^3_1)$; il secondo termine è
 Complessivamente si ha:
 \begin{equation}
   \begin{split}
-    r_1 & \simeq \frac{c}{R_0} \left[ -\Delta t + \frac{1}{2}H_0 \Delta t^2 + \cdots \right] \\
-    & \simeq \frac{c}{R_0} \left[
+    r_1 & \simeq \frac{1}{R_0} \left[ -\Delta t + \frac{1}{2}H_0 \Delta t^2 + \cdots \right] \\
+    & \simeq \frac{1}{R_0} \left[
       \frac{z}{H_0} -
       \frac{1}{H_0} \left(1 + \frac{1}{2} q_0 \right) z^2
       + \frac{H_0}{2} \frac{z^2}{H^2_0} + \cdots \right]
@@ -1276,13 +1286,13 @@ Complessivamente si ha:
 \end{equation}
 da cui si ottiene
 \begin{equation}
-  r(z) \simeq \frac{cz}{R_0 H_0} \left[ 1- \left( \frac{1+q_0}{2}\right) z +
+  r(z) \simeq \frac{z}{R_0 H_0} \left[ 1- \left( \frac{1+q_0}{2}\right) z +
     \cdots \right]
 \end{equation}
 La distanza di luminosità è allora data da
 \begin{equation}
   d_L \equiv R_0 r_1 (1+z)
-  \simeq R_0 \frac{cz}{R_0 H_0} \left[ 1 - \left( \frac{1+q_0}{2} \right) z +
+  \simeq R_0 \frac{z}{R_0 H_0} \left[ 1 - \left( \frac{1+q_0}{2} \right) z +
     \cdots \right] (1+z)
 \end{equation}
 ed infine
@@ -1290,7 +1300,7 @@ ed infine
   d_L = \frac{cz}{H_0} \left[ 1 + \left( \frac{1-q_0}{2} \right) z + \cdots \right]
   \label{1468}
 \end{equation}
-Tale relazione è indipendente dal modello cosmologico utilizzato. All'ordine più
+{bf Tale relazione è indipendente dal modello cosmologico utilizzato}. All'ordine più
 basso riprendiamo la legge di Hubble.
 
 Possiamo esprimere il flusso osservato in termini di $z$.  Si ottiene
@@ -1342,9 +1352,10 @@ Verso la fine degli anni '90 il programma è stato ripreso da Perlmutter e Riess
 usando come indicatori di distanza Supernovae (di tipo Ia) piuttosto che
 galassie.
 
-\section{Relazione di Mattig}
+\section{Relazione di Mattig: $d_L(z)$ per i modelli di Friedmann. }
 
-Cerchiamo una relazione esatta tra coordinata comovente $r_1$ e red-shift $z$.
+Cerchiamo una relazione esatta tra coordinata comovente $r_1$ e red-shift $z$ per
+il caso in cui $R(t)$ .
 Consideriamo un segnale emesso al tempo $t_1$ da una galassia in $r=r_1$ e che
 ci raggiunge in $r=0$ all'istante attuale $t_0$. Integrando radialmente la
 metrica di RW, si ha
@@ -1352,8 +1363,8 @@ metrica di RW, si ha
   \int_0^{r_1} \frac{dr}{\sqrt{1-kr^2}} = \int_{t_1}^{t_0} \frac{dt}{R(t)} =
   \int_{R_1}^{R_0} \frac{dR}{R \dot{R}}
 \end{equation}
-Utilizzando l'eq. di Friedmann \eqref{fri}, con $x=R(t)/R_0$ possiamo scrivere
-l'integrale sopra come
+Utilizzando l'eq. di Friedmann \eqref{fri} (nella forma \eqref{2.40}), con
+$x=R(t)/R_0$ possiamo scrivere l'integrale sopra come
 \begin{equation}
   \int_0^{r_1} \frac{dr}{\sqrt{1-kr^2}} = \frac{1}{R_0 H_0}
   \int_{(1+z)^{-1}}^{1} \left(1-2q_0+ \frac{2q_0}{x} \right)^{-1/2} \frac{dx}{x}
@@ -1430,11 +1441,11 @@ relazione
 \end{figure}
 La lunghezza propria $D$ si calcola dalla metrica RW ponendo $dt=dr=d\phi=0$
 \begin{equation}
-  D= R(t_1) r_1 \Delta \theta
+  D= R(t_1) r_1 \Delta \theta  \implies \Delta \theta = \frac{D} {R(t_1) r_1}
 \end{equation}
 da cui segue
 \begin{equation}
-  \Delta \theta = \frac{D} {R(t_1) r_1} \implies d_A= R(t_1) r_1.
+  d_A= R(t_1) r_1.
 \end{equation}
 Dalle definizioni di $d_L$ in \eqref{dis_lum} e $d_A$ segue
 \begin{equation}
@@ -1448,8 +1459,13 @@ e quindi usando eq. \eqref{15324}
   \Delta \theta  = D \frac{H_0 q^2_0 (1+z)^2} {\left[ z q_0 +(q_0-1)
       (-1+\sqrt{2q_0z+1}) \right]}
 \end{equation}
+Qui anticipiamo alcune relazioni che troveremo nel capitolo successivo
+\begin{align}
+  \Omega_0 &= \frac{\rho_0 }{\rho_c}=2 q_0, \\
+  \rho_c   &= \frac{3 H_0^2}{8 \pi G}
+\end{align}
 La fig.~\ref{diam_angolari_1} illustra l'andamento della dimensione angolare di
-una sorgente in funzione di $z$ e la sua dipendenza da $q_0$. Per $z\ll 1$
+una sorgente in funzione di $z$ e la sua dipendenza da $q_0$.  Per $z\ll 1$
 l'andamento è quello previsto in un universo Euclideo $\Delta \theta \propto
 z^{-1}$ .  All'avvicinarsi a $z=1$ si verifica un appiattimento, e per valori di
 $z>1$ una inversione per cui al crescere della distanza (e red-shift) la

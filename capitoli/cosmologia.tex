@@ -20,8 +20,8 @@ coomoventi e $\tilde{g}_{ij}(x^i)$ è la metrica su $^{3}$S
   \label{rw2}
   \begin{align}
     \tilde{g}_{rr} &= (1-kr^2)^{-1}, \\
-    \tilde{g}_{\theta \theta} = r^2, \\
-    \tilde{g}_{\phi \phi} = r^2 \sin^2 \phi,
+    \tilde{g}_{\theta \theta} &= r^2, \\
+    \tilde{g}_{\phi \phi} &= r^2 \sin^2 \phi,
   \end{align}
 \end{subequations}
 tutti gli altri elementi della metrica sono nulli.
@@ -185,13 +185,13 @@ valida la condizione in eq. \eqref{41}.  Applichiamo l'approssimazione
 newtoniana per descrivere il moto di un punto P sulla sfera di raggio $l(t)$.
 Si ha
 \begin{equation}
-  \frac{d^2 l}{dt^2} = -\frac{G m}{l^2} = \frac{4 \pi}{3} G \rho l
+  \toder[2]{l}{t} = -\frac{G m}{l^2} = \frac{4 \pi}{3} G \rho l
   \label{1103}
 \end{equation}
 o anche, moltiplicando per $\dot l$
 \begin{equation}
-  \frac{l}{2} \frac{d \dot{l}^2}{dt} = - \dot{l} \frac{G m}{l^2} = Gm  \frac {d}
-  {dt} \left( \frac{1}{l} \right)
+  \frac{l}{2} \toder{\dot{l}^2}{t} = - \dot{l} \frac{G m}{l^2} = Gm  \toder{}{t}
+  \left( \frac{1}{l} \right)
 \end{equation}
 e integrando
 \begin{equation}
@@ -234,19 +234,20 @@ che è l'analoga eq. \eqref{e1} ottenuta applicando la Relatività Generale.
 
 Per quanto riguarda l'eq. di conservazione \eqref{moto}, essa si può ottenere
 dalla I legge della termodinamica nel caso di espansione dell'Universo
-adiabatica ($dQ=0$).  Si ha
+adiabatica ($\dd Q=0$).  Si ha
 \begin{equation}
-  dU + p dV=0
+  \dd U + p \dd V=0
 \end{equation}
-e sostituendo $U=\rho V c^2$, per cui $dU= V c^2 d\rho + \rho c^2 dV$, si ha
+e sostituendo $U=\rho V c^2$, per cui $\dd U= V c^2 d\rho + \rho c^2 \dd V$, si
+ha
 \begin{equation}
-  \rho dV + V d\rho = - \frac{p}{c^2} dV \implies
-  d\rho= -\left( \rho + \frac{p}{c^2} \right) \frac{dV}{V}
+  \rho \dd V + V \dd\rho = - \frac{p}{c^2} \dd V \implies
+  \dd\rho= -\left( \rho + \frac{p}{c^2} \right) \frac{\dd V}{V}
 \end{equation}
 da cui segue
 \begin{equation}
   d\rho= - \left( \rho + \frac{p}{c^2} \right) \frac{4 \pi l^2 dl}{4 \pi l^3/3}
-  \implies \frac{d \rho}{dt} +  3 \left( \rho + \frac{p}{c^2} \right) \frac{\dot
+  \implies \toder{\rho}{t} +  3 \left( \rho + \frac{p}{c^2} \right) \frac{\dot
     R }{R} =0
 \end{equation}
 che è equivalente all'eq. \eqref{moto}.
@@ -259,7 +260,7 @@ $v=v_{c}$.  Si ha
 \end{equation}
 e per l'istante attuale $t_0$
 \begin{equation}
-\rho_c(t_{0}) = \frac{3 H_0}{8 \pi G}.
+\rho_c(t_{0}) = \frac{3 H_0^2}{8 \pi G}.
 \end{equation}
 
 \section{Densità e pressione dell'Universo presente}
@@ -293,10 +294,13 @@ $\rho_0 > \rho_c$ oppure $\rho_0 < \rho_c$.
 
 Possiamo mettere in relazione $\rho_0$ e $\rho_c$ con il parametro di
 decelerazione $q_0$.  Infatti per l'Universo presente che è dominato dalla
-materia, si ha $p_0=0$, così che dall'eq.  \eqref{p0} si ha $k/R_0^2 = H_0^2
-(2q_0-1)$.  Sostituendo nella \eqref{temp1} si ottiene infine
+materia, si ha $p_0=0$, così che dall'equazione~\eqref{p0} segue
 \begin{equation}
-  \frac {\rho_0} {\rho_c}=2 q_0
+  \frac{k}{R_0^2} = H_0^2 (2q_0-1)
+\end{equation}.
+Sostituendo nella \eqref{temp1} si ottiene infine
+\begin{equation}
+  \frac{\rho_0}{\rho_c}=2 q_0
   \label{rho0surhoc}
 \end{equation}
 pertanto
@@ -350,7 +354,8 @@ o, equivalentemente,
 \end{equation}
 Con la posizione $x=R(t)/R_0$ si ha infine
 \begin{equation}
-  \frac{dx}{dt}= H_0 \left(1-2q_0+ \frac {2q_0}{x}\right)^{1/2},
+  \toder{x}{t}= H_0 \left(1-2q_0+ \frac {2q_0}{x}\right)^{1/2},
+  \label{2.40}
 \end{equation}
 la cui soluzione formale è
 \begin{equation}
@@ -502,57 +507,60 @@ $R$, $\rho$ e $p$ costanti nel tempo. L'eq. di campo modificate sono
   \label{EECC1}
 \end{equation}
 Moltiplicando per $g^{\mu \nu}$ si ha $R - (1/2) 4 R - 4\Lambda = -8 \pi G
-T^{\lambda}_{\lambda}$, cioè $R=8 \pi G T^{\lambda}_{\lambda} -4 \Lambda$.
-Sostituendo l'espressione di $R$ trovata e portando a destra i termini $R g_{\mu
-  \nu}/2$ e $\Lambda g_{\mu \nu}$, si ha la forma equivalente
+\tensor{T}{^{\lambda}_{\lambda}}$, cioè $R=8 \pi G
+\tensor{T}{^{\lambda}_{\lambda}} - 4 \Lambda$.  Sostituendo l'espressione di $R$
+trovata e portando a destra i termini $R g_{\mu \nu}/2$ e $\Lambda g_{\mu \nu}$,
+si ha la forma equivalente
 \begin{equation}
   R_{\mu \nu} = - 8 \pi G   \left(
-    T_{\mu \nu} - \frac {1}{2} g_{\mu \nu} T^{\mu}_{\mu} + \rho_{\Lambda} g_{\mu \nu}
-  \right) \qquad\text{con}\qquad \rho_{\Lambda} = \frac {\Lambda c^2} {8 \pi G}
+    T_{\mu \nu} - \frac {1}{2} g_{\mu \nu} \tensor{T}{^{\lambda}_{\lambda}} +
+    \rho_{\Lambda} g_{\mu \nu} \right) \qquad\text{con}\qquad \rho_{\Lambda} =
+  \frac {\Lambda c^2} {8 \pi G}
   \label{EECC2}
 \end{equation}
-
 Compare quindi un termine di sorgente
 \begin{equation}
-  S_{\mu \nu}=T_{\mu \nu} - \frac {1}{2} g_{\mu \nu} T^{\mu}_{\mu} + \rho_{\Lambda}
+  S_{\mu \nu}=T_{\mu \nu} - \frac {1}{2} g_{\mu \nu}
+  \tensor{T}{^{\lambda}_{\lambda}} + \rho_{\Lambda}
 \end{equation}
 che include la densità $\rho_{\Lambda}$.  Nel caso $\mu=\nu=0$ si ha
 \begin{equation}
-  S_{00} = \frac {1}{2} (\rho+3p) - \rho_{\Lambda},
+  S_{tt} = \frac {1}{2} (\rho+3p) - \rho_{\Lambda},
   \label{945}
 \end{equation}
 e pertanto, poiché in analogia al caso di materia ordinaria il termine di
 sorgente atteso per la costante cosmologica è $(\rho_{\Lambda}+3p_{\Lambda})/2$
 e invece abbiamo il termine $-\rho_{\Lambda}$, l'eq. stato sottostante è
 $p_{\Lambda} = - \rho_{\Lambda}$.  Osserviamo che questo è un caso particolare
-di una più generale eq. di stato
+di una più generale eq. di stato per la componente Dark Energy (DE)
 \begin{equation}
   p_{DE}= w \rho_{DE} \qquad\text{con } w<0
 \end{equation}
 
 Prima di procedere, osserviano che se il termine con costante cosmologica è
 sempre dominante per cui $\rho \simeq \rho_{\Lambda}$ e $p \simeq p_{\Lambda}$,
-le eq. del moto \eqref{moto} danno la soluzione stazionaria con $R(t) \simeq
-\text{costante}$ (Universo statico).
+le eq. del moto \eqref{moto} danno la soluzione stazionaria con $\rho (t) \simeq
+\text{costante}$ (Universo stazionario).
 
 Vediamo ora come le eq. \eqref{e1}, \eqref{e2} e \eqref{fri} sono modificate per
-l'introduzione di $\rho_{\Lambda}$ e $p_{\Lambda}$.  Uguagliando $S_{00}$ alla
-componente $R_{00}= 3 \ddot{R}/R$, in sostituzione dell'eq. \eqref{e1}, si ha
+l'introduzione di $\rho_{\Lambda}$ e $p_{\Lambda}$.  Uguagliando $S_{tt}$ alla
+componente $R_{tt}= 3 \ddot{R}/R$, in sostituzione dell'eq. \eqref{e1}, si ha
 ora:
 \begin{equation}
   \frac{3 \ddot{R}}{R} = - 8\pi G \left[ \frac{1}{2}  (\rho+3p) - \rho_{\Lambda}
   \right]
   \label{ecc1}
 \end{equation}
-e, in termini della densità critica $\rho_c=3H_0^2/(8\pi G)$
+e, in termini della densità critica $\rho_c(0)=3H_0^2/(8\pi G)$
 \begin{equation}
-  \frac {\ddot{R}} {R} = - \frac {H_0^2} {\rho_c}
+  \frac {\ddot{R}} {R} = - \frac {H_0^2} {\rho_c(0)}
   \left[
     \frac {1}{2}  (\rho+3p) - \rho_{\Lambda}
   \right]
+\label{2.63}
 \end{equation}
 ed infine ponendo per le componenti ordinarie (materia e radiazione)
-$\rho=\rho_m+\rho_r$, $p=p_m+p_r$ e considerando l'era della materia $\rho
+$\rho=\rho_m+\rho_r$, $p=p_m+p_r$, per l'era della materia $\rho
 \simeq \rho_m$ e $p_m=0$ segue
 \begin{equation}
   \label{ddRcc}
@@ -562,10 +570,11 @@ $\rho=\rho_m+\rho_r$, $p=p_m+p_r$ e considerando l'era della materia $\rho
 con
 \begin{subequations}
   \begin{align}
-    \Omega_{\Lambda} &= \frac{\rho_{\Lambda}}{\rho_c}, \\
-    \Omega_m       &= \frac{\rho_m(0)}{\rho_c}.
+    \Omega_{\Lambda} &= \frac{\rho_{\Lambda}}{\rho_c(0)}, \\
+    \Omega_m       &= \frac{\rho_m(0)}{\rho_c(0)}.
   \end{align}
 \end{subequations}
+Nella relazione precedente si pone anche $\rho_m(t)=\rho_m(0) [R_0/R(t)]^3 = \rho_m(0) (1+z)^3$.
 
 In maniera analoga il termine $S_{ij}$ diventa
 \begin{equation}
@@ -581,8 +590,10 @@ e l'q. \eqref{e2}  è ora sostituita da
 Eliminando $\ddot R$, con l'uso dell'eq. (\ref{ecc1}), si ha
 \begin{equation}
   \frac{\dot{R}^2}{R^2} +\frac{k}{R^2} = \frac{8 \pi G}{3} (\rho+\rho_{\Lambda}).
+\label{2.67}
 \end{equation}
-Questa sostituisce l'eq. di Friedmann. Per l'era della materia si ha
+Questa relazione sostituisce l'eq. di Friedmann~\eqref{fri}.  Per l'era della
+materia l'equazione~\eqref{2.67} diventa
 \begin{equation}
   H(z)=H_0\left[\Omega_{\Lambda}+\Omega_{k}(1+z)^2+\Omega_m (1+z)^3\right]^{1/2}
   \label{hzcc}
@@ -595,7 +606,7 @@ L'eq. \ref{hzcc} riferita all'istante attuale $z=0$ diventa
 \begin{equation}
   \Omega_{\Lambda}+\Omega_{k}+\Omega_m = 1
 \end{equation}
-Per il parametro di decelerazione si ha invece:
+Per il parametro di decelerazione, da eq.(\ref{2.63}) con $z=0$, si ha invece:
 \begin{equation}
   q_0 \equiv  -\frac {\ddot R_0 R_0}{\dot R^2_0} = \frac{\Omega_m}{2}
   -\Omega_{\Lambda}.
@@ -612,16 +623,17 @@ $\Omega_{\Lambda} + \Omega_m = 1$.
   \label{fig:Rvst}
 \end{figure}
 
-Vediamo come sia possibile determinare i parametri di densità attraverso misure
-$m-z$.  In effetti, il modo in cui la costante di Hubble dipende da $z$
-influenza la relazione $m-z$ tra magnitudine e red-shift.  Preliminarmente,
-dalla definizione $z=R_0/R(t) -1$, segue
+Vediamo come sia possibile determinare i parametri di densità $\Omega_i$
+attraverso misure di distanza e red-shift.  In effetti, il modo in cui la
+costante di Hubble $H(z)$ dipende da $z$ influenza la relazione tra magnitudine
+e red-shift.  Preliminarmente osserviamo che dalla definizione $z=R_0/R(t) -1$,
+segue
 \begin{equation}
   \dd z = -\frac {R_0}{R(t)} H(t) \dd t.
 \end{equation}
 Consideriamo ora segnali luminosi (per i quali è $d \tau=0$) emessi al tempo $t$
-da una galassia, con coordinata radiale $r$, e che raggiungono noi, che siamo in
-$r=0$, all'istante $t_0$.  Dalla metrica RW si ha
+da una galassia che abbia coordinata radiale $r$, e che raggiungono noi (che siamo in
+$r=0$) all'istante $t_0$.  Dalla metrica RW si ha
 \begin{equation}
   \int_t^{t_0} \frac {\dd t}{R(t)}= \int_0^{r} \frac {\dd r}{\sqrt{1-kr^2}}
   \simeq r + \mathcal{O}(r^3),
@@ -639,16 +651,28 @@ La distanza di luminosità $d_L = r R_0 (1+z)$ diventa allora
                (1+z)^3\right]^{1/2}}.
   \end{split}
 \end{equation}
-Quindi a parità di $z$, gli oggetti osservati (di stessa $M$) appaiono più o
-meno lontani a seconda del valore dei parametri cosmologici. (introdurre
-Figura).  È evidente allora, che lo studio del diagramma $m-z$ per oggetti
-lontani permette di assegnare valori ai parametri $\Omega_{\Lambda}$,
-$\Omega_{k}$, $\Omega_{m}$.
+Quindi a parità di $z$, gli oggetti osservati (di stessa magnitudine assoluta
+$M$) appaiono più o meno lontani a seconda del valore dei parametri cosmologici
+(vedere Fig. \ref{fig:Par_Cosm} dove per le supernovae \footnote{In sistemi
+  binari di una nana bianca ed una gigante rossa, la massa espulsa dalla gigante
+  rossa cade sulla nana bianca, che esplode in supernova quando la sua massa
+  supera la massa limite di Chandrasekar. Si ritiene che queste supernovae
+  abbiano la stessa luminosità intrinsceca, indipendentemente dalla distanza.}
+di tipo Ia (??per la presenza o assenza di particolari righe??) è mostrata la
+distanza $d_L$ in funzione del red-shift $z$).  È evidente allora che lo studio
+del diagramma $m-z$ per questi oggetti (sufficientemente lontani) permette di
+determinare i valori dei parametri $\Omega_{\Lambda}$, $\Omega_{k}$ ed
+$\Omega_{m}$.
+% In particolare si ha $\Omega_m = 0.27$ ed $\Omega_{\Lambda} =0.73$, se si
+% assume $\Omeka_k=0$, il che è dedotto dall'analisi delle anisotropie della
+% temperatura della CMB.%
+
 
 Ricordiamo che per i modelli di Friedmann, la relazione $d_L=d_L(z)$ era
 \begin{equation}
   d_L = \frac {1}{H_0} \left[ z+ \frac{1}{2}(1-q_0)z^2\right].
 \end{equation}
+
 Questo programma è stato realizzato prendendo come indicatori di distanza le
 supernovae di tipo Ia~\parencites{1998AJ....116.1009R}{1999ApJ...517..565P}
 \begin{figure}
@@ -689,7 +713,7 @@ Dal punto di vista fenomenologico, invece di introdurre nelle eq. di Einstein (a
 sinistra) il termine $g_{\mu \nu}\Lambda$, possiamo introdurre (a destra) un
 termine di sorgente con densità $\rho_{DE}$, che attribuiamo ad una nuova
 componente dell'Universo nota come Dark Energy.  In generale si assume che la
-Dark Energy abbia eq di stato $p_{DE}=w\rho_{DE}$ con $w<0$.  Il caso $w=-1$
+Dark Energy abbia eq. di stato $p_{DE}=w\rho_{DE}$ con $w<0$.  Il caso $w=-1$
 corrispondente alla costante cosmologica.  Ora, se assumiamo che la componente
 DE sia disaccoppiata dalla radiazione
 \begin{equation}
@@ -697,10 +721,10 @@ DE sia disaccoppiata dalla radiazione
 \end{equation}
 si ha
 \begin{equation}
-  \rho_{DE} \propto \frac {1}{R^{-3(1+w)}}
+  \rho_{DE} \propto \frac {1}{R^{3(1+w)}}
 \end{equation}
 Pertanto $\rho_{DE}=\text{cost}$ implica $w=-1$ come per il caso
-da $\rho_{\Lambda}=\text{cost}$ e $p_{\Lambda}=-\rho_{\Lambda}$.
+$\rho_{\Lambda}=\text{cost}$, $p_{\Lambda}=-\rho_{\Lambda}$.
 
 Notiamo che il rapporto $\rho_{DE}/\rho_m \propto R^{-3w} \propto (1+z)^{3w}$.
 Quindi nel caso $w<0$, per $t < t_0 $ ($z$ crescente a partire dal valore 0), si
@@ -714,16 +738,17 @@ L'eq. \eqref{hzcc} risulterà così modificata:
     (1+z)^3 \right]^{1/2}
   \label{hzccX}
 \end{equation}
+
 Anche l'eq. (\ref{ddRcc}) è modificata
 \begin{equation}
-  \frac {\ddot{R}} {R} = \frac{H_0^2}{2}
+  \frac {\ddot{R}} {R} = H_0^2
   \left[ - \frac{\Omega_{DE} (1+3w)}{2} (1+z)^{3(1+w)}
     -\frac {\Omega_m (1+z)^3} {2 } \right]
   \label {ddRw}
 \end{equation}
 da cui per il parametro di decelerazione si ha ora
 \begin{equation}
-  q_0= \frac{\Omega_DE}{2} (1+3w) +  \frac{\Omega_m}{2} + \Omega_{k}
+  q_0= \frac{\Omega_{DE}}{2} (1+3w) +  \frac{\Omega_m}{2} + \Omega_{k}
 \end{equation}
 e, nel caso $k=0$ (poichè $\Omega_m = 1 - \Omega_{DE}$), si ha
 \begin{equation}
@@ -731,7 +756,7 @@ e, nel caso $k=0$ (poichè $\Omega_m = 1 - \Omega_{DE}$), si ha
 \end{equation}
 per cui se poniamo $\Omega_{DE} \simeq 0.7$ si ha $q_0 =0.5+w$ che diventa
 negativo (quindi l'Universo oggi è in una fase di espansione accelerata) se
-$w<0.5$.  In realtà lo studio dei diagramma di Hubble $m-z$ non permette una
+$w<-0.5$.  In realtà lo studio dei diagramma di Hubble $m-z$ non permette una
 precisa determinazione del valore di $w \simeq -0.7$ a causa delle larghe
 incertezze dei dati osservativi.
 
@@ -805,9 +830,9 @@ La radiazione di fondo cosmico nella banda delle microonde (CMB) ha uno spettro
 di corpo nero a $T_{CMB}(0) \simeq 2.725$K.  Nella Figura~\ref{fig:radio-gamma}
 lo spettro della radiazione extragalactica è mostrato in funzione dell'energia
 dei fotoni.  La CMB contribuisce con il 93\% dell'emissione totale.  Definita la
-grandezza $\Omega_{\lambda}= \rho_{\lambda}/\rho{tot}$, si ha:
-$\Omega_{CMB}=0.93,$ $\Omega_{IR}= 0.05$, $\Omega_{VIS}=0.02$, $\Omega_{X}=2.5
-\times 10^{-4},$ $\Omega_{\gamma}= 2.5 \times 10^{-5}$, $\Omega_{CR} \simeq
+grandezza $f_{\lambda}= \rho_{\lambda}/\rho_{tot}$, si ha:
+$f_{CMB}=0.93,$ $f_{IR}= 0.05$, $f_{VIS}=0.02$, $f_{X}=2.5
+\times 10^{-4},$ $f_{\gamma}= 2.5 \times 10^{-5}$, $f_{CR} \simeq
 \Omega_{CMB}$.
 \begin{figure}
   \centering{}
@@ -845,13 +870,13 @@ La densità totale di energia si calcola integrando lo spettro su tutte le
 frequenze
 \begin{equation}
   \begin{split}
-    \rho_{\gamma}(t_0)
-    & =  \int_0^{\infty} \frac{8 \pi h \nu^3 } {c^3} \frac{d \nu} {\exp (h \nu/
+    \rho_{\gamma}(t_0) &= \int_0^{\infty} \frac{8 \pi h \nu^3 } {c^3}
+    \frac{\dd\nu} {\exp (h \nu/
       kT_0) -1} \\
-    & = \frac{8 \pi k^4 T^4_0}{c^3 h^3} \int_0^{\infty} \frac{x^3}{e^{x} -1} dx
-    \\
+    &= \frac{8 \pi k^4 T^4_0}{c^3 h^3} \int_0^{\infty} \frac{x^3}{e^{x} -1} \dd
+    x \\
     & = a T^4_0 \\
-    & = 4.64 \times 10^{-34}~~{\rm gr~cm^{-3}}  \implies \Omega_{\gamma} =2.47
+    & = 4.64 \times 10^{-34}~~{\rm gr~cm^{-3}} \implies \Omega_{\gamma} =2.47
     \times 10^{-5} h^{-2}
 \end{split}
 \end{equation}
@@ -862,8 +887,10 @@ unità di $100$ km/sec/Mpc, cioè $h=H_0/100$ km/sec/Mpc.
 La densità spaziale di fotoni della CMB all'istante attuale è
 \begin{equation}
   \begin{split}
-    n_{\gamma}(t_0) & = \int_0^{\infty} \frac{\rho_{\gamma}(t_0) } {h \nu } d\nu
-    = \frac{8 \pi k^3 T^3_0 }{c^3 h^3} \int_0^{\infty} \frac{x^2}{e^x -1} dx \\
+    n_{\gamma}(t_0) & = \int_0^{\infty} \frac{\rho_{\gamma}(t_0) } {h \nu }
+    \dd\nu
+    = \frac{8 \pi k^3 T^3_0 }{c^3 h^3} \int_0^{\infty} \frac{x^2}{e^x -1} \dd x
+    \\
     & = \frac{30 a \zeta(3) T^3_0} {\pi^4 k} = 0.3702 \frac{a T^3_0}{k} = 410
     ~{\rm fotoni/cm^3}
   \end{split}
@@ -888,7 +915,7 @@ stessa frequenza.
 
 Ma lo spettro continua ad essere di corpo nero. Per dimostrarlo, supponiamo che
 la transizione tra Universo opaco e Universo trasparente avvenga istantaneamente
-al tempo (di last scattering) $t_{LS}$ a cui la temperatura ha il valore
+al tempo di ultimo scattering $t_{LS}$ a cui la temperatura ha il valore
 $T_{LS}$.
 
 Se consideriamo tempi successivi $t>t_{LS}$ abbiamo le seguenti proprietà
@@ -915,15 +942,14 @@ $t$ se
 
 Questa conclusione è inalterata se la transizione dall'opacità alla trasparenza
 avviene in un tempo finito poichè l'interazione $\gamma H$ è limitata allo
-scattering eleatico per il quale le frequenze dei $\gamma$ non cambiano.
+scattering elastico per il quale le frequenze dei $\gamma$ non cambiano.
 
 Dopo il disaccoppiamento tra materia e radiazione si ha $\rho_{\gamma} \propto
 R^{-4}$ e poiché $\rho_{\gamma} \propto T^4$, si ha $T_{\gamma} \propto
 R(t)^{-1}$.  Ma prima del disaccoppiamento come varia la temperatura dei fotoni
-in contatto termico con la materia?
-
-A questo scopo consideriamo un modello: gas ideale e radiazione alla stessa
-temperatura $T_{\gamma}=T_{m}=T$.  Abbiamo che densità e pressione delle due
+in contatto termico con la materia?  A questo scopo consideriamo un semplice
+modello per l'Universo che supponiamo costituito da un gas ideale e radiazione
+alla stessa temperatura $T_{\gamma}=T_{m}=T$. Densità e pressione delle due
 componenti sono
 \begin{subequations}
   \begin{align}
@@ -933,13 +959,13 @@ componenti sono
     p_m &=n_N kT
   \end{align}
 \end{subequations}
-dove l'indice $\gamma=5/3$ $(4/3)$ per il regime non relativistico
+dove l'indice politropico $\gamma=5/3$ $(4/3)$ per il regime non relativistico
 (relativistico).  Per la densità e pressione totali avremo $\rho =
 \rho_{m}+\rho_{\gamma}$ e $p=p_{m}+p_{\gamma}$ e sostituendo
 nell'eq. \eqref{moto} si trova l'eq. differenziale
 \begin{equation}
   \label{TvsR}
-  \frac{R}{T} \frac{dT}{dR} = -
+  \frac{R}{T} \toder{T}{R} = -
   \left(\frac{\sigma+1}{\sigma+[3(\gamma-1)]^{-1}}\right)
 \end{equation}
 dove la costante $\sigma = 4 a T^3_{\gamma}/(3 n_N k)$ è l'entropia specifica.  Ora:
@@ -947,54 +973,107 @@ dove la costante $\sigma = 4 a T^3_{\gamma}/(3 n_N k)$ è l'entropia specifica. 
 \item se $\sigma \ll 1$, dall'eq. \eqref{TvsR} segue $T \propto
   R^{-3(\gamma-1)}$ che è l'usuale relazione temperatura-volume per
   un'espansione adiabatica di un gas ideale, e infine
-  $T \propto R^{-1}$ nel caso relativistico e $ T \propto R^{-2}$ nel caso non-relativistico;
+  $T \propto R^{-1}$ nel caso relativistico (per cui $\gamma=4/3$)
+e $ T \propto R^{-2}$ nel caso non-relativistico (per cui $\gamma=5/3$);
 \item se $\sigma \gg 1$ si ha sempre $T \propto R^{-1}$.
 \end{itemize}
 
 Nel nostro caso $\sigma = 4 a T^3_{\gamma}(0)/(4 n_N(0) k) \simeq 10^8$ e quindi
 prima del disaccoppiamento la materia (nonostante sia in un regime
-non-relativistico) segue la radiazione con $T \propto R^{-1}$.  Dopo il
-disaccoppiamento la temperatura della materia $T_{mat}\propto R^{-2}$.
+non-relativistico) segue la radiazione con $T_m=T_{CMB} \propto R^{-1}$.  Dopo
+il disaccoppiamento la temperatura della materia $T_{m}\propto R^{-2}$.
+
+\subsection{Anisotropia di dipolo}
+
+Supponiamo che vi sia un sistema di riferimento fondamentale in cui la
+radiazione di fondo cosmico è isotropa (e con spettro di Planck) e che la Terra
+si muova con velocità $v_{\oplus}$ rispetto a questo sistema.  Nel sistema
+fondamentale, i fotoni nell'angolo solido $\sin \theta \dd\theta \dd\phi$ e con
+frequenza tra $\nu$ e $\nu + \dd\nu$ contribuiscono al tensore energia impulso
+della radiazione di fondo con
+\begin{equation}
+  \dd T^{\mu \nu}= \frac{p^{\mu} p^{\nu}}{h^2 \nu^2}
+  \frac{\sin \theta \dd\theta \dd\phi}{4 \pi}
+  \rho_{\gamma ~ 0}(\nu) \dd\nu
+\end{equation}
+Qui si assume che l'espressione del tensore energia impulso sia proporzionale a
+$p^{\mu} p^{\nu}$ e gli altri termini sono introdotti in modo che l'integrale
+nell'intero angolo solido sia pari a $\rho_{\gamma ~0}$.  Quindi si ha
+\begin{equation}
+  \dd T^{\mu \nu}= 2 \frac{ p^{\mu} p^{\nu} }{h} \frac{1}{\exp (h \nu/ kT_{\gamma ~ 0 })}
+  \sin \theta \dd\theta \dd\phi \nu \dd\nu
+\end{equation}
+con
+\begin{equation}
+  p^{\mu} \equiv (p^0, p_x, p_y, p_z) =
+  h \nu ( 1, \sin\theta \cos\phi , \sin\theta \sin\phi, \cos\theta)
+\end{equation}
+
+Nel sistema della Terra il tensore energia impulso della radiazione di fondo è
+\begin{equation}
+  \dd T'^{\mu \nu} = \tensor{\Lambda}{^{\mu}_{\rho}} \tensor{\Lambda}{^{\nu}_{\sigma}}
+  \dd T^{\rho\sigma} 
+\end{equation}
+dove $\Lambda$ è la matrice di Lorentz con $\vec{v} = - \vec{v}_{\oplus}$.
+Allora possiamo esprimere $\dd T'^{\mu \nu}$ in termini di quantità nel sistema
+della Terra.  Osserviamo preliminarmente
+\begin{equation}
+  p'^{\mu } = \tensor{\Lambda}{^{\mu}_{\nu}} p^{\nu}
+\end{equation}
+oppure, orientando gli assi in modo $\phi=0$ (asse z nella direzione della
+velocità della Terra rispetto al sistema fondamentale), si ha
+\begin{equation}
+  \nu' = \nu \frac{[-v_{\oplus}\cos\theta]}{[ 1 - v_{\oplus} \cos\theta]}
+\end{equation}
+dove ora $\theta$ è l'angolo tra la velocità della Terra e il fotone.  L'angolo
+solido ha la regola di trasformazione
+\begin{equation}
+  \cos \theta' = \frac{[1- v_{\oplus} \cos \theta]}{[1 - v_{\oplus}^2 ]^{1/2}}
+\end{equation}
 
 \subsection{Effetto GZK}
 
-I raggi cosmici sono prevalentemente protoni prodotti da acceleratori cosmici
+I raggi cosmici, prevalentemente protoni, sono prodotti da acceleratori cosmici
 (SN galattiche fino ad energia $E_{CR} \simeq 10^{15}$ eV, AGN extragalattici
-per energie maggiori). Vedi Fig. \ref{fig:CR1}
+per energie maggiori) ed hanno uno spettro che si estende da circa $10^9$ ev fino a $10^{21}$ ev
+seguendo semplici leggi di potenza. (Vedi Fig. \ref{fig:CR1})
  \begin{figure}
    \centering{}
    \includegraphics[width=0.8\textwidth]{figure/CR_spectrum_1.pdf}
   \caption{Spettro dei Raggi Cosmici}
   \label{fig:CR1}
 \end{figure}
-A energie $E_{CR} \simeq 10^{21}$ eV si osserva nello spettro dei CR una perdita
-di flusso dovuta ai processi (interazione forte) $\gamma_{CMB} p \to p \pi^0$ e
-$\gamma_{CMB} p \to n \pi^+$, che comunque avvengono attraverso la creazione di
-risonanze (stati metastabili) $\Delta^{++}$, $\Delta^{+}$, $\Delta^{0}$ e il
-loro successivo decadimento.  L'effetto è stato predetto
-da~\textcites{1966PhRvL..16..748G}{1966JETPL...4...78Z}.  La massa delle
-risonanze $m_{\Delta} \simeq 1236$ MeV pone un limite inferiore all'energia dei
-protoni dei CR capaci di attivare il processo di annichilazione: l'energia dei
-protoni nel sistema del CM $\sqrt{s} > m_{\Delta} c^2$.  Consideriamo la
-cinematica del processo.  Nel sistema del laboratorio sia
+Comunque ad energie $E_{CR} \simeq 10^{20}$ eV si osserva nello spettro dei CR
+una perdita di flusso che è una dimostrazione indiretta dell'esistenza della
+CMB: protoni di alta energia interagiscono con i fotoni del fondo cosmico dando
+luogo ad interazioni forti del tipo $p \gamma_{CMB} \to p \pi^0$ e $\gamma_{CMB}
+p \to n \pi^+$, e quindi non ci raggiungono.  Tali processi, comunque, avvengono
+attraverso la creazione di risonanze (stati metastabili intermedi)
+$\Delta^{++}$, $\Delta^{+}$, $\Delta^{0}$ e il loro successivo decadimento.
+L'effetto è stato predetto
+da~\textcites{1966PhRvL..16..748G}{1966JETPL...4...78Z}.
+
+La massa della risonanza $m_{\Delta} \simeq 1236$ MeV pone un limite inferiore
+all'energia dei protoni dei CR capaci di attivare il processo di annichilazione.
+Consideriamo la cinematica del processo.  Nel sistema del laboratorio sia
 \begin{subequations}
   \begin{align}
-    P^{\mu}_{\gamma}      &= (q, \bm{q}), \\
-    P^{\mu}_{\textup{p}}   &= (\sqrt{p^2+m_\textup{p}}, \bm{p}), \\
-    P^{\mu}_{\textup{tot}} &= ( q+\sqrt{p^2+m_\textup{p}}  ,  \bm{q} + \bm{p}) \\
-    \sqrt{s}          &= P^{\mu}_{\textup{tot}} P_{\mu~\textup{tot}} =
-                        \left[ \left( q+\sqrt{p^2+m_\textup{p}} \right)^2 -
+    P^{\mu}_{\gamma}       &= (q, \bm{q}), \\
+    P^{\mu}_{\ \textup{p}}   &= (\sqrt{p^2+m^2_\textup{p}}, \bm{p}), \\
+    P^{\mu}_{\ \textup{tot}} &= ( q+\sqrt{p^2+m^2_\textup{p}}  ,  \bm{q} + \bm{p}) \\
+    \sqrt{s} &= \sqrt{ P^{\mu}_{\ \textup{tot}} P_{\mu \ \textup{tot}} } =
+                        \left[ \left( q+\sqrt{p^2+m^2_\textup{p}} \right)^2 -
                         \left(\bm{q}+ \bm{p} \right)^2 \right]^{1/2} \\
                       & \simeq \left[ 2qp \left(1-\cos \theta \right) +
                         m_\textup{p}^2 \right]^{1/2}.
   \end{align}
 \end{subequations}
-La reazione può avvenire se $\sqrt{s} > m_{\Delta} c^2$.  La tipica energia dei
-fotoni della CMB è $\langle E_{\gamma}\rangle 6 \times 10^{-4}$ eV e il massimo
-di $(1-\cos \theta)=2$.  Si ha quindi
+La reazione può avvenire se $\sqrt{s} > m_{\Delta} c^2$.  La tipica energia
+$\langle E_{\gamma}\rangle$ dei fotoni della CMB è $6 \times 10^{-4}$ eV e il
+massimo di $(1-\cos \theta)=2$.  Si ha quindi
 \begin{equation}
-  p_{\textup{th}} \simeq \frac{m_{\Delta} c^2 - m_p c^2}{2 \langle
-    E_{\gamma}\rangle} \simeq 10^{21}~~~{\rm eV}
+  p_{\textup{th}} \simeq \frac{m^2_{\ \Delta} c^4 - m^2_{\ p} c^4} {4 \langle
+    \ E_{\gamma}\rangle} \simeq 10^{20}~~~{\rm eV}
 \end{equation}
 Nella figura~\ref{fig:CR2} è riportato lo spettro dei raggi cosmici attorno al
 taglio GZK.
@@ -1012,33 +1091,33 @@ Le leggi della termodinamica sono
 \begin{subequations}
   \label{leggi_termo}
   \begin{align}
-    dQ &= dU+pdV \\
-    dS &= \frac{dQ}{T}
+    \dd Q &= \dd U+p\dd V \\
+    \dd S &= \frac{\dd Q}{T}
   \end{align}
 \end{subequations}
 in cui $dQ$ è il calore assorbito, $dU=d(\rho c^2 V)$ la variazione di energia
 interna, $pdV$ il lavoro eseguito, $dS$ la variazione di entropia, $V$ infine è
 il volume occupato dal gas.
 
-Dalla seconda legge della termodinamica si ha
+Dalle leggi della termodinamica si ha
 \begin{equation}
   \begin{split}
-    dS &=  \frac{1}{T} \left( d( \rho c^2 V) + p dV \right) \\
-    &= \frac{1}{T} \left( V d(\rho c^2) + (\rho c^2+p) dV \right) \\
-    &= \frac{1}{T} \left( V \frac{d(\rho c^2)}{dT} dT + (\rho c^2+p) dV \right).
+    \dd S &=  \frac{1}{T} \left( \dd( \rho c^2 V) + p \dd V \right) \\
+    &= \frac{1}{T} \left( V \dd(\rho c^2) + (\rho c^2+p) \dd V \right) \\
+    &= \frac{1}{T} \left( V \toder{(\rho c^2)}{T} \dd T + (\rho c^2+p) \dd V
+    \right).
   \end{split}
 \end{equation}
 Poichè $S=S(V,T)$ segue
 \begin{equation}
-  dS = \left( \frac{\partial S}{\partial T} \right)_V dT+ \left( \frac{\partial
-      S}{\partial V} \right)_T dV
+  \dd S = \left( \frac{\partial S}{\partial T} \right)_V \dd T +
+  \left( \parder{S}{V} \right)_T \dd V
 \end{equation}
 dal confronto tra le precedenti eq. si ha
 \begin{subequations}
   \begin{align}
-    \left(\frac{\partial S}{\partial V}\right)_T &= \frac{1}{T} (\rho c^2+p) \\
-    \left(\frac{\partial S}{\partial T} \right)_V &= \frac{V}{T} \frac{d (\rho
-                                                    c^2)}{dT}.
+    \left(\parder{S}{V}\right)_T &= \frac{1}{T} (\rho c^2+p) \\
+    \left(\parder{S}{T}\right)_V &= \frac{V}{T} \toder{(\rho c^2)}{T}.
   \end{align}
 \end{subequations}
 La condizione di integrabilità
@@ -1048,27 +1127,27 @@ La condizione di integrabilità
 \end{equation}
 conduce alla relazione
 \begin{equation}
-  \frac{dp}{dT} = \frac{1}{T} (\rho c^2 +p).
+  \toder{p}{T} = \frac{1}{T} (\rho c^2 +p).
   \label{integrab}
 \end{equation}
 Usando questa relazione nella legge di conservazione dell'energia \eqref{moto}
 si ha
 \begin{equation}
   \begin{split}
-    \frac{d}{dt} [R^3(\rho c^2 +p)] & = R^3 \frac{dp}{dt} \\
-    & = R^3 \frac{dp}{dT} \frac{dT}{dt} \\
-    & = R^3 (\rho c^2 +p)] \frac{1}{T} \frac{dT}{dt}
+    \toder{}{t} [R^3(\rho c^2 +p)] & = R^3 \toder{p}{t} \\
+    & = R^3 \toder{p}{T} \toder{T}{t} \\
+    & = R^3 (\rho c^2 +p) \frac{1}{T} \toder{T}{t}
   \end{split}
 \end{equation}
 da cui segue
 \begin{equation}
-  \frac{d}{dt} \left( \frac{R^3}{T} (\rho c^2 + p) \right) = 0.
+  \toder{}{t} \left( \frac{R^3}{T} (\rho c^2 + p) \right) = 0.
 \end{equation}
 Se indichiamo con $S(t)$ l'entropia contenuta nel volume comoving, abbiamo
 \begin{subequations}
   \begin{align}
     S(t) & =  \left( \frac{R^3}{T} (\rho c^2 + p) \right) \\
-    \frac{dS(t)}{dt} & = 0 \longleftrightarrow S(t)= \text{cost}
+    \toder{S(t)}{t} & = 0 \iff S(t)= \text{cost}
   \end{align}
   \label{cons_entropia}
 \end{subequations}
@@ -1078,14 +1157,15 @@ scala come $R^3$).
 Verifichiamo che la definizione di $S$ è consistente con la $2^a$ legge della
 termodinamica in eq. \eqref{leggi_termo}, che riscriviamo nella forma
 \begin{equation}
-  dS  = \frac{1}{T} \left( d(\rho c^2 V) + d(pV) - V \frac{dp}{dT} dT \right)
+  \dd S  = \frac{1}{T} \left( \dd(\rho c^2 V) + \dd(pV) - V \toder{p}{T} dT
+  \right)
 \end{equation}
 e usando l'eq. \eqref{integrab}
 \begin{equation}
   \begin{split}
-    dS &= \frac{1}{T} \left( d(\rho c^2 V + pV) -  \frac{V}{T}   (\rho c^2 +p)
-      dT  \right) \\
-    &= d \left( \frac{V (\rho c^2 + p)} {T}  \right)
+    \dd S &= \frac{1}{T} \left( \dd(\rho c^2 V + pV) -  \frac{V}{T}   (\rho c^2
+      +p) \dd T \right) \\
+    &= \dd\left( \frac{V (\rho c^2 + p)} {T}  \right)
   \end{split}
 \end{equation}
 che è la relazione in eq. \eqref{cons_entropia} poiché $V \propto R^3$.
@@ -1111,31 +1191,36 @@ della radiazione.  Infatti, all'istante attuale $t_0$ si ha
 poichè $q_0>0.014$.  D'altra parte indietro nel tempo, tale termine cresce
 almeno come $z$ e quando $z\simeq 1000$ (inizio era radiazione) risulta $>30$.
 
-Da eq. \eqref{293} si ha
+Da eq. \eqref{293} e \eqref{fri_pri} si ha
 \begin{equation}
   \frac{\dot \rho}{\rho} = -4 \frac{\dot R}{R} = - 4 \left( \frac{8 \pi G
       \rho}{3} \right)^{1/2}
 \end{equation}
-da cui segue, con l'uso della \eqref{fri_pri}, una relazione tra $t$ e $\rho$
+da cui segue la relazione tra $t$ e $\rho$
 \begin{equation}
-  t = \left( \frac{3}{32 \pi G \rho} \right)^{1/2} + \text{cost}.
+  t = \left( \frac{3}{32 \pi G \rho} \right)^{1/2} + \text{cost}\ .
   \label{tvsrho}
 \end{equation}
 
 L'obiettivo ora è quello di ricavare $\rho= \rho(T)$.  Ovviamente ci riferiamo
 ad un era in cui le galassie non si erano ancora formate ed il fluido
-cosmologico è diffuso con densità (quasi) uniforme.\footnote{In realtà
-  all'interno della materia (dark) e della radiazione sono presenti (i semi) le
-  fluttuazioni di densità (prodotte da transizioni di fase) che si accrescono.
-  Al disaccoppiamento, comunque, i contrasti di densità sono ancora molto
-  piccoli --- $\Delta \rho / \rho \simeq \Delta T / T \simeq 10^{-5}$ --- ed
-  essi successivamente evolvono fino alla creazione di strutture autogravitanti
-  di dark matter.  Su queste buche di potenziale cadono i barioni, che
-  attraverso processi dissipativi, alla fine danno luogo alle strutture visibili
-  (galassie ed ammassi).}
+cosmologico è diffuso con densità (quasi) uniforme.  In realtà all'interno della
+materia (prevalentemente dark) e della radiazione sono presenti (i semi delle
+galassie) le fluttuazioni di densità (prodotte da transizioni di fase tra
+$10^{-43} - 10^{30} sec$, durante l'epoca inflazionaria) che si accrescono a
+causa del meccanismo di Jeans (instabilità gravitazionali di sistemi di
+dimensioni maggiori della lunghezza d'onda di Jeans).  Al disaccoppiamento,
+comunque, i contrasti di densità sono ancora molto piccoli, poiché $\Delta \rho
+/ \rho \simeq \Delta T / T \simeq 10^{-5}$ durante l'era in cui ci è contatto
+termico tra materia e radiazione. I picchi di densità successivamente si
+accrescono fino alla creazione di strutture autogravitanti di materia oscura. Si
+formano quindi prima sistemi autogravitanti di materia oscura e poi su queste
+buche di potenziale gravitazionale cadono i barioni, che attraverso processi
+dissipativi, alla fine danno luogo alle strutture visibili ammassi, galassie,
+stelle.
 
-A partire dal tempo di Planck ($t_P = ( \hbar G/c^5)^{1/2} \simeq 5.391 \times
-10^{-44}$ sec), i costituenti dell'Universo vanno ricercati
+A partire dal tempo a cui le interazioni deboli ed elettromagnetiche si sono separate,
+$t > 10^{-30}$ secondi, $T < 100 $ Gev, i costituenti dell'Universo vanno ricercati
 tra le seguenti particelle:
 \begin{itemize}
 \item gli adroni = barioni (n,p,..) \& mesoni ($\pi$, k, ...) e rispettive
@@ -1175,11 +1260,12 @@ definisce una scala di temperatura (K$^{-1} = 11604$ Kelvin/eV):
     \midrule
     $m_n c^2$       & 939.55 MeV & $1.090 \times 10^{13}$ \\
     $m_p c^2 $      & 938.25 MeV & $1.088 \times 10^{13}$ \\
-    $m_{\pi} c^2$   & 140    MeV & $1.6   \times 10^{12}$ \\
     $m_{\tau}c^2$   & 177    MeV & $2.1   \times 10^{12}$ \\
+    $m_{\pi} c^2$   & 140    MeV & $1.6   \times 10^{12}$ \\
     $m_{\mu} c^2 $  & 106    MeV & $1.2   \times 10^{12}$ \\
     $(m_n-m_p) c^2$ & 1.3    MeV & $1.5   \times 10^{10}$ \\
     $m_e c^2      $ & 511    KeV & $5.8   \times 10^{9 }$ \\
+    temperatura di dissociazione del deuterio \\ 
     \bottomrule
   \end{tabular}
 \end{table}
@@ -1202,8 +1288,8 @@ in cui si distinguono le seguenti fasi:
 \item[(F)] $T \simeq 10^{9}$K: ($t \simeq 180$ sec) i nuclei di deuterio
   diventano stabili e i neutroni sopravvissuti al decadimento in protoni
   rapidamente si fondono nei nuclei degli elementi leggeri; da questo momento
-  fino alla ricombinazione l'Universo è costituito da un gas ionizzato,
-  prevalentemente $H^+$ ed $^4He^2$ (nella percentuale di 1 atomo di elio per
+  fino alla ricombinazione l'Universo è costituito da un plasma ionizzato,
+  prevalentemente $H^+$, $^4He^2$ ed elettroni (nella percentuale di 1 atomo di elio per
   ogni 11 atomi di idrogeno), in equilibrio con i $\gamma$, mentre i neutrini
   già disaccoppiati sono a temperatura più bassa;
 \item[(G)] tra $(4000 < T < 10^{9})$K: espansione libera con $T_m = T \propto
@@ -1219,8 +1305,8 @@ fermioni e bosoni sono descritti dalle statistiche di Fermi-Dirac e
 Bose-Einstein. Per la specie $i$, la densità in numero di particelle con impulso
 tra $q$ e $q+dq$ è
 \begin{equation}
-  n_i(q) dp = \frac{g_i 4 \pi q^2 dq} {h^3} \left( \exp\left[{
-      {\frac{E(q)-\mu_i}{KT}} }\right] \pm 1 \right)^{-1}
+  n_i(q) \dd p = \frac{g_i 4 \pi q^2 \dd q} {h^3} \left( \exp\left[{
+        {\frac{E(q)-\mu_i}{KT}} }\right] \pm 1 \right)^{-1}
 \end{equation}
 in cui l'energia $E =(q^2+m^2)^{1/2}$, $\mu_i$ è il potenziale chimico, il segno
 $+$ per fermioni, il segno $-$ per bosoni, $g_i$ la molteplicità rispetto allo
@@ -1249,12 +1335,12 @@ con neutrini disaccoppiati dal fluido e $T_{\nu}=T$.  Quando la temperatura
 $T<10^{10}$K, ma prima dell'annichilazione delle coppie e$^+$ e$^-$, l'entropia
 del fluido cosmologico (elettroni, positroni, fotoni e tracce di nucleoni) è
 \begin{equation}
-  S_{prima}= \frac{R^3}{T} (\rho c^2 +p) = \frac{11}{3} a (RT)^3
+  S_{\textup{prima}}= \frac{R^3}{T} (\rho c^2 +p) = \frac{11}{3} a (RT)^3
 \end{equation}
 mentre per $T<5 \times 10^9$K (dopo l'annichilazione delle coppie e$^{-}$ e$^+$)
 sono presenti solamente fotoni con tracce di nucleoni ed elettroni; allora
 \begin{equation}
-  S_{dopo}= \frac{4}{3}\frac{R^3}{T} \rho_{\gamma} = \frac{4}{3} a (RT)^3
+  S_{\textup{dopo}}= \frac{4}{3}\frac{R^3}{T} \rho_{\gamma} = \frac{4}{3} a (RT)^3
 \end{equation}
 Poichè $S_{\textup{prima}} = S_{\textup{dopo}}$ (entropia nel volume comoving è
 costante), ci deve essere un brusco salto della temperatura dei fotoni (di cui
@@ -1359,7 +1445,7 @@ dovremmo avere
 \begin{equation}
   \rho_r > 2 \times 10^{-34}~{\rm gr~ cm}^{-3}
 \end{equation}
-Dalle osservazioni si determina la densità di massa della radiazione a
+Dalle osservazioni si determina la densità di energia della radiazione a
 differenti lunghezze d'onda.  Dall'esame della Tab. \ref{tab_den_rad_bande}
 concludiamo che non più del 10\% dell'elio presente nell'Universo può avere
 origine stellare.
@@ -1420,7 +1506,7 @@ Winberg)
 \end{subequations}
 L'eq. differenziale per il rapporto $X_n= n/(n+p)$ è
 \begin{equation}
-  -\frac{dX_n}{dt} =  \lambda (n \to p) X_n + \lambda (p \to n) (1-X_n)
+  -\toder{X_n}{t} =  \lambda (n \to p) X_n + \lambda (p \to n) (1-X_n)
 \end{equation}
 con soluzione numerica data in~\textcite[549]{weinberg:gravitation} e riportata
 nella tabella~\ref{X_nvsT}
@@ -1472,11 +1558,11 @@ densità attuale si ha
 \item $T_{Nucl} \simeq 1.1 \times 10^9~^0K$ se $\rho_N(0) = 2 \times 10^{-29}$
   gr cm$^{-3}$.
 \end{itemize}
-All'aumentare di $\rho_N(0)$ l'Universo si espande meno velocemente, e quindi
+All'aumentare di $\rho_N(0)$ l'Universo si espande più velocemente, e quindi
 \begin{itemize}
-\item più tempo intercorre per una diminuzione di temperatura;
-\item più tempo per arrivare all'avvio delle reazioni di nucleosintesi;
-\item meno neutroni sopravvivono al decadimento.
+\item meno tempo intercorre per una diminuzione di temperatura;
+\item meno tempo per arrivare all'avvio delle reazioni di nucleosintesi;
+\item più neutroni sopravvivono al decadimento.
 \end{itemize}
 
 Nella Tab. \ref{tab_abbondanze}~\parencite[555]{weinberg:gravitation} sono
