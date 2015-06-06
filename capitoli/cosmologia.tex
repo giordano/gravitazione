@@ -1634,6 +1634,199 @@ Fig. \ref{fig:abbondanza}
   \label{fig:abbondanza}
 \end{figure}
 
+\section{Teoria dell'inflazione}
+\label{sec:inflazione}
+
+\subsection{Problemi del modello standard della cosmologia}
+\label{sec:problemi-cosmologia}
+
+Il modello dell'Hot Big Bang è perfettamente soddisfacente per tempi \(t\gtrsim
+\SI{e-3}{\second}\) (quindi prima della nucleosintesi del Big Bang) dopo la
+singolarità iniziale.  Questo modello è compatibile con la legge di Hubble e
+descrive bene la nucleosintesi, la presenza di una radiazione di fondo a
+microonde e la formazione e crescita delle struttura a larga scala.
+
+Tuttavia, il modello è incompleto dal momento che le condizioni iniziali devono
+essere fissate a mano.  Inoltre, ci sono alcuni problemi tuttora irrisolti, fra
+i quali:
+\begin{itemize}
+\item l'origine e la natura della materia e dell'energia oscura,
+\item il \emph{problema dei monopoli magnetici},
+\item il \emph{problema della piattezza},
+\item il \emph{problema dell'orizzonte}.
+\end{itemize}
+La teoria dell'\emph{inflazione} afferma che pochi istanti dopo il Big Bang c'è
+stata una breve fase di rapida espansione accelerata dell'Universo, quindi
+caratterizzata da \(\ddot{R}>0\).  La fase di inflazione sarebbe iniziata circa
+\SI{e-36}{\second} dopo il Big Bang e sarebbe terminata fra circa
+\SI{e-34}{\second} e \SI{e-32}{\second} dopo la singolarità iniziale.  Questo
+fenomeno, se fosse avvenuto realmente, risolverebbe in un colpo solo tutti gli
+ultimi tre problemi elencati.
+
+La teoria dell'inflazione è un'aggiunta al modello standard della cosmologia,
+non una nuova teoria alternativa a quella finora illustrata che rimane per il
+resto inalterata.  A oggi non sono ancora state trovate evidenze sperimentali
+che dimostrino la validità dell'inflazione.
+
+Nei seguenti paragrafi illustreremo i problemi dei monopoli magnetici, della
+piattezza e dell'orizzonte, facendo inoltre vedere come la fase di inflazione li
+risolverebbe.
+
+\subsection{Problema dei monopoli magnetici}
+\label{sec:problema-monopoli}
+
+Secondo alcune teorie della grande unificazione, al termine della fase di
+unificazione delle forze (\SI{e-36}{\second} dopo il Big Bang) si sarebbe
+formato un gran numero di \emph{monopoli magnetici} (ipotetiche particelle
+dotate di singola carica del campo magnetico) dotate di massa elevata.  Secondo
+alcune stime~\parencite[143-145]{2002coec.book.....C}, i monopoli magnetici
+dovrebbero avere massa \(m_{\textup{M}} \approx \SI{e16}{\giga\electronvolt}\) e
+densità attuale, escludendo che ci sia stata una fase di inflazione, almeno
+dello stesso ordine della densità di barioni.  Questo è chiaramente
+incompatibile con le osservazioni attuali perché i monopoli magnetici non sono
+mai stati trovati ma, soprattutto, la loro elevata massa combinata con la loro
+densità significherebbe che la densità di materia oggi dovrebbe essere \(16\)
+ordini di grandezza più grande di quella misurata.
+
+La fase di inflazione risolverebbe questo problema perché l'espansione
+accelerata si collocherebbe dopo la formazione dei monopoli magnetici ma prima
+della creazione della materia ordinaria che costituisce l'Universo che
+conosciamo.  Pertanto, la rapida espansione porterebbe a una forte diminuzione
+della densità dei soli monopoli magnetici, senza alterare la densità della
+materia barionica.  Per fissare le idee, anticipiamo che il fattore di scala fra
+l'inizio e la fine della fase di inflazione sarebbe aumentato di circa \num{e27}
+volte, quindi la densità di monopoli sarebbe diminuita di un fattore dell'ordine
+di \num{e81}.
+
+\subsection{Problema della piattezza}
+\label{sec:problema-piattezza}
+
+Richiamiamo l'equazione di Friedmann~\eqref{eq:friedmann} nella forma
+\begin{equation}
+  \label{eq:friedmann2}
+  H^{2}(t) = \left(\frac{\dot{R}(t)}{R(t)}\right)^{2} = \frac{8\pi G}{3}\rho(t)
+  - \frac{k}{R^{2}(t)}.
+\end{equation}
+Con il parametro di densità \(\Omega(t) = \rho(t)/\rho_{\textup{c}}(t)\) si può
+riscrivere come
+\begin{equation}
+  \label{eq:friedmann-densita}
+  \Omega(t) - 1 = \frac{k}{R^{2}(t)H^{2}(t)}.
+\end{equation}
+Secondo gli ultimi dati del telescopio Planck~\parencite{2015arXiv150201589P},
+oggi risulta \(\abs{\Omega(t_{0}) - 1} = \num{0.000(5)}\), cioè
+\(\abs{\Omega(t_{0}) - 1} < \num{0.005}\).  Questo significa che oggi l'Universo
+appare pressoché piatto.  Dall'analisi
+dell'equazione~\eqref{eq:friedmann-densita} possiamo osservare che
+\begin{itemize}
+\item o la costante \(k\) è nulla e quindi \(\Omega(t) - 1\) è sempre stata
+  uguale a \(0\),
+\item oppure \(\abs{\Omega(t) - 1}\) si evolve nel tempo come \((R(t)H(t))^{-2}
+  = \dot{R}^{-2}(t)\).
+\end{itemize}
+
+Prima di procedere, ricordiamo che dall'equazione di
+continuità~\eqref{eq:continuita} \(\dot{\rho} + 3H(p + \rho) = 0\) si ricava che
+\begin{equation}
+  \rho(R) \sim R^{-3(1+w)}
+\end{equation}
+con \(w = p/\rho\).  Poiché stiamo considerando un Universo approssimativamente
+piatto, poniamo per semplicità \(k=0\) nell'equazione~\eqref{eq:friedmann2} e
+inserendo il risultato precedente si ha
+\begin{equation}
+  \begin{split}
+    H^{2} = \left(\frac{\dot{R}}{R}\right)^{2} \sim \rho = R^{-3(1+w)} &\implies
+    \frac{1}{R} \toder{R}{t} \sim R^{-3(1+w)/2} \\
+    &\implies R^{(3w+1)/2}\dd R \sim \dd t.
+  \end{split}
+\end{equation}
+La soluzione di questa equazione differenziale dipende dal valore di \(w\).  Se
+\(w\neq -1\) allora si trova che
+\begin{equation}
+  R(t) \sim t^{2/3(w+1)} = t^{\beta}
+\end{equation}
+con
+\begin{equation}
+  \beta = \frac{2}{3(w+1)} =
+  \begin{cases}
+    2/3 & \text{per la materia (\(w = 0\))}, \\
+    1/2 & \text{per la radiazione (\(w = 1/3\))}.
+  \end{cases}
+\end{equation}
+Invece se \(w = -1\) si ha che
+\begin{equation}
+  R(t) \sim \e^{Ht}.
+\end{equation}
+Ricapitolando abbiamo determinato
+\begin{equation}
+  R(t) \sim
+  \begin{cases}
+    t^{\beta} & \text{se \(w\neq -1\)}, \\
+    \e^{Ht}  & \text{se \(w = -1\)}.
+  \end{cases}
+\end{equation}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figure/flatness}
+  \caption[Come l'inflazione risolverebbe il problema della
+  piattezza]{L'inflazione risolverebbe il problema della piattezza introducendo
+    una fase in cui \(\abs{\Omega(t) - 1}\) tende rapidamente verso \(0\),
+    partendo da una condizione iniziale qualsiasi.  Immagine tratta da
+    \url{https://ned.ipac.caltech.edu/level5/Liddle/Liddle4_1.html}}
+  \label{fig:piattezza}
+\end{figure}
+Ora possiamo calcolare l'evoluzione di \(\abs{\Omega(t) - 1}\) con il tempo.
+Supponiamo che l'Universo sia stato dominato solo dalla radiazione e dalla
+materia, quindi possiamo assumere che risulti sempre \(\beta < 1\).  In questo
+modo vediamo che
+\begin{equation}
+  \label{eq:omega-t}
+  \abs{\Omega(t) - 1} \sim \dot{R}^{-2}(t) \sim \frac{t^{2(1-\beta)}}{\beta^{2}}
+\end{equation}
+è una funzione crescente col tempo.  Dunque, oggi l'Universo ha una densità
+prossima alla densità critica, ma per quanto abbiamo trovato in passato la
+densità era ancora più vicina alla densità critica.  Possiamo stimare quanto è
+aumentato \(\Omega(t) - 1\) fra il tempo di Planck \(t = t_{\textup{Pl}} \sim
+\SI{e-43}{\second}\) e oggi (\(t = t_{0} \sim \SI{e17}{\second}\)).  Per fare
+questo supponiamo un Universo sempre dominato dalla radiazione, quindi vale
+sempre \(\beta = 1/2 \implies \abs{\Omega(t) - 1} \sim t\), da cui
+\begin{equation}
+  \frac{\abs{\Omega(t_{0}) - 1}}{\abs{\Omega(t_{\textup{Pl}}) - 1}} \sim
+  \frac{10^{17}}{10^{-43}} = 10^{60}.
+\end{equation}
+Inoltre abbiamo visto che oggi si ha \(\abs{\Omega(t_{0}) - 1} \lesssim
+10^{-3}\), quindi
+\begin{equation}
+  \abs{\Omega(t_{\textup{Pl}}) - 1} \lesssim 10^{-63}.
+\end{equation}
+Pertanto, subito dopo il Big Bang la densità dell'Universo doveva differire
+dalla densità critica al più per una parte su \(10^{-63}\).  Il modello standard
+della cosmologia non prevede che l'Universo dovesse essere all'inizio
+praticamente piatto o quasi, bisogna imporlo come condizione iniziale.  Questo
+non è un vero e proprio problema di per sé, ma è un difetto nella teoria del
+modello standard perché comporta fissare forzatamente la densità iniziale
+dell'Universo a un valore ben preciso, quando non ci sono motivi per ritenere
+che questo valore fosse più probabile di qualsiasi altro.  Si usa dire che
+questo è un problema di \emph{fine-tuning}.
+
+Il problema della piattezza sarebbe risolto se ci fosse stata una fase, nel
+passato, in cui \(\abs{\Omega(t) - 1}\) fosse rapidamente sceso verso \(0\).
+Questa è proprio la fase di inflazione.  Dall'equazione~\eqref{eq:omega-t} si
+vede che questo è possibile se risulta \(\beta > 1\).  In questo caso
+\(\abs{\Omega(t) - 1} \to 0\) è un attrattore per l'evoluzione del sistema,
+qualunque sia stato il valore iniziale.  L'inflazione risolve dinamicamente il
+problema del \emph{fine-tuning}: la densità iniziale dell'Universo aveva
+effettivamente un valore qualsiasi, solo successivamente si è evoluta verso la
+densità critica, per poi allontanarsi lentamente da essa al termine della fase
+di inflazione, come mostrato nella figura~\ref{fig:piattezza}.
+
+Osserviamo che se \(\beta>1\) risulta \(\ddot{R} = \beta(\beta-1)t^{\beta-2}
+\implies \ddot{R} > 0\), cioè espansione accelerata dell'Universo, proprio come
+prescritto dalla teoria dell'inflazione.  D'altra parte \(\beta = 2/3(w+1)>1\)
+equivale a \(w < -1/3\) e dall'equazione di accelerazione \(\ddot{R}/R=-4\pi
+G(\rho+3p)/3\) si ha che si ha espansione accelerata solo se \(w < -1/3\).
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../cosmo"
