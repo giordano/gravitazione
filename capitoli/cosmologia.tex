@@ -105,13 +105,13 @@ si ottiene un'equazione differenziale del primo ordine, nota come
 \emph{equazione di Friedmann}
 \begin{equation}
   \dot{R}^2 +k = \frac{8 \pi G}{3} \rho R^2.
-  \label{fri}
+  \label{eq:friedmann}
 \end{equation}
 
-In conclusione, le eq. \eqref{fri}, \eqref{moto} e \eqref{stato} permettono di
-determinare le 3 funzioni incognite $R(t)$, $p(t)$ e $\rho(t)$.  Si otterranno 3
-differenti soluzioni a seconda del valore di $k=-1,0,+1$.  Questi modelli
-cosmologici sono noti come modelli di Friedmann.
+In conclusione, le eq. \eqref{eq:friedmann}, \eqref{moto} e \eqref{stato}
+permettono di determinare le 3 funzioni incognite $R(t)$, $p(t)$ e $\rho(t)$.
+Si otterranno 3 differenti soluzioni a seconda del valore di $k=-1,0,+1$.
+Questi modelli cosmologici sono noti come modelli di Friedmann.
 
 \textbf{Osservazione}: senza dare esplicitamente l'eq. di stato è possibile
 ricavare informazioni sull'età $t_0$ dell'Universo e sull'andamento del fattore
@@ -127,8 +127,8 @@ di scala cosmico $R(t)$.  Infatti:
   iniziale.  Inoltre poichè $ \ddot{R} < 0$ sempre, $\dot{R}$ è una funzione
   decrescente e quindi la velocità di espansione dell'Universo $v_H(t) \propto
   \dot{R}$ diminuisce nel tempo, come ci si aspetta con gravità attrattiva.
-\item Il termine a destra nell'eq. \eqref{fri}, per $t>t_0$ ($t<t_0$) decresce
-  (cresce) con il tempo --- rispetto al valore attuale --- almeno come
+\item Il termine a destra nell'eq. \eqref{eq:friedmann}, per $t>t_0$ ($t<t_0$)
+  decresce (cresce) con il tempo --- rispetto al valore attuale --- almeno come
   $R^{-1}(t)$.
 \end{itemize}
 
@@ -140,7 +140,7 @@ Da queste considerazioni segue che l'età dell'Universo è
 \end{equation}
 L'uguaglianza si avrebbe nel caso in cui fosse $\ddot{R} =0$, per cui $R(t)=t
 \dot{R}$.  Per quanto riguarda il comportamento di $R(t)$ per $t>t_0$,
-dall'eq. \eqref{fri} si ha
+dall'eq. \eqref{eq:friedmann} si ha
 \begin{itemize}
 \item $R(t) \propto t$ nel caso $k=-1$, per il quale per $t \to \infty$,
   $\dot{R} \to 1$;
@@ -210,7 +210,7 @@ seconda del segno della costante.  Si ha quindi
   \dot{R}^2 + k c^2 = \frac{8 \pi}{3} G \rho R^2
   \label{1106}
 \end{equation}
-che è l'eq. di Friedmann \eqref{fri}.  Il caso $k=1$ corrisponde a
+che è l'eq. di Friedmann \eqref{eq:friedmann}.  Il caso $k=1$ corrisponde a
 $\text{costante}<0$ (energia totale negativa) e quindi il caso descrive la
 situazione in cui un'eventuale espansione è seguita da collasso; il caso $k=-1$
 corrisponde a $\text{costante}>0$ (energia totale positiva) e quindi espansione
@@ -246,6 +246,7 @@ ha
 \end{equation}
 da cui segue
 \begin{equation}
+  \label{eq:continuita}
   d\rho= - \left( \rho + \frac{p}{c^2} \right) \frac{4 \pi l^2 dl}{4 \pi l^3/3}
   \implies \toder{\rho}{t} +  3 \left( \rho + \frac{p}{c^2} \right) \frac{\dot
     R }{R} =0
@@ -330,7 +331,7 @@ $z = 1000$.  Questo accade (come vedremo) ad un tempo $ \simeq 10^5$ yr (a
 partire dalla singolarità iniziale).  Tale valore è trascurabile rispetto al
 tempo attuale dell'Universo $t_0 \simeq 14 \times 10^9$ yr e pertanto porremo
 l'inizio di tale era a $t=0$.  Riprendiamo in esame l'eq. di Friedmann
-\eqref{fri} in cui poniamo
+\eqref{eq:friedmann} in cui poniamo
 \begin{equation}
   \rho = \rho_0 \left( \frac {R_0} {R} \right)^{3}
 \end{equation}
@@ -343,7 +344,7 @@ e sostituendo nell'eq. \eqref{rho0} si ha
 \begin{equation}
   \frac{8\pi G}{3} \rho_0 = 2q_0 H_0^2
 \end{equation}
-Usando le relazioni precedenti l'eq. \eqref{fri} diventa:
+Usando le relazioni precedenti l'eq. \eqref{eq:friedmann} diventa:
 \begin{equation}
   \dot{R}^2 + (2 q_0-1) H_0^2 R_0^2 = \frac{8\pi G}{3} \rho_0 \frac{R_0^3}{R},
 \end{equation}
@@ -542,10 +543,10 @@ sempre dominante per cui $\rho \simeq \rho_{\Lambda}$ e $p \simeq p_{\Lambda}$,
 le eq. del moto \eqref{moto} danno la soluzione stazionaria con $\rho (t) \simeq
 \text{costante}$ (Universo stazionario).
 
-Vediamo ora come le eq. \eqref{e1}, \eqref{e2} e \eqref{fri} sono modificate per
-l'introduzione di $\rho_{\Lambda}$ e $p_{\Lambda}$.  Uguagliando $S_{tt}$ alla
-componente $R_{tt}= 3 \ddot{R}/R$, in sostituzione dell'eq. \eqref{e1}, si ha
-ora:
+Vediamo ora come le eq. \eqref{e1}, \eqref{e2} e \eqref{eq:friedmann} sono
+modificate per l'introduzione di $\rho_{\Lambda}$ e $p_{\Lambda}$.  Uguagliando
+$S_{tt}$ alla componente $R_{tt}= 3 \ddot{R}/R$, in sostituzione
+dell'eq. \eqref{e1}, si ha ora:
 \begin{equation}
   \frac{3 \ddot{R}}{R} = - 8\pi G \left[ \frac{1}{2}  (\rho+3p) - \rho_{\Lambda}
   \right]
@@ -592,8 +593,8 @@ Eliminando $\ddot R$, con l'uso dell'eq. (\ref{ecc1}), si ha
   \frac{\dot{R}^2}{R^2} +\frac{k}{R^2} = \frac{8 \pi G}{3} (\rho+\rho_{\Lambda}).
 \label{2.67}
 \end{equation}
-Questa relazione sostituisce l'eq. di Friedmann~\eqref{fri}.  Per l'era della
-materia l'equazione~\eqref{2.67} diventa
+Questa relazione sostituisce l'eq. di Friedmann~\eqref{eq:friedmann}.  Per l'era
+della materia l'equazione~\eqref{2.67} diventa
 \begin{equation}
   H(z)=H_0\left[\Omega_{\Lambda}+\Omega_{k}(1+z)^2+\Omega_m (1+z)^3\right]^{1/2}
   \label{hzcc}
@@ -986,33 +987,37 @@ il disaccoppiamento la temperatura della materia $T_{m}\propto R^{-2}$.
 \subsection{Anisotropia di dipolo}
 
 Supponiamo che vi sia un sistema di riferimento fondamentale in cui la
-radiazione di fondo cosmico è isotropa (e con spettro di Planck) e che la Terra
-si muova con velocità $v_{\oplus}$ rispetto a questo sistema.  Nel sistema
-fondamentale, i fotoni nell'angolo solido $\sin \theta \dd\theta \dd\phi$ e con
-frequenza tra $\nu$ e $\nu + \dd\nu$ contribuiscono al tensore energia impulso
-della radiazione di fondo con
+radiazione di fondo cosmico sia isotropa (e con spettro di Planck) e che la
+Terra si muova con velocità $v_{\oplus}$ rispetto a questo sistema.  Nel sistema
+fondamentale, i fotoni nell'angolo solido $\sin \theta \dd \theta \dd \phi$ e
+con frequenza tra $\nu$ e $\nu + \dd\nu$ contribuiscono al tensore energia
+impulso della radiazione di fondo cosmico con
 \begin{equation}
-  \dd T^{\mu \nu}= \frac{p^{\mu} p^{\nu}}{h^2 \nu^2}
-  \frac{\sin \theta \dd\theta \dd\phi}{4 \pi}
-  \rho_{\gamma ~ 0}(\nu) \dd\nu
+  \dd T^{\mu \nu}=  \left( \frac{p^{\mu} p^{\nu}}{h^2 \nu^2} \right)
+                  \left( \frac{\sin\theta \dd\theta \dd\phi}{4\pi} \right)
+  \rho_{\gamma 0}(\nu) \dd\nu
+\label{521}
 \end{equation}
-Qui si assume che l'espressione del tensore energia impulso sia proporzionale a
-$p^{\mu} p^{\nu}$ e gli altri termini sono introdotti in modo che l'integrale
-nell'intero angolo solido sia pari a $\rho_{\gamma ~0}$.  Quindi si ha
+Nella relazione precedente si è tenuto conto che il tensore energia impulso è
+proporzionale a $p^{\mu} p^{\nu}$ (vedi~\cite[44]{weinberg:gravitation}); gli
+altri termini sono introdotti in modo che integrando sull'intero angolo solido
+$\dd T^{00} = \rho_{\gamma 0} \dd \nu$.  Si ha quindi
 \begin{equation}
-  \dd T^{\mu \nu}= 2 \frac{ p^{\mu} p^{\nu} }{h} \frac{1}{\exp (h \nu/ kT_{\gamma ~ 0 })}
+  \dd T^{\mu \nu}= \left( 2 \frac{ p^{\mu} p^{\nu} }{h} \right)
+                   \left( \frac{1} { \exp (h \nu/ kT_{\gamma 0 }) } \right)
   \sin \theta \dd\theta \dd\phi \nu \dd\nu
+\label{522}
 \end{equation}
 con
 \begin{equation}
-  p^{\mu} \equiv (p^0, p_x, p_y, p_z) =
-  h \nu ( 1, \sin\theta \cos\phi , \sin\theta \sin\phi, \cos\theta)
+  p^{\mu} \equiv (E, p_x, p_y, p_z) =
+  h \nu ( 1, \sin \theta \cos \phi , \sin \theta \sin \phi, \cos \theta)
 \end{equation}
 
 Nel sistema della Terra il tensore energia impulso della radiazione di fondo è
 \begin{equation}
   \dd T'^{\mu \nu} = \tensor{\Lambda}{^{\mu}_{\rho}} \tensor{\Lambda}{^{\nu}_{\sigma}}
-  \dd T^{\rho\sigma} 
+  \dd T^{\rho\sigma}
 \end{equation}
 dove $\Lambda$ è la matrice di Lorentz con $\vec{v} = - \vec{v}_{\oplus}$.
 Allora possiamo esprimere $\dd T'^{\mu \nu}$ in termini di quantità nel sistema
@@ -1020,16 +1025,51 @@ della Terra.  Osserviamo preliminarmente
 \begin{equation}
   p'^{\mu } = \tensor{\Lambda}{^{\mu}_{\nu}} p^{\nu}
 \end{equation}
-oppure, orientando gli assi in modo $\phi=0$ (asse z nella direzione della
-velocità della Terra rispetto al sistema fondamentale), si ha
+e che orientando gli assi in modo ($\phi=0$) che l'asse z sia nella direzione della
+velocità della Terra,  si ha
+\begin{subequations}
+  \begin{gather}
+    \nu' = \nu \frac{[1-v_{\oplus}\cos\theta]}{[ 1 - v_{\oplus}^2]^{1/2}}, \\
+    \cos\theta' = \frac{[- v_{\oplus} + \cos\theta]}{[1 - v_{\oplus}
+      \cos\theta]}, \\
+    \phi' = \phi
+  \end{gather}
+\end{subequations}
+dove ora $\theta$ è l'angolo tra la velocità della Terra e il fotone.
+Il tensore energia impulso differenziale nel sistema terra ha necessariamente la forma
 \begin{equation}
-  \nu' = \nu \frac{[-v_{\oplus}\cos\theta]}{[ 1 - v_{\oplus} \cos\theta]}
+  \dd T^{\prime \mu \nu}= \left( 2 \frac{ p^{\prime \mu} p^{\prime \nu} }{h} \right)
+                   \left( \frac{1} { \exp (h \nu/ kT_{\gamma 0 }) } \right)
+  \sin \theta \dd\theta \dd\phi \nu \dd\nu
 \end{equation}
-dove ora $\theta$ è l'angolo tra la velocità della Terra e il fotone.  L'angolo
-solido ha la regola di trasformazione
+poich\'e in eq.(\ref{522}) il termine a sinistra \'e un tensore di rango 2 controvariante,
+il prodotto $p^{\mu} p^{\nu}$ \'e un tensore dello stesso tipo e rango e quindi la parte
+restante a destra \'e un invariante.
+Ora, l'angolo solido ha la regola di trasformazione (?)
 \begin{equation}
-  \cos \theta' = \frac{[1- v_{\oplus} \cos \theta]}{[1 - v_{\oplus}^2 ]^{1/2}}
+ \sin \theta^{\prime} \dd\theta^{\prime} \dd\phi^{\prime}
+= \left( \frac {\nu}{\nu^{\prime}} \right)^2 \sin \theta \dd\theta \dd\phi
 \end{equation}
+da cui segue
+\begin{equation}
+  \dd T^{\prime \mu \nu}= \left( 2 \frac{ p^{\prime \mu} p^{\prime \nu} }{h} \right)
+                   \left( \frac{1} { \exp (h \nu^{\prime}/ kT^{\prime}_{\gamma 0 }) } \right)
+  \sin \theta^{\prime} \dd\theta^{\prime} \dd\phi^{\prime} \nu^{\prime} \dd\nu^{\prime}
+\end{equation}
+dove si \'e posto
+\begin{equation}
+T^{\prime}_{\gamma 0} \equiv \left( \frac{\nu ^{\prime}}{\nu} \right) T_{\gamma 0} =
+\left[ \frac{(1- v_{\oplus} \cos \theta)}{(1-v_{\oplus}^2)^{1/2} } \right] T_{\gamma 0}
+\end{equation}
+Quindi, rispetto alla Terra la radiazione di fondo cosmico ha ancora una distribuzione di Planck
+ma con una temperatura differente.
+Per velocit\'a piccole, cio\'e per $v_{\oplus}/c << 1$, segue che
+\begin{equation}
+\Delta T_{\gamma 0} = T^{\prime}_{\gamma 0} - T_{\gamma 0} = - \frac{ v_{\oplus}} {c} T_{\gamma 0}
+\end{equation}
+Questa relazione determina un'anisopropia di dipolo in due direzioni opposte.
+Da misure recenti si trova $v_{\oplus} \simeq 300$ km/s (nel direzione ....) e quindi
+$  \Delta T_{\gamma 0} / T_{\gamma 0} \simeq 10^{-3}$.
 
 \subsection{Effetto GZK}
 
@@ -1177,8 +1217,8 @@ Si prende ora in esame l'era dell'Universo dominata dalla radiazione, per cui
   \rho(t)=\rho_0 \left(\frac{R_0}{R(t)} \right)^4
   \label{293}
 \end{equation}
-La dinamica dell'Universo è descritta dall'eq. \eqref{fri}, in cui ora però si
-può trascurare il termine $k$
+La dinamica dell'Universo è descritta dall'eq. \eqref{eq:friedmann}, in cui ora
+però si può trascurare il termine $k$
 \begin{equation}
   \dot{R}^2 = \frac{8 \pi G}{3} \rho R^2,
   \label{fri_pri}
@@ -1265,7 +1305,7 @@ definisce una scala di temperatura (K$^{-1} = 11604$ Kelvin/eV):
     $m_{\mu} c^2 $  & 106    MeV & $1.2   \times 10^{12}$ \\
     $(m_n-m_p) c^2$ & 1.3    MeV & $1.5   \times 10^{10}$ \\
     $m_e c^2      $ & 511    KeV & $5.8   \times 10^{9 }$ \\
-    temperatura di dissociazione del deuterio \\ 
+    temperatura di dissociazione del deuterio \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -1476,12 +1516,12 @@ Il calcolo dell'abbondanza di $^4He$ procede in due passaggi:
   interazione debole) che alterano il numero di neutroni e protoni a partire da
   $n/(n+p)=0.5$.  Questi sono
   \begin{subequations}
+    \label{w1571}
     \begin{align}
       n + \nu  & \longleftrightarrow p  + e^-             \\
       n + e^+  & \longleftrightarrow p +        {\bar\nu} \\
       n        & \longleftrightarrow p + e^-  + {\bar\nu}
     \end{align}
-    \label{w1571}
   \end{subequations}
 \item quindi si considerano le reazioni che portano alla formazione dell'elio.
 \end{itemize}
