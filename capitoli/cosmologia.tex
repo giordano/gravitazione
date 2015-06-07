@@ -1666,7 +1666,8 @@ ultimi tre problemi elencati.
 La teoria dell'inflazione è un'aggiunta al modello standard della cosmologia,
 non una nuova teoria alternativa a quella finora illustrata che rimane per il
 resto inalterata.  A oggi non sono ancora state trovate evidenze sperimentali
-che dimostrino la validità dell'inflazione.
+che dimostrino la validità dell'inflazione, anche se ci sono forti motivazioni
+teoriche che la fanno apparire ben fondata.
 
 Nei seguenti paragrafi illustreremo i problemi dei monopoli magnetici, della
 piattezza e dell'orizzonte, facendo inoltre vedere come la fase di inflazione li
@@ -1769,11 +1770,13 @@ Ricapitolando abbiamo determinato
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{figure/flatness}
-  \caption[Come l'inflazione risolverebbe il problema della
-  piattezza]{L'inflazione risolverebbe il problema della piattezza introducendo
-    una fase in cui \(\abs{\Omega(t) - 1}\) tende rapidamente verso \(0\),
-    partendo da una condizione iniziale qualsiasi.  Immagine tratta da
-    \url{https://ned.ipac.caltech.edu/level5/Liddle/Liddle4_1.html}}
+  \caption[Come l'inflazione risolve il problema della piattezza]{La teoria
+    dell'inflazione risolve il problema della piattezza introducendo una fase in
+    cui \(\abs{\Omega(t) - 1}\), rappresentata sull'asse delle ordinate, tende
+    rapidamente verso \(0\), partendo da una condizione iniziale qualsiasi.  Al
+    termine della fase di inflazione, \(\abs{\Omega(t) - 1}\) ha ripreso
+    lentamente ad aumentare fino a raggiungere il valore attuale.  Immagine
+    tratta da \url{https://ned.ipac.caltech.edu/level5/Liddle/Liddle4_1.html}}
   \label{fig:piattezza}
 \end{figure}
 Ora possiamo calcolare l'evoluzione di \(\abs{\Omega(t) - 1}\) con il tempo.
@@ -1800,15 +1803,16 @@ Inoltre abbiamo visto che oggi si ha \(\abs{\Omega(t_{0}) - 1} \lesssim
 \begin{equation}
   \abs{\Omega(t_{\textup{Pl}}) - 1} \lesssim 10^{-63}.
 \end{equation}
-Pertanto, subito dopo il Big Bang la densità dell'Universo doveva differire
-dalla densità critica al più per una parte su \(10^{-63}\).  Il modello standard
-della cosmologia non prevede che l'Universo dovesse essere all'inizio
-praticamente piatto o quasi, bisogna imporlo come condizione iniziale.  Questo
-non è un vero e proprio problema di per sé, ma è un difetto nella teoria del
-modello standard perché comporta fissare forzatamente la densità iniziale
-dell'Universo a un valore ben preciso, quando non ci sono motivi per ritenere
-che questo valore fosse più probabile di qualsiasi altro.  Si usa dire che
-questo è un problema di \emph{fine-tuning}.
+Con questi approssimativi calcoli abbiamo trovato che subito dopo il Big Bang la
+densità dell'Universo doveva differire dalla densità critica al più per una
+parte su \(10^{-63}\).  Il modello standard della cosmologia non prevede che
+l'Universo dovesse essere all'inizio praticamente piatto o quasi, bisogna
+imporlo come condizione iniziale.  Questo non è un vero e proprio problema di
+per sé, ma è un difetto nella teoria del modello standard perché comporta
+fissare forzatamente la densità iniziale dell'Universo a un valore molto
+particolare, quando non ci sono motivi per ritenere che questo valore fosse più
+probabile di qualsiasi altro.  Si usa dire che questo è un problema di
+\emph{fine-tuning}.
 
 Il problema della piattezza sarebbe risolto se ci fosse stata una fase, nel
 passato, in cui \(\abs{\Omega(t) - 1}\) fosse rapidamente sceso verso \(0\).
@@ -1826,6 +1830,135 @@ Osserviamo che se \(\beta>1\) risulta \(\ddot{R} = \beta(\beta-1)t^{\beta-2}
 prescritto dalla teoria dell'inflazione.  D'altra parte \(\beta = 2/3(w+1)>1\)
 equivale a \(w < -1/3\) e dall'equazione di accelerazione \(\ddot{R}/R=-4\pi
 G(\rho+3p)/3\) si ha che si ha espansione accelerata solo se \(w < -1/3\).
+
+\subsection{Problema dell'orizzonte}
+\label{sec:problema-orizzonte}
+
+L'origine di questo problema è la \emph{causalità}: la velocità della luce nel
+vuoto fissa un limite superiore alla velocità di propagazione di qualsiasi
+segnale.  Le mappe della radiazione cosmica di fondo realizzate dai telescopi
+WMAP e Planck hanno mostrato che l'intero cielo a noi oggi visibile ha la stessa
+temperatura, a meno di anisotropie dell'ordine di \(10^{-5}\), quindi
+trascurabili in prima analisi.  È possibile che tutti i punti di una così vasta
+regione dello spazio fossero in connessione causale al momento del
+disaccoppiamento, in modo tale da giustificare un processo di termalizzazione
+che abbia coinvolto tutto l'Universo visibile?
+
+Definiamo \emph{orizzonte} \(d_{\textup{H}}(t,t_{i})\) come la massima distanza
+percorsa da un raggio di luce emesso al tempo \(t_{i}\) e osservato al tempo
+\(t\).  Questa quantità determina la distanza massima che ci può essere fra due
+punti che sono in connessione causale l'uno con l'altro.  Matematicamente
+abbiamo
+\begin{equation}
+  d_{\textup{H}}(t, t_{i}) = R(t)\int_{t_{i}}^{t} \frac{\dd t'}{R(t')} =
+  \frac{R(t)}{1-\beta}(t^{1-\beta} - t_{i}^{1-\beta})
+\end{equation}
+avendo usato \(R(t)\sim t^{\beta}\).  Vogliamo determinare cosa succede provando
+a considerare un segnale partito molto indietro nel tempo, diciamo per \(t_{i}
+\to 0\).  Ci sono due possibilità:
+\begin{itemize}
+\item \(d_{\textup{H}}(t, t_{i})\) converge a un valore finito per \(t_{i} \to
+  0\) e in questo caso il segnale emesso non può essere visto più lontano della
+  distanza \(d_{\textup{H}}(t, t_{i})\),
+\item oppure l'integrale diverge a un valore infinito, quindi è possibile
+  ricevere segnali emessi a tempi sufficientemente remoti da qualsiasi sorgente
+  comovente.
+\end{itemize}
+In un Universo sempre dominato solo da radiazione e materia risulta \(\beta<1\)
+e quindi
+\begin{equation}
+  d_{\textup{H}}(t, t_{i}) \xrightarrow[t_{i}\to 0]{} \frac{R(t)
+    t^{1-\beta}}{1-\beta} = \frac{\beta}{1-\beta} \frac{1}{H(t)}
+\end{equation}
+A parte il fattore numerico legato al valore di \(\beta\), la dimensione
+dell'orizzonte è essenzialmente data dal raggio di Hubble \(1/H(t)\) e ci
+troviamo nella prima delle due situazioni illustrate sopra.  Secondo questo
+modello, col passare del tempo aumentano le frazioni dell'Universo che sono in
+connessione causale.  Quindi esistono nella radiazione cosmica di fondo delle
+regioni che erano disconnesse causalmente.  Ma a questo punto sorge il problema:
+come è possibile spiegare l'omogeneità delle condizioni iniziali al momento
+dell'ultimo scattering, quando è iniziata la radiazione cosmica di fondo?
+Ancora una volta l'inflazione risolve il problema introducendo una fase con
+\(\beta>1\), che abbiamo visto implicare espansione accelerata \(\ddot{R}>0\).
+In questo caso si ha
+\begin{equation}
+  d_{\textup{H}}(t, t_{i}) \xrightarrow[t_{i}\to 0]{} \infty
+\end{equation}
+e sarebbe quindi stato possibile, per tutti i punti della radiazione che
+osserviamo oggi, essere in connessione causale l'uno con l'altro.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.55\textwidth]{figure/scales}\hfill
+  \includegraphics[width=0.4\textwidth]{figure/horizon}
+  \caption[Come l'inflazione risolve il problema
+  dell'orizzonte]{\emph{Sinistra}: andamento schematico del raggio comovente di
+    Hubble \((RH)^{-1}\) con il tempo.  Durante l'inflazione è diminuito, per
+    poi crescere nelle epoche della radiazione e della materia, previste dal
+    modello dell'Hot Big Bang.  Le regioni si trovano a una distanza pari al
+    raggio comovente di Hubble attuale secondo quest'ultimo modello non possono
+    mai essere state in contatto causale nel passato.  Invece, se c'è stata una
+    fase di inflazione le distanze dell'ordine di \((RH)^{-1}\) attuale sono
+    state al di sotto dell'orizzonte in tempi sufficientemente remoti.
+    \emph{Destra}: evoluzione del raggio comovente di Hubble.  La sfera
+    comovente di Hubble si è ristretta durante l'inflazione e allargata in
+    seguito.  Figure tratte da~\cite[27]{2009arXiv0907.5424B}}
+  \label{fig:orizzonte}
+\end{figure}
+Proviamo a illustrare un altro argomento che presenta il problema
+dell'orizzonte.  Già nel problema della piattezza abbiamo incontrato
+l'importante quantità
+\begin{equation}
+  \frac{1}{R(t)H(t)}
+\end{equation}
+chiamata \emph{raggio} o \emph{parametro di Hubble comovente}.  Il nome deriva
+dal fatto che \(c/H(t) = 1/H(t)\) è il \emph{raggio di Hubble}, che indica la
+tipica lunghezza di scala alla quale un processo fisico nell'Universo opera
+coerentemente.  Dividendo per il fattore di scala si ottiene la corrispondente
+grandezza comovente, che tiene conto della variazione di \(R(t)\).  Vediamo come
+si evolve il parametro di Hubble comovente con il tempo.  Per parametrizzare il
+tempo usiamo il fattore di scala, che sappiamo avere andamento \(R(t)\sim
+t^{\beta}\), se \(w\neq -1\).  Nel caso dell'Universo dominato dalla radiazione
+\(\beta = 1/2\), quindi
+\begin{equation}
+  \ln \frac{1}{RH} = \ln \frac{1}{\dot{R}} \sim \ln t^{1/2} \sim \ln R.
+\end{equation}
+Invece, nella fase dell'Universo dominato dalla materia abbiamo \(\beta = 2/3\),
+da cui
+\begin{equation}
+  \ln \frac{1}{RH} = \ln \frac{1}{\dot{R}} \sim \ln t^{1/3} \sim \ln R^{1/2} =
+  \frac{1}{2}\ln R.
+\end{equation}
+Quindi in ogni caso \(\ln (RH)^{-1}\) è una funzione crescente di \(\ln R\).  Ma
+questo significa che regioni che oggi vediamo essere in contatto causale in
+passato non potevano esserlo, dato che il raggio comovente di Hubble in passato
+era molto più piccolo, quindi non c'è potuto essere un processo di
+termalizzazione su una scala così grande.  Il problema si risolverebbe se in
+passato, prima dell'inizio dell'epoca dominata dalla radiazione, c'è stata una
+fase in cui \((RH)^{-1}\) è diminuito con il tempo, e quindi con \(R\).
+Condizione necessaria affinché \((RH)^{-1}\) diminuisca con il tempo è che la
+sua derivata temporale sia negativa, cioè
+\begin{equation}
+  0 > \toder{}{t} \frac{1}{RH} = \frac{1}{\dot{R}} =
+  -\frac{\ddot{R}}{(\dot{R})^{2}} \iff \ddot{R}>0.
+\end{equation}
+Abbiamo di nuovo trovato che una fase inflazionaria di espansione accelerata
+risolverebbe il problema dell'orizzonte: l'Universo prima dell'inflazione aveva
+un raggio comovente di Hubble più grande di quello attuale, durante l'inflazione
+il raggio è diminuito rapidamente, per poi ricominciare a crescere durante le
+epoche della radiazione e della materia.  Le scale che noi oggi vediamo entrare
+in connessione casuale lo erano già stato in passato, prima dell'era della
+radiazione, ed è in quel periodo che erano in corso i processi di
+omogeneizzazione delle condizioni iniziali che hanno poi permesso alla
+radiazione cosmica di fondo di avere una temperatura uniforme fra regioni che
+credevamo non aver mai potuto comunicare fra di loro.  Per concretezza, durante
+l'inflazione si assume che \(H\) sia rimasto costante, quindi
+\begin{equation}
+  \ln \frac{1}{RH} = \ln \frac{1}{R \cdot \text{costante}} \sim \ln \frac{1}{R}
+  = - \ln R.
+\end{equation}
+Nella figura~\ref{fig:orizzonte} è rappresentato schematicamente l'andamento del
+raggio comovente di Hubble secondo la teoria dell'inflazione.
 
 %%% Local Variables:
 %%% mode: latex
