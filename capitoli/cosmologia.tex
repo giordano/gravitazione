@@ -1637,13 +1637,16 @@ Fig. \ref{fig:abbondanza}
 \section{Teoria dell'inflazione}
 \label{sec:inflazione}
 
+\emph{Queste note sono basate sulle lezioni di Inflazione tenute da Danièle
+  Steer (APC Paris) durante l'IDPASC School 2015.}
+
 \subsection{Problemi del modello standard della cosmologia}
 \label{sec:problemi-cosmologia}
 
 Il modello dell'Hot Big Bang è perfettamente soddisfacente per tempi \(t\gtrsim
-\SI{e-3}{\second}\) (quindi prima della nucleosintesi del Big Bang) dopo la
-singolarità iniziale.  Questo modello è compatibile con la legge di Hubble e
-descrive bene la nucleosintesi, la presenza di una radiazione di fondo a
+\SI{e-3}{\second}\) dopo la singolarità iniziale, quindi prima della
+nucleosintesi del Big Bang.  Questo modello è compatibile con la legge di Hubble
+e descrive bene la nucleosintesi, la presenza di una radiazione di fondo a
 microonde e la formazione e crescita delle struttura a larga scala.
 
 Tuttavia, il modello è incompleto dal momento che le condizioni iniziali devono
@@ -1655,10 +1658,11 @@ i quali:
 \item il \emph{problema della piattezza},
 \item il \emph{problema dell'orizzonte}.
 \end{itemize}
-La teoria dell'\emph{inflazione} afferma che pochi istanti dopo il Big Bang c'è
-stata una breve fase di rapida espansione accelerata dell'Universo, quindi
-caratterizzata da \(\ddot{R}>0\).  La fase di inflazione sarebbe iniziata circa
-\SI{e-36}{\second} dopo il Big Bang e sarebbe terminata fra circa
+La teoria dell'\emph{inflazione}, sviluppata a partire dagli anni '70 del secolo
+scorso soprattutto da parte di Guth e Linde, afferma che pochi istanti dopo il
+Big Bang c'è stata una breve fase di rapida espansione accelerata dell'Universo,
+quindi caratterizzata da \(\ddot{R}>0\).  La fase di inflazione sarebbe iniziata
+circa \SI{e-36}{\second} dopo il Big Bang e sarebbe terminata fra circa
 \SI{e-34}{\second} e \SI{e-32}{\second} dopo la singolarità iniziale.  Questo
 fenomeno, se fosse avvenuto realmente, risolverebbe in un colpo solo tutti gli
 ultimi tre problemi elencati.
@@ -1682,12 +1686,12 @@ formato un gran numero di \emph{monopoli magnetici} (ipotetiche particelle
 dotate di singola carica del campo magnetico) dotate di massa elevata.  Secondo
 alcune stime~\parencite[143-145]{2002coec.book.....C}, i monopoli magnetici
 dovrebbero avere massa \(m_{\textup{M}} \approx \SI{e16}{\giga\electronvolt}\) e
-densità attuale, escludendo che ci sia stata una fase di inflazione, almeno
-dello stesso ordine della densità di barioni.  Questo è chiaramente
+densità numerica attuale, escludendo che ci sia stata una fase di inflazione,
+almeno dello stesso ordine di quella dei barioni.  Questo è chiaramente
 incompatibile con le osservazioni attuali perché i monopoli magnetici non sono
 mai stati trovati ma, soprattutto, la loro elevata massa combinata con la loro
-densità significherebbe che la densità di materia oggi dovrebbe essere \(16\)
-ordini di grandezza più grande di quella misurata.
+densità numerica significherebbe che la densità di materia oggi dovrebbe essere
+\(16\) ordini di grandezza più grande di quella misurata.
 
 La fase di inflazione risolverebbe questo problema perché l'espansione
 accelerata si collocherebbe dopo la formazione dei monopoli magnetici ma prima
@@ -1695,9 +1699,9 @@ della creazione della materia ordinaria che costituisce l'Universo che
 conosciamo.  Pertanto, la rapida espansione porterebbe a una forte diminuzione
 della densità dei soli monopoli magnetici, senza alterare la densità della
 materia barionica.  Per fissare le idee, anticipiamo che il fattore di scala fra
-l'inizio e la fine della fase di inflazione sarebbe aumentato di circa \num{e27}
+l'inizio e la fine della fase di inflazione sarebbe aumentato di circa \num{e26}
 volte, quindi la densità di monopoli sarebbe diminuita di un fattore dell'ordine
-di \num{e81}.
+di \num{e78}.
 
 \subsection{Problema della piattezza}
 \label{sec:problema-piattezza}
@@ -1718,7 +1722,7 @@ Secondo gli ultimi dati del telescopio Planck~\parencite{2015arXiv150201589P},
 oggi risulta \(\abs{\Omega(t_{0}) - 1} = \num{0.000(5)}\), cioè
 \(\abs{\Omega(t_{0}) - 1} < \num{0.005}\).  Questo significa che oggi l'Universo
 appare pressoché piatto.  Dall'analisi
-dell'equazione~\eqref{eq:friedmann-densita} possiamo osservare che
+dell'equazione~\eqref{eq:friedmann-densita} possiamo dedurre che
 \begin{itemize}
 \item o la costante \(k\) è nulla e quindi \(\Omega(t) - 1\) è sempre stata
   uguale a \(0\),
@@ -1790,9 +1794,9 @@ modo vediamo che
 è una funzione crescente col tempo.  Dunque, oggi l'Universo ha una densità
 prossima alla densità critica, ma per quanto abbiamo trovato in passato la
 densità era ancora più vicina alla densità critica.  Possiamo stimare quanto è
-aumentato \(\Omega(t) - 1\) fra il tempo di Planck \(t = t_{\textup{Pl}} \sim
-\SI{e-43}{\second}\) e oggi (\(t = t_{0} \sim \SI{e17}{\second}\)).  Per fare
-questo supponiamo un Universo sempre dominato dalla radiazione, quindi vale
+aumentato \(\abs{\Omega(t) - 1}\) fra il tempo di Planck \(t = t_{\textup{Pl}}
+\sim \SI{e-43}{\second}\) e oggi (\(t = t_{0} \sim \SI{e17}{\second}\)).  Per
+fare questo supponiamo un Universo sempre dominato dalla radiazione, quindi vale
 sempre \(\beta = 1/2 \implies \abs{\Omega(t) - 1} \sim t\), da cui
 \begin{equation}
   \frac{\abs{\Omega(t_{0}) - 1}}{\abs{\Omega(t_{\textup{Pl}}) - 1}} \sim
@@ -1828,8 +1832,9 @@ di inflazione, come mostrato nella figura~\ref{fig:piattezza}.
 Osserviamo che se \(\beta>1\) risulta \(\ddot{R} = \beta(\beta-1)t^{\beta-2}
 \implies \ddot{R} > 0\), cioè espansione accelerata dell'Universo, proprio come
 prescritto dalla teoria dell'inflazione.  D'altra parte \(\beta = 2/3(w+1)>1\)
-equivale a \(w < -1/3\) e dall'equazione di accelerazione \(\ddot{R}/R=-4\pi
-G(\rho+3p)/3\) si ha che si ha espansione accelerata solo se \(w < -1/3\).
+equivale a \(-1 < w < -1/3\) e dall'equazione di accelerazione
+\(\ddot{R}/R=-4\pi G(\rho+3p)/3\) si ha che si ha espansione accelerata solo se
+\(w < -1/3\).
 
 \subsection{Problema dell'orizzonte}
 \label{sec:problema-orizzonte}
@@ -1895,12 +1900,12 @@ osserviamo oggi, essere in connessione causale l'uno con l'altro.
   dell'orizzonte]{\emph{Sinistra}: andamento schematico del raggio comovente di
     Hubble \((RH)^{-1}\) con il tempo.  Durante l'inflazione è diminuito, per
     poi crescere nelle epoche della radiazione e della materia, previste dal
-    modello dell'Hot Big Bang.  Le regioni si trovano a una distanza pari al
-    raggio comovente di Hubble attuale secondo quest'ultimo modello non possono
-    mai essere state in contatto causale nel passato.  Invece, se c'è stata una
-    fase di inflazione le distanze dell'ordine di \((RH)^{-1}\) attuale sono
-    state al di sotto dell'orizzonte in tempi sufficientemente remoti.
-    \emph{Destra}: evoluzione del raggio comovente di Hubble.  La sfera
+    modello dell'Hot Big Bang.  I punti che si trovano a una distanza pari al
+    raggio comovente di Hubble attuale oggi sono in contatto causale, ma secondo
+    quest'ultimo modello non possono mai esserlo stato nel passato.  Invece, se
+    c'è stata una fase di inflazione le distanze dell'ordine di \((RH)^{-1}\)
+    attuale sono state al di sotto dell'orizzonte in tempi sufficientemente
+    remoti.  \emph{Destra}: evoluzione del raggio comovente di Hubble.  La sfera
     comovente di Hubble si è ristretta durante l'inflazione e allargata in
     seguito.  Figure tratte da~\cite[27]{2009arXiv0907.5424B}}
   \label{fig:orizzonte}
@@ -1947,7 +1952,7 @@ risolverebbe il problema dell'orizzonte: l'Universo prima dell'inflazione aveva
 un raggio comovente di Hubble più grande di quello attuale, durante l'inflazione
 il raggio è diminuito rapidamente, per poi ricominciare a crescere durante le
 epoche della radiazione e della materia.  Le scale che noi oggi vediamo entrare
-in connessione casuale lo erano già stato in passato, prima dell'era della
+in connessione casuale lo erano già state in passato, prima dell'era della
 radiazione, ed è in quel periodo che erano in corso i processi di
 omogeneizzazione delle condizioni iniziali che hanno poi permesso alla
 radiazione cosmica di fondo di avere una temperatura uniforme fra regioni che
@@ -1959,6 +1964,188 @@ l'inflazione si assume che \(H\) sia rimasto costante, quindi
 \end{equation}
 Nella figura~\ref{fig:orizzonte} è rappresentato schematicamente l'andamento del
 raggio comovente di Hubble secondo la teoria dell'inflazione.
+
+\subsection{Quanta inflazione?}
+\label{sec:quanta-inflazione}
+
+Vogliamo determinare quanta inflazione c'è stata, cioè di quanto è aumentato il
+fattore di scala durante la fase inflazionaria.  Calcoleremo questa quantità
+prendendo spunto dal problema della piattezza.
+
+Nella teoria dell'inflazione si quantifica l'espansione con il logaritmo del
+rapporto fra il fattore di scala alla fine dell'inflazione (\(t_{f}\)) e
+all'inizio (\(t_{i}\))
+\begin{equation}
+  N_{*} = \ln \frac{R(t_{f})}{R(t_{i})}.
+\end{equation}
+Questa quantità è chiamata \emph{numero di \(\e\)-foldings}, perché indica
+quante \(\e = 2.718\dots\) volte si è espanso l'Universo in quella fase.
+
+Assumiamo, senza perdita di generalità, che \(\abs{\Omega(t) - 1}\) all'inizio
+dell'inflazione fosse dell'ordine dell'unità,\footnote{L'importante è che sia
+  sostanzialmente diversa da \(0\).} quindi \(\abs{\Omega(t_{i}) - 1} \sim 1\).
+Oggi sappiamo che risulta al più \(\abs{\Omega(t_{0}) - 1} \sim 0.001\), per
+determinare \(\abs{\Omega(t_{f}) - 1}\) sfruttiamo \(\abs{\Omega(t) -1} \sim
+t^{2(1-\beta)}\) e andiamo a ritroso nel tempo.  Ricordiamo che
+\begin{itemize}
+\item l'era della radiazione (\(\beta = 1/2\)) è iniziata al termine
+  dell'inflazione (\(t \sim \SI{e-34}{\second}\)) ed è finita a \(t =
+  \SI{4.7e4}{y} = \SI{1.5e12}{\second}\);
+\item l'era della materia (\(\beta = 2/3\)) è iniziata al termine dell'era della
+  radiazione ed è continuata quasi fino ai giorni nostri\footnote{Trascuriamo
+    l'era dell'energia oscura, ininfluente ai fini di questi calcoli.} \(t =
+  \SI{13.8e9}{y} = \SI{4.4e17}{\second}\).
+\end{itemize}
+Quindi risulta
+\begin{equation}
+  \abs{\Omega(t_{f}) - 1} = \abs{\Omega(t_{f}) - 1}
+  \left(\frac{\num{4.4e17}}{\num{1.5e12}}\right)^{2(2/3-1)}
+  \left(\frac{\num{1.5e12}}{\num{e-34}}\right)^{2(1/2-1)} = \num{1.5e-53}.
+\end{equation}
+Durante l'inflazione si assume \(H(t) = \text{costante}\), quindi in questa fase
+\(\abs{\Omega(t_{f}) - 1} \sim R^{-2}\) e
+\begin{equation}
+  \frac{R(t_{f})}{R(t_{i})} = \sqrt{\frac{\abs{\Omega(t_{i}) -
+        1}}{\abs{\Omega(t_{f}) - 1}}} = \num{2.6e26},
+\end{equation}
+da cui troviamo infine
+\begin{equation}
+  N_{*} = \ln \frac{R(t_{f})}{R(t_{i})} \approx 61.
+\end{equation}
+Dunque, usando come punto di partenza il problema dell'orizzonte, abbiamo
+trovato che durante la breve fase di inflazione il fattore di scale è aumentato
+di un fattore dell'ordine di \(10^{26}\), corrisponde a un numero di e-foldings
+pari a circa \(60\).
+
+\subsection{Inflazione vs energia oscura}
+\label{sec:inflazione-energia-oscura}
+
+Sia la fase di inflazione sia l'era dominata dall'energia oscura nella quale ci
+troviamo oggi sono caratterizzate dall'espansione accelerata dell'Universo,
+\(\ddot{R} > 0\), ma ci sono due differenze sostanziali fra queste due
+situazioni
+\begin{itemize}
+\item le energie in gioco sono completamente differenti, infatti si calcola che
+  il potenziale associato all'inflazione è dell'ordine di (\(M_{\textup{Pl}} =
+  1/\sqrt{8\pi G}\) è la massa di Planck)
+  \begin{equation}
+    V_{\textup{inflazione}} \sim (M_{\textup{Pl}})^{4}
+  \end{equation}
+  mentre per l'energia oscura si trova
+  \begin{equation}
+    V_{\textup{energia oscura}} \sim (10^{-30}M_{\textup{Pl}})^{4}.
+  \end{equation}
+  Questo giustifica anche il fatto che il fattore di scala durante l'inflazione
+  è aumentato in maniera molto più rapida rispetto all'aumento in corso oggi;
+\item la fase di inflazione si è dovuta arrestare a un certo punto della storia
+  dell'Universo, per dare spazio alle ere di dominio della radiazione e della
+  materia, mentre non conosciamo ancora il destino dell'espansione attuale
+  guidata dall'energia oscura, che in base alle nostre conoscenze potrebbe anche
+  durare per sempre.
+\end{itemize}
+
+\subsection{Regime di slow-roll e potenziale di inflazione}
+\label{sec:slow-roll}
+
+La costante cosmologica è un esempio di modello per descrivere un Universo in
+espansione accelerata, ma abbiamo ricordato che l'inflazione deve avere
+necessariamente avuto una fine.  Affinché questo sia avvenuto, c'è bisogno di
+introdurre una dipendenza dal tempo nel modello dell'inflazione e si fa questo
+introduce un campo scalare inflatonico \(\phi\) che guida l'evoluzione
+dell'Universo in questa fase, con un potenziale associato \(V(\phi)\) che evolve
+nel tempo.  In questo paragrafo vedremo sotto quali condizioni si verifica la
+fase di inflazione.
+
+Per descrivere l'inflazione si aggiunge all'azione del campo gravitazionale
+l'azione associata al campo inflatonico \(\phi\) data da
+\begin{equation}
+  S_{\phi} = \int\dd^{4}x
+  \sqrt{-g}\left(-\frac{1}{2}(\partial_{\mu}\phi)(\partial^{\mu}\phi) -
+    V(\phi)\right)
+\end{equation}
+da cui si ricava il tensore di energia-impulso
+\begin{equation}
+  T_{\mu\nu} = \frac{2}{\sqrt{-g}} \frac{\delta S_{\phi}}{\delta g_{\mu\nu}}
+  = \partial_{\mu}\phi \partial_{\nu}\phi -
+  g_{\mu\nu}\left(\frac{1}{2}\partial_{\sigma}\phi \partial^{\sigma}\phi -
+    V\right)
+\end{equation}
+e l'equazione del moto
+\begin{equation}
+  \nabla_{\mu}\nabla^{\mu}\phi = \toder{V}{\phi}.
+\end{equation}
+Inoltre si possono calcolare la pressione e la densità del campo inflatonico
+\begin{align}
+  \rho &= -\tensor{T}{^{0}_{0}} = \frac{1}{2}\dot{\phi}^{2} + V, \\
+  p &= \frac{1}{2}\dot{\phi}^{2} - V.
+\end{align}
+L'equazione del moto si può riscrivere come
+\begin{equation}
+  \ddot{\phi} + 3H\dot{\phi} + V' = 0,
+\end{equation}
+in cui \(V' = \ltoder{V}{\phi}\).  L'equazione di stato stato del campo
+inflatonico è
+\begin{equation}
+  w = \frac{p}{\rho} = \frac{\dot{\phi}^{2}/2 - V}{\dot{\phi}^{2}/2 + V}.
+\end{equation}
+Risulta \(-1<w<1\), con \(-1\) corrispondente al caso limite \(\dot{\phi}^{2}/2
+\ll V\) e \(1\) al caso \(\dot{\phi}^{2}/2 \gg V\).  L'inflazione richiede che
+ci sia espansione accelerata e come abbiamo già visto questo corrisponde alla
+condizione \(w < -1/3\), quindi l'energia cinetica del campo è molto più piccola
+del potenziale.  Questo porta alla definizione del \emph{regime di slow-roll},
+durante il quale, secondo le moderne teorie dell'inflazione, è avvenuta
+l'espansione accelerata primordiale.  Lo slow-roll è caratterizzato da due
+condizioni
+\begin{itemize}
+\item energia cinetica del campo inflatonico molto più piccola del suo
+  potenziale, \(\dot{\phi}^{2}/2 \ll V\);
+\item accelerazione del campo trascurabile nell'equazione del moto,
+  \(\abs{\ddot{\phi}}\ll \abs{3H\dot{\phi}}\), \(\abs{V'}\).
+\end{itemize}
+Dalla prima condizione abbiamo che l'equazione di Friedmann si può scrivere come
+\begin{equation}
+  H^{2} = \frac{8\pi G}{3}\rho \approx \frac{8\pi G}{3}V
+\end{equation}
+e dalla seconda condizione l'equazione del moto diventa
+\begin{equation}
+  3H\dot{\phi} + V' = 0.
+\end{equation}
+Inoltre risulta \(w \approx -1\), quindi durante l'inflazione il fattore di
+scala va come \(R(t)\sim \e^{Ht}\).
+
+Nelle teorie d'inflazione si introducono due parametri
+\begin{align}
+  \epsilon_{V} &\equiv
+  \frac{M_{\textup{Pl}}^{2}}{2}\left(\frac{V'}{V}\right)^{2}, \\
+  \eta_{V} &\equiv M_{\textup{Pl}}^{2}\frac{V''}{V}.
+\end{align}
+Usando entrambe le condizioni che determinano il regime di slow-roll si vede che
+affinché si abbia l'inflazione deve risultare
+\begin{align}
+  \epsilon_{V} &\ll 1, \\
+  \abs{\eta_{V}} &\ll 1.
+\end{align}
+La fase di inflazione termina quando le condizioni di slow-roll non sono più
+soddisfatte.  In particolare, calcolando \(\dot{H} = \ddot{R}/R - H^{2}\) si può
+ricavare che \(\ddot{R}/R = H^{2}(1 - \epsilon_{V})\), quindi l'inflazione ha
+avuto fine quando si è raggiunta la condizione
+\begin{equation}
+  \ddot{R} = 0 \implies \epsilon_{V} = 1.
+\end{equation}
+
+Esistono diversi modelli di inflazione: tutti prevedono una breve fase di rapida
+espansione accelerata, ma cambiano i parametri del sistema, come il numero di
+e-foldings, e l'espressione del potenziale inflatonico.  Riportiamo che in base
+alle ultime analisi fatte dalla collaborazione di
+Planck~\parencite{2015arXiv150202114P} il potenziale che risulta favorito è il
+\emph{potenziale di Starobinsky}
+\begin{equation}
+  V(\phi) \propto (1 - \e^{\sqrt{2/3}\phi/M_{\textup{Pl}}})^{2}
+\end{equation}
+e con \(N_{*} = 60\).  Questo modello è anche chiamato \emph{inflazione
+  \(R^{2}\)} perché si modifica l'azione del campo gravitazionale aggiungendo un
+termine quadratico nella curvatura scalare \(S \sim \int\dd^{4}x\sqrt{-g}(R +
+R^{2})\).
 
 %%% Local Variables:
 %%% mode: latex
