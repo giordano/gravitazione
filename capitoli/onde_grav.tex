@@ -621,6 +621,9 @@ particelle di prova, inizialmente a distanza di un metro, si spostano di circa
 esperimenti che si propongono di mettere in evidenza le onde gravitazionali è
 molto elevata.
 
+\subsection{Tecniche di rivelazione}
+\label{sec:tecniche-rivelazione}
+
 Sono stati sviluppate tre tecniche per la rivelazione delle onde gravitazionali:
 \begin{enumerate}
 \item \emph{Antenne gravitazionali risonanti (alla Weber)}.  Sono costituite da
@@ -653,16 +656,14 @@ Sono stati sviluppate tre tecniche per la rivelazione delle onde gravitazionali:
   segnale laser è inviato verso lo specchio semi-riflettente dove è splittato in
   due cammini ottici disposti a 90 gradi, quindi i due raggi sono riflessi
   indietro da due specchi, posti a distanza di qualche km negli esperimenti
-  Virgo (PISA) e Ligo (US), e alla fine fatti interferire.  La variazione di
-  distanza nei due cammini ottici indotta dall'onda gravitazionale determina lo
-  spostamento delle frange di interferenza.
+  Virgo (Càscina, Pisa) e LIGO (USA), e alla fine fatti interferire.  La
+  variazione di distanza nei due cammini ottici indotta dall'onda gravitazionale
+  determina lo spostamento delle frange di interferenza.
 
-  La tecnica è nella fase matura, i dati sono ora analizzati, ma non ci sono
-  risultati positivi.  La possibilità di riflessioni multiple dei fasci laser
-  lungo i cammini ottici (comunque limitata dall'assorbimento, stabilità di
-  sospensione e allineamento degli specchi) permette di aumentare il cammino
-  ottico $L$ e quindi la variazione di distanza indotta dall'onda
-  gravitazionale, $\var l \simeq L h$.
+  La possibilità di riflessioni multiple dei fasci laser lungo i cammini ottici
+  (comunque limitata dall'assorbimento, stabilità di sospensione e allineamento
+  degli specchi) permette di aumentare il cammino ottico $L$ e quindi la
+  variazione di distanza indotta dall'onda gravitazionale, $\var l \simeq L h$.
 
   La frequenza caratteristica delle onde gravitazionali in questo caso sarebbe
   dell'ordine di $10^{-3}$ Hz che corrisponde (attraverso la relazione $\nu \to
@@ -671,14 +672,18 @@ Sono stati sviluppate tre tecniche per la rivelazione delle onde gravitazionali:
   al tempo caratteristico $P$ di rotazione di pulsar a millisecondi. Si ritiene
   che i centri delle galassie contengano buchi neri super-massivi e allora è
   naturale guardare in direzione dei centri delle galassie e AGN.
+
 \item \emph{Satelliti nel sistema solare}.  Sono esperimenti previsti per gli
   anni 2020.  Nel caso di LISA si pensa di posizionare 3 satelliti in punti
   lagrangiani del sistema solare in cui $\bm{g} \simeq \bm{0}$, a distanza
   reciproca $\simeq 1$ AU (150 milioni di km).  La posizione dei satelliti
   sarebbe determinata attraverso segnali radar e la variazione di distanza
   indotta da un'onda gravitazionale sarebbe così rivelata.
-
 \end{enumerate}
+
+L'11 febbraio 2016 LIGO ha annunciato di aver rivelato per la prima volta
+un'onda gravitazionale.  Per maggiori dettagli vedi la
+sezione~\ref{sec:osservazione-onde}.
 
 \section{Generazione di Onde gravitazionali}
 \label{sec:onde-grav-masse}
@@ -1042,19 +1047,45 @@ sono necessari tempi scala molto più grandi dell'età del sistema solare per
 poter osservare degli effetti sull'orbita di Giove dovuti alla perdita di
 energia per radiazione gravitazionale.
 
-Comunque, a circa \SI{7.3}{\kilo\parsec} di distanza da noi esiste un sistema
-binario molto stretto costituito da due stelle di neutroni, di cui una è la
-pulsar PSR B1913+16 (scoperta da Hulse e Taylor nel 1974), in orbita l'una
-attorno all'altra con un periodo di $\simeq 8$ ore.  Le masse delle due stelle
-sono $\simeq \SI{1.4}{\solarmass}$, la distanza fra le stelle è $\simeq
-\SI{1.9e11}{\centi\metre} = \SI{1.9e6}{\kilo\metre}$ e la pulsar si muove alla
-velocità di \SI{300}{\kilo\metre\per\second}.  Questo sistema è importante
-perché fornisce una forte evidenza sperimentale, seppur indiretta, della
-emissione di onde gravitazionali e della validità della Teoria della Relatività
-Generale.  Grazie alle regolari emissioni di impulsi elettromagnetici da parte
-delle pulsar, è stato possibile misurare i parametri orbitali del sistema, in
-particolare la precessione del perielio del sistema e la dilatazione
-gravitazionale del tempo (red-shift gravitazionale).
+In questo tipi di sistemi, una quantità osservabile importante è la \emph{massa
+  chirp} \(\mathcal{M}\), legata alla massa ridotta \(\mu\) e alla massa totale
+\(M\) dei due corpi dalla relazione
+\begin{equation}
+  \mathcal{M} = \mu^{3/5} M^{2/5} = \frac{(m_{1} m_{2})^{3/5}}{(m_{1} +
+    m_{2})^{1/5}} \simeq \frac{c^{3}}{G} \biggl(\frac{5}{96} \pi^{-8/3}
+  f^{-11/3} \dot{f}\biggr)^{3/5},
+\end{equation}
+in cui \(f\) e \(\dot{f}\) sono, rispettivamente, la frequenza osservata delle
+onde gravitazionali emesse e la sua derivata temporale.  Quindi, misurando \(f\)
+e \(\dot{f}\) di un evento di onda gravitazionale si hanno immediatamente
+informazioni sulle masse dei due corpi coinvolti nel processo.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.45\textwidth]{figure/hulse-taylor-grav-wave}
+  \caption{Andamento della precessione del periastro della pulsar binaria PSR
+    1913+16 scoperta da Hulse e Taylor, fra il 1975 e il 2000.  Il buco negli
+    anni '90 è dovuto alla chiusura del telescopio di Arecibo per aggiornamento.
+    La linea continua rappresenta la predizione della relatività generale, che
+    tiene conto dell'emissione di onde gravitazionali da parte della pulsar, con
+    potenza dell'ordine \SI{e24}{\watt}.  Crediti:
+    \textcite{2001LRR.....4....4W}}
+  \label{fig:hulse-taylor-grav-wave}
+\end{figure}
+A circa \SI{7.3}{\kilo\parsec} di distanza da noi esiste un sistema binario
+molto stretto costituito da due stelle di neutroni, di cui una è la pulsar PSR
+B1913+16 (scoperta da Hulse e Taylor nel 1974), in orbita l'una attorno
+all'altra con un periodo di $\simeq 8$ ore.  Le masse delle due stelle sono
+$\simeq \SI{1.4}{\solarmass}$, la distanza fra le stelle è
+$\simeq \SI{1.9e11}{\centi\metre} = \SI{1.9e6}{\kilo\metre}$ e la pulsar si
+muove alla velocità di \SI{300}{\kilo\metre\per\second}.  Questo sistema è
+importante perché fornisce una forte evidenza sperimentale, seppur indiretta,
+della emissione di onde gravitazionali e della validità della Teoria della
+Relatività Generale.  Grazie alle regolari emissioni di impulsi elettromagnetici
+da parte delle pulsar, è stato possibile misurare i parametri orbitali del
+sistema, in particolare la precessione del periastro del sistema (vedi
+figura~\ref{fig:hulse-taylor-grav-wave}) e la dilatazione gravitazionale del
+tempo (red-shift gravitazionale).
 
 \subsection{Collasso gravitazionale}
 \label{sec:collasso-grav}
@@ -1097,9 +1128,78 @@ costretti a ipotizzare che la NS dopo il collasso circolarizzi velocemente ($e
 \to 0$) con la conseguente soppressione della potenza emessa in onde
 gravitazionali.
 
-Comunque, la NS continua a emettere radiazione elettromagnetica se è dotata di
-un momento di dipolo magnetico $\bm{m}$ non allineato con l'asse di rotazione
-(modello di Pacini).
+Comunque, la stella di neutroni continua a emettere radiazione elettromagnetica
+se è dotata di un momento di dipolo magnetico $\bm{m}$ non allineato con l'asse
+di rotazione (modello di Pacini).
+
+\section{Osservazione delle onde gravitazionali}
+\label{sec:osservazione-onde}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{figure/ligo-grav-wave-signal}
+  \caption{Evento di onda gravitazionale GW150914, osservato da LIGO Hanford
+    (sinistra) e Livingston (destra).  In alto: segnale registrato dai due
+    interferometri.  Al centro: segnale ricostruito, con intervallo di
+    confidenza del \(90\%\) usando due diversi modelli (in grigio) e modello
+    teorico, derivante dalle relatività numerica, che meglio si adatta ai dati
+    osservati (curve solide).  In basso: rappresentazione tempo-frequenza del
+    segnale, che mostra la crescita della frequenza del segnale con il tempo}
+  \label{fig:ligo-grav-wave}
+\end{figure}
+Il sistema binario di pulsar scoperto da Hulse e Taylor ha fornito la prima
+prova indiretta delle onde gravitazionali, ma a 100 anni esatti dalla
+pubblicazione della teoria della relatività generale, il 14 settembre 2015 i due
+apparati interferometrici dell'esperimento LIGO hanno registrato il primo
+segnale diretto di un'onda gravitazionale, riportato nella
+figura~\ref{fig:ligo-grav-wave}, originatosi a \SI{410}{\mega\parsec} di
+distanza dalla Terra.  L'onda è stata generata dal processo di fusione di due
+buchi neri, rispettivamente di massa \SI{36}{\solarmass} e \SI{29}{\solarmass},
+che hanno prodotto un buco nero finale di massa \SI{62}{\solarmass}.  Le \(3\)
+masse solari mancanti alla somma aritmetiche delle masse individuali sono state
+emesse sotto forma di onde gravitazionali nel tempo di \SI{0.2}{\second},
+producendo una luminosità di onde gravitazionali di picco pari a
+\SI{3.6e56}{\erg\per\second}
+(\(=\SI{200}{\solarmass\clight\squared\per\second}\)).  La sorgente di onde di
+questo evento è stata dunque un sistema binario, come quello descritto nel
+paragrafo~\ref{sec:sistema-binario}.
+
+Questa scoperta è stata molto importante per l'astrofisica perché, oltre a
+osservare direttamente per la prima volta le onde gravitazionali, ha fornito
+un'ulteriore prova a sostegno dell'esistenza dei buchi neri di massa stellare,
+in particolare più massivi di \SI{25}{\solarmass}, e che essi possono costituire
+dei sistemi binari di buchi neri che possono poi fondersi in tempi minori
+rispetto al tempo di Hubble.
+
+Il segnale è giunto al rivelatore di Hanford, che si trova più a nord, con
+\SI{6.9}{\milli\second} di ritardo rispetto a Livingston, indicando che l'onda
+proveniva da qualche parte nell'emisfero meridionale.  Dato che solo questi due
+rivelatori erano attivi durante l'evento,\footnote{L'esperimento italo-francese
+  Virgo, con sede a Càscina (Pisa, Italia) era in fase di ampliamento per
+  aumentarne la sensibilità.} non è stato possibile determinare con maggiore
+precisione la direzione della sorgente di onde.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{figure/ligo-estim-strain}
+  \caption{Ricostruzione dell'evento di onda gravitazionale GW150914.  In alto:
+    rappresentazione artistica dell'evento, secondo i modelli di relatività
+    numerica.  Al centro: ampiezza stimata del segnale dell'onda gravitazionale.
+    In basso: andamento della separazione dei due buchi neri e della loro
+    velocità relativa}
+  \label{fig:ligo-strain}
+\end{figure}
+Nella figura~\ref{fig:ligo-strain} è mostrata la ricostruzione dell'evento.  La
+fase della loro fusione vera e propria (\emph{merger}) è stata preceduta da un
+loro spiraleggiamento (\emph{inspiral}) dei due buchi neri l'uno attorno
+all'altro e seguita dallo smorzamento del segnale (\emph{ring-down to Kerr}) una
+volta che si è formato un nuovo buco nero di Kerr.  Dalla analisi delle
+frequenze delle onde, riportate nella figura~\ref{fig:ligo-grav-wave}, si è
+trovato che nell'arco dei \SI{0.2}{\second} di durata dell'evento le frequenze
+sono andate da \num{30} a \SI{150}{\hertz} e la massa chirp per questo evento è
+risultata pari a \(\mathcal{M} \simeq \SI{30}{\solarmass}\).  Attraverso un
+ulteriore processo di fit a modelli numerica è stato possibile stimare le masse
+individuali dei due buchi neri riportate all'inizio di questo paragrafo.
 
 %%% Local Variables:
 %%% mode: latex
